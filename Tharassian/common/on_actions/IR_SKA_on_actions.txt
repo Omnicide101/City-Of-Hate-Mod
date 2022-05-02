@@ -1,0 +1,9 @@
+on_actions = {
+
+	on_startup = {
+
+		effect = {
+			SKA = { country_event = { id = skaelinger.6 days = 240 random = 4500 } }
+		}
+	}
+}

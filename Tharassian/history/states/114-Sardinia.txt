@@ -1,0 +1,25 @@
+state={
+	id=114
+	name="STATE_114"
+	provinces={
+		408 7174 5525 3926 2401 3954 372 
+	}
+	state_category = town
+	manpower=15692
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 2
+	}
+	history={
+		victory_points = { 7174 11 }
+		owner = ORD
+		buildings = {
+			infrastructure = 2
+			workshop = 1
+			farm = 2
+			7174 = { naval_base = 3 }
+			dockyard = 1
+		}
+		add_core_of = ORD
+	}
+}

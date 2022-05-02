@@ -1,0 +1,74 @@
+﻿capital = 385
+
+set_oob = "BLD_1936"
+
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	ogre_warriors = 1
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = republic_peasant
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 0
+
+	monarchy_constitutional = 0
+
+	republic_peasant = 48
+
+	republic_aristocrat =  0
+
+	republic_merchant = 42
+
+	theocrat = 6
+
+	puritan = 4
+}
+
+add_ideas = {
+	BLD_Swamp_Is_Our_Home
+	BLD_The_Ogregeld
+	limited_conscription
+	tribal_society
+	unorganized_economy
+	ogre_country
+	unknownism_religion
+}
+
+add_opinion_modifier = {
+	target = SKA
+	modifier = bitter_rivals
+}
+
+add_opinion_modifier = {
+	target = BLD
+	modifier = bitter_rivals
+}
+
+add_opinion_modifier = {
+	target = BER
+	modifier = bitter_rivals
+}
+
+recruit_character = BLD_kar_thaurun
+recruit_character = BLD_kar_kurbah
+recruit_character = BLD_kar_reimvan
+recruit_character = BLD_kar_stoya
+recruit_character = BLD_kar_vurkun
+recruit_character = BLD_wun_orvar
+recruit_character = BLD_gur_tarvak
+recruit_character = BLD_pav_karbun
+recruit_character = BLD_ren_dirgal

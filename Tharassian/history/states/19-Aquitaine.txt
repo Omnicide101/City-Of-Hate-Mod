@@ -1,0 +1,27 @@
+state={
+	id=19
+	name="STATE_19"
+
+	history={
+		victory_points = {
+			6654 2
+		}
+		owner = GMR
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+		}
+		add_core_of = GMR
+
+	}
+
+	provinces={
+		6514 6554 6572 6594 2763 6640 6620 3921 6647 4642
+	}
+	state_category = town
+	manpower=9274
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 4
+	}
+}

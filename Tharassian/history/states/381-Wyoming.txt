@@ -1,0 +1,24 @@
+state={
+	id=381
+	name="STATE_381"
+	provinces={
+		1623 6777 6749
+	}
+	state_category = large_city
+	manpower=628201
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 11
+		steel = 13
+	}
+	history={
+		victory_points = { 1623 23 }
+		owner = RMT
+		buildings = {
+			infrastructure = 2
+			workshop = 2
+			forge = 1
+		}
+		add_core_of = RMT
+	}
+}

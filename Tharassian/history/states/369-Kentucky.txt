@@ -1,0 +1,25 @@
+
+state={
+	id=369
+	name="STATE_369"
+	provinces={	
+		8397 8402
+	}
+	state_category = large_city
+	manpower=908721
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = { 8402 49 }
+		owner = BER
+		buildings = {
+			infrastructure = 4
+			workshop = 3
+			forge = 2
+			dockyard = 1
+			8402 = {
+				naval_base = 8
+			}
+		}
+		add_core_of = BER
+	}
+}	

@@ -1,0 +1,522 @@
+# Written by Mira Gale "Omni" Fraters
+
+# befriend
+# conquer
+# anidonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+# contain
+# area_priority
+
+#faction_friends = {
+#	enable = {
+#		has_country_flag = faction_friends
+#	}
+#	abort = {
+#		NOT = {
+#			has_country_flag = faction_friends
+#		}
+#	}
+#	
+#	effect = {
+#	}
+#}
+
+###FORCE AI TO DO MORE NAVAL INVASIONS###
+
+#Northern Plains
+
+invade_GMR = {
+	enable = {
+		has_war_with = GMR
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "GMR"
+		value = 200
+	}
+}
+
+invade_NPC = {
+	enable = {
+		has_war_with = NPC
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "NPC"
+		value = 200
+	}
+}
+
+invade_IRT = {
+	enable = {
+		has_war_with = IRT
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "IRT"
+		value = 200
+	}
+}
+
+invade_NAV = {
+	enable = {
+		has_war_with = NAV
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "NAV"
+		value = 200
+	}
+}
+
+invade_KRT = {
+	enable = {
+		has_war_with = KRT
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "KRT"
+		value = 200
+	}
+}
+
+invade_TRI = {
+	enable = {
+		has_war_with = TRI
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "TRI"
+		value = 200
+	}
+}
+
+#Ordoria
+
+invade_ORD = {
+	enable = {
+		has_war_with = ORD
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "ORD"
+		value = 200
+	}
+}
+
+invade_ORB = {
+	enable = {
+		has_war_with = ORB
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "ORB"
+		value = 200
+	}
+}
+
+invade_YTH = {
+	enable = {
+		has_war_with = YTH
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "YTH"
+		value = 200
+	}
+}
+
+invade_IST = {
+	enable = {
+		has_war_with = IST
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "IST"
+		value = 200
+	}
+}
+
+invade_VAR = {
+	enable = {
+		has_war_with = VAR
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "VAR"
+		value = 200
+	}
+}
+
+invade_RTH = {
+	enable = {
+		has_war_with = RTH
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "RTH"
+		value = 200
+	}
+}
+
+#The Union
+
+invade_STA = {
+	enable = {
+		has_war_with = STA
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "STA"
+		value = 200
+	}
+}
+
+invade_HLZ = {
+	enable = {
+		has_war_with = HLZ
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "HLZ"
+		value = 200
+	}
+}
+
+invade_NOC = {
+	enable = {
+		has_war_with = NOC
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "NOC"
+		value = 200
+	}
+}
+
+invade_SPW = {
+	enable = {
+		has_war_with = SPW
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "SPW"
+		value = 200
+	}
+}
+
+invade_SVT = {
+	enable = {
+		has_war_with = SVT
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "SVT"
+		value = 200
+	}
+}
+
+invade_TEI = {
+	enable = {
+		has_war_with = TEI
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "TEI"
+		value = 200
+	}
+}
+
+invade_SNF = {
+	enable = {
+		has_war_with = SNF
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "SNF"
+		value = 200
+	}
+}
+
+invade_WSZ = {
+	enable = {
+		has_war_with = WSZ
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "WSZ"
+		value = 200
+	}
+}
+
+invade_FTH = {
+	enable = {
+		has_war_with = FTH
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "FTH"
+		value = 200
+	}
+}
+
+#Perkavland
+
+invade_PRK = {
+	enable = {
+		has_war_with = PRK
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "PRK"
+		value = 200
+	}
+}
+
+invade_LNK = {
+	enable = {
+		has_war_with = LNK
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "LNK"
+		value = 200
+	}
+}
+
+invade_VLN = {
+	enable = {
+		has_war_with = VLN
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "VLN"
+		value = 200
+	}
+}
+
+invade_WLT = {
+	enable = {
+		has_war_with = WLT
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "WLT"
+		value = 200
+	}
+}
+
+invade_SVC = {
+	enable = {
+		has_war_with = SVC
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "SVC"
+		value = 200
+	}
+}
+
+invade_KRL = {
+	enable = {
+		has_war_with = KRL
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "KRL"
+		value = 200
+	}
+}
+
+invade_NVT = {
+	enable = {
+		has_war_with = NVT
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "NVT"
+		value = 200
+	}
+}
+
+#Bergial
+
+invade_BER = {
+	enable = {
+		has_war_with = BER
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "BER"
+		value = 200
+	}
+}
+
+#Tlarthingia
+
+invade_TLA = {
+	enable = {
+		has_war_with = TLA
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "TLA"
+		value = 200
+	}
+}
+
+#Irinthios
+
+invade_IRI = {
+	enable = {
+		has_war_with = IRI
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "IRI"
+		value = 200
+	}
+}
+
+#Hand
+
+invade_MER = {
+	enable = {
+		has_war_with = MER
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "MER"
+		value = 200
+	}
+}
+
+#Kurgur
+
+invade_KUR = {
+	enable = {
+		has_war_with = KUR
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "KUR"
+		value = 200
+	}
+}
+
+#Bilodya
+
+invade_BLD = {
+	enable = {
+		has_war_with = BLD
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "BLD"
+		value = 200
+	}
+}
+
+#Lirothlind
+
+invade_LIR = {
+	enable = {
+		has_war_with = LIR
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "LIR"
+		value = 200
+	}
+}
+
+invade_LEX = {
+	enable = {
+		has_war_with = LEX
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = "LEX"
+		value = 200
+	}
+}
+

@@ -1,0 +1,14 @@
+state={
+	id=857
+	name="STATE_857"
+	provinces={
+		1731 2170 4040 4977 8712 
+	}
+	buildings_max_level_factor=1.000
+	manpower=1
+	state_category=pastoral
+	history={
+		owner = XXX
+		add_core_of = XXX
+	}
+}

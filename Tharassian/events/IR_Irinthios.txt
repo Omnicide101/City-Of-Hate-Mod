@@ -1,0 +1,1784 @@
+﻿### IRINTHIAN EVENTS
+
+add_namespace = iri
+
+### WAR WITH TLARTHINGIA
+
+country_event = {#To Arms!
+	id = iri.1
+	title = iri.1.t
+	desc = iri.1.d
+	picture = GFX_report_event_soviet_invasion_map
+	
+	fire_only_once = yes
+	
+	trigger = {
+		date > 1940.01.01
+	}
+	
+	mean_time_to_happen = {
+		days = 150
+	}
+	
+	option = {#To War!
+		name = iri.1.a
+		every_state = {
+			limit = {
+				is_core_of = TLA
+			}
+			add_claim_by = IRI
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = TLA
+		}
+	}
+}
+
+
+country_event = {#Dissenting Nobles!
+	id = iri.3
+	title = iri.3.t
+	desc = iri.3.d
+	picture = report_event_carol_party
+	
+	is_triggered_only = yes
+	
+	option = {#Drat
+		name = iri.3.a
+		add_timed_idea = {
+			idea = IRI_dissenters
+			days = 182
+		}
+	}
+}
+
+country_event = {#Union Alliance?
+	id = iri.4
+	title = iri.4.t
+	desc = iri.4.d
+	picture = report_event_carol_party
+	
+	is_triggered_only = yes
+	
+	option = {#Yes
+		name = iri.4.a
+		ai_chance = {
+			factor = 9
+		}
+		UNG = {
+			country_event = {
+				id = ung.54
+				days = 4
+			}
+		}
+		
+	}
+	
+	option = {#No
+		name = iri.4.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_war_with = TLA
+				factor = 0
+			}
+		}
+		UNG = {
+			country_event = {
+				id = ung.55
+				days = 4
+			}
+		}
+	}
+}
+
+## SPECIAL AGRESSIVE OCCUPATION EVENTS
+
+country_event = {#Ogres Massacre in Burdvin in which Irinthians are going hella nazi
+	id = iri.5
+	title = iri.5.t
+	desc = iri.5.d
+	picture = GFX_report_event_irinthios_warcrimes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {#Such sacrifice we are ready to make
+		name = iri.5.a
+		add_manpower = -40000
+		add_stability = -0.3
+		add_war_support = -0.3
+		if = {
+			limit = {
+					NOT = { has_idea = IRI_Glory_Built_On_Blood }
+			}
+			add_ideas = IRI_Glory_Built_On_Blood
+		}
+	}
+}
+
+country_event = {#Surely the outside world won't like lizardmen ulitisation camps
+	id = iri.6
+	title = iri.6.t
+	desc = iri.6.d
+	picture = GFX_report_event_irinthios_warcrimes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {#Oh well that doesn't need a comment
+		name = iri.6.a
+		add_stability = -0.3
+		add_war_support = -0.3
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.25
+		}
+		if = {
+			limit = {
+					NOT = { has_idea = IRI_Glory_Built_On_Blood }
+			}
+			add_ideas = IRI_Glory_Built_On_Blood
+		}
+	}
+}
+
+country_event = {#Uh oh militarists are mad because Chairopon failed his promises
+	id = iri.7
+	title = iri.7.t
+	desc = iri.7.d
+	picture = GFX_report_event_irinthios_coup
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {#Disaster but truly deserved for nazis - puritan side
+		name = iri.7.a
+		kill_country_leader = yes
+		hidden_effect = { 
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.9
+		}
+		kill_ideology_leader = monarchy_absolute
+		}
+		IRI = {
+		remove_ideas = IRI_The_Bloodlust
+		start_civil_war = {
+				ruling_party = puritan
+				ideology = monarchy_absolute
+				size = 0.4
+				capital = 397
+				states = { 
+				397 744 398 740 399 739 400 741 742
+				}
+				keep_unit_leaders = {
+				503 505 506 509 510
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = IRI
+				has_government = monarchy_absolute
+			}
+			complete_national_focus = IRI_Enpower_The_Old_Guard
+		}
+		complete_national_focus = IRI_Appoint_Sosibios
+	}
+	option = {#Disaster but truly deserved for nazis - Chairopon heir side
+		name = iri.7.b
+		kill_country_leader = yes
+		hidden_effect = { 
+		kill_ideology_leader = monarchy_absolute
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.9
+		}
+		}
+		IRI = {
+		remove_ideas = IRI_The_Bloodlust
+		start_civil_war = {
+				ruling_party = monarchy_absolute
+				ideology = puritan
+				size = 0.4
+				capital = 751
+				states = { 
+				751 750 755 386 753 757 755 752 758 756 797 759 402
+				}
+				keep_unit_leaders = {
+				501 502 504 507 508
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = IRI
+				has_government = puritan
+			}
+			complete_national_focus = IRI_Appoint_Sosibios
+		}
+		complete_national_focus = IRI_Enpower_The_Old_Guard
+	}
+}
+country_event = {#Nobody expected Merchant Hand exile
+	id = iri.8
+	title = iri.8.t
+	desc = iri.8.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+
+	mean_time_to_happen = {
+
+	}
+	
+	option = {#Oh well what will we do now
+		name = iri.8.a
+		MER = { 
+			FROM_worsen_THIS_relations = yes
+			add_opinion_modifier = {
+				target = IRI
+				modifier = embargo_trade
+			}
+		}
+		IRI = { 
+			country_event = {
+				id = iri.9
+				hours = 6
+				random_hours = 18
+			}
+			add_opinion_modifier = {
+				target = MER
+				modifier = embargo_trade
+			}
+		}
+	}
+}
+country_event = {#Irinthios gets response
+	id = iri.9
+	title = iri.9.t
+	desc = iri.9.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	mean_time_to_happen = {
+	}
+	
+	option = {#Oh crap
+		name = iri.9.a
+	}
+}
+
+country_event = {# Sunday provocation begins, it is the end of Chairophons tyrrany
+	id = iri.10
+	title = iri.10.t
+	desc = iri.10.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {#Cinyras
+		name = iri.10.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				has_game_rule = {
+					rule = IRI_game_plan
+					option = IRI_ROSITE
+				}
+				factor = 0
+			}
+		}
+		hidden_effect = {
+		set_country_flag = IRI_Revolution_Ongoing
+		set_country_flag = IRI_Cinyras_Chosen
+		news_event = {
+			id = iri.11
+			days = 3
+		}
+		}
+		IRI = {
+			if = {
+			limit = {
+			has_idea = IRI_Revolution_In_Air_1
+			}
+			start_civil_war = {
+				ruling_party = republic_aristocrat
+				ideology = monarchy_absolute
+				size = 0.7
+				capital = 797
+				states = { 
+				797 759 737 738 744 398 399 740 739 400 751 750 756 758 755 752 402 746 401 754 745
+				}
+			keep_unit_leaders = {
+				501 502 506 508 509 510
+					}
+				}
+			}
+			else_if = {
+			limit = {
+			has_idea = IRI_Revolution_In_Air_2
+			}
+			start_civil_war = {
+				ruling_party = republic_aristocrat
+				ideology = monarchy_absolute
+				size = 0.4
+				capital = 397
+				states = { 
+				797 398 399 740 402 752 758 759 750 756
+				}
+			keep_unit_leaders = {
+				501 502 506 508 509 510
+					}
+				}
+			}
+			else_if = {
+			limit = {
+			has_idea = IRI_Revolution_In_Air_3
+			}
+			start_civil_war = {
+				ruling_party = republic_aristocrat
+				ideology = monarchy_absolute
+				size = 0.2
+				capital = 397
+				states = { 
+				797 398 399 740 402
+				}
+			keep_unit_leaders = {
+				501 502 506 508 509 510 759
+					}
+				}
+			}
+			else_if = {
+			limit = {
+			has_idea = IRI_Revolution_In_Air_4
+			}
+			start_civil_war = {
+				ruling_party = republic_aristocrat
+				ideology = monarchy_absolute
+				size = 0.1
+				capital = 797
+				states = { 
+				797 398 399
+				}
+			keep_unit_leaders = {
+				501 502 506 508 509 510
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = IRI
+				has_government = monarchy_absolute
+			}
+			complete_national_focus = IRI_Spoils_Of_War
+			complete_national_focus = IRI_Quantity_Over_Quality
+			complete_national_focus = IRI_Enpower_The_Old_Guard
+		}
+	}
+	option = {#The people
+		name = iri.10.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_game_rule = {
+					rule = IRI_game_plan
+					option = IRI_CINYRAS
+				}
+				factor = 0
+			}
+		}
+		hidden_effect = { 
+		set_country_flag = IRI_Revolution_Ongoing
+		set_country_flag = IRI_Peasant_Chosen
+		news_event = {
+			id = iri.12
+			days = 3
+		}
+		}
+		IRI = {
+			if = {
+			limit = {
+			has_idea = IRI_Revolution_In_Air_1
+			}
+			start_civil_war = {
+				ruling_party = republic_peasant
+				ideology = monarchy_absolute
+				size = 0.7
+				capital = 797
+				states = { 
+				797 759 737 738 744 398 399 740 739 400 751 750 756 758 755 752 402 746 401 754 745
+				}
+			keep_unit_leaders = {
+				501 502 506 508 509 510
+					}
+				}
+			}
+			else_if = {
+			limit = {
+			has_idea = IRI_Revolution_In_Air_2
+			}
+			start_civil_war = {
+				ruling_party = republic_peasant
+				ideology = monarchy_absolute
+				size = 0.4
+				capital = 397
+				states = { 
+				797 398 399 740 402 752 758 759 750 756
+				}
+			keep_unit_leaders = {
+				501 502 506 508 509 510
+					}
+				}
+			}
+			else_if = {
+			limit = {
+			has_idea = IRI_Revolution_In_Air_3
+			}
+			start_civil_war = {
+				ruling_party = republic_peasant
+				ideology = monarchy_absolute
+				size = 0.2
+				capital = 397
+				states = { 
+				797 398 399 740 402
+				}
+			keep_unit_leaders = {
+				501 502 506 508 509 510 759
+					}
+				}
+			}
+			else_if = {
+			limit = {
+			has_idea = IRI_Revolution_In_Air_4
+			}
+			start_civil_war = {
+				ruling_party = republic_peasant
+				ideology = monarchy_absolute
+				size = 0.1
+				capital = 797
+				states = { 
+				797 398 399
+				}
+			keep_unit_leaders = {
+				501 502 506 508 509 510
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = IRI
+				has_government = monarchy_absolute
+			}
+			complete_national_focus = IRI_Spoils_Of_War
+			complete_national_focus = IRI_Quantity_Over_Quality
+			complete_national_focus = IRI_Enpower_The_Old_Guard
+		}	
+	}
+}
+
+news_event = {
+	id = iri.11
+	title = iri.11.t
+	desc = iri.11.d
+	picture = GFX_news_event_iri_peasant_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+		name = iri.11.a
+	}
+
+}
+
+news_event = {
+	id = iri.12
+	title = iri.12.t
+	desc = iri.12.d
+	picture = GFX_news_event_iri_peasant_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+		name = iri.12.a
+	}
+
+}
+country_event = {# Cinyras won civil war
+	id = iri.13
+	title = iri.13.t
+	desc = iri.13.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {#Hooray
+		name = iri.13.a
+	}
+}
+country_event = {# Peasants won civil war
+	id = iri.14
+	title = iri.14.t
+	desc = iri.14.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {#Hooray
+		name = iri.14.a
+	}
+}
+country_event = {# Tlarthingians getting the land exchange offer
+	id = iri.15
+	title = iri.15.t
+	desc = iri.15.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {#Yes
+	name = iri.15.a
+	IRI = {
+	puppet = TLA
+	transfer_state = 773
+	transfer_state = 377
+	transfer_state = 374
+	transfer_state = 766
+	transfer_state = 788
+	transfer_state = 765
+	add_state_core = 773
+	add_state_core = 377
+	add_state_core = 374
+	add_state_core = 766
+	add_state_core = 788
+	add_state_core = 765
+	remove_opinion_modifier = {
+		target = TLA
+		modifier = bitter_rivals
+	}
+	country_event = {
+		id = iri.16
+		days = 1
+	}
+	} 
+	remove_state_core = 773
+	remove_state_core = 377
+	remove_state_core = 374
+	remove_state_core = 766
+	remove_state_core = 788
+	remove_state_core = 765
+	remove_opinion_modifier = {
+		target = IRI
+		modifier = bitter_rivals
+	}
+	hidden_effect = {
+		set_global_flag = IRI_Lizardmen_Accepted_Deal
+	}
+	}
+	
+	option = {#Halfyes
+	name = iri.15.b
+	IRI = {
+	give_guarantee = TLA
+	transfer_state = 773
+	transfer_state = 377
+	transfer_state = 374
+	transfer_state = 766
+	transfer_state = 788
+	transfer_state = 765
+	add_state_core = 773
+	add_state_core = 377
+	add_state_core = 374
+	add_state_core = 766
+	add_state_core = 788
+	add_state_core = 765
+	country_event = {
+		id = iri.17
+		days = 1
+	}
+	remove_opinion_modifier = {
+		target = TLA
+		modifier = bitter_rivals
+	}
+	} 
+	remove_state_core = 773
+	remove_state_core = 377
+	remove_state_core = 374
+	remove_state_core = 766
+	remove_state_core = 788
+	remove_state_core = 765
+	remove_opinion_modifier = {
+		target = IRI
+		modifier = bitter_rivals
+	}
+	hidden_effect = {
+		set_global_flag = IRI_Lizardmen_Accepted_Deal
+	}
+	}
+	
+	option = {#Nooo
+	name = iri.15.c
+	IRI = {
+	add_state_claim = 773
+	add_state_claim = 377
+	add_state_claim = 374
+	add_state_claim = 766
+	add_state_claim = 788
+	add_state_claim = 765
+	country_event = {
+		id = iri.18
+		days = 1
+	}
+	}
+	}
+}
+country_event = {# They say Yes
+	id = iri.16
+	title = iri.16.t
+	desc = iri.16.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.16.a
+	}
+
+}
+country_event = {# They say Halfyes
+	id = iri.17
+	title = iri.17.t
+	desc = iri.17.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.17.a
+	}
+
+}
+country_event = {# They say Halfyes
+	id = iri.18
+	title = iri.18.t
+	desc = iri.18.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.18.a
+	}
+
+}
+country_event = { #Kurgurs Influencing
+	id = iri.19
+	title = iri.19.t
+	desc = iri.19.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.19.a
+	hidden_effect = {
+	set_global_flag = IRI_kur_influenced
+	IRI = { country_event = { id = iri.29 } } 
+	}
+	add_political_power = 50
+	}
+	option = {
+	name = iri.19.b
+	IRI = { country_event = { id = iri.20 } } 
+	add_political_power = -100
+	add_stability = -0.05
+	}
+
+}
+country_event = { #Answer to influence - negative
+	id = iri.20
+	title = iri.20.t
+	desc = iri.20.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.20.a
+	}
+
+}
+country_event = { # Puppetting
+	id = iri.21
+	title = iri.21.t
+	desc = iri.21.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.21.a
+	FROM = { puppet = ROOT }
+	IRI = { country_event = { id = iri.22 } } 
+	}
+	
+	option = {
+	name = iri.21.b
+	declare_war_on = { target = IRI   type = puppet_wargoal_focus }
+	IRI = { country_event = { id = iri.23 } } 
+	}
+
+}
+country_event = { #Answer to puppetting - positive
+	id = iri.22
+	title = iri.22.t
+	desc = iri.22.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.22.a
+	}
+
+}
+country_event = { #Answer to puppetting - negative
+	id = iri.23
+	title = iri.23.t
+	desc = iri.23.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.23.a
+	}
+
+}
+country_event = { #Bilodya Influencing
+	id = iri.24
+	title = iri.24.t
+	desc = iri.24.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.24.a
+	hidden_effect = {
+	set_global_flag = IRI_BLD_influenced
+	IRI = { country_event = { id = iri.29 } } 
+	}
+	add_political_power = 50
+	}
+	option = {
+	name = iri.24.b
+	IRI = { country_event = { id = iri.20 } } 
+	add_political_power = -100
+	add_stability = -0.05
+	}
+
+}
+country_event = { #MerHand Influencing
+	id = iri.25
+	title = iri.25.t
+	desc = iri.25.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.25.a
+	hidden_effect = {
+	set_global_flag = IRI_MER_influenced
+	IRI = { country_event = { id = iri.29 } } 
+	}
+	add_political_power = 50
+	}
+	option = {
+	name = iri.25.b
+	IRI = { country_event = { id = iri.20 } } 
+	add_political_power = -100
+	add_stability = -0.05
+	}
+
+}
+country_event = { #Rimatu Influencing
+	id = iri.26
+	title = iri.26.t
+	desc = iri.26.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.26.a
+	hidden_effect = {
+	set_global_flag = IRI_RMT_influenced
+	IRI = { country_event = { id = iri.29 } } 
+	}
+	add_political_power = 50
+	}
+	option = {
+	name = iri.26.b
+	IRI = { country_event = { id = iri.20 } } 
+	add_political_power = -100
+	add_stability = -0.05
+	}
+
+}
+country_event = { #Lirothlind Influencing
+	id = iri.27
+	title = iri.27.t
+	desc = iri.27.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.27.a
+	hidden_effect = {
+	set_global_flag = IRI_LIR_influenced
+	IRI = { country_event = { id = iri.29 } } 
+	}
+	add_political_power = 50
+	}
+	option = {
+	name = iri.27.b
+	IRI = { country_event = { id = iri.20 } } 
+	add_political_power = -100
+	add_stability = -0.05
+	}
+
+}
+country_event = { #Bergialer Influencing
+	id = iri.28
+	title = iri.28.t
+	desc = iri.28.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.28.a
+	hidden_effect = {
+	set_global_flag = IRI_BER_influenced
+	IRI = { country_event = { id = iri.29 } } 
+	}
+	add_political_power = 50
+	}
+	option = {
+	name = iri.28.b
+	IRI = { country_event = { id = iri.20 } } 
+	add_political_power = -100
+	add_stability = -0.05
+	}
+
+}
+country_event = { #Answer to influence - positive
+	id = iri.29
+	title = iri.29.t
+	desc = iri.29.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.29.a
+	}
+
+}
+
+country_event = { #Bilodya gets invite to Irinthian war
+	id = iri.30
+	title = iri.30.t
+	desc = iri.30.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.30.a
+		ai_chance = {
+			factor = 100 # Always
+		}
+	IRI = { puppet = BLD }
+	IRI = { country_event = { id = iri.31 } } 
+	}
+	option = {
+	name = iri.30.b
+	ai_chance = {
+		factor = 0
+	}
+	IRI = { country_event = { id = iri.32 } } 
+	}
+
+}
+country_event = { #Bilodya accepts
+	id = iri.31
+	title = iri.31.t
+	desc = iri.31.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.31.a
+	}
+
+}
+country_event = { #Bilodya refuses
+	id = iri.32
+	title = iri.32.t
+	desc = iri.32.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.32.a
+	}
+
+}
+country_event = {
+	id = iri.33
+	title = iri.33.t
+	desc = iri.33.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.33.a
+	ai_chance = {
+		factor = 100 
+	}
+	IRI = { 
+	annex_country = { 
+	target =  BLD 
+	transfer_troops = yes
+	}
+	country_event = { id = iri.34 }
+	}
+	}
+	option = {
+	name = iri.33.a
+	ai_chance = {
+		factor = 0
+	}
+	IRI = { end_puppet = BLD }
+	}
+
+}
+country_event = {
+	id = iri.34
+	title = iri.34.t
+	desc = iri.34.d
+	picture = GFX_report_event_sunday_provocation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+	name = iri.34.a
+	}
+
+}
+country_event = {
+	id = iri.35
+	title = iri.35.t
+	desc = iri.35.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {#They are ridiculous
+	name = iri.35.a
+	ai_chance = {
+		factor = 1
+		modifier = {
+			has_war_with = IRI
+			factor = 0
+		}
+		modifier = {
+			is_in_faction = yes
+			factor = 0
+		}
+	}
+	IRI = {
+	add_state_claim = 378
+	add_state_claim = 379
+	add_state_claim = 380
+	}
+	FROM = { country_event = { id = iri.36 hours = 6 random_hours = 18 } }
+	}
+	
+	option = {#oh god oh F
+	name = iri.35.b
+	ai_chance = {
+		factor = 1
+	}
+	IRI = { annex_country = { target = MER transfer_troops = yes } }
+	FROM = { country_event = { id = iri.37 hours = 6 random_hours = 18 } }
+	}
+}
+country_event = {
+	id = iri.36
+	title = iri.36.t
+	desc = iri.36.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.36.a
+	}
+
+}
+country_event = {
+	id = iri.37
+	title = iri.37.t
+	desc = iri.37.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.37.a
+	ROOT = { 	
+	add_state_core = 378
+	add_state_core = 379
+	add_state_core = 380
+	}
+
+}
+}
+country_event = {
+	id = iri.38
+	title = iri.38.t
+	desc = iri.38.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.38.a
+	add_political_power = 20
+}
+}
+country_event = {
+	id = iri.39
+	title = iri.39.t
+	desc = iri.39.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.39.a
+	remove_country_leader_trait = dishonoured_dynasty
+	add_country_leader_trait = forgiven_dynasty
+}
+}
+country_event = { #Stahlhof gets ultimatum
+	id = iri.40
+	title = iri.40.t
+	desc = iri.40.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.40.a
+	FROM = { country_event = { id = iri.41 hours = 6 random_hours = 18 } }
+	UNG = { end_puppet = STA }
+	IRI = { puppet = STA }
+	
+}
+	option = {
+	name = iri.40.b
+	IRI = { 
+	country_event = { id = iri.42 hours = 6 random_hours = 18 } 
+	create_wargoal = {
+		type = puppet_wargoal_focus
+		target = STA
+	}
+	}
+}
+}
+country_event = {
+	id = iri.41
+	title = iri.41.t
+	desc = iri.41.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.41.a
+}
+
+}
+country_event = {
+	id = iri.42
+	title = iri.42.t
+	desc = iri.42.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.42.a
+}
+
+}
+
+country_event = { #Ungerdaler gets ultimatum
+	id = iri.43
+	title = iri.43.t
+	desc = iri.43.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.43.a
+	create_wargoal = {
+		type = puppet_wargoal_focus
+		target = IRI
+	}
+	IRI = { 
+	country_event = { id = iri.44 hours = 6 random_hours = 18 } 
+	}
+}
+	option = {
+	name = iri.43.b
+	UNG = { 
+	end_puppet = STA 
+	end_puppet = FTH
+	end_puppet = WIS
+	end_puppet = STA 
+	end_puppet = SNF
+	end_puppet = WSZ
+	end_puppet = TEI
+	end_puppet = SVT
+	end_puppet = SPW
+	end_puppet = NOC
+	end_puppet = NRK
+	end_puppet = HLZ
+	end_puppet = STA
+	end_puppet = ARK
+	}
+	IRI = { 
+	country_event = { id = iri.45 hours = 6 random_hours = 18 } 
+	}
+}
+}
+country_event = {
+	id = iri.44
+	title = iri.44.t
+	desc = iri.44.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.44.a
+	create_wargoal = {
+		type = puppet_wargoal_focus
+		target = UNG
+	}
+}
+
+}
+country_event = {
+	id = iri.45
+	title = iri.45.t
+	desc = iri.45.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.45.a
+}
+
+}
+
+country_event = { #Trying to get Lirothlind into alliance
+	id = iri.46
+	title = iri.46.t
+	desc = iri.46.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.46.a
+	IRI = { add_to_faction = LIR 
+	country_event = { id = iri.47 hours = 12 random_hours = 36 } 
+	}
+}
+	option = {
+	name = iri.46.b
+	IRI = {
+	country_event = { id = iri.48 hours = 12 random_hours = 36 } 
+	}
+}
+}
+country_event = {
+	id = iri.47
+	title = iri.47.t
+	desc = iri.47.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.47.a
+}
+
+}
+country_event = {
+	id = iri.48
+	title = iri.48.t
+	desc = iri.48.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.48.a
+}
+
+}
+country_event = { #Chairophon gonna die, rip
+	id = iri.49
+	title = iri.49.t
+	desc = iri.49.d
+	picture = GFX_report_event_irinthios_sanctions
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+	name = iri.49.a
+	add_stability = -0.05
+		news_event = {
+			id = iri.50
+			days = 3
+		}
+}
+	option = {
+	name = iri.49.b
+	add_stability = -0.15
+	add_war_support = 0.2
+		news_event = {
+			id = iri.51
+			days = 3
+		}
+}
+	option = {
+	name = iri.49.c
+	add_stability = -0.4
+	add_war_support = 0.6
+		news_event = {
+			id = iri.52
+			days = 3
+		}
+}
+}
+news_event = {
+	id = iri.50
+	title = iri.50.t
+	desc = iri.50.d
+	picture = GFX_news_event_iri_peasant_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+		name = iri.50.a
+	}
+
+}
+news_event = {
+	id = iri.51
+	title = iri.51.t
+	desc = iri.51.d
+	picture = GFX_news_event_iri_peasant_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+		name = iri.51.a
+	}
+
+}
+news_event = {
+	id = iri.52
+	title = iri.52.t
+	desc = iri.52.d
+	picture = GFX_news_event_iri_peasant_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	mean_time_to_happen = {
+
+	}
+	
+	option = {
+		name = iri.52.a
+	}
+
+}
+
+country_event = {# Union Offers Alliance
+	id = iri.53
+	title = iri.53.t
+	desc = iri.53.d
+	picture = GFX_report_event_romania_poland_visit
+	
+	is_triggered_only = yes
+	
+	option = {#Yes
+		name = iri.53.a
+		ai_chance = {
+			factor = 9
+		}
+		UNG = {
+			country_event = {
+				id = ung.57
+				days = 4
+			}
+		}
+		
+	}
+	
+	option = {#No
+		name = iri.53.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_war_with = IRI
+				factor = 0
+			}
+		}
+		UNG = {
+			country_event = {
+				id = ung.58
+				days = 4
+			}
+		}
+	}
+}

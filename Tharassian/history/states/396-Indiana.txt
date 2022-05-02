@@ -1,0 +1,30 @@
+state={
+	id=396
+	name="STATE_396"
+	provinces={
+		3904 6542 6505 562 3089 6424 6436 2341
+	}
+	state_category = megalopolis
+	manpower=681539
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 8
+		mount = 2
+		lumber = 5
+	}
+	history={
+		victory_points = { 6505 35 }
+		owner = IRI
+		buildings = {
+			infrastructure = 3
+			workshop = 5
+			forge = 4
+			dockyard = 2
+			6505 = {
+				bunker = 5
+				naval_base = 9
+			}
+		}
+		add_core_of = IRI
+	}
+}

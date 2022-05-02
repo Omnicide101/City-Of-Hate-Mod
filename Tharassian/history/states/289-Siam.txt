@@ -1,0 +1,21 @@
+state={
+	id=289
+	name="STATE_289"
+	provinces={
+		2676 8979 984 3774 8952 8981 4017 253 4674 9027 
+	}
+	state_category = rural
+	manpower=8772
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			8981 3
+		}
+		owner = SPW
+		buildings = {
+			infrastructure = 2
+			farm = 1
+		}
+		add_core_of = SPW
+		}
+}

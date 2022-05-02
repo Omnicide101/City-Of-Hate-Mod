@@ -1,0 +1,25 @@
+state={
+	id=124
+	name="STATE_124"
+	provinces={
+		983 4759 473
+	}
+	state_category = pastoral
+	manpower=3492
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 3
+	}
+		history={	
+			victory_points = {
+				4759 3
+			}
+		owner = RTH
+		buildings = {	
+			infrastructure = 1
+			workshop = 1
+		}	
+		add_core_of = RTH
+
+		}
+}

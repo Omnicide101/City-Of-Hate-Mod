@@ -1,0 +1,25 @@
+state={
+	id=5
+	name="STATE_5"
+	provinces={
+		2191 6433 1414 5596 1060 5389
+	}
+	state_category = rural
+	manpower=10192
+	buildings_max_level_factor=1.000
+	
+	history={
+		victory_points = {
+			5596 1
+		}
+		owner = GMR
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+			dockyard = 1
+		}
+		add_core_of = GMR
+	}
+
+
+}

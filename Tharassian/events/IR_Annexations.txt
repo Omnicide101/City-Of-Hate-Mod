@@ -1,0 +1,10334 @@
+﻿###	ANNEXATION EVENTS
+
+add_namespace = annex
+
+country_event = { #Remove resistance modifiers from ex-commissiaries
+	id = annex.0
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		every_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			force_disable_resistance = ROOT
+			cancel_resistance = yes
+		}
+	}
+}
+
+country_event = { #Conquest of Stahlhof
+	id = annex.1
+	title = annex.1.t
+	desc = annex.1.d
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				tag = ORD
+			}
+			ORD = {
+				add_state_claim = 193
+				add_state_claim = 194
+				add_state_claim = 195
+				add_state_claim = 198
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = ORD
+						tag = EOR
+						ROOT = {
+							is_subject_of = ORD
+						}
+						ROOT = {
+							is_subject_of = EOR
+						}
+					}
+				}
+				STA = {
+					has_cosmetic_tag = STA_OSG
+				}
+			}
+			STA = {
+				drop_cosmetic_tag = yes
+				set_party_name = {
+					ideology = puritan
+					long_name = STA_puritan_party
+					name = STA_puritan_party
+				}
+				set_party_name = {
+					ideology = theocrat
+					long_name = STA_theocrat_party
+					name = STA_theocrat_party
+				}
+				set_party_name = {
+					ideology = monarchy_absolute
+					long_name = STA_monarchy_absolute_party
+					name = STA_monarchy_absolute_party
+				}
+				kill_ideology_leader = monarchy_absolute
+				kill_ideology_leader = puritan
+				kill_ideology_leader = theocrat
+				remove_ideas = OSG_settler_government
+				delete_unit_template_and_units = {
+					division_template = "Grove Guards"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Bladesingers"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Rangers"
+				}
+				load_oob = "STA_empty"
+				
+				swap_ideas = {
+					remove_idea = elf_country
+					add_idea = human_country
+				}
+				swap_ideas = {
+					remove_idea = itherynism_religion
+					add_idea = septism_religion
+				}
+				
+				country_event = {
+					id = annex.0
+					days = 5
+				}
+			}
+			
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = HLZ
+						is_core_of = NRK
+						is_core_of = ARK
+					}
+				}
+				remove_core_of = STA
+			}
+			
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = HLZ
+						is_core_of = NRK
+						is_core_of = ARK
+					}
+				}
+				reset_state_name = yes
+			}
+			
+			reset_province_name = 4340
+			reset_province_name = 1467
+			reset_province_name = 1316
+			reset_province_name = 1829
+		}
+	}
+
+	trigger = {
+		NOT = {
+			OR = {
+				tag = NBI
+				original_tag = STA
+				AND = {
+					has_global_flag = UNG_STA_started_civil_war
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+					}
+				}
+			}
+		}
+		OR = {
+			AND = {
+				STA = {
+					has_capitulated = yes
+				}
+				controls_state = 192
+			}
+			AND = {
+				NOT = {
+					country_exists = STA
+				}
+				controls_state = 192
+			}
+			owns_state = 192
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_stahlhof
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.1.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = STA
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+		puppet = STA
+		set_country_flag = conquest_of_stahlhof
+	}
+	
+	option = { # Annex
+		name = annex.1.b
+		trigger = {
+			NOT = {
+				tag = UNG
+				is_subject_of = UNG
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_stahlhof
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+	
+	option = { # Freiprinztum
+		name = annex.1.c
+		trigger = {
+			OR = {
+				tag = UNG
+				has_country_flag = ORD_pact_with_union
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = STA
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = STA
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Rthauiaur
+	id = annex.2
+	title = annex.2.t
+	desc = annex.2.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			OR = {
+				original_tag = RTH
+				original_tag = ORD # Special events for everyone's favourite maniacs
+				original_tag = EOR
+			}
+		}
+		OR = {
+			AND = {
+				RTH = {
+					has_capitulated = yes
+				}
+				controls_state = 118
+			}
+			AND = {
+				NOT = {
+					country_exists = RTH
+				}
+				controls_state = 118
+			}
+			owns_state = 118
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_rthauiaur
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.2.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = SKA
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+			
+		if = {
+			limit = {
+				any_state = {
+					is_core_of = RTH
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = EOR
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				RTH = {
+					add_state_core = PREV
+				}
+				EOR = {
+					remove_state_core = PREV
+				}
+			}
+
+			every_state = {
+				limit = {
+					is_core_of = RTH
+					is_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				RTH = {
+					transfer_state = PREV
+				}
+			}
+			puppet = RTH
+			set_country_flag = conquest_of_rthauiaur
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					any_state = {
+						is_core_of = RTH
+					}
+				}
+			}
+			revive_rthaur = yes
+		}
+	}
+	
+	option = { # Annex
+		name = annex.2.b
+		trigger = {
+			NOT = {
+				tag = SKA
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_rthauiaur
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+	
+	option = { # Skaelinger-Rthaur Alliance
+		name = annex.2.c
+		trigger = {
+			tag = SKA
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = EOR
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			RTH = {
+				add_state_core = PREV
+			}
+			EOR = {
+				remove_state_core = PREV
+			}
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = RTH
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+					state = 135
+					state = 133
+					state = 139
+				}
+			}
+			RTH = {
+				transfer_state = PREV
+			}
+		}
+		
+		139 = {
+			set_state_name = "Mersingbjarg"
+		}
+		
+		135 = {
+			set_state_name = "Svinnersút"
+		}
+		
+		133 = {
+			set_state_name = "Khoringr"
+		}
+		
+		create_faction = "brotherhood_alliance"
+		add_to_faction = RTH
+		if = {
+			limit = {
+				ROOT = {
+					has_war_with = ORD
+				}
+			}
+			RTH = {
+				declare_war_on = {
+					target = ORD
+					type = annex_everything
+				}
+			}
+		}
+		
+		hidden_effect = {
+			set_country_flag = conquest_of_rthauiaur
+			set_autonomy = {
+				target = RTH
+				autonomy_state = autonomy_free
+			}
+			RTH = {
+				set_politics = {
+					ruling_party = republic_peasant
+				}
+			}
+			RTH = {
+				add_opinion_modifier = {
+					target = SKA
+					modifier = staunch_allies
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = bitter_rivals
+				}
+			}
+			ORD = {
+				add_opinion_modifier = {
+					target = RTH
+					modifier = bitter_rivals
+				}
+			}
+			add_opinion_modifier = {
+				target = RTH
+				modifier = staunch_allies
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.2.e
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = EOR
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			RTH = {
+				add_state_core = PREV
+			}
+			EOR = {
+				remove_state_core = PREV
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = RTH
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			RTH = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = RTH
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Holzbrenn
+	id = annex.3
+	title = annex.3.t
+	desc = annex.3.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = HLZ
+		}
+		OR = {
+			AND = {
+				HLZ = {
+					has_capitulated = yes
+				}
+				controls_state = 232
+			}
+			AND = {
+				NOT = {
+					country_exists = HLZ
+				}
+				controls_state = 232
+			}
+			owns_state = 232
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_holzbrenn
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.3.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = HLZ
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HLZ = {
+				transfer_state = PREV
+			}
+		}
+		puppet = HLZ
+		set_country_flag = conquest_of_holzbrenn
+		if = {
+			limit = {
+				has_government = puritan
+			}
+			set_country_flag = achievement_you_bastard
+		}
+	}
+	
+	option = { # Annex
+		name = annex.3.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_holzbrenn
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.3.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = HLZ
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HLZ = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = HLZ
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.3.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = HLZ
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Neureik
+	id = annex.4
+	title = annex.4.t
+	desc = annex.4.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = NRK
+		}
+		OR = {
+			AND = {
+				NRK = {
+					has_capitulated = yes
+				}
+				controls_state = 284
+			}
+			AND = {
+				NOT = {
+					country_exists = NRK
+				}
+				controls_state = 284
+			}
+			owns_state = 284
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_neureik
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.4.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = NRK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NRK = {
+				transfer_state = PREV
+			}
+		}
+			puppet = NRK
+			set_country_flag = conquest_of_neureik
+	}
+	
+	option = { # Annex
+		name = annex.4.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_neureik
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.4.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NRK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NRK = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = NRK
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.4.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NRK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Arkanisturm
+	id = annex.5
+	title = annex.5.t
+	desc = annex.5.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = ARK
+		}
+		OR = {
+			AND = {
+				ARK = {
+					has_capitulated = yes
+				}
+				controls_state = 206
+			}
+			AND = {
+				NOT = {
+					country_exists = ARK
+				}
+				controls_state = 206
+			}
+			owns_state = 206
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_arkanisturm
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.5.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = ARK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			ARK = {
+				transfer_state = PREV
+			}
+		}
+			puppet = ARK
+			set_country_flag = conquest_of_arkanisturm
+	}
+	
+	option = { # Annex
+		name = annex.5.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_arkanisturm
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.5.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = ARK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			ARK = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = ARK
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.5.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = ARK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Nochwald
+	id = annex.6
+	title = annex.6.t
+	desc = annex.6.d
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = ORD
+						tag = EOR
+						ROOT = {
+							is_subject_of = ORD
+						}
+						ROOT = {
+							is_subject_of = EOR
+						}
+					}
+				}
+				NOC = {
+					has_cosmetic_tag = NOC_OSG
+				}
+			}
+			NOC = {
+				drop_cosmetic_tag = yes
+				set_party_name = {
+					ideology = puritan
+					long_name = NOC_puritan_party
+					name = NOC_puritan_party
+				}
+				set_party_name = {
+					ideology = theocrat
+					long_name = NOC_theocrat_party
+					name = NOC_theocrat_party
+				}
+				set_party_name = {
+					ideology = monarchy_absolute
+					long_name = NOC_monarchy_absolute_party
+					name = NOC_monarchy_absolute_party
+				}
+				kill_ideology_leader = monarchy_absolute
+				kill_ideology_leader = puritan
+				kill_ideology_leader = theocrat
+				remove_ideas = OSG_settler_government
+				delete_unit_template_and_units = {
+					division_template = "Grove Guards"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Bladesingers"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Rangers"
+				}
+				load_oob = "NOC_empty"
+				
+				swap_ideas = {
+					remove_idea = elf_country
+					add_idea = human_country
+				}
+				swap_ideas = {
+					remove_idea = itherynism_religion
+					add_idea = septism_religion
+				}
+				
+				country_event = {
+					id = annex.0
+					days = 5
+				}
+			}
+			
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SVT
+						is_core_of = SPW
+						is_core_of = TEI
+					}
+				}
+				remove_core_of = NOC
+			}
+			
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SVT
+						is_core_of = SPW
+						is_core_of = TEI
+					}
+				}
+				reset_state_name = yes
+			}
+			
+			reset_province_name = 8473
+			reset_province_name = 9285
+			reset_province_name = 9005
+			reset_province_name = 8473
+		}
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = NOC
+		}
+		OR = {
+			AND = {
+				NOC = {
+					has_capitulated = yes
+				}
+				controls_state = 228
+			}
+			AND = {
+				NOT = {
+					country_exists = NOC
+				}
+				controls_state = 228
+			}
+			owns_state = 228
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_nochwald
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.6.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = NOC
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NOC = {
+				transfer_state = PREV
+			}
+		}
+			puppet = NOC
+			set_country_flag = conquest_of_nochwald
+	}
+	
+	option = { # Annex
+		name = annex.6.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_nochwald
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.6.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NOC
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NOC = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = NOC
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.6.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NOC
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Spochwald
+	id = annex.7
+	title = annex.7.t
+	desc = annex.7.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = SPW
+		}
+		OR = {
+			AND = {
+				SPW = {
+					has_capitulated = yes
+				}
+				controls_state = 226
+			}
+			AND = {
+				NOT = {
+					country_exists = SPW
+				}
+				controls_state = 226
+			}
+			owns_state = 226
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_spochwald
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.7.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = SPW
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			SPW = {
+				transfer_state = PREV
+			}
+		}
+			puppet = SPW
+			set_country_flag = conquest_of_spochwald
+	}
+	
+	option = { # Annex
+		name = annex.7.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_spochwald
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.7.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = SPW
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			SPW = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = SPW
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.7.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = SPW
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of St. Vichtlas
+	id = annex.8
+	title = annex.8.t
+	desc = annex.8.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = SVT
+		}
+		OR = {
+			AND = {
+				SVT = {
+					has_capitulated = yes
+				}
+				controls_state = 227
+			}
+			AND = {
+				NOT = {
+					country_exists = SVT
+				}
+				controls_state = 227
+			}
+			owns_state = 227
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_st_vichtlas
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.8.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = SVT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			SVT = {
+				transfer_state = PREV
+			}
+		}
+			puppet = SVT
+			set_country_flag = conquest_of_st_vichtlas
+	}
+	
+	option = { # Annex
+		name = annex.8.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_st_vichtlas
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.8.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = SVT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			SVT = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = SVT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.8.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = SVT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Teigerholen
+	id = annex.9
+	title = annex.9.t
+	desc = annex.9.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = TEI
+		}
+		OR = {
+			AND = {
+				TEI = {
+					has_capitulated = yes
+				}
+				controls_state = 225
+			}
+			AND = {
+				NOT = {
+					country_exists = TEI
+				}
+				controls_state = 225
+			}
+			owns_state = 225
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_teigerholen
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.9.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = TEI
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			TEI = {
+				transfer_state = PREV
+			}
+		}
+			puppet = TEI
+			set_country_flag = conquest_of_teigerholen
+	}
+	
+	option = { # Annex
+		name = annex.9.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_teigerholen
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.9.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = TEI
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			TEI = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = TEI
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.9.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = TEI
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Schneefilde
+	id = annex.10
+	title = annex.10.t
+	desc = annex.10.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = SNF
+		}
+		OR = {
+			AND = {
+				SNF = {
+					has_capitulated = yes
+				}
+				controls_state = 224
+			}
+			AND = {
+				NOT = {
+					country_exists = SNF
+				}
+				controls_state = 224
+			}
+			owns_state = 224
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_schneefilde
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.10.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = SNF
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			SNF = {
+				transfer_state = PREV
+			}
+		}
+			puppet = SNF
+			set_country_flag = conquest_of_schneefilde
+	}
+	
+	option = { # Annex
+		name = annex.10.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_schneefilde
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.10.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = SNF
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			SNF = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = SNF
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.10.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = SNF
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Wistingen
+	id = annex.11
+	title = annex.11.t
+	desc = annex.11.d
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = ORD
+						tag = EOR
+						ROOT = {
+							is_subject_of = ORD
+						}
+						ROOT = {
+							is_subject_of = EOR
+						}
+					}
+				}
+				WIS = {
+					has_cosmetic_tag = WIS_OSG
+				}
+			}
+			WIS = {
+				drop_cosmetic_tag = yes
+				set_party_name = {
+					ideology = puritan
+					long_name = WIS_puritan_party
+					name = WIS_puritan_party
+				}
+				set_party_name = {
+					ideology = theocrat
+					long_name = WIS_theocrat_party
+					name = WIS_theocrat_party
+				}
+				set_party_name = {
+					ideology = monarchy_absolute
+					long_name = WIS_monarchy_absolute_party
+					name = WIS_monarchy_absolute_party
+				}
+				kill_ideology_leader = monarchy_absolute
+				kill_ideology_leader = puritan
+				kill_ideology_leader = theocrat
+				remove_ideas = OSG_settler_government
+				delete_unit_template_and_units = {
+					division_template = "Grove Guards"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Bladesingers"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Rangers"
+				}
+				load_oob = "WIS_empty"
+				
+				swap_ideas = {
+					remove_idea = elf_country
+					add_idea = human_country
+				}
+				swap_ideas = {
+					remove_idea = itherynism_religion
+					add_idea = anzella_patron
+				}
+				
+				country_event = {
+					id = annex.0
+					days = 5
+				}
+			}
+			
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = WIS
+						is_core_of = WSZ
+						is_core_of = FTH
+						is_core_of = SNF
+						is_core_of = UNG
+						is_core_of = FAU
+					}
+				}
+				reset_state_name = yes
+			}
+			
+			reset_province_name = 4748
+			reset_province_name = 4080
+			reset_province_name = 8753
+			reset_province_name = 1754
+			reset_province_name = 807
+		}
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = WIS
+		}
+		OR = {
+			AND = {
+				WIS = {
+					has_capitulated = yes
+				}
+				controls_state = 234
+			}
+			AND = {
+				NOT = {
+					country_exists = WIS
+				}
+				controls_state = 234
+			}
+			owns_state = 234
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_wistingen
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.11.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = WIS
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			WIS = {
+				transfer_state = PREV
+			}
+		}
+			puppet = WIS
+			set_country_flag = conquest_of_wistingen
+	}
+	
+	option = { # Annex
+		name = annex.11.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_wistingen
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.11.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = WIS
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			WIS = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = WIS
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.11.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = WIS
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Skaelinger
+	id = annex.12
+	title = annex.12.t
+	desc = annex.12.d
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = ORD
+						tag = EOR
+						ROOT = {
+							is_subject_of = ORD
+						}
+						ROOT = {
+							is_subject_of = EOR
+						}
+					}
+				}
+				SKA = {
+					has_cosmetic_tag = SKA_OSG
+				}
+			}
+			SKA = {
+				drop_cosmetic_tag = yes
+				set_party_name = {
+					ideology = puritan
+					long_name = SKA_puritan_party
+					name = SKA_puritan_party
+				}
+				set_party_name = {
+					ideology = theocrat
+					long_name = SKA_theocrat_party
+					name = SKA_theocrat_party
+				}
+				set_party_name = {
+					ideology = monarchy_absolute
+					long_name = SKA_monarchy_absolute_party
+					name = SKA_monarchy_absolute_party
+				}
+				kill_ideology_leader = monarchy_absolute
+				kill_ideology_leader = puritan
+				kill_ideology_leader = theocrat
+
+				remove_ideas = OSG_settler_government
+				delete_unit_template_and_units = {
+					division_template = "Grove Guards"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Bladesingers"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Rangers"
+				}
+				load_oob = "SKA_empty"
+				set_technology = {
+					dwarven_warriors = 1
+				}
+				
+				#load_focus_tree = {
+				#	tree = skaelinger_focus
+				#	keep_completed = yes
+				#}
+				
+				swap_ideas = {
+					remove_idea = elf_country
+					add_idea = dwarf_country
+				}
+				swap_ideas = {
+					remove_idea = itherynism_religion
+					add_idea = dwarven_ancestor_worship_religion
+				}
+				
+				country_event = {
+					id = annex.0
+					days = 5
+				}
+			}
+			
+			every_state = {
+				limit = {
+					is_core_of = SKA
+				}
+				reset_state_name = yes
+			}
+			
+			reset_province_name = 7100
+			
+		}
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = SKA
+			tag = VRG
+			tag = SKP
+			tag = SKR
+		}
+		OR = {
+			AND = {
+				SKA = {
+					has_capitulated = yes
+				}
+				controls_state = 146
+			}
+			AND = {
+				NOT = {
+					country_exists = SKA
+				}
+				controls_state = 146
+			}
+			owns_state = 146
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_skaelinger
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.12.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = SKA
+					is_core_of = KUR #Accounting for skirmishes
+				}
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			SKA = {
+				transfer_state = PREV
+			}
+		}
+			puppet = SKA
+			set_country_flag = conquest_of_skaelinger
+	}
+	
+	option = { # Annex
+		name = annex.12.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_skaelinger
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.12.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = SKA
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			SKA = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = SKA
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Fritzhafen
+	id = annex.13
+	title = annex.13.t
+	desc = annex.13.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = FTH
+		}
+		OR = {
+			AND = {
+				FTH = {
+					has_capitulated = yes
+				}
+				controls_state = 236
+			}
+			AND = {
+				NOT = {
+					country_exists = FTH
+				}
+				controls_state = 236
+			}
+			owns_state = 236
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_fritzhafen
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.13.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = FTH
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			FTH = {
+				transfer_state = PREV
+			}
+		}
+			puppet = FTH
+			set_country_flag = conquest_of_fritzhafen
+	}
+	
+	option = { # Annex
+		name = annex.13.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_fritzhafen
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.13.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = FTH
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			FTH = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = FTH
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.13.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = FTH
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Wertszvorde
+	id = annex.14
+	title = annex.14.t
+	desc = annex.14.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = WSZ
+		}
+		OR = {
+			AND = {
+				WSZ = {
+					has_capitulated = yes
+				}
+				controls_state = 235
+			}
+			AND = {
+				NOT = {
+					country_exists = WSZ
+				}
+				controls_state = 235
+			}
+			owns_state = 235
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_wertszvorde
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.14.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = WSZ
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			WSZ = {
+				transfer_state = PREV
+			}
+		}
+			puppet = WSZ
+			set_country_flag = conquest_of_wertszvorde
+	}
+	
+	option = { # Annex
+		name = annex.14.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_wertszvorde
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.14.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = WSZ
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			WSZ = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = WSZ
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.14.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = WSZ
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Ungerdal
+	id = annex.15
+	title = annex.15.t
+	desc = annex.15.d
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = UNG_trade_realm
+			}
+			remove_ideas = UNG_trade_realm
+		}
+		if = {
+			limit = {
+				GMR = {
+					has_idea = GMR_trade_union
+				}
+			}
+			GMR = {
+				remove_ideas = GMR_trade_union
+			}
+		}
+		if = {
+			limit = {
+				tag = STA
+			}
+			set_country_flag = STA_union_defeated
+		}
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = UNG
+			tag = FAU
+		}
+		OR = {
+			AND = {
+				UNG = {
+					has_capitulated = yes
+				}
+				controls_state = 233
+			}
+			AND = {
+				NOT = {
+					country_exists = UNG
+					country_exists = FAU
+				}
+				controls_state = 233
+			}
+			owns_state = 233
+		}
+		NOT = {
+			OR = {
+				ROOT = {
+					has_country_flag = conquest_of_ungerdal
+				}
+				ROOT = {
+					has_country_flag = conquest_of_faustburg
+				}
+			}
+		}
+		233 = {
+			is_core_of = UNG
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+	
+	option = { # Annex
+		name = annex.15.a
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_ungerdal
+		
+		set_country_flag = conquest_of_faustburg
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Liberate 
+		name = annex.15.b
+		trigger = {
+			OR = {
+				NOT = {
+					tag = UNG
+					ROOT = {
+						is_subject_of = UNG
+					}
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = UNG
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			FAU = {
+				add_state_core = PREV
+			}
+			UNG = {
+				remove_state_core = PREV
+			}
+		}
+			
+		every_state = {
+			limit = {
+				is_core_of = FAU
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			FAU = {
+				transfer_state = PREV
+			}
+		}
+		
+		puppet = FAU
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.15.c
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = UNG
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Ordoria
+	id = annex.16
+	title = annex.16.t
+	desc = annex.16.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = ORD
+			tag = ORB
+			tag = RTH
+		}
+		OR = {
+			AND = {
+				ORD = {
+					has_capitulated = yes
+				}
+				controls_state = 85
+			}
+			AND = {
+				NOT = {
+					country_exists = ORD
+				}
+				controls_state = 85
+				}
+			owns_state = 85
+		}
+		85 = {
+			is_core_of = ORD
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_ordoria
+			}
+		}
+	}
+	
+	immediate = {
+		UNG = {
+			clr_country_flag = UNG_trade_harassment
+		}
+		GMR = {
+			clr_country_flag = GMR_trade_harassment
+		}
+	}
+
+	option = {# Liberate
+		name = annex.16.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+				has_country_flag = twothrone_concord_member
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 5
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = ORD
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			ORD = {
+				transfer_state = PREV
+			}
+		}
+			puppet = ORD
+			set_country_flag = conquest_of_ordoria
+	}
+	
+	option = { # Annex
+		name = annex.16.b
+
+		trigger = {
+			NOT = {
+				has_country_flag = twothrone_concord_member
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_ordoria
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.16.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+			NOT = {
+				has_country_flag = twothrone_concord_member
+			}
+		}
+		
+		ai_chance = {
+			factor = 1
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = ORD
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			ORD = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = ORD
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { #Grant to Rthauiaur
+		name = annex.16.e
+		trigger = {
+			OR = {
+				is_in_faction_with = RTH
+			}
+			RTH = {
+				is_subject_of = ROOT
+			}
+			AND = {
+				tag = SKA
+				has_war_together_with = RTH
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = ORD
+			}
+			remove_core_of = PREV
+			RTH = {
+				transfer_state = PRV
+			}
+		}
+	}
+	
+	option = { # Balkanize
+		name = annex.16.f
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+				has_country_flag = twothrone_concord_member
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 20
+		}
+		
+		partition_ordoria = yes
+		puppet = IST
+		puppet = VAR
+		puppet = YTH
+		puppet = VUD
+		set_country_flag = conquest_of_ordoria
+	}
+	
+	option = { # Balkanize Freiprinztümer
+		name = annex.16.g
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+			NOT = {
+				has_country_flag = twothrone_concord_member
+			}
+		}
+		
+		ai_chance = {
+			factor = 10
+		}
+		
+		partition_ordoria = yes
+			
+		UNG = {
+			set_autonomy = {
+				target = IST
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = VAR
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = YTH
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = VUD
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = {#Partition between UNG and GMR
+		name = annex.16.h
+		
+		trigger = {
+			has_country_flag = twothrone_concord_member
+		}
+		
+		partition_ordoria = yes
+		
+		UNG = {
+			set_autonomy = {
+				target = IST
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = VAR
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		
+		UNG = {
+			set_country_flag = conquest_of_ordoria
+		}
+		
+		GMR = {
+			puppet = YTH
+			puppet = VUD
+			set_country_flag = conquest_of_ordoria
+		}
+	}
+}
+
+country_event = { #Conquest of the Realm
+	id = annex.17
+	title = annex.17.t
+	desc = annex.17.d
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = GMR_trade_union
+			}
+			remove_ideas = GMR_trade_union
+		}
+		if = {
+			limit = {
+				UNG = {
+					has_idea = UNG_trade_realm
+				}
+			}
+			UNG = {
+				remove_ideas = UNG_trade_realm
+			}
+		}
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			OR = {
+				tag = GMR
+				tag = IRT
+				tag = NPC
+			}
+		}
+		OR = {
+			AND = {
+				GMR = {
+					has_capitulated = yes
+				}
+				controls_state = 1
+			}
+			AND = {
+				NOT = {
+					country_exists = GMR
+				}
+				controls_state = 1
+				1 = {
+					is_core_of = GMR
+				}
+			}
+			AND = {
+				owns_state = 1
+				1 = {
+					is_core_of = GMR
+				}
+			}
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_the_realm
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.17.a
+		trigger = {
+			OR = {
+				NOT = {
+					tag = NPC
+					tag = KAL
+					tag = KRT
+					tag = FEL
+					tag = KRT
+					tag = NAV
+					tag = TRI
+					tag = GMR
+					is_subject_of = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+					tag = UNG
+					ROOT = {
+						is_subject_of = UNG
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					has_government = monarchy_absolute
+				}
+				NOT = {
+					has_government = puritan
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = GMR
+				}
+				GMR = {
+					remove_state_core = PREV
+				}
+				NPC = {
+					add_state_core = PREV
+				}
+			}
+			
+			every_state = {
+				limit = {
+					is_core_of = NPC
+					is_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NPC = {
+					transfer_state = PREV
+				}
+			}
+			puppet = NPC
+		}
+		
+		if = {
+			limit = {
+				OR = {
+					has_government = monarchy_absolute
+					has_government = puritan
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = GMR
+					is_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				GMR = {
+					transfer_state = PREV
+				}
+			}
+			puppet = GMR
+		}
+			set_country_flag = conquest_of_the_realm
+	}
+	
+	option = { # Annex
+		name = annex.17.b
+		
+		trigger = {
+			NOT = {
+				OR = {
+					tag = NPC
+					tag = KAL
+					tag = KRT
+					tag = FEL
+					tag = KRT
+					tag = NAV
+					tag = TRI
+					tag = GMR
+					is_subject_of = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_the_realm
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum - Realm
+		name = annex.17.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					has_government = monarchy_absolute
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = GMR
+				}
+				GMR = {
+					remove_state_core = PREV
+				}
+				NPC = {
+					add_state_core = PREV
+				}
+			}
+			
+			every_state = {
+				limit = {
+					is_core_of = NPC
+					is_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NPC = {
+					transfer_state = PREV
+				}
+			}
+			UNG = {
+				set_autonomy = {
+					target = NPC
+					autonomy_state = autonomy_IR_freiprinztum
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				has_government = monarchy_absolute
+			}
+			every_state = {
+				limit = {
+					is_core_of = GMR
+					is_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				GMR = {
+					transfer_state = PREV
+				}
+			}
+			UNG = {
+				set_autonomy = {
+					target = GMR
+					autonomy_state = autonomy_IR_freiprinztum
+				}
+			}
+		}
+	}
+	
+	option = { #Puppet City-States
+		name = annex.17.e
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					ROOT = {
+						is_subject_of = UNG
+					}
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				country_exists = IRT
+				country_exists = KAL
+				country_exists = KRT
+				country_exists = KRT
+				country_exists = NAV
+				country_exists = FEL
+				country_exists = TRI
+			}
+			NOT = {
+				has_government = puritan
+				has_government = theocrat
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		shatter_the_realm = yes
+		
+		puppet = IRT
+		puppet = KAL
+		puppet = KRT
+		puppet = KRT
+		puppet = NAV
+		puppet = FEL
+		puppet = TRI
+		puppet = NAS
+		
+		set_country_flag = conquest_of_the_realm
+	}
+	
+	option = { #Freiprinztum City-States
+		name = annex.17.f
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+			NOT = {
+				country_exists = IRT
+				country_exists = KAL
+				country_exists = KRT
+				country_exists = KRT
+				country_exists = NAV
+				country_exists = FEL
+				country_exists = TRI
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		shatter_the_realm = yes
+		
+		UNG = {
+			set_autonomy = {
+				target = IRT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = NAS
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = FEL
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = KAL
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = KRT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = KRT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = NAV
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = TRI
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		
+		set_country_flag = conquest_of_the_realm
+	}
+}
+
+country_event = { #Conquest of Faustburg
+	id = annex.18
+	title = annex.18.t
+	desc = annex.18.d
+	mean_time_to_happen = {
+		days = 25
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = FAU
+		}
+		OR = {
+			AND = {
+				FAU = {
+					has_capitulated = yes
+				}
+				controls_state = 233
+			}
+			AND = {
+				NOT = {
+					country_exists = FTH
+					country_exists = UNG
+				}
+				controls_state = 233
+			}
+			owns_state = 233
+		}
+		233 = {
+			is_core_of = FAU
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_faustburg
+			}
+		}
+		NOT = {
+			tag = STA
+			has_country_flag = STA_defect
+		}
+	}
+
+	option = {# Liberate
+		name = annex.18.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = FAU
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			FAU = {
+				transfer_state = PREV
+			}
+		}
+			puppet = FAU
+			set_country_flag = conquest_of_faustburg
+	}
+	
+	option = { # Annex
+		name = annex.18.b
+		
+		trigger = {
+			NOT = {
+				AND = {
+					country_exists = STA
+					tag = ORD
+					STA = {
+						has_country_flag = STA_defect
+					}
+					STA = {
+						is_subject_of = ORD
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_faustburg
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.18.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = FAU
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			FAU = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = FAU
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Stahlhof
+		name = annex.18.e
+		trigger = {
+			country_exists = STA
+			tag = ORD
+			STA = {
+				has_country_flag = STA_defect
+			}
+			STA = {
+				is_subject_of = ORD
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				tag = ORD
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = FAU
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			STA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Ierethayne
+	id = annex.19
+	title = annex.19.t
+	desc = annex.19.d
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = ORD
+						tag = EOR
+						ROOT = {
+							is_subject_of = ORD
+						}
+						ROOT = {
+							is_subject_of = EOR
+						}
+					}
+				}
+				IRT = {
+					has_cosmetic_tag = IRT_OSG
+				}
+			}
+			IRT = {
+				drop_cosmetic_tag = yes
+				set_party_name = {
+					ideology = puritan
+					long_name = IRT_puritan_party
+					name = IRT_puritan_party
+				}
+				set_party_name = {
+					ideology = theocrat
+					long_name = IRT_theocrat_party
+					name = IRT_theocrat_party
+				}
+				set_party_name = {
+					ideology = monarchy_absolute
+					long_name = IRT_monarchy_absolute_party
+					name = IRT_monarchy_absolute_party
+				}
+				kill_ideology_leader = monarchy_absolute
+				kill_ideology_leader = puritan
+				kill_ideology_leader = theocrat
+				remove_ideas = OSG_settler_government
+				delete_unit_template_and_units = {
+					division_template = "Grove Guards"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Bladesingers"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Rangers"
+				}
+				load_oob = "IRT_empty"
+				
+				swap_ideas = {
+					remove_idea = elf_country
+					add_idea = human_country
+				}
+				swap_ideas = {
+					remove_idea = itherynism_religion
+					add_idea = lorthorism_religion
+				}
+				
+				country_event = {
+					id = annex.0
+					days = 5
+				}
+			}
+			
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = IRT
+						is_core_of = FEL
+					}
+				}
+				reset_state_name = yes
+			}
+			
+			reset_province_name = 3069
+			reset_province_name = 4730
+		}
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			tag = IRT
+			tag = GMR
+			tag = NPC
+		}
+		1 = {
+			is_core_of = IRT
+		}
+		OR = {
+			AND = {
+				IRT = {
+					has_capitulated = yes
+				}
+				controls_state = 1
+			}
+			AND = {
+				NOT = {
+					country_exists = GMR
+					country_exists = NPC
+					country_exists = IRT
+				}
+				controls_state = 1
+			}
+			owns_state = 1
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_ierethayne
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.19.a
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		hidden_effect = {
+			IRT = {
+				add_state_core = 1
+				add_state_core = 2
+				add_state_core = 3
+				add_state_core = 4
+				add_state_core = 5
+				add_state_core = 6
+				add_state_core = 7
+				add_state_core = 8
+				add_state_core = 9
+				add_state_core = 10
+				add_state_core = 11
+				add_state_core = 13
+				add_state_core = 14
+				add_state_core = 41
+				add_state_core = 31
+			}
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = IRT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			IRT = {
+				transfer_state = PREV
+			}
+		}
+			puppet = IRT
+			set_country_flag = conquest_of_ierethayne
+	}
+	
+	option = { # Annex
+		name = annex.19.b
+		
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+						UNG = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_ierethayne
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.19.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		hidden_effect = {
+			IRT = {
+				add_state_core = 1
+				add_state_core = 2
+				add_state_core = 3
+				add_state_core = 4
+				add_state_core = 5
+				add_state_core = 6
+				add_state_core = 7
+				add_state_core = 8
+				add_state_core = 9
+				add_state_core = 10
+				add_state_core = 11
+				add_state_core = 13
+				add_state_core = 14
+				add_state_core = 41
+				add_state_core = 31
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = IRT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			IRT = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = IRT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Realm
+		name = annex.19.e
+		trigger = {
+			country_exists = GMR
+			GMR = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = IRT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			GMR = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+	
+	option = { # Grant to Confederation
+		name = annex.19.f
+		trigger = {
+			country_exists = NPC
+			NPC = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = IRT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NPC = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Trifell
+	id = annex.20
+	title = annex.20.t
+	desc = annex.20.d
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = ORD
+						tag = EOR
+						ROOT = {
+							is_subject_of = ORD
+						}
+						ROOT = {
+							is_subject_of = EOR
+						}
+					}
+				}
+				TRI = {
+					has_cosmetic_tag = TRI_OSG
+				}
+			}
+			TRI = {
+				drop_cosmetic_tag = yes
+				set_party_name = {
+					ideology = puritan
+					long_name = TRI_puritan_party
+					name = TRI_puritan_party
+				}
+				set_party_name = {
+					ideology = theocrat
+					long_name = TRI_theocrat_party
+					name = TRI_theocrat_party
+				}
+				set_party_name = {
+					ideology = monarchy_absolute
+					long_name = TRI_monarchy_absolute_party
+					name = TRI_monarchy_absolute_party
+				}
+				kill_ideology_leader = monarchy_absolute
+				kill_ideology_leader = puritan
+				kill_ideology_leader = theocrat
+				remove_ideas = OSG_settler_government
+				delete_unit_template_and_units = {
+					division_template = "Grove Guards"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Bladesingers"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Rangers"
+				}
+				load_oob = "TRI_empty"
+				
+				swap_ideas = {
+					remove_idea = elf_country
+					add_idea = human_country
+				}
+				swap_ideas = {
+					remove_idea = itherynism_religion
+					add_idea = lorthorism_religion
+				}
+				
+				country_event = {
+					id = annex.0
+					days = 5
+				}
+			}
+			
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = TRI
+						is_core_of = NAV
+						is_core_of = KAL
+					}
+				}
+				reset_state_name = yes
+			}
+			
+			reset_province_name = 2379
+			reset_province_name = 6106
+			reset_province_name = 5840
+		}
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = TRI
+			tag = GMR
+		}
+		OR = {
+			AND = {
+				TRI = {
+					has_capitulated = yes
+				}
+				controls_state = 29
+			}
+			AND = {
+				NOT = {
+					country_exists = GMR
+					country_exists = NPC
+					country_exists = TRI
+				}
+				controls_state = 29
+			}
+			owns_state = 29
+		}
+		29 = {
+			is_core_of = TRI
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_trifell
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.20.a
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+		
+		hidden_effect = {
+			TRI = {
+				add_state_core = 29
+				add_state_core = 65
+				add_state_core = 59
+				add_state_core = 53
+				add_state_core = 54
+				add_state_core = 58
+				add_state_core = 48
+				add_state_core = 47
+				add_state_core = 44
+				add_state_core = 43
+				add_state_core = 42
+				add_state_core = 74
+				add_state_core = 15
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = TRI
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			TRI = {
+				transfer_state = PREV
+			}
+		}
+			puppet = TRI
+			set_country_flag = conquest_of_trifell
+	}
+	
+	option = { # Annex
+		name = annex.20.b
+		
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+						UNG = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_trifell
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.20.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		hidden_effect = {
+			TRI = {
+				add_state_core = 29
+				add_state_core = 65
+				add_state_core = 59
+				add_state_core = 53
+				add_state_core = 54
+				add_state_core = 58
+				add_state_core = 48
+				add_state_core = 47
+				add_state_core = 44
+				add_state_core = 43
+				add_state_core = 42
+				add_state_core = 74
+				add_state_core = 15
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = TRI
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			TRI = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = TRI
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Realm
+		name = annex.20.e
+		trigger = {
+			country_exists = GMR
+			GMR = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = TRI
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			GMR = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+	
+	option = { # Grant to Confederation
+		name = annex.20.f
+		trigger = {
+			country_exists = GMR
+			NPC = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = TRI
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NPC = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Nastrogdar
+	id = annex.21
+	title = annex.21.t
+	desc = annex.21.d
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = ORD
+						tag = EOR
+						ROOT = {
+							is_subject_of = ORD
+						}
+						ROOT = {
+							is_subject_of = EOR
+						}
+					}
+				}
+				NAS = {
+					has_cosmetic_tag = NAS_OSG
+				}
+			}
+			NAS = {
+				drop_cosmetic_tag = yes
+				set_party_name = {
+					ideology = puritan
+					long_name = NAS_puritan_party
+					name = NAS_puritan_party
+				}
+				set_party_name = {
+					ideology = theocrat
+					long_name = NAS_theocrat_party
+					name = NAS_theocrat_party
+				}
+				set_party_name = {
+					ideology = monarchy_absolute
+					long_name = NAS_monarchy_absolute_party
+					name = NAS_monarchy_absolute_party
+				}
+				every_state = {
+					limit = {
+							is_core_of = KRT
+					}
+					remove_core_of = NAS
+				}
+				kill_ideology_leader = monarchy_absolute
+				kill_ideology_leader = puritan
+				kill_ideology_leader = theocrat
+				remove_ideas = OSG_settler_government
+				delete_unit_template_and_units = {
+					division_template = "Grove Guards"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Bladesingers"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Rangers"
+				}
+				load_oob = "NAS_empty"
+				swap_ideas = {
+					remove_idea = elf_country
+					add_idea = human_country
+				}
+				swap_ideas = {
+					remove_idea = itherynism_religion
+					add_idea = lorthorism_religion
+				}
+				
+				country_event = {
+					id = annex.0
+					days = 5
+				}
+			}
+			
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = NAS
+						is_core_of = KRT
+					}
+				}
+				reset_state_name = yes
+			}
+			
+			reset_province_name = 829
+			reset_province_name = 6633
+		}
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = NAS
+			tag = GMR
+		}
+		OR = {
+			AND = {
+				NAS = {
+					has_capitulated = yes
+				}
+				controls_state = 20
+			}
+			AND = {
+				NOT = {
+					country_exists = GMR
+					country_exists = NPC
+					country_exists = NAS
+				}
+				controls_state = 20
+			}
+			owns_state = 20
+		}
+		20 = {
+			is_core_of = NAS
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_nastrogdar
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.21.a
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+		
+		hidden_effect = {
+			NAS = {
+				add_state_core = 25
+				add_state_core = 26
+				add_state_core = 73
+				add_state_core = 20
+				add_state_core = 21
+				add_state_core = 22
+				add_state_core = 723
+				add_state_core = 49
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NAS
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NAS = {
+				transfer_state = PREV
+			}
+		}
+			puppet = NAS
+			set_country_flag = conquest_of_nastrogdar
+	}
+	
+	option = { # Annex
+		name = annex.21.b
+		
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+						UNG = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_nastrogdar
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.21.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		hidden_effect = {
+			NAS = {
+				add_state_core = 25
+				add_state_core = 26
+				add_state_core = 73
+				add_state_core = 20
+				add_state_core = 21
+				add_state_core = 22
+				add_state_core = 723
+				add_state_core = 49
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NAS
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NAS = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = NAS
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Realm
+		name = annex.21.e
+		trigger = {
+			country_exists = GMR
+			GMR = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NAS
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			GMR = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+	
+	option = { # Grant to Confederation
+		name = annex.21.f
+		trigger = {
+			country_exists = GMR
+			NPC = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NAS
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NPC = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Kortinall
+	id = annex.22
+	title = annex.22.t
+	desc = annex.22.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = KRT
+			tag = GMR
+		}
+		OR = {
+			AND = {
+				KRT = {
+					has_capitulated = yes
+				}
+				controls_state = 17
+			}
+			AND = {
+				NOT = {
+					country_exists = GMR
+					country_exists = NPC
+					country_exists = KRT
+				}
+				controls_state = 17
+			}
+			owns_state = 17
+		}
+		17 = {
+			is_core_of = KRT
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_kortinall
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.22.a
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+		
+		hidden_effect = {
+			KRT = {
+				add_state_core = 36
+				add_state_core = 75
+				add_state_core = 35
+				add_state_core = 17
+				add_state_core = 18
+				add_state_core = 16
+				add_state_core = 27
+				add_state_core = 23
+				add_state_core = 24
+				add_state_core = 12
+				add_state_core = 30
+				add_state_core = 19
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = KRT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			KRT = {
+				transfer_state = PREV
+			}
+		}
+			puppet = KRT
+			set_country_flag = conquest_of_kortinall
+	}
+	
+	option = { # Annex
+		name = annex.22.b
+		
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+						UNG = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_kortinall
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.22.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		hidden_effect = {
+			KRT = {
+				add_state_core = 36
+				add_state_core = 75
+				add_state_core = 35
+				add_state_core = 17
+				add_state_core = 18
+				add_state_core = 16
+				add_state_core = 27
+				add_state_core = 23
+				add_state_core = 24
+				add_state_core = 12
+				add_state_core = 30
+				add_state_core = 19
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = KRT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			KRT = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = KRT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Realm
+		name = annex.22.e
+		trigger = {
+			country_exists = GMR
+			GMR = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = KRT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			GMR = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+	
+	option = { # Grant to Confederation
+		name = annex.22.f
+		trigger = {
+			country_exists = GMR
+			NPC = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = KRT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NPC = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Felweyne
+	id = annex.23
+	title = annex.23.t
+	desc = annex.23.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = FEL
+			tag = GMR
+		}
+		OR = {
+			AND = {
+				FEL = {
+					has_capitulated = yes
+				}
+				controls_state = 28
+			}
+			AND = {
+				NOT = {
+					country_exists = GMR
+					country_exists = NPC
+					country_exists = FEL
+				}
+				controls_state = 28
+			}
+			owns_state = 28
+		}
+		28 = {
+			is_core_of = FEL
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_felweyne
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.23.a
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+		
+		hidden_effect = {
+			FEL = {
+				add_state_core = 40
+				add_state_core = 28
+				add_state_core = 37
+				add_state_core = 32
+				add_state_core = 50
+				add_state_core = 38
+				add_state_core = 39
+				add_state_core = 52
+				add_state_core = 46
+				add_state_core = 33
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = FEL
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			FEL = {
+				transfer_state = PREV
+			}
+		}
+			puppet = FEL
+			set_country_flag = conquest_of_felweyne
+	}
+	
+	option = { # Annex
+		name = annex.23.b
+		
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+						UNG = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_felweyne
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.23.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		hidden_effect = {
+			FEL = {
+				add_state_core = 40
+				add_state_core = 28
+				add_state_core = 37
+				add_state_core = 32
+				add_state_core = 50
+				add_state_core = 38
+				add_state_core = 39
+				add_state_core = 52
+				add_state_core = 46
+				add_state_core = 33
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = FEL
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			FEL = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = FEL
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Realm
+		name = annex.23.e
+		trigger = {
+			country_exists = GMR
+			GMR = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = FEL
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			GMR = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+	
+	option = { # Grant to Confederation
+		name = annex.23.f
+		trigger = {
+			country_exists = GMR
+			NPC = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = FEL
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NPC = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Navandonne
+	id = annex.24
+	title = annex.24.t
+	desc = annex.24.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = NAV
+			tag = GMR
+		}
+		OR = {
+			AND = {
+				NAV = {
+					has_capitulated = yes
+				}
+				controls_state = 72
+			}
+			AND = {
+				NOT = {
+					country_exists = GMR
+					country_exists = NPC
+					country_exists = NAV
+				}
+				controls_state = 72
+			}
+			owns_state = 72
+		}
+		72 = {
+			is_core_of = NAV
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_navandonne
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.24.a
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+		
+		hidden_effect = {
+			NAV = {
+				add_state_core = 72
+				add_state_core = 68
+				add_state_core = 70
+				add_state_core = 69
+				add_state_core = 44
+				add_state_core = 67
+				add_state_core = 71
+				add_state_core = 66
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NAV
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NAV = {
+				transfer_state = PREV
+			}
+		}
+			puppet = NAV
+			set_country_flag = conquest_of_navandonne
+	}
+	
+	option = { # Annex
+		name = annex.24.b
+		
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+						UNG = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_navandonne
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.24.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		hidden_effect = {
+			NAV = {
+				add_state_core = 72
+				add_state_core = 68
+				add_state_core = 70
+				add_state_core = 69
+				add_state_core = 44
+				add_state_core = 67
+				add_state_core = 71
+				add_state_core = 66
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NAV
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NAV = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = NAV
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Realm
+		name = annex.24.e
+		trigger = {
+			country_exists = GMR
+			GMR = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NAV
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			GMR = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+	
+	option = { # Grant to Confederation
+		name = annex.24.f
+		trigger = {
+			country_exists = GMR
+			NPC = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = NAV
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NPC = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Kaltire
+	id = annex.25
+	title = annex.25.t
+	desc = annex.25.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = KAL
+			tag = GMR
+		}
+		OR = {
+			AND = {
+				KAL = {
+					has_capitulated = yes
+				}
+				controls_state = 34
+			}
+			AND = {
+				NOT = {
+					country_exists = GMR
+					country_exists = NPC
+					country_exists = KAL
+				}
+				controls_state = 34
+			}
+			owns_state = 34
+		}
+		34 = {
+			is_core_of = KAL
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_kaltire
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.25.a
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+		
+		hidden_effect = {
+			KAL = {
+				add_state_core = 34
+				add_state_core = 62
+				add_state_core = 56
+				add_state_core = 63
+				add_state_core = 64
+				add_state_core = 45
+				add_state_core = 57
+				add_state_core = 55
+				add_state_core = 61
+				add_state_core = 60
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = KAL
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			KAL = {
+				transfer_state = PREV
+			}
+		}
+			puppet = KAL
+			set_country_flag = conquest_of_kaltire
+	}
+	
+	option = { # Annex
+		name = annex.25.b
+		
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						tag = UNG
+						is_subject_of = UNG
+						UNG = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				NOT = {
+					country_exists = GMR
+					GMR = {
+						is_subject_of = ROOT
+					}
+				}
+				NOT = {
+					country_exists = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_kaltire
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.25.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		hidden_effect = {
+			KAL = {
+				add_state_core = 34
+				add_state_core = 62
+				add_state_core = 56
+				add_state_core = 63
+				add_state_core = 64
+				add_state_core = 45
+				add_state_core = 57
+				add_state_core = 55
+				add_state_core = 61
+				add_state_core = 60
+			}
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = KAL
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			KAL = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = KAL
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Realm
+		name = annex.25.e
+		trigger = {
+			country_exists = GMR
+			GMR = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = KAL
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			GMR = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+	
+	option = { # Grant to Confederation
+		name = annex.25.f
+		trigger = {
+			country_exists = GMR
+			NPC = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = KAL
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NPC = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of the Confederation
+	id = annex.26
+	title = annex.26.t
+	desc = annex.26.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			tag = GMR
+			tag = IRT
+			tag = NPC
+		}
+		OR = {
+			AND = {
+				NPC = {
+					has_capitulated = yes
+				}
+				controls_state = 20
+				controls_state = 34
+				controls_state = 1
+				controls_state = 17
+				controls_state = 28
+				controls_state = 29
+				controls_state = 72
+			}
+			AND = {
+				owns_state = 20
+				owns_state = 34
+				owns_state = 1
+				owns_state = 17
+				owns_state = 28
+				owns_state = 29
+				owns_state = 72
+			}
+		}
+		AND = {
+			20 = {
+				is_core_of = NPC
+			}
+			34 = {
+				is_core_of = NPC
+			}
+			1 = {
+				is_core_of = NPC
+			}
+			17 = {
+				is_core_of = NPC
+			}
+			28 = {
+				is_core_of = NPC
+			}
+			29 = {
+				is_core_of = NPC
+			}
+			72 = {
+				is_core_of = NPC
+			}
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_the_confederation
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.26.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = NPC
+					tag = KAL
+					tag = KRT
+					tag = FEL
+					tag = KRT
+					tag = NAV
+					tag = TRI
+					tag = GMR
+					is_subject_of = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				has_government = puritan
+				has_government = theocrat
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		if = {
+			limit = {
+				OR = {
+					has_government = monarchy_absolute
+					has_government = puritan
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = NPC
+				}
+				NPC = {
+					remove_state_core = PREV
+				}
+				GMR = {
+					add_state_core = PREV
+				}
+			}
+			
+			every_state = {
+				limit = {
+					is_core_of = GMR
+					is_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				GMR = {
+					transfer_state = PREV
+				}
+			}
+			puppet = GMR
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					has_government = monarchy_absolute
+					has_government = puritan
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = NPC
+					is_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NPC = {
+					transfer_state = PREV
+				}
+			}
+			puppet = NPC
+		}
+			set_country_flag = conquest_of_the_confederation
+	}
+	
+	option = { # Annex
+		name = annex.26.b
+		
+		trigger = {
+			NOT = {
+				OR = {
+					tag = NPC
+					tag = KAL
+					tag = KRT
+					tag = FEL
+					tag = KRT
+					tag = NAV
+					tag = TRI
+					tag = GMR
+					is_subject_of = NPC
+					NPC = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_the_confederation
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum - Confederation
+		name = annex.26.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		if = {
+			limit = {
+				has_government = monarchy_absolute
+			}
+			every_state = {
+				limit = {
+					is_core_of = NPC
+				}
+				NPC = {
+					remove_state_core = PREV
+				}
+				GMR = {
+					add_state_core = PREV
+				}
+			}
+			
+			every_state = {
+				limit = {
+					is_core_of = GMR
+					is_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				GMR = {
+					transfer_state = PREV
+				}
+			}
+			
+			UNG = {
+				set_autonomy = {
+					target = GMR
+					autonomy_state = autonomy_IR_freiprinztum
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					has_government = monarchy_absolute
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = NPC
+					is_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NPC = {
+					transfer_state = PREV
+				}
+			}
+			
+			UNG = {
+				set_autonomy = {
+					target = NPC
+					autonomy_state = autonomy_IR_freiprinztum
+				}
+			}
+		}
+	}
+	
+	option = { #Puppet City-States
+		name = annex.26.e
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					ROOT = {
+						is_subject_of = UNG
+					}
+					UNG = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			NOT = {
+				country_exists = IRT
+				country_exists = KAL
+				country_exists = KRT
+				country_exists = KRT
+				country_exists = NAV
+				country_exists = FEL
+				country_exists = TRI
+			}
+			NOT = {
+				has_government = puritan
+				has_government = theocrat
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		shatter_the_realm = yes
+		
+		puppet = IRT
+		puppet = KAL
+		puppet = KRT
+		puppet = KRT
+		puppet = NAV
+		puppet = FEL
+		puppet = TRI
+		puppet = NAS
+		
+		set_country_flag = conquest_of_the_confederation
+	}
+	
+	option = { #Freiprinztum City-States
+		name = annex.26.f
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+			NOT = {
+				country_exists = IRT
+				country_exists = KAL
+				country_exists = KRT
+				country_exists = KRT
+				country_exists = NAV
+				country_exists = FEL
+				country_exists = TRI
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		hidden_effect = {
+		
+			1 = {
+				set_state_name = "Ierethayne"
+			}
+			set_province_name = {
+				id = 3069
+				name = "Ierethayne"
+			}
+			
+			28 = {
+				set_state_name = "Felweyne"
+			}
+			set_province_name = {
+				id = 3966
+				name = "Felweyne"
+			}
+			
+			17 = {
+				set_state_name = "Kortinall"
+			}
+			
+			set_province_name = {
+				id = 7830
+				name = "Kortinall"
+			}
+			
+			72 = {
+				set_state_name = "Navandonne"
+			}
+			
+			set_province_name = {
+				id = 1334
+				name = "Navandonne"
+			}
+			
+			34 = {
+				set_state_name = "Kaltire"
+			}
+			
+			set_province_name = {
+				id = 3863
+				name = "Kaltire"
+			}
+			
+			20 = {
+				set_state_name = "Nastrodoge"
+			}
+			
+			set_province_name = {
+				id = 4931
+				name = "Nastrodoge"
+			}
+			
+			29 = {
+				set_state_name = "Trifell"
+			}
+			
+			set_province_name = {
+				id = 8702
+				name = "Trifell"
+			}
+
+			every_state = {
+				limit = {
+					is_core_of = GMR
+				}
+				GMR = {
+					remove_state_core = PREV
+				}
+			}
+		}
+		
+		shatter_the_realm = yes
+		
+		UNG = {
+			set_autonomy = {
+				target = IRT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = NAS
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = FEL
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = KAL
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = KRT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = KRT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = NAV
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = TRI
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		
+		set_country_flag = conquest_of_the_confederation
+	}
+}
+
+country_event = { #Conquest of Perkavland
+	id = annex.27
+	title = annex.27.t
+	desc = annex.27.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = PRK
+		}
+		OR = {
+			AND = {
+				PRK = {
+					has_capitulated = yes
+				}
+				controls_state = 413
+			}
+			AND = {
+				NOT = {
+					country_exists = PRK
+				}
+				controls_state = 413
+			}
+			owns_state = 413
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_perkavland
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				tag = SNF
+			}
+			set_country_flag = achievement_something_done_right
+		}
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = ORD
+						tag = EOR
+						ROOT = {
+							is_subject_of = ORD
+						}
+						ROOT = {
+							is_subject_of = EOR
+						}
+					}
+				}
+				PRK = {
+					has_cosmetic_tag = PRK_OSG
+				}
+			}
+			PRK = {
+				drop_cosmetic_tag = yes
+				set_party_name = {
+					ideology = puritan
+					long_name = PRK_puritan_party
+					name = PRK_puritan_party
+				}
+				set_party_name = {
+					ideology = theocrat
+					long_name = PRK_theocrat_party
+					name = PRK_theocrat_party
+				}
+				set_party_name = {
+					ideology = monarchy_absolute
+					long_name = PRK_monarchy_absolute_party
+					name = PRK_monarchy_absolute_party
+				}
+				kill_ideology_leader = monarchy_absolute
+				kill_ideology_leader = puritan
+				kill_ideology_leader = theocrat
+				remove_ideas = OSG_settler_government
+				delete_unit_template_and_units = {
+					division_template = "Grove Guards"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Bladesingers"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Rangers"
+				}
+				load_oob = "PRK_empty"
+				
+				swap_ideas = {
+					remove_idea = elf_country
+					add_idea = human_country
+				}
+				swap_ideas = {
+					remove_idea = itherynism_religion
+					add_idea = krostov_religion
+				}
+				
+				country_event = {
+					id = annex.0
+					days = 5
+				}
+			}
+			
+			every_state = {
+				limit = {
+					is_core_of = PRK
+				}
+				reset_state_name = yes
+			}
+			
+			reset_province_name = 4527
+		}
+	}
+
+	option = {# Liberate
+		name = annex.27.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = PRK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			PRK = {
+				transfer_state = PREV
+			}
+		}
+			puppet = PRK
+			set_country_flag = conquest_of_perkavland
+	}
+	
+	option = { # Annex
+		name = annex.27.b
+
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_perkavland
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.27.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 5
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = PRK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			PRK = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = PRK
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = {# Liberate Chiefs
+		name = annex.27.e
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		shatter_perkavland = yes
+		puppet = KRL
+		puppet = SVC
+		puppet = WLT
+		puppet = RLV
+		puppet = VLN
+		puppet = LNK
+		puppet = KRZ
+		puppet = VTZ
+		puppet = NVT
+		set_country_flag = conquest_of_perkavland
+	}
+	
+	option = {# Freiprinztum Chiefs
+		name = annex.27.f
+		trigger = {
+			OR = {
+				tag = UNG
+				is_subject_of = UNG
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		shatter_perkavland = yes
+		UNG = {
+			set_autonomy = {
+				target = KRL
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = SVC
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = WLT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = RLV
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = VLN
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = LNK
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = KRZ
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = VTZ
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = NVT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+		set_country_flag = conquest_of_perkavland
+	}
+}
+
+country_event = { #Conquest of Bergial
+	id = annex.28
+	title = annex.28.t
+	desc = annex.28.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = BER
+		}
+		OR = {
+			NOT = {
+				AND = {
+					tag = VRG
+					has_country_flag = VRG_formed_by_BER
+				}
+			}
+			AND = {
+				tag = VRG
+				has_country_flag = VRG_can_annex_BER
+			}
+		}
+		OR = {
+			AND = {
+				BER = {
+					has_capitulated = yes
+				}
+				controls_state = 369
+			}
+			AND = {
+				NOT = {
+					country_exists = BER
+				}
+				controls_state = 369
+			}
+			owns_state = 369
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_bergial
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.28.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					has_country_flag = VRG_can_annex_BER
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = BER
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			BER = {
+				transfer_state = PREV
+			}
+		}
+			puppet = BER
+			set_country_flag = conquest_of_bergial
+	}
+	
+	option = { # Annex
+		name = annex.28.b
+		
+		trigger = {
+			NOT = {
+				has_country_flag = VRG_can_annex_BER
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_bergial
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.28.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}			
+			NOT = {
+				has_country_flag = VRG_can_annex_BER
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = BER
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			BER = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = BER
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Vergallheim cores Bergial
+		name = annex.28.e
+
+		ai_chance = {
+			factor = 500
+		}
+		
+		trigger = {
+			has_country_flag = VRG_can_annex_BER
+		}
+
+		set_country_flag = conquest_of_bergial
+
+		every_state = {
+			limit = {
+				is_core_of = BER
+			}
+			add_core_of = VRG
+		}
+	}
+}
+
+country_event = { #Conquest of Tlarthingia
+	id = annex.29
+	title = annex.29.t
+	desc = annex.29.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		AND = {
+			OR = {
+				NOT = {
+					original_tag = TLA
+					original_tag = IRI
+				}
+			}
+			OR = {
+				AND = {
+					TLA = {
+						has_capitulated = yes
+					}
+					controls_state = 372
+				}
+				AND = {
+					NOT = {
+						country_exists = TLA
+					}
+					controls_state = 372
+				}
+				owns_state = 372
+			}
+			NOT = {
+				ROOT = {
+					has_country_flag = conquest_of_tlarthingia
+				}
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.29.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = TLA
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			TLA = {
+				transfer_state = PREV
+			}
+		}
+			puppet = TLA
+			set_country_flag = conquest_of_tlarthingia
+	}
+	
+	option = { # Annex
+		name = annex.29.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_tlarthingia
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.29.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = TLA
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			TLA = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = TLA
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Kurgur
+	id = annex.30
+	title = annex.30.t
+	desc = annex.30.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = KUR
+		}
+		OR = {
+			AND = {
+				KUR = {
+					has_capitulated = yes
+				}
+				controls_state = 367
+			}
+			AND = {
+				NOT = {
+					country_exists = KUR
+				}
+				controls_state = 367
+			}
+			owns_state = 367
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_kurgur
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.30.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					tag = BER
+					tag = SKA
+					tag = RMT
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = KUR
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			KUR = {
+				transfer_state = PREV
+			}
+		}
+			puppet = KUR
+			set_country_flag = conquest_of_kurgur
+	}
+	
+	option = { # Annex
+		name = annex.30.b
+
+		trigger = {
+			NOT = {
+				OR = {
+					has_country_flag = UNG_helping_terugkeer
+					has_country_flag = UNG_helping_seventh_campaign
+					has_country_flag = BER_terugkeer_with_UNG
+					has_country_flag = SKA_seventh_campaign_with_UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_kurgur
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+		
+		if = {
+			limit = {
+				OR = {
+					tag = BER
+					tag = RMT
+					tag = SKA
+				}
+			}
+			659 = {
+				set_state_name = "Skaptaholt"
+			}
+			179 = {
+				set_state_name = "Asolfsskali"
+			}
+			176 = {
+				set_state_name = "Hvanneyrr"
+			}
+			174 = {
+				set_state_name = "Ruins of Zarathum"
+			}
+			173 = {
+				set_state_name = "Lagraskr"
+			}
+			172 = {
+				set_state_name = "Valgring"
+			}
+			365 = {
+				set_state_name = "Tholorg"
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.30.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+			NOT = {
+				OR = {
+					has_country_flag = UNG_helping_terugkeer
+					has_country_flag = UNG_helping_seventh_campaign
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = KUR
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			KUR = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = KUR
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { #Take Vergall Lands
+		name = annex.30.e
+		trigger = {
+			OR = {
+				AND = {
+					tag = UNG
+					UNG = {
+						has_country_flag = UNG_helping_terugkeer
+					}
+				}
+				AND = {
+					ROOT = {
+						is_subject_of = UNG
+					}
+					UNG = {
+						has_country_flag = UNG_helping_terugkeer
+					}
+				}
+				AND = {
+					UNG = {
+						is_subject_of = ROOT
+					}
+					UNG = {
+						has_country_flag = UNG_helping_terugkeer
+					}
+				}
+				AND = {
+					tag = UNG
+					UNG = {
+						has_country_flag = UNG_helping_seventh_campaign
+					}
+				}
+				AND = {
+					ROOT = {
+						is_subject_of = UNG
+					}
+					UNG = {
+						has_country_flag = UNG_helping_seventh_campaign
+					}
+				}
+				AND = {
+					UNG = {
+						is_subject_of = ROOT
+					}
+					UNG = {
+						has_country_flag = UNG_helping_seventh_campaign
+					}
+				}
+				
+				tag = BER
+				
+				tag = SKA
+				
+				tag = RMT
+			}
+		}
+		
+		ai_chance = {
+			factor = 5000
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = KUR
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+					state = 659
+					state = 179
+					state = 176
+					state = 174
+					state = 173
+					state = 172
+					state = 365
+				}
+			}
+			KUR = {
+				transfer_state = PREV
+			}
+		}
+		
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						OR = {
+							tag = UNG
+							UNG = {
+								is_subject_of = ROOT
+							}
+							ROOT = {
+								is_subject_of = UNG
+							}
+						}
+						UNG = {
+							has_country_flag = UNG_helping_terugkeer
+						}
+					}
+					tag = BER
+				}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 659
+						state = 179
+						state = 176
+						state = 174
+						state = 173
+						state = 172
+						state = 365
+					}
+				}
+				BER = {
+					transfer_state = PREV
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						OR = {
+							tag = UNG
+							UNG = {
+								is_subject_of = ROOT
+							}
+							ROOT = {
+								is_subject_of = UNG
+							}
+						}
+						UNG = {
+							has_country_flag = UNG_helping_seventh_campaign
+						}
+					}
+					tag = SKA
+				}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 659
+						state = 179
+						state = 176
+						state = 174
+						state = 173
+						state = 172
+						state = 365
+					}
+				}
+				SKA = {
+					transfer_state = PREV
+				}
+			}
+		}
+		
+		659 = {
+			set_state_name = "Skaptaholt"
+		}
+		179 = {
+			set_state_name = "Asolfsskali"
+		}
+		176 = {
+			set_state_name = "Hvanneyrr"
+		}
+		174 = {
+			set_state_name = "Ruins of Zarathum"
+		}
+		173 = {
+			set_state_name = "Lagraskr"
+		}
+		172 = {
+			set_state_name = "Valgring"
+		}
+		365 = {
+			set_state_name = "Tholorg"
+		}
+		
+		if = {
+			limit = {
+				OR = {
+					tag = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+					ROOT = {
+						is_subject_of = UNG
+					}
+				}
+			}
+			UNG = {
+				set_autonomy = {
+					target = KUR
+					autonomy_state = autonomy_IR_freiprinztum
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = UNG
+						UNG = {
+							is_subject_of = ROOT
+						}
+						ROOT = {
+							is_subject_of = UNG
+						}
+					}
+				}
+			}
+			puppet = KUR
+		}
+		
+		set_country_flag = conquest_of_kurgur
+	}
+}
+
+country_event = { #Conquest of Irinthios
+	id = annex.31
+	title = annex.31.t
+	desc = annex.31.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = IRI
+		}
+		OR = {
+			AND = {
+				IRI = {
+					has_capitulated = yes
+				}
+				controls_state = 396
+			}
+			AND = {
+				NOT = {
+					country_exists = IRI
+				}
+				controls_state = 396
+			}
+			owns_state = 396
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_irinthios
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.31.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = IRI
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			IRI = {
+				transfer_state = PREV
+			}
+		}
+			puppet = IRI
+			set_country_flag = conquest_of_irinthios
+	}
+	
+	option = { # Annex
+		name = annex.31.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_irinthios
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.31.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = IRI
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			IRI = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = IRI
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Rimatü
+	id = annex.32
+	title = annex.32.t
+	desc = annex.32.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = RMT
+			tag = SKA
+			tag = BER
+			tag = VRG
+		}
+		OR = {
+			AND = {
+				RMT = {
+					has_capitulated = yes
+				}
+				controls_state = 383
+			}
+			AND = {
+				NOT = {
+					country_exists = RMT
+				}
+				controls_state = 383
+			}
+			owns_state = 383
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_rimatu
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.32.a
+		trigger = {
+			NOT = {
+				tag = UNG
+				is_subject_of = UNG
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+					tag = SKA
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = RMT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			RMT = {
+				transfer_state = PREV
+			}
+		}
+			puppet = RMT
+			set_country_flag = conquest_of_rimatu
+	}
+	
+	option = { # Annex
+		name = annex.32.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+						tag = SKA
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_rimatu
+
+		custom_effect_tooltip = annex_rimatu_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+							tag = SKA
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.32.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = RMT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			RMT = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = RMT
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Grant to Skaelinger
+		name = annex.32.e
+		trigger = {
+			NOT = {
+				tag = SKA
+			}
+			OR = {
+				is_in_faction_with = SKA
+				SKA = {
+					is_subject_of = ROOT
+				}
+				ROOT = {
+					is_subject_of = SKA
+				}
+			}
+		}
+		
+		ai_chance = {
+			modifier = {
+				factor = 100
+				OR = {
+					is_in_faction_with = SKA
+					SKA = {
+						is_subject_of = ROOT
+					}
+					ROOT = {
+						is_subject_of = SKA
+					}	
+				}
+			}
+			modifier = {
+				factor = 50
+				SKA = {
+					is_subject_of = ROOT
+				}			
+			}
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = RMT
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			SKA = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Lirothlind
+	id = annex.33
+	title = annex.33.t
+	desc = annex.33.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		OR = {
+			NOT = {
+				original_tag = LIR
+			}
+			tag = LEX
+		}
+		OR = {
+			AND = {
+				LIR = {
+					has_capitulated = yes
+				}
+				controls_state = 391
+			}
+			AND = {
+				NOT = {
+					country_exists = LIR
+				}
+				controls_state = 391
+			}
+			owns_state = 391
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_lirothlind
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.33.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = LEX
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = LIR
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			LIR = {
+				transfer_state = PREV
+			}
+		}
+			puppet = LIR
+			set_country_flag = conquest_of_lirothlind
+	}
+	
+	option = { # Annex
+		name = annex.33.b
+		
+		trigger = {
+			NOT = {
+				tag = LEX
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_lirothlind
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.33.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = LIR
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			LIR = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = LIR
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = {#Reclamation by the LEX
+		name = annex.33.e
+		trigger = {
+			tag = LEX
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		#hidden_effect = {
+			every_state = {
+				limit = {
+					is_core_of = LIR
+					is_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				LIR = {
+					transfer_state = PREV
+				}
+			}
+			
+			every_state = {
+				limit = {
+					is_core_of = LEX
+				}
+				remove_core_of = LEX
+			}
+			
+			every_state = {
+				limit = {
+					is_claimed_by = LEX
+				}
+				remove_claim_by = LEX
+			}
+				
+			LIR = {
+				transfer_state = 393
+				transfer_state = 394
+				transfer_state = 395
+			}
+			puppet = LIR
+		
+			LIR = {
+				annex_country = {
+					target = LEX
+					transfer_troops = yes
+				}
+				change_tag_from = LEX
+			}
+		#}
+	}
+}
+
+country_event = { #Conquest of Istaroth
+	id = annex.34
+	title = annex.34.t
+	desc = annex.34.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = IST
+			original_tag = ORD
+		}
+		85 = {
+			is_core_of = IST
+		}
+		OR = {
+			AND = {
+				IST = {
+					has_capitulated = yes
+				}
+				controls_state = 85
+			}
+			AND = {
+				NOT = {
+					country_exists = IST
+				}
+				controls_state = 85
+			}
+			owns_state = 85
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_istaroth
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.34.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = IST
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			IST = {
+				transfer_state = PREV
+			}
+		}
+			puppet = IST
+			set_country_flag = conquest_of_istaroth
+	}
+	
+	option = { # Annex
+		name = annex.34.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_istaroth
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.34.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = IST
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			IST = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = IST
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Varinthia
+	id = annex.35
+	title = annex.35.t
+	desc = annex.35.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = VAR
+			original_tag = ORD
+		}
+		111 = {
+			is_core_of = VAR
+		}
+		OR = {
+			AND = {
+				VAR = {
+					has_capitulated = yes
+				}
+				controls_state = 111
+			}
+			AND = {
+				NOT = {
+					country_exists = VAR
+				}
+				controls_state = 111
+			}
+			owns_state = 111
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_varinthia
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.35.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = VAR
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			VAR = {
+				transfer_state = PREV
+			}
+		}
+			puppet = VAR
+			set_country_flag = conquest_of_varinthia
+	}
+	
+	option = { # Annex
+		name = annex.35.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_varinthia
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.35.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = VAR
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			VAR = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = VAR
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Ythelmare
+	id = annex.36
+	title = annex.36.t
+	desc = annex.36.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = YTH
+			original_tag = ORD
+		}
+		112 = {
+			is_core_of = YTH
+		}
+		OR = {
+			AND = {
+				YTH = {
+					has_capitulated = yes
+				}
+				controls_state = 112
+			}
+			AND = {
+				NOT = {
+					country_exists = YTH
+				}
+				controls_state = 112
+			}
+			owns_state = 112
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_ythelmare
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.36.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = YTH
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			YTH = {
+				transfer_state = PREV
+			}
+		}
+			puppet = YTH
+			set_country_flag = conquest_of_ythelmare
+	}
+	
+	option = { # Annex
+		name = annex.36.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_ythelmare
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.36.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = YTH
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			YTH = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = YTH
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Vuid
+	id = annex.37
+	title = annex.37.t
+	desc = annex.37.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = VUD
+			original_tag = ORD
+		}
+		84 = {
+			is_core_of = VUD
+		}
+		OR = {
+			AND = {
+				VUD = {
+					has_capitulated = yes
+				}
+				controls_state = 84
+			}
+			AND = {
+				NOT = {
+					country_exists = VUD
+				}
+				controls_state = 84
+			}
+			owns_state = 84
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_vuid
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.37.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = VUD
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			VUD = {
+				transfer_state = PREV
+			}
+		}
+			puppet = VUD
+			set_country_flag = conquest_of_vuid
+	}
+	
+	option = { # Annex
+		name = annex.37.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_vuid
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.37.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = VUD
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			VUD = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = VUD
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Bilodya
+	id = annex.38
+	title = annex.38.t
+	desc = annex.38.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = BLD
+		}
+		OR = {
+			AND = {
+				BLD = {
+					has_capitulated = yes
+				}
+				controls_state = 385
+			}
+			AND = {
+				NOT = {
+					country_exists = BLD
+				}
+				controls_state = 385
+			}
+			owns_state = 385
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_bilodya
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.38.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					tag = IRI
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = BLD
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			BLD = {
+				transfer_state = PREV
+			}
+		}
+			puppet = BLD
+			set_country_flag = conquest_of_bilodya
+	}
+	
+	option = { # Annex
+		name = annex.38.b
+		
+		trigger = {
+			NOT = {
+				tag = BLD
+				tag = IRI
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_bilodya
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.38.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = BLD
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			BLD = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = BLD
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Re-Integrate into Irinthios
+		name = annex.38.e
+		trigger = {
+			OR = {
+				tag = IRI
+				ROOT = {
+					is_subject_of = IRI
+				}
+				IRI = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = BLD
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			IRI = {
+				transfer_state = PREV
+				add_state_core = PREV
+				set_country_flag = conquest_of_bilodya
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Merchant's Hand
+	id = annex.39
+	title = annex.39.t
+	desc = annex.39.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = MER
+		}
+		OR = {
+			AND = {
+				MER = {
+					has_capitulated = yes
+				}
+				controls_state = 378
+			}
+			AND = {
+				NOT = {
+					country_exists = MER
+				}
+				controls_state = 378
+			}
+			owns_state = 378
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_merchants_hand
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.39.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					tag = IRI
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = MER
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			MER = {
+				transfer_state = PREV
+			}
+		}
+			puppet = MER
+			set_country_flag = conquest_of_merchants_hand
+	}
+	
+	option = { # Annex
+		name = annex.39.b
+		
+		trigger = {
+			NOT = {
+				tag = MER
+				tag = IRI
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_merchants_hand
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.39.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = MER
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			MER = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = MER
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	
+	option = { # Re-Integrate into Irinthios
+		name = annex.39.e
+		trigger = {
+			OR = {
+				tag = IRI
+				ROOT = {
+					is_subject_of = IRI
+				}
+				IRI = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = MER
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			IRI = {
+				transfer_state = PREV
+				add_state_core = PREV
+			}
+		}
+		set_country_flag = conquest_of_merchants_hand
+	}
+}

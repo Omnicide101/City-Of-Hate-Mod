@@ -1,0 +1,26 @@
+state={
+	id=277
+	name="STATE_277"
+	provinces={
+		9182 5346 9172 5056
+	}
+	state_category = rural
+	manpower=7099
+	buildings_max_level_factor=1.000
+	
+	resources = {
+		food = 5
+	}
+	
+	history = {
+		victory_points = { 9172 16 }
+		owner = SPW
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+			forge = 1
+		}
+		add_core_of = SPW
+		add_core_of = RKS
+		}
+}

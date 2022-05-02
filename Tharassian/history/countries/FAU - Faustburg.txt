@@ -1,0 +1,134 @@
+﻿capital = 233
+
+set_oob = "empty"
+set_research_slots = 3
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1 
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = puritan
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 26
+
+	monarchy_constitutional = 20
+
+	republic_peasant = 1
+
+	republic_aristocrat = 11
+
+	republic_merchant = 1
+
+	theocrat = 7
+
+	puritan = 34
+}
+
+add_ideas = {
+	human_country
+	septism_religion
+}
+
+create_country_leader = {
+	name = "Adalina Vlussinger"
+	desc = "politics_UNG_vlussinger_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Vlussinger.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Thirza Lichtenfels"
+	desc = "politics_UNG_lichtenfels_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Lichtenfels.dds"
+	ideology = republic_peasant_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Severin Tauber"
+	desc = "politics_UNG_tauber_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Tauber.dds"
+	ideology = monarchy_absolute_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Severin Tauber"
+	desc = "politics_UNG_tauber_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Tauber.dds"
+	ideology = puritan_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Achimer Kümmel"
+	desc = "politics_UNG_kummel_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Kummel.dds"
+	ideology = theocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Adalina Vlussinger"
+	desc = "politics_UNG_vlussinger_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Vlussinger.dds"	
+	ideology = republic_aristocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Ferdinand Holzer"
+	desc = "politics_UNG_holzer_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Holzer.dds"
+	ideology = republic_merchant_ideology
+	traits = {
+	}
+}

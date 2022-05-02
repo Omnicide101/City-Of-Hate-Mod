@@ -1,0 +1,24 @@
+state={
+	id=417
+	name="STATE_417"
+	provinces={
+		9648 9650 4192 3287 9630 75 1423 9649
+	}
+	state_category = large_town
+	manpower=401237
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = { 3287 22 }
+		owner = PRK
+		buildings = {
+			infrastructure = 1
+			forge = 2
+			workshop = 1
+			dockyard = 2
+			3287 = {
+				naval_base = 5
+			}
+		}
+		add_core_of = PRK
+	}
+}

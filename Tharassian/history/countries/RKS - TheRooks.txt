@@ -1,0 +1,123 @@
+﻿capital = 277
+
+set_oob = "RKS_empty"
+
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1 
+}
+
+set_variable = {
+	var = FPT_piety
+	value = 2
+}
+
+set_variable = {
+	var = FPT_union_loyalty
+	value = 12
+}
+
+set_variable = {
+	var = FPT_stahlhof_loyalty
+	value = 0
+}
+
+set_variable = {
+	var = FPT_small_loyalty_cost
+	value = 50
+}
+
+set_variable = {
+	var = FPT_medium_loyalty_cost
+	value = 75
+}
+
+set_variable = {
+	var = FPT_big_loyalty_cost
+	value = 100
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = republic_aristocrat
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+give_military_access = UNG
+give_military_access = HLZ
+give_military_access = NOC
+give_military_access = SPW
+give_military_access = STA
+give_military_access = NRK
+give_military_access = TEI
+give_military_access = ARK
+give_military_access = SNF
+give_military_access = FTH
+give_military_access = WIS
+give_military_access = WSZ
+
+set_popularities = {
+	monarchy_absolute = 3
+
+	monarchy_constitutional = 6
+
+	republic_peasant = 5
+
+	republic_aristocrat = 72
+
+	republic_merchant = 9
+
+	theocrat = 4
+
+	puritan = 1
+}
+
+add_ideas = {
+	halfling_country
+	bitha_patron
+}
+
+create_country_leader = {
+	name = "Peke van der Bij"
+	desc = "politics_Rooks_van_der_bij_desc"
+	picture = "gfx/leaders/RKS/Portrait_Rooks_van_der_Bij.dds"
+	ideology = republic_aristocrat_ideology
+	traits = {
+	}
+}

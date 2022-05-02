@@ -1,0 +1,91 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+ungerdaler_buddies = {
+	enable = {
+		tag = PRK
+		NOT = {
+			has_government = puritan
+		}
+		is_in_faction_with = UNG
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "UNG"
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "UNG"			
+		value = 200
+	}
+	ai_strategy = {
+		type = protect
+		id = "UNG"			
+		value = 200
+	}
+}
+
+default_unit_production = {
+	enable = {
+		is_og_perkav_chiefdom = yes
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = perkav_raiders
+		value = 30
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = warband
+		value = 45
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = archer
+		value = 15
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 5
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = light_cavalry
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = heavy_cavalry
+		value = 5
+	}
+}

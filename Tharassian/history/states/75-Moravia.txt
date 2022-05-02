@@ -1,0 +1,19 @@
+state={
+	id=75
+	name="STATE_75"
+	provinces={
+		2207 6391 5428 5016
+	}
+	state_category = large_town
+	manpower=19242
+	buildings_max_level_factor=1.000
+	history={
+		owner = GMR
+		victory_points = { 5428 12 }
+		buildings = {
+			infrastructure = 2
+			forge = 1
+		}
+		add_core_of = GMR
+	}
+}

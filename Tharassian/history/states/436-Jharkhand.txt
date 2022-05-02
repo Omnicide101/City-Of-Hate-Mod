@@ -1,0 +1,24 @@
+state={
+	id=436
+	name="STATE_436"
+	provinces={
+		9657 9662 5570 3738 1421 9665 1056 4756 9663
+	}
+	state_category = pastoral
+	manpower = 1119
+	
+	resources = {
+		lumber = 1
+	}
+	
+	history={
+		victory_points = {
+			9663 1
+		}
+		owner = GET
+			buildings = {
+				infrastructure = 1
+			}
+		add_core_of = GET
+	}
+}

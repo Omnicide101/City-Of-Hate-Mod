@@ -1,0 +1,22 @@
+state={
+	id=869
+	name="STATE_869"
+	provinces={
+		3943 4350 8726 8754 8771 
+	}
+	state_category = pastoral
+	manpower = 377
+	
+	resources = {
+		mount = 2
+	}
+	
+	history={
+		owner = TES
+		buildings = {
+			infrastructure = 1
+			forge = 1
+		}
+		add_core_of = TES
+	}
+}

@@ -1,0 +1,237 @@
+music_station = "ir"
+
+###PEACETIME
+
+# Note: UNG Theme Song
+music = {
+	song = "The Union Forever"
+	
+	chance = {
+		modifier = {
+			factor = 2.5
+
+			has_war = no
+			OR = {
+				tag = UNG
+				is_in_faction_with = UNG
+			}
+		}		
+	}	
+}
+
+# Note: Stahlhof Ambience Theme
+music = {
+	song = "Iron Judgement"
+	
+	chance = {
+		modifier = {
+			factor = 2.5
+
+			has_war = no
+			OR = {
+				tag = STA
+				is_in_faction_with = STA
+			}
+		}		
+	}	
+}
+
+# Note: Ordorian Ambience Theme
+music = {
+	song = "Rebirth of Sovereignty"
+	
+	chance = {
+		modifier = {
+			factor = 2.5
+
+			has_war = no
+			OR = {
+				tag = ORD
+				tag = EOR
+			}
+		}
+	}	
+}
+
+# Note: Generic Dwarven Ambience
+music = {
+	song = "Miner's Delight"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			
+			has_idea = dwarf_country
+			has_war = no
+		}	
+	}	
+}
+
+# Note: Generic Ambience Theme
+music = {
+	song = "Lathweynian Forests"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = no
+		}	
+	}	
+}
+
+# Note: Generic Ambience Theme #2
+music = {
+	song = "Age of Progression"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = no
+		}
+	}	
+}
+# Note: Generic Ambience Theme #3
+music = {
+	song = "Soothing Nights"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = no
+		}
+	}
+}
+
+# Note: Generic Ambience Theme #4
+music = {
+	song = "What It's All About"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = no
+		}	
+	}	
+}
+
+###WARTIME
+
+# Note: Stahlhof Civil War Theme
+music = {
+	song = "March on Faustburg"
+	
+	chance = {
+		modifier = {
+			factor = 2.5
+			
+			or = {
+				AND = {
+					tag = STA
+					has_offensive_war_with = UNG
+				}
+				AND = {
+					has_offensive_war_with = UNG
+					is_in_faction_with = STA
+				}
+			}
+		}		
+	}	
+}
+
+# Note: Ungerdaler Union War Theme
+music = {
+	song = "Ungerdaler Diplomacy"
+	
+	chance = {
+		modifier = {
+			factor = 2.5
+			
+			or = {
+				AND = {
+					tag = UNG
+					has_war = yes
+				}
+				AND = {
+					has_defensive_war = yes
+					is_in_faction_with = UNG
+				}
+			}
+		}		
+	}
+}
+
+# Note: Generic War Theme #1
+music = {
+	song = "Authors of History"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = yes
+		}
+	}
+}
+
+
+# Note: Generic War Theme #2
+music = {
+	song = "Tactical Assault"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = yes
+		}
+	}
+}
+
+# Note: Generic Elf War Theme
+music = {
+	song = "Elven Conquest"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			
+			has_idea = elf_country
+			has_war = yes
+		}
+	}
+}
+
+# Note: Generic Masthal War Theme
+music = {
+	song = "Wars of the East"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			OR = {
+				tag = SUL
+				tag = GOW
+				tag = TES
+			}
+			has_war = yes
+		}	
+	}	
+}
+
+# Note: Generic Dwarf War Theme
+music = {
+	song = "Miner's Blight"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			
+			has_idea = dwarf_country
+			has_war = yes
+		}	
+	}	
+}

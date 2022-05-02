@@ -1,0 +1,87 @@
+﻿units = {
+
+	division = {
+		name = "1st Trans Liberation Force"
+		location = 154
+		division_template = "Trans Liberation Force"
+		start_experience_factor = 1
+
+	}
+	division = {
+		name = "2nd Trans Liberation Force"
+		location = 154
+		division_template = "Trans Liberation Force"
+		start_experience_factor = 1
+
+	}
+	division = {
+		name = "3rd Trans Liberation Force"
+		location = 154
+		division_template = "Trans Liberation Force"
+		start_experience_factor = 1
+
+	}
+	division = {
+		name = "4th Trans Liberation Force"
+		location = 154
+		division_template = "Trans Liberation Force"
+		start_experience_factor = 1
+
+	}
+	division = {
+		name = "5th Trans Liberation Force"
+		location = 154
+		division_template = "Trans Liberation Force"
+		start_experience_factor = 1
+
+	}
+	division = {
+		name = "6th Trans Liberation Force"
+		location = 154
+		division_template = "Trans Liberation Force"
+		start_experience_factor = 1
+
+	}
+	division = {
+		name = "7th Trans Liberation Force"
+		location = 154
+		division_template = "Trans Liberation Force"
+		start_experience_factor = 1
+
+	}
+	division = {
+		name = "8th Trans Liberation Force"
+		location = 154
+		division_template = "Trans Liberation Force"
+		start_experience_factor = 1
+
+	}
+	division = {
+		name = "9th Trans Liberation Force"
+		location = 154
+		division_template = "Trans Liberation Force"
+		start_experience_factor = 1
+
+	}
+	division = {
+		name = "10th Trans Liberation Force"
+		location = 154
+		division_template = "Trans Liberation Force"
+		start_experience_factor = 1
+
+	}
+	division = {
+		name = "1st Victorian Gentlemen"
+		location = 7136
+		division_template = "Transmasc Knights"
+		start_experience_factor = 1
+
+	}
+	division = {
+		name = "1st Catgirl Cavalry"
+		location = 7181
+		division_template = "Transfem Horse Girls"
+		start_experience_factor = 1
+
+	}
+}

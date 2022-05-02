@@ -1,0 +1,21 @@
+state={
+	id=897
+	name="STATE_897"
+	provinces={
+		719 1025 5406 
+	}
+	manpower=182
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	
+	history={
+		victory_points = {
+			5406 1
+		}
+		owner = GOW
+			buildings = {
+				infrastructure = 1
+			}
+		add_core_of = GOW
+	}
+}

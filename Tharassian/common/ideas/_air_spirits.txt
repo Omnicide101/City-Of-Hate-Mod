@@ -1,0 +1,6 @@
+#None yet so far
+
+#ideas = {
+#	air_force_spirit = {
+#	}
+#}

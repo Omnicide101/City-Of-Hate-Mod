@@ -1,0 +1,167 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+#Stop building so many divisions please
+ai_division_limiter = {
+	ai_desired_divisions_factor = -1
+}
+
+#Generic state modifiers
+
+city_of_erudition = {
+	icon = GFX_modifier_city_erudition
+    research_speed_factor = 0.03
+	stability_factor = 0.05
+	political_power_gain = 0.25
+}
+
+city_of_foundries = {
+	icon = GFX_modifier_city_foundries
+    production_factory_max_efficiency_factor = 0.07
+	production_lack_of_resource_penalty_factor = -0.05
+}
+
+city_of_harbours = {
+	icon = GFX_modifier_city_harbours
+	repair_speed_factor = 0.07
+	experience_gain_navy_unit_factor = 0.05
+	industrial_capacity_dockyard = 0.03
+}
+
+city_of_slavers = {
+	icon = GFX_modifier_city_harbours
+	production_speed_buildings_factor = 0.03
+	repair_speed_factor = 0.02
+	experience_gain_navy_unit_factor = 0.02
+	industrial_capacity_dockyard = 0.01				
+}
+
+city_of_generals = {
+	icon = GFX_modifier_city_generals
+	army_leader_cost_factor = -0.1
+	experience_gain_army_unit_factor = 0.05
+	army_org_regain = 0.03
+}
+
+#Fertility
+
+very_fertile_land = {
+    icon = GFX_modifier_state_big_fertility
+    state_resource_food = 3
+    monthly_population = 0.1
+	local_supplies_for_controller = 0.25
+}
+
+fertile_land = {
+    icon = GFX_modifier_state_fertility
+    state_resource_food = 1
+    monthly_population = 0.025
+	local_supplies_for_controller = 0.1
+}
+
+infertile_land = {
+    icon = GFX_modifier_state_infertility
+    state_resource_food = -1
+    monthly_population = -0.025
+	local_supplies_for_controller = -0.1
+}
+
+very_infertile_land = {
+    icon = GFX_modifier_state_big_infertility
+    state_resource_food = -3
+    monthly_population = -0.1
+	local_supplies_for_controller = -0.25
+}
+
+ongoing_border_conflict = {
+    icon = GFX_modifier_ongoing_conflict
+    local_org_regain = -1
+    army_speed_factor_for_controller = -0.5
+	disable_strategic_redeployment = 1
+}
+
+upset_populace = {
+	icon = GFX_modifier_state_upset_populace
+	local_factories = -0.2
+	state_resources_factor = -0.25
+	mobilization_speed = -0.5
+	recruitable_population_factor = -0.1
+}
+
+autonomous_region = {
+	icon = GFX_modifier_state_autonomous_region
+	local_factories = -0.15
+	state_resources_factor = -0.1
+	recruitable_population_factor = 0.1
+	resistance_growth = 0.1
+}
+
+#civilian_food_consumption = { #Need to fix later
+#	enable = {
+#		always = yes
+#	}
+#	fuel_cost = civilian_food_consumption_var
+#}
+
+freiprinz_piety = {
+	enable = {
+		has_variable = FPT_piety
+	}
+	mobilization_speed = FPT_pious_mobilization
+	research_speed_factor = FPT_pious_science
+}
+
+steel_road_state = {
+	enable = {
+		always = yes
+	}
+
+	icon = GFX_MODIFIER_NO_SUPPLY_GRACE
+}
+
+
+sabotaged_resources = {
+	remove_trigger = { 
+		has_resistance = no
+	}
+	
+	icon = GFX_modifiers_sabotaged_resource
+	
+	temporary_state_resource_oil = sabotaged_oil
+	temporary_state_resource_aluminium = sabotaged_aluminium
+	temporary_state_resource_rubber = sabotaged_rubber
+	temporary_state_resource_tungsten = sabotaged_tungsten
+	temporary_state_resource_steel = sabotaged_steel
+	temporary_state_resource_chromium = sabotaged_chromium
+}
+
+war_exhaustion_modifier = {
+	enable = {
+		has_war = yes
+	}
+	mobilization_speed = war_exhaustion_mobilization
+	surrender_limit = war_exhaustion_surrender_limit
+}

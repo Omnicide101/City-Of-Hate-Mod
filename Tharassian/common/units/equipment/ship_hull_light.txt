@@ -1,0 +1,122 @@
+equipments = {
+	
+	#MTG
+	
+	ship_hull_light = {
+		year = 600
+
+		is_archetype = yes
+		is_buildable = no
+		type = screen_ship
+		interface_category = interface_category_screen_ships
+		alias = destroyer
+		priority = 2000
+
+		module_slots = {
+			fixed_ship_battery_slot = {
+				required = yes
+				allowed_module_categories = { ship_light_armaments }
+			}
+			fixed_ship_engine_slot = {
+				required = yes
+				allowed_module_categories = { light_ship_rowers }
+			}
+		}
+		
+		default_modules = {
+			fixed_ship_battery_slot = light_ship_ballista_0
+			fixed_ship_engine_slot = light_ship_rowers_0
+		}
+		
+		lg_armor_piercing = 0
+		lg_attack = 0
+		
+		hg_armor_piercing = 0
+		hg_attack = 0
+		
+		torpedo_attack = 0
+		sub_attack = 1
+		
+		anti_air_attack = 0
+		
+		armor_value = 0
+
+		
+		surface_detection = 20
+		sub_detection = 1
+		surface_visibility = 10
+		naval_speed = 5
+		reliability = 0.80
+		
+		naval_range = 1500
+		
+		max_strength = 25
+		
+
+		fuel_consumption = 5
+		
+		build_cost_ic = 1000
+		resources = {
+			lumber = 2
+			steel = 1
+		}
+		
+		manpower = 125
+	}
+	
+	ship_hull_light_0 = {
+		year = 600
+
+		archetype = ship_hull_light
+		priority = 2000
+		#alias = destroyer_0
+		visual_level = 0
+		
+		module_slots = inherit
+	}
+	
+	#VANILLA
+	
+	destroyer_1 = {
+		year = 600
+
+		archetype = ship_hull_light
+		priority = 2000
+		module_slots = inherit
+		default_modules = {
+			fixed_ship_battery_slot = light_ship_ballista_1
+			fixed_ship_engine_slot = light_ship_rowers_1
+		}
+		lg_armor_piercing = 0
+		lg_attack = 0
+		
+		torpedo_attack = 0
+		sub_attack = 1
+		
+		anti_air_attack = 0
+		
+		armor_value = 0
+
+		
+		surface_detection = 20
+		sub_detection = 1
+		surface_visibility = 10
+		naval_speed = 5
+		reliability = 0.80
+		
+		naval_range = 1500
+		
+		max_strength = 25
+		
+		
+		fuel_consumption = 5
+		
+		build_cost_ic = 1000
+		resources = {
+			lumber = 2
+			steel = 1
+		}
+		
+		manpower = 125
+	}
+}

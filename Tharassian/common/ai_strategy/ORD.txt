@@ -1,0 +1,265 @@
+	# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+ungerdaler_buddies = {
+	enable = {
+		original_tag = ORD
+		has_country_flag = ORD_pact_with_union
+		NOT = {
+			has_completed_focus = ORD_break_pact
+		}
+	}
+
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = "UNG"
+		value = 200
+	}
+}
+
+realm_buddies = {
+	enable = {
+		original_tag = ORD
+		has_country_flag = ORD_pact_with_realm
+		NOT = {
+			has_completed_focus = ORD_break_pact
+		}
+	}
+
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = "GMR"
+		value = 200
+	}
+}
+
+defend_heartlands = {
+	enable = {
+		original_tag = ORD
+	}
+	ai_strategy = {
+		type = area_priority
+		id = west_ordoria
+		value = 200
+	}
+}
+
+not_ready_for_rthaur_war = {
+	enable = {
+		original_tag = ORD
+		country_exists = RTH
+		NOT = {
+			OR = {
+				has_country_flag = ORD_unlock_wars
+				has_country_flag = ORD_fortified_border
+				has_war_with = RTH
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = ignore
+		id = "RTH"			
+		value = 200
+	}
+	ai_strategy = {
+		type = ignore_claim
+		id = "RTH"
+		value = 200
+	}
+}
+
+not_ready_for_wars = {
+	enable = {
+		original_tag = ORD
+		OR = {
+			country_exists = STA
+			country_exists = HLZ
+			country_exists = UNG
+			country_exists = GMR
+		}
+		NOT = {
+			has_completed_focus = ORD_united_once_more
+		}
+	}
+	abort = {
+		has_completed_focus = ORD_united_once_more
+	}
+	ai_strategy = {
+		type = ignore
+		id = "STA"			
+		value = 999
+	}
+	ai_strategy = {
+		type = ignore_claim
+		id = "STA"
+		value = 999
+	}
+	ai_strategy = {
+		type = ignore
+		id = "HLZ"			
+		value = 999
+	}
+	ai_strategy = {
+		type = ignore_claim
+		id = "HLZ"
+		value = 999
+	}
+	ai_strategy = {
+		type = ignore
+		id = "UNG"			
+		value = 999
+	}
+	ai_strategy = {
+		type = ignore_claim
+		id = "UNG"
+		value = 999
+	}
+	ai_strategy = {
+		type = ignore
+		id = "GMR"			
+		value = 999
+	}
+	ai_strategy = {
+		type = ignore_claim
+		id = "GMR"
+		value = 999
+	}
+}
+
+invade_north = {
+	enable = {
+		original_tag = ORD
+		has_country_flag = ORD_northern_strategy
+	}
+	ai_strategy = {
+		type = invade
+		id = "GMR"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "NPC"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "IRT"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "KRT"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "FEL"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "TRI"
+		value = 200
+		}
+	ai_strategy = {
+		type = invade
+		id = "NAS"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "NAV"
+			value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "KAL"
+		value = 200
+	}
+}
+
+invade_south = {
+	enable = {
+		original_tag = ORD
+		has_country_flag = ORD_southern_strategy
+	}
+	ai_strategy = {
+		type = invade
+		id = "SVT"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "NOC"
+			value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "HLZ"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "SPW"
+		value = 200
+	}
+	ai_strategy = {
+			type = invade
+		id = "STA"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "NRK"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+			id = "TEI"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "ARK"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+			id = "UNG"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "SNF"
+		value = 200
+	}
+	ai_strategy = {
+			type = invade
+		id = "FTH"
+		value = 200
+	}
+		ai_strategy = {
+		type = invade
+		id = "WIS"
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+			id = "WSZ"
+		value = 200
+	}
+}

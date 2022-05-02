@@ -1,0 +1,65 @@
+characters={
+	ARK_jithe_lafdaren = {
+		name = "Jithe Lafdaren"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ARK/Portrait_ARK_Lafdaren.dds"
+			}
+		}
+		
+		country_leader = {
+			ideology = monarchy_constitutional_ideology
+			desc = "politics_ARK_lafdaren_desc"
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	
+	ARK_loster_ignawyne = {
+		name = "Loster Ignawyne"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ARK/Portrait_ARK_Ignawyne.dds"
+			}
+		}
+		
+		country_leader = {
+			ideology = republic_peasant_ideology
+			desc = "politics_ARK_ignawyne_desc"
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	
+	ARK_falstinnion_resmayer = {
+		name = "Falstinnion Resmayer"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ARK/Portrait_ARK_Resmayer.dds"
+			}
+		}
+		
+		country_leader = {
+			ideology = monarchy_absolute_ideology
+			desc = "politics_ARK_resmayer_desc"
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	
+	ARK_bhalus_tanin = {
+		name = "Bhalus Ianin"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ARK/Portrait_ARK_Ianin.dds"
+			}
+		}
+		
+		country_leader = {
+			ideology = theocrat_ideology
+			desc = "politics_ARK_ianin_desc"
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+}

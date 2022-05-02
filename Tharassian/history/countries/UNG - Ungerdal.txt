@@ -1,0 +1,238 @@
+﻿capital = 233
+
+set_major = yes
+
+set_oob = "UNG_1936"
+set_research_slots = 3
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1 
+}
+
+set_variable = { #What's this used for?
+	var = UNG_num_allies
+	value = 11
+}
+
+set_variable = {
+	var = UNG_num_loyal_freiprinzen
+	value = 9
+}
+
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = monarchy_constitutional
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 8
+
+	monarchy_constitutional = 82
+
+	republic_peasant = 2
+
+	republic_aristocrat = 5
+
+	republic_merchant = 1
+
+	theocrat = 1
+
+	puritan = 1
+}
+
+add_ideas = {
+	UNG_trade_realm
+	human_country
+	septism_religion
+	heinrich_brengst
+	stella_galde
+	alko_blau
+}
+
+add_opinion_modifier = {
+	target = STA
+	modifier = bitter_rivals
+}
+
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = STA
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = HLZ
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = NOC
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = SPW
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = SVT
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = TEI
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = SNF
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = WIS
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = WSZ
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = FTH
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = ARK
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = NRK
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	else = {
+		puppet = ARK
+		puppet = FTH
+		puppet = NOC
+		puppet = STA
+		puppet = SPW
+		puppet = SNF
+		puppet = NRK
+		puppet = WSZ
+		puppet = WIS
+		puppet = TEI
+		puppet = SVT
+		puppet = HLZ
+		}
+}
+
+create_country_leader = {
+	name = "Adalina Vlussinger"
+	desc = "politics_UNG_vlussinger_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Vlussinger.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+		unproven_hochprinzessin
+	}
+}
+
+create_country_leader = {
+	name = "Thirza Lichtenfels"
+	desc = "politics_UNG_lichtenfels_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Lichtenfels.dds"
+	ideology = republic_peasant_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Severin Tauber"
+	desc = "politics_UNG_tauber_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Tauber.dds"
+	ideology = puritan_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Adalina Vlussinger"
+	desc = "politics_UNG_vlussinger_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Vlussinger.dds"
+	ideology = monarchy_absolute_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Achimer Kümmel"
+	desc = "politics_UNG_kummel_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Kummel.dds"
+	ideology = theocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Aristokratischer Rat"
+	desc = "politics_UNG_council_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Aristocratic_Council.dds"	
+	ideology = republic_aristocrat_ideology
+	traits = {
+		informal_council
+	}
+}
+
+create_country_leader = {
+	name = "Ferdinand Holzer"
+	desc = "politics_UNG_holzer_desc"
+	picture = "gfx/leaders/UNG/Portrait_UNG_Holzer.dds"
+	ideology = republic_merchant_ideology
+	traits = {
+	}
+}

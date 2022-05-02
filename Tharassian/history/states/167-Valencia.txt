@@ -1,0 +1,18 @@
+state={
+	id=167
+	name="STATE_167"
+	provinces={
+		6868 962 4430
+	}
+	state_category = pastoral
+	manpower=1251
+	buildings_max_level_factor=1.000
+	history={
+		owner = SKA
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = SKA
+
+	}
+}

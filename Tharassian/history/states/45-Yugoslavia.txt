@@ -1,0 +1,22 @@
+state={
+	id=45
+	name="STATE_45"
+	provinces={
+		3175 6089 2561 5194 6052
+	}
+	state_category = town
+	manpower=10137
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 4
+	}
+	history={
+		owner = GMR
+		buildings = {
+			infrastructure = 2
+			farm = 3
+		}
+		add_core_of = GMR
+
+	}
+}

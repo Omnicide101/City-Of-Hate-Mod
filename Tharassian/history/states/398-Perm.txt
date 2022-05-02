@@ -1,0 +1,26 @@
+state={
+	id=398
+	name="STATE_398"
+	provinces={
+		3532 6621 6591 6597 2817 6559 6590
+	}
+	state_category = large_city
+	manpower=502952
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 2
+	}
+	history={
+		victory_points = { 6597 29 }
+		victory_points = {
+			3532 1
+		}
+		owner = IRI
+		buildings = {
+			infrastructure = 3
+			workshop = 2
+			forge = 6
+		}
+		add_core_of = IRI
+	}
+}

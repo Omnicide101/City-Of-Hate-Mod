@@ -1,0 +1,142 @@
+﻿capital = 383
+
+set_oob = "RMT_1936"
+
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	dwarven_warriors = 1
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = monarchy_absolute
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 48
+
+	monarchy_constitutional = 6
+
+	republic_peasant = 0
+
+	republic_aristocrat = 14
+
+	republic_merchant = 32
+
+	theocrat = 0
+
+	puritan = 0
+}
+
+add_ideas = {
+	fiscalism_economy
+	dwarf_country
+	dwarven_ancestor_worship_religion
+	BLD_The_Ogregeld_RMT
+}
+
+add_opinion_modifier = {
+	target = LIR
+	modifier = bitter_rivals
+}
+
+add_opinion_modifier = {
+	target = BLD
+	modifier = bitter_rivals
+}
+
+create_country_leader = {
+	name = "Valkrün Skyldske"
+	desc = "politics_RMT_skyldske_desc"
+	picture = "gfx/leaders/RMT/Portrait_RMT_Skyldske_ii.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Bjarne Röndskun"
+	desc = "politics_RMT_rondskun_desc"
+	picture = "gfx/leaders/RMT/Portrait_RMT_Rondskun.dds"
+	ideology = republic_peasant_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Søren Räsk"
+	desc = "politics_RMT_rask_desc"
+	picture = "gfx/leaders/RMT/Portrait_RMT_Rask.dds"
+	ideology = puritan_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Joris Skyldske"
+	desc = "politics_RMT_skyldske_desc"
+	picture = "gfx/leaders/RMT/Portrait_RMT_Skyldske.dds"
+	ideology = monarchy_absolute_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Elena Thurgensen"
+	desc = "politics_RMT_thurgensen_desc"
+	picture = "gfx/leaders/RMT/Portrait_RMT_Thurgensen.dds"
+	ideology = theocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Valkrün Skyldske"
+	desc = "politics_RMT_skyldske_desc"
+	picture = "gfx/leaders/RMT/Portrait_RMT_Skyldske_ii.dds"
+	ideology = republic_aristocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Maibritt Narkünd"
+	desc = "politics_RMT_narkund_desc"
+	picture = "gfx/leaders/RMT/Portrait_RMT_Narkund.dds"
+	ideology = republic_merchant_ideology
+	traits = {
+	}
+}

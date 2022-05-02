@@ -1,0 +1,21 @@
+state={
+	id=657
+	name="STATE_657"
+	provinces={
+		7090 7105
+	}
+	state_category = pastoral
+	manpower=3731
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 4
+	}
+	history={
+		owner = KUR
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = KUR
+	}
+}

@@ -1,0 +1,24 @@
+state={
+	id=76
+	name="STATE_76"
+	provinces={
+		748 1819 6685 540 454 1524
+	}
+	state_category = town
+	manpower=14731
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 1
+		food = 2
+	}
+		history={
+			victory_points = {1819 8}
+			owner = ORD
+			buildings = {	
+			workshop = 2
+			farm = 1
+			infrastructure = 1
+		}
+		add_core_of = ORD
+		}
+}

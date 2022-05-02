@@ -1,0 +1,22 @@
+state={
+	id=158
+	name="STATE_158"
+	provinces={
+		7077 7034
+	}
+	state_category = pastoral
+	manpower=1034
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			7034 1
+		}
+		owner = SKA
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = SKA
+
+	}
+}

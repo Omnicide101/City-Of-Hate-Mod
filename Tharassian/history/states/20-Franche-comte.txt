@@ -1,0 +1,29 @@
+state={
+	id=20
+	name="STATE_20"
+	state_category = metropolis
+	manpower = 720842
+
+	provinces={
+		6503 6519 6541 6555 829 6589 6608
+	}
+
+	resources = {
+		mount = 14
+		food = 11
+	}
+	
+	history={
+		owner = GMR
+		victory_points = { 829 46 }
+		buildings = {
+			infrastructure = 2
+			forge = 1
+			workshop = 1
+			farm = 4
+		}
+		add_core_of = GMR
+
+	}
+
+}

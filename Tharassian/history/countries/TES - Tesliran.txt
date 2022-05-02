@@ -1,0 +1,80 @@
+﻿capital = 496
+
+set_oob = "TES_1936"
+
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1 
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = monarchy_constitutional
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 23
+
+	monarchy_constitutional = 18
+
+	republic_peasant = 3
+
+	republic_aristocrat = 2
+
+	republic_merchant = 37
+
+	theocrat = 2
+
+	puritan = 15
+}
+
+add_ideas = {
+	human_country
+	rivism_religion
+}
+
+create_country_leader = {
+	name = "Baker Blackbow"
+	desc = "politics_TES_blackbow_desc"
+	picture = "gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
+}

@@ -1,0 +1,78 @@
+
+add_namespace = ith
+
+country_event= {
+	id = ith.1
+	title = ith.1.t
+	desc = ith.1.d
+	picture = GFX_Dummy_ith
+
+	is_triggered_only  = yes
+
+	fire_only_once = yes
+	
+	option = {# good
+		name = ith.1.a
+	}
+}
+
+country_event= {
+	id = ith.2
+	title = ith.2.t
+	desc = ith.2.d
+	picture = GFX_Dummy_ith
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option ={
+		name = ith.2.a
+	}
+}
+
+country_event= {
+	id = ith.3
+	title = ith.3.t
+	desc = ith.3.d
+	picture = GFX_Dummy_ith
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option ={
+		name = ith.3.a
+	}
+}
+
+country_event= {
+	id = ith.4
+	title = ith.4.t
+	desc = ith.4.d
+	picture = GFX_Dummy_ith
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option ={
+		name = ith.4.a
+	}
+}
+
+country_event= {
+	id = ith.5
+	title = ith.5.t
+	desc = ith.5.d
+	picture = GFX_Dummy_ith
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option ={
+		name = ith.5.a
+	}
+}
+

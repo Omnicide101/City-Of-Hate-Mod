@@ -1,0 +1,21 @@
+state={
+	id=871
+	name="STATE_871"
+	provinces={
+		4531 8592 8617 
+	}
+	state_category = pastoral
+	manpower = 503
+	
+	history={
+		victory_points = {
+			4531 1
+		}
+		owner = TES
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+		}
+		add_core_of = TES
+	}
+}

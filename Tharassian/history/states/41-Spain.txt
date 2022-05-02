@@ -1,0 +1,22 @@
+state={
+	id=41
+	name="STATE_41"
+	provinces={
+		6183 584 6111 6152 6116 6137
+	}
+	state_category = pastoral
+	manpower=3201
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 4
+		mount = 3
+	}
+	history={
+		owner = GMR
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = GMR
+
+	}
+}

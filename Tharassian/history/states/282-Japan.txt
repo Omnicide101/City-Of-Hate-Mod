@@ -1,0 +1,20 @@
+state={
+	id=282
+	name="STATE_282"
+	provinces={
+		4143 8814 8772 1269 2346 8739 8767 4491 8717 8679
+	}
+	state_category = town
+	manpower=4429
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			8772 2
+		}
+		owner = NOC
+		buildings = {
+			infrastructure = 2	
+		}
+		add_core_of = NOC
+	}
+}

@@ -1,0 +1,22 @@
+state={
+	id=133
+	name="STATE_133"
+	provinces={
+		7128 3096 7121 4829 7104 7211 7199 4301
+	}
+	state_category = pastoral
+	manpower=2931
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 7
+	}
+		history={
+		owner = RTH
+		buildings = {	
+		infrastructure = 1
+		workshop = 1
+		}	
+		add_core_of = RTH
+
+		}
+}

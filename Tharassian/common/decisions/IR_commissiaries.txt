@@ -1,0 +1,2482 @@
+commissiaries = {
+	
+	ORD_establish_settler_governments = {
+		
+		icon = GFX_decision_ordorian_settler_governments
+		
+		allowed = {
+			original_tag = ORD
+		}
+		
+		available = {
+			has_country_flag = ORD_autumn_debate_done
+			OR = {
+				has_country_flag = ORD_domestic_imperialist
+				has_country_flag = ORD_domestic_theocrat
+			}
+			OR = {
+				has_government = puritan
+				has_government = theocrat
+			}
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			OR = {
+				has_government = puritan
+				has_government = theocrat
+			}
+			NOT = {
+				has_country_flag = ORD_settler_governments_enabled
+			}
+			NOT = {
+				has_country_flag = ORD_domestic_moderate
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = enable_commissiaries_tt
+			set_country_flag = ORD_settler_governments_enabled
+		}
+	}
+	
+	ORD_skylynaur_commissiary = {
+		
+		icon = GFX_decision_ordorian_settler_governments
+		
+		allowed = {
+			original_tag = ORD
+		}
+		
+		available = {
+			OR = {
+				SKA = {
+					is_puppet_of = ORD
+				}
+				owns_state = 146
+			}
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_country_flag = ORD_settler_governments_enabled
+			NOT = {
+				has_country_flag = ORD_settled_skaelinger
+			}
+		}
+		
+		complete_effect = {
+			
+			146 = {
+				set_state_name = "Skylynaur"
+			}			
+			
+			set_province_name = {
+				id = 7100
+				name = "Skylynaur"
+			}
+			
+			186 = {
+				set_state_name = "Votryss"
+			}
+			
+			187 = {
+				set_state_name = "Witraur"
+			}
+			
+			157 = {
+				set_state_name = "Wysgyn"
+			}
+			
+			149 = {
+				set_state_name = "Hostryn"
+			}
+			
+			hidden_effect = {
+				set_country_flag = ORD_settled_skaelinger
+				if = {
+					limit = {
+						NOT = {
+							country_exists = SKA
+						}
+					}
+					release_autonomy = {
+						target = SKA
+						autonomy_state = autonomy_IR_commissiary
+						freedom_level = 0.5
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = KUR
+						is_owned_by = ORD
+					}
+					SKA = {
+						transfer_state = PREV #prevent ORD from hanging onto states conquered by SKA
+					}
+				}
+				
+				if = {
+					limit = {
+						has_government = puritan
+					}
+					SKA = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 27
+
+							puritan = 60
+						}
+						set_politics = {
+							ruling_party = puritan
+						}
+					}
+				}
+
+				if = {
+					limit = {
+						has_government = theocrat
+					}
+					SKA = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 60
+
+							puritan = 27
+						}
+						
+						set_politics = {
+							ruling_party = theocrat
+						}
+					}
+				}
+				SKA = {
+					set_cosmetic_tag = SKA_OSG
+					load_focus_tree = generic_focus
+				}
+				SKA = {
+					set_party_name = {
+						ideology = puritan
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = theocrat
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = monarchy_absolute
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+				}
+				
+				SKA = {
+					add_ideas = OSG_settler_government
+					delete_unit_template_and_units = {
+						division_template = "Hearthguards"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Tunnel Fighters"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Mountainbreakers"
+					}
+					load_oob = "OSG_empty"
+					set_technology = {
+						dwarven_warriors = 0
+					}
+				}
+				SKA = {
+					create_country_leader = {
+						name = "Solsthyr Isventhe"
+						desc = "politics_OSG_isventhe_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
+						expire = "1965.1.1"
+						ideology = puritan_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Solsthyr Isventhe"
+						desc = "politics_OSG_isventhe_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
+						expire = "1965.1.1"
+						ideology = theocrat_ideology
+						traits = {		
+						}
+					}
+					create_country_leader = {
+						name = "Solsthyr Isventhe"
+						desc = "politics_OSG_isventhe_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
+						expire = "1965.1.1"
+						ideology = monarchy_absolute_ideology
+						traits = {		
+						}
+					}
+					
+					swap_ideas = {
+						remove_idea = dwarf_country
+						add_idea = elf_country
+					}
+					swap_ideas = {
+						remove_idea = dwarven_ancestor_worship_religion
+						add_idea = itherynism_religion
+					}
+					every_state = {
+						limit = {
+							is_core_of = SKA
+						}
+						force_enable_resistance = SKA
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_stauhyte_commissiary = {
+		
+		icon = GFX_decision_ordorian_settler_governments
+		
+		allowed = {
+			original_tag = ORD
+		}
+		
+		available = {
+			OR = {
+				STA = {
+					is_puppet_of = ORD
+				}
+				owns_state = 192
+			}
+			OR = {
+				HLZ = {
+					is_puppet_of = ORD
+				}
+				owns_state = 232
+			}
+			OR = {
+				NRK = {
+					is_puppet_of = 284
+				}
+				owns_state = 284
+			}
+			OR = {
+				ARK = {
+					is_puppet_of = ORD
+				}
+				owns_state = 206
+			}
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_country_flag = ORD_settler_governments_enabled
+			NOT = {
+				has_country_flag = ORD_settled_stahlhof
+			}
+		}
+		
+		complete_effect = {
+			
+			192 = {
+				set_state_name = "Stauhyte"
+			}
+			
+			set_province_name = {
+				id = 4340
+				name = "Stauhyte"
+			}
+			
+			232 = {
+				set_state_name = "Hysbryn"
+			}
+			
+			set_province_name = {
+				id = 1467
+				name = "Hysbryn"
+			}
+			
+			284 = {
+				set_state_name = "Norothe"
+			}
+			
+			set_province_name = {
+				id = 1316
+				name = "Norothe"
+			}
+			
+			206 = {
+				set_state_name = "Ofynhaur"
+			}
+			
+			set_province_name = {
+				id = 1829
+				name = "Ofynhaur"
+			}
+			
+			238 = {
+				set_state_name = "Nymyngr"
+			}
+			
+			218 = {
+				set_state_name = "Nortyf"
+			}
+			
+			318 = {
+				set_state_name = "Yringaur"
+			}
+			
+			287 = {
+				set_state_name = "Rintygr"
+			}
+			
+			291 = {
+				set_state_name = "Lothinnysorynthe"
+			}
+			
+			209 = {
+				set_state_name = "Onywasr"
+			}
+			
+			305 = {
+				set_state_name = "Varthysaur"
+			}
+			
+			299 = {
+				set_state_name = "Grosbaraur"
+			}
+			
+			294 = {
+				set_state_name = "Ruhyskyst"
+			}
+			
+			hidden_effect = {
+				set_country_flag = ORD_settled_stahlhof
+			
+				if = {
+					limit = {
+						NOT = {
+							country_exists = STA
+						}
+					}
+					release_autonomy = {
+						target = STA
+						autonomy_state = autonomy_IR_commissiary
+						freedom_level = 0.5
+					}
+				}
+				
+				if = {
+					limit = {
+						country_exists = HLZ
+					}
+					STA = {
+						annex_country = {
+							target = HLZ
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = HLZ
+					}
+					add_core_of = STA
+				}
+				
+				
+				if = {
+					limit = {
+						country_exists = NRK
+					}
+					STA = {
+						annex_country = {
+							target = NRK
+							transfer_troops = yes
+						}
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = NRK
+					}
+					add_core_of = STA
+				}
+
+			if = {
+				limit = {
+					country_exists = ARK
+				}
+				STA = {
+					annex_country = {
+						target = ARK
+						transfer_troops = yes
+					}
+				}
+			}
+				every_state = {
+					limit = {
+						is_core_of = ARK
+					}
+					add_core_of = STA
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = STA
+						is_controlled_by = ROOT
+						NOT = {
+							is_core_of = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+					STA = {
+						transfer_state = PREV
+					}
+				}
+		
+				if = {
+					limit = {
+						has_government = puritan
+					}
+					STA = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 27
+
+							puritan = 60
+						}
+						set_politics = {
+							ruling_party = puritan
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_government = theocrat
+					}
+					STA = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 60
+
+							puritan = 27
+						}
+						
+						set_politics = {
+							ruling_party = theocrat
+						}
+					}
+				}
+				
+				STA = {
+					set_cosmetic_tag = STA_OSG
+					load_focus_tree = generic_focus
+				}
+				
+				STA = {
+					set_party_name = {
+						ideology = puritan
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = theocrat
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = monarchy_absolute
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+				}
+				
+				STA = {
+					add_ideas = OSG_settler_government
+					delete_unit_template_and_units = {
+						division_template = "Stadtwache"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Prinztruppen"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Stahlritter"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Späher"
+					}
+					load_oob = "OSG_empty"
+				}
+				
+				STA = {
+					create_country_leader = {
+						name = "Ystvalin Estonnys"
+						desc = "politics_OSG_estonnys_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+						expire = "1965.1.1"
+						ideology = puritan_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Ystvalin Estonnys"
+						desc = "politics_OSG_estonnys_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+						expire = "1965.1.1"
+						ideology = theocrat_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Ystvalin Estonnys"
+						desc = "politics_OSG_estonnys_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+						expire = "1965.1.1"
+						ideology = monarchy_absolute_ideology
+						traits = {
+						}
+					}
+					swap_ideas = {
+						remove_idea = human_country
+						add_idea = elf_country
+					}
+					swap_ideas = {
+						remove_idea = septism_religion
+						add_idea = itherynism_religion
+					}
+					every_state = {
+						limit = {
+							is_core_of = STA
+						}
+						force_enable_resistance = STA
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_nocthorin_commissiary = {
+		
+		icon = GFX_decision_ordorian_settler_governments
+		
+		allowed = {
+			original_tag = ORD
+		}
+		
+		available = {
+			OR = {
+				NOC = {
+					is_puppet_of = ORD
+				}
+				owns_state = 228
+			}
+			OR = {
+				SVT = {
+					is_puppet_of = ORD
+				}
+				owns_state = 227
+			}
+			OR = {
+				SPW = {
+					is_puppet_of = 284
+				}
+				owns_state = 226
+			}
+			OR = {
+				TEI = {
+					is_puppet_of = ORD
+				}
+				owns_state = 225
+			}
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_country_flag = ORD_settler_governments_enabled
+			NOT = {
+				has_country_flag = ORD_settled_nochwald
+			}
+		}
+		
+		complete_effect = {
+			
+			228 = {
+				set_state_name = "Nocthorin"
+			}
+			
+			set_province_name = {
+				id = 8473
+				name = "Nocthorin"
+			}
+			
+			227 = {
+				set_state_name = "Itherynthyne"
+			}
+			
+			set_province_name = {
+				id = 9285
+				name = "Itherynthyne"
+			}
+			
+			226 = {
+				set_state_name = "Spauhyte"
+			}
+			
+			set_province_name = {
+				id = 9005
+				name = "Spauhyte"
+			}
+			
+			225 = {
+				set_state_name = "Thyssorthor"
+			}
+			
+			set_province_name = {
+				id = 8473
+				name = "Thyssorthor"
+			}
+			
+			hidden_effect = {
+				set_country_flag = ORD_settled_nochwald
+				if = {
+					limit = {
+						NOT = {
+							country_exists = NOC
+						}
+					}
+					release_autonomy = {
+						target = NOC
+						autonomy_state = autonomy_IR_commissiary
+						freedom_level = 0.5
+					}
+				}
+				
+				if = {
+					limit = {
+						country_exists = SVT
+					}
+					STA = {
+						annex_country = {
+							target = SVT
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = SVT
+					}
+					add_core_of = SVT
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = SVT
+					}
+					add_core_of = NOC
+				}
+				
+				if = {
+					limit = {
+						country_exists = SPW
+					}
+					STA = {
+						annex_country = {
+							target = SPW
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = SPW
+					}
+					add_core_of = NOC
+				}
+				
+				if = {
+					limit = {
+						country_exists = TEI
+					}
+					STA = {
+						annex_country = {
+							target = TEI
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = TEI
+					}
+					add_core_of = NOC
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = NOC
+						is_controlled_by = ROOT
+						NOT = {
+							is_core_of = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+					NOC = {
+						transfer_state = PREV
+					}
+				}
+			
+				if = {
+					limit = {
+						has_government = puritan
+					}
+					NOC = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 27
+
+							puritan = 60
+						}
+						set_politics = {
+							ruling_party = puritan
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						has_government = theocrat
+					}
+					NOC = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 60
+
+							puritan = 27
+						}
+						set_politics = {
+							ruling_party = theocrat
+						}
+					}
+				}
+				
+				NOC = {
+					set_cosmetic_tag = NOC_OSG
+					load_focus_tree = generic_focus
+				}
+				
+				NOC = {
+					set_party_name = {
+						ideology = puritan
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = theocrat
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = monarchy_absolute
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+				}
+				
+				NOC = {
+					add_ideas = OSG_settler_government
+					delete_unit_template_and_units = {
+						division_template = "Stadtwache"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Prinztruppen"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Prinzritter"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Späher"
+					}
+					load_oob = "OSG_empty"
+				}
+			
+				NOC = {
+					create_country_leader = {
+						name = "Ystala Verysne"
+						desc = "politics_OSG_verysne_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+						expire = "1965.1.1"
+						ideology = puritan_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Ystala Verysne"
+						desc = "politics_OSG_verysne_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+						expire = "1965.1.1"
+						ideology = theocrat_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Ystala Verysne"
+						desc = "politics_OSG_verysne_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+						expire = "1965.1.1"
+						ideology = monarchy_absolute_ideology
+						traits = {
+						}
+					}
+					swap_ideas = {
+						remove_idea = human_country
+						add_idea = elf_country
+					}
+					swap_ideas = {
+						remove_idea = septism_religion
+						add_idea = itherynism_religion
+					}
+					every_state = {
+						limit = {
+							is_core_of = NOC
+						}
+						force_enable_resistance = NOC
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_wystine_commissiary = {
+		
+		icon = GFX_decision_ordorian_settler_governments
+		
+		allowed = {
+			original_tag = ORD
+		}
+		
+		available = {
+			OR = {
+				WIS = {
+					is_puppet_of = ORD
+				}
+				owns_state = 234
+			}
+			OR = {
+				WSZ = {
+					is_puppet_of = ORD
+				}
+				owns_state = 235
+			}
+			OR = {
+				FTH = {
+					is_puppet_of = 284
+				}
+				owns_state = 236
+			}
+			OR = {
+				SNF = {
+					is_puppet_of = ORD
+				}
+				owns_state = 224
+			}
+			OR = {
+				UNG = {
+					is_puppet_of = ORD
+				}
+				FAU = {
+					is_puppet_of = ORD
+				}
+				owns_state = 233
+			}
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_country_flag = ORD_settler_governments_enabled
+			NOT = {
+				has_country_flag = ORD_settled_wistingen
+			}
+		}
+		
+		complete_effect = {
+			234 = {
+				set_state_name = "Wystine"
+			}
+			
+			set_province_name = {
+				id = 4748
+				name = "Wystine"
+			}
+			
+			235 = {
+				set_state_name = "Anthysione"
+			}
+			
+			set_province_name = {
+				id = 4080
+				name = "Anthysione"
+			}
+			
+			236 = {
+				set_state_name = "Marysione"
+			}
+			
+			set_province_name = {
+				id = 8753
+				name = "Marysione"
+			}
+			
+			224 = {
+				set_state_name = "Yghalissa"
+			}
+			
+			set_province_name = {
+				id = 1754
+				name = "Yghalissa"
+			}
+			
+			233 = {
+				set_state_name = "Lilyasorynthe"
+			}
+			
+			set_province_name = {
+				id = 807
+				name = "Lilyasorynthe"
+			}
+			
+			hidden_effect = {
+				set_country_flag = ORD_settled_wistingen
+				if = {
+					limit = {
+						NOT = {
+							country_exists = WIS
+						}
+					}
+					release_autonomy = {
+						target = WIS
+						autonomy_state = autonomy_IR_commissiary
+						freedom_level = 0.5
+					}
+				}
+				
+				if = {
+					limit = {
+						country_exists = WSZ
+					}
+					WIS = {
+						annex_country = {
+							target = WSZ
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = WSZ
+					}
+					add_core_of = WSZ
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = WSZ
+					}
+					add_core_of = WIS
+				}
+				
+				
+				if = {
+					limit = {
+						country_exists = FTH
+					}
+					WIS = {
+						annex_country = {
+							target = FTH
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = FTH
+					}
+					add_core_of = WIS
+				}
+				
+				if = {
+					limit = {
+						country_exists = SNF
+					}
+					WIS = {
+						annex_country = {
+							target = SNF
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = SNF
+					}
+					add_core_of = WIS
+				}
+				
+				if = {
+					limit = {
+						country_exists = UNG
+					}
+					WIS = {
+						annex_country = {
+							target = UNG
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = UNG
+					}
+					add_core_of = WIS
+				}
+				
+				if = {
+					limit = {
+						country_exists = FAU
+					}
+					WIS = {
+						annex_country = {
+							target = FAU
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = FAU
+					}
+					add_core_of = WIS
+				}
+			
+				every_state = {
+					limit = {
+						is_core_of = WIS
+						is_controlled_by = ROOT
+						NOT = {
+							is_core_of = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+					WIS = {
+						transfer_state = PREV
+					}
+				}
+
+				if = {
+					limit = {
+						has_government = puritan
+					}
+					WIS = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 27
+
+							puritan = 60
+						}
+						set_politics = {
+							ruling_party = puritan
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_government = theocrat
+					}
+					WIS = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 60
+
+							puritan = 27
+						}
+						set_politics = {
+							ruling_party = theocrat
+						}
+					}
+				}
+				
+				WIS = {
+					set_cosmetic_tag = WIS_OSG
+					load_focus_tree = generic_focus
+				}
+				
+				WIS = {
+					set_party_name = {
+						ideology = puritan
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = theocrat
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = monarchy_absolute
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+				}
+				
+				WIS = {
+					add_ideas = OSG_settler_government
+					delete_unit_template_and_units = {
+						division_template = "Stadtwache"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Prinztruppen"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Prinzritter"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Späher"
+					}
+					load_oob = "OSG_empty"
+				}
+
+				WIS = {
+					create_country_leader = {
+						name = "Ranestha Lysorin"
+						desc = "politics_OSG_lysorin_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+						expire = "1965.1.1"
+						ideology = puritan_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Ranestha Lysorin"
+						desc = "politics_OSG_lysorin_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+						expire = "1965.1.1"
+						ideology = theocrat_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Ranestha Lysorin"
+						desc = "politics_OSG_lysorin_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+						expire = "1965.1.1"
+						ideology = monarchy_absolute_ideology
+						traits = {
+						}
+					}
+					swap_ideas = {
+						remove_idea = human_country
+						add_idea = elf_country
+					}
+					swap_ideas = {
+						remove_idea = anzella_patron
+						add_idea = itherynism_religion
+					}
+					every_state = {
+						limit = {
+							is_core_of = WIS
+						}
+						force_enable_resistance = WIS
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_nasthyrin_commissiary = {
+		
+		icon = GFX_decision_ordorian_settler_governments
+		
+		allowed = {
+			original_tag = ORD
+		}
+		
+		available = {
+			OR = {
+				GMR = {
+					is_puppet_of = ORD
+				}
+				NPC = {
+					is_puppet_of = ORD
+				}
+				AND = {
+					OR = {
+						NAS = {
+							is_puppet_of = ORD
+						}
+						owns_state = 20
+					}
+					OR = {
+						KRT = {
+							is_puppet_of = ORD
+						}
+						owns_state = 17
+					}
+				}
+			}
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_country_flag = ORD_settler_governments_enabled
+			NOT = {
+				has_country_flag = ORD_settled_nastrogdar
+			}
+		}
+		
+		complete_effect = {
+			
+			20 = {
+				set_state_name = "Nasthyrin"
+			}
+			
+			set_province_name = {
+				id = 829
+				name = "Nasthyrin"
+			}
+
+			17 = {
+				set_state_name = "Cyrthinnis"
+			}
+			
+			set_province_name = {
+				id = 6633
+				name = "Cyrthinnis"
+			}
+
+			26 = {
+				set_state_name = "Vislythe"
+			}			
+
+			75 = {
+				set_state_name = "Splythwiss"
+			}
+			
+			723 = {
+				set_state_name = "Thyrrintyl"
+			}			
+			
+			12 = {
+				set_state_name = "Xorynthaur"
+			}
+			
+			hidden_effect = {
+				set_country_flag = ORD_settled_nastrogdar
+				NAS = {
+					add_state_core = 25
+					add_state_core = 20
+					add_state_core = 21
+					add_state_core = 22
+					add_state_core = 19
+					add_state_core = 36
+					add_state_core = 50
+					add_state_core = 26
+					add_state_core = 75
+					add_state_core = 73
+					add_state_core = 723
+				}
+				
+				KRT = {
+					add_state_core = 16
+					add_state_core = 17
+					add_state_core = 18
+					add_state_core = 30
+					add_state_core = 19
+					add_state_core = 23
+					add_state_core = 24
+					add_state_core = 12
+					add_state_core = 27
+					add_state_core = 35
+				}
+				
+				if = {
+					limit = {
+						NOT = {
+							country_exists = NAS
+						}
+					}
+					release_autonomy = {
+						target = NAS
+						autonomy_state = autonomy_IR_commissiary
+						freedom_level = 0.5
+					}
+				}
+				
+				if = {
+					limit = {
+						country_exists = KRT
+					}
+					NAS = {
+						annex_country = {
+							target = KRT
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = KRT
+					}
+					add_core_of = KRT
+				}
+			
+			
+				every_state = {
+					limit = {
+						is_core_of = KRT
+					}
+					add_core_of = NAS
+				}
+
+				every_state = {
+					limit = {
+						is_core_of = NAS
+						is_controlled_by = ROOT
+						NOT = {
+							is_core_of = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+					NAS = {
+						transfer_state = PREV
+					}
+				}
+
+				if = {
+					limit = {
+						has_government = puritan
+					}
+					NAS = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 27
+
+							puritan = 60
+						}
+						set_politics = {
+							ruling_party = puritan
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						has_government = theocrat
+					}
+					NAS = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 60
+
+							puritan = 27
+						}
+						set_politics = {
+							ruling_party = theocrat
+						}
+					}
+				}
+				
+				NAS = {
+					set_cosmetic_tag = NAS_OSG
+				}
+				
+				NAS = {
+					set_party_name = {
+						ideology = puritan
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = theocrat
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = monarchy_absolute
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+				}
+				
+				NAS = {
+					add_ideas = OSG_settler_government
+					delete_unit_template_and_units = {
+						division_template = "Farmer's Guard"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Fieldwatch"
+					}
+					load_oob = "OSG_empty"
+				}
+
+				NAS = {
+					create_country_leader = {
+						name = "Jysthar Olthore"
+						desc = "politics_OSG_olthore_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
+						expire = "1965.1.1"
+						ideology = puritan_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Jysthar Olthore"
+						desc = "politics_OSG_olthore_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
+						expire = "1965.1.1"
+						ideology = theocrat_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Jysthar Olthore"
+						desc = "politics_OSG_olthore_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
+						expire = "1965.1.1"
+						ideology = monarchy_absolute_ideology
+						traits = {
+						}
+					}
+					swap_ideas = {
+						remove_idea = human_country
+						add_idea = elf_country
+					}
+					swap_ideas = {
+						remove_idea = lorthorism_religion
+						add_idea = itherynism_religion
+					}
+					every_state = {
+						limit = {
+							is_core_of = NAS
+						}
+						force_enable_resistance = NAS
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_triferyn_commissiary = {
+		
+		icon = GFX_decision_ordorian_settler_governments
+		
+		allowed = {
+			original_tag = ORD
+		}
+		
+		available = {
+			OR = {
+				GMR = {
+					is_puppet_of = ORD
+				}
+				NPC = {
+					is_puppet_of = ORD
+				}
+				AND = {
+					OR = {
+						TRI = {
+							is_puppet_of = ORD
+						}
+						owns_state = 29
+					}
+					OR = {
+						NAV = {
+							is_puppet_of = ORD
+						}
+						owns_state = 72
+					}
+				}
+			}
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_country_flag = ORD_settler_governments_enabled
+			NOT = {
+				has_country_flag = ORD_settled_trifersi
+			}
+		}
+		
+		complete_effect = {
+			
+			29 = {
+				set_state_name = "Triferyn"
+			}			
+			set_province_name = {
+				id = 2379
+				name = "Triferyn"
+			}
+			
+			34 = {
+				set_state_name = "Cylthis"
+			}			
+			set_province_name = {
+				id = 6106
+				name = "Cylthis"
+			}
+			
+			72 = {
+				set_state_name = "Yghalmarys"
+			}			
+			set_province_name = {
+				id = 5840
+				name = "Yghalmarys"
+			}
+			
+			hidden_effect = {
+				set_country_flag = ORD_settled_trifersi
+				
+				TRI = {
+					add_state_core = 67
+					add_state_core = 29
+					add_state_core = 43
+					add_state_core = 54
+					add_state_core = 44
+					add_state_core = 53
+				}
+				
+				NAV = {
+					add_state_core = 72
+					add_state_core = 71
+					add_state_core = 66
+					add_state_core = 70
+					add_state_core = 69
+					add_state_core = 68
+				}
+				
+				KAL = {
+					add_state_core = 65
+					add_state_core = 55
+					add_state_core = 64
+					add_state_core = 57
+					add_state_core = 58
+					add_state_core = 45
+					add_state_core = 52
+					add_state_core = 58
+					add_state_core = 61
+					add_state_core = 59
+					add_state_core = 60
+					add_state_core = 34
+					add_state_core = 63
+					add_state_core = 62
+					add_state_core = 56
+					add_state_core = 51
+					add_state_core = 49
+				}	
+					
+				if = {
+					limit = {
+						NOT = {
+							country_exists = TRI
+						}
+					}
+					release_autonomy = {
+						target = TRI
+						autonomy_state = autonomy_IR_commissiary
+						freedom_level = 0.5
+					}
+				}
+				
+				if = {
+					limit = {
+						country_exists = NAV
+					}
+					TRI = {
+						annex_country = {
+							target = NAV
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						country_exists = KAL
+					}
+					TRI = {
+						annex_country = {
+							target = KAL
+							transfer_troops = yes
+						}
+					}
+				}
+
+				every_state = {
+					limit = {
+						is_core_of = KAL
+					}
+					add_core_of = TRI
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = NAV
+					}
+					add_core_of = NAV
+				}
+
+				every_state = {
+					limit = {
+						is_core_of = NAV
+					}
+					add_core_of = TRI
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = TRI
+						is_controlled_by = ROOT
+						NOT = {
+							is_core_of = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+					TRI = {
+						transfer_state = PREV
+					}
+				}
+
+				if = {
+					limit = {
+						has_government = puritan
+					}
+					TRI = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 27
+
+							puritan = 60
+						}
+						set_politics = {
+							ruling_party = puritan
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						has_government = theocrat
+					}
+					TRI = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 60
+
+							puritan = 27
+						}
+						set_politics = {
+							ruling_party = theocrat
+						}
+					}
+				}
+				
+				TRI = {
+					set_cosmetic_tag = TRI_OSG
+				}
+				
+				TRI = {
+					set_party_name = {
+						ideology = puritan
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = theocrat
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = monarchy_absolute
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+				}
+			
+				TRI = {
+					add_ideas = OSG_settler_government
+					delete_unit_template_and_units = {
+						division_template = "City Guard"
+					}
+					delete_unit_template_and_units = {
+						division_template = "King's Men"
+					}
+					load_oob = "OSG_empty"
+				}
+
+				TRI = {
+					create_country_leader = {
+						name = "Alenthys Isthanora"
+						desc = "politics_OSG_isthanora_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
+						expire = "1965.1.1"
+						ideology = puritan_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Alenthys Isthanora"
+						desc = "politics_OSG_isthanora_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
+						expire = "1965.1.1"
+						ideology = theocrat_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Alenthys Isthanora"
+						desc = "politics_OSG_isthanora_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
+						expire = "1965.1.1"
+						ideology = monarchy_absolute_ideology
+						traits = {
+						}
+					}
+					swap_ideas = {
+						remove_idea = human_country
+						add_idea = elf_country
+					}
+					swap_ideas = {
+						remove_idea = lorthorism_religion
+						add_idea = itherynism_religion
+					}
+					every_state = {
+						limit = {
+							is_core_of = TRI
+						}
+						force_enable_resistance = TRI
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_irythyn_commissiary = {
+		
+		icon = GFX_decision_ordorian_settler_governments
+		
+		allowed = {
+			original_tag = ORD
+		}
+		
+		available = {
+			OR = {
+				GMR = {
+					is_puppet_of = ORD
+				}
+				NPC = {
+					is_puppet_of = ORD
+				}
+				AND = {
+					OR = {
+						IRT = {
+							is_puppet_of = ORD
+						}
+						owns_state = 1
+					}
+					OR = {
+						FEL = {
+							is_puppet_of = ORD
+						}
+						owns_state = 28
+					}
+				}
+			}
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_country_flag = ORD_settler_governments_enabled
+			NOT = {
+				has_country_flag = ORD_settled_irenthar
+			}
+		}
+		
+		complete_effect = {
+			
+			1 = {
+				set_state_name = "Irythyn"
+			}			
+			set_province_name = {
+				id = 3069
+				name = "Irythyn"
+			}
+			
+			28 = {
+				set_state_name = "Fylwyne"
+			}
+			
+			set_province_name = {
+				id = 4730
+				name = "Fylwyne"
+			}
+			
+			hidden_effect = {
+				set_country_flag = ORD_settled_irenthar
+				
+				IRT = {
+					add_state_core = 1
+					add_state_core = 2
+					add_state_core = 3
+					add_state_core = 4
+					add_state_core = 5
+					add_state_core = 6
+					add_state_core = 7
+					add_state_core = 8
+					add_state_core = 9
+					add_state_core = 10
+					add_state_core = 11
+					add_state_core = 13
+					add_state_core = 31
+					add_state_core = 14
+				}
+				
+				FEL = {
+					add_state_core = 28
+					add_state_core = 32
+					add_state_core = 37
+					add_state_core = 41
+					add_state_core = 15
+					add_state_core = 38
+					add_state_core = 39
+					add_state_core = 42
+					add_state_core = 47
+					add_state_core = 46
+					add_state_core = 33
+					add_state_core = 40
+					add_state_core = 48
+					add_state_core = 74
+				}
+					
+				if = {
+					limit = {
+						NOT = {
+							country_exists = IRT
+						}
+					}
+					release_autonomy = {
+						target = IRT
+						autonomy_state = autonomy_IR_commissiary
+						freedom_level = 0.5
+					}
+				}
+				
+				if = {
+					limit = {
+						country_exists = FEL
+					}
+					IRT = {
+						annex_country = {
+							target = FEL
+							transfer_troops = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = FEL
+					}
+					add_core_of = FEL
+				}
+
+				every_state = {
+					limit = {
+						is_core_of = FEL
+					}
+					add_core_of = IRT
+				}
+
+				every_state = {
+					limit = {
+						is_core_of = IRT
+						is_controlled_by = ROOT
+						NOT = {
+							is_core_of = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+					IRT = {
+						transfer_state = PREV
+					}
+				}
+
+				if = {
+					limit = {
+						has_government = puritan
+					}
+					IRT = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 27
+
+							puritan = 60
+						}
+						set_politics = {
+							ruling_party = puritan
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						has_government = theocrat
+					}
+					IRT = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 60
+
+							puritan = 27
+						}
+						set_politics = {
+							ruling_party = theocrat
+						}
+					}
+				}
+				
+				IRT = {
+					set_cosmetic_tag = IRT_OSG
+				}
+				
+				IRT = {
+					set_party_name = {
+						ideology = puritan
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = theocrat
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = monarchy_absolute
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+				}
+				
+				IRT = {
+					add_ideas = OSG_settler_government
+					
+					delete_unit_template_and_units = {
+						division_template = "Freewatch"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Silver Gargoyles"
+					}
+					load_oob = "OSG_empty"
+				}
+
+				IRT = {
+					create_country_leader = {
+						name = "Algothyne Lysthennia"
+						desc = "politics_OSG_lysthennia_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
+						expire = "1965.1.1"
+						ideology = puritan_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Algothyne Lysthennia"
+						desc = "politics_OSG_lysthennia_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
+						expire = "1965.1.1"
+						ideology = theocrat_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Algothyne Lysthennia"
+						desc = "politics_OSG_lysthennia_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
+						expire = "1965.1.1"
+						ideology = monarchy_absolute_ideology
+						traits = {
+						}
+					}
+					swap_ideas = {
+						remove_idea = human_country
+						add_idea = elf_country
+					}
+					swap_ideas = {
+						remove_idea = lorthorism_religion
+						add_idea = itherynism_religion
+					}
+					every_state = {
+						limit = {
+							is_core_of = IRT
+						}
+						force_enable_resistance = IRT
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_pyrkhiv_commissiary = {
+		
+		icon = GFX_decision_ordorian_settler_governments
+		
+		allowed = {
+			original_tag = ORD
+		}
+		
+		available = {
+			OR = {
+				PRK = {
+					is_puppet_of = ORD
+				}
+				owns_state = 413
+			}
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_country_flag = ORD_settler_governments_enabled
+			NOT = {
+				has_country_flag = ORD_settled_perkavland
+			}
+		}
+		
+		complete_effect = {
+			
+			413 = {
+				set_state_name = "Ythele-Resderin"
+			}			
+			set_province_name = {
+				id = 4527
+				name = "Ythele-Resderin"
+			}
+			
+			hidden_effect = {
+				set_country_flag = ORD_settled_perkavland
+				if = {
+					limit = {
+						NOT = {
+							country_exists = PRK
+						}
+					}
+					release_autonomy = {
+						target = PRK
+						autonomy_state = autonomy_IR_commissiary
+						freedom_level = 0.5
+					}
+				}
+			
+				if = {
+					limit = {
+						has_government = puritan
+					}
+					PRK = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 27
+
+							puritan = 60
+						}
+						set_politics = {
+							ruling_party = puritan
+						}
+					}
+				}
+
+				if = {
+					limit = {
+						has_government = theocrat
+					}
+					PRK = {
+						set_popularities = {
+
+							monarchy_absolute = 13
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 0
+
+							republic_aristocrat = 0
+
+							republic_merchant = 0
+
+							theocrat = 60
+
+							puritan = 27
+						}
+						
+						set_politics = {
+							ruling_party = theocrat
+						}
+					}
+				}
+				
+				PRK = {
+					set_cosmetic_tag = PRK_OSG
+				}
+				PRK = {
+					set_party_name = {
+						ideology = puritan
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = theocrat
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+					set_party_name = {
+						ideology = monarchy_absolute
+						long_name = OSG_party_name
+						name = OSG_party_name
+					}
+				}
+				
+				PRK = {
+					add_ideas = OSG_settler_government
+					delete_unit_template_and_units = {
+						division_template = "Stráže"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Wojownicy"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Fosztogató"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Vozhdi"
+					}
+					load_oob = "OSG_empty"
+				}
+				
+				if = {
+					limit = {
+						PRK = {
+							has_idea = PRK_tribal_nation
+						}
+					}
+					PRK = {
+						remove_ideas = PRK_tribal_nation
+					}
+				}
+				
+				if = {
+					limit = {
+						PRK = {
+							has_idea = PRK_administrative_reform
+						}
+					}
+					PRK = {
+						remove_ideas = PRK_administrative_reform
+					}
+				}
+				
+				if = {
+					limit = {
+						PRK = {
+							has_idea = PRK_perkav_census_idea
+						}
+					}
+					PRK = {
+						remove_ideas = PRK_perkav_census_idea
+					}
+				}
+
+				if = {
+					limit = {
+						PRK = {
+							has_idea = PRK_perkav_script
+						}
+					}
+					PRK = {
+						remove_ideas = PRK_perkav_script
+					}
+				}
+
+				if = {
+					limit = {
+						PRK = {
+							has_idea = PRK_oral_tradition
+						}
+					}
+					PRK = {
+						remove_ideas = PRK_oral_tradition
+					}
+				}
+				
+				if = {
+					limit = {
+						PRK = {
+							has_idea = PRK_beginnings_literacy
+						}
+					}
+					PRK = {
+						remove_ideas = PRK_beginnings_literacy
+					}
+				}
+			
+				PRK = {
+					create_country_leader = {
+						name = "Ycthara Venthryse"
+						desc = "politics_OSG_venthryse_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
+						expire = "1965.1.1"
+						ideology = puritan_ideology
+						traits = {
+						}
+					}
+					create_country_leader = {
+						name = "Ycthara Venthryse"
+						desc = "politics_OSG_venthryse_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
+						expire = "1965.1.1"
+						ideology = theocrat_ideology
+						traits = {		
+						}
+					}
+					create_country_leader = {
+						name = "Ycthara Venthryse"
+						desc = "politics_OSG_venthryse_desc"
+						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
+						expire = "1965.1.1"
+						ideology = monarchy_absolute_ideology
+						traits = {		
+						}
+					}
+					swap_ideas = {
+						remove_idea = human_country
+						add_idea = elf_country
+					}
+					swap_ideas = {
+						remove_idea = krostov_religion
+						add_idea = itherynism_religion
+					}
+					every_state = {
+						limit = {
+							is_core_of = PRK
+						}
+						force_enable_resistance = PRK
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+state={
+	id=887
+	name="STATE_887"
+	provinces={
+		1886 2744 8877 8908 
+	}
+	manpower=10598
+	buildings_max_level_factor=1.000
+	state_category=town
+	
+	resources = {
+		mount = 11
+	}
+	
+	history={
+		owner = GOW
+		victory_points = { 8908 7 }
+			buildings = {
+				infrastructure = 3
+				workshop = 1
+				dockyard = 3
+				8908 = {
+					naval_base = 10
+				}
+			}
+		add_core_of = GOW
+	}
+}

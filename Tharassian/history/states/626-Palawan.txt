@@ -1,0 +1,24 @@
+state={
+	id=626
+	name="STATE_626"
+	provinces={
+		9637 2124 3302 881 1242
+	}
+	state_category = pastoral
+	manpower=1029
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 6
+	}
+	history={
+		victory_points = {
+			881 1
+		}
+		owner = PRK
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = PRK
+	}
+}

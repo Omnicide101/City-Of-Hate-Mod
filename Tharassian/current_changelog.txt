@@ -1,0 +1,32 @@
+-Made out of food combat penalties significantly harsher
+-Starvation is now absolutely devastating to a nation; avoid it at all costs
+-Improved AI's ability to feed itself
+-AI will now (hopefully) disband units if it is facing starvation
+-Added traits to Arthenon, Astrellion and Stoutfellow
+-Gave Stahlhof some extra troops when the Prinzkriege break out
+-Buffed the amount of troops Stahlhof gets upon dealing with the Adalinatruppen
+-Made Ordorian rebels the agressor in the Traditionalist-Moderate Civil War instead of the legitimate government
+-Improved Ordorian supply lines
+-Made railways and supply hubs a lot cheaper
+-Fixed non-Human Puritans thinking Tesliran is an exception to their racial hatred
+-Added some railways to Getaland
+-Made Commissiaries get the generic focus tree
+-Buffed equipment attack values
+-Fixed ORD-RTH-SKA war peacing out in status quo ante bellum
+-Added a starting national spirit to Ordoria to represent the ancientness of that state
+-Nerfed Rthauiaur again
+-Made Skaelinger not take the Ironblood foci if they'd already committed to other politics
+-Made Skaelinger only able to demand the Khorinor Mountains from Rthauiaur if Rthauiaur actually controls them
+-Added SKA Focus tree descriptions (partially)
+-Added SKA to the interesting countries bookmark
+-Halved infantry equipment IC cost  due to carts taking up more MFs, bringing it back in line with vanilla IC cost
+-Made invading Bilodya and Tlarthingia no longer mutually exclusive for Constitutionalist Irinthios
+-Bumped up BER's Eerherstel-Erkevan railway since the supply node doesn't count as connected otherwise(???)
+-Fixed TLA portraits not fitting in their canvases
+-Fixed a bug where a flag allowing the Union to go to war with Perkavland if they rejected diplomacy would not set properly
+-Fixed Surveying Perkavbland decisions not showing up
+-Fixed continuous foci overlapping with St. Vichtlas' focus tree
+-Fixed a bug where Skaelinger Radicals would revolt in the middle of an Ordorian invasion, leaving the Rthaur to die
+-Added generic decisions to buff stability and/or war support
+-Added VPs across the board
+-Ordoria and the Commissiaries now always have resistance/compliance mechanics enabled in conquered lands, though they do get the full building slots

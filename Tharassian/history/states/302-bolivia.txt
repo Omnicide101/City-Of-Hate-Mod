@@ -1,0 +1,20 @@
+state={
+	id=302
+	name="STATE_302"
+	provinces={
+		9090 4614 2998 2404 9047 2336 5214 9024
+	}
+	state_category = pastoral
+	manpower=1672
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			2404 2
+		}
+		owner = SPW
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = SPW
+	}
+}

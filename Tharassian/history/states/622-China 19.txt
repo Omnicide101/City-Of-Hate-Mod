@@ -1,0 +1,21 @@
+state={
+	id=622
+	name="STATE_622"
+	provinces={
+		2662 1221 1824 1106 2150 856 3341
+	}
+	state_category = pastoral
+	manpower=3209
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			3341 3
+		}
+		owner = PRK
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+		}
+		add_core_of = PRK
+	}
+}

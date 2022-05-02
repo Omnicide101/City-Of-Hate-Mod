@@ -1,0 +1,26 @@
+state={
+	id=426
+	name="STATE_426"
+	provinces={
+		3607 4402 9416 2026 9417 1530 9385
+	}
+	
+	state_category = rural 
+	manpower = 1002
+	
+	resources = {
+		food = 7
+	}
+	
+	history={
+		victory_points = {
+			9417 2
+		}
+		owner = TAR
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+		}
+		add_core_of = TAR
+	}
+}

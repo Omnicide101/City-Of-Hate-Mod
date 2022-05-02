@@ -1,0 +1,136 @@
+areas = {
+	perkav_raid_area = {
+		strategic_regions = {
+			8
+			34
+		}
+	}
+	
+	tholder_bay_border = {
+		strategic_regions = {
+			41
+			14
+		}
+	}
+
+	west_ordoria = {
+        strategic_regions = {
+            43
+            44
+        }
+    }
+	
+	north_ordoria = {
+		strategic_regions = {
+			48
+			47
+		}
+	}
+	
+	south_ordoria = {
+		strategic_regions = {
+			41
+			42
+		}
+	}
+	
+	east_ordoria = {
+		strategic_regions = {
+			45
+			46
+		}
+	}
+	
+	loris_pass = {
+		strategic_regions = {
+			50
+		}
+	}
+	
+	stahlhoffer_ordoria = {
+		strategic_regions = {
+			23
+		}
+	}
+	
+	irenthar = {
+		strategic_regions = {
+			59
+		}
+	}
+	
+	trifersi = {
+		strategic_regions = {
+			68
+		}
+	}
+	
+	cortineal = {
+		strategic_regions = {
+			64
+		}
+	}
+	
+	caltireth = {
+		strategic_regions = {
+			67
+		}
+	}
+	
+	west_stahlhof = {
+		strategic_regions = {
+			23
+			24
+		}
+	}
+	
+	holzbrenn = {
+		strategic_regions = {
+			14
+		}
+	}
+	
+	neureik = {
+		strategic_regions = {
+			15
+		}
+	}
+	
+	west_faustburg = {
+		strategic_regions = {
+			18
+			17
+		}
+	}
+	
+	east_faustburg = {
+		strategic_regions = {
+			20
+			19
+		}
+	}
+	
+	arkanisturm = {
+		strategic_regions = {
+			33
+		}
+	}
+	
+	wistingen = {
+		strategic_regions = {
+			21
+		}
+	}
+	
+	fritzhafen = {
+		strategic_regions = {
+			31
+		}
+	}
+	
+	schneefilde = {
+		strategic_regions = {
+			8
+		}
+	}
+}

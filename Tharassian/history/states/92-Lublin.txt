@@ -1,0 +1,23 @@
+state={
+	id=92
+	name="STATE_92"
+	provinces={
+		2408 3312 1211 1694
+	}
+	state_category = rural
+	manpower=7264
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 18
+	}
+		history={
+		victory_points = {
+			1211 1
+		}
+		owner = ORD
+		buildings = {	
+		infrastructure = 1
+		}	
+		add_core_of = ORD
+		}
+}

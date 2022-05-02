@@ -1,0 +1,21 @@
+state={
+	id=348
+	name="STATE_348"
+	provinces={
+		2313 5519 8550 4671 336
+	}
+	state_category = rural
+	manpower=2921
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 3
+	}
+	history={
+		owner = FTH
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = FTH
+		}
+}

@@ -1,0 +1,20 @@
+state={
+	id=353
+	name="STATE_353"
+	provinces={
+		9300 9268 4733 5014 9228 5618
+	}
+	state_category = rural
+	manpower=4901
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			9228 3
+		}
+		owner = WSZ
+		buildings = {
+			infrastructure = 2	
+		}
+		add_core_of = WSZ
+		}
+}

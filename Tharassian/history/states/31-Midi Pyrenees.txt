@@ -1,0 +1,23 @@
+state={
+	id=31
+	name="STATE_31"
+	provinces={
+		6408 4634 6419 5256 1617 2779 6377 3212
+	}
+	state_category = town
+	manpower=18291
+	buildings_max_level_factor=1.000
+	resources = {
+		mount = 4
+	}
+		history={
+		owner = GMR
+		victory_points = {5256 8}
+		buildings = {
+			infrastructure = 1
+			forge = 1
+			farm = 1
+		}
+		add_core_of = GMR
+	}
+}

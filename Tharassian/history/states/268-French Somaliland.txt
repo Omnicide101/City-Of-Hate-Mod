@@ -1,0 +1,21 @@
+state={
+	id=268
+	name="STATE_268"
+	provinces={
+		715 9183 2432 9155 2821 1558
+	}
+	state_category = pastoral
+	manpower=1022
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 5
+	}
+	history={
+		owner = SPW
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = SPW
+		add_core_of = RKS
+	}
+}

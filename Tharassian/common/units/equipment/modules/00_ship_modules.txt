@@ -1,0 +1,107 @@
+equipment_modules = {
+
+
+#   ###  ##  #  # ###     ###   ##  ### ### ### ###  #   # 
+#    #  #    #  #  #      #  # #  #  #   #  #   #  #  # #  
+#    #  # ## ####  #      ###  ####  #   #  ##  ###    #   
+#    #  #  # #  #  #      #  # #  #  #   #  #   #  #   #   
+### ###  ##  #  #  #      ###  #  #  #   #  ### #  #   #   
+
+	light_ship_ballista_0 = {
+		category = ship_light_armaments
+		sfx = sfx_ui_sd_module_turret
+		
+		add_stats = {
+			lg_attack = 1
+			build_cost_ic = 90	
+		}
+		
+		add_average_stats = {
+			lg_armor_piercing = 0.25
+		}
+		
+		can_convert_from = {
+			module_category = ship_light_armaments
+			convert_cost_ic = 60
+		}
+
+		critical_parts = { damaged_light_guns }
+	}
+	
+	#Special Perkav armaments
+	
+	light_ship_harpoon_thrower_0 = {
+		category = ship_light_armaments
+		sfx = sfx_ui_sd_module_turret
+		
+		add_stats = {
+			lg_attack = 1.5
+			build_cost_ic = 95
+		}
+		
+		add_average_stats = {
+			lg_armor_piercing = 0.35
+		}
+		
+		can_convert_from = {
+			module_category = ship_light_armaments
+			convert_cost_ic = 60
+		}
+
+		critical_parts = { damaged_light_guns }
+	}
+	
+### #  #  ##  ### #  # ### 
+#   ## # #     #  ## # #   
+##  # ## # ##  #  # ## ##  
+#   #  # #  #  #  #  # #   
+### #  #  ##  ### #  # ### 
+
+	light_ship_rowers_0 = {
+		category = light_ship_rowers
+		sfx = sfx_ui_sd_module_engine
+
+		
+		add_stats = {
+			naval_speed = 3
+			fuel_consumption = 14
+			build_cost_ic = 90
+		}
+		
+		multiply_stats = {
+			naval_speed = 0.1
+			reliability = -0.25
+		}
+		
+		can_convert_from = {
+			module_category = light_ship_rowers
+			convert_cost_ic = 250
+		}
+
+	}
+	
+	#Special Perkav rowers
+	
+	light_ship_perkav_raider_rowers_0 = {
+		category = light_ship_rowers
+		sfx = sfx_ui_sd_module_engine
+
+		
+		add_stats = {
+			naval_speed = 4
+			fuel_consumption = 15
+			build_cost_ic = 95
+		}
+		
+		multiply_stats = {
+			naval_speed = 0.3
+			reliability = -0.15
+		}
+		
+		can_convert_from = {
+			module_category = light_ship_rowers
+			convert_cost_ic = 250
+		}
+
+	}
+}

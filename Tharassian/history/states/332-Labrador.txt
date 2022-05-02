@@ -1,0 +1,21 @@
+state={
+	id=332
+	name="STATE_332"
+	provinces={
+		2309 741 819 9480 751 9473 781 9458
+	}
+	state_category = rural
+	manpower=1029
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			9473 1
+		}
+		owner = PRK
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = PRK
+		}
+}

@@ -1,0 +1,21 @@
+state={
+	id=725
+	name="STATE_725"
+	provinces={
+		1531 5554
+	}
+	state_category = pastoral
+	manpower=1029
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 12
+	}
+	history={
+		owner = RMT
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+		}
+		add_core_of = RMT
+	}
+}

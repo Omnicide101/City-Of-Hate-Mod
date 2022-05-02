@@ -1,0 +1,97 @@
+ORD_strengthen_slavery = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_idea = ORD_slavery_1
+					has_idea = ORD_slavery_2
+					has_idea = ORD_slavery_3
+					has_idea = ORD_slavery_4
+					has_idea = ORD_slavery_5
+				}
+			}
+		}
+		add_ideas = ORD_slavery_1
+	}
+	if = {
+		limit = {
+			has_idea = ORD_slavery_1
+		}
+		swap_ideas = {
+			remove_idea = ORD_slavery_1
+			add_idea = ORD_slavery_2
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ORD_slavery_2
+		}
+		swap_ideas = {
+			remove_idea = ORD_slavery_2
+			add_idea = ORD_slavery_3
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ORD_slavery_3
+		}
+		swap_ideas = {
+			remove_idea = ORD_slavery_3
+			add_idea = ORD_slavery_4
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ORD_slavery_4
+		}
+		swap_ideas = {
+			remove_idea = ORD_slavery_4
+			add_idea = ORD_slavery_5
+		}
+	}
+}
+
+ORD_weaken_slavery = {
+	if = {
+		limit = {
+			has_idea = ORD_slavery_1
+		}
+		remove_ideas = ORD_slavery_1
+	}
+	if = {
+		limit = {
+			has_idea = ORD_slavery_2
+		}
+		swap_ideas = {
+			remove_idea = ORD_slavery_2
+			add_idea = ORD_slavery_1
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ORD_slavery_3
+		}
+		swap_ideas = {
+			remove_idea = ORD_slavery_3
+			add_idea = ORD_slavery_2
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ORD_slavery_4
+		}
+		swap_ideas = {
+			remove_idea = ORD_slavery_4
+			add_idea = ORD_slavery_3
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ORD_slavery_5
+		}
+		swap_ideas = {
+			remove_idea = ORD_slavery_5
+			add_idea = ORD_slavery_4
+		}
+	}
+}

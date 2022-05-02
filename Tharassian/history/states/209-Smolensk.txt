@@ -1,0 +1,20 @@
+state={
+	id=209
+	name="STATE_209"
+	provinces={
+		8297 1651
+	}
+	state_category = town
+	manpower=17293
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = { 1651 13 }
+		owner = STA
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+			forge = 1
+		}
+		add_core_of = STA
+	}
+}

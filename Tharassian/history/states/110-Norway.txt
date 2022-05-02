@@ -1,0 +1,25 @@
+state={
+	id=110
+	name="STATE_110"
+	provinces={
+		3504 60 797
+	}
+	state_category = rural
+	manpower=2492
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 5
+	}
+	history={	
+		victory_points = {
+			60 3
+		}
+		owner = ORD
+		buildings = {	
+			infrastructure = 1
+			forge = 1
+			workshop = 1
+		}
+		add_core_of = ORD
+	}
+}

@@ -1,0 +1,25 @@
+state={
+	id=886
+	name="STATE_886"
+	provinces={
+		1100 1983 3731 4781 8745 
+	}
+	manpower=11928
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	
+	resources = {
+		food = 7
+	}
+	
+	history={
+		owner = GOW
+		victory_points = { 1100 12 }
+			buildings = {
+				infrastructure = 2
+				workshop = 1
+				farm = 3
+			}
+		add_core_of = GOW
+	}
+}

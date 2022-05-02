@@ -1,0 +1,24 @@
+state={
+	id=58
+	name="STATE_58"
+	provinces={
+		4521 2650 6118 1498 6085 5498 6098
+	}
+	state_category = pastoral
+	manpower=1019
+	buildings_max_level_factor=1.000
+	resources = {
+		mount = 2
+		lumber = 1
+	}
+	history={
+		victory_points = {
+			6085 1
+		}
+		owner = GMR
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = GMR
+	}
+}

@@ -1,0 +1,167 @@
+﻿division_template = {
+	name = "Rose Wardens"	
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Peasant's Guard"
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		men_at_arms = { x = 0 y = 1 }
+        		men_at_arms = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		men_at_arms = { x = 1 y = 1 }
+		men_at_arms = { x = 1 y = 2 }
+		men_at_arms = { x = 2 y = 0 }
+		men_at_arms = { x = 2 y = 1 }
+		men_at_arms = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Archer Peasants"
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		archer_shortbow = { x = 0 y = 1 }
+       	archer_shortbow = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		archer_shortbow = { x = 1 y = 1 }
+		archer_shortbow = { x = 1 y = 2 }
+		men_at_arms = { x = 2 y = 0 }
+		archer_shortbow = { x = 2 y = 1 }
+		archer_shortbow = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Outrider Watchers"
+	regiments = {
+		light_cavalry = { x = 0 y = 0 }
+        light_cavalry = { x = 0 y = 1 }
+        light_cavalry = { x = 1 y = 0 }
+		light_cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    scouts_cavalry = { x = 0 y = 0 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "Quellion Peasant's Self-Defense Guild"
+		location = 1353
+		division_template = "Rose Wardens"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Thurgithon Peasant's Militia"
+		location = 473
+		division_template = "Rose Wardens"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Vrinnis People's Watch"
+		location = 6954
+		division_template = "Rose Wardens"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Ytholine City Watch"
+		location = 4959
+		division_template = "Rose Wardens"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Astrenar Hunter's Union"
+		location = 4347
+		division_template = "Rose Wardens"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Yctharon Forester's Lodge"
+		location = 6894
+		division_template = "Rose Wardens"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Peakwatcher Sentries"
+		location = 7128
+		division_template = "Rose Wardens"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Gythus Southguard"
+		location = 1897
+		division_template = "Rose Wardens"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Unspykaur Miner's Self-Defense League"
+		location = 7736
+		division_template = "Rose Wardens"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Ytholine Basin Garrison"
+		location = 7276
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.5
+
+	}
+
+	division = {
+		name = "Postal Woker's Self-Defense Guild"
+		location = 7095
+		division_template = "Outrider Watchers"
+		start_experience_factor = 0.4
+	}
+}
+
+
+
+
+### STARTING PRODUCTION ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "RTH"
+		}
+		requested_factories = 4
+		progress = 0.48
+		efficiency = 37
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = light_cavalry_equipment_0
+			creator = "RTH" 
+		}
+		requested_factories = 2
+		progress = 0.3
+		efficiency = 12
+	}
+}

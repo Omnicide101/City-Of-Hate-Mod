@@ -1,0 +1,23 @@
+state={
+	id=36
+	name="STATE_36"
+	provinces={
+		6375 1133 6336 2591 909 1921
+	}
+	state_category = pastoral
+	manpower=4882
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 7
+	}
+	history={
+		victory_points = {
+			909 2
+		}
+		owner = GMR
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = GMR
+	}
+}

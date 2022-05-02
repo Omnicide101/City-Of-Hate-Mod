@@ -1,0 +1,21 @@
+state={
+	id=784
+	name="STATE_784"
+	provinces={
+		7416 1132 5524 7435
+	}
+	state_category = rural
+	manpower=6682
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 6
+	}
+	history={
+		owner = TLA
+		buildings = {
+			infrastructure = 2
+			forge = 1
+		}
+		add_core_of = TLA
+	}
+}

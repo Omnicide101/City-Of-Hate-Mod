@@ -1,0 +1,20 @@
+state={
+	id=40
+	name="STATE_40"
+	provinces={
+		4472 6210 3333 731 6190 3383
+	}
+	state_category = town
+	manpower=14340
+	buildings_max_level_factor=1.000
+	resources = {
+		mount = 3
+	}
+	history={
+		owner = GMR
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = GMR
+	}
+}

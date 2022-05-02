@@ -1,0 +1,26 @@
+state={
+	id=17
+	name="STATE_17"
+	state_category = large_city
+	manpower = 692991
+
+	provinces={
+		3940 6644 2818 6633 6600 1331 6593 3192
+	}
+	
+	resources = {
+		lumber = 7
+	}
+	
+	history={
+		owner = GMR
+		victory_points = { 6633 41 }
+		buildings = {
+			infrastructure = 2
+			forge = 3
+			workshop = 2
+			farm = 1
+		}
+		add_core_of = GMR
+	}
+}

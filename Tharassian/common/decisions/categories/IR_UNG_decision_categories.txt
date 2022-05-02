@@ -1,0 +1,35 @@
+UNG_convince_freiprinzen = {
+	icon = GFX_decision_category_eng_appeal_to_imperial_loyalists
+
+	picture = GFX_decision_cat_union
+	
+	allowed = {
+		tag = UNG
+	}
+	
+	visible_when_empty = yes
+}
+
+UNG_council = {
+	icon = ung_council
+	allowed = {
+		always = no #TEMPORARY DISABLE UNTIL I CAN FIX IT
+		original_tag = UNG
+	}
+
+	scripted_gui = ung_council_decision_ui
+	
+	priority = 85
+}
+
+UNG_union_influence_sphere_category = {
+
+	icon = generic_formable_nations
+	
+	allowed = {
+		always = no #TEMPORARY DISABLE UNTIL I CAN FIX IT
+		original_tag = UNG
+	}
+
+	picture = GFX_decision_cat_generic_hre
+}

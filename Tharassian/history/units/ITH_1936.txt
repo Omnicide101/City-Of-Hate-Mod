@@ -1,0 +1,61 @@
+division_template = {
+	name = "Port Guards"
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+		garrison = { x = 1 y = 0 }
+		garrison = { x = 1 y = 1 }
+		garrison = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Ithian Host"
+	regiments = {
+		halberdier = { x = 0 y = 0 }
+		halberdier = { x = 0 y = 1 }
+        	halberdier = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		men_at_arms = { x = 1 y = 1 }
+		men_at_arms = { x = 1 y = 2 }
+		men_at_arms = { x = 1 y = 3 }
+		halberdier = { x = 2 y = 0 }
+		halberdier = { x = 2 y = 1 }
+		halberdier = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Inland Scouts"
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		archer_shortbow = { x = 0 y = 1 }
+        	archer_shortbow = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		archer_shortbow = { x = 1 y = 1 }
+		archer_shortbow = { x = 1 y = 2 }
+		men_at_arms = { x = 2 y = 0 }
+		archer_shortbow = { x = 2 y = 1 }
+		archer_shortbow = { x = 2 y = 2 }
+	}
+		support = {
+	    		scouts_cavalry = { x = 0 y = 0 }
+		}
+	
+}
+
+units = {
+	division = {
+		name = "Port Authorities"
+		location = 2112
+		division_template = "Port Guards"
+		start_experience_factor = 3
+	}
+	division = {
+		name = "Inland Rangers"
+		location = 9575
+		division_template = "Inland Scouts"
+		start_experience_factor = 0.3
+	}
+}

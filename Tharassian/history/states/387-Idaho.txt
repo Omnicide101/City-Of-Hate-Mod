@@ -1,0 +1,32 @@
+
+state={
+	id=387
+	name="STATE_387"
+	provinces={
+		6351 1693 6350 3227 3839 3765 6288 5215
+	}
+	state_category = large_city
+	manpower=172549
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 3
+		mount = 1
+	}
+	history={
+		victory_points = { 3765 35 }
+		owner = LIR
+		buildings = {
+			infrastructure = 3
+			workshop = 2
+			forge = 1
+			dockyard = 5
+			3765 = {
+				bunker = 5
+			}
+			3765 = {
+				naval_base = 6
+			}
+		}
+		add_core_of = LIR
+	}
+}

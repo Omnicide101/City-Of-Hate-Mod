@@ -1,0 +1,21 @@
+state={
+	id=187
+	name="STATE_187"
+	provinces={
+		2260 7267 7299
+	}
+	state_category = town
+	manpower=10992
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = { 2260 8 }
+		owner = SKA
+		buildings = {
+			infrastructure = 2
+			workshop = 3
+			forge = 1
+		}
+		add_core_of = SKA
+
+	}
+}

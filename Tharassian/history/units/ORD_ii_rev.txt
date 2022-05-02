@@ -1,0 +1,237 @@
+﻿division_template = {
+	name = "Grove Guards"	
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Bladesingers"
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		men_at_arms = { x = 0 y = 1 }
+       	halberdier = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		men_at_arms = { x = 1 y = 1 }
+		swordsmen = { x = 1 y = 2 }
+		men_at_arms = { x = 2 y = 0 }
+		men_at_arms = { x = 2 y = 1 }
+		men_at_arms = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Ordorian Rangers"
+	regiments = {
+		light_cavalry = { x = 0 y = 0 }
+        light_cavalry = { x = 0 y = 1 }
+        light_cavalry = { x = 1 y = 0 }
+		light_cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    scouts_cavalry = { x = 0 y = 0 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "Ythelmare Guards"
+		location = 4463
+		division_template = "Grove Guards"
+		start_experience_factor = 0.6
+
+	}
+	
+	division = {
+		name = "Varinthia Guards"
+		location = 7152
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Istharoth Guards"
+		location = 3881
+		division_template = "Grove Guards"
+		start_experience_factor = 0.6
+
+	}
+	
+	division = {
+		name = "Dahauris Inquisitors"
+		location = 2408
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Invetis Inquisitors"
+		location = 1007
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Mentherisur Militia"
+		location = 2414
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Gholdaur Militia"
+		location = 6936
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Loris Pass Watch"
+		location = 7153
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Thurgithon Loyalists"
+		location = 473
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		name = "Escarys Loyalists"
+		location = 7646
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		name = "Olissin Loyalists"
+		location = 3723
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		name = "Mentherin Loyalists"
+		location = 2273
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "1st Rangers"
+		location = 60
+		division_template = "Ordorian Rangers"
+		start_experience_factor = 0.4
+	}
+	
+	division = {
+		name = "Tholder Guards"
+		location = 4600
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Serthis Inquisitors"
+		location = 7930
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Palothuir Guards"
+		location = 7275
+		division_template = "Grove Guards"
+		start_experience_factor = 0.6
+
+	}
+	
+	division = {
+		name = "Ythelmare Inquisitors"
+		location = 3092
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Bhenne Inquisitors"
+		location = 877
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Ythelmare Militia"
+		location = 6935
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Losingrys Militia"
+		location = 5507
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Gythus Watch"
+		location = 4378
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "1st Academy Cadets"
+		location = 2488
+		division_template = "Bladesingers"
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "2nd Academy Cadets"
+		location = 6784
+		division_template = "Bladesingers"
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "3nd Academy Cadets"
+		location = 6818
+		division_template = "Bladesingers"
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "Lorthoris Loyalists"
+		location = 1819
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "2nd Rangers"
+		location = 1377
+		division_template = "Ordorian Rangers"
+		start_experience_factor = 0.4
+	}
+}

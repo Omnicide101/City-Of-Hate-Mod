@@ -1,0 +1,24 @@
+state={
+	id=337
+	name="STATE_337"
+	provinces={
+		4549 1674 2529 9428
+	}
+	state_category = rural
+	manpower=5829
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 9
+		mount = 3
+	}
+	history={
+		victory_points = {
+			9428 1
+		}
+		owner = PRK
+		buildings = {
+			infrastructure = 2	
+		}
+		add_core_of = PRK
+		}
+}

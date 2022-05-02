@@ -1,0 +1,22 @@
+state={
+	id=734
+	name="STATE_734"
+	provinces={
+		3253 5911 5924 1728
+	}
+	state_category = town
+	manpower=12542
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 15
+	}
+	history={
+		victory_points = { 5924 8 }
+		owner = RMT
+		buildings = {
+			infrastructure = 2
+			workshop = 2
+		}
+		add_core_of = RMT
+	}
+}

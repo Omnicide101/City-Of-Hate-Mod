@@ -1,0 +1,7 @@
+#Hey at least I'm doing this for FOUR whole nations
+#also compatability reasons
+SKP = "countries/Skaelinger Soltruist.txt"
+SKR = "countries/Skaelinger Brotherhood.txt"
+QUE = "countries/Quellion.txt"
+THR = "countries/Thurgithon.txt"
+XXX = "countries/Wastelands.txt"

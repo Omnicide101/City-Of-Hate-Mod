@@ -1,0 +1,1184 @@
+GENERIC_institutions_governance = {
+	
+	GENERIC_codify_privileges = {
+		icon = GFX_decision_eng_ally_imperialist_coup
+		
+		available = {
+			OR = {
+				has_political_power > 145
+				political_power_daily > 0.3
+			}
+		}
+		
+		visible = {
+			is_monarchy = yes
+		}
+		
+		is_good = yes
+		
+		cost = 135
+		
+		days_remove = 28
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 28 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.3
+			consumer_goods_factor = 0.05
+			stability_weekly = 0.006
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				num_of_available_civilian_factories < 10
+				factor = 0.5
+			}
+			modifier = {
+				num_of_available_civilian_factories < 5
+				factor = 0.5
+			}
+			modifier = {
+				has_stability < 0.6
+				factor = 2
+			}
+			modifier = {
+				has_stability < 0.4
+				factor = 2
+			}
+			modifier = {
+				has_stability < 0.2
+				factor = 5
+			}
+		}
+	}
+	
+	GENERIC_entrench_feudalism = {
+		icon = GFX_decision_eng_abdication_crisis
+		
+		available = {
+			OR = {
+				has_political_power > 175
+				political_power_daily > 0.4
+			}
+		}
+		
+		visible = {
+			is_monarchy = yes
+		}
+		
+		is_good = yes
+		
+		cost = 150
+		
+		days_remove = 63
+		
+		days_re_enable = 150
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 63 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.4
+			stability_weekly = 0.002
+			war_support_weekly = 0.002
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		ai_will_do = {
+			factor = 7
+			modifier = {
+				has_stability < 0.6
+				factor = 2
+			}
+			modifier = {
+				has_stability < 0.4
+				factor = 2
+			}
+			modifier = {
+				has_stability < 0.2
+				factor = 5
+			}
+			modifier = {
+				has_war_support < 0.6
+				factor = 2
+			}
+			modifier = {
+				has_war_support < 0.4
+				factor = 2
+			}
+			modifier = {
+				has_war_support < 0.2
+				factor = 5
+			}
+		}
+	}
+	
+	GENERIC_divine_right = {
+		icon = GFX_decision_generic_civil_support
+		
+		available = {
+			OR = {
+				has_political_power > 160
+				political_power_daily > 0.5
+			}
+		}
+		
+		visible = {
+			has_government = monarchy_absolute
+		}
+		
+		is_good = yes
+		
+		cost = 140
+		
+		days_remove = 42
+		
+		days_re_enable = 150
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 42 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.5
+			stability_weekly = 0.001
+			war_support_weekly = 0.005
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				has_stability < 0.6
+				factor = 1.5
+			}
+			modifier = {
+				has_stability < 0.4
+				factor = 1.5
+			}
+			modifier = {
+				has_stability < 0.2
+				factor = 3
+			}
+			modifier = {
+				has_war_support < 0.6
+				factor = 3
+			}
+			modifier = {
+				has_war_support < 0.4
+				factor = 3
+			}
+			modifier = {
+				has_war_support < 0.2
+				factor = 6
+			}
+		}
+	}
+	
+	GENERIC_constitutional_codifications = {
+		icon = GFX_decision_eng_imperial_federation
+		
+		available = {
+			OR = {
+				has_political_power > 150
+				political_power_daily > 0.5
+			}
+		}
+		
+		visible = {
+			has_government = monarchy_constitutional
+		}
+		
+		is_good = yes
+		
+		cost = 140
+		
+		days_remove = 35
+		
+		days_re_enable = 150
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 35 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.35
+			stability_weekly = 0.007
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				has_stability < 0.6
+				factor = 1.5
+			}
+			modifier = {
+				has_stability < 0.4
+				factor = 1.5
+			}
+			modifier = {
+				has_stability < 0.2
+				factor = 3
+			}
+			modifier = {
+				has_war_support < 0.6
+				factor = 3
+			}
+			modifier = {
+				has_war_support < 0.4
+				factor = 3
+			}
+			modifier = {
+				has_war_support < 0.2
+				factor = 6
+			}
+		}
+	}
+	
+	GENERIC_strengthen_institutions = {
+		icon = GFX_decision_eng_trade_unions_support
+		
+		available = {
+			OR = {
+				has_political_power > 150
+				political_power_daily > 0.3
+			}
+		}
+		
+		visible = {
+			is_republic = yes
+		}
+		
+		is_good = yes
+		
+		cost = 135
+		
+		days_remove = 30
+		
+		days_re_enable = 150
+		
+		modifier = {
+			political_power_cost = 0.3
+			stability_weekly = 0.005
+		}
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				has_stability < 0.6
+				factor = 2
+			}
+			modifier = {
+				has_stability < 0.4
+				factor = 2
+			}
+			modifier = {
+				has_stability < 0.2
+				factor = 5
+			}
+		}
+	}
+	
+	GENERIC_reinforce_ideals = {
+		icon = GFX_decision_generic_political_rally
+		
+		available = {
+			OR = {
+				has_political_power > 200
+				political_power_daily > 0.35
+			}
+		}
+		
+		visible = {
+			is_republic = yes
+		}
+		
+		is_good = yes
+		
+		cost = 175
+		
+		days_remove = 63
+		
+		days_re_enable = 150
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 63 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.35
+			stability_weekly = 0.003
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_stability < 0.6
+				factor = 1.5
+			}
+			modifier = {
+				has_stability < 0.4
+				factor = 1.5
+			}
+			modifier = {
+				has_stability < 0.2
+				factor = 3
+			}
+			modifier = {
+				has_government = republic_aristocrat
+				republic_aristocrat < 0.7
+				factor = 2
+			}
+			modifier = {
+				has_government = republic_aristocrat
+				republic_aristocrat < 0.5
+				factor = 6
+			}
+			modifier = {
+				has_government = republic_merchant
+				republic_merchant < 0.7
+				factor = 2
+			}
+			modifier = {
+				has_government = republic_merchant
+				republic_merchant < 0.5
+				factor = 6
+			}
+			modifier = {
+				has_government = republic_peasant
+				republic_peasant < 0.7
+				factor = 2
+			}
+			modifier = {
+				has_government = republic_peasant
+				republic_peasant < 0.5
+				factor = 6
+			}
+		}
+	}
+	
+	GENERIC_convene_families = {
+		icon = GFX_decision_SOV_place_hq
+		
+		available = {
+			OR = {
+				has_political_power > 115
+				political_power_daily > 0.5
+			}
+		}
+		
+		visible = {
+			has_government = republic_aristocrat
+		}
+		
+		is_good = yes
+		
+		cost = 100
+		
+		days_remove = 50
+		
+		days_re_enable = 150
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 50 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.25
+			stability_weekly = 0.001
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		remove_effect = {
+			add_political_power = 250
+		}
+		
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				has_stability < 0.6
+				factor = 1.5
+			}
+			modifier = {
+				has_stability < 0.4
+				factor = 1.5
+			}
+			modifier = {
+				has_stability < 0.2
+				factor = 1.5
+			}
+			modifier = {
+				has_government = republic_aristocrat
+				republic_aristocrat < 0.7
+				factor = 1.5
+			}
+			modifier = {
+				has_government = republic_aristocrat
+				republic_aristocrat < 0.5
+				factor = 1.5
+			}
+		}
+	}
+	
+	GENERIC_facilitate_commerce = {
+		icon = GFX_decision_hol_attract_foreign_investors
+		
+		available = {
+			OR = {
+				has_political_power > 60
+				political_power_daily > 0.1
+			}
+			has_war_support > 0.25
+		}
+		
+		visible = {
+			has_government = republic_merchant
+		}
+		
+		is_good = yes
+		
+		cost = 50
+		
+		days_remove = 49
+		
+		days_re_enable = 150
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 49 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.15
+			war_support_weekly = -0.03
+			consumer_goods_factor = -0.15
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				has_war_support < 0.6
+				factor = 0.5
+			}
+			modifier = {
+				has_war_support < 0.4
+				factor = 0.5
+			}
+			modifier = {
+				has_war_support < 0.2
+				factor = 0.5
+			}
+			modifier = {
+				has_government = republic_merchant
+				republic_merchant > 0.5
+				factor = 1.5
+			}
+			modifier = {
+				has_government = republic_merchant
+				republic_merchant > 0.7
+				factor = 1.5
+			}
+		}
+	}
+	
+	GENERIC_lift_up_commonfolk = {
+		icon = GFX_decision_hol_exchange_intelligence_data
+		
+		available = {
+			OR = {
+				has_political_power > 149
+				political_power_daily > 1
+			}
+			has_war_support > 0.4
+		}
+		
+		visible = {
+			has_government = republic_peasant
+		}
+		
+		is_good = yes
+		
+		cost = 125
+		
+		days_remove = 28
+		
+		days_re_enable = 150
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 28 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.75
+			stability_weekly = 0.004
+			war_support_weekly = 0.006
+			army_core_defence_factor = 0.03
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		remove_effect = {
+			add_war_support = -0.03
+		}
+		
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				has_war = yes
+				factor = 5
+			}
+			modifier = {
+				has_war_support < 0.5
+				factor = 0.1
+			}
+			modifier = {
+				has_war_support < 0.3
+				factor = 0
+			}
+			modifier = {
+				has_government = republic_peasant
+				republic_peasant < 0.7
+				factor = 1.5
+			}
+			modifier = {
+				has_government = republic_peasant
+				republic_peasant < 0.5
+				factor = 1.5
+			}
+		}
+	}
+	
+	GENERIC_spread_word = {
+		icon = GFX_decision_generic_speech
+		
+		available = {
+			OR = {
+				has_political_power > 65
+				political_power_daily > 0.3
+			}
+		}
+		
+		visible = {
+			has_government = theocrat
+		}
+		
+		is_good = yes
+		
+		cost = 50
+		
+		days_remove = 56
+		
+		days_re_enable = 150
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 56 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.25
+			stability_weekly = 0.005
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		remove_effect = {
+			add_political_power = 75
+		}
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				has_stability < 0.6
+				factor = 1.5
+			}
+			modifier = {
+				has_stability < 0.4
+				factor = 1.5
+			}
+			modifier = {
+				has_stability < 0.2
+				factor = 3
+			}
+			modifier = {
+				has_war_support < 0.6
+				factor = 3
+			}
+			modifier = {
+				has_war_support < 0.4
+				factor = 3
+			}
+			modifier = {
+				has_war_support < 0.2
+				factor = 6
+			}
+		}
+	}
+	
+	GENERIC_stamp_out_unorthodoxy = {
+		icon = GFX_decision_generic_scorched_earth
+		
+		available = {
+			OR = {
+				has_political_power > 115
+				political_power_daily > 0.2
+				has_stability > 0.35
+			}
+		}
+		
+		visible = {
+			has_government = theocrat
+		}
+		
+		is_good = yes
+		
+		cost = 100
+		
+		days_remove = 70
+		
+		days_re_enable = 150
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 56 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.15
+			stability_weekly = -0.003
+			war_support_weekly = 0.007
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		remove_effect = {
+			add_political_power = 175
+		}
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				has_stability < 0.6
+				factor = 0.5
+			}
+			modifier = {
+				has_stability < 0.4
+				factor = 0.5
+			}
+			modifier = {
+				has_stability < 0.2
+				factor = 0
+			}
+			modifier = {
+				has_war_support < 0.6
+				factor = 1.5
+			}
+			modifier = {
+				has_war_support < 0.4
+				factor = 1.5
+			}
+			modifier = {
+				has_war_support < 0.2
+				factor = 1.5
+			}
+		}
+	}
+	
+	GENERIC_expel_inferior = {
+		icon = GFX_decision_generic_assassination
+		
+		available = {
+			OR = {
+				has_political_power > 55
+				political_power_daily > 0.6
+				has_stability > 0.65
+			}
+		}
+		
+		visible = {
+			has_government = puritan
+		}
+		
+		is_good = yes
+		
+		cost = 40
+		
+		days_remove = 21
+		
+		days_re_enable = 50
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 21 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.5
+			monthly_population = -0.01
+			stability_weekly = -0.05
+			war_support_weekly = 0.01
+			justify_war_goal_time = -0.5
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		remove_effect = {
+			add_political_power = 50
+		}
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				has_stability < 0.6
+				factor = 0.9
+			}
+			modifier = {
+				has_war_support < 0.6
+				factor = 3
+			}
+			modifier = {
+				has_war_support < 0.4
+				factor = 3
+			}
+			modifier = {
+				has_war_support < 0.2
+				factor = 3
+			}
+		}
+	}
+	
+	GENERIC_celebrate_purity = {
+		icon = GFX_decision_generic_military
+		
+		available = {
+			OR = {
+				has_political_power > 180
+				political_power_daily > 0.9
+			}
+		}
+		
+		visible = {
+			has_government = puritan
+		}
+		
+		is_good = yes
+		
+		cost = 125
+		
+		days_remove = 7
+		
+		days_re_enable = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_variable = { hidden_drift_timer = 7 }
+				ruling_ideology_drift = yes
+			}
+		}
+		
+		modifier = {
+			political_power_cost = 0.75
+			stability_weekly = 0.002
+			war_support_weekly = 0.005
+			custom_modifier_tooltip = ruling_ideology_drift_tt
+		}
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				has_stability < 0.6
+				factor = 1.1
+			}
+			modifier = {
+				has_stability < 0.4
+				factor = 1.1
+			}
+			modifier = {
+				has_stability < 0.2
+				factor = 1.1
+			}
+			modifier = {
+				has_war_support < 0.6
+				factor = 2
+			}
+			modifier = {
+				has_war_support < 0.4
+				factor = 2
+			}
+			modifier = {
+				has_war_support < 0.2
+				factor = 2
+			}
+		}
+	}
+}
+
+GENERIC_join_wars = {
+
+	DORF_join_union_war_against_opponent = { #As RMT or SKA, Join UNG against SKA or RMT
+
+		icon = GFX_decision_generic_prepare_civil_war
+		
+		available = {
+			OR = {
+				has_country_flag = SKA_UNG_invade_rimatu
+				has_country_flag = RMT_UNG_invade_skaelinger
+			}
+		}
+		
+		cost = 0
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			has_country_flag = SKA_UNG_invade_rimatu
+		}
+
+		is_good = yes
+		
+		fire_only_once = yes
+
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = SKA_UNG_invade_rimatu
+				}
+				declare_war_on = {
+					target = RMT
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = RMT_UNG_invade_skaelinger
+				}
+				declare_war_on = {
+					target = SKA
+					type = annex_everything
+				}
+			}
+		}
+	}
+}
+
+GENERIC_war_exhaustion_category = {
+	
+	war_exhaustion_mission = {
+
+		icon = generic_civil_support
+
+		available = {
+			has_war = no
+		}
+
+		activation = {
+			has_country_flag = war_exhaustion_kicks_in
+		}
+
+		is_good = no
+
+		days_mission_timeout = 30
+
+		fixed_random_seed = no
+
+		timeout_effect = {
+			random_list = {
+				33 = {
+					add_to_variable = { war_exhaustion_mobilization = -0.03 }
+					add_to_variable = { war_exhaustion_mobilization_display = -3 }
+					custom_effect_tooltip = war_exhaustion_decrease_mob_speed_3
+				}
+				33 = {
+					add_to_variable = { war_exhaustion_surrender_limit = -0.03 }
+					add_to_variable = { war_exhaustion_surrender_limit_display = -3 }
+					custom_effect_tooltip = war_exhaustion_decrease_surrender_limit_3
+				}
+				33 = {
+					add_war_support = -0.015
+				}
+			}
+			hidden_effect = {
+				clamp_variable = {
+					var = war_exhaustion_mobilization
+					min = -1
+					max = 0
+				}
+				clamp_variable = {
+					var = war_exhaustion_surrender_limit
+					min = -1
+					max = 0
+				}
+				clamp_variable = {
+					var = war_exhaustion_mobilization_display
+					min = -100
+					max = 0
+				}
+				clamp_variable = {
+					var = war_exhaustion_surrender_limit_display
+					min = -100
+					max = 0
+				}
+				activate_mission = war_exhaustion_mission
+			}
+		}
+
+		complete_effect = {
+			clr_country_flag = war_exhaustion_kicks_in
+			set_variable = { war_exhaustion_mobilization = 0 }
+			set_variable = { war_exhaustion_surrender_limit = 0 }
+			set_variable = { war_exhaustion_mobilization_display = 0 }
+			set_variable = { war_exhaustion_surrender_limit_display = 0 }
+		}
+
+	}
+
+	war_exhaustion_praise_victories = {
+
+		icon = eng_propaganda_campaigns
+
+		cost = 50
+
+		available = {
+			any_enemy_country = {
+				surrender_progress > 0.1
+			}
+			has_war_support < 0.8
+			check_variable = {
+				war_exhaustion_mobilization < 0
+			}
+		}
+
+		days_re_enable = 100
+
+		complete_effect = {
+			add_to_variable = { war_exhaustion_mobilization = 0.03 }
+			clamp_variable = {
+				var = war_exhaustion_mobilization
+				min = -1
+				max = 0
+			}
+			add_to_variable = { war_exhaustion_mobilization_display = 3 }
+			clamp_variable = {
+				var = war_exhaustion_mobilization_display
+				min = -100
+				max = 0
+			}
+			custom_effect_tooltip = war_exhaustion_increase_mob_speed_3
+		}
+
+	}
+
+	war_exhaustion_downplay_defeats = {
+
+		icon = eng_propaganda_campaigns
+
+		cost = 50
+
+		available = {
+			surrender_progress > 0.1
+			check_variable = {
+				war_exhaustion_surrender_limit < 0
+			}
+		}
+
+		days_re_enable = 100
+
+		complete_effect = {
+			add_to_variable = { war_exhaustion_surrender_limit = 0.03 }
+			clamp_variable = {
+				var = war_exhaustion_surrender_limit
+				min = -1
+				max = 0
+			}
+			add_to_variable = { war_exhaustion_surrender_limit_display = 3 }
+			clamp_variable = {
+				var = war_exhaustion_surrender_limit_display
+				min = -100
+				max = 0
+			}
+			custom_effect_tooltip = war_exhaustion_increase_surrender_limit_3
+		}
+
+	}
+
+	war_exhaustion_for_king = {
+
+		icon = generic_civil_support
+
+		cost = 75
+
+		visible = {
+			OR = {
+				has_government = monarchy_absolute
+				has_government = monarchy_constitutional
+			}
+		}
+
+		days_re_enable = 365
+
+		days_remove = 50
+
+		modifier = {
+			army_attack_factor = 0.05
+		}
+
+		complete_effect = {
+			add_war_support = 0.025
+		}
+
+	}
+
+	war_exhaustion_for_republic = {
+
+		icon = generic_civil_support
+
+		cost = 75
+
+		visible = {
+			OR = {
+				has_government = republic_merchant
+				has_government = republic_peasant
+			}
+		}
+
+		days_re_enable = 365
+
+		days_remove = 50
+
+		modifier = {
+			army_defence_factor = 0.05
+		}
+
+		complete_effect = {
+			add_war_support = 0.025
+		}
+
+	}
+
+	war_exhaustion_for_faith = {
+
+		icon = generic_civil_support
+
+		cost = 75
+
+		visible = {
+			has_government = theocrat
+		}
+
+		days_re_enable = 365
+
+		days_remove = 50
+
+		modifier = {
+			army_defence_factor = 0.05
+		}
+
+		complete_effect = {
+			add_war_support = 0.025
+		}
+
+	}
+
+	war_exhaustion_for_race = {
+
+		icon = generic_civil_support
+
+		cost = 75
+
+		visible = {
+			has_government = puritan
+		}
+
+		days_re_enable = 365
+
+		days_remove = 50
+
+		modifier = {
+			army_defence_factor = 0.05
+		}
+
+		complete_effect = {
+			add_war_support = 0.025
+		}
+
+	}
+
+	war_exhaustion_focus_military_production = {
+
+		icon = generic_factory
+
+		cost = 75
+
+		days_re_enable = 365
+
+		days_remove = 70
+
+		modifier = {
+			production_speed_buildings_factor = -0.1
+			industrial_capacity_factory = 0.1
+		}
+
+	}
+
+	war_exhaustion_desperate_defense = {
+
+		icon = generic_industry
+
+		cost = 75
+
+		available = {
+			surrender_progress > 0.2
+		}
+
+		days_re_enable = 365
+
+		days_remove = 100
+
+		modifier = {
+			surrender_limit = 0.1
+			army_defence_factor = 0.1
+			dig_in_speed_factor = 0.1
+		}
+
+		remove_effect = {
+			add_war_support = -0.03
+		}
+
+	}
+	
+}

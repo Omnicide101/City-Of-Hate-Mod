@@ -1,0 +1,4630 @@
+focus_tree = {
+	id = skaelinger_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			original_tag = SKA
+		}
+	}
+	default = no
+
+	continuous_focus_position = { x = 1575 y = 1400 }
+
+	focus = {
+		id = SKA_aftermath_of_miners_blight
+		icon = GFX_goal_generic_secret_weapon
+		cost = 10
+		x = 9
+		y = 0
+		completion_reward = {
+			country_event = { id = skaelinger.1 hours = 2 }
+		}
+	}
+	focus = {
+		id = SKA_abandon_isolationism
+		icon = GFX_goal_generic_propaganda
+		cost = 5
+		mutually_exclusive = {
+			focus = SKA_enforce_isolationism
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		x = 39
+		y = 9
+		available = {
+			NOT = {
+				has_country_leader = {
+					name = "Petar Grimvald"
+					ruling_only = yes
+				}
+			}
+			has_country_flag = SKA_king_died
+			OR = {
+				has_completed_focus = SKA_the_dwarfen_republic
+				has_completed_focus = SKA_the_great_houses
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = SKA_emergency_conclave
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		available = {
+			has_country_flag = SKA_king_died
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		x = 34
+		y = 0
+		completion_reward = {
+			country_event = { id = skaelinger.2 hours = 2 }
+		}
+	}
+	focus = {
+		id = SKA_enforce_isolationism
+		icon = GFX_goal_generic_defence
+		cost = 5
+		mutually_exclusive = {
+			focus = SKA_abandon_isolationism
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		x = 28
+		y = 9
+		available = {
+			has_country_leader = {
+				name = "Petar Grimvald"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_ideas = SKA_isolationism
+		}
+	}
+	focus = {
+		id = SKA_financial_recovery_endeavors
+		icon = GFX_goal_generic_production2
+		cost = 10
+		prerequisite = {
+			focus = SKA_aftermath_of_miners_blight
+		}
+		relative_position_id = SKA_aftermath_of_miners_blight
+		x = 0
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_appease_the_guild
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10
+		mutually_exclusive = { focus = SKA_oppose_the_guild }
+		prerequisite = {
+			focus = SKA_financial_recovery_endeavors
+		}
+		relative_position_id = SKA_financial_recovery_endeavors
+		available = {
+			OR = {
+				has_government = republic_merchant
+				has_government = republic_peasant
+				has_completed_focus = SKA_the_grandlore_council
+				has_country_leader = {
+					ruling_only = yes
+					name = "Reev Hellirfast"
+				}
+				has_country_leader = {
+					ruling_only = yes
+					name = "Petar Grimvald"
+				}
+			}
+		}
+		x = -3
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_merchant
+				popularity = 0.05
+			}
+			#replace with an idea that gives more merchant support, costs pp, and increases production
+		}
+	}
+	focus = {
+		id = SKA_abandon_prison_labor
+		icon = GFX_focus_generic_slavery
+		cost = 10
+		prerequisite = {
+			focus = SKA_appease_the_guild
+		}
+		x = 5
+		y = 3
+		completion_reward = {
+			if = {
+				limit = { has_idea = SKA_penal_levy }
+				swap_ideas = {
+					remove_idea = SKA_penal_levy
+					add_idea = SKA_penal_levy_no_prison_labor
+				}
+				else = {
+					remove_ideas = SKA_penal_levy_no_conscription
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_decrease_basic_goods_taxes
+		icon = GFX_goal_generic_consumer_goods
+		cost = 10
+		prerequisite = {
+			focus = SKA_abandon_prison_labor
+		}
+		x = 2
+		y = 4
+		completion_reward = {
+			add_ideas = SKA_decrease_taxes
+		}
+	}
+	focus = {
+		id = SKA_foreign_workers
+		icon = GFX_goal_generic_production
+		cost = 10
+		prerequisite = {
+			focus = SKA_abandon_prison_labor
+		}
+		x = 4
+		y = 4
+		completion_reward = {
+			add_ideas = SKA_foreign_workers
+		}
+	}
+	focus = {
+		id = SKA_lift_the_debts
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		prerequisite = {
+			focus = SKA_abandon_prison_labor
+		}
+		x = 6
+		y = 4
+		completion_reward = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.05
+			}
+			add_political_power = -50
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = SKA_restore_the_guilds_influence
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = SKA_foreign_workers
+		}
+		prerequisite = {
+			focus = SKA_decrease_basic_goods_taxes
+		}
+		prerequisite = {
+			focus = SKA_lift_the_debts
+		}
+		x = 4
+		y = 5
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_merchant
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = SKA_stop_prison_conscription
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 10
+		prerequisite = {
+			focus = SKA_appease_the_guild
+		}
+		x = 7
+		y = 3
+		completion_reward = {
+			if = {
+				limit = { has_idea = SKA_penal_levy }
+				swap_ideas = {
+					remove_idea = SKA_penal_levy
+					add_idea = SKA_penal_levy_no_conscription
+				}
+				else = {
+					remove_ideas = SKA_penal_levy_no_prison_labor
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_oppose_the_guild
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		mutually_exclusive = { focus = SKA_appease_the_guild }
+		prerequisite = {
+			focus = SKA_financial_recovery_endeavors
+		}
+		available = {
+			OR = {
+				has_government = monarchy_absolute
+				has_government = puritan
+				has_completed_focus = SKA_the_grandlore_council
+				has_country_leader = {
+					ruling_only = yes
+					name = "Kytos Palmekvist"
+				}
+				has_country_leader = {
+					ruling_only = yes
+					name = "Petar Grimvald"
+				}
+			}
+		}
+		x = 12
+		y = 2
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_merchant
+				popularity = -0.05
+			}
+		}
+	}
+	focus = {
+		id = SKA_enforce_prison_conscription
+		icon = GFX_focus_generic_manpower
+		cost = 10
+		prerequisite = {
+			focus = SKA_oppose_the_guild
+		}
+		x = 11
+		y = 3
+		completion_reward = {
+			if = {
+				limit = { has_idea = SKA_penal_levy }
+				swap_ideas = {
+					remove_idea = SKA_penal_levy
+					add_idea = SKA_penal_levy_expanded_conscription
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_penal_levy_expanded_work }
+				swap_ideas = {
+					remove_idea = SKA_penal_levy_expanded_work
+					add_idea = SKA_penal_levy_expanded_work_conscription
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_the_army_of_skaelinger
+		icon = GFX_focus_generic_military_mission
+		cost = 10
+		prerequisite = {
+			focus = SKA_stop_prison_conscription
+			focus = SKA_enforce_prison_conscription
+		}
+		x = 9
+		y = 4
+		completion_reward = {
+			army_experience = 15
+			#probably research bonus, maybe idea that increases org and defense
+		}
+	}
+	focus = {
+		id = SKA_enforce_prison_labor
+		icon = GFX_IRI_New_Cohorts_Training_Program
+		cost = 10
+		prerequisite = {
+			focus = SKA_oppose_the_guild
+		}
+		x = 13
+		y = 3
+		completion_reward = {
+			if = {
+				limit = { has_idea = SKA_penal_levy }
+				swap_ideas = {
+					remove_idea = SKA_penal_levy
+					add_idea = SKA_penal_levy_expanded_work
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_penal_levy_expanded_conscription }
+				swap_ideas = {
+					remove_idea = SKA_penal_levy_expanded_conscription
+					add_idea = SKA_penal_levy_expanded_work_conscription
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_expel_the_refugees
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 10
+		prerequisite = {
+			focus = SKA_enforce_prison_conscription
+		}
+		prerequisite = {
+			focus = SKA_enforce_prison_labor
+		}
+		x = 12
+		y = 4
+		completion_reward = {
+			add_manpower = -500
+			add_stability = 0.05
+			hidden_effect = {
+				BER = {
+					country_event = { id = skaelinger.7 days = 25 random = 240 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_war_prisoners
+		icon = GFX_focus_CZE_german_puppet
+		cost = 10
+		prerequisite = {
+			focus = SKA_expel_the_refugees
+		}
+		x = 12
+		y = 5
+		completion_reward = {
+			add_ideas = SKA_war_prisoners
+		}
+	}
+	focus = {
+		id = SKA_avert_the_famine
+		icon = GFX_BLD_Promote_Farming
+		cost = 10
+		prerequisite = {
+			focus = SKA_financial_recovery_endeavors
+		}
+		x = 17
+		y = 2
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = { ideology = monarchy_constitutional popularity = 0.05 }
+		}
+	}
+	focus = {
+		id = SKA_secure_ung_trade
+		icon = GFX_focus_ung_union_forever
+		cost = 10
+		prerequisite = {
+			focus = SKA_avert_the_famine
+		}
+		relative_position_id = SKA_avert_the_famine
+		x = -2
+		y = 1
+		completion_reward = {
+			UNG = {
+				FROM_improve_THIS_relations = yes
+			}
+			add_offsite_building = {
+				type = workshop
+				level = 1
+			}
+		}
+	}
+	focus = {
+		id = SKA_cultivate_mushroom_plantages
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10
+		prerequisite = {
+			focus = SKA_avert_the_famine
+		}
+		relative_position_id = SKA_avert_the_famine
+		x = 1
+		y = 2
+		completion_reward = {
+			if = {
+				limit = { has_idea = SKA_food_imports_3 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_3
+					add_idea = SKA_food_imports_4
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports_2 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_2
+					add_idea = SKA_food_imports_3
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports_1 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_1
+					add_idea = SKA_food_imports_2
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports }
+				swap_ideas = {
+					remove_idea = SKA_food_imports
+					add_idea = SKA_food_imports_1
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_secure_ber_trade
+		icon = GFX_focus_generic_bergial_agreement
+		cost = 10
+		prerequisite = {
+			focus = SKA_avert_the_famine
+		}
+		relative_position_id = SKA_avert_the_famine
+		x = 2
+		y = 1
+		completion_reward = {
+			BER = {
+				FROM_improve_THIS_relations = yes
+			}
+			add_offsite_building = {
+				type = workshop
+				level = 1
+			}
+		}
+	}
+	focus = {
+		id = SKA_lower_ratios
+		icon = GFX_focus_generic_slavery
+		cost = 10
+		prerequisite = {
+			focus = SKA_avert_the_famine
+		}
+		relative_position_id = SKA_avert_the_famine
+		x = -1
+		y = 2
+		completion_reward = {
+			if = {
+				limit = { has_idea = SKA_food_imports_3 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_3
+					add_idea = SKA_food_imports_4
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports_2 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_2
+					add_idea = SKA_food_imports_3
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports_1 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_1
+					add_idea = SKA_food_imports_2
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports }
+				swap_ideas = {
+					remove_idea = SKA_food_imports
+					add_idea = SKA_food_imports_1
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_invest_in_foreign_farms
+		icon = GFX_focus_hlz_compensate_nobles
+		cost = 10
+		prerequisite = {
+			focus = SKA_avert_the_famine
+		}
+		relative_position_id = SKA_avert_the_famine
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = { has_idea = SKA_food_imports_3 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_3
+					add_idea = SKA_food_imports_4
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports_2 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_2
+					add_idea = SKA_food_imports_3
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports_1 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_1
+					add_idea = SKA_food_imports_2
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports }
+				swap_ideas = {
+					remove_idea = SKA_food_imports
+					add_idea = SKA_food_imports_1
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_the_dwarfen_republic
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 20
+		prerequisite = {
+			focus = SKA_emergency_conclave
+		}
+		mutually_exclusive = {
+			focus = SKA_the_great_houses
+		}
+		available = {
+			has_country_flag = SKA_transitioning_republic
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		continue_if_invalid = yes
+		select_effect = {
+			country_event = { id = skaelinger.32 days = 15 }
+		}
+		x = 28
+		y = 1
+		completion_reward = {
+			add_political_power = 100
+			country_event = { id = skaelinger.3 days = 2 }
+		}
+	}
+	focus = {
+		id = SKA_charter_protection_league
+		icon = GFX_focus_generic_treaty
+		cost = 10
+		prerequisite = {
+			focus = SKA_the_dwarfen_republic
+		}
+		mutually_exclusive = {
+			focus = SKA_the_grandlore_council
+		}
+		available = {
+			has_country_flag = SKA_charter_wins
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		relative_position_id = SKA_the_dwarfen_republic
+		x = -4
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							has_country_flag = SKA_legalized_boe_debates
+							republic_peasant < 0.1
+							republic_merchant < 0.2
+						}
+						AND = {
+							NOT = { has_country_flag = SKA_legalized_boe_debates }
+							republic_merchant < 0.3
+						}
+					}
+				}
+				add_stability = -0.1
+			}
+			set_politics = {
+				ruling_party = republic_merchant
+				elections_allowed = yes
+			}
+		}
+	}
+	focus = {
+		id = SKA_ending_tariffs
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 10
+		prerequisite = {
+			focus = SKA_charter_protection_league
+		}
+		relative_position_id = SKA_charter_protection_league
+		x = 1
+		y = 1
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_idea = SKA_food_imports_3 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_3
+					add_idea = SKA_food_imports_4
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports_2 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_2
+					add_idea = SKA_food_imports_3
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports_1 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_1
+					add_idea = SKA_food_imports_2
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports }
+				swap_ideas = {
+					remove_idea = SKA_food_imports
+					add_idea = SKA_food_imports_1
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_price_control
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 10
+		prerequisite = {
+			focus = SKA_ending_tariffs
+		}
+		available = {
+			has_country_flag = SKA_legalized_boe_debates
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_ending_tariffs
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_price_ceilings
+		}
+	}
+	focus = {
+		id = SKA_proportional_riksdag_representation
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = {
+			focus = SKA_charter_protection_league
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_charter_protection_league
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_representational_riksdag
+		}
+	}
+	focus = {
+		id = SKA_dividing_underused_noble_lands
+		icon = GFX_goal_generic_construction2
+		cost = 10
+		prerequisite = {
+			focus = SKA_ending_tariffs
+		}
+		prerequisite = { focus = SKA_proportional_riksdag_representation }
+		relative_position_id = SKA_charter_protection_league
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 0
+		y = 2
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { NOT = { state = 146 } }
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = { NOT = { state = 146 } }
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = { NOT = { state = 146 } }
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = SKA_universal_suffrage
+		icon = GFX_goal_support_democracy
+		cost = 10
+		prerequisite = {
+			focus = SKA_proportional_riksdag_representation
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_proportional_riksdag_representation
+		x = 0
+		y = 2
+		completion_reward = {
+			add_ideas = SKA_universal_suffrage
+		}
+	}
+	focus = {
+		id = SKA_found_public_schools
+		icon = GFX_focus_research
+		cost = 10
+		prerequisite = {
+			focus = SKA_universal_suffrage
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_universal_suffrage
+		x = 1
+		y = 1
+		completion_reward = {
+			add_research_slot = 1
+			remove_ideas = SKA_destabilization_caste_system
+		}
+	}
+	focus = {
+		id = SKA_guild_medicine
+		icon = GFX_focus_research2
+		cost = 10
+		prerequisite = {
+			focus = SKA_found_public_schools
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_found_public_schools
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_guild_medicine
+		}
+	}
+	focus = {
+		id = SKA_abolish_grand_lore_council
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = {
+			focus = SKA_universal_suffrage
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_universal_suffrage
+		x = -1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = -0.1
+			}
+			add_stability = -0.05
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = SKA_teach_of_extremisms_horrors
+		icon = GFX_focus_generic_manpower
+		cost = 10
+		prerequisite = {
+			focus = SKA_abolish_grand_lore_council
+		}
+		prerequisite = {
+			focus = SKA_found_public_schools
+		}
+		available = {
+			NOT = { has_country_flag = SKA_legalized_boe_debates }
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_abolish_grand_lore_council
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_militaristic_anti_extremism
+		}
+	}
+	focus = {
+		id = SKA_absorb_moderate_radicals
+		icon = GFX_focus_generic_rosite_housing
+		cost = 5
+		prerequisite = {
+			focus = SKA_proportional_riksdag_representation
+		}
+		mutually_exclusive = { focus = SKA_sponsor_moderate_rthaur }
+		available = {
+			has_country_flag = SKA_legalized_boe_debates
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_proportional_riksdag_representation
+		x = -3
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = SKA_absorb_40_radical_support
+			set_temp_variable = { SKA_bro_of_equal_support = party_popularity@republic_peasant }
+			divide_temp_variable = { SKA_bro_of_equal_support = 2.5 }
+			add_popularity = {
+				ideology = republic_merchant
+				popularity = SKA_bro_of_equal_support
+			}
+			set_party_name = {
+				ideology = republic_merchant
+				name = SKA_republican_coalition
+				long_name = SKA_republican_coalition
+			}
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = SKA_sponsor_moderate_rthaur
+		icon = GFX_goal_tripartite_pact
+		cost = 5
+		prerequisite = {
+			focus = SKA_proportional_riksdag_representation
+		}
+		mutually_exclusive = { focus = SKA_absorb_moderate_radicals }
+		available = {
+			NOT = { has_country_flag = SKA_legalized_boe_debates has_country_flag = SKA_has_started_ironblood_conspiracy }
+		}
+		bypass = {
+			RTH = {
+				exists = no
+			}
+		}
+		relative_position_id = SKA_proportional_riksdag_representation
+		x = -1
+		y = 1
+		completion_reward = {
+			RTH = {
+				country_event = { id = skaelinger.108 hours = 4 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_international_relations
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 5
+		prerequisite = {
+			focus = SKA_absorb_moderate_radicals
+			focus = SKA_sponsor_moderate_rthaur
+		}
+		relative_position_id = SKA_absorb_moderate_radicals
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			every_country = {
+				limit = { NOT = { OR = { has_government = puritan has_idea = dwarf_country } } }
+				FROM_improve_THIS_relations = yes
+			}
+		}
+	}
+	focus = {
+		id = SKA_major_land_reforms
+		icon = GFX_focus_prc_agrarian_socialism
+		cost = 10
+		prerequisite = { focus = SKA_dividing_underused_noble_lands }
+		relative_position_id = SKA_dividing_underused_noble_lands
+		x = 1
+		y = 1
+		available = {
+			has_country_flag = SKA_legalized_boe_debates
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		completion_reward = {
+			add_ideas = SKA_major_land_reforms
+		}
+	}
+	focus = {
+		id = SKA_public_housing
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		prerequisite = { focus = SKA_major_land_reforms }
+		relative_position_id = SKA_major_land_reforms
+		x = 1
+		y = 1
+		available = {
+			has_country_flag = SKA_legalized_boe_debates
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SKA_major_land_reforms
+				add_idea = SKA_public_housing
+			}
+		}
+	}
+	focus = {
+		id = SKA_defensive_army
+		icon = GFX_goal_generic_military_sphere
+		cost = 10
+		prerequisite = {
+			focus = SKA_enforce_isolationism
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		relative_position_id = SKA_enforce_isolationism
+		x = 2
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_defensive_army
+		}
+	}
+	focus = {
+		id = SKA_impenetrable_wall
+		icon = GFX_goal_generic_fortify_city
+		cost = 10
+		prerequisite = {
+			focus = SKA_defensive_army
+		}
+		relative_position_id = SKA_defensive_army
+		x = 0
+		y = 1
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_building_walls
+		}
+	}
+	focus = {
+		id = SKA_retaking_the_wall
+		icon = GFX_goal_generic_demand_territory
+		cost = 5
+		prerequisite = {
+			focus = SKA_impenetrable_wall
+		}
+		available = {
+			surrender_progress > 0
+		}
+		continue_if_invalid = yes
+		relative_position_id = SKA_impenetrable_wall
+		x = 0
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = SKA_retaking_the_wall
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = SKA_cut_ties_with_rthauriaur
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		cost = 10
+		prerequisite = {
+			focus = SKA_enforce_isolationism
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
+		}
+		bypass = {
+			RTH = {
+				OR = {
+					exists = no
+					is_subject_of = ORD
+					NOT = {
+						is_guaranteed_by = SKA
+					}
+				}
+			}
+		}
+		relative_position_id = SKA_enforce_isolationism
+		x = -2
+		y = 1
+		completion_reward = {
+			diplomatic_relation = {
+				country = RTH
+				relation = guarantee
+				active = no
+			}
+			diplomatic_relation = {
+				country = RTH
+				relation = military_access
+				active = no
+			}
+			diplomatic_relation = {
+				country = RTH
+				relation = non_aggression_pact
+				active = no
+			}
+			RTH = {
+				country_event = { id = skaelinger.4 hours = 4 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_expand_mining_operations
+		icon = GFX_goal_generic_construction2
+		cost = 10
+		prerequisite = {
+			focus = SKA_cut_ties_with_rthauriaur
+		}
+		relative_position_id = SKA_cut_ties_with_rthauriaur
+		x = -1
+		y = 1
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_digging_deeper
+		}
+	}
+	focus = {
+		id = SKA_peacetime_construction
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = SKA_cut_ties_with_rthauriaur
+		}
+		relative_position_id = SKA_cut_ties_with_rthauriaur
+		x = 1
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_no_elven_trade
+		icon = GFX_ung_focus_radicalism_both_sides
+		cost = 10
+		prerequisite = {
+			focus = SKA_expand_mining_operations
+		}
+		prerequisite = {
+			focus = SKA_peacetime_construction
+		}
+		mutually_exclusive = {
+			focus = SKA_tentative_rthaur_trade
+			focus = SKA_mend_ordorian_trade
+		}
+		relative_position_id = SKA_peacetime_construction
+		x = -1
+		y = 1
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = SKA_mend_ordorian_trade
+		icon = GFX_focus_hlz_compensate_nobles
+		cost = 10
+		prerequisite = {
+			focus = SKA_expand_mining_operations
+		}
+		prerequisite = {
+			focus = SKA_peacetime_construction
+		}
+		available = {
+			RTH = {
+				exists = no
+			}
+			ORD = {
+				has_government = monarchy_absolute
+			}
+		}
+		mutually_exclusive = {
+			focus = SKA_tentative_rthaur_trade
+			focus = SKA_no_elven_trade
+		}
+		relative_position_id = SKA_no_elven_trade
+		x = 2
+		y = 0
+		completion_reward = {
+			ORD = {
+				country_event = { id = skaelinger.63 hours = 3 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_tentative_rthaur_trade
+		icon = GFX_focus_ung_lesser_evil
+		cost = 10
+		prerequisite = {
+			focus = SKA_expand_mining_operations
+		}
+		prerequisite = {
+			focus = SKA_peacetime_construction
+		}
+		available = {
+			country_exists = RTH
+		}
+		mutually_exclusive = {
+			focus = SKA_no_elven_trade
+			focus = SKA_mend_ordorian_trade
+		}
+		relative_position_id = SKA_no_elven_trade
+		x = -2
+		y = 0
+		completion_reward = {
+			RTH = {
+				country_event = { id = skaelinger.63 hours = 3 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_root_out_puritans_iron_bloods
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		prerequisite = {
+			focus = SKA_tentative_rthaur_trade
+			focus = SKA_no_elven_trade
+		}
+		relative_position_id = SKA_no_elven_trade
+		x = -1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = puritan
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = monarchy_absolute
+				popularity = -0.1
+			}
+			set_country_flag = SKA_iron_bloods_purged
+		}
+	}
+	focus = {
+		id = SKA_root_out_brotherhood
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 5
+		prerequisite = {
+			focus = SKA_mend_ordorian_trade
+			focus = SKA_no_elven_trade
+		}
+		relative_position_id = SKA_no_elven_trade
+		x = 1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.15
+			}
+		}
+	}
+	focus = {
+		id = SKA_splendid_isolation
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10
+		prerequisite = {
+			focus = SKA_root_out_puritans_iron_bloods
+			focus = SKA_root_out_brotherhood
+		}
+		relative_position_id = SKA_root_out_brotherhood
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SKA_isolationism
+				add_idea = SKA_isolationism_2
+			}
+		}
+	}
+	focus = {
+		id = SKA_the_grandlore_council
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		prerequisite = {
+			focus = SKA_the_dwarfen_republic
+		}
+		mutually_exclusive = {
+			focus = SKA_charter_protection_league
+		}
+		available = {
+			has_country_flag = SKA_loremasters_stay
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		relative_position_id = SKA_the_dwarfen_republic
+		x = 3
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					republic_aristocrat < 0.3
+				}
+				add_stability = -0.1
+			}
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = SKA_funding_moderate_rthaur
+		icon = GFX_goal_anti_comintern_pact
+		cost = 10
+		prerequisite = {
+			focus = SKA_the_grandlore_council
+		}
+		relative_position_id = SKA_the_grandlore_council
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_sponsoring_moderate_rthaur
+		}
+	}
+	focus = {
+		id = SKA_befriending_ungerdaler
+		icon = GFX_goal_generic_improve_relations
+		cost = 10
+		prerequisite = {
+			focus = SKA_the_grandlore_council
+		}
+		relative_position_id = SKA_the_grandlore_council
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = -2
+		y = 1
+		completion_reward = {
+			UNG = {
+				FROM_improve_THIS_relations = yes
+			}
+		}
+	}
+	focus = {
+		id = SKA_promoting_free_trade
+		icon = GFX_goal_generic_trade
+		cost = 10
+		prerequisite = {
+			focus = SKA_charter_protection_league
+			focus = SKA_the_grandlore_council
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_legalized_boe_debates
+			}
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_the_grandlore_council
+		x = -4
+		y = 1
+		completion_reward = {
+			add_offsite_building = {
+				type = workshop
+				level = 2
+			}
+		}
+	}
+	focus = {
+		id = SKA_our_own_steel_trade_hub
+		icon = GFX_IRI_Reach_Southern_Mineral_Deposits
+		cost = 10
+		prerequisite = {
+			focus = SKA_promoting_free_trade
+		}
+		prerequisite = {
+			focus = SKA_befriending_ungerdaler
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_promoting_free_trade
+		x = 1
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { has_resources_amount = { resource = steel amount > 2 } }
+				add_resource = {
+					type = steel
+					amount = 5
+				}
+			}
+			add_ideas = SKA_our_own_steel_trade_hub
+		}
+	}
+	focus = {
+		id = SKA_subverting_steel_road
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 10
+		prerequisite = {
+			focus = SKA_our_own_steel_trade_hub
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_our_own_steel_trade_hub
+		x = -1
+		y = 1
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_competing_with_steel_road
+		}
+	}
+	focus = {
+		id = SKA_equal_representation_riksdag
+		icon = GFX_goal_tripartite_pact
+		cost = 10
+		prerequisite = {
+			focus = SKA_funding_moderate_rthaur
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_funding_moderate_rthaur
+		x = -2
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_representational_riksdag
+		}
+	}
+	focus = {
+		id = SKA_lift_casteless_prohibitions
+		icon = GFX_focus_CZE_german_puppet
+		cost = 10
+		prerequisite = {
+			focus = SKA_equal_representation_riksdag
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_equal_representation_riksdag
+		x = 1
+		y = 1
+		completion_reward = {
+			remove_ideas = SKA_destabilization_caste_system
+		}
+	}
+	focus = {
+		id = SKA_distribute_bannerlordships
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		prerequisite = {
+			focus = SKA_equal_representation_riksdag
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_equal_representation_riksdag
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_bannerlords
+		}
+	}
+	focus = {
+		id = SKA_enlightened_council_rule
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		prerequisite = {
+			focus = SKA_lift_casteless_prohibitions
+			focus = SKA_distribute_bannerlordships
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		mutually_exclusive = { focus = SKA_revive_vergall_riks_party }
+		relative_position_id = SKA_lift_casteless_prohibitions
+		x = 0
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = -0.075
+			}
+			add_ideas = SKA_enlightened_council_rule
+		}
+	}
+	focus = {
+		id = SKA_revive_vergall_riks_party
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10
+		prerequisite = {
+			focus = SKA_lift_casteless_prohibitions
+			focus = SKA_distribute_bannerlordships
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		mutually_exclusive = { focus = SKA_enlightened_council_rule }
+		relative_position_id = SKA_lift_casteless_prohibitions
+		x = -2
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = 0.05
+			}
+			add_stability = 0.05
+			set_party_name = {
+				ideology = republic_aristocrat
+				name = SKA_vergall_riks
+				long_name = SKA_vergall_riks_long
+			}
+			#event deciding which noble to elect, also enables elections
+			country_event = { id = skaelinger.86 hours = 2 }
+		}
+	}
+	focus = {
+		id = SKA_purge_extremists_army
+		icon = GFX_focus_generic_military_academy
+		cost = 10
+		prerequisite = {
+			focus = SKA_enlightened_council_rule
+			focus = SKA_revive_vergall_riks_party
+		}
+		available = {
+			OR = {
+				has_completed_focus = SKA_enlightened_council_rule
+				AND = {
+					has_completed_focus = SKA_revive_vergall_riks_party
+					has_country_leader = {
+						name = "Generallete"
+						ruling_only = yes
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_enlightened_council_rule
+		x = -1
+		y = 1
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_enemies_of_the_army
+		}
+	}
+	focus = {
+		id = SKA_militaristic_anti_extremism
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = {
+			focus = SKA_purge_extremists_army
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_purge_extremists_army
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_militaristic_anti_extremism
+		}
+	}
+	focus = {
+		id = SKA_intellectual_commissars
+		icon = GFX_goal_generic_major_war
+		cost = 10
+		prerequisite = {
+			focus = SKA_enlightened_council_rule
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_enlightened_council_rule
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_intellectual_commissars
+		}
+	}
+	focus = {
+		id = SKA_central_planning
+		icon = GFX_goal_generic_production2
+		cost = 10
+		prerequisite = {
+			focus = SKA_intellectual_commissars
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_intellectual_commissars
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_central_planning
+		}
+	}
+	focus = {
+		id = SKA_reform_markets
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 10
+		prerequisite = {
+			focus = SKA_revive_vergall_riks_party
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_revive_vergall_riks_party
+		x = -1
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = workshop
+					level = 2
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_renounce_claims_dwarven_nations
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = {
+			focus = SKA_funding_moderate_rthaur
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_funding_moderate_rthaur
+		x = 1
+		y = 1
+		completion_reward = {
+			every_country = {
+				limit = { OR = { original_tag = BER original_tag = RMT } }
+				news_event = { id = skaelinger.50 hours = 4 }
+			}
+			remove_opinion_modifier = {
+				target = RMT
+				modifier = bitter_rivals
+			}
+			BER = {
+				FROM_improve_THIS_relations = yes
+			}
+			RMT = {
+				FROM_improve_THIS_relations = yes
+				remove_opinion_modifier = {
+					target = SKA
+					modifier = bitter_rivals
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_threats_from_the_west
+		icon = GFX_goal_generic_small_arms
+		cost = 2
+		prerequisite = {
+			focus = SKA_abandon_isolationism
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			has_guaranteed = RTH
+		}
+		x = 36
+		y = 10
+		completion_reward = {
+			add_war_support = 0.1
+			ORD = {
+				FROM_worsen_THIS_relations = yes
+			}
+		}
+	}
+	focus = {
+		id = SKA_puritan_opposition
+		icon = GFX_goal_support_fascism
+		cost = 3
+		prerequisite = {
+			focus = SKA_threats_from_the_west
+		}
+		mutually_exclusive = {
+			focus = SKA_mutual_defense_allegiance
+			focus = SKA_guarantee_for_support
+		}
+		available = {
+			has_guaranteed = RTH
+		}
+		x = 33
+		y = 11
+		completion_reward = {
+			add_popularity = {
+				ideology = puritan
+				popularity = 0.05
+			}
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = SKA_anti_ordorian_stance
+		icon = GFX_focus_ord_evil
+		cost = 10
+		prerequisite = {
+			focus = SKA_puritan_opposition
+		}
+		available = {
+			has_guaranteed = RTH
+		}
+		x = 1
+		y = 1
+		relative_position_id = SKA_puritan_opposition
+		completion_reward = {
+			add_ideas = SKA_anti_ordorian_stance
+		}
+	}
+	focus = {
+		id = SKA_take_rthaur_industry
+		icon = GFX_IRI_Debase_Currency
+		cost = 5
+		prerequisite = {
+			focus = SKA_puritan_opposition
+		}
+		available = {
+			has_guaranteed = RTH
+			NOT = {
+				has_war_with = ORD
+			}
+		}
+		continue_if_invalid = yes
+		x = -1
+		y = 1
+		relative_position_id = SKA_puritan_opposition
+		completion_reward = {
+			add_offsite_building = { type = workshop level = 1 }
+			add_offsite_building = { type = forge level = 1 }
+			RTH = {
+				country_event = { id = skaelinger.109 hours = 4 }
+			}
+
+		}
+	}
+	focus = {
+		id = SKA_demand_khorinor_mountains
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		prerequisite = {
+			focus = SKA_take_rthaur_industry
+		}
+		available = {
+			has_guaranteed = RTH
+			RTH = {
+				controls_state = 133
+				controls_state = 135
+			}
+			NOT = {
+				has_war_with = ORD
+			}
+		}
+		continue_if_invalid = yes
+		x = 0
+		y = 1
+		relative_position_id = SKA_take_rthaur_industry
+		completion_reward = {
+			RTH = {
+				country_event = { id = skaelinger.110 hours = 4 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_the_great_houses
+		icon = GFX_focus_generic_monarchy_2
+		cost = 5
+		prerequisite = {
+			focus = SKA_emergency_conclave
+		}
+		mutually_exclusive = {
+			focus = SKA_the_dwarfen_republic
+		}
+		available = {
+			has_country_flag = SKA_keeping_monarchism
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		x = 40
+		y = 1
+		completion_reward = {
+			add_political_power = 100
+			country_event = { id = skaelinger.5 hours = 2 }
+		}
+	}
+	focus = {
+		id = SKA_house_hellirfast
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 10
+		prerequisite = {
+			focus = SKA_the_great_houses
+		}
+		mutually_exclusive = {
+			focus = SKA_house_grimvald
+			focus = SKA_house_palmekvist
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 36
+		y = 2
+		completion_reward = {
+			#
+		}
+	}
+	focus = {
+		id = SKA_close_republican_ties
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 10
+		prerequisite = {
+			focus = SKA_house_hellirfast
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 35
+		y = 3
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = {
+				ideology = republic_merchant
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = SKA_elven_support_announcement
+		icon = GFX_focus_ung_lesser_evil
+		cost = 10
+		prerequisite = {
+			focus = SKA_house_hellirfast
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 37
+		y = 3
+		completion_reward = {
+			RTH = {
+				FROM_improve_THIS_relations = yes
+			}
+		}
+	}
+	focus = {
+		id = SKA_charter_modernization_attempts
+		icon = GFX_focus_generic_treaty
+		cost = 10
+		prerequisite = {
+			focus = SKA_close_republican_ties
+		}
+		prerequisite = {
+			focus = SKA_elven_support_announcement
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 36
+		y = 4
+		completion_reward = {
+			add_ideas = SKA_reforming_charter
+		}
+	}
+	focus = {
+		id = SKA_lower_caste_education
+		icon = GFX_focus_research
+		cost = 10
+		prerequisite = {
+			focus = SKA_charter_modernization_attempts
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 35
+		y = 5
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = SKA_bicameral_legislature
+		icon = GFX_goal_support_democracy
+		cost = 10
+		prerequisite = {
+			focus = SKA_charter_modernization_attempts
+		}
+		x = 37
+		y = 5
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SKA_reforming_charter
+				add_idea = SKA_bicameral_legislature
+			}
+		}
+	}
+	focus = {
+		id = SKA_price_ceilings
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 10
+		prerequisite = {
+			focus = SKA_lower_caste_education
+		}
+		prerequisite = {
+			focus = SKA_bicameral_legislature
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 36
+		y = 6
+		completion_reward = {
+			add_ideas = SKA_price_ceilings
+		}
+	}
+	focus = {
+		id = SKA_guarantee_for_support
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 5
+		prerequisite = {
+			focus = SKA_threats_from_the_west
+		}
+		mutually_exclusive = {
+			focus = SKA_mutual_defense_allegiance
+			focus = SKA_puritan_opposition
+		}
+		available = {
+			has_guaranteed = RTH
+		}
+		x = 36
+		y = 11
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_RTH_support_stuff
+			RTH = {
+				country_event = { id = skaelinger.19 hours = 3 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_careful_preperations
+		icon = GFX_IRI_Reign_Of_Strategos
+		cost = 10
+		prerequisite = {
+			focus = SKA_guarantee_for_support
+		}
+		available = {
+			has_guaranteed = RTH
+		}
+		x = 36
+		y = 12
+		completion_reward = {
+			add_ideas = SKA_careful_preperations
+			RTH = { add_ideas = SKA_careful_preperations }
+		}
+	}
+	focus = {
+		id = SKA_peace_for_the_dwarfes
+		icon = GFX_goal_generic_major_alliance
+		cost = 10
+		prerequisite = {
+			focus = SKA_price_ceilings
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 37
+		y = 7
+		completion_reward = {
+			remove_ideas = SKA_destabilization_caste_system
+		}
+	}
+	focus = {
+		id = SKA_mutual_defense_allegiance
+		icon = GFX_goal_tripartite_pact
+		cost = 7
+		prerequisite = {
+			focus = SKA_threats_from_the_west
+		}
+		mutually_exclusive = {
+			focus = SKA_guarantee_for_support
+			focus = SKA_puritan_opposition
+		}
+		available = {
+			has_guaranteed = RTH
+		}
+		x = 38
+		y = 11
+		completion_reward = {
+			create_faction = mutual_defense_allegiance
+			RTH = {
+				country_event = { id = skaelinger.8 hours = 3 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_technological_military_agreement
+		icon = GFX_focus_research2
+		cost = 10
+		prerequisite = {
+			focus = SKA_mutual_defense_allegiance
+		}
+		available = {
+			OR = {
+				has_guaranteed = RTH
+				is_in_faction_with = RTH
+			}
+		}
+		x = 38
+		y = 12
+		completion_reward = {
+			add_to_tech_sharing_group = SKA_mutual_defense_research_group
+			RTH = {
+				add_to_tech_sharing_group = SKA_mutual_defense_research_group
+			}
+		}
+	}
+	focus = {
+		id = SKA_house_grimvald
+		icon = GFX_goal_generic_construct_military
+		cost = 10
+		prerequisite = {
+			focus = SKA_the_great_houses
+		}
+		mutually_exclusive = {
+			focus = SKA_house_hellirfast
+			focus = SKA_house_palmekvist
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 40
+		y = 2
+		completion_reward = {
+			#
+		}
+	}
+	focus = {
+		id = SKA_status_quo
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10
+		prerequisite = {
+			focus = SKA_house_grimvald
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 40
+		y = 3
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = SKA_acquisation_of_resources
+		icon = GFX_goal_generic_construction2
+		cost = 10
+		prerequisite = {
+			focus = SKA_status_quo
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 39
+		y = 4
+		completion_reward = {
+			add_resource = {
+				type = lumber
+				amount = 5
+				state = 150
+			}
+			add_resource = {
+				type = food
+				amount = 3
+				state = 159
+			}
+			add_resource = {
+				type = tungsten
+				amount = 5
+				state = 187
+			}
+		}
+	}
+	focus = {
+		id = SKA_increased_industrial_efforts
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = SKA_status_quo
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 41
+		y = 4
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					level = 2
+					type = workshop
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					level = 2
+					type = workshop
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_improve_trade_relations
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 10
+		prerequisite = {
+			focus = SKA_acquisation_of_resources
+		}
+		prerequisite = {
+			focus = SKA_increased_industrial_efforts
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 40
+		y = 5
+		completion_reward = {
+			every_other_country = {
+				limit = { is_neighbor_of = SKA NOT = { has_war_with = SKA } }
+				add_opinion_modifier = {
+					target = SKA
+					modifier = UNG_exchange 
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_border_fortifications
+		icon = GFX_goal_generic_fortify_city
+		cost = 10
+		prerequisite = {
+			focus = SKA_improve_trade_relations
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_improve_trade_relations
+		x = 1
+		y = 1
+		completion_reward = {
+			every_owned_state = {
+				limit = { any_neighbor_state = { NOT = { is_owned_by = SKA } } }
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_buy_out_steel_road_competition
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 10
+		prerequisite = {
+			focus = SKA_improve_trade_relations
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_improve_trade_relations
+		x = -1
+		y = 1
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_competing_with_steel_road
+		}
+	}
+	focus = {
+		id = SKA_traditionalism
+		icon = GFX_IRI_Emperors_Party
+		cost = 10
+		prerequisite = {
+			focus = SKA_border_fortifications
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 41
+		y = 7
+		completion_reward = {
+			add_popularity = {
+				ideology = monarchy_constitutional
+				popularity = 0.05
+			}
+			remove_ideas = SKA_destabilization_caste_system
+		}
+	}
+	focus = {
+		id = SKA_restoration_of_vergallheim
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		prerequisite = {
+			focus = SKA_abandon_isolationism
+		}
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
+		}
+		x = 45
+		y = 10
+		completion_reward = {
+			country_event = { id = skaelinger.21 hours = 2 }
+		}
+	}
+	focus = {
+		id = SKA_in_all_but_name
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 10
+		prerequisite = {
+			focus = SKA_restoration_of_vergallheim
+		}
+		mutually_exclusive = {
+			focus = SKA_glory_of_the_past
+			focus = SKA_diplomatic_ties
+		}
+		available = {
+			has_country_flag = SKA_minor_restoration
+			is_subject = no
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		relative_position_id = SKA_restoration_of_vergallheim
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SKA_memories_of_vergallheim
+				add_idea = SKA_memories_of_vergallheim_all_but_name
+			}
+		}
+	}
+	focus = {
+		id = SKA_the_ultimatum
+		icon = GFX_focus_ung_seventh_campaign
+		cost = 10
+		prerequisite = {
+			focus = SKA_in_all_but_name
+		}
+		mutually_exclusive = {
+			focus = SKA_vergallheim_alliance
+		}
+		available = {
+			is_subject = no
+			country_exists = RMT
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		relative_position_id = SKA_in_all_but_name
+		x = -1
+		y = 1
+		completion_reward = {
+			RMT = {
+				country_event = { id = skaelinger.22 hours = 3 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_vergallheim_alliance
+		icon = GFX_focus_generic_rimatu_agreement
+		cost = 10
+		prerequisite = {
+			focus = SKA_in_all_but_name
+		}
+		mutually_exclusive = {
+			focus = SKA_the_ultimatum
+		}
+		available = {
+			is_subject = no
+			country_exists = RMT
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		relative_position_id = SKA_in_all_but_name
+		x = 1
+		y = 1
+		completion_reward = {
+			RMT = {
+				country_event = { id = skaelinger.25 hours = 3 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_house_palmekvist
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 10
+		prerequisite = {
+			focus = SKA_the_great_houses
+		}
+		mutually_exclusive = {
+			focus = SKA_house_grimvald
+			focus = SKA_house_hellirfast
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 44
+		y = 2
+		completion_reward = {
+			#
+		}
+	}
+	focus = {
+		id = SKA_war_councils
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		prerequisite = {
+			focus = SKA_house_palmekvist
+		}
+		available = {
+			OR = {
+				AND = {
+					has_government = monarchy_absolute
+					has_country_leader = {
+						name = "Kytos Palmekvist"
+						ruling_only = yes
+					}
+					hidden_trigger = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
+				}
+				NOT = { has_country_flag = SKA_has_started_ironblood_conspiracy }
+			}
+		}
+		x = 43
+		y = 3
+		completion_reward = {
+			army_experience = 10
+			add_war_support = 0.05
+			#probably research bonus
+		}
+	}
+	focus = {
+		id = SKA_pledge_of_loyalty
+		icon = GFX_focus_generic_military_academy
+		cost = 5
+		prerequisite = {
+			focus = SKA_house_palmekvist
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		bypass = {
+			has_government = monarchy_absolute
+			has_country_leader = {
+				name = "Kytos Palmekvist"
+				ruling_only = yes
+			}
+		}
+		x = 45
+		y = 3
+		completion_reward = {
+			add_popularity = {
+				ideology = monarchy_absolute
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = monarchy_constitutional
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = SKA_rthaurian_monarchy_support
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 10
+		prerequisite = {
+			focus = SKA_war_councils
+		}
+		prerequisite = {
+			focus = SKA_pledge_of_loyalty
+		}
+		available = {
+			OR = {
+				AND = {
+					has_government = monarchy_absolute
+					has_country_leader = {
+						name = "Kytos Palmekvist"
+						ruling_only = yes
+					}
+					hidden_trigger = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
+				}
+				NOT = { has_country_flag = SKA_has_started_ironblood_conspiracy }
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = SKA_war_councils
+		completion_reward = {
+			RTH = {
+				country_event = { id = skaelinger.102 hours = 3 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_no_need_for_casteless
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		cost = 10
+		prerequisite = {
+			focus = SKA_rthaurian_monarchy_support
+		}
+		available = {
+			OR = {
+				AND = {
+					has_government = monarchy_absolute
+					has_country_leader = {
+						name = "Kytos Palmekvist"
+						ruling_only = yes
+					}
+					hidden_trigger = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
+				}
+				NOT = { has_country_flag = SKA_has_started_ironblood_conspiracy }
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = SKA_rthaurian_monarchy_support
+		completion_reward = {
+			add_ideas = SKA_no_need_for_casteless
+		}
+	}
+	focus = {
+		id = SKA_militarized_economy
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = SKA_rthaurian_monarchy_support
+		}
+		available = {
+			OR = {
+				AND = {
+					has_government = monarchy_absolute
+					has_country_leader = {
+						name = "Kytos Palmekvist"
+						ruling_only = yes
+					}
+					hidden_trigger = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
+				}
+				NOT = { has_country_flag = SKA_has_started_ironblood_conspiracy }
+			}
+		}
+		x = 43
+		y = 5
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					level = 2
+					type = forge
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					level = 2
+					type = forge
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_the_emergency_decree
+		icon = GFX_focus_generic_strike_at_democracy1
+		cost = 10
+		prerequisite = {
+			focus = SKA_no_need_for_casteless
+		}
+		prerequisite = {
+			focus = SKA_militarized_economy
+		}
+		available = {
+			OR = {
+				AND = {
+					has_government = monarchy_absolute
+					has_country_leader = {
+						name = "Kytos Palmekvist"
+						ruling_only = yes
+					}
+					hidden_trigger = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
+				}
+				NOT = { has_country_flag = SKA_has_started_ironblood_conspiracy }
+			}
+		}
+		x = 44
+		y = 6
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = -0.1
+			}
+			remove_ideas = SKA_destabilization_caste_system
+		}
+	}
+	focus = {
+		id = SKA_enemies_of_the_army
+		icon = GFX_BLD_Combined_Arsenal_Projects
+		cost = 10
+		prerequisite = {
+			focus = SKA_the_emergency_decree
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		bypass = {
+			has_government = monarchy_absolute
+			has_country_leader = {
+				name = "Kytos Palmekvist"
+				ruling_only = yes
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = SKA_the_emergency_decree
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_enemies_of_the_army
+		}
+	}
+	focus = {
+		id = SKA_glory_of_the_past
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = {
+			focus = SKA_restoration_of_vergallheim
+		}
+		mutually_exclusive = {
+			focus = SKA_in_all_but_name
+			focus = SKA_diplomatic_ties
+		}
+		available = {
+			has_country_flag = SKA_major_restoration
+			is_subject = no
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		relative_position_id = SKA_restoration_of_vergallheim
+		x = 4
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SKA_memories_of_vergallheim
+				add_idea = SKA_memories_of_vergallheim_glory_of_the_past
+			}
+		}
+	}
+	focus = {
+		id = SKA_defining_new_borders
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10
+		prerequisite = {
+			focus = SKA_glory_of_the_past
+		}
+		mutually_exclusive = {
+			focus = SKA_all_or_nothing
+		}
+		available = {
+			is_subject = no
+			OR = {
+				country_exists = KUR
+				country_exists = RMT
+			}
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		relative_position_id = SKA_glory_of_the_past
+		x = -1
+		y = 1
+		completion_reward = {
+			KUR = {
+				country_event = { id = skaelinger.29 hours = 2 random = 9 }
+			}
+			RMT = {
+				country_event = { id = skaelinger.29 hours = 2 random = 9 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_former_imperial_glory
+		icon = GFX_focus_ung_seventh_campaign
+		cost = 10
+		prerequisite = {
+			focus = SKA_the_emergency_decree
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		relative_position_id = SKA_the_emergency_decree
+		x = 1
+		y = 1
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 100
+			add_popularity = { ideology = monarchy_constitutional popularity = 0.05 }
+		}
+	}
+	focus = {
+		id = SKA_all_or_nothing
+		icon = GFX_goal_generic_major_war
+		cost = 10
+		prerequisite = {
+			focus = SKA_glory_of_the_past
+		}
+		mutually_exclusive = {
+			focus = SKA_defining_new_borders
+		}
+		available = {
+			is_subject = no
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				OR = {
+					has_government = puritan
+					has_government = monarchy_absolute
+				}
+				add = 3
+			}
+		}
+		relative_position_id = SKA_glory_of_the_past
+		x = 1
+		y = 1
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_all_or_nothing_KUR
+			unlock_decision_category_tooltip = SKA_all_or_nothing_RMT
+		}
+	}
+	focus = {
+		id = SKA_diplomatic_ties
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 10
+		prerequisite = {
+			focus = SKA_restoration_of_vergallheim
+		}
+		mutually_exclusive = {
+			focus = SKA_in_all_but_name
+			focus = SKA_glory_of_the_past
+		}
+		available = {
+			has_country_flag = SKA_diplomatic_restoration
+			is_subject = no
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		relative_position_id = SKA_restoration_of_vergallheim
+		x = -4
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SKA_memories_of_vergallheim
+				add_idea = SKA_memories_of_vergallheim_all_but_name
+			}
+		}
+	}
+	focus = {
+		id = SKA_protective_father_nation
+		icon = GFX_goal_generic_defence
+		cost = 10
+		prerequisite = {
+			focus = SKA_diplomatic_ties
+		}
+		mutually_exclusive = {
+			focus = SKA_support_all_dwarves
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		relative_position_id = SKA_diplomatic_ties
+		x = 1
+		y = 1
+		completion_reward = {
+			give_guarantee = RMT
+			give_guarantee = BER
+		}
+	}
+	focus = {
+		id = SKA_support_all_dwarves
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = SKA_diplomatic_ties
+		}
+		mutually_exclusive = {
+			focus = SKA_protective_father_nation
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		relative_position_id = SKA_diplomatic_ties
+		x = -1
+		y = 1
+		completion_reward = {
+			add_offsite_building = { type = workshop level = 1 }
+			RMT = {
+				country_event = { id = skaelinger.57 hours = 2 }
+			}
+			BER = {
+				country_event = { id = skaelinger.57 hours = 2 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_dwarven_protection_pact
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = {
+			focus = SKA_support_all_dwarves
+			focus = SKA_protective_father_nation
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		relative_position_id = SKA_diplomatic_ties
+		x = 0
+		y = 2
+		completion_reward = {
+			remove_ideas = SKA_memories_of_vergallheim_all_but_name
+			create_faction = dwarven_pact
+			RMT = {
+				country_event = { id = skaelinger.25 hours = 3 }
+			}
+			BER = {
+				country_event = { id = skaelinger.25 hours = 3 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_iron_blood_conspiracy
+		icon = GFX_goal_generic_major_war
+		cost = 10
+		prerequisite = {
+			focus = SKA_emergency_conclave
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = SKA_iron_bloods_purged
+			}
+		}
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = SKA_CHARTIST
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = SKA_COUNCIL
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = SKA_HELLIRFAST
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = SKA_GRIMVALD
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = SKA_PALMKEVIST
+				}
+				factor = 0
+			}
+			modifier = {
+				has_completed_focus = SKA_enemies_of_the_army
+				factor = 0
+			}
+			modifier = {
+				has_completed_focus = SKA_traditionalism
+				factor = 0
+			}
+			modifier = {
+				has_completed_focus = SKA_peace_for_the_dwarfes
+				factor = 0
+			}
+			modifier = {
+				has_completed_focus = SKA_purge_extremists_army
+				factor = 0
+			}
+			modifier = {
+				has_completed_focus = SKA_teach_of_extremisms_horrors
+				factor = 0
+			}
+		}
+		x = 50
+		y = 1
+		completion_reward = {
+			set_country_flag = SKA_has_started_ironblood_conspiracy
+			add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.05
+			}
+			hidden_effect = {
+				if = {
+					limit = { check_variable = { SKA_social_war_boe_inf > 2 } }
+					random_owned_controlled_state = {
+						limit = { NOT = { state = 146 } }
+						set_state_flag = SKA_ironblood_conspirator_state
+					}
+					random_owned_controlled_state = {
+						limit = { NOT = { state = 146 has_state_flag = SKA_ironblood_conspirator_state } }
+						set_state_flag = SKA_ironblood_conspirator_state
+					}
+					add_to_variable = { SKA_ironblood_conspiracy_strength = 2 }
+					add_popularity = {
+						ideology = monarchy_absolute
+						popularity = 0.01
+					}
+				}
+			}
+			set_temp_variable = { SKA_temp_iron_blood_general_support = party_popularity@monarchy_absolute }
+			multiply_temp_variable = { SKA_temp_iron_blood_general_support = 100 }
+			set_variable = { SKA_iron_blood_general_support = SKA_temp_iron_blood_general_support }
+			add_timed_idea = {
+				idea = SKA_conspiracy_idea
+				days = 200
+			}
+			unlock_decision_category_tooltip = SKA_ironblood_conspiracy
+			activate_mission = SKA_conspiracy_mission
+		}
+	}
+	focus = {
+		id = SKA_popular_figurehead
+		icon = GFX_goal_generic_major_alliance
+		cost = 10
+		prerequisite = {
+			focus = SKA_iron_blood_conspiracy
+		}
+		mutually_exclusive = {
+			focus = SKA_popular_general
+		}
+		relative_position_id = SKA_iron_blood_conspiracy
+		x = -1
+		y = 1
+		completion_reward = {
+			hidden_effect = {
+				retire_ideology_leader = monarchy_absolute
+			}
+			create_country_leader = {
+				name = "Gayra Hafahlif"
+				desc = "POLITICS_REEV_HELLIRFAST_DESC"
+				picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_7.dds"
+				expire = "990.1.1"
+				ideology = monarchy_absolute_ideology
+				traits = {
+				}
+			}
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = SKA_popular_general
+		icon = GFX_focus_generic_little_entente
+		cost = 10
+		prerequisite = {
+			focus = SKA_iron_blood_conspiracy
+		}
+		mutually_exclusive = {
+			focus = SKA_popular_figurehead
+		}
+		relative_position_id = SKA_iron_blood_conspiracy
+		x = 1
+		y = 1
+		completion_reward = {
+			create_country_leader = {
+				name = "Egviel Hvassøx"
+				desc = "POLITICS_REEV_HELLIRFAST_DESC"
+				picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_navy_1.dds"
+				expire = "990.1.1"
+				ideology = monarchy_absolute_ideology
+				traits = {
+				}
+			}
+			army_experience = 5
+		}
+	}
+	focus = {
+		id = SKA_dissolve_the_lore_council
+		icon = GFX_focus_generic_strike_at_democracy1
+		cost = 10
+		prerequisite = {
+			focus = SKA_popular_figurehead
+			focus = SKA_popular_general
+		}
+		relative_position_id = SKA_iron_blood_conspiracy
+		x = 0
+		y = 2
+		completion_reward = {
+			add_stability = -0.1
+			add_political_power = 120
+			country_event = { id = skaelinger.11 hours = 4 }
+		}
+	}
+	focus = {
+		id = SKA_shore_up_the_caste_system
+		icon = GFX_focus_CZE_german_puppet
+		cost = 10
+		prerequisite = {
+			focus = SKA_dissolve_the_lore_council
+		}
+		mutually_exclusive = {
+			focus = SKA_second_scheme
+		}
+		available = {
+			hidden_trigger = {
+				NOT = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
+			}
+		}
+		relative_position_id = SKA_dissolve_the_lore_council
+		x = -1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = { has_idea = SKA_destabilization_caste_system }
+				remove_ideas = SKA_destabilization_caste_system
+				add_popularity = {
+					ideology = monarchy_absolute
+					popularity = -0.05
+				}
+				else = {
+					add_stability = 0.05
+					add_popularity = {
+						ideology = monarchy_absolute
+						popularity = 0.05
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_establish_soldier_caste
+		icon = GFX_focus_generic_manpower
+		cost = 10
+		prerequisite = {
+			focus = SKA_shore_up_the_caste_system
+		}
+		available = {
+			hidden_trigger = {
+				NOT = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = SKA_SOLTRUIST
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = SKA_BROTHERHOOD
+				}
+				factor = 0
+			}
+		}
+		relative_position_id = SKA_shore_up_the_caste_system
+		x = 0
+		y = 1
+		completion_reward = {
+			add_war_support = 0.05
+			add_ideas = SKA_soldier_caste
+		}
+	}
+	focus = {
+		id = SKA_slave_acquisition_program
+		icon = GFX_focus_ung_elven_internment_act
+		cost = 10
+		prerequisite = {
+			focus = SKA_establish_soldier_caste
+		}
+		available = {
+			hidden_trigger = {
+				NOT = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
+			}
+		}
+		relative_position_id = SKA_establish_soldier_caste
+		x = 2
+		y = 1
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_slave_acquisition_program
+		}
+	}
+	focus = {
+		id = SKA_slave_division_program
+		icon = GFX_focus_generic_secret_treaty
+		cost = 5
+		prerequisite = {
+			focus = SKA_establish_soldier_caste
+		}
+		available = {
+			has_idea = SKA_slaves_acquired
+			hidden_trigger = {
+				NOT = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
+			}
+		}
+		continue_if_invalid = yes
+		relative_position_id = SKA_establish_soldier_caste
+		x = 0
+		y = 1
+		completion_reward = {
+			division_template = {
+				name = "Slave Division"
+				regiments = {
+					garrison = { x = 0 y = 0 }
+					garrison = { x = 0 y = 1 }
+					garrison = { x = 1 y = 0 }
+					garrison = { x = 1 y = 1 }
+				}
+			}
+			146 = {
+				create_unit = {
+					division = "name = \"Slave Division\" division_template = \"Slave Division\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+					owner = SKA
+					count = 3
+				}
+			}
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1200
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_lowborn_workers
+		icon = GFX_goal_generic_production
+		cost = 10
+		prerequisite = {
+			focus = SKA_establish_soldier_caste
+		}
+		available = {
+			hidden_trigger = {
+				NOT = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
+			}
+		}
+		relative_position_id = SKA_establish_soldier_caste
+		x = -2
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_lowborn_workers
+		}
+	}
+	focus = {
+		id = SKA_absolute_order
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		prerequisite = {
+			focus = SKA_slave_division_program
+		}
+		prerequisite = {
+			focus = SKA_lowborn_workers
+		}
+		available = {
+			hidden_trigger = {
+				NOT = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
+			}
+		}
+		relative_position_id = SKA_establish_soldier_caste
+		x = -1
+		y = 2
+		completion_reward = {
+			add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.1
+			}
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = SKA_forced_labor_army
+		icon = GFX_goal_tfv_saf_support_ossebrandwag
+		cost = 10
+		prerequisite = {
+			focus = SKA_basic_advances
+		}
+		prerequisite = {
+			focus = SKA_war_prisoners
+		}
+		mutually_exclusive = {
+			focus = SKA_increased_military_spendings
+		}
+		x = 8
+		y = 6
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SKA_war_prisoners
+				add_idea = SKA_forced_labor_army
+			}
+		}
+	}
+	focus = {
+		id = SKA_increased_military_spendings
+		icon = GFX_goal_generic_cavalry
+		cost = 10
+		prerequisite = {
+			focus = SKA_basic_advances
+		}
+		prerequisite = {
+			focus = SKA_restore_the_guilds_influence
+		}
+		mutually_exclusive = {
+			focus = SKA_forced_labor_army
+		}
+		x = 6
+		y = 6
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					level = 2
+					type = forge
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_basic_advances
+		icon = GFX_IRI_International_Academy_Of_Philosophy
+		cost = 10
+		prerequisite = {
+			focus = SKA_the_army_of_skaelinger
+		}
+		x = 9
+		y = 5
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = SKA_skaelinger_infantry
+		icon = GFX_goal_generic_military_sphere
+		cost = 10
+		prerequisite = {
+			focus = SKA_increased_military_spendings
+			focus = SKA_forced_labor_army
+		}
+		x = 7
+		y = 7
+		completion_reward = {
+			add_ideas = SKA_skaelinger_infantry
+		}
+	}
+	focus = {
+		id = SKA_superior_mountain_warfare
+		icon = GFX_focus_RAJ_indian_gentlemen_offcers
+		cost = 10
+		prerequisite = {
+			focus = SKA_skaelinger_infantry
+		}
+		x = 7
+		y = 8
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SKA_skaelinger_infantry
+				add_idea = SKA_skaelinger_infantry_2
+			}
+		}
+	}
+	focus = {
+		id = SKA_professional_army_training
+		icon = GFX_focus_generic_military_academy
+		cost = 10
+		prerequisite = {
+			focus = SKA_increased_military_spendings
+		}
+		x = 5
+		y = 7
+		completion_reward = {
+			add_ideas = SKA_professional_army_training
+		}
+	}
+	focus = {
+		id = SKA_glory_of_skaelinger_craftsmanship
+		icon = GFX_goal_generic_production2
+		cost = 10
+		prerequisite = {
+			focus = SKA_professional_army_training
+		}
+		x = 5
+		y = 8
+		completion_reward = {
+			add_ideas = SKA_skaelinger_craftsmanship
+		}
+	}
+	focus = {
+		id = SKA_forges_of_skaelinger
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = SKA_glory_of_skaelinger_craftsmanship
+			focus = SKA_dwarfen_engineering
+			focus = SKA_superior_mountain_warfare
+		}
+		x = 7
+		y = 9
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					level = 2
+					type = forge
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_foreign_lands_siege_practises
+		icon = GFX_goal_generic_army_artillery
+		cost = 10
+		prerequisite = {
+			focus = SKA_increased_military_spendings
+			focus = SKA_forced_labor_army
+		}
+		x = 9
+		y = 7
+		completion_reward = {
+			add_ideas = SKA_foreign_lands_siege_practises
+		}
+	}
+	focus = {
+		id = SKA_dwarfen_engineering
+		icon = GFX_goal_generic_production
+		cost = 10
+		prerequisite = {
+			focus = SKA_foreign_lands_siege_practises
+		}
+		x = 9
+		y = 8
+		completion_reward = {
+			add_ideas = SKA_dwarfen_engineering
+		}
+	}
+	focus = {
+		id = SKA_preemptive_strike
+		icon = GFX_focus_ung_war_ordoria
+		cost = 10
+		prerequisite = {
+			focus = SKA_anti_ordorian_stance
+		}
+		bypass = {
+			has_war_with = ORD
+		}
+		relative_position_id = SKA_anti_ordorian_stance
+		x = 0
+		y = 1
+		completion_reward = {
+			create_wargoal = {
+				target = ORD
+				type = topple_government
+			}
+			RTH = {
+				create_wargoal = {
+					target = ORD
+					type = annex_everything
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_border_fortification_programs
+		icon = GFX_goal_generic_construct_military
+		cost = 10
+		prerequisite = {
+			focus = SKA_careful_preperations
+			focus = SKA_technological_military_agreement
+		}
+		available = {
+			OR = {
+				has_guaranteed = RTH
+				is_in_faction_with = RTH
+			}
+		}
+		x = 37
+		y = 13
+		completion_reward = {
+			add_ideas = SKA_border_fortification_programs
+			RTH = {
+				add_ideas = SKA_border_fortification_programs
+			}
+		}
+	}
+	focus = {
+		id = SKA_continue_alliance
+		icon = GFX_goal_generic_major_alliance
+		cost = 10
+		prerequisite = {
+			focus = SKA_border_fortification_programs
+			focus = SKA_preemptive_strike
+		}
+		mutually_exclusive = {
+			focus = SKA_end_alliance_convenience
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
+			OR = {
+				is_in_faction_with = RTH
+				has_guaranteed = RTH
+			}
+			country_exists = RTH
+		}
+		relative_position_id = SKA_border_fortification_programs
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = SKA_end_alliance_convenience
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		cost = 10
+		prerequisite = {
+			focus = SKA_border_fortification_programs
+			focus = SKA_preemptive_strike
+		}
+		mutually_exclusive = {
+			focus = SKA_continue_alliance
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
+			OR = {
+				has_guaranteed = RTH
+				is_in_faction_with = RTH
+				RTH = {
+					exists = no
+				}
+			}
+		}
+		relative_position_id = SKA_preemptive_strike
+		x = 0
+		y = 1
+		completion_reward = {
+			RTH = {
+				country_event = { id = skaelinger.4 hours = 4 }
+				if = {
+					limit = { SKA = { is_in_faction_with = RTH } }
+					leave_faction = yes
+				}
+			}
+			diplomatic_relation = {
+				country = RTH
+				relation = guarantee
+				active = no
+			}
+			diplomatic_relation = {
+				country = RTH
+				relation = military_access
+				active = no
+			}
+			diplomatic_relation = {
+				country = RTH
+				relation = non_aggression_pact
+				active = no
+			}
+		}
+	}
+	focus = {
+		id = SKA_blessings_of_the_past
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 10
+		prerequisite = {
+			focus = SKA_defining_new_borders
+			focus = SKA_all_or_nothing
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SKA_controls_all_demanded_states
+				controls_state = 176
+				controls_state = 174
+				controls_state = 173
+				controls_state = 172
+				controls_state = 179
+				controls_state = 659
+				controls_state = 704
+				controls_state = 694
+				controls_state = 660
+				controls_state = 664
+				controls_state = 665
+				controls_state = 381
+				controls_state = 724
+			}
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		relative_position_id = SKA_glory_of_the_past
+		x = 0
+		y = 2
+		completion_reward = {
+			remove_ideas = SKA_memories_of_vergallheim_glory_of_the_past
+			custom_effect_tooltip = SKA_core_buncha_states
+			hidden_effect = {
+				every_state = {
+					limit = { OR = { state = 176 state = 174 state = 173 state = 172 state = 179 state = 659 state = 704 state = 694 state = 660 state = 664 state = 665 state = 381 state = 724 } NOT = { is_core_of = SKA } }
+					add_core_of = SKA
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_northern_dominion
+		icon = GFX_focus_ung_rimatu
+		cost = 10
+		prerequisite = {
+			focus = SKA_vergallheim_alliance
+			focus = SKA_the_ultimatum
+		}
+		available = {
+			RMT = {
+				OR = {
+					AND = {
+						exists = no
+						SKA = { owns_state = 383 }
+					}
+					is_subject_of = SKA
+					is_in_faction_with = SKA
+				}
+			}
+			NOT = {
+				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		relative_position_id = SKA_the_ultimatum
+		x = 1
+		y = 1
+		completion_reward = {
+			remove_ideas = SKA_memories_of_vergallheim_all_but_name
+			if = {
+				limit = { RMT = { is_in_faction_with = SKA NOT = { is_subject_of = SKA } } }
+				RMT = {
+					country_event = { id = skaelinger.27 hours = 3 }
+				}
+			}
+			if = {
+				limit = { RMT = { is_subject_of = SKA } }
+				set_autonomy = {
+					target = RMT
+					autonomous_state = autonomy_integrated_puppet
+				}
+				RMT = {
+					set_cosmetic_tag = RMT_SKA_northern_dominion
+				}
+			}
+			if = {
+				limit = { NOT = { country_exists = RMT } }
+				release = RMT
+				set_autonomy = {
+					target = RMT
+					autonomous_state = autonomy_integrated_puppet
+				}
+				RMT = {
+					set_cosmetic_tag = RMT_SKA_northern_dominion
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_subordination_war_plans
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10
+		prerequisite = {
+			focus = SKA_slave_acquisition_program
+		}
+		relative_position_id = SKA_slave_acquisition_program
+		x = 0
+		y = 1
+		completion_reward = {
+			create_wargoal = {
+				target = KUR
+				type = annex_everything
+			}
+		}
+	}
+	focus = {
+		id = SKA_population_support
+		icon = GFX_BLD_Promote_Farming
+		cost = 10
+		prerequisite = {
+			focus = SKA_buy_out_steel_road_competition
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 39
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_idea = SKA_food_imports_3 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_3
+					add_idea = SKA_food_imports_4
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports_2 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_2
+					add_idea = SKA_food_imports_3
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports_1 }
+				swap_ideas = {
+					remove_idea = SKA_food_imports_1
+					add_idea = SKA_food_imports_2
+				}
+			}
+			if = {
+				limit = { has_idea = SKA_food_imports }
+				swap_ideas = {
+					remove_idea = SKA_food_imports
+					add_idea = SKA_food_imports_1
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_decriminalize_the_brotherhood
+		icon = GFX_focus_generic_rosite_housing
+		cost = 10
+		prerequisite = {
+			focus = SKA_price_ceilings
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_has_started_ironblood_conspiracy
+			}
+		}
+		x = 35
+		y = 7
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = 0.05
+			}
+			set_country_flag = SKA_legalized_boe_debates
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = SKA_hellirfasts_final_decree
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10
+		available = {
+			NOT = {
+				has_country_flag = SKA_king_died
+			}
+		}
+		x = 20
+		y = 0
+		completion_reward = {
+			country_event = { id = skaelinger.65 hours = 2 }
+		}
+	}
+	focus = {
+		id = SKA_fortify_loris_path
+		icon = GFX_goal_generic_fortify_city
+		cost = 10
+		prerequisite = {
+			focus = SKA_hellirfasts_final_decree
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_king_died
+			}
+			has_guaranteed = RTH
+			is_guaranteed_by = RTH
+		}
+		relative_position_id = SKA_hellirfasts_final_decree
+		x = 1
+		y = 1
+		completion_reward = {
+			131 = {
+				add_building_construction = {
+					level = 2
+					type = bunker
+					instant_build = yes
+					province = {
+						all_provinces = yes
+					}
+				}
+			}
+			RTH = {
+				country_event = { id = skaelinger.64 hours = 3 }
+			}
+		}
+	}
+	focus = {
+		id = SKA_attempting_stabilize_nation
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = {
+			focus = SKA_hellirfasts_final_decree
+		}
+		available = {
+			NOT = {
+				has_country_flag = SKA_king_died
+			}
+		}
+		relative_position_id = SKA_hellirfasts_final_decree
+		x = -1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = monarchy_constitutional
+				popularity = 0.05
+			}
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = SKA_second_scheme
+		icon = GFX_goal_generic_position_armies
+		cost = 10
+		prerequisite = {
+			focus = SKA_dissolve_the_lore_council
+		}
+		mutually_exclusive = {
+			focus = SKA_shore_up_the_caste_system
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SKA_someone_won_social_war
+				OR = {
+					has_country_flag = SKA_social_war_radical_republican_victory
+					has_country_flag = SKA_social_war_puritan_victory
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = SKA_IRONBLOOD
+				}
+				factor = 0
+			}
+		}
+		select_effect = {
+			set_country_flag = SKA_started_second_scheme
+		}
+		relative_position_id = SKA_dissolve_the_lore_council
+		x = 5
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = SKA_beginning_second_scheme
+			add_popularity = {
+				ideology = monarchy_absolute
+				popularity = -0.05
+			}
+		}
+	}
+	focus = {
+		id = SKA_follow_rthaur_brothers
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+		cost = 10
+		prerequisite = {
+			focus = SKA_second_scheme
+		}
+		mutually_exclusive = {
+			focus = SKA_sun_beneath_stone
+		}
+		available = {
+			has_country_flag = SKA_social_war_radical_republican_victory
+		}
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = SKA_SOLTRUIST
+				}
+				factor = 0
+			}
+		}
+		relative_position_id = SKA_second_scheme
+		x = -1
+		y = 1
+		select_effect = {
+			country_event = { id = skaelinger.66 days = 14 }
+		}
+		completion_reward = {
+			country_event = { id = skaelinger.70 days = 1 }
+		}
+	}
+	focus = {
+		id = SKA_sun_beneath_stone
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10
+		prerequisite = {
+			focus = SKA_second_scheme
+		}
+		mutually_exclusive = {
+			focus = SKA_follow_rthaur_brothers
+		}
+		available = {
+			has_country_flag = SKA_social_war_puritan_victory
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = SKA_BROTHERHOOD
+				}
+				factor = 0
+			}
+		}
+		relative_position_id = SKA_second_scheme
+		x = 5
+		y = 1
+		completion_reward = {
+			country_event = { id = skaelinger.71 days = 1 }
+		}
+	}
+	focus = {
+		id = SKA_abolish_caste_system
+		icon = GFX_focus_rom_abdicate
+		cost = 5
+		prerequisite = {
+			focus = SKA_follow_rthaur_brothers
+			focus = SKA_sun_beneath_stone
+		}
+		mutually_exclusive = {
+			focus = SKA_spare_legionaire_nobles_abolishment
+		}
+		relative_position_id = SKA_sun_beneath_stone
+		x = -4
+		y = 1
+		available = {
+			has_idea = SKA_destabilization_caste_system
+		}
+		completion_reward = {
+			remove_ideas = SKA_destabilization_caste_system
+		}
+	}
+	focus = {
+		id = SKA_spare_legionaire_nobles_abolishment
+		icon = GFX_goal_generic_military_sphere
+		cost = 5
+		prerequisite = {
+			focus = SKA_sun_beneath_stone
+		}
+		mutually_exclusive = {
+			focus = SKA_abolish_caste_system
+		}
+		relative_position_id = SKA_sun_beneath_stone
+		x = -2
+		y = 1
+		available = {
+			has_idea = SKA_destabilization_caste_system
+		}
+		completion_reward = {
+			remove_ideas = SKA_destabilization_caste_system
+			add_political_power = 100
+			add_to_variable = { SKA_radical_soltruist_anger = 1 }
+		}
+	}
+	focus = {
+		id = SKA_making_republican_constitution
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10
+		prerequisite = {
+			focus = SKA_follow_rthaur_brothers
+		}
+		relative_position_id = SKA_follow_rthaur_brothers
+		x = 0
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = SKA_making_republican_constitution
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = SKA_centralized_guild_republics
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = {
+			focus = SKA_making_republican_constitution
+		}
+		relative_position_id = SKA_making_republican_constitution
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_centralized_guild_federation
+		}
+	}
+	focus = {
+		id = SKA_establish_universal_suffrage
+		icon = GFX_goal_support_democracy
+		cost = 10
+		prerequisite = {
+			focus = SKA_making_republican_constitution
+		}
+		relative_position_id = SKA_making_republican_constitution
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_universal_suffrage_radical
+		}
+	}
+	focus = {
+		id = SKA_control_the_prices
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 10
+		prerequisite = {
+			focus = SKA_centralized_guild_republics
+		}
+		relative_position_id = SKA_centralized_guild_republics
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_price_ceilings
+		}
+	}
+	focus = {
+		id = SKA_provide_housing
+		icon = GFX_goal_generic_construction2
+		cost = 10
+		prerequisite = {
+			focus = SKA_establish_universal_suffrage
+		}
+		prerequisite = {
+			focus = SKA_centralized_guild_republics
+		}
+		relative_position_id = SKA_centralized_guild_republics
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_public_housing
+		}
+	}
+	focus = {
+		id = SKA_national_guard
+		icon = GFX_focus_generic_manpower
+		cost = 10
+		prerequisite = {
+			focus = SKA_establish_universal_suffrage
+		}
+		relative_position_id = SKA_establish_universal_suffrage
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_national_guard
+		}
+	}
+	focus = {
+		id = SKA_hold_lathweyne_republican_conference
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10
+		prerequisite = {
+			focus = SKA_provide_housing
+		}
+		prerequisite = {
+			focus = SKA_national_guard
+		}
+		prerequisite = {
+			focus = SKA_control_the_prices
+		}
+		relative_position_id = SKA_provide_housing
+		x = 0
+		y = 1
+		completion_reward = {
+			every_country = {
+				limit = { OR = { has_government = republic_peasant has_government = republic_merchant } }
+				news_event = { id = skaelinger.72 days = 2 random = 12 }
+			}
+			hidden_effect = {
+				every_other_country = {
+					limit = { OR = { has_government = republic_peasant has_government = republic_merchant } }
+					FROM_improve_THIS_relations = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_supporting_republicans_abroad
+		icon = GFX_goal_generic_improve_relations
+		cost = 10
+		prerequisite = {
+			focus = SKA_hold_lathweyne_republican_conference
+		}
+		relative_position_id = SKA_hold_lathweyne_republican_conference
+		x = 0
+		y = 1
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_supporting_republicans
+		}
+	}
+	focus = {
+		id = SKA_convert_temple_to_soltruism
+		icon = GFX_focus_spa_save_the_alcazar
+		cost = 5
+		prerequisite = {
+			focus = SKA_sun_beneath_stone
+		}
+		mutually_exclusive = {
+			focus = SKA_destroy_temple
+		}
+		relative_position_id = SKA_sun_beneath_stone
+		x = 0
+		y = 1
+		completion_reward = {
+			add_to_variable = { SKA_radical_soltruist_anger = 1 }
+			remove_ideas = dwarven_ancestor_worship_religion
+			custom_effect_tooltip = SKA_soltruism_tt
+			hidden_effect = {
+				add_ideas = mohrokism_religion
+			}
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = SKA_destroy_temple
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		prerequisite = {
+			focus = SKA_sun_beneath_stone
+		}
+		mutually_exclusive = {
+			focus = SKA_convert_temple_to_soltruism
+		}
+		relative_position_id = SKA_sun_beneath_stone
+		x = 2
+		y = 1
+		completion_reward = {
+			remove_ideas = dwarven_ancestor_worship_religion
+			custom_effect_tooltip = SKA_soltruism_tt
+			hidden_effect = {
+				add_ideas = mohrokism_religion
+			}
+			add_war_support = 0.05
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = SKA_state_controlled_guild
+		icon = GFX_focus_generic_self_management
+		cost = 5
+		prerequisite = {
+			focus = SKA_convert_temple_to_soltruism
+			focus = SKA_destroy_temple
+		}
+		mutually_exclusive = {
+			focus = SKA_merge_all_guilds
+		}
+		relative_position_id = SKA_destroy_temple
+		x = -2
+		y = 1
+		completion_reward = {
+			add_to_variable = { SKA_radical_soltruist_anger = 1 }
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_merge_all_guilds
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 5
+		prerequisite = {
+			focus = SKA_convert_temple_to_soltruism
+			focus = SKA_destroy_temple
+		}
+		mutually_exclusive = {
+			focus = SKA_state_controlled_guild
+		}
+		relative_position_id = SKA_destroy_temple
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_centralized_guild_federation
+		}
+	}
+	focus = {
+		id = SKA_conventional_studies
+		icon = GFX_focus_research2
+		cost = 5
+		prerequisite = {
+			focus = SKA_state_controlled_guild
+			focus = SKA_merge_all_guilds
+		}
+		mutually_exclusive = {
+			focus = SKA_rediscover_runesmithing
+		}
+		relative_position_id = SKA_merge_all_guilds
+		x = -2
+		y = 1
+		completion_reward = {
+			add_to_variable = { SKA_radical_soltruist_anger = 1 }
+			add_ideas = SKA_conventional_studies
+		}
+	}
+	focus = {
+		id = SKA_rediscover_runesmithing
+		icon = GFX_goal_generic_production
+		cost = 5
+		prerequisite = {
+			focus = SKA_state_controlled_guild
+			focus = SKA_merge_all_guilds
+		}
+		mutually_exclusive = {
+			focus = SKA_conventional_studies
+		}
+		relative_position_id = SKA_merge_all_guilds
+		x = 0
+		y = 1
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_runesmithing_category
+			hidden_effect = {
+				add_ideas = SKA_runesmithing_idea
+			}
+		}
+	}
+	focus = {
+		id = SKA_pragmatist_warlordship
+		icon = GFX_focus_generic_little_entente
+		cost = 10
+		available = {
+			NOT = { has_idea = SKA_destabilization_caste_system }
+		}
+		prerequisite = {
+			focus = SKA_conventional_studies
+			focus = SKA_rediscover_runesmithing
+		}
+		mutually_exclusive = {
+			focus = SKA_esoteric_council
+		}
+		relative_position_id = SKA_rediscover_runesmithing
+		x = -2
+		y = 1
+		completion_reward = {
+			add_to_variable = { SKA_radical_soltruist_anger = 1 }
+			add_ideas = SKA_pragmatist_warlordship
+			if = {
+				limit = { check_variable = { SKA_radical_soltruist_anger > 3 } }
+				hidden_effect = {
+					country_event = { id = skaelinger.75 days = 3 random = 24 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_esoteric_council
+		icon = GFX_goal_generic_CAS
+		cost = 10
+		available = {
+			NOT = { has_idea = SKA_destabilization_caste_system }
+			custom_trigger_tooltip = {
+				check_variable = { SKA_radical_soltruist_anger < 3 }
+				tooltip = SKA_mostly_populist_reforms
+			}
+		}
+		prerequisite = {
+			focus = SKA_conventional_studies
+			focus = SKA_rediscover_runesmithing
+		}
+		mutually_exclusive = {
+			focus = SKA_pragmatist_warlordship
+		}
+		relative_position_id = SKA_rediscover_runesmithing
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_esoteric_council
+			retire_ideology_leader = puritan
+			create_country_leader = {
+				name = "Sigurdar Hakonson"
+				desc = "POLITICS_REEV_HELLIRFAST_DESC"
+				picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds"
+				expire = "990.1.1"
+				ideology = puritan_ideology
+				traits = {
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_crush_kurgur
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10
+		bypass = {
+			KUR = {
+				exists = no
+			}
+		}
+		prerequisite = {
+			focus = SKA_pragmatist_warlordship
+			focus = SKA_esoteric_council
+		}
+		relative_position_id = SKA_esoteric_council
+		x = -1
+		y = 1
+		completion_reward = {
+			every_state = {
+				limit = { is_core_of = KUR }
+				add_claim_by = SKA
+			}
+			create_wargoal = {
+				target = KUR
+				type = annex_everything
+			}
+		}
+	}
+	focus = {
+		id = SKA_war_focused_economy
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = SKA_pragmatist_warlordship
+		}
+		relative_position_id = SKA_pragmatist_warlordship
+		x = 0
+		y = 2
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = forge
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = forge
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_utilize_kurgur_plans
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 10
+		prerequisite = {
+			focus = SKA_esoteric_council
+		}
+		relative_position_id = SKA_esoteric_council
+		x = 0
+		y = 2
+		completion_reward = {
+			add_ideas = SKA_utilize_kurgur_plans
+		}
+	}
+	focus = {
+		id = SKA_begin_mohrok_indoctrination
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		prerequisite = {
+			focus = SKA_crush_kurgur
+		}
+		prerequisite = {
+			focus = SKA_war_focused_economy
+			focus = SKA_utilize_kurgur_plans
+		}
+		relative_position_id = SKA_crush_kurgur
+		x = 0
+		y = 2
+		completion_reward = {
+			unlock_decision_category_tooltip = SKA_mohrok_satellites
+		}
+	}
+	focus = {
+		id = SKA_demand_reunification_with_all_dwarves
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = {
+			focus = SKA_begin_mohrok_indoctrination
+		}
+		available = {
+			KUR = { exists = no }
+		}
+		relative_position_id = SKA_begin_mohrok_indoctrination
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = { BER = { is_subject = no exists = yes } }
+				BER = {
+					country_event = { id = skaelinger.83 hours = 4 }
+				}
+				else = {
+					if = {
+						limit = { NOT = { SKA = { owns_state = 369 } } }
+						random_country = {
+							limit = { owns_state = 369 }
+							SKA = {
+								create_wargoal = {
+									target = PREV
+									type = take_state_focus
+									generator = { 369 }
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { RMT = { is_subject = no exists = yes } }
+				RMT = {
+					country_event = { id = skaelinger.83 hours = 4 }
+				}
+				else = {
+					if = {
+						limit = { NOT = { SKA = { owns_state = 383 } } }
+						random_country = {
+							limit = { owns_state = 383 }
+							SKA = {
+								create_wargoal = {
+									target = PREV
+									type = take_state_focus
+									generator = { 383 }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_the_return_to_zarathum
+		icon = GFX_goal_generic_secret_weapon
+		cost = 5
+		x = 16
+		y = 5
+		available = {
+			owns_state = 174
+		}
+		completion_reward = {
+			add_political_power = 50
+			hidden_effect = {
+				KUR = {
+					country_event = { id = skaelinger.99 days = 3 random = 120 }
+				}
+			}
+			set_country_flag = SKA_seventh_campaign_zenith #will be referenced in an event that'll pop up if you lose Zarathum while trying this
+		}
+	}
+	focus = {
+		id = SKA_fortifying_orallheim_claims
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = SKA_the_return_to_zarathum }
+		cost = 10
+		relative_position_id = SKA_the_return_to_zarathum
+		x = 1
+		y = 1
+		completion_reward = {
+			every_owned_state = {
+				limit = { is_core_of = KUR any_neighbor_state = { is_owned_by = KUR } }
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_army_zarathum_defense
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = SKA_the_return_to_zarathum }
+		cost = 10
+		relative_position_id = SKA_the_return_to_zarathum
+		x = -1
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = SKA_army_zarathum_defense
+				days = 100
+			}
+		}
+	}
+	focus = {
+		id = SKA_secured_zarathum
+		icon = GFX_focus_spa_save_the_alcazar
+		prerequisite = { focus = SKA_fortifying_orallheim_claims }
+		prerequisite = { focus = SKA_army_zarathum_defense }
+		cost = 10
+		relative_position_id = SKA_the_return_to_zarathum
+		available = {
+			owns_state = 174
+		}
+		x = 0
+		y = 2
+		completion_reward = {
+			KUR = {
+				country_event = { id = skaelinger.100 days = 3 random = 120 }
+			}
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = SKA_connecting_new_capital
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = SKA_secured_zarathum }
+		cost = 10
+		relative_position_id = SKA_secured_zarathum
+		available = {
+			owns_state = 174
+		}
+		x = -2
+		y = 1
+		completion_reward = {
+			every_owned_state = {
+				limit = { is_core_of = KUR }
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_repopulating_zarathum
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = SKA_secured_zarathum }
+		cost = 10
+		relative_position_id = SKA_secured_zarathum
+		available = {
+			owns_state = 174
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			174 = {
+				add_manpower = 5000
+			}
+			#add idea that boosts monthly pop growth
+		}
+	}
+	focus = {
+		id = SKA_enhancing_zarathums_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = SKA_secured_zarathum }
+		cost = 10
+		relative_position_id = SKA_secured_zarathum
+		available = {
+			owns_state = 174
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			174 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					level = 3
+					type = workshop
+					instant_build = yes
+				}
+				add_building_construction = {
+					level = 3
+					type = forge
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SKA_zarathum_restored
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = SKA_connecting_new_capital }
+		prerequisite = { focus = SKA_repopulating_zarathum }
+		prerequisite = { focus = SKA_enhancing_zarathums_industry }
+		cost = 10
+		relative_position_id = SKA_repopulating_zarathum
+		available = {
+			owns_state = 174
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = SKA_vergallheim_restored
+		}
+	}
+}

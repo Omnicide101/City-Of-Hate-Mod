@@ -1,0 +1,24 @@
+state={
+	id=198
+	name="STATE_198"
+	provinces={
+		8193 1741 3634
+	}
+	state_category = rural
+	manpower=2019
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 2
+	}
+	history={
+		victory_points = {
+			1741 2
+		}
+		owner = STA
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = STA
+		add_claim_by = ORD
+	}
+}

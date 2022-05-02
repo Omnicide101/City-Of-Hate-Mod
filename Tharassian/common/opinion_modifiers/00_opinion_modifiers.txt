@@ -1,0 +1,336 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+# value
+# min_trust
+# max_trust
+# decay
+# months/years/days = timer
+# trade = yes/no
+
+opinion_modifiers = {
+
+	### MOD STUFF ###
+
+	staunch_allies = {
+		value = 75
+	}
+	
+	bitter_rivals = {
+		value = -75
+	}
+	
+	threatened_opinion = {
+		value = -50
+	}
+	
+	annoyed_opinion = {
+		value = -25
+	}
+	
+	dislike_opinion = {
+		value = -35
+	}
+	
+	illegitimate_war = {
+		value = -35
+	}
+	
+	trusted_opinion = {
+		value = 50
+	}
+	
+	liked_opinion = {
+		value = 35
+	}
+	
+	supportive_opinion = {
+		value = 25
+	}
+	
+	incredible_betrayal = {
+		value = -125
+	}
+	
+	puppet_opinion = {
+		value = 15
+	}
+	
+	hampered_trade = {
+		value = -40
+	}
+	
+	trade_monopoly = {
+		value = 35
+	}
+	
+	embargo_trade = {
+		trade = yes
+		value = -250
+	}
+	
+	closed_economy_trade_modifier = {
+		trade = yes
+		value = -250
+	}
+	
+	limited_exports_trade_modifier = {
+		trade = yes
+		value = -50
+	}
+	
+	export_focus_trade_modifier = {
+		trade = yes
+		value = -15
+	}
+	
+	free_trade_trade_modifier = {
+		trade = yes
+		value = 15
+	}
+	
+	targeted_by_faction = {
+		value = -50
+	}
+	
+	UNG_heavy_concessions = {
+		value = -50
+	}
+	
+	UNG_medium_concessions = {
+		value = -15
+	}
+	
+	FPT_cheater = {
+		value = -25
+	}
+	
+	FPT_outrageous_accusation = {
+		value = -25
+	}
+	
+	FPT_dirty_fighter = {
+		value = -15
+	}
+	
+	FPT_sore_loser = {
+		value = -15
+	}
+	
+	ORD_thaw_modifier = {
+		value = 50
+	}
+	
+	ORD_demand_land_modifier = {
+		value = -15
+	}
+	
+	RTH_monarchist_scum = {
+		value = -25
+	}
+	
+	UNG_exchange = {
+		value = 5
+	}
+	
+	UNG_expansionist_opinion = {
+		value = -25
+	}
+	
+	UNG_diplomatic_opinion = {
+		value = 25
+	}
+	
+	UNG_tensions = {
+		value = -15
+	}
+	
+	UNG_peasant_rabble = {
+		value = -25
+	}
+	
+	UNG_cold_war = {
+		value = -25
+	}
+	
+	HLZ_mad_freiprinz_opinion = {
+		value = -70
+	}
+	
+	HLZ_besmirched_state = {
+		value = -35
+	}
+	
+	HLZ_republican_rabble = {
+		value = -50
+	}
+	
+	HLZ_blue_blooded_diplomats = {
+		value = -25
+	}
+	
+	HLZ_compensated_nobles = {
+		value = -40
+	}
+	
+	HLZ_noble_riches_seized = {
+		value = -65
+	}
+	
+	HLZ_freiprinzen_reassured = {
+		value = -5
+	}
+	
+	HLZ_caved_to_aristocrats = {
+		value = -15
+	}
+	
+	HLZ_purple_seats_opinion = {
+		value = 20
+	}
+	
+	HLZ_banned_aristocrats_opinion = {
+		value = -35
+	}
+	
+	HLZ_placated = {
+		value = 35
+	}
+	
+	HLZ_supported = {
+		value = 50
+	}
+	
+	IR_same_ideology = {
+		value = 10
+	}
+	
+	IR_similar_ideology = {
+		value = 5
+	}
+	
+	IR_different_ideology = {
+		value = -5
+	}
+	
+	IR_vile_aristocrats = {
+		value = -25
+	}
+	
+	IR_vile_peasants = {
+		value = -25
+	}
+	
+	IR_puritan_pure_brothers = {
+		value = 35
+	}
+	
+	IR_puritan_good_race = {
+		value = 15
+	}
+	
+	IR_puritan_vermin = {
+		value = -200
+	}
+	
+	IR_puritan_vermin_trade = {
+		value = -200
+		trade = yes
+	}
+	
+	IR_puritan_extremists = {
+		value = -10
+	}
+	
+	IR_puritan_butchers = {
+		value = -200
+	}
+	
+	IR_puritan_butchers_trade = {
+		value = -200
+		trade = yes
+	}
+	
+	IR_wrong_puritans = {
+		value = -200
+	}
+	
+	IR_wrong_puritans_trade = {
+		value = -200
+		trade = yes
+	}
+
+	IR_same_faith = {
+		value = 5
+	}
+	
+	IR_heathens = {
+		value = -5
+	}
+	
+	IR_heretics = {
+		value = -10
+	}
+	
+	IR_same_faith_theocrat = {
+		value = 25
+	}
+	
+	IR_heathens_theocrat = {
+		value = -25
+	}
+	
+	IR_heretics_theocrat = {
+		value = -35
+	}
+
+	### VANILLA STUFF ###
+
+	holds_our_cores = {
+		value = -30
+	}
+	holds_our_claims = {
+		value = -15
+	}
+	claims_on_us = { 
+		value = -10
+	}
+	at_war_with_faction = {
+		value = -25
+	}
+	
+	attache_sent = {
+		value = 30
+	}
+	
+	attache_sent_to_enemy = {
+		value = -20
+	}
+
+	at_war = {
+		value = -75
+	}
+	
+	justifying_war_goal = {
+		value = -10
+		min_trust = -10
+		days = 10
+		decay = 1
+	}
+	
+	in_faction = {
+		value = 50
+	}
+	
+	military_access = {
+		value = 10
+	}
+	
+	non_aggression_pact = {
+		value = 25
+	}
+	
+	long_term_trade_partner = {
+		value = 1
+	}
+}

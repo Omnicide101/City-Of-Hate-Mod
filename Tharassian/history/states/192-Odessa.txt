@@ -1,0 +1,26 @@
+state={
+	id=192
+	name="STATE_192"
+	provinces={
+		4340 3553 262 787
+	}
+	state_category = city
+	manpower=139285
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 6
+		food = 3
+	}
+	history={
+		victory_points = { 4340 50 }
+		owner = STA
+		buildings = {
+			infrastructure = 2	
+			forge = 2
+			workshop = 3
+
+		}
+		add_core_of = STA
+
+	}
+}

@@ -1,0 +1,23 @@
+state={
+	id=281
+	name="STATE_281"
+	provinces={
+		8847 3521 628 4725 4087 2550 5195 8813 3465
+	}
+	state_category = pastoral
+	manpower=1001
+	buildings_max_level_factor=1.000
+	resources = {
+		mount = 2
+	}
+	history={
+		victory_points = {
+			4725 2
+		}
+		owner = NOC
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = NOC
+	}
+}

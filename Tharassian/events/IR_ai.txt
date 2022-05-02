@@ -1,0 +1,28 @@
+﻿### EVENTS FOR MAKING THE AI WORK PROPERLY
+
+add_namespace = ai
+
+
+country_event = {#Set border modifiers
+	id = ai.1
+	
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		every_controlled_state = {
+			limit = {
+				has_state_flag = border_incident_active
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = ongoing_border_conflict
+					}
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = ongoing_border_conflict
+			}
+		}
+	}
+}

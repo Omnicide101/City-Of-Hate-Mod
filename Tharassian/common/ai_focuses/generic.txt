@@ -1,0 +1,12 @@
+
+ai_focus_defense = {
+	research = {
+		defensive = 5.0	
+	}
+}
+
+ai_focus_aggressive = {
+	research = {
+		offensive = 5.0
+	}
+}

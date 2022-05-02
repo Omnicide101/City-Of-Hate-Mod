@@ -1,0 +1,146 @@
+﻿capital = 369
+
+set_oob = "BER_1936"
+
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	dwarven_warriors = 1
+	basic_ship_hull = 1
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = republic_aristocrat
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 0
+
+	monarchy_constitutional = 12
+
+	republic_peasant = 0
+
+	republic_aristocrat = 46
+
+	republic_merchant = 34
+
+	theocrat = 2
+
+	puritan = 6
+}
+
+add_ideas = {
+	dwarf_country
+	dwarven_ancestor_worship_religion
+}
+
+add_opinion_modifier = {
+	target = SKA
+	modifier = bitter_rivals
+}
+
+add_opinion_modifier = {
+	target = KUR
+	modifier = bitter_rivals
+}
+
+add_opinion_modifier = {
+	target = TAR
+	modifier = dislike_opinion
+}
+
+create_country_leader = {
+	name = "Joris Zilversteen"
+	desc = "politics_BER_zilversteen_desc"
+	picture = "gfx/leaders/BER/Portrait_BER_Zilversteen.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Willemijn Doeringa"
+	desc = "politics_BER_doeringa_desc"
+	picture = "gfx/leaders/BER/Portrait_BER_Doeringa.dds"
+	ideology = republic_peasant_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Alexander Goudhand"
+	desc = "politics_BER_goudhand_desc"
+	picture = "gfx/leaders/BER/Portrait_BER_Goudhand.dds"
+	ideology = puritan_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Joris Zilversteen"
+	desc = "politics_BER_zilversteen_desc"
+	picture = "gfx/leaders/BER/Portrait_BER_Zilversteen.dds"
+	ideology = monarchy_absolute_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Tessa Hoevering"
+	desc = "politics_BER_hoevering_desc"
+	picture = "gfx/leaders/BER/Portrait_BER_Hoevering.dds"
+	ideology = theocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Joris Zilversteen"
+	desc = "politics_BER_zilversteen_desc"
+	picture = "gfx/leaders/BER/Portrait_BER_Zilversteen.dds"
+	ideology = republic_aristocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Jasper Ijzerbaard"
+	desc = "politics_BER_ijzerbaard_desc"
+	picture = "gfx/leaders/BER/Portrait_BER_Ijzerbaard.dds"
+	ideology = republic_merchant_ideology
+	traits = {
+	}
+}

@@ -1,0 +1,2222 @@
+### Rthauiaur FOCUS TREE
+
+focus_tree = {
+	id = rthauiaur_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			original_tag = RTH
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 25 y = 1225 }
+
+	focus = {
+		id = RTH_cultural_tug_of_war
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 5
+		x = 3
+		y = 0
+		available = {
+			controls_state = 118
+			controls_state = 122
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = RTH_cultural_tug_of_war_cat
+		}
+	}
+
+	focus = {
+		id = RTH_build_loris_pass
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = RTH_cultural_tug_of_war }
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = RTH_cultural_tug_of_war
+		available = {
+			controls_state = 131
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_economic_competition
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = RTH_cultural_tug_of_war }
+		cost = 5
+		x = 1
+		y = 1
+		relative_position_id = RTH_cultural_tug_of_war
+		completion_reward = {
+			add_timed_idea = {
+				idea = RTH_economic_competition
+				days = 200
+			}
+			unlock_decision_tooltip = RTH_develop_quellion
+			unlock_decision_tooltip = RTH_develop_thurgithon
+		}
+	}
+
+	focus = {
+		id = RTH_commune_expansion_initiative
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = RTH_build_loris_pass }
+		prerequisite = { focus = RTH_economic_competition }
+		cost = 5
+		x = 1
+		y = 1
+		relative_position_id = RTH_build_loris_pass
+		completion_reward = {
+			add_ideas = RTH_commune_expansion_initiative
+		}
+	}
+
+	focus = {
+		id = RTH_strengthen_secretariat
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = RTH_build_loris_pass }
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = RTH_build_loris_pass
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = RTH_promote_regional_cultures
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = RTH_economic_competition }
+		cost = 5
+		x = 1
+		y = 1
+		relative_position_id = RTH_economic_competition
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = RTH_quellion_thurgithon_council_merger
+		icon = GFX_goal_tripartite_pact
+		prerequisite = { focus = RTH_strengthen_secretariat }
+		mutually_exclusive = { focus = RTH_vrinters_proposal }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = RTH_strengthen_secretariat
+		completion_reward = {
+			add_political_power = 120
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = RTH_together_and_equal
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = RTH_quellion_thurgithon_council_merger }
+		mutually_exclusive = { focus = RTH_crush_regionalism }
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = RTH_quellion_thurgithon_council_merger
+		completion_reward = {
+			if = {
+				limit = { has_idea = RTH_regionalism_quellion_dominant }
+				remove_ideas = RTH_regionalism_quellion_dominant
+			}
+			if = {
+				limit = { has_idea = RTH_regionalism_quellion_strong }
+				remove_ideas = RTH_regionalism_quellion_strong
+			}
+			if = {
+				limit = { has_idea = RTH_regionalism_quellion_thurgithon_balance }
+				remove_ideas = RTH_regionalism_quellion_thurgithon_balance
+			}
+			if = {
+				limit = { has_idea = RTH_regionalism_thurgithon_strong }
+				remove_ideas = RTH_regionalism_thurgithon_strong
+			}
+			if = {
+				limit = { has_idea = RTH_regionalism_thurgithon_dominant }
+				remove_ideas = RTH_regionalism_thurgithon_dominant
+			}
+			add_ideas = RTH_together_and_equal
+		}
+	}
+
+	focus = {
+		id = RTH_crush_regionalism
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = RTH_quellion_thurgithon_council_merger }
+		mutually_exclusive = { focus = RTH_together_and_equal }
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = RTH_quellion_thurgithon_council_merger
+		completion_reward = {
+			if = {
+				limit = { has_idea = RTH_regionalism_thurgithon_dominant }
+				random_list = {
+					25 = {
+						country_event = { id = rth.28 hours = 3 random = 3 }
+					}
+					75 = {
+						add_stability = -0.05
+					}
+				}
+				swap_ideas = {
+					remove_idea = RTH_regionalism_thurgithon_dominant
+					add_idea = RTH_centralized_communes
+				}
+			}
+			if = {
+				limit = { has_idea = RTH_regionalism_quellion_dominant }
+				random_list = {
+					25 = {
+						country_event = { id = rth.29 hours = 3 random = 3 }
+					}
+					75 = {
+						add_stability = -0.05
+					}
+				}
+				swap_ideas = {
+					remove_idea = RTH_regionalism_quellion_dominant
+					add_idea = RTH_centralized_communes
+				}
+			}
+			if = {
+				limit = { has_idea = RTH_regionalism_quellion_strong }
+				swap_ideas = {
+					remove_idea = RTH_regionalism_quellion_strong
+					add_idea = RTH_centralized_communes
+				}
+			}
+			if = {
+				limit = { has_idea = RTH_regionalism_quellion_thurgithon_balance }
+				swap_ideas = {
+					remove_idea = RTH_regionalism_quellion_thurgithon_balance
+					add_idea = RTH_centralized_communes
+				}
+			}
+			if = {
+				limit = { has_idea = RTH_regionalism_thurgithon_strong }
+				swap_ideas = {
+					remove_idea = RTH_regionalism_thurgithon_strong
+					add_idea = RTH_centralized_communes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_vrinters_proposal
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = RTH_promote_regional_cultures }
+		mutually_exclusive = { focus = RTH_quellion_thurgithon_council_merger }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = RTH_promote_regional_cultures
+		completion_reward = {
+			country_event = { id = rth.30 hours = 2 }
+		}
+	}
+
+	focus = {
+		id = RTH_dual_state_of_que_thr
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = RTH_vrinters_proposal }
+		mutually_exclusive = { focus = RTH_two_city_states }
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = RTH_vrinters_proposal
+		available = {
+			has_country_flag = RTH_city_autonomy_chosen
+		}
+		completion_reward = {
+			add_ideas = RTH_city_state_autonomy
+		}
+	}
+
+	focus = {
+		id = RTH_two_city_states
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = RTH_vrinters_proposal }
+		mutually_exclusive = { focus = RTH_dual_state_of_que_thr }
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = RTH_vrinters_proposal
+		available = {
+			has_country_flag = RTH_chose_separation_two_cities
+			NOT = {
+				has_idea = RTH_regionalism_quellion_thurgithon_balance
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { OR = { has_idea = RTH_regionalism_thurgithon_strong has_idea = RTH_regionalism_thurgithon_dominant } }
+				hidden_effect = {
+					QUE = {
+						add_state_core = 118
+						add_state_core = 142
+						add_state_core = 144
+						add_state_core = 140
+						add_state_core = 141
+						add_state_core = 139
+						add_state_core = 143
+						add_state_core = 128
+						add_state_core = 123
+						add_state_core = 137
+						add_state_core = 134
+						add_state_core = 138
+						add_state_core = 136
+						add_state_core = 129
+					}
+					every_state = {
+						limit = { is_core_of = QUE }
+						QUE = {
+							transfer_state = PREV
+						}
+					}
+				}
+				puppet = QUE
+			}
+			if = {
+				limit = { OR = { has_idea = RTH_regionalism_quellion_strong has_idea = RTH_regionalism_quellion_dominant } }
+				hidden_effect = {
+					THR = {
+						add_state_core = 122
+						add_state_core = 124
+						add_state_core = 125
+						add_state_core = 127
+						add_state_core = 119
+						add_state_core = 130
+						add_state_core = 145
+						add_state_core = 128
+						add_state_core = 126
+						add_state_core = 135
+						add_state_core = 132
+						add_state_core = 131
+					}
+					every_state = {
+						limit = { is_core_of = THR NOT = { OR = { state = 131 state = 133 } } }
+						THR = {
+							transfer_state = PREV
+						}
+					}
+				}
+				puppet = THR
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_spreading_seeds_ordorian_revolution
+		icon = GFX_focus_prc_agrarian_socialism
+		cost = 10
+		x = 11
+		y = 0
+		bypass = {
+			has_war_with = ORD
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = RTH_ORD_seeds_of_revolt
+		}
+	}
+
+	focus = {
+		id = RTH_ordarian_war_plans
+		icon = GFX_focus_ung_war_ordoria
+		prerequisite = { focus = RTH_spreading_seeds_ordorian_revolution }
+		cost = 10
+		x = -3
+		y = 1
+		bypass = {
+			has_war_with = ORD
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0.2
+				date < 887.9.1
+			}
+		}
+		relative_position_id = RTH_spreading_seeds_ordorian_revolution
+		completion_reward = {
+			country_event = { id = rth.37 hours = 2 }
+		}
+	}
+
+	focus = {
+		id = RTH_defend_the_revolution
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+		prerequisite = { focus = RTH_ordarian_war_plans }
+		cost = 5
+		x = 0
+		y = 1
+		available = {
+			has_war_with = ORD
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				ORD = {
+					OR = {
+						exists = no
+						is_subject_of = SKA
+						is_subject_of = RTH
+					}
+				}
+			}
+		}
+		relative_position_id = RTH_ordarian_war_plans
+		completion_reward = {
+			every_country = {
+				limit = { OR = { tag = RTH is_subject_of = RTH } }
+				add_ideas = RTH_defend_the_revolution
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_war_of_resistance
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = RTH_defend_the_revolution }
+		cost = 10
+		x = 0
+		y = 1
+		available = {
+			has_war_with = ORD
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = RTH_defend_the_revolution
+		completion_reward = {
+			ORD = {
+				add_ideas = ORD_rthaur_resistance_idea
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_dealing_ordorian_lands
+		icon = GFX_focus_ord_evil
+		cost = 15
+		x = 11
+		y = 5
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				ORD = {
+					OR = {
+						exists = no
+						is_subject_of = SKA
+						is_subject_of = RTH
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		select_effect = {
+			country_event = { id = rth.47 days = 20 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = RTH_have_to_decide_who_influence_our_new_cities
+			country_event = { id = rth.51 hours = 3 }
+		}
+	}
+
+	focus = {
+		id = RTH_promote_local_cultures
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		x = -2
+		y = 1
+		prerequisite = { focus = RTH_dealing_ordorian_lands }
+		mutually_exclusive = { focus = RTH_destroy_ordorian_cultures }
+		relative_position_id = RTH_dealing_ordorian_lands
+		available = {
+			has_country_flag = RTH_dont_destroy_ORD_culture
+			NOT = {
+				has_country_leader = {
+					name = "Kastyne Solverin"
+					ruling_only = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			unlock_decision_tooltip = RTH_increase_ORD_compliance
+		}
+	}
+
+	focus = {
+		id = RTH_destroy_ordorian_cultures
+		icon = GFX_focus_hlz_hard_power
+		cost = 10
+		x = 2
+		y = 1
+		prerequisite = { focus = RTH_dealing_ordorian_lands }
+		mutually_exclusive = { focus = RTH_promote_local_cultures }
+		relative_position_id = RTH_dealing_ordorian_lands
+		available = {
+			OR = {
+				has_country_leader = {
+					name = "Kastyne Solverin"
+					ruling_only = yes
+				}
+				has_country_flag = RTH_destroy_ORD_culture
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			unlock_decision_tooltip = RTH_reduce_ORD_resistance
+		}
+	}
+
+	focus = {
+		id = RTH_hunt_down_remaining_puritans
+		icon = GFX_IRI_New_Cohorts_Training_Program
+		cost = 5
+		x = -1
+		y = 1
+		prerequisite = { focus = RTH_destroy_ordorian_cultures }
+		relative_position_id = RTH_destroy_ordorian_cultures
+		available = {
+			OR = {
+				has_country_leader = {
+					name = "Kastyne Solverin"
+					ruling_only = yes
+				}
+				has_country_flag = RTH_destroy_ORD_culture
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = RTH_double_decrease_resistance_decision
+		}
+	}
+
+	focus = {
+		id = RTH_no_more_ordorian_buildings
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		cost = 5
+		x = 1
+		y = 1
+		prerequisite = { focus = RTH_destroy_ordorian_cultures }
+		relative_position_id = RTH_destroy_ordorian_cultures
+		available = {
+			OR = {
+				has_country_leader = {
+					name = "Kastyne Solverin"
+					ruling_only = yes
+				}
+				has_country_flag = RTH_destroy_ORD_culture
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			every_state = {
+				limit = { OR = { is_core_of = ORD is_core_of = VUD is_core_of = VAR is_core_of = IST is_core_of = YTH } workshop > 0 }
+				damage_building = {
+					type = workshop
+					damage = 0.9
+				}
+				add_compliance = 10
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_bring_city_states_back_into_line
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 10
+		x = -1
+		y = 1
+		prerequisite = { focus = RTH_hunt_down_remaining_puritans }
+		prerequisite = { focus = RTH_no_more_ordorian_buildings }
+		relative_position_id = RTH_no_more_ordorian_buildings
+		bypass = {
+			hidden_trigger = {
+				NOT = {
+					country_exists = VUD
+					country_exists = VAR
+					country_exists = IST
+					country_exists = YTH
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			unlock_decision_tooltip = RTH_city_states_puritan_undrift
+		}
+	}
+
+	focus = {
+		id = RTH_demand_city_state_submission
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		x = 0
+		y = 1
+		prerequisite = { focus = RTH_bring_city_states_back_into_line }
+		relative_position_id = RTH_bring_city_states_back_into_line
+		available = {
+			VUD = {
+				custom_trigger_tooltip = {
+					tooltip = RTH_no_ord_puritan_sentiments_loyal
+					NOT = {
+						OR = {
+							has_idea = RTH_ordorian_city_states_1
+							has_idea = RTH_ordorian_city_states_2
+						}
+					}
+					OR = {
+						is_subject_of = RTH
+						exists = no
+					}
+				}
+			}
+			VAR = {
+				custom_trigger_tooltip = {
+					tooltip = RTH_no_ord_puritan_sentiments_loyal
+					NOT = {
+						OR = {
+							has_idea = RTH_ordorian_city_states_1
+							has_idea = RTH_ordorian_city_states_2
+						}
+					}
+					OR = {
+						is_subject_of = RTH
+						exists = no
+					}
+				}
+			}
+			IST = {
+				custom_trigger_tooltip = {
+					tooltip = RTH_no_ord_puritan_sentiments_loyal
+					NOT = {
+						OR = {
+							has_idea = RTH_ordorian_city_states_1
+							has_idea = RTH_ordorian_city_states_2
+						}
+					}
+					OR = {
+						is_subject_of = RTH
+						exists = no
+					}
+				}
+			}
+			YTH = {
+				custom_trigger_tooltip = {
+					tooltip = RTH_no_ord_puritan_sentiments_loyal
+					NOT = {
+						OR = {
+							has_idea = RTH_ordorian_city_states_1
+							has_idea = RTH_ordorian_city_states_2
+						}
+					}
+					OR = {
+						is_subject_of = RTH
+						exists = no
+					}
+				}
+			}
+		}
+		bypass = {
+			hidden_trigger = {
+				NOT = {
+					country_exists = VUD
+					country_exists = VAR
+					country_exists = IST
+					country_exists = YTH
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			every_country = {
+				limit = { OR = { tag = VUD tag = VAR tag = IST tag = YTH } is_subject_of = RTH }
+				country_event = { id = rth.57 hours = 2 random = 2 }
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_successful_cultural_revolution_ordoria
+		icon = GFX_focus_ung_war_ordoria
+		cost = 10
+		x = 0
+		y = 1
+		prerequisite = { focus = RTH_demand_city_state_submission }
+		relative_position_id = RTH_demand_city_state_submission
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				country_exists = VUD
+				country_exists = VAR
+				country_exists = IST
+				country_exists = YTH
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = rthaur_cores
+			set_country_flag = RTH_ORD_culture_gone
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = ORD
+					}
+					add_core_of = RTH
+					remove_core_of = ORD
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_cosmopolitan_sentiments_cities
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		x = -1
+		y = 1
+		prerequisite = { focus = RTH_promote_local_cultures }
+		relative_position_id = RTH_promote_local_cultures
+		ai_will_do = {
+			factor = 100
+		}
+		bypass = {
+			hidden_trigger = {
+				NOT = {
+					country_exists = VUD
+					country_exists = VAR
+					country_exists = IST
+					country_exists = YTH
+				}
+			}
+		}
+		completion_reward = {
+			unlock_decision_tooltip = RTH_city_states_ruling_party_drift
+		}
+	}
+
+	focus = {
+		id = RTH_use_the_monarchists_aristocrats
+		icon = GFX_BLD_Swear_Loyalty_To_Irinthios
+		cost = 5
+		x = -1
+		y = 1
+		prerequisite = { focus = RTH_cosmopolitan_sentiments_cities }
+		relative_position_id = RTH_cosmopolitan_sentiments_cities
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				has_government = republic_peasant
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_idea = RTH_ordorian_resistance_idea }
+				swap_ideas = {
+					remove_idea = RTH_ordorian_resistance_idea
+					add_idea = RTH_ordorian_resistance_used_aristocrats_idea
+				}
+			}
+			every_country = {
+				limit = { OR = { tag = VUD tag = VAR tag = YTH tag = IST } is_subject_of = RTH }
+				add_popularity = {
+					ideology = republic_aristocrat
+					popularity = 0.05
+				}
+				add_popularity = {
+					ideology = monarchy_constitutional
+					popularity = 0.03
+				}
+				add_stability = 0.05
+				hidden_effect = {
+					add_popularity = {
+						ideology = puritan
+						popularity = -0.03
+					}
+				}
+			}
+			every_state = {
+				limit = { OR = { is_core_of = ORD is_core_of = VUD is_core_of = VAR is_core_of = YTH is_core_of = IST } }
+				if = {
+					limit = { is_owned_by = RTH }
+					add_compliance = 10
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_rosite_sentiments_countryside
+		icon = GFX_focus_generic_rosite_housing
+		cost = 10
+		x = 1
+		y = 1
+		prerequisite = { focus = RTH_promote_local_cultures }
+		relative_position_id = RTH_promote_local_cultures
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = RTH_double_effect_compliance_gain
+			every_country = {
+				limit = { OR = { tag = VUD tag = VAR tag = YTH tag = IST } is_subject_of = RTH }
+				add_popularity = {
+					ideology = republic_peasant
+					popularity = 0.05
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_secure_against_monarchism
+		icon = GFX_focus_rom_handle_king
+		cost = 5
+		x = 1
+		y = 1
+		prerequisite = { focus = RTH_rosite_sentiments_countryside }
+		relative_position_id = RTH_rosite_sentiments_countryside
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			if = {
+				limit = { has_idea = RTH_ordorian_resistance_idea }
+				swap_ideas = {
+					remove_idea = RTH_ordorian_resistance_idea
+					add_idea = RTH_ordorian_resistance_used_aristocrats_idea
+				}
+			}
+			every_country = {
+				limit = { OR = { tag = VUD tag = VAR tag = YTH tag = IST tag = RTH } }
+				add_popularity = {
+					ideology = monarchy_absolute
+					popularity = -0.05
+				}
+				add_popularity = {
+					ideology = monarchy_constitutional
+					popularity = -0.05
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_combat_puritanism_ord_city_states
+		icon = GFX_goal_generic_military_deal
+		cost = 10
+		x = 1
+		y = 1
+		prerequisite = { focus = RTH_cosmopolitan_sentiments_cities }
+		prerequisite = { focus = RTH_rosite_sentiments_countryside }
+		relative_position_id = RTH_cosmopolitan_sentiments_cities
+		ai_will_do = {
+			factor = 100
+		}
+		bypass = {
+			hidden_trigger = {
+				NOT = {
+					country_exists = VUD
+					country_exists = VAR
+					country_exists = IST
+					country_exists = YTH
+				}
+			}
+		}
+		completion_reward = {
+			unlock_decision_tooltip = RTH_city_states_puritan_undrift
+		}
+	}
+
+	focus = {
+		id = RTH_local_cultures_implanted
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10
+		x = -1
+		y = 1
+		prerequisite = { focus = RTH_combat_puritanism_ord_city_states }
+		mutually_exclusive = { focus = RTH_new_rthaur_culture }
+		relative_position_id = RTH_combat_puritanism_ord_city_states
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			VUD = {
+				custom_trigger_tooltip = {
+					tooltip = RTH_no_ord_puritan_sentiments_loyal
+					NOT = {
+						OR = {
+							has_idea = RTH_ordorian_city_states_1
+							has_idea = RTH_ordorian_city_states_2
+						}
+					}
+					OR = {
+						is_subject_of = RTH
+						exists = no
+					}
+				}
+			}
+			VAR = {
+				custom_trigger_tooltip = {
+					tooltip = RTH_no_ord_puritan_sentiments_loyal
+					NOT = {
+						OR = {
+							has_idea = RTH_ordorian_city_states_1
+							has_idea = RTH_ordorian_city_states_2
+						}
+					}
+					OR = {
+						is_subject_of = RTH
+						exists = no
+					}
+				}
+			}
+			IST = {
+				custom_trigger_tooltip = {
+					tooltip = RTH_no_ord_puritan_sentiments_loyal
+					NOT = {
+						OR = {
+							has_idea = RTH_ordorian_city_states_1
+							has_idea = RTH_ordorian_city_states_2
+						}
+					}
+					OR = {
+						is_subject_of = RTH
+						exists = no
+					}
+				}
+			}
+			YTH = {
+				custom_trigger_tooltip = {
+					tooltip = RTH_no_ord_puritan_sentiments_loyal
+					NOT = {
+						OR = {
+							has_idea = RTH_ordorian_city_states_1
+							has_idea = RTH_ordorian_city_states_2
+						}
+					}
+					OR = {
+						is_subject_of = RTH
+						exists = no
+					}
+				}
+			}
+		}
+		completion_reward = {
+			set_country_flag = RTH_ORD_culture_gone
+			if = {
+				limit = { 112 = { NOT = { is_core_of = YTH } } }
+				partition_ordoria = yes
+			}
+			if = {
+				limit = { VUD = { exists = no } }
+				release_puppet = VUD
+			}
+			if = {
+				limit = { VAR = { exists = no } }
+				release_puppet = VAR
+			}
+			if = {
+				limit = { IST = { exists = no } }
+				release_puppet = IST
+			}
+			if = {
+				limit = { YTH = { exists = no } }
+				release_puppet = YTH
+			}
+			every_country = {
+				limit = { OR = { tag = VUD tag = VAR tag = YTH tag = IST } is_subject_of = RTH }
+				add_ideas = RTH_loyal_city_states
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_new_rthaur_culture
+		icon = GFX_focus_ung_lesser_evil
+		cost = 10
+		x = 1
+		y = 1
+		prerequisite = { focus = RTH_combat_puritanism_ord_city_states }
+		mutually_exclusive = { focus = RTH_local_cultures_implanted }
+		relative_position_id = RTH_combat_puritanism_ord_city_states
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			VUD = {
+				exists = no
+			}
+			VAR = {
+				exists = no
+			}
+			IST = {
+				exists = no
+			}
+			YTH = {
+				exists = no
+			}
+			NOT = {
+				OR = {
+					has_completed_focus = RTH_two_city_states
+					has_government = republic_aristocrat
+				}
+			}
+		}
+		completion_reward = {
+			set_country_flag = RTH_ORD_culture_gone
+			custom_effect_tooltip = rthaur_cores
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = ORD
+					}
+					add_core_of = RTH
+					remove_core_of = ORD
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_expand_volunteer_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = RTH_spreading_seeds_ordorian_revolution }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = RTH_spreading_seeds_ordorian_revolution
+		completion_reward = {
+			add_ideas = RTH_expand_volunteer_corps
+		}
+	}
+
+	focus = {
+		id = RTH_call_for_international_radical_volunteers
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = RTH_expand_volunteer_corps }
+		mutually_exclusive = { focus = RTH_expand_drafting }
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = RTH_expand_volunteer_corps
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = RTH_expand_volunteer_corps
+				add_idea = RTH_expand_volunteer_corps_international
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_expand_drafting
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = RTH_expand_volunteer_corps }
+		mutually_exclusive = { focus = RTH_call_for_international_radical_volunteers }
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = RTH_expand_volunteer_corps
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = RTH_expand_volunteer_corps
+				add_idea = RTH_expand_volunteer_corps_draft
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_call_solverin_service
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = RTH_expand_drafting focus = RTH_call_for_international_radical_volunteers }
+		cost = 5
+		x = 1
+		y = 1
+		available = {
+			has_war_with = ORD
+		}
+		relative_position_id = RTH_call_for_international_radical_volunteers
+		completion_reward = {
+			create_field_marshal = {
+				name = "Kastyne Solverin"
+				picture = "gfx/leaders/RTH/Portrait_RTH_Solverin.dds"
+				traits = {
+					brilliant_strategist
+					infantry_officer
+					infantry_leader
+					infantry_expert
+				}
+				skill = 3
+				attack_skill = 4
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 3
+			}
+			create_corps_commander = {
+				name = "Quizzt Sendar"
+				picture = "gfx/leaders/RTH/Portrait_Rthauiaur_Generic_navy_2.dds"
+				traits = {
+					infantry_leader
+					trickster
+					ambusher
+				}
+				skill = 2
+				attack_skill = 1
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 4
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_raise_militias
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = RTH_call_solverin_service }
+		cost = 10
+		x = -1
+		y = 1
+		available = { has_war_with = ORD }
+		relative_position_id = RTH_call_solverin_service
+		completion_reward = {
+			if = {
+				limit = { controls_state = 131 }
+				131 = {
+					create_unit = {
+                    	division = "division_template = \"Peasant's Guard\" start_experience_factor = 0.2" 
+                   		owner = RTH
+                	    allow_spawning_on_enemy_provs = no
+                	    count = 1
+                	}
+				}
+				else = {
+					limit = { controls_state = 133 }
+					133 = {
+						create_unit = {
+                    		division = "division_template = \"Peasant's Guard\" start_experience_factor = 0.2" 
+                   			owner = RTH
+                		    allow_spawning_on_enemy_provs = no
+                		    count = 1
+                		}
+					}
+				}
+			}
+			if = {
+				limit = { controls_state = 118 }
+				118 = {
+					create_unit = {
+                    	division = "division_template = \"Peasant's Guard\" start_experience_factor = 0.2" 
+                   		owner = RTH
+                	    allow_spawning_on_enemy_provs = no
+                	    count = 2
+                	}
+				}
+			}
+			if = {
+				limit = { controls_state = 122 }
+				122 = {
+					create_unit = {
+                    	division = "division_template = \"Peasant's Guard\" start_experience_factor = 0.2" 
+                   		owner = RTH
+                	    allow_spawning_on_enemy_provs = no
+                	    count = 2
+                	}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_military_production_coop_ska
+		icon = GFX_BLD_Combined_Arsenal_Projects
+		prerequisite = { focus = RTH_spreading_seeds_ordorian_revolution }
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = RTH_spreading_seeds_ordorian_revolution
+		completion_reward = {
+			add_offsite_building = { type = forge level = 1 }
+			SKA = {
+				country_event = { id = rth.32 hours = 3 }
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_scramble_for_weapons
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = RTH_military_production_coop_ska }
+		cost = 10
+		x = 0
+		y = 2
+		available = {
+			has_war_with = ORD
+		}
+		relative_position_id = RTH_military_production_coop_ska
+		completion_reward = {
+			if = {
+				limit = { has_idea = RTH_military_production_cooperation }
+				swap_ideas = {
+					remove_idea = RTH_military_production_cooperation
+					add_idea = RTH_scramble_for_weapons
+				}
+				else = {
+					add_ideas = RTH_scramble_for_weapons
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_every_commune_soldier
+		icon = GFX_focus_focus_fra_maquis
+		prerequisite = { focus = RTH_call_solverin_service }
+		prerequisite = { focus = RTH_scramble_for_weapons }
+		cost = 10
+		x = 1
+		y = 1
+		available = { has_war_with = ORD }
+		relative_position_id = RTH_call_solverin_service
+		completion_reward = {
+			add_timed_idea = {
+				idea = RTH_every_commune_soldier
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_united_front
+		icon = GFX_goal_tripartite_pact
+		cost = 5
+		x = 18
+		y = 0
+		available = {
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = 0.05
+			}
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = RTH_anti_rosite_maneuvering
+		icon = GFX_goal_anti_comintern_pact
+		prerequisite = { focus = RTH_united_front }
+		mutually_exclusive = { focus = RTH_maintaining_united_front }
+		cost = 10
+		x = -2
+		y = 1
+		relative_position_id = RTH_united_front
+		available = {
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = RTH_degrade_united_front
+				days = 1000
+			}
+			add_to_variable = { RTH_anti_rosite_inf_in_ordoria = 1 }
+		}
+	}
+
+	focus = {
+		id = RTH_sponsor_vrinters_speeches
+		icon = GFX_focus_hlz_compensate_nobles
+		prerequisite = { focus = RTH_anti_rosite_maneuvering }
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = RTH_anti_rosite_maneuvering
+		available = {
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = RTH_vrinters_speeches
+				days = 180
+			}
+			add_to_variable = { RTH_anti_rosite_inf_in_ordoria = 1 }
+		}
+	}
+
+	focus = {
+		id = RTH_true_republican_coalition
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = RTH_sponsor_vrinters_speeches }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = RTH_sponsor_vrinters_speeches
+		available = {
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_merchant
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = 0.05
+			}
+			add_to_variable = { RTH_anti_rosite_inf_in_ordoria = 1 }
+		}
+	}
+
+	focus = {
+		id = RTH_maintaining_united_front
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = RTH_united_front }
+		mutually_exclusive = { focus = RTH_anti_rosite_maneuvering }
+		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = RTH_united_front
+		available = {
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = RTH_maintain_united_front
+				days = 1000
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_sway_oath_harquiss
+		icon = GFX_goal_molotov_ribbentrop_pact
+		prerequisite = { focus = RTH_anti_rosite_maneuvering focus = RTH_maintaining_united_front }
+		mutually_exclusive = { focus = RTH_hunt_down_oath_harquiss }
+		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = RTH_anti_rosite_maneuvering
+		available = {
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = RTH_sway_oath_harquiss_cat
+		}
+	}
+
+	focus = {
+		id = RTH_hunt_down_oath_harquiss
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = RTH_maintaining_united_front }
+		mutually_exclusive = { focus = RTH_sway_oath_harquiss }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = RTH_maintaining_united_front
+		available = {
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = RTH_hunt_the_oath_harquiss
+			add_to_variable = { RTH_rosite_authoritarianism = 1 }
+		}
+	}
+
+	focus = {
+		id = RTH_use_harquiss_against_rosites
+		icon = GFX_goal_tfv_saf_support_ossebrandwag
+		prerequisite = { focus = RTH_sway_oath_harquiss }
+		prerequisite = { focus = RTH_anti_rosite_maneuvering }
+		mutually_exclusive = { focus = RTH_use_ex_sympathizer_knowledge }
+		cost = 10
+		x = -1
+		y = 1
+		available = {
+			has_government = republic_peasant
+			has_country_flag = RTH_oath_of_harquiss_dealt_with
+		}
+		relative_position_id = RTH_sway_oath_harquiss
+		completion_reward = {
+			add_ideas = RTH_oath_harquiss_allies_anti_rosite
+			add_to_variable = { RTH_anti_rosite_inf_in_ordoria = 1 }
+		}
+	}
+
+	focus = {
+		id = RTH_use_ex_sympathizer_knowledge
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = RTH_sway_oath_harquiss }
+		mutually_exclusive = { focus = RTH_use_harquiss_against_rosites }
+		cost = 10
+		x = 1
+		y = 1
+		available = {
+			country_exists = ORD
+			has_country_flag = RTH_oath_of_harquiss_dealt_with
+		}
+		relative_position_id = RTH_sway_oath_harquiss
+		completion_reward = {
+			add_ideas = RTH_oath_harquiss_allies
+		}
+	}
+
+	focus = {
+		id = RTH_watch_vrinter
+		icon = GFX_focus_spa_save_the_alcazar
+		prerequisite = { focus = RTH_maintaining_united_front }
+		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = RTH_maintaining_united_front
+		available = {
+			NOT = { has_country_flag = RTH_vrinter_house_arrested }
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			country_event = { id = rth.54 hours = 3 }
+		}
+	}
+
+	focus = {
+		id = RTH_declare_travellers_illegal
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = RTH_watch_vrinter }
+		mutually_exclusive = { focus = RTH_republican_cooperation_committee }
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = RTH_watch_vrinter
+		available = {
+			NOT = {
+				has_country_flag = RTH_travellers_illegal_now
+			}
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = republic_merchant
+				popularity = -0.1
+			}
+			set_country_flag = RTH_travellers_illegal_now
+			add_to_variable = { RTH_rosite_authoritarianism = 1 }
+		}
+	}
+
+	focus = {
+		id = RTH_republican_cooperation_committee
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = RTH_watch_vrinter }
+		mutually_exclusive = { focus = RTH_declare_travellers_illegal }
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = RTH_watch_vrinter
+		available = {
+			NOT = {
+				has_country_flag = RTH_travellers_illegal_now
+			}
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			custom_effect_tooltip = RTH_absorb_50_republican_support
+			set_temp_variable = { RTH_traveller_support_var = party_popularity@republic_merchant }
+			divide_temp_variable = { RTH_traveller_support_var = 2 }
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = RTH_traveller_support_var
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_new_secretariat
+		icon = GFX_goal_generic_demand_territory
+		cost = 5
+		x = 27
+		y = 0
+		available = {
+			has_country_leader = {
+				name = "Kastyne Solverin"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = RTH_avenging_alucien
+		icon = GFX_ung_focus_radicalism_both_sides
+		prerequisite = { focus = RTH_new_secretariat }
+		cost = 5
+		x = -3
+		y = 1
+		relative_position_id = RTH_new_secretariat
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_country_leader = {
+				name = "Kastyne Solverin"
+				ruling_only = yes
+			}
+			country_exists = ORD
+		}
+		completion_reward = {
+			add_ideas = RTH_vengeance_for_alucien
+		}
+	}
+
+	focus = {
+		id = RTH_forging_new_rosebearer_party
+		icon = GFX_focus_generic_rosite_housing
+		prerequisite = { focus = RTH_new_secretariat }
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = RTH_new_secretariat
+		available = {
+			has_country_leader = {
+				name = "Kastyne Solverin"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			country_event = { id = rth.55 hours = 3 }
+		}
+	}
+
+	focus = {
+		id = RTH_reach_out_brotherhood_of_equals
+		icon = GFX_focus_ung_lesser_evil
+		prerequisite = { focus = RTH_new_secretariat }
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = RTH_new_secretariat
+		available = {
+			has_country_leader = {
+				name = "Kastyne Solverin"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				add_popularity = {
+					ideology = republic_peasant
+					popularity = 0.05
+				}
+			}
+			SKA = {
+				add_popularity = {
+					ideology = republic_peasant
+					popularity = 0.05
+				}
+				country_event = { id = rth.56 days = 1 random = 48 }
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_counter_lack_of_charisma
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = RTH_forging_new_rosebearer_party }
+		prerequisite = { focus = RTH_reach_out_brotherhood_of_equals }
+		cost = 5
+		x = 1
+		y = 2
+		relative_position_id = RTH_new_secretariat
+		available = {
+			has_country_leader = {
+				name = "Kastyne Solverin"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			remove_country_leader_trait = lack_of_charisma
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_centralization_programs
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = RTH_forging_new_rosebearer_party }
+		prerequisite = { focus = RTH_reach_out_brotherhood_of_equals }
+		cost = 10
+		x = -1
+		y = 2
+		relative_position_id = RTH_new_secretariat
+		available = {
+			has_country_leader = {
+				name = "Kastyne Solverin"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = RTH_centralizing_government
+		}
+	}
+
+	focus = {
+		id = RTH_traveller_threat
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = RTH_centralization_programs }
+		mutually_exclusive = { focus = RTH_cooperate_with_guilds }
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = RTH_centralization_programs
+		available = {
+			has_country_leader = {
+				name = "Kastyne Solverin"
+				ruling_only = yes
+			}
+		}
+		bypass = {
+			has_country_flag = RTH_travellers_illegal_now
+		}
+		completion_reward = {
+			set_country_flag = RTH_travellers_illegal_now
+			set_temp_variable = { RTH_traveller_popularity_temp = party_popularity@republic_merchant }
+			divide_temp_variable = { RTH_traveller_popularity_temp = 1.5 }
+			multiply_temp_variable = { RTH_traveller_popularity_temp = -1 }
+			add_popularity = {
+				ideology = republic_merchant
+				popularity = RTH_traveller_popularity_temp
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_cooperate_with_guilds
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = RTH_centralization_programs }
+		mutually_exclusive = { focus = RTH_traveller_threat }
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = RTH_centralization_programs
+		available = {
+			has_country_leader = {
+				name = "Kastyne Solverin"
+				ruling_only = yes
+			}
+			NOT = {
+				has_country_flag = RTH_travellers_illegal_now
+			}
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_new_rthauiaur
+		icon = GFX_focus_ung_lesser_evil
+		cost = 10
+		x = 21
+		y = 5
+		available = {
+			OR = {
+				has_completed_focus = RTH_promote_local_cultures
+				has_completed_focus = RTH_destroy_ordorian_cultures
+			}
+			has_government = republic_peasant
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = RTH_political_power_diplomacy
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 5
+		prerequisite = { focus = RTH_new_rthauiaur }
+		mutually_exclusive = {
+			focus = RTH_political_power_stability
+			focus = RTH_political_power_swordpoint
+		}
+		x = -4
+		y = 1
+		relative_position_id = RTH_new_rthauiaur
+		available = {
+			has_country_leader = {
+				name = "Ecernne Llyrin"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = RTH_political_power_stability
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 5
+		prerequisite = { focus = RTH_new_rthauiaur }
+		mutually_exclusive = {
+			focus = RTH_political_power_diplomacy
+			focus = RTH_political_power_swordpoint
+		}
+		x = 0
+		y = 1
+		relative_position_id = RTH_new_rthauiaur
+		available = {
+			has_country_leader = {
+				name = "Reezma Nawlr"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = RTH_political_power_swordpoint
+		icon = GFX_goal_generic_major_war
+		cost = 5
+		prerequisite = { focus = RTH_new_rthauiaur }
+		mutually_exclusive = {
+			focus = RTH_political_power_stability
+			focus = RTH_political_power_diplomacy
+		}
+		available = {
+			has_completed_focus = RTH_centralization_programs
+		}
+		x = 4
+		y = 1
+		relative_position_id = RTH_new_rthauiaur
+		available = {
+			has_country_leader = {
+				name = "Kastyne Solverin"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = RTH_end_anti_ordorian_alliance
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		cost = 5
+		prerequisite = { focus = RTH_political_power_diplomacy focus = RTH_political_power_stability }
+		mutually_exclusive = { focus = RTH_keep_skaelinger_ties }
+		x = 2
+		y = 1
+		relative_position_id = RTH_political_power_diplomacy
+		bypass = {
+			NOT = {
+				has_guaranteed = SKA
+				SKA = {
+					has_guaranteed = RTH
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { is_in_faction_with = SKA }
+				leave_faction = yes
+			}
+			diplomatic_relation = {
+				country = SKA
+				relation = guarantee
+				active = no
+			}
+			diplomatic_relation = {
+				country = SKA
+				relation = military_access
+				active = no
+			}
+			diplomatic_relation = {
+				country = SKA
+				relation = non_aggression_pact
+				active = no
+			}
+			SKA = {
+				country_event = { id = rth.65 hours = 4 }
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_rebuilding_war
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 20
+		prerequisite = { focus = RTH_political_power_stability }
+		x = 0
+		y = 1
+		relative_position_id = RTH_political_power_stability
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_inward_perfection
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		prerequisite = { focus = RTH_rebuilding_war }
+		x = 0
+		y = 1
+		relative_position_id = RTH_rebuilding_war
+		available = {
+			has_war = no
+		}
+		completion_reward = {
+			add_ideas = RTH_inward_perfection
+		}
+	}
+
+	focus = {
+		id = RTH_reassure_non_radical_neighbors
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10
+		prerequisite = { focus = RTH_inward_perfection }
+		x = -1
+		y = 1
+		relative_position_id = RTH_inward_perfection
+		available = {
+			has_war = no
+		}
+		completion_reward = {
+			every_other_country = {
+				limit = { is_neighbor_of = ROOT NOT = { has_government = republic_peasant } }
+				FROM_improve_THIS_relations = yes
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_protecting_revolution
+		icon = GFX_goal_generic_construct_military
+		cost = 15
+		prerequisite = { focus = RTH_inward_perfection }
+		x = 1
+		y = 1
+		relative_position_id = RTH_inward_perfection
+		available = {
+			has_war = no
+		}
+		completion_reward = {
+			every_owned_state = {
+				limit = { any_neighbor_state = { NOT = { is_owned_by = RTH } } }
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_keep_skaelinger_ties
+		icon = GFX_goal_generic_improve_relations
+		cost = 5
+		prerequisite = { focus = RTH_political_power_diplomacy }
+		mutually_exclusive = { focus = RTH_end_anti_ordorian_alliance }
+		x = -1
+		y = 1
+		relative_position_id = RTH_political_power_diplomacy
+		available = {
+			OR = {
+				has_guaranteed = SKA
+				SKA = {
+					has_guaranteed = RTH
+				}
+				is_in_faction_with = SKA
+			}
+		}
+		completion_reward = {
+			SKA = {
+				FROM_improve_THIS_relations = yes
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_prepare_spread_revolution_elsewhere
+		icon = GFX_focus_generic_rosite_housing
+		cost = 10
+		available = { has_completed_focus = RTH_political_power_diplomacy }
+		prerequisite = { focus = RTH_keep_skaelinger_ties focus = RTH_end_anti_ordorian_alliance }
+		x = 0
+		y = 2
+		relative_position_id = RTH_political_power_diplomacy
+		completion_reward = {
+			#decisions to start increasing radical power in neighbors
+			clr_country_flag = RTH_already_seeding_revolution
+			unlock_decision_category_tooltip = RTH_international_revolution
+		}
+	}
+
+	focus = {
+		id = RTH_operation_wizard
+		icon = GFX_focus_ung_cold_war
+		cost = 10
+		prerequisite = { focus = RTH_prepare_spread_revolution_elsewhere }
+		x = -1
+		y = 1
+		relative_position_id = RTH_prepare_spread_revolution_elsewhere
+		completion_reward = {
+			unlock_decision_tooltip = RTH_southern_GMR_revolution
+		}
+	}
+
+	focus = {
+		id = RTH_undermine_schwarzenbach
+		icon = GFX_focus_ung_stahlhof_demands
+		cost = 10
+		prerequisite = { focus = RTH_prepare_spread_revolution_elsewhere }
+		x = 0
+		y = 2
+		relative_position_id = RTH_prepare_spread_revolution_elsewhere
+		completion_reward = {
+			#UNG gets an event about radical agitation in STA, and whether or not they're willing to accept it then STA gets very destabilized, otherwise just somewhat destabilized
+			if = {
+				limit = { STA = { is_subject_of = UNG } }
+				UNG = {
+					country_event = { id = rth.66 hours = 4 }
+				}
+				else = {
+					STA = {
+						country_event = { id = rth.67 days = 1 random = 12 }
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_closer_ties_with_holzbrenn
+		icon = GFX_focus_hlz_pressler_triumphant
+		cost = 10
+		prerequisite = { focus = RTH_undermine_schwarzenbach }
+		available = {
+			HLZ = {
+				OR = {
+					has_government = republic_merchant
+					has_government = republic_peasant
+				}
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = RTH_undermine_schwarzenbach
+		completion_reward = {
+			HLZ = {
+				FROM_improve_THIS_relations = yes
+			}
+			#unlocks decision to pull them out of UNG civil war. Also decisions for increasing ties
+		}
+	}
+
+	focus = {
+		id = RTH_neureik_revolution
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 10
+		prerequisite = { focus = RTH_undermine_schwarzenbach }
+		x = 1
+		y = 1
+		relative_position_id = RTH_undermine_schwarzenbach
+		completion_reward = {
+			unlock_decision_tooltip = RTH_neureik_revolution_decision
+		}
+	}
+
+	focus = {
+		id = RTH_prepare_grand_revolution
+		icon = GFX_ung_focus_radicalism_both_sides
+		cost = 10
+		prerequisite = { focus = RTH_political_power_swordpoint }
+		x = -1
+		y = 1
+		relative_position_id = RTH_political_power_swordpoint
+		completion_reward = {
+			add_ideas = RTH_grand_revolution_idea
+		}
+	}
+
+	focus = {
+		id = RTH_thorns_of_roses
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 15
+		prerequisite = { focus = RTH_political_power_swordpoint }
+		x = 1
+		y = 1
+		relative_position_id = RTH_political_power_swordpoint
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = forge
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = forge
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = forge
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_incite_skaelinger_brothers_rise_up
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		prerequisite = { focus = RTH_prepare_grand_revolution }
+		prerequisite = { focus = RTH_thorns_of_roses }
+		x = -1
+		y = 1
+		relative_position_id = RTH_thorns_of_roses
+		completion_reward = {
+			create_faction = directory_lathweyne
+			if = {
+				limit = { SKA = { has_government = republic_peasant } }
+				SKA = {
+					country_event = { id = skaelinger.8 hours = 3 }
+				}
+				else = {
+					if = {
+						limit = { SKA = { NOT = { has_country_flag = SKA_legalized_boe_debates } } }
+						SKA = {
+							country_event = { id = rth.73 hours = 5 random = 10 }
+						}
+						else = {
+							create_wargoal = {
+								target = SKA
+								type = annex_everything
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_plan_future_sister_states
+		icon = GFX_IRI_Reign_Of_Strategos
+		cost = 10
+		prerequisite = { focus = RTH_incite_skaelinger_brothers_rise_up }
+		x = -1
+		y = 1
+		relative_position_id = RTH_incite_skaelinger_brothers_rise_up
+		completion_reward = {
+			#unlock_decisions to form 'sister states of the rthaur'
+		}
+	}
+
+	focus = {
+		id = RTH_khorinor_question
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 10
+		prerequisite = { focus = RTH_incite_skaelinger_brothers_rise_up }
+		x = 1
+		y = 1
+		available = {
+			OR = {
+				SKR = {
+					is_in_faction_with = RTH
+				}
+				SKR = {
+					is_subject_of = RTH
+				}
+				SKA = {
+					is_in_faction_with = RTH
+				}
+				SKA = {
+					is_subject_of = RTH
+				}
+			}
+		}
+		bypass = {
+			owns_state = 133
+			owns_state = 135
+		}
+		relative_position_id = RTH_incite_skaelinger_brothers_rise_up
+		completion_reward = {
+			country_event = { id = rth.74 hours = 3 }
+		}
+	}
+
+	focus = {
+		id = RTH_free_peoples_of_realm
+		icon = GFX_focus_ord_shatter_realm
+		cost = 10
+		prerequisite = { focus = RTH_plan_future_sister_states }
+		prerequisite = { focus = RTH_khorinor_question }
+		x = 1
+		y = 1
+		relative_position_id = RTH_plan_future_sister_states
+		completion_reward = {
+			create_wargoal = {
+				target = GMR
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = RTH_red_sigismund
+		icon = GFX_BLD_Kugur_Warriors_Cooperation
+		cost = 5
+		prerequisite = { focus = RTH_free_peoples_of_realm }
+		x = 0
+		y = 1
+		available = {
+			GMR = {
+				OR = {
+					exists = no
+					has_capitulated = yes
+					is_subject_of = RTH
+				}
+			}
+		}
+		relative_position_id = RTH_free_peoples_of_realm
+		completion_reward = {
+			swap_ruler_traits = {
+				remove = red_general
+				add = red_sigismund
+			}
+		}
+	}

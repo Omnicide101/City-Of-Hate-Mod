@@ -1,0 +1,29 @@
+spriteTypes = {
+
+	#### Mod stuff####
+	
+	spriteType = {
+		name = "GFX_trait_lumotheurge"
+		texturefile = "gfx/interface/traits/trait_lumotheurge.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_noctheurge"
+		texturefile = "gfx/interface/traits/trait_noctheurge.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_has_magic_sword_commander"
+		texturefile = "gfx/interface/traits/trait_has_magic_sword.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_has_magic_ring_commander"
+		texturefile = "gfx/interface/traits/trait_has_magic_ring.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_has_magic_armour_commander"
+		texturefile = "gfx/interface/traits/trait_has_magic_armour.dds"
+	}
+}

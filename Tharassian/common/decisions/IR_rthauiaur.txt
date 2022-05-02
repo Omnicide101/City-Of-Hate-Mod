@@ -1,0 +1,1740 @@
+RTH_cultural_tug_of_war_cat = {
+
+    RTH_enshrine_quellion_proclamation = {
+
+        cost = 25
+
+        fire_only_once = yes
+
+        icon = generic_civil_support
+
+        complete_effect = {
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_strong
+                    add_idea = RTH_regionalism_quellion_dominant
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_thurgithon_balance }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_thurgithon_balance
+                    add_idea = RTH_regionalism_quellion_strong
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_thurgithon_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_thurgithon_strong
+                    add_idea = RTH_regionalism_quellion_thurgithon_balance
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_thurgithon_dominant }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_thurgithon_dominant
+                    add_idea = RTH_regionalism_thurgithon_strong
+                }
+            }
+        }
+
+    }
+
+    RTH_promote_insularity = {
+
+        cost = 20
+
+        icon = generic_political_discourse
+
+        days_remove = 70
+
+        days_re_enable = 70
+
+        modifier = {
+            min_export = -0.1
+            stability_factor = 0.025
+        }
+
+        complete_effect = {
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_strong
+                    add_idea = RTH_regionalism_quellion_dominant
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_thurgithon_balance }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_thurgithon_balance
+                    add_idea = RTH_regionalism_quellion_strong
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_thurgithon_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_thurgithon_strong
+                    add_idea = RTH_regionalism_quellion_thurgithon_balance
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_thurgithon_dominant }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_thurgithon_dominant
+                    add_idea = RTH_regionalism_thurgithon_strong
+                }
+            }
+        }
+
+    }
+
+    RTH_develop_quellion = {
+
+        cost = 25
+
+        icon = generic_construction
+
+        days_remove = 35
+
+        visible = {
+            has_completed_focus = RTH_economic_competition
+        }
+
+        fire_only_once = yes
+
+        modifier = {
+            consumer_goods_factor = 0.05
+        }
+
+        complete_effect = {
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_strong
+                    add_idea = RTH_regionalism_quellion_dominant
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_thurgithon_balance }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_thurgithon_balance
+                    add_idea = RTH_regionalism_quellion_strong
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_thurgithon_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_thurgithon_strong
+                    add_idea = RTH_regionalism_quellion_thurgithon_balance
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_thurgithon_dominant }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_thurgithon_dominant
+                    add_idea = RTH_regionalism_thurgithon_strong
+                }
+            }
+            118 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = workshop
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+
+    }
+
+    RTH_promote_chartism_in_ytholine = {
+
+        cost = 25
+
+        days_re_enable = 70
+
+        days_remove = 70
+
+        modifier = {
+            republic_merchant_drift = 0.1
+            consumer_goods_factor = -0.03
+        }
+
+        icon = generic_political_discourse
+
+        complete_effect = {
+            if = {
+                limit = { has_idea = RTH_regionalism_thurgithon_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_thurgithon_strong
+                    add_idea = RTH_regionalism_thurgithon_dominant
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_thurgithon_balance }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_thurgithon_balance
+                    add_idea = RTH_regionalism_thurgithon_strong
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_strong
+                    add_idea = RTH_regionalism_quellion_thurgithon_balance
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_dominant }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_dominant
+                    add_idea = RTH_regionalism_quellion_strong
+                }
+            }
+        }
+
+    }
+
+    RTH_expand_trade_with_GMR = {
+
+        cost = 30
+
+        icon = generic_naval
+
+        fire_only_once = yes
+
+        days_remove = 35
+
+        modifier = {
+            min_export = 0.1
+        }
+
+        complete_effect = {
+           if = {
+                limit = { has_idea = RTH_regionalism_thurgithon_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_thurgithon_strong
+                    add_idea = RTH_regionalism_thurgithon_dominant
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_thurgithon_balance }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_thurgithon_balance
+                    add_idea = RTH_regionalism_thurgithon_strong
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_strong
+                    add_idea = RTH_regionalism_quellion_thurgithon_balance
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_dominant }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_dominant
+                    add_idea = RTH_regionalism_quellion_strong
+                }
+            }
+            GMR = {
+                FROM_improve_THIS_relations = yes
+            }
+        }
+
+    }
+
+    RTH_expand_trade_with_SKA = {
+
+        cost = 25
+
+        icon = generic_naval
+
+        days_remove = 35
+
+        fire_only_once = yes
+
+        modifier = {
+            min_export = 0.1
+        }
+
+        complete_effect = {
+            if = {
+                limit = { has_idea = RTH_regionalism_thurgithon_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_thurgithon_strong
+                    add_idea = RTH_regionalism_thurgithon_dominant
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_thurgithon_balance }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_thurgithon_balance
+                    add_idea = RTH_regionalism_thurgithon_strong
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_strong
+                    add_idea = RTH_regionalism_quellion_thurgithon_balance
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_dominant }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_dominant
+                    add_idea = RTH_regionalism_quellion_strong
+                }
+            }
+            SKA = {
+                FROM_improve_THIS_relations = yes
+            }
+        }
+
+    }
+
+    RTH_develop_thurgithon = {
+
+        cost = 25
+
+        icon = generic_construction
+
+        days_remove = 35
+
+        fire_only_once = yes
+
+        visible = {
+            has_completed_focus = RTH_economic_competition
+        }
+
+        modifier = {
+            consumer_goods_factor = 0.05
+        }
+
+        complete_effect = {
+            if = {
+                limit = { has_idea = RTH_regionalism_thurgithon_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_thurgithon_strong
+                    add_idea = RTH_regionalism_thurgithon_dominant
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_thurgithon_balance }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_thurgithon_balance
+                    add_idea = RTH_regionalism_thurgithon_strong
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_strong }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_strong
+                    add_idea = RTH_regionalism_quellion_thurgithon_balance
+                }
+            }
+            if = {
+                limit = { has_idea = RTH_regionalism_quellion_dominant }
+                swap_ideas = {
+                    remove_idea = RTH_regionalism_quellion_dominant
+                    add_idea = RTH_regionalism_quellion_strong
+                }
+            }
+            122 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = workshop
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+
+    }
+
+}
+
+RTH_ORD_seeds_of_revolt = {
+
+    RTH_debug_reset_seed_flag = {
+
+        visible = {
+            is_debug = yes
+        }
+
+        available = {
+            has_country_flag = RTH_already_seeding_revolution
+        }
+
+        complete_effect = {
+            clr_country_flag = RTH_already_seeding_revolution
+        }
+
+    }
+    
+    RTH_orchestrate_ORD_sabotage = {
+
+        available = {
+            ORD = {
+                republic_peasant > 0.01
+            }
+        }
+
+        days_re_enable = 120
+
+        icon = generic_construction
+
+        cost = 50
+
+        complete_effect = {
+            ORD = {
+                country_event = { id = rth.35 hours = 6 random = 6 }
+            }
+        }
+
+    }
+
+    RTH_seed_revolts_in_targeted_state = {
+
+        icon = generic_political_discourse
+
+        cost = 10
+
+        days_remove = 21
+
+        ai_will_do = {
+            factor = 3
+            modifier = {
+                factor = 0
+                check_variable = { RTH_ordorian_states_seeded > 50 }
+            }
+        }
+
+        on_map_mode = map_only
+
+        available = {
+            has_war = no
+            NOT = {
+                has_country_flag = RTH_already_seeding_revolution
+            }
+        }
+
+        state_target = yes 
+
+        target_trigger = {
+            FROM = {
+                is_owned_by = ORD
+                is_controlled_by = ORD
+                is_core_of = ORD
+                NOT = {
+                    has_state_flag = RTH_seeded_for_revolution_3
+                    OR = {
+                        state = 85
+                        state = 97
+                        state = 98
+                        state = 96
+                        state = 111
+                        state = 112
+                        state = 84
+                        state = 81
+                    }
+                    any_neighbor_state = {
+                        is_owned_by = RTH
+                    }
+                }
+            }
+        }
+
+        complete_effect = {
+            set_country_flag = RTH_already_seeding_revolution
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = RTH_seed_the_grounds_for_revolution
+            clr_country_flag = RTH_already_seeding_revolution
+            add_to_variable = { RTH_ordorian_states_seeded = 1 }
+            FROM = {
+                if = {
+                    limit = { has_state_flag = RTH_seeded_for_revolution_2 }
+                    set_state_flag = RTH_seeded_for_revolution_3
+                }
+                if = {
+                    limit = { has_state_flag = RTH_seeded_for_revolution }
+                    set_state_flag = RTH_seeded_for_revolution_2
+                }
+                if = {
+                    limit = { NOT = { has_state_flag = RTH_seeded_for_revolution } }
+                    set_state_flag = RTH_seeded_for_revolution
+                }
+            }
+            ORD = {
+                add_popularity = {
+                    ideology = republic_peasant
+                    popularity = 0.003
+                }
+            }
+        }
+
+    }
+
+    RTH_trigger_ordorian_revolution = {
+
+        icon = generic_prepare_civil_war
+
+        cost = 50
+
+        fire_only_once = yes
+
+        ai_will_do = {
+            factor = 1000
+        }
+
+        available = {
+            has_war_with = ORD
+            check_variable = {
+                RTH_ordorian_states_seeded > 1
+            }
+            NOT = {
+                has_country_flag = RTH_already_seeding_revolution
+            }
+        }
+
+        complete_effect = {
+            set_country_flag = RTH_ordorian_revolution_sprung
+            add_timed_idea = {
+                idea = RTH_prepared_revolters
+                days = 120
+            }
+            every_state = {
+                limit = {
+                    is_controlled_by = ORD
+                    has_state_flag = RTH_seeded_for_revolution
+                }
+                create_unit = {
+                    division = "division_template = \"Rose Wardens\" start_experience_factor = 0.2" 
+                    owner = RTH
+                    allow_spawning_on_enemy_provs = yes
+                    count = 1
+                }
+            }
+            every_state = {
+                limit = {
+                    is_controlled_by = ORD
+                    has_state_flag = RTH_seeded_for_revolution_2
+                }
+                create_unit = {
+                    division = "division_template = \"Rose Wardens\" start_experience_factor = 0.2" 
+                    owner = RTH
+                    allow_spawning_on_enemy_provs = yes
+                    count = 1
+                }
+            }
+            every_state = {
+                limit = {
+                    is_controlled_by = ORD
+                    has_state_flag = RTH_seeded_for_revolution_3
+                }
+                create_unit = {
+                    division = "division_template = \"Peasant's Guard\" start_experience_factor = 0.2" 
+                    owner = RTH
+                    allow_spawning_on_enemy_provs = yes
+                    count = 1
+                }
+            }
+            ORD = {
+                country_event = { id = rth.36 }
+                set_temp_variable = { ORD_temp_radical_pop = party_popularity@republic_peasant }
+                divide_temp_variable = { ORD_temp_radical_pop = 2 }
+                multiply_temp_variable = { ORD_temp_radical_pop = -1 }
+                add_popularity = {
+                    ideology = republic_peasant
+                    popularity = ORD_temp_radical_pop
+                }
+            }
+        }
+
+    }
+
+}
+
+RTH_flip_vuid = {
+    
+    RTH_infiltrate_vuid_infantry = {
+
+        icon = generic_industry
+
+        cost = 10
+
+        days_re_enable = 20
+
+        ai_will_do = {
+            factor = 10
+        }
+
+        complete_effect = {
+            add_to_variable = { RTH_vuid_infiltration = 3 }
+            clamp_variable = {
+                var = RTH_vuid_infiltration
+                min = 0
+                max = 100
+            }
+        }
+
+    }
+
+    RTH_distribute_pro_rosite_pamphlets = {
+
+        cost = 20
+
+        days_re_enable = 50
+
+        ai_will_do = {
+            factor = 10
+        }
+
+        complete_effect = {
+            add_to_variable = { RTH_vuid_infiltration = 4 }
+            clamp_variable = {
+                var = RTH_vuid_infiltration
+                min = 0
+                max = 100
+            }
+            ORD = {
+                add_popularity = {
+                    ideology = republic_peasant
+                    popularity = 0.005
+                }
+            }
+        }
+
+    }
+
+    RTH_sabotage_vuid_production = {
+
+        icon = generic_construction
+
+        cost = 30
+
+        days_re_enable = 30
+
+        ai_will_do = {
+            factor = 10
+        }
+
+        complete_effect = {
+            add_to_variable = { RTH_vuid_infiltration = 4 }
+            84 = {
+                damage_building = {
+                    type = forge
+                    damage = 0.25
+                }
+            }
+            clamp_variable = {
+                var = RTH_vuid_infiltration
+                min = 0
+                max = 100
+            }
+        }
+
+    }
+
+    RTH_infiltrate_officer_school = {
+
+        cost = 25
+
+        days_re_enable = 70
+
+        ai_will_do = {
+            factor = 10
+        }
+
+        complete_effect = {
+            add_to_variable = { RTH_vuid_infiltration = 5 }
+            clamp_variable = {
+                var = RTH_vuid_infiltration
+                min = 0
+                max = 100
+            }
+        }
+
+    }
+
+    RTH_assassinate_vuid_politician = {
+
+        cost = 30
+
+        icon = generic_industry
+
+        days_re_enable = 70
+
+        ai_will_do = {
+            factor = 10
+        }
+
+        complete_effect = {
+            add_to_variable = { RTH_vuid_infiltration = 6 }
+            clamp_variable = {
+                var = RTH_vuid_infiltration
+                min = 0
+                max = 100
+            }
+            ORD = {
+                add_popularity = {
+                    ideology = puritan
+                    popularity = -0.005
+                }
+            }
+        }
+
+    }
+
+    RTH_flip_vuid_mission = {
+
+        days_mission_timeout = 180
+
+        fire_only_once = yes
+
+        activation = {
+            has_country_flag = RTH_war_plan_north
+        }
+
+        visible = {
+            NOT = {
+                has_country_flag = RTH_attempted_vuid
+            }
+        }
+
+        available = {
+            OR = {
+                has_war_with = ORD
+                check_variable = { RTH_vuid_infiltration = 100 }
+            }
+        }
+
+        complete_effect = {
+            custom_effect_tooltip = RTH_vuid_revolution_success_depends_infiltration
+            hidden_effect = {
+                if = {
+                    limit = {
+                        check_variable = { RTH_vuid_infiltration < 20 }
+                    }
+                    random_list = {
+                        10 = {
+                            country_event = { id = rth.38 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.39 hours = 3 }
+                            }
+                        }
+                        90 = {
+                            country_event = { id = rth.40 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.41 hours = 3 }
+                            }
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        check_variable = { RTH_vuid_infiltration > 19 }
+                        check_variable = { RTH_vuid_infiltration < 41 }
+                    }
+                    random_list = {
+                        33 = {
+                            country_event = { id = rth.38 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.39 hours = 3 }
+                            }
+                        }
+                        66 = {
+                            country_event = { id = rth.40 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.41 hours = 3 }
+                            }
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        check_variable = { RTH_vuid_infiltration > 40 }
+                        check_variable = { RTH_vuid_infiltration < 61 }
+                    }
+                    random_list = {
+                        50 = {
+                            country_event = { id = rth.38 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.39 hours = 3 }
+                            }
+                        }
+                        50 = {
+                            country_event = { id = rth.40 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.41 hours = 3 }
+                            }
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        check_variable = { RTH_vuid_infiltration > 60 }
+                        check_variable = { RTH_vuid_infiltration < 81 }
+                    }
+                    random_list = {
+                        75 = {
+                            country_event = { id = rth.38 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.39 hours = 3 }
+                            }
+                        }
+                        25 = {
+                            country_event = { id = rth.40 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.41 hours = 3 }
+                            }
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        check_variable = { RTH_vuid_infiltration > 80 }
+                    }
+                    country_event = { id = rth.38 hours = 2 }
+                    ORD = {
+                        country_event = { id = rth.39 hours = 3 }
+                    }
+                }
+                set_country_flag = RTH_attempted_vuid
+            }
+        }
+
+        timeout_effect = {
+            custom_effect_tooltip = RTH_vuid_revolution_success_depends_infiltration
+            hidden_effect = {
+                if = {
+                    limit = {
+                        check_variable = { RTH_vuid_infiltration < 20 }
+                    }
+                    random_list = {
+                        10 = {
+                            country_event = { id = rth.38 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.39 hours = 3 }
+                            }
+                        }
+                        90 = {
+                            country_event = { id = rth.40 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.41 hours = 3 }
+                            }
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        check_variable = { RTH_vuid_infiltration > 19 }
+                        check_variable = { RTH_vuid_infiltration < 41 }
+                    }
+                    random_list = {
+                        33 = {
+                            country_event = { id = rth.38 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.39 hours = 3 }
+                            }
+                        }
+                        66 = {
+                            country_event = { id = rth.40 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.41 hours = 3 }
+                            }
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        check_variable = { RTH_vuid_infiltration > 40 }
+                        check_variable = { RTH_vuid_infiltration < 61 }
+                    }
+                    random_list = {
+                        50 = {
+                            country_event = { id = rth.38 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.39 hours = 3 }
+                            }
+                        }
+                        50 = {
+                            country_event = { id = rth.40 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.41 hours = 3 }
+                            }
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        check_variable = { RTH_vuid_infiltration > 60 }
+                        check_variable = { RTH_vuid_infiltration < 81 }
+                    }
+                    random_list = {
+                        75 = {
+                            country_event = { id = rth.38 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.39 hours = 3 }
+                            }
+                        }
+                        25 = {
+                            country_event = { id = rth.40 hours = 2 }
+                            ORD = {
+                                country_event = { id = rth.41 hours = 3 }
+                            }
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        check_variable = { RTH_vuid_infiltration > 80 }
+                    }
+                    country_event = { id = rth.38 hours = 2 }
+                    ORD = {
+                        country_event = { id = rth.39 hours = 3 }
+                    }
+                }
+                set_country_flag = RTH_attempted_vuid
+            }
+        }
+
+    }
+
+}
+
+RTH_capture_ORD_king = { 
+
+    RTH_capture_king_mission = { 
+
+        days_mission_timeout = 180 
+
+        icon = generic_industry  
+
+        activation = {    
+            has_war_with = ORD    
+            has_country_flag = RTH_war_plan_south      
+        }   
+
+        available = { 
+            controls_state = 85
+        }  
+
+        complete_effect = {
+            ORD = {  country_event = rth.43 }
+        }  
+
+        fire_only_once = yes
+
+        timeout_effect = {
+            add_war_support = -0.05
+        }  
+    }  
+  
+    RTH_sabotage_king_escape = {
+        icon = border_war
+        cost = 25
+        fire_only_once = yes
+        available = {  
+            ORD = { 
+                republic_peasant > 0.01 
+            }   
+            has_active_mission = RTH_capture_king_mission
+        }   
+        complete_effect = {
+            add_days_mission_timeout = {
+                mission = RTH_capture_king_mission
+                days = 30
+            }  
+        }  
+    }
+
+    RTH_bribe_personal_guards = {
+        icon = ger_mefo_bills
+        cost = 25
+        fire_only_once = yes
+        days_remove = 30
+        available = {
+            has_active_mission = RTH_capture_king_mission
+        }   
+        modifier = {
+            consumer_goods_factor = 0.1
+        }
+        complete_effect = {
+            add_days_mission_timeout = {
+                mission = RTH_capture_king_mission
+                days = 30
+            }  
+        }  
+    }
+  
+}
+
+RTH_hunt_the_oath_harquiss = {
+    
+    RTH_raid_oath_safehouses = {
+
+        icon = generic_prepare_civil_war
+
+        fire_only_once = yes
+
+        cost = 15
+
+        available = {
+            has_equipment = {
+                infantry_equipment > 49
+            }
+            puritan > 0
+        }
+
+        ai_will_do = {
+            factor = 3
+        }
+
+        on_map_mode = map_only
+
+        state_target = yes 
+
+        target_trigger = {
+            FROM = {
+                is_owned_by = RTH
+                is_controlled_by = RTH
+                is_core_of = RTH
+            }
+        }
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -50
+            }
+            add_popularity = {
+                ideology = puritan
+                popularity = -0.005
+            }
+        }
+
+    }
+
+    RTH_declare_oath_dealt_with = {
+
+        icon = generic_civil_support
+
+        available = {
+            puritan < 0.01
+        }
+
+        fire_only_once = yes
+
+        ai_will_do = {
+            factor = 10
+        }
+
+        complete_effect = {
+            set_country_flag = RTH_oath_of_harquiss_dealt_with
+        }
+
+    }
+
+}
+
+RTH_sway_oath_harquiss_cat = {
+    
+    RTH_offer_reparations_minor_nobles = {
+
+        icon = generic_construction
+
+        cost = 25
+
+        days_remove = 50
+
+        ai_will_do = {
+            factor = 5
+        }
+
+        days_re_enable = 120
+
+        modifier = {
+            consumer_goods_factor = 0.05
+        }
+
+        complete_effect = {
+            add_popularity = {
+                ideology = puritan
+                popularity = -0.01
+            }
+        }
+
+    }
+
+    RTH_sponsor_emigration = {
+
+        icon = ger_mefo_bills
+
+        cost = 25
+
+        days_remove = 50
+
+        days_re_enable = 180
+
+        modifier = {
+            puritan_drift = -0.1
+            monthly_population = -0.05
+        }
+
+    }
+
+    RTH_promote_rthaur_nationalism = {
+
+        icon = generic_civil_support
+
+        cost = 30
+
+        days_remove = 35
+
+        days_re_enable = 100
+
+        modifier = {
+            puritan_drift = -0.15
+            war_support_weekly = 0.005
+        }
+
+    }
+
+    RTH_welcome_former_oath_fold = {
+
+        icon = generic_political_discourse
+
+        available = {
+            puritan < 0.01
+        }
+
+        fire_only_once = yes
+
+        ai_will_do = {
+            factor = 10
+        }
+
+        complete_effect = {
+            set_country_flag = RTH_oath_of_harquiss_dealt_with
+            add_popularity = {
+                ideology = ROOT
+                popularity = 0.01
+            }
+        }
+
+    }
+
+}
+
+RTH_centralizing_government = {
+    
+    RTH_move_administration_capital = {
+
+        cost = 25
+
+        days_remove = 100
+
+        visible = {
+            check_variable = { RTH_centralization_var < 100 }
+        }
+
+        days_re_enable = 100
+
+        modifier = {
+            political_power_factor = 0.2
+        }
+
+        complete_effect = {
+            add_to_variable = { RTH_centralization_var = 10 }
+            clamp_variable = {
+                var = RTH_centralization_var
+                min = 0
+                max = 100
+            }
+            custom_effect_tooltip = RTH_increase_centralization_10
+        }
+
+    }
+
+    RTH_enact_common_training_program = {
+
+        cost = 50
+
+        icon = generic_industry
+
+        days_remove = 100
+
+        visible = {
+            check_variable = { RTH_centralization_var < 100 }
+        }
+
+        days_re_enable = 100
+
+        modifier = {
+            training_time_factor = -0.1
+        }
+
+        complete_effect = {
+            add_to_variable = { RTH_centralization_var = 10 }
+            clamp_variable = {
+                var = RTH_centralization_var
+                min = 0
+                max = 100
+            }
+            custom_effect_tooltip = RTH_increase_centralization_10
+        }
+
+    }
+
+    RTH_establish_local_party_representatives = {
+
+        cost = 50
+
+        icon = generic_political_discourse
+
+        days_remove = 100
+
+        visible = {
+            check_variable = { RTH_centralization_var < 100 }
+        }
+
+        days_re_enable = 100
+
+        modifier = {
+            republic_peasant_drift = 0.1
+        }
+
+        complete_effect = {
+            add_to_variable = { RTH_centralization_var = 10 }
+            clamp_variable = {
+                var = RTH_centralization_var
+                min = 0
+                max = 100
+            }
+            custom_effect_tooltip = RTH_increase_centralization_10
+        }
+
+    }
+
+    RTH_annex_city_states = {
+
+        icon = generic_political_discourse
+
+        fire_only_once = yes
+
+        cost = 50
+
+        available = {
+            has_war = no
+        }
+
+        ai_will_do = {
+            factor = 3
+        }
+
+        on_map_mode = map_and_decisions_view
+
+        target_trigger = {
+            FROM = {
+                is_subject_of = RTH
+                OR = {
+                    tag = QUE
+                    tag = THR
+                }
+            }
+        }
+
+        state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = FROM.capital
+			}
+		}
+
+		on_map_mode = map_only
+
+        complete_effect = {
+            FROM = {
+                country_event = { id = rth.57 hours = 2 random = 2 }
+            }
+        }
+
+    }
+    
+}
+
+RTH_dealing_with_ORD_culture = {
+
+    RTH_ORD_culture_empty_decision = {
+
+        available = {
+            always = no
+        }
+
+    }
+    
+    RTH_increase_ORD_compliance = {
+
+        icon = generic_political_discourse
+
+        state_target = yes
+
+        on_map_mode = map_only
+
+        visible = {
+            has_completed_focus = RTH_promote_local_cultures
+        }
+
+        cost = 10
+
+        target_trigger = {
+            FROM = {
+                is_core_of = ORD
+                is_owned_by = RTH
+            }
+        }
+
+        days_re_enable = 50
+
+        ai_will_do = {
+            factor = 10
+        }
+
+        available = {
+            FROM = {
+                compliance < 99
+            }
+        }
+
+        complete_effect = {
+            if = {
+                limit = { has_completed_focus = RTH_rosite_sentiments_countryside }
+                FROM = {
+                    add_compliance = 20
+                }
+                else = {
+                    FROM = {
+                        add_compliance = 10
+                    }
+                }
+            }
+        }
+
+    }
+
+    RTH_reduce_ORD_resistance = {
+
+        icon = generic_industry
+
+        state_target = yes
+
+        on_map_mode = map_only
+
+        visible = {
+            has_completed_focus = RTH_destroy_ordorian_cultures
+        }
+
+        cost = 10
+
+        target_trigger = {
+            FROM = {
+                is_core_of = ORD
+                is_owned_by = RTH
+            }
+        }
+
+        days_re_enable = 50
+
+        ai_will_do = {
+            factor = 10
+        }
+
+        available = {
+            FROM = {
+                resistance > 0
+            }
+        }
+
+        complete_effect = {
+            if = {
+                limit = { has_completed_focus = RTH_hunt_down_remaining_puritans }
+                FROM = {
+                    add_resistance = -20
+                }
+                else = {
+                    FROM = {
+                        add_resistance = -10
+                    }
+                }
+            }
+        }
+
+    }
+
+    RTH_city_states_puritan_undrift = {
+
+        icon = generic_civil_support
+
+        days_re_enable = 100
+
+        cost = 60
+
+        visible = {
+            OR = {
+                has_completed_focus = RTH_combat_puritanism_ord_city_states
+                has_completed_focus = RTH_bring_city_states_back_into_line
+            }
+        }
+
+        ai_will_do = {
+            factor = 5
+        }
+
+        available = {
+            FROM = {
+                puritan > 0.05
+            }
+        }
+
+        target_trigger = {
+            FROM = {
+                is_subject_of = RTH
+                OR = {
+                    tag = VUD
+                    tag = VAR
+                    tag = YTH
+                    tag = IST
+                }
+            }
+        }
+
+        complete_effect = {
+            FROM = {
+                add_popularity = {
+                    ideology = puritan
+                    popularity = -0.1
+                }
+                if = {
+                    limit = { has_idea = RTH_ordorian_city_states_1 }
+                    swap_ideas = {
+                        remove_idea = RTH_ordorian_city_states_1
+                        add_idea = RTH_ordorian_city_states_2
+                    }
+                }
+                if = {
+                    limit = { has_idea = RTH_ordorian_city_states_2 }
+                    remove_ideas = RTH_ordorian_city_states_2
+                }
+            }
+        }
+
+    }
+
+    RTH_city_states_ruling_party_drift = {
+
+        icon = generic_political_discourse
+
+        days_re_enable = 100
+
+        cost = 25
+
+        visible = {
+            has_completed_focus = RTH_cosmopolitan_sentiments_cities
+        }
+
+        ai_will_do = {
+            factor = 5
+        }
+
+        available = {
+            FROM = {
+                puritan > 0.05
+            }
+        }
+
+        target_trigger = {
+            FROM = {
+                is_subject_of = RTH
+                OR = {
+                    tag = VUD
+                    tag = VAR
+                    tag = YTH
+                    tag = IST
+                }
+            }
+        }
+
+        complete_effect = {
+            FROM = {
+                add_popularity = {
+                    ideology = ROOT
+                    popularity = 0.05
+                }
+            }
+        }
+
+    }
+
+}
+
+RTH_international_revolution = {
+    
+    RTH_seed_revolts_in_targeted_state_2 = {
+
+        icon = generic_industry
+
+        fire_only_once = yes
+
+        cost = 30
+
+        days_remove = 30
+
+        ai_will_do = {
+            factor = 3
+            modifier = {
+                FROM = {
+                    OWNER = {
+                        tag = NRK
+                    }
+                }
+                factor = 3
+            }
+            modifier = {
+                FROM = {
+                    OWNER = {
+                        tag = GMR
+                    }
+                }
+                factor = 3
+            }
+        }
+
+        on_map_mode = map_only
+
+        available = {
+            has_war = no
+            NOT = {
+                custom_trigger_tooltip = {
+                    tooltip = RTH_seeding_three_states
+                    check_variable = { RTH_number_seedings_happening > 2 }
+                }
+            }
+        }
+
+        state_target = yes 
+
+        target_trigger = {
+            FROM = {
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = RTH
+                    }
+                    is_owned_by = NRK
+                    AND = {
+                        is_owned_by = GMR
+                        OR = {
+                            state = 20
+                            state = 11
+                            state = 25
+                        }
+                    }
+                }
+                NOT = {
+                    has_state_flag = RTH_seeded_for_revolution
+                    is_owned_by = RTH
+                    is_controlled_by = RTH
+                    is_core_of = RTH
+                    is_capital = yes
+                    OWNER = {
+                        OR = {
+                            is_in_faction_with = RTH
+                            is_guaranteed_by = RTH
+                            has_non_aggression_pact_with = RTH
+                        }
+                    }
+                }
+            }
+        }
+
+        complete_effect = {
+            add_to_variable = { RTH_number_seedings_happening = 1 }
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = RTH_seed_the_grounds_for_revolution
+            add_to_variable = { RTH_number_seedings_happening = -1 }
+            hidden_effect = {
+                if = {
+                    limit = { FROM = { OWNER = { tag = NRK } } }
+                    add_to_variable = { RTH_sown_NRK_states = 1 }
+                }
+            }
+            FROM = {
+                set_state_flag = RTH_seeded_for_revolution
+                OWNER = {
+                    add_popularity = {
+                        ideology = republic_peasant
+                        popularity = 0.005
+                    }
+                }
+            }
+        }
+
+    }
+
+    RTH_southern_GMR_revolution = {
+
+        icon = generic_prepare_civil_war
+
+        visible = {
+            has_completed_focus = RTH_operation_wizard
+        }
+
+        available = {
+            17 = {
+                has_state_flag = RTH_seeded_for_revolution
+            }
+            20 = {
+                has_state_flag = RTH_seeded_for_revolution
+            }
+        }
+
+        cost = 75
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        complete_effect = {
+            hidden_effect = {
+                NAS = {
+                    add_state_core = 23
+                    add_state_core = 24
+                    add_state_core = 25
+                    add_state_core = 26
+                    add_state_core = 73
+                    add_state_core = 20
+                    add_state_core = 21
+                    add_state_core = 22
+                    add_state_core = 723
+                    add_state_core = 49
+                }
+                KRT = {
+                    add_state_core = 36
+                    add_state_core = 75
+                    add_state_core = 35
+                    add_state_core = 17
+                    add_state_core = 18
+                    add_state_core = 16
+                    add_state_core = 27
+                    add_state_core = 12
+                    add_state_core = 30
+                    add_state_core = 19
+                    add_state_core = 13
+                    add_state_core = 11
+                    add_state_core = 31
+                }
+            }
+            every_state = {
+                limit = {
+                    is_core_of = KRT
+                    has_state_flag = RTH_seeded_for_revolution
+                }
+                KRT = {
+                    transfer_state = PREV
+                }
+                create_unit = {
+                    division = "division_template = \"Town Guard\" start_experience_factor = 0.2" 
+                    owner = KRT
+                    allow_spawning_on_enemy_provs = yes
+                    count = 2
+                }
+                create_unit = {
+                    division = "division_template = \"Men-at-Arms\" start_experience_factor = 0.2" 
+                    owner = KRT
+                    allow_spawning_on_enemy_provs = yes
+                    count = 1
+                }
+            }
+            every_state = {
+                limit = {
+                    is_core_of = NAS
+                    has_state_flag = RTH_seeded_for_revolution
+                }
+                NAS = {
+                    transfer_state = PREV
+                }
+                create_unit = {
+                    division = "division_template = \"Town Guard\" start_experience_factor = 0.2" 
+                    owner = NAS
+                    allow_spawning_on_enemy_provs = yes
+                    count = 2
+                }
+                create_unit = {
+                    division = "division_template = \"Men-at-Arms\" start_experience_factor = 0.2" 
+                    owner = NAS
+                    allow_spawning_on_enemy_provs = yes
+                    count = 1
+                }
+            }
+            puppet = NAS
+            puppet = KRT
+            GMR = {
+                country_event = { id = rth.69 days = 1 random = 24 }
+            }
+        }
+
+    }
+
+    RTH_neureik_revolution_decision = {
+
+        icon = generic_prepare_civil_war
+
+        visible = {
+            has_completed_focus = RTH_neureik_revolution
+            NRK = {
+                NOT = {
+                    has_government = republic_peasant
+                }
+            }
+        }
+
+        available = {
+            OR = {
+                custom_trigger_tooltip = {
+                    tooltip = RTH_has_surrounded_neureik
+                    284 = {
+                        all_neighbor_state = {
+                            has_state_flag = RTH_seeded_for_revolution
+                        }
+                    }
+                }
+                custom_trigger_tooltip = {
+                    tooltip = RTH_control_majority_states
+                    check_variable = { RTH_sown_NRK_states > 7 }
+                }
+            }
+        }
+
+        cost = 75
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        complete_effect = {
+            NRK = {
+                country_event = { id = rth.72 random = 36 }
+            }
+        }
+
+    }
+
+}

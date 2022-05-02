@@ -1,0 +1,21 @@
+state={
+	id=263
+	name="STATE_263"
+	provinces={
+		1547 1575 9244 9233 9290 9248 2093
+	}
+	state_category = rural
+	manpower=9234
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			9248 3
+		}
+		owner = TEI
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = TEI
+	}
+}

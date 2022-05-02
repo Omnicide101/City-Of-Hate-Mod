@@ -1,0 +1,97 @@
+﻿units = {
+	division = {
+		name = "Clan Hafahlíf"
+		location = 5584
+		division_template = "Mountainbreakers"
+		start_experience_factor = 0.8
+
+	}
+
+	division = {
+		name = "Clan Hraustr"
+		location = 5329
+		division_template = "Mountainbreakers"
+		start_experience_factor = 0.8
+
+	}
+
+	division = {
+		name = "Clan Hvassøx"
+		location = 7076
+		division_template = "Mountainbreakers"
+		start_experience_factor = 0.8
+
+	}
+
+	division = {
+		name = "Clan Stinnrstál"
+		location = 7212
+		division_template = "Mountainbreakers"
+		start_experience_factor = 0.8
+
+	}
+	
+	division = {
+		name = "Clan Hellirfast"
+		location = 7075
+		division_template = "Mountainbreakers"
+		start_experience_factor = 1.0
+
+	}
+
+	division = {
+		name = "Jolskane Hearthguards"
+		location = 2563
+		division_template = "Hearthguards"
+		start_experience_factor = 0.6
+
+	}
+
+	division = {
+		name = "Skaeskind Pass Watch"
+		location = 6793
+		division_template = "Hearthguards"
+		start_experience_factor = 0.6
+
+	}
+	
+	division = {
+		name = "Alstir Border Garrison"
+		location = 6966
+		division_template = "Hearthguards"
+		start_experience_factor = 0.6
+
+	}
+	
+	division = {
+		name = "Votrosr Southguard"
+		location = 2320
+		division_template = "Hearthguards"
+		start_experience_factor = 0.7
+
+	}
+	
+	division = {
+		name = "1st Miner's Militia"
+		location = 7573
+		division_template = "Hearthguards"
+		start_experience_factor = 0.5
+
+	}
+	
+	division = {
+		name = "2nd Miner's Militia"
+		location = 1249
+		division_template = "Hearthguards"
+		start_experience_factor = 0.5
+
+	}
+	
+	division = {
+		name = "3rd Miner's Militia"
+		location = 1299
+		division_template = "Hearthguards"
+		start_experience_factor = 0.5
+
+	}
+}

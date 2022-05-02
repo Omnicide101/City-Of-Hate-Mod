@@ -1,0 +1,23 @@
+state={
+	id=299
+	name="STATE_299"
+	provinces={
+		3768 2688 8465 8445
+	}
+	state_category = town
+	manpower=12751
+	buildings_max_level_factor=1.000
+	resources = {
+		mount = 1
+	}
+	history={
+		victory_points = { 8445 13 }
+		owner = HLZ
+		buildings = {
+			infrastructure = 2
+			workshop = 1
+			farm = 1
+		}
+		add_core_of = HLZ
+	}
+}

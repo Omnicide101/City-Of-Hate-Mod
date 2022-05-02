@@ -1,0 +1,168 @@
+﻿capital = 191
+
+set_oob = "NBI_empty"
+set_research_slots = 10
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1 
+}
+
+set_politics = {
+	ruling_party = republic_peasant
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 0
+
+	monarchy_constitutional = 0
+
+	republic_peasant = 67
+
+	republic_aristocrat = 0
+
+	republic_merchant = 33
+
+	theocrat = 0
+
+	puritan = 0
+}
+
+add_ideas = {
+	diverse_country
+	trans_rights_religion
+	NBI_be_trans_throw_hands
+}
+
+create_country_leader = {
+	name = "Committee of Nonbinary Rights"
+	desc = "politics_NBI_nonbinary_desc"
+	picture = "gfx/leaders/NBI/Portrait_NBI_Nonbinary.dds"
+	ideology = republic_peasant_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Committee of Trans Rights"
+	desc = "politics_NBI_trans_desc"
+	picture = "gfx/leaders/NBI/Portrait_NBI_Trans.dds"
+	ideology = republic_merchant_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "None"
+	ideology = monarchy_absolute_ideology
+}
+
+create_country_leader = {
+	name = "None"
+	ideology = monarchy_constitutional_ideology
+}
+
+create_country_leader = {
+	name = "None"
+	ideology = republic_aristocrat_ideology
+}
+
+
+create_country_leader = {
+	name = "None"
+	ideology = theocrat_ideology
+}
+
+create_country_leader = {
+	name = "None"
+	ideology = puritan_ideology
+}
+
+create_field_marshal = {
+	name = "'Gnarly' Carly"
+	picture = "Portrait_NBI_Carly.dds"
+	traits = {
+	has_magic_sword_commander
+	has_magic_ring_commander
+	has_magic_armour_commander
+	brilliant_strategist
+	inflexible_strategist
+	infantry_officer
+	infantry_leader
+	infantry_expert
+	cavalry_officer
+	cavalry_leader
+	cavalry_expert
+	organizer
+	skilled_staffer
+	expert_delegator
+	trait_engineer
+	winter_specialist
+	jungle_rat
+	desert_fox
+	swamp_fox
+	trait_mountaineer
+	hill_fighter
+	ranger
+	urban_assault_specialist
+	logistics_wizard
+	fast_planner
+	thorough_planner
+	unyielding_defender
+	aggressive_assaulter
+	offensive_doctrine
+	defensive_doctrine
+	organisational_leader
+	inspirational_leader
+	expert_delegator
+	fortress_buster
+	scavenger
+	ambusher
+	skirmisher
+	expert_improviser
+	guerilla_fighter
+	adaptable
+	winter_expert
+	commando
+	trickster
+	}
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}

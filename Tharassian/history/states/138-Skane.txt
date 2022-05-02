@@ -1,0 +1,25 @@
+state={
+	id=138
+	name="STATE_138"
+	provinces={
+		92 7413 4998 995 7423 437 306 7490 2579
+	}
+	state_category = rural
+	manpower=7382
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 14
+	}
+		history={
+		victory_points = {
+			306 3
+		}
+		owner = RTH
+		buildings = {	
+		infrastructure = 1
+		workshop = 2
+		}
+		add_core_of = RTH
+
+		}
+}

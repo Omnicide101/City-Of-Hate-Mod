@@ -1,0 +1,24 @@
+state={
+	id=284
+	name="STATE_284"
+	provinces={
+		1316 8817 2938 8822 8778 4059 8691 8718
+	}
+	state_category = city
+	manpower=177492
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 6
+	}
+	history={
+		victory_points = { 1316 43 }
+		owner = NRK
+		buildings = {
+			infrastructure = 2
+			forge = 2
+			workshop = 3
+		}
+		add_core_of = NRK
+
+	}
+}

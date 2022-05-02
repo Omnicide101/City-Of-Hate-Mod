@@ -1,0 +1,22 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Krell's Fleet"
+		naval_base = 4527 # Krell's Hall
+		task_force = {				
+			name = "Krostov's Wrath"				
+			location = 4527 # Krell's Hall
+			ship = { name = "Krell's Wrath" definition = destroyer equipment = { ship_hull_light_0 = { amount = 1 owner = PRK } } }
+			ship = { name = "Ogar" definition = destroyer equipment = { ship_hull_light_0 = { amount = 1 owner = PRK } } }
+		}					
+		task_force = {					
+			name = "Western Raiders"				
+			location = 9478# Lyenikova
+			ship = { name = "Rzeźnik" definition = destroyer equipment = { ship_hull_light_0 = { amount = 1 owner = PRK } } }
+			ship = { name = "Sláva" definition = destroyer equipment = { ship_hull_light_0 = { amount = 1 owner = PRK } } }
+			ship = { name = "Krostovova Pomsta" definition = destroyer equipment = { ship_hull_light_0 = { amount = 1 owner = PRK } } }
+			ship = { name = "Skvělý Sekera" definition = destroyer equipment = { ship_hull_light_0 = { amount = 1 owner = PRK } } }
+		}					
+	}
+}

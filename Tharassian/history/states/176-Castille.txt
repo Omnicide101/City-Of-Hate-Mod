@@ -1,0 +1,21 @@
+state={
+	id=176
+	name="STATE_176"
+	provinces={
+		1545 7664 1963 4053 4966 
+	}
+	state_category = rural
+	manpower=2055
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 2
+	}
+	history={
+		owner = KUR
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+		}
+		add_core_of = KUR
+	}
+}

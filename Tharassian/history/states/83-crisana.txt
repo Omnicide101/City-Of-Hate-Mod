@@ -1,0 +1,21 @@
+state={
+	id=83
+	name="STATE_83"
+	provinces={
+		6804 1925 935 6872 3134
+	}
+	state_category = pastoral
+	manpower=1026
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			935 3
+		}
+		owner = ORD
+		buildings = {	
+			infrastructure = 1
+			forge = 1
+		}	
+		add_core_of = ORD
+	}
+}

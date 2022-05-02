@@ -1,0 +1,24 @@
+state={
+	id=883
+	name="STATE_883"
+	provinces={
+		1585 2065 2576 8946 
+	}
+	manpower=1920
+	buildings_max_level_factor=1.000
+	state_category=rural
+	
+	resources = {
+		lumber = 7
+	}
+	
+	history={
+		owner = GOW
+		victory_points = { 3127 36 }
+			buildings = {
+				infrastructure = 1
+				dockyard = 1
+			}
+		add_core_of = GOW
+	}
+}

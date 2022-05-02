@@ -1,0 +1,125 @@
+﻿capital = 1
+
+set_oob = "empty"
+set_research_slots = 3
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	cavalry_lances = 1
+	wedge_formations = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1 
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = republic_aristocrat
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 9
+
+	monarchy_constitutional = 14
+
+	republic_peasant = 15
+
+	republic_aristocrat = 26
+
+	republic_merchant = 18
+
+	theocrat = 10
+
+	puritan = 8
+}
+
+add_ideas = {
+	human_country
+	lorthorism_religion
+}
+
+create_country_leader = {
+	name = "Lascryne Osnith"
+	desc = "politics_IRT_osnith_desc"
+	picture = "gfx/leaders/IRT/Portrait_IRT_Osnith.dds"
+	ideology = monarchy_absolute_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Lascryne Osnith"
+	desc = "politics_IRT_osnith_desc"
+	picture = "gfx/leaders/IRT/Portrait_IRT_Osnith.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Venthoris Grinnon"
+	desc = "politics_IRT_grinnon_desc"
+	picture = "gfx/leaders/IRT/Portrait_IRT_Grinnon.dds"
+	ideology = theocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Tholsinder Wascine"
+	desc = "politics_IRT_wascine_desc"
+	picture = "gfx/leaders/IRT/Portrait_IRT_Wascine.dds"
+	ideology = republic_aristocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Mennis Nieler"
+	desc = "politics_IRT_nieler_desc"
+	picture = "gfx/leaders/IRT/Portrait_IRT_Nieler.dds"
+	ideology = republic_peasant_ideology
+}
+
+create_country_leader = {
+	name = "Rasmana Loth"
+	desc = "politics_IRT_loth_desc"
+	picture = "gfx/leaders/IRT/Portrait_IRT_Loth.dds"
+	ideology = republic_merchant_ideology
+}
+
+create_country_leader = {
+	name = "Tinia Ecthis"
+	desc = "politics_IRT_ecthis_desc"
+	picture = "gfx/leaders/IRT/Portrait_IRT_Ecthis.dds"
+	ideology = puritan_ideology
+}

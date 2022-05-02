@@ -1,0 +1,24 @@
+state={
+	id=399
+	name="STATE_399"
+	provinces={
+		3406 2928 6518 930 6495 6510 6472
+	}
+	state_category = city
+	manpower=198220
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 6
+		mount = 2
+	}
+	history={
+		victory_points = { 6518 22 }
+		owner = IRI
+		buildings = {
+			infrastructure = 3
+			workshop = 5
+			forge = 1
+		}
+		add_core_of = IRI
+	}
+}

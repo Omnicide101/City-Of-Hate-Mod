@@ -1,0 +1,19 @@
+state={
+	id=130
+	name="STATE_130"
+	provinces={
+		6906 2153 6936 4501 6942 6910 4435 2354
+	}
+	state_category = rural
+	manpower=8029
+	buildings_max_level_factor=1.000
+		history={	
+		owner = RTH
+		buildings = {
+			farm = 2
+			infrastructure = 2
+		}	
+		add_core_of = RTH
+
+		}
+}

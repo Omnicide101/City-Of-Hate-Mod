@@ -1,0 +1,166 @@
+﻿capital = 146
+
+set_oob = "SKA_1936"
+set_research_slots = 3
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = monarchy_constitutional
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 8
+
+	monarchy_constitutional = 70
+
+	republic_peasant = 3
+
+	republic_aristocrat = 12
+
+	republic_merchant = 5
+
+	theocrat = 2
+
+	puritan = 0
+}
+
+add_ideas = {
+	dwarf_country
+	dwarven_ancestor_worship_religion
+	SKA_food_imports
+	SKA_penal_levy
+	SKA_memories_of_vergallheim
+	SKA_destabilization_caste_system
+}
+
+	give_guarantee = RTH
+
+	add_opinion_modifier = {
+		target = RTH
+		modifier = staunch_allies
+	}
+	diplomatic_relation = {
+		country = RTH
+		relation = military_access
+		active = yes
+	}
+	
+	diplomatic_relation = {
+		country = RTH
+		relation = non_aggression_pact
+		active = yes
+	}
+	
+	add_opinion_modifier = {
+		target = RMT
+		modifier = bitter_rivals
+	}
+
+	add_opinion_modifier = {
+		target = KUR
+		modifier = bitter_rivals
+	}
+	
+	add_opinion_modifier = {
+		target = BLD
+		modifier = bitter_rivals
+	}
+	
+create_country_leader = {
+	name = "Ystvigg Hellirfast"
+	desc = "politics_SKA_hellirfast_desc"
+	picture = "gfx/leaders/SKA/Portrait_SKA_Hellirfast.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Yngvild Rettrdaga"
+	desc = "politics_SKA_rettrdaga_desc"
+	picture = "gfx/leaders/SKA/Portrait_SKA_Rettrdaga.dds"
+	ideology = republic_peasant_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Halstigg Urkbani"
+	desc = "politics_SKA_urkbani_desc"
+	picture = "gfx/leaders/SKA/Portrait_SKA_Urkbani.dds"
+	ideology = puritan_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Ystvigg Hellirfast"
+	desc = "politics_SKA_hellirfast_desc"
+	picture = "gfx/leaders/SKA/Portrait_SKA_Hellirfast.dds"
+	ideology = monarchy_absolute_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Banskr Salmogr"
+	desc = "politics_SKA_salmogr_desc"
+	picture = "gfx/leaders/SKA/Portrait_SKA_Salmogr.dds"
+	ideology = theocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Brynhild Lasengra"
+	desc = "politics_SKA_lasengra_desc"
+	picture = "gfx/leaders/SKA/Portrait_SKA_Lasengra.dds"
+	ideology = republic_aristocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Freydis Vantangr"
+	desc = "politics_SKA_vantangr_desc"
+	picture = "gfx/leaders/SKA/Portrait_SKA_Vantangr.dds"
+	ideology = republic_merchant_ideology
+	traits = {
+	}
+}

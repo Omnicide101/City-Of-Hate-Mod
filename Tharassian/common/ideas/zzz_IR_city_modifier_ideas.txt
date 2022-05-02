@@ -1,0 +1,84 @@
+ideas = {
+	
+	hidden_ideas = {
+		CITY_varinthia = {
+			allowed = {
+				controls_state = 111
+			}
+			
+			allowed_civil_war = {
+				controls_state = 111
+			}
+			
+			modifier = {
+				research_speed_factor = 0.03
+				stability_factor = 0.05
+				political_power_gain = 0.25
+			}
+		}
+		
+		CITY_istaroth = {
+			allowed = {
+				controls_state = 85
+			}
+			
+			allowed_civil_war = {
+				controls_state = 85
+			}
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.07
+				production_lack_of_resource_penalty_factor = -0.05
+			}
+		}
+		
+		CITY_ythelmare = {
+			allowed = {
+				controls_state = 112
+			}
+			
+			allowed_civil_war = {
+				controls_state = 112
+			}
+			
+			modifier = {
+				repair_speed_factor = 0.07
+				experience_gain_navy_unit_factor = 0.05
+				industrial_capacity_dockyard = 0.03
+			}
+		}
+		
+		CITY_ythelmare_slavery = {
+			allowed = {
+				controls_state = 112
+			}
+			
+			allowed_civil_war = {
+				controls_state = 112
+			}
+			
+			modifier = {
+				production_speed_buildings_factor = 0.03
+				repair_speed_factor = 0.02
+				experience_gain_navy_unit_factor = 0.02
+				industrial_capacity_dockyard = 0.01				
+			}
+		}
+		
+		CITY_vuid = {
+			allowed = {
+				controls_state = 84
+			}
+			
+			allowed_civil_war = {
+				controls_state = 84
+			}
+			
+			modifier = {
+				army_leader_cost_factor = -0.1
+				experience_gain_army_unit_factor = 0.05
+				army_org_regain = 0.03
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+state={
+	id=325
+	name="STATE_325"
+	provinces={
+		2265 4539 3100 1947 853
+	}
+	state_category = pastoral
+	manpower=1011
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 3
+	}
+	history={
+		victory_points = {
+			3100 1
+		}
+		owner = SNF
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = SNF
+	}
+}

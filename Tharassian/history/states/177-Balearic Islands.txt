@@ -1,0 +1,21 @@
+state={
+	id=177
+	name="STATE_177"
+	provinces={
+		4545 7048
+	}
+	state_category = rural
+	manpower=4592
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 3
+	}
+	history={
+		owner = SKA
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = SKA
+
+	}
+}

@@ -1,0 +1,1580 @@
+### ORDORIAN FOCUS TREE ###
+
+focus_tree = {
+	id = ordorian_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			original_tag = ORD
+		}
+	}
+
+	#focus = { #
+	#	id = 
+	#	icon = GFX_
+	#	cost = 
+	#	prerequisite = {
+	#		focus = 
+	#	}
+	#	ai_will_do = {
+	#		factor = 5
+	#	}
+	#	x = 
+	#	y = 
+	#	completion_reward = {
+	#		
+	#	}
+	#}
+	
+	
+### AUTUMN DEBATE ###
+
+	focus = {#Autumn Debate Start
+		id = ORD_autumn
+		icon = GFX_focus_ord_autumn_debate
+		cost = 5
+		x = 20
+		y = 0
+		ai_will_do = {
+			factor = 15
+		}
+		
+		select_effect = {
+			country_event = {
+				id = ord.1
+				days = 1
+				random = 168
+			}    
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = ordoria_important
+		}
+	}
+	
+### INDUSTRIAL BRANCH ###
+
+	focus = { #Rebuilding Ordorian Glory
+		id = ORD_rebuilding_glory
+		icon = GFX_goal_generic_construct_civilian
+		cost = 1
+		prerequisite = {
+			focus = ORD_autumn
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_flag = ORD_autumn_debate_done
+		}
+		relative_position_id = ORD_autumn
+		x = 7
+		y = 1
+		completion_reward = {
+			add_stability = 0.03
+			add_timed_idea = {
+				idea = ORD_rebuilding_glory_idea
+				days = 70
+			}
+		}
+	}
+
+## SHARED ##
+	
+	focus = {#Compensate for our Lost Industry
+		#id = ORD_compensate_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8
+		prerequisite = {
+			focus = ORD_rebuilding_glory
+		}
+		ai_will_do = {
+			factor = 8
+		}
+		available = {
+			controls_state = 84
+			controls_state = 85
+			controls_state = 111
+			controls_state = 112
+		}
+		relative_position_id = ORD_rebuilding_glory
+		x = -4
+		y = 1
+		completion_reward = {
+			85 = {
+				add_extra_state_shared_building_slots = 3
+				
+				add_building_construction = {
+					type = workshop
+					level = 2
+				}
+			}
+			
+			111 = {
+				add_extra_state_shared_building_slots = 3
+
+				add_building_construction = {
+					type = workshop
+					level = 1
+				}
+			}
+			
+			112 = {
+				add_extra_state_shared_building_slots = 3
+			}
+			84 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	## VARINTHIA ##
+	
+	focus = { #Varinthia
+		id = ORD_improve_varinthia
+		icon = GFX_focus_ord_varinthia
+		cost = 3
+		prerequisite = {
+			focus = ORD_rebuilding_glory
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			controls_state = 111
+		}
+		relative_position_id = ORD_rebuilding_glory
+		x = -5
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_trads_1
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 1
+			}
+			
+			custom_effect_tooltip = ORD_please_mods_1
+			add_to_variable = {
+				ORD_moderates_loyalty = 1
+			}
+			
+			custom_effect_tooltip = ORD_please_faiths_1
+			add_to_variable = {
+				ORD_faithful_loyalty = 1
+			}
+			
+			111 = {
+				add_dynamic_modifier = {
+					modifier = city_of_erudition
+				}
+			}
+			hidden_effect = {
+				add_ideas = CITY_varinthia
+			}
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Expand Varinthian Libraries
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+## GLORY LEAGUE ##
+	
+	focus = { #Istaroth
+		id = ORD_improve_istaroth
+		icon = GFX_focus_ord_istaroth
+		cost = 3
+		prerequisite = {
+			focus = ORD_rebuilding_glory
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			controls_state = 85
+		}
+		relative_position_id = ORD_rebuilding_glory
+		x = -2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_trads_1
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 1
+			}
+			custom_effect_tooltip = ORD_empower_trads_1
+			add_to_variable = {
+				ORD_traditionalists_influence = 1
+			}
+			85 = {
+				add_dynamic_modifier = {
+					modifier = city_of_foundries
+				}
+			}
+			add_resource = {
+				type = steel
+				amount = 7
+				state = 85
+			}
+			hidden_effect = {
+				add_ideas = CITY_istaroth
+			}
+		}
+	}
+	
+	focus = { #End the Exceptions
+		id = ORD_end_exceptions
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 4
+		prerequisite = {
+			focus = ORD_improve_istaroth
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_10
+				check_variable = {
+					ORD_traditionalists_influence > 9
+				}
+			}
+		}
+		relative_position_id = ORD_improve_istaroth
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_trads_2
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 2
+			}
+			custom_effect_tooltip = ORD_empower_trads_1
+			add_to_variable = {
+				ORD_traditionalists_influence = 1
+			}
+			custom_effect_tooltip = ORD_please_faiths_1
+			add_to_variable = {
+				ORD_faithful_loyalty = 1
+			}
+			custom_effect_tooltip = ORD_displease_mods_5
+			subtract_from_variable = {
+				ORD_moderates_loyalty = 5
+			}
+			country_event = ord_lore.6
+		}
+	}
+	
+	#Slavery
+	
+	focus = { #Establish the Corps
+		id = ORD_slave_hunter_corps
+		icon = GFX_IRI_New_Warfare_Experiences
+		cost = 3
+		prerequisite = {
+			focus = ORD_end_exceptions
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_15
+				check_variable = {
+					ORD_traditionalists_influence > 14
+				}
+			}
+		}
+		relative_position_id = ORD_end_exceptions
+		x = -2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_slave_hunters_tt
+			custom_effect_tooltip = ORD_please_trads_3
+			add_to_variable = {
+				ORD_faithful_loyalty = 3
+			}
+			custom_effect_tooltip = ORD_empower_trads_2
+			add_to_variable = {
+				ORD_traditionalists_influence = 2
+			}
+			custom_effect_tooltip = ORD_displease_mods_3
+			subtract_from_variable = {
+				ORD_moderates_loyalty = 3
+			}
+			ORD_strengthen_slavery = yes
+		}
+	}
+	
+	focus = { #Peonage for the Rthaur
+		id = ORD_rthaur_exploit
+		icon = GFX_focus_generic_rosites_fucked
+		cost = 2
+		prerequisite = {
+			focus = ORD_slave_hunter_corps
+		}
+		mutually_exclusive = {
+			focus = ORD_rthaur_control
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			RTH = {
+				is_not_threat = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						country_exists = RTH
+					}
+				}
+				OR = {
+					owns_state = 118
+					EOR = {
+						owns_state = 118
+					}
+				}
+				OR = {
+					owns_state = 122
+					EOR = {
+						owns_state = 122
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_5
+				check_variable = {
+					ORD_traditionalists_influence > 4
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_10
+				check_variable = {
+					ORD_traditionalists_influence > 9
+				}
+			}
+		}
+		relative_position_id = ORD_slave_hunter_corps
+		x = -2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = bad_idea_note
+			country_event = ord_lore.7
+			add_ideas = ORD_peonage_rthaur
+			set_country_flag = ORD_rthaur_spared
+		}
+	}
+	
+	focus = { #Cleanse the Race Traitors
+		id = ORD_rthaur_control
+		icon = GFX_focus_ord_cleanse_traitors
+		cost = 4
+		prerequisite = {
+			focus = ORD_slave_hunter_corps
+		}
+		mutually_exclusive = {
+			focus = ORD_rthaur_exploit
+		}
+		ai_will_do = {
+			factor = 12
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_20
+				check_variable = {
+					ORD_traditionalists_influence > 19
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_7
+				check_variable = {
+					ORD_traditionalists_influence > 6
+				}
+			}
+			RTH = {
+				is_not_threat = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						country_exists = RTH
+					}
+				}
+				OR = {
+					owns_state = 118
+					EOR = {
+						owns_state = 118
+					}
+				}
+				OR = {
+					owns_state = 122
+					EOR = {
+						owns_state = 122
+					}
+				}
+			}
+		}
+		relative_position_id = ORD_slave_hunter_corps
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = ord_lore.8
+			118 = {
+				add_manpower = -17219
+			}
+			122 = {
+				add_manpower = -16307
+			}
+			136 = {
+				add_manpower = -10253
+			}
+			140 = {
+				add_manpower = -2742
+			}
+			119 = {
+				add_manpower = -1390
+			}
+			ORD_weaken_slavery = yes
+		}
+	}
+	
+	focus = { #Dwarves and their Tunnels
+		id = ORD_skaelinger_exploit
+		icon = GFX_IRI_Reach_Southern_Mineral_Deposits
+		cost = 2
+		prerequisite = {
+			focus = ORD_rthaur_exploit
+			focus = ORD_rthaur_control
+		}
+		mutually_exclusive = {
+			focus = ORD_skaelinger_control
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			OR = {
+				SKA = {
+					is_sphered = yes
+				}
+				any_owned_state = {
+					is_core_of = SKA
+				}
+				EOR = {
+					any_owned_state = {
+						is_core_of = SKA
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_10
+				check_variable = {
+					ORD_traditionalists_influence > 9
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_25
+				check_variable = {
+					ORD_traditionalists_influence > 24
+				}
+			}
+		}
+		relative_position_id = ORD_rthaur_exploit
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = ord_lore.9
+			custom_effect_tooltip = bad_idea_note
+			random_state = {
+				limit = {
+					OR = {
+						is_owned_by = EOR
+						is_owned_by = ORD
+					}
+					is_core_of = SKA
+				}
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+			}
+			random_state = {
+				limit = {
+					OR = {
+						is_owned_by = EOR
+						is_owned_by = ORD
+					}
+					is_core_of = SKA
+				}
+				add_resource = {
+					type = steel
+					amount = 30
+				}
+			}
+			random_state = {
+				limit = {
+					OR = {
+						is_owned_by = EOR
+						is_owned_by = ORD
+					}
+					is_core_of = SKA
+				}
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+			}
+			ORD_strengthen_slavery = yes
+		}
+	}
+	
+	focus = { #Keep them in Sight
+		id = ORD_skaelinger_control
+		icon = GFX_IRI_Force_Bilodyans_To_Gunsmithing
+		cost = 3
+		prerequisite = {
+			focus = ORD_rthaur_exploit
+			focus = ORD_rthaur_control
+		}
+		mutually_exclusive = {
+			focus = ORD_skaelinger_exploit
+		}
+		ai_will_do = {
+			factor = 12
+		}
+		available = {
+			OR = {
+				SKA = {
+					is_sphered = yes
+				}
+				any_owned_state = {
+					is_core_of = SKA
+				}
+				EOR = {
+					any_owned_state = {
+						is_core_of = SKA
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_20
+				check_variable = {
+					ORD_traditionalists_influence > 19
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_30
+				check_variable = {
+					ORD_traditionalists_influence > 29
+				}
+			}
+		}
+		relative_position_id = ORD_rthaur_control
+		x = 0
+		y = 1
+		completion_reward = {
+			event = ord_lore.10
+			add_stability = -0.03
+			random_state = {
+				limit = {
+					OR = {
+						is_owned_by = EOR
+						is_owned_by = ORD
+					}
+					is_core_of = SKA
+				}
+				add_manpower = -3283
+			}
+			random_state = {
+				limit = {
+					OR = {
+						is_owned_by = EOR
+						is_owned_by = ORD
+					}
+					NOT = {
+						is_core_of = SKA
+					}
+				}
+				add_manpower = 3283
+			}
+			random_state = {
+				limit = {
+					OR = {
+						is_owned_by = EOR
+						is_owned_by = ORD
+					}
+					is_core_of = SKA
+				}
+				add_manpower = -1976
+			}
+			random_state = {
+				limit = {
+					OR = {
+						is_owned_by = EOR
+						is_owned_by = ORD
+					}
+					NOT = {
+						is_core_of = SKA
+					}
+				}
+				add_manpower = 1976
+			}
+			random_state = {
+				limit = {
+					OR = {
+						is_owned_by = EOR
+						is_owned_by = ORD
+					}
+					is_core_of = SKA
+				}
+				add_manpower = -2205
+			}
+			random_state = {
+				limit = {
+					OR = {
+						is_owned_by = EOR
+						is_owned_by = ORD
+					}
+					NOT = {
+						is_core_of = SKA
+					}
+				}
+				add_manpower = 2205
+			}
+			ORD_strengthen_slavery = yes
+		}
+	}
+	
+	focus = { #Open Ythelmaran Slave Markets
+		id = ORD_ythelmare_slave_market
+		icon = GFX_focus_ord_destroy_moderates
+		cost = 5
+		prerequisite = {
+			focus = ORD_skaelinger_exploit
+			focus = ORD_skaelinger_control
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_30
+				check_variable = {
+					ORD_traditionalists_influence > 29
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_30
+				check_variable = {
+					ORD_traditionalists_influence > 29
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_mods_1
+				check_variable = {
+					ORD_moderates_influence < 2
+				}
+			}
+		}
+		relative_position_id = ORD_skaelinger_control
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_disable_mods
+			set_variable = {
+				var = ORD_moderates_influence
+				value = 0
+			}
+			set_variable = {
+				var = ORD_moderates_loyalty
+				value = 0
+			}
+			ORD_strengthen_slavery = yes
+			if = {
+				limit = {
+					has_completed_focus = ORD_improve_ythelmare
+				}
+				112 = {
+					remove_dynamic_modifier = {
+						modifier = city_of_harbours
+					}
+					add_dynamic_modifier = {
+						modifier = city_of_slavers
+					}
+				}
+				hidden_effect = {
+					swap_ideas = {
+						remove_idea = CITY_ythelmare
+						add_idea = CITY_ythelmare_slavery
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = ORD_improve_ythelmare
+					}
+				}
+				112 = {
+					add_dynamic_modifier = {
+						modifier = city_of_slavers
+					}
+				}
+				hidden_effect = {
+					add_ideas = CITY_ythelmare_slavery
+				}
+			}
+		}
+	}
+	
+	#Industrialization
+	
+	focus = { #Utilise the Skilled
+		id = ORD_utilise_skilled
+		icon = GFX_BLD_Exchange_Of_Builders
+		cost = 2
+		prerequisite = {
+			focus = ORD_end_exceptions
+		}
+		mutually_exclusive = {
+			focus = ORD_dedication_lombrin
+		}
+		ai_will_do = {
+			factor = 8
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_5
+				check_variable = {
+					ORD_traditionalists_influence > 4
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_3
+				check_variable = {
+					ORD_traditionalists_loyalty > 2
+				}
+			}
+		}
+		relative_position_id = ORD_end_exceptions
+		x = 0
+		y = 1
+		completion_reward = {
+			
+			custom_effect_tooltip = ORD_displease_trads_2
+			subtract_from_variable = {
+				ORD_traditionalists_loyalty = 2
+			}
+			
+			custom_effect_tooltip = ORD_please_mods_1
+			add_to_variable = {
+				ORD_moderates_loyalty = 1
+			}
+			custom_effect_tooltip = ORD_empower_mods_1
+			add_to_variable = {
+				ORD_moderates_influence = 1
+			}
+			
+			add_stability = -0.03
+			
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Dedication to Lombrin
+		id = ORD_dedication_lombrin
+		icon = GFX_focus_ord_dedication_lombrin
+		cost = 4
+		prerequisite = {
+			focus = ORD_end_exceptions
+		}
+		mutually_exclusive = {
+			focus = ORD_utilise_skilled
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_7
+				check_variable = {
+					ORD_traditionalists_influence > 6
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_mods_3
+				check_variable = {
+					ORD_moderates_influence < 4
+				}
+			}
+		}
+		relative_position_id = ORD_end_exceptions
+		x = 2
+		y = 1
+		completion_reward = {
+			ORD_strengthen_slavery = yes
+			
+			custom_effect_tooltip = ORD_please_trads_3
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 3
+			}
+			
+			custom_effect_tooltip = ORD_empower_trads_3
+			add_to_variable = {
+				ORD_traditionalists_influence = 3
+			}
+			
+			custom_effect_tooltip = ORD_please_faiths_1
+			add_to_variable = {
+				ORD_faithful_loyalty = 1
+			}
+			
+			custom_effect_tooltip = ORD_displease_mods_1
+			subtract_from_variable = {
+				ORD_moderates_loyalty = 1
+			}
+			
+			custom_effect_tooltip = ORD_disempower_mods_1
+			subtract_from_variable = {
+				ORD_moderates_influence = 1
+			}
+			
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Expand the Waterwheel Foundries
+		id = ORD_expand_waterwheels
+		icon = GFX_focus_generic_waterwheel
+		cost = 3
+		prerequisite = {
+			focus = ORD_utilise_skilled
+			focus = ORD_dedication_lombrin
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_10
+				check_variable = {
+					ORD_traditionalists_influence > 9
+				}
+			}
+		}
+		relative_position_id = ORD_utilise_skilled
+		x = 1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					controls_state = 85
+				}
+				85 = {
+					add_extra_state_shared_building_slots = 2
+				
+					add_building_construction = {
+						type = workshop
+						level = 2
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 99
+				}
+				99 = {
+					add_extra_state_shared_building_slots = 1
+				
+					add_building_construction = {
+						type = workshop
+						level = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 101
+				}
+				101 = {
+					add_extra_state_shared_building_slots = 2
+				
+					add_building_construction = {
+						type = workshop
+						level = 1
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { #Technologize Arcanotech
+		id = ORD_technologize_arcanotech
+		icon = GFX_focus_generic_tech_beat_magic
+		cost = 4
+		prerequisite = {
+			focus = ORD_expand_waterwheels
+		}
+		ai_will_do = {
+			factor = 12
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_10
+				check_variable = {
+					ORD_traditionalists_influence > 9
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_15
+				check_variable = {
+					ORD_traditionalists_loyalty > 14
+				}
+			}
+		}
+		relative_position_id = ORD_expand_waterwheels
+		x = 0
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = ORD_reverse_engineer_arcanotech
+				days = 70
+			}
+		}
+	}
+	
+	focus = { #Study Dwarven Designs
+		id = ORD_study_skaelinger_tech
+		icon = GFX_BLD_Blackhill_Iron_Mines
+		cost = 2
+		prerequisite = {
+			focus = ORD_technologize_arcanotech
+		}
+		mutually_exclusive = {
+			focus = ORD_dedication_shalyn
+		}
+		ai_will_do = {
+			factor = 12
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_15
+				check_variable = {
+					ORD_traditionalists_influence > 14
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_20
+				check_variable = {
+					ORD_traditionalists_loyalty > 19
+				}
+			}
+			OR = {
+				any_controlled_state = {
+					is_core_of = SKA
+				}
+				AND = {
+					country_exists = EOR
+					EOR = {
+						any_controlled_state = {
+							is_core_of = SKA
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = ORD_technologize_arcanotech
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_displease_trads_2
+			subtract_from_variable = {
+				ORD_traditionalists_loyalty = 2
+			}
+			
+			custom_effect_tooltip = ORD_empower_mods_2
+			add_to_variable = {
+				ORD_moderates_influence = 2
+			}
+			every_controlled_state = {
+				limit = {
+					is_core_of = SKA
+				}
+				damage_building = {
+					type = workshop
+					damage = 5
+				}
+			}
+			if = {
+				limit = {
+					country_exists = EOR
+				}
+				EOR = {
+					every_controlled_state = {
+						limit = {
+							is_core_of = SKA
+						}
+						damage_building = {
+							type = workshop
+							damage = 1
+						}
+						damage_building = {
+							type = forge
+							damage = 1
+						}
+					}
+				}
+			}
+			add_timed_idea = {
+				idea = ORD_study_dwarf_tech
+				days = 70
+			}
+			86 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			105 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			106 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
+	}
+	
+	focus = { #Dedication to Shalyn
+		id = ORD_dedication_shalyn
+		icon = GFX_BLD_Codex_Of_War
+		cost = 3
+		prerequisite = {
+			focus = ORD_technologize_arcanotech
+		}
+		ai_will_do = {
+			factor = 14
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_20
+				check_variable = {
+					ORD_traditionalists_influence > 19
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_mods_5
+				check_variable = {
+					ORD_traditionalists_influence < 6
+				}
+			}
+		}
+		relative_position_id = ORD_technologize_arcanotech
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_trads_2
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 2
+			}
+			
+			custom_effect_tooltip = ORD_empower_trads_1
+			add_to_variable = {
+				ORD_traditionalists_influence = 1
+			}
+			
+			custom_effect_tooltip = ORD_empower_faiths_3
+			add_to_variable = {
+				ORD_faithful_influence = 3
+			}
+			
+			86 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			
+			106 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
+	}
+	
+	focus = { #Found the Fetter_Factories
+		id = ORD_fetter_factories
+		icon = GFX_BLD_Urbanisation_Investments
+		cost = 5
+		prerequisite = {
+			focus = ORD_ythelmare_slave_market
+		}
+		prerequisite = {
+			focus = ORD_study_skaelinger_tech
+			focus = ORD_dedication_shalyn
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_30
+				check_variable = {
+					ORD_traditionalists_influence > 29
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_20
+				check_variable = {
+					ORD_traditionalists_loyalty > 19
+				}
+			}
+		}
+		relative_position_id = ORD_study_skaelinger_tech
+		x = 0
+		y = 1
+		completion_reward = {
+			ORD_strengthen_slavery = yes
+		}
+	}
+	
+	focus = { #It's Not Enough
+		id = ORD_not_enough
+		icon = GFX_focus_ord_faithful_society
+		cost = 1
+		prerequisite = {
+			focus = ORD_fetter_factories
+		}
+		ai_will_do = {
+			factor = 25
+		}
+		relative_position_id = ORD_fetter_factories
+		x = 0
+		y = 1
+		completion_reward = {
+			ORD_strengthen_slavery = yes
+		}
+	}
+	
+	focus = { #Slave Shantytowns
+		id = ORD_slave_shantytowns
+		icon = GFX_focus_ung_elven_internment_act
+		cost = 4
+		prerequisite = {
+			focus = ORD_not_enough
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_50
+				check_variable = {
+					ORD_traditionalists_influence > 49
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_50
+				check_variable = {
+					ORD_traditionalists_loyalty > 49
+				}
+			}
+		}
+		relative_position_id = ORD_not_enough
+		x = -2
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Work Until You Die
+		id = ORD_work_until_death
+		icon = GFX_IRI_Remove_Rodents	
+		cost = 1
+		prerequisite = {
+			focus = ORD_slave_shantytowns
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_75
+				check_variable = {
+					ORD_traditionalists_influence > 74
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_75
+				check_variable = {
+					ORD_traditionalists_loyalty > 74
+				}
+			}
+		}
+		relative_position_id = ORD_slave_shantytowns
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Engines of Flame
+		id = ORD_engine_flame
+		icon = GFX_IRI_Resettle_Ogres_To_Cities
+		cost = 3
+		prerequisite = {
+			focus = ORD_not_enough
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_50
+				check_variable = {
+					ORD_traditionalists_influence > 49
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_50
+				check_variable = {
+					ORD_traditionalists_loyalty > 49
+				}
+			}
+		}
+		relative_position_id = ORD_not_enough
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Til Smog Chokes the Sky
+		id = ORD_smog_choked_skies
+		icon = GFX_IRI_Slave_Labour_Force
+		cost = 2
+		prerequisite = {
+			focus = ORD_engine_flame
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_75
+				check_variable = {
+					ORD_traditionalists_influence > 74
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_75
+				check_variable = {
+					ORD_traditionalists_loyalty > 74
+				}
+			}
+		}
+		relative_position_id = ORD_engine_flame
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Open Coal Pits
+		id = ORD_open_coal_pits
+		icon = GFX_BLD_Give_Lead_To_Progressive_Faction
+		cost = 2
+		prerequisite = {
+			focus = ORD_not_enough
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_50
+				check_variable = {
+					ORD_traditionalists_influence > 49
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_50
+				check_variable = {
+					ORD_traditionalists_loyalty > 49
+				}
+			}
+		}
+		relative_position_id = ORD_not_enough
+		x = 2
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Corpse-Furnaces
+		id = ORD_corpse_furnaces
+		icon = GFX_IRI_Scorch_The_Earth
+		cost = 2
+		prerequisite = {
+			focus = ORD_open_coal_pits
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_75
+				check_variable = {
+					ORD_traditionalists_influence > 74
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_75
+				check_variable = {
+					ORD_traditionalists_loyalty > 74
+				}
+			}
+		}
+		relative_position_id = ORD_open_coal_pits
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Industrialization, Kicking and Screaming
+		id = ORD_industrialization
+		icon = GFX_IRI_Nationalize_Guilds
+		cost = 10
+		prerequisite = {
+			focus = ORD_work_until_death
+			focus = ORD_smog_choked_skies
+			focus = ORD_corpse_furnaces
+		}
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_100
+				check_variable = {
+					ORD_traditionalists_influence > 99
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_100
+				check_variable = {
+					ORD_traditionalists_loyalty > 99
+				}
+			}
+		}
+		relative_position_id = ORD_smog_choked_skies
+		x = 0
+		y = 1
+		completion_reward = {
+		
+		}
+	}
+	
+## MODERATES ##
+	
+	focus = { #Ythelmare
+		id = ORD_improve_ythelmare
+		icon = GFX_focus_ord_ythelmare
+		cost = 3
+		prerequisite = {
+			focus = ORD_rebuilding_glory
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			controls_state = 112
+		}
+		relative_position_id = ORD_rebuilding_glory
+		x = 2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_mods_1
+			add_to_variable = {
+				ORD_moderates_loyalty = 1
+			}
+			custom_effect_tooltip = ORD_empower_mods_1
+			add_to_variable = {
+				ORD_moderates_influence = 1
+			}
+			112 = {
+				add_dynamic_modifier = {
+					modifier = city_of_harbours
+				}
+			}
+			hidden_effect = {
+				add_ideas = CITY_ythelmare
+			}
+		}
+	}
+
+## SOPHISTS ##
+	
+	focus = { #Vuid
+		id = ORD_improve_vuid
+		icon = GFX_focus_ord_vuid
+		cost = 3
+		prerequisite = {
+			focus = ORD_rebuilding_glory
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			controls_state = 84
+		}
+		relative_position_id = ORD_rebuilding_glory
+		x = 5
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_faiths_1
+			add_to_variable = {
+				ORD_moderates_loyalty = 1
+			}
+			custom_effect_tooltip = ORD_empower_faiths_1
+			add_to_variable = {
+				ORD_moderates_influence = 1
+			}
+			84 = {
+				add_dynamic_modifier = {
+					modifier = city_of_generals
+				}
+			}
+			hidden_effect = {
+				add_ideas = CITY_vuid
+			}
+		}
+	}
+}

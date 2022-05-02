@@ -1,0 +1,24 @@
+state={
+	id=117
+	name="STATE_117"
+	provinces={
+		6994 6964 5630 2414
+	}
+	state_category = town
+	manpower=17099
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 2
+		lumber = 6
+	}
+		history={
+		victory_points = { 6964 19 }
+		owner = ORD
+		buildings = {
+			infrastructure = 2
+			forge = 1
+			farm = 3
+		}
+		add_core_of = ORD
+		}
+}

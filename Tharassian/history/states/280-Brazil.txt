@@ -1,0 +1,23 @@
+	state={
+	id=280
+	name="STATE_280"
+	provinces={
+		8637 8669 2509 8708 4 8766 5027 1427 8700 2181
+	}
+	state_category = pastoral
+	manpower=1033
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 6
+	}
+	history={
+		victory_points = {
+			8708 1
+		}
+		owner = NOC
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = NOC
+	}
+}

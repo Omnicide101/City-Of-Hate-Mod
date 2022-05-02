@@ -1,0 +1,402 @@
+ideas = {
+
+	hidden_ideas = {
+		
+		FOOD_starvation = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = -0.15
+				research_speed_factor = -0.65
+				stability_factor = -0.3
+				stability_weekly = -0.01
+				war_support_factor = -0.7
+				war_support_weekly = -0.03
+				political_power_gain = -2
+				command_power_gain = -3
+				surrender_limit = -0.25
+				experience_loss_factor = 0.3
+				land_reinforce_rate = -0.8
+				weekly_manpower = -1050
+				production_speed_buildings_factor = -0.45
+				industrial_capacity_dockyard = -0.6
+				industrial_capacity_factory = -0.6
+				no_compliance_gain = 1
+				army_attack_factor = -0.9
+				army_defence_factor = -0.65
+				army_morale_factor = -0.75
+				army_org_factor = -0.6
+				army_org_regain = -0.9
+				attrition = 0.15
+				breakthrough_factor = -0.9
+			}
+		}
+	}
+
+	economy = {
+		law = yes
+		
+		unorganized_economy = {
+			
+			available = {
+				always = no
+			}
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+			consumer_goods_factor = 0.6
+			production_factory_max_efficiency_factor = -0.2
+			supply_consumption_factor = -0.2
+			out_of_supply_factor = -0.5
+			min_export = 0
+			}
+			allowed_to_remove = {
+				always =  no
+			}
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+		
+		
+		autarkic_isolationism = {
+			
+			available = {
+				has_government = puritan
+			}
+			
+			allowed = {
+				OR = {
+					has_government = puritan
+					AND = {
+						tag = ORD
+						has_government = theocrat
+					}
+					AND = {
+						tag = EOR
+						has_government = theocrat
+					}
+				}
+			}
+			removal_cost = -1
+			
+			modifier = {
+				trade_opinion_factor = -5
+				consumer_goods_factor = 0.3
+				production_factory_max_efficiency_factor = -0.05
+				min_export = 0
+			}
+			allowed_to_remove = {
+				NOT = {
+					OR = {
+						has_government = puritan
+						AND = {
+							tag = ORD
+							OR = {
+								has_government = theocrat
+								has_government = monarchy_absolute
+							}
+						}
+						AND = {
+							tag = EOR
+							has_government = theocrat
+						}
+					}
+				}
+			}
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 0
+				modifier = {
+					add = 500
+					has_government = puritan
+				}
+				modifier = {
+					add = 500
+					tag = ORD
+					has_government = theocrat
+				}
+   			}
+		}
+		
+		agrarianism_economy = {
+			
+			allowed = {
+				always = yes
+			}
+		
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+				supply_consumption_factor = -0.1
+				MONTHLY_POPULATION = 0.25
+				min_export = 0.25
+			}
+			
+			default = yes
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+		
+		manorialism_economy = {
+			
+			available = {
+				always = yes
+			}
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.2
+				global_building_slots_factor = 0.25
+				political_power_gain = 0.05
+				min_export = 0.1
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+		
+		fiscalism_economy = {
+			
+			available = {
+				always = yes
+			}
+
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+				political_power_gain = 0.15
+				industrial_capacity_factory = 0.1
+				min_export = 0.7
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+		
+		mercantilism_economy = {
+			
+			
+			available = {
+				always = yes
+			}
+		
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				production_speed_buildings_factor = 0.2
+				industrial_capacity_factory = 0.15
+				min_export = 0.8
+			}
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+		
+		corporatism_economy = {
+			
+			
+			available = {
+				always = yes
+			}
+
+			ai_will_do = {
+   				factor = 0
+   			}
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.1
+				industrial_capacity_factory = 0.15
+				min_export = 0.4
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		communalism_economy = {
+			
+			allowed = {
+				has_government = republic_peasant
+			}
+			
+			available = {
+				always = no
+			}
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.2
+				supply_consumption_factor = -0.2
+				out_of_supply_factor = -0.5
+				min_export = 0
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+
+		steam_and_steel = {
+			
+			available = {
+				always = no
+			}
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				production_speed_buildings_factor = 0.3
+				industrial_capacity_factory = 0.2
+				conscription = -0.02
+				min_export = 0.6
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+	}
+	
+	trade_laws = {
+		law = yes
+
+		tribal_society = {
+			
+			available = {
+				always = no
+			}
+			
+			cost = 300
+			removal_cost = -1
+			
+			modifier = {
+			MONTHLY_POPULATION = 0.3
+			attrition = -0.2
+			research_speed_factor = -0.1
+			}
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+		
+		feudal_society = {
+			
+			available = {
+				always = no
+			}
+			
+			cost = 300
+			removal_cost = -1
+			
+			modifier = {
+			MONTHLY_POPULATION = 0.1
+			}
+			
+			default = yes
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+		
+		late_feudal_society = {
+			
+			available = {
+				always = no
+			}
+		
+			cost = 300
+			removal_cost = -1
+			
+			modifier = {
+			research_speed_factor = 0.05
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+		
+		industrial_society = {
+			
+			
+			available = {
+				always = no
+			}
+			
+			cost = 300
+			removal_cost = -1
+			
+			
+			modifier = {
+			MONTHLY_POPULATION = -0.15
+			research_speed_factor = 0.15
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+	}
+}

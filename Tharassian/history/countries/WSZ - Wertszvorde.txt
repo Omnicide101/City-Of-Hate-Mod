@@ -1,0 +1,178 @@
+﻿capital = 235
+
+set_oob = "WSZ_1936"
+
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1 
+}
+
+set_variable = {
+	var = FPT_piety
+	value = 5
+}
+
+set_variable = {
+	var = FPT_union_loyalty
+	value = 2
+}
+
+set_variable = {
+	var = FPT_stahlhof_loyalty
+	value = 5
+}
+
+set_variable = {
+	var = FPT_small_loyalty_cost
+	value = 50
+}
+
+set_variable = {
+	var = FPT_medium_loyalty_cost
+	value = 75
+}
+
+set_variable = {
+	var = FPT_big_loyalty_cost
+	value = 100
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = monarchy_absolute
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 73
+
+	monarchy_constitutional = 7
+
+	republic_peasant = 0
+
+	republic_aristocrat = 12
+
+	republic_merchant = 0
+
+	theocrat = 8
+
+	puritan = 0
+}
+
+add_ideas = {
+	human_country
+	nurhelm_patron
+	FPT_bauernfreistellung
+}
+
+give_military_access = UNG
+give_military_access = HLZ
+give_military_access = NOC
+give_military_access = SPW
+give_military_access = SVT
+give_military_access = STA
+give_military_access = NRK
+give_military_access = TEI
+give_military_access = ARK
+give_military_access = SNF
+give_military_access = FTH
+give_military_access = WIS
+
+create_country_leader = {
+	name = "Kristin Kindl"
+	desc = "politics_WSZ_kindl_desc"
+	picture = "gfx/leaders/WSZ/Portrait_WSZ_Kindl.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Anton Beckmann"
+	desc = "politics_WSZ_Beckmann_desc"
+	picture = "gfx/leaders/WSZ/Portrait_WSZ_Beckmann.dds"
+	ideology = republic_peasant_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Thorsten Weingand"
+	desc = "politics_WSZ_weingand_desc"
+	picture = "gfx/leaders/WSZ/Portrait_WSZ_Weingand.dds"
+	ideology = puritan_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Kristin Kindl"
+	desc = "politics_WSZ_kindl_desc"
+	picture = "gfx/leaders/WSZ/Portrait_WSZ_Kindl.dds"
+	ideology = monarchy_absolute_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Rupprecht Pelzer"
+	desc = "politics_WSZ_pelzer_desc"
+	picture = "gfx/leaders/WSZ/Portrait_WSZ_Pelzer.dds"
+	ideology = theocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Karin Söllner"
+	desc = "politics_WSZ_sollner_desc"
+	picture = "gfx/leaders/WSZ/Portrait_WSZ_Sollner.dds"
+	ideology = republic_aristocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Tanja Spitz"
+	desc = "politics_WSZ_spitz_desc"
+	picture = "gfx/leaders/WSZ/Portrait_WSZ_Spitz.dds"
+	ideology = republic_merchant_ideology
+	traits = {
+	}
+}

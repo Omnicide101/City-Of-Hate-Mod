@@ -1,0 +1,73 @@
+capital = 449
+
+set_oob = "GET_1936"
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	improved_woodworking = 1
+	basic_ship_hull = 1
+}
+
+set_research_slots = 3
+set_stability = 0.43
+set_war_support = 0.67
+
+set_politics = {
+	ruling_party = monarchy_constitutional
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 23
+
+	monarchy_constitutional = 53
+	
+	republic_peasant = 17
+
+	republic_aristocrat = 4
+
+	republic_merchant = 0
+	
+	theocrat = 3
+
+	puritan = 0
+}
+
+add_ideas = {
+	tribal_society
+	unorganized_economy
+	gnome_country
+	jursarg_religion
+}
+
+diplomatic_relation = {
+	country = ITH
+	relation = non_aggression_pact
+	active = yes
+}
+
+add_opinion_modifier = {
+	target = ITH
+	modifier = supportive_opinion
+}
+
+add_opinion_modifier = {
+	target = DIA
+	modifier = bitter_rivals
+}
+
+create_country_leader = {
+	name = "Halgryn Thrusr"
+	desc = "politics_GET_thrusr_desc"
+	picture = "gfx/leaders/SUL/Portrait_Sulfurisle_Generic_navy_1.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
+}

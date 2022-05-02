@@ -1,0 +1,167 @@
+﻿#Irenthar: City of Hate Alpha Build
+
+#THE MOD TEAM
+
+#Lead Dev
+Omnicide101
+
+#Lore Team
+Old Man Duchense
+CrownLoyalist
+Burger King Hotline
+DiocletianFanBoy
+Magic Bad
+The Swoviet Wunion
+TheDestroyer
+Silvestrich
+Aifendragon
+
+#Mechanics Team
+Dregorin
+Shortpower
+Silvestrich
+Jim_
+
+#Tech Tree Design Team
+OldManCorvo
+TCampo28
+
+#GFX Team
+Caelvanir
+
+#Music
+Dregorin
+
+#Server Admins
+Scoop
+Shawniepie
+
+#Dev Diarists
+Actual Spook
+Imperial_Warlord
+
+#Unit Models by Xangelo7
+
+#Map Reworks by Veag
+
+#Character Portraits
+
+All portraits made by Artbreeder unless otherwise specified
+
+Portraits made by Yann Blomquist:
+	Luudz
+	Lizardman Country Idea GFX
+	Lizardman Generals and Admirals
+
+#Loading Screens
+Any map loading screens made by Omnicide101
+Other map loading screens made with thanks to Artbreeder
+
+#Flag Icons
+
+Ordorian Tree - Icon available at www.thenounproject.com (made by Jhonatan)
+Arkanisturm Spellbook - Icon available at techFlourish from www.techflourish.com
+Rosite Rose - Icon made by Freepik from www.flaticon.com (https://www.flaticon.com/authors/freepik)
+Rosite Bread - Icon available at www.icons8.com
+Wistinger/Holzbrenner Tree - Icon available at www.thenounproject.com (made by Shane Herzog)
+Rosite Fist - Icon available at en.wikipedia.org (made by Keith Tyler)
+Holzbrenner Axes - Icon available at www.thenounproject.com (made by Guvnor Co)
+Holzbrenner Shield - Icon available at www.thenounproject.com (made by alkhalifi_design)
+Sword (Various) - Icon available at www.ya-webdesign.com
+Nochwalder Fishing Hook - Icon available at www.thenounproject.com (made by Alexander Russell)
+Schneefilder Snowflake - Icon available at www.icons8.com
+Skaelinger Pickaxe - Icon made by Smashicons from www.flaticon.com (https://www.flaticon.com/authors/smashicons)
+Skaelinger Battleaxe - Icon available at www.thenounproject.com (made by parkjisun)
+Ungerdaler Septagram - Icon available at commmons.wikimedia.org (made by Frater5)
+Ungerdaler Eagle - Icon available at commons.wikimedia.org (made by David Liuzzo)
+Ungerdaler Crown - Icon available at vecteezy.com
+Religious Knot Pattern - Icon available at KissCC0
+Ierethayner Shield - Icon available at www.icons8.com
+Crowns - Icons available at pngtree.com
+Irentharite Gargoyle - Icon available at www.getdrawings.com
+Astrellion's Sunflower - Icon available at www.thenounproject.com (made by ProSymbols)
+Stoutfellow's Fist - Icon available at www.freepik.com (made by Vectorportal)
+Wertzsvorder Lion - Icon available at www.vecteezy.com
+Nochwalder Warhammer - Icon available at www.thenounproject.com (made by parkjisun)
+Nochwalder Laurel - Icon available at www.thenounproject.com (made by Ofer Lehr)
+Rthaur Handshake - Icon available at www.vector.me
+Guildist Sailboat - Icon available at www.thenounproject.com (made by Jens Tärning)
+Guildist Torch - Icon made by Smashicons from www.flaticon.com (https://www.flaticon.com/authors/smashicons)
+Guildist Scales - Icon available at www.kissping.com
+Puritan Axe - Icon available at www.pixabay.com
+Puritan Skull - Icon available at www.thenounproject.com (made by Andrew Forrester)
+Felweyner Tower - Icon available at www.shareicon.net (made by buildings)
+Fritzer Crown - Icon available at www.thenounproject.com (made by ProSymbols)
+Fritzer Ship - Icon available at www.shareicon.net (made by Orin zuu)
+Fritzer Anchor - Icon available at www.thenounproject.com (made by Public Domain Nouns)
+Stahlhoffer Wings - Icon available at www.thenounproject.com (made by Luis Prado)
+Navandonnite Ship's Wheel - Icon available at www.thenounproject.com (made by Ben)
+Nastrodoger Scythe - Icon available at www.thenounproject.com (made by Ralf Schmitzer)
+Perkav Halberd - Icon available at www.thenounproject.com (made by parkjisun)
+Tlarthingian Bear - Icon available at www.thenounproject.com (made by Felix Brönnimann)
+Puritan Tlarthingian Bear - Icon available at www.vecteezy.com
+Tlarthingian Leaf - Icon available at www.thenounproject.com (made by Baboon Designs)
+Bergialer Crown - Icon available at www.thenounproject.com (made by Kelsey Armstrong)
+Sulfurisler Wrench - Icon available at www.thenounproject.com (made by National Park Service, US)
+Kurgur Claw - Icon available at www.thenounproject.com (made by regina)
+Irinthian Wreath - Icon available at www.clipartmax.com
+Irinthian Knight - Lithuanian Coat of Arms (public domain)
+Rthaur Sword - Icon available at www.thenounproject.com (made by Simon Mettler)
+Lirothline Crown - Icon available at www.thenounproject.com (made by ProSymbols)
+Lirothline Ram - Icon available at www.thenounproject.com (made by Laymik)
+Ythelmare Anchor - Icon available at www.thenounproject.com (made by Nick Novell)
+Varinthian Sun - Icon available at www.thenounproject.com (made by Alice Design)
+Merchant's Hand Praying Hands - Icon available at www.thenounproject.com (made by Luis Durazo)
+Merchant's Hand Skull - Icon available at www.thenounproject.com (made by Jacopo Mencacci)
+Bilodyan Catttail - Icon available at www.thenounproject.com (made by Alex C.)
+Stotvic Harpoon - Icon available at www.thenounproject.com (made by Creative Mania)
+Krellsland Horn - Icon available at www.thenounproject.com (made by Becris)
+Perkav Crown - Icon available at www.thenounproject.com (made by Gilberto)
+Vlencin Crown - Icon available at www.thenounproject.com (made by Pedro Santos)
+Rlavyan Eagle - Icon available at www.thenounproject.com (made by Eucalyp)
+Vitrczin Pine - Icon available at www.thenounproject.com (made by iconcheese)
+Unused Crown - Icon available at www.thenounproject.com (made by Denicon)
+Gowie Key - Icon available at www.thenounproject.com (made by Ani Rofiqah)
+Stabba Web - Icon available at www.thenounproject.com (made by Made)
+Stabba Skull - Icon available at www.thenounproject.com (made by Hasanudin)
+Stabba Brain - Icon available at www.thenounproject.com (made by Juicy Fish)
+
+# Technology Icons
+
+Astrolabe - Photo taken by Andrew Dunn
+Recurve Bow - Photo taken by Gao Xiang
+Chainmail Hauberk - Photo taken by Walters Art Museum
+Brigandine Armour - Photo taken by Gaius Cornelius
+Stirrups - Photo taken by Wolfgang Sauber
+Quiver - Photo taken by Birkenleder
+Bracers - Photo taken by the Metropolitan Museum of Art
+Recurve Bow - Photo taken by Gao Xiang
+Crossbow - Photo taken by the Swedish Royal Armoury
+Repeating Crossbow - Photo taken by Liang Jieming
+Greaves - Photo taken by the Metropolitan Museum of Art
+Bastard Sword - Photo taken by Søren Niedziella
+Great Helm - Photo taken by Łukasz Olszewski
+Winged Helm - Photo taken by Dnalor 01
+Two-Handed Sword - Photo taken by Göran Schmidt
+Full Plate - Photo taken by Rama
+Kite Shield - Photo taken by Viollet-le-Duc
+Buckler - Photo taken by Ángel M. Felicísimo
+Pavise - Photo taken by Daderot
+Lance - Photo taken by the Cleveland Museum of Art
+Saddle - Photo taken by David Straub
+Halberd - Photo taken by Dornicke
+Falchion - Photo taken by Metropolitan Museum of Art
+Arming Sword - Photo taken by Søren Niedziella
+Pauldron - Photo taken by Anonymous (District Museum in Tarnów)
+Estioc - Photo taken by Auge=mit
+Cart - Photo taken by Gausanchennai
+ - Photo taken by
+ - Photo taken by
+ - Photo taken by
+ - Photo taken by
+ - Photo taken by
+ - Photo taken by
+ - Photo taken by
+ 
+# Equipment Module Icons
+Perkav Oarsman - Photo taken by Kromeus

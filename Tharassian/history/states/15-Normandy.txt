@@ -1,0 +1,20 @@
+
+state={
+	id=15
+	name="STATE_15"
+
+	history={
+		owner = GMR
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = GMR
+	}
+
+	provinces={
+		4609 1054 5968 1154 8
+	}
+	state_category = pastoral
+	manpower=3279
+	buildings_max_level_factor=1.000
+}

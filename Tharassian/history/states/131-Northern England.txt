@@ -1,0 +1,32 @@
+state={
+	id=131
+	name="STATE_131"
+	provinces={
+		2878 7229 7194 7188 3430 7153 7095 7056 950 4291
+	}
+	state_category = large_town
+	manpower=18927
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 2
+	}
+		history={	
+		victory_points = {7153 19}
+		owner = RTH
+		buildings = {
+			infrastructure = 2
+			workshop = 2
+			forge = 1
+			7188 = {
+				bunker = 2
+			}
+			3430 = {
+				bunker = 2
+			}
+			950 = {
+				bunker = 2
+			}
+		}
+		add_core_of = RTH
+		}
+}

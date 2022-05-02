@@ -1,0 +1,21 @@
+state={
+	id=71
+	name="STATE_71"
+	provinces={
+		2082 5132 5869 1346
+	}
+	state_category = pastoral
+	manpower=2911
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			2082 3
+		}
+		owner = GMR
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = GMR
+
+	}
+}

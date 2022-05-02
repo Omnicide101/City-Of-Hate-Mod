@@ -1,0 +1,21 @@
+state={
+	id=591
+	name="STATE_591"
+	provinces={
+		8125 1044 
+	}
+	state_category = rural
+	resources = {
+		lumber = 7
+	}
+	manpower=4481
+	buildings_max_level_factor=1.000
+	history={
+		owner = BER
+		buildings = {
+			infrastructure = 2
+			farm = 2
+		}
+		add_core_of = BER
+	}
+}

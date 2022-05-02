@@ -1,0 +1,27 @@
+state={
+	id=598
+	name="STATE_598"
+	provinces={
+		7963 3234
+	}
+	state_category = town
+	manpower=13482
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 7
+	}
+	history={
+		victory_points = { 7963 15 }
+		owner = BER
+		buildings = {
+			infrastructure = 2
+			workshop = 1
+			forge = 1
+			dockyard = 1
+			7963 = {
+				naval_base = 6
+			}
+		}
+		add_core_of = BER
+	}
+}

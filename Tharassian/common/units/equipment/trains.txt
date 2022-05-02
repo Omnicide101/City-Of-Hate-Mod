@@ -1,0 +1,41 @@
+equipments = {
+	#archetype
+	cart_equipment = {
+		year = 600
+
+		is_archetype = yes
+		is_buildable = no
+		active = no
+		type = train
+		picture = archetype_train
+		group_by = archetype
+		sprite = train
+
+		interface_category = interface_category_land
+
+		armor_value = 0 # HP = BASE_TRAIN_HP + armor_value
+
+		build_cost_ic = 70
+		resources = {
+			lumber = 1
+		}
+	}
+	# regular trains
+	cart_equipment_1 = {
+		year = 610
+
+		archetype = cart_equipment
+		type = {
+			train
+		}
+
+		armor_value = 0 # HP = BASE_TRAIN_HP + armor_value
+
+		priority = 10
+
+		build_cost_ic = 70
+		resources = {
+			lumber = 1
+		}
+	}
+}

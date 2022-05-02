@@ -1,0 +1,944 @@
+﻿### FREIPRINZLICHE EVENTS
+
+add_namespace = fpt
+
+country_event = {#Ten Years of Safety Parties
+	id = fpt.1
+	title = fpt.1.t
+	desc = fpt.1.d
+	picture = GFX_report_event_generic_rally2
+	
+	is_triggered_only = yes
+	
+	option = {#Fuck the Septists
+		name = fpt.1.a
+		ai_chance = {
+			factor = 1
+		}
+		add_stability = 0.03
+		SVT = {
+			FROM_worsen_THIS_relations = yes
+		}
+		hidden_effect = {
+			subtract_from_variable = {
+				var = FPT_piety
+				value = 1
+			}
+		}
+		custom_effect_tooltip = FPT_decrease_piety_tt
+		set_country_flag = FPT_septists_fucked
+		set_freiprinz_piety_effects = yes
+	}
+	
+	option = {#Forgive the Septists
+		name = fpt.1.b
+		ai_chance = {
+			factor = 2
+		}
+		add_popularity = {
+			ideology = theocrat
+			popularity = 0.05
+		}
+		add_stability = -0.02
+		SVT = {
+			FROM_improve_THIS_relations = yes
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = FPT_piety
+				value = 1
+			}
+		}
+		custom_effect_tooltip = FPT_increase_piety_tt
+		set_country_flag = FPT_septists_forgiven
+		set_freiprinz_piety_effects = yes
+	}
+}
+
+country_event = {#Picking a Side
+	id = fpt.2
+	title = fpt.2.t
+	desc = fpt.2.d
+	picture = GFX_report_event_ung_civil_warning
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+					OR = { #Likely to be Loyalists
+						tag = SVT
+						tag = ARK
+						tag = NOC
+					}
+				}
+				random_list = {
+					85 = {#Loyalist
+						set_country_flag = FPT_loyalist_strats
+					}
+					10 = {#Ferdinist
+						set_country_flag = FPT_ferdinist_strats
+					}
+					5 = {#Neutral
+						set_country_flag = FPT_neutralist_strats
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					OR = { #Likely to be Ferdinists
+						tag = WSZ
+						tag = SNF
+						tag = NRK
+					}
+				}
+				random_list = {
+					85 = {#Ferdinist
+						set_country_flag = FPT_ferdinist_strats
+					}
+					10 = {#Loyalist
+						set_country_flag = FPT_loyalist_strats
+					}
+					5 = {#Neutral
+						set_country_flag = FPT_neutralist_strats
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					tag = TEI #Likely to be Neutral
+				}
+				random_list = {
+					90 = {#Neutral
+						set_country_flag = FPT_neutralist_strats
+					}
+					5 = {#Loyalist
+						set_country_flag = FPT_loyalist_strats
+					}
+					5 = {#Ferdinist
+						set_country_flag = FPT_ferdinist_strats
+					}
+				}
+			}
+		}
+	}
+	
+	option = {#Adalina Gang
+		name = fpt.2.a
+		custom_effect_tooltip = FPT_increase_union_loyalty_small_tt
+		add_to_variable = {
+			var = FPT_union_loyalty
+			value = 1
+		}
+		set_loyalty_approximations = yes
+	}
+	
+	option = {#I just wanna grill for God's sake
+		name = fpt.2.b
+		add_political_power = 25
+	}
+	
+	option = {#Schwarzenbach Gang
+		name = fpt.2.c
+		custom_effect_tooltip = FPT_increase_stahlhof_loyalty_small_tt
+		add_to_variable = {
+			var = FPT_stahlhof_loyalty
+			value = 1
+		}
+		set_loyalty_approximations = yes
+	}
+}
+
+country_event = {#FPT Returns home
+	id = fpt.3
+	title = fpt.3.t
+	desc = fpt.3.d
+	picture = GFX_report_event_generic_rally
+	
+	trigger = {
+		has_completed_focus = FPT_exploit_chaos
+		has_global_flag = UNG_STA_started_civil_war
+		is_subject = no
+		NOT = {
+			UNG = {
+				has_war_with = STA
+			}
+			has_war_with = STA
+			has_war_with = UNG
+			has_completed_focus = FPT_break_from_union
+		}
+	}
+	
+	fire_only_once = yes
+	
+	option = {#Adalina Gang
+		name = fpt.3.a
+		trigger = {
+			UNG = {
+				is_faction_leader = yes
+				exists = yes
+				is_subject = no
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = autonomy_IR_freiprinztum
+				freedom_level = 0.4
+			}
+		}
+	}
+	
+	
+	option = {#Schwarzenbach Gang
+		name = fpt.3.b
+		trigger = {
+			STA = {
+				is_faction_leader = yes
+				exists = yes
+				is_subject = no
+			}
+		}
+		
+		STA = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = autonomy_IR_freiprinztum
+				freedom_level = 0.4
+			}
+		}
+	}
+}
+
+### KRIEGSSPIELE EVENTS ###
+
+country_event = {#FPT sabotaged for the Kriegsspiele
+	id = fpt.4
+	title = fpt.4.t
+	desc = fpt.4.d
+	picture = GFX_report_event_generic_rally
+	
+	is_triggered_only = yes
+	
+	option = {#Curses
+		name = fpt.4.a
+		custom_effect_tooltip = FPT_decrease_kriegsspiele_preparedness_medium_tt
+	}
+}
+
+country_event = {#Kriegsspiele - Preparations pay off!
+	id = fpt.5
+	title = fpt.5.t
+	desc = fpt.5.d
+	picture = GFX_report_event_generic_rally
+	
+	trigger = {
+		has_active_mission = FPT_kriegsspiele_happening
+		check_variable = {
+			FPT_kriegsspiele_preparedness > 3
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {#Hurrah!
+		name = fpt.5.a
+		custom_effect_tooltip = FPT_increase_kriegsspiele_preparedness_small_tt
+		add_to_variable = {
+			var = FPT_kriegsspiele_preparedness
+			value = 1
+		}
+		
+		every_country = {
+			limit = {
+				is_og_freiprinz = yes
+			}
+			update_kriegsspiele_tracker = yes
+		}
+	}
+}
+
+country_event = {#Kriegsspiele - Opponent cheats in siege!
+	id = fpt.6
+	title = fpt.6.t
+	desc = fpt.6.d
+	picture = GFX_report_event_fascist_militia
+	
+	trigger = {
+		has_active_mission = FPT_kriegsspiele_happening
+	}
+	
+	mean_time_to_happen = {
+		days = 32
+	}
+	
+	option = {#Curses
+		name = fpt.6.a
+		custom_effect_tooltip = FPT_decrease_kriegsspiele_preparedness_small_tt
+		subtract_from_variable = {
+			var = FPT_kriegsspiele_preparedness
+			value = 1
+		}
+		random_country = {
+			limit = {
+				has_active_mission = FPT_kriegsspiele_happening
+				NOT = {
+					tag = ROOT
+					has_country_flag = FPT_kriegsspiele_accused_cheater
+				}
+			}
+			set_country_flag = FPT_kriegsspiele_accused_cheater
+			country_event = {
+				id = fpt.7
+				days = 1
+			}
+		}
+		
+		every_country = {
+			limit = {
+				is_og_freiprinz = yes
+			}
+			update_kriegsspiele_tracker = yes
+		}
+	}
+}
+
+country_event = {#Kriegsspiele - FROM accuses us of cheating!
+	id = fpt.7
+	title = fpt.7.t
+	desc = fpt.7.d
+	picture = GFX_report_event_ast_transfer_singapore
+	
+	is_triggered_only = yes
+	
+	option = {#Well I never!
+		name = fpt.7.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = FPT_outrageous_accusation
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = FPT_cheater
+		}
+	}
+}
+
+country_event = {#FPT - Dirty Fighters!
+	id = fpt.8
+	title = fpt.8.t
+	desc = fpt.8.d
+	picture = GFX_report_event_china_infiltration
+	
+	trigger = {
+		has_active_mission = FPT_kriegsspiele_happening
+	}
+	
+	mean_time_to_happen = {
+		days = 23
+	}
+	
+	option = {#Curses
+		name = fpt.8.a
+		custom_effect_tooltip = FPT_decrease_kriegsspiele_preparedness_small_tt
+		subtract_from_variable = {
+			var = FPT_kriegsspiele_preparedness
+			value = 1
+		}
+		random_country = {
+			limit = {
+				has_active_mission = FPT_kriegsspiele_happening
+				NOT = {
+					tag = ROOT
+					has_country_flag = FPT_kriegsspiele_accused_dirty_fighter
+				}
+			}
+			set_country_flag = FPT_kriegsspiele_accused_dirty_fighter
+			country_event = {
+				id = fpt.9
+				days = 1
+			}
+		}
+		
+		every_country = {
+			limit = {
+				is_og_freiprinz = yes
+			}
+			update_kriegsspiele_tracker = yes
+		}
+	}
+}
+
+country_event = {#FPT - FROM is a sore loser!
+	id = fpt.9
+	title = fpt.9.t
+	desc = fpt.9.d
+	picture = GFX_report_event_bul_boris_military
+	
+	is_triggered_only = yes
+	
+	option = {#Well I never!
+		name = fpt.9.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = FPT_sore_loser
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = FPT_dirty_fighter
+		}
+	}
+}
+
+country_event = {#Decide Winner
+	id = fpt.10
+	title = fpt.10.t
+	desc = fpt.10.d
+	picture = GFX_report_event_german_reichstag_gathering
+	
+	is_triggered_only = yes
+	
+	#Let the most prepared Freiprinztum win
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						OR = {
+							check_variable = {
+								FPT_kriegsspiele_preparedness > ROOT.FPT_kriegsspiele_preparedness
+							}
+							check_variable = {
+								FPT_kriegsspiele_preparedness = ROOT.FPT_kriegsspiele_preparedness
+							}
+						}
+					}
+				}
+			}
+			set_country_flag = FPT_kriegsspiele_winner
+		}
+		#Pick a random winner if there's a tie
+		if = {
+			limit = {
+				has_variable = FPT_kriegsspiele_preparedness
+				NOT = {
+					any_other_country = {
+						OR = {
+							check_variable = {
+								FPT_kriegsspiele_preparedness > ROOT.FPT_kriegsspiele_preparedness
+							}
+							has_country_flag = FPT_kriegsspiele_winner
+						}
+					}
+				}
+				any_other_country = {
+					check_variable = {
+						FPT_kriegsspiele_preparedness = ROOT.FPT_kriegsspiele_preparedness
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					has_variable = FPT_kriegsspiele_preparedness
+					NOT = {
+						any_other_country = {
+							check_variable = {
+								FPT_kriegsspiele_preparedness > ROOT.FPT_kriegsspiele_preparedness
+							}
+						}
+					}
+				}
+				set_country_flag = FPT_kriegsspiele_winner
+			}
+		}
+	}
+	
+	option = {#Let's see
+		name = fpt.10.a
+		if = {
+			limit = {
+				has_country_flag = FPT_kriegsspiele_winner
+			}
+			hidden_effect = {
+				country_event = {
+					id = fpt.11
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = FPT_kriegsspiele_winner
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = fpt.12
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {#We won!
+	id = fpt.11
+	title = fpt.11.t
+	desc = fpt.11.d
+	picture = GFX_report_event_gre_winter_soldiers_celebrating
+	
+	trigger = {
+		has_country_flag = FPT_kriegsspiele_winner
+	}
+	
+	fire_only_once = yes
+	
+	option = {#LET'S FUCKING GOOOOO
+		name = fpt.11.a
+		add_timed_idea = {
+			idea = FPT_winner_kriegsspiele
+			days = 365
+		}
+		army_experience = 35
+		
+		hidden_effect = {
+			load_oob = "FPT_kriegsspiele_winner"
+			country_event = {
+				id = fpt.13
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {#We didn't win
+	id = fpt.12
+	title = fpt.12.t
+	desc = fpt.12.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	
+	is_triggered_only = yes
+	
+	option = {#Rip
+		name = fpt.12.a
+		
+		hidden_effect = {
+			country_event = {
+				id = fpt.13
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {#Stahlhof Dips
+	id = fpt.13
+	title = fpt.13.t
+	desc = fpt.13.d
+	picture = GFX_report_event_romania_parliament
+	
+	is_triggered_only = yes
+	
+	option = {#How Rude!
+		name = fpt.13.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					tag = STA
+				}
+			}
+		}
+		custom_effect_tooltip = FPT_increase_union_loyalty_small_tt
+		add_to_variable = {
+			var = FPT_union_loyalty
+			value = 1
+		}
+		set_loyalty_approximations = yes
+		hidden_effect = {
+			country_event = {
+				id = fpt.14
+				days = 1
+			}
+		}
+	}
+	
+	option = {#lmao based
+		name = fpt.13.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					tag = STA
+				}
+			}
+		}
+		custom_effect_tooltip = FPT_increase_stahlhof_loyalty_small_tt
+		add_to_variable = {
+			var = FPT_stahlhof_loyalty
+			value = 1
+		}
+		set_loyalty_approximations = yes
+		hidden_effect = {
+			country_event = {
+				id = fpt.14
+				days = 1
+			}
+		}
+	}
+	
+	option = {#uhm rude??
+		name = fpt.13.c
+		trigger = {
+			tag = UNG
+		}
+		add_political_power = -35
+		hidden_effect = {
+			country_event = {
+				id = fpt.14
+				days = 1
+			}
+		}
+	}
+	
+	option = {#get rekt
+		name = fpt.13.e
+		trigger = {
+			tag = STA
+		}
+		add_political_power = 35
+		hidden_effect = {
+			country_event = {
+				id = fpt.14
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {#Shanking each other with word shivs
+	id = fpt.14
+	title = fpt.14.t
+	desc = fpt.14.d
+	picture = GFX_report_event_gre_cabinet_meeting
+	
+	is_triggered_only = yes
+	
+	option = {#How Rude!
+		name = fpt.14.a
+		custom_effect_tooltip = FPT_enable_border_conflicts_tt
+		if = {
+			limit = {
+				NOT = {
+					tag = UNG
+				}
+			}
+			set_country_flag = FPT_border_conflicts_enabled
+		}
+		if = {
+			limit = {
+				tag = STA
+			}
+			custom_effect_tooltip = STA_get_some_troops_tt
+			hidden_effect = {
+				load_oob = "STA_border_conflict_troops"
+			}
+		}
+	}
+}
+
+### BORDER SKIRMISH EVENTS ###
+
+country_event = {#Attacker wins
+	id = fpt.15
+	title = fpt.15.t
+	desc = fpt.15.d
+	
+	picture = GFX_report_event_chinese_soldiers_city_ruin
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+	}
+	
+	option = {
+		name = fpt.15.a
+		add_political_power = 100
+		if = {
+			limit = {
+				check_variable = {
+					FROM.FROM.num_owned_states > 1
+				}
+			}
+			transfer_state = FROM.FROM.FROM
+		}
+		else = {
+			FROM.FROM = { ROOT = { annex_country = { target = PREV } } }
+		}
+		FROM = {
+			remove_dynamic_modifier = {
+				modifier = ongoing_border_conflict
+			}
+		}
+		FROM.FROM.FROM = {
+			remove_dynamic_modifier = {
+				modifier = ongoing_border_conflict
+			}
+		}
+	}	
+}
+
+country_event = {# Defender Wins
+	id = fpt.16
+	title = fpt.16.t
+	desc = fpt.16.d
+	
+	picture = GFX_report_event_chinese_soldiers_mountain
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = our_country
+			FROM = {
+				save_event_target_as = our_state
+				clr_state_flag = border_incident_active
+			}
+			FROM.FROM = { save_event_target_as = their_country }
+			FROM.FROM.FROM = {
+				save_event_target_as = their_state
+				clr_state_flag = border_incident_active
+			}
+			set_country_flag = show_effect_tooltips
+			clear_variable = attacker_state_vs_@FROM.FROM
+			clear_variable = defender_state_vs_@FROM.FROM
+		}
+	}
+	
+	#Same effect as attacker. Tooltip for their effects
+	option = {
+		name = fpt.16.a
+		add_political_power = 150
+		army_experience = 30
+		if = {
+			limit = { has_country_flag = show_effect_tooltips }
+			event_target:their_country = {
+				effect_tooltip = {
+					add_political_power = -150
+					army_experience = 10
+				}
+			}
+			clr_country_flag = show_effect_tooltips
+		}
+		FROM = {
+			remove_dynamic_modifier = {
+				modifier = ongoing_border_conflict
+			}
+		}
+		FROM.FROM.FROM = {
+			remove_dynamic_modifier = {
+				modifier = ongoing_border_conflict
+			}
+		}
+	}	
+}
+
+country_event = {#Attacker Lost
+	id = fpt.17
+	title = fpt.17.t
+	desc = fpt.17.d
+	
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+		set_country_flag = show_effect_tooltips
+	}
+	
+	#Same effect as defender. Tooltip for their effects	
+	option = {
+		name = fpt.17.a
+		add_political_power = -150
+		army_experience = 10
+		if = {
+			limit = { has_country_flag = show_effect_tooltips }
+			event_target:their_country = {
+				effect_tooltip = {
+					add_political_power = 150
+					army_experience = 30
+				}
+			}
+			clr_country_flag = show_effect_tooltips
+		}
+	}	
+}
+
+country_event = {#Defender Lost
+	id = fpt.18
+	title = fpt.18.t
+	desc = fpt.18.d
+	
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = our_country
+			FROM = {
+				save_event_target_as = our_state
+				clr_state_flag = border_incident_active
+			}
+			FROM.FROM = { save_event_target_as = their_country }
+			FROM.FROM.FROM = {
+				save_event_target_as = their_state
+				clr_state_flag = border_incident_active
+			}
+			set_country_flag = show_effect_tooltips
+			clear_variable = attacker_state_vs_@FROM.FROM
+			clear_variable = defender_state_vs_@FROM.FROM
+		}
+	}
+	
+	#Same effect as attacker. Tooltip for their effects
+	option = {
+		name = fpt.18.a
+		if = {
+			limit = { has_country_flag = show_effect_tooltips }
+			effect_tooltip = {
+				add_political_power = 100
+				if = {
+					limit = {
+						check_variable = {
+							num_owned_states > 1
+						}
+					}
+					FROM.FROM = { transfer_state = FROM }
+				}
+				else = {
+					FROM.FROM = { annex_country = { target = ROOT } }
+				}				
+			}
+			clr_country_flag = show_effect_tooltips
+		}
+	}	
+}
+
+country_event = {#Attacker Cancel
+	id = fpt.19
+	title = fpt.19.t
+	desc = fpt.19.d
+	
+	picture = GFX_report_event_chinese_soldiers_mountain
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+		set_country_flag = show_effect_tooltips
+	}
+	
+	option = {
+		name = fpt.19.a
+		army_experience = 15
+		if = {
+			limit = { has_country_flag = show_effect_tooltips }
+			event_target:their_country = {
+				effect_tooltip = {
+					army_experience = 30
+					add_political_power = 50
+				}
+			}
+			clr_country_flag = show_effect_tooltips
+		}
+		FROM = {
+			remove_dynamic_modifier = {
+				modifier = ongoing_border_conflict
+			}
+		}
+		FROM.FROM.FROM = {
+			remove_dynamic_modifier = {
+				modifier = ongoing_border_conflict
+			}
+		}
+	}	
+}
+
+country_event = {#Defender Cancel
+	id = fpt.20
+	title = fpt.20.t
+	desc = fpt.20.d
+	
+	picture = GFX_report_event_chinese_soldiers_mountain
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = our_country
+			FROM = {
+				save_event_target_as = our_state
+				clr_state_flag = border_incident_active
+			}
+			FROM.FROM = { save_event_target_as = their_country }
+			FROM.FROM.FROM = {
+				save_event_target_as = their_state
+				clr_state_flag = border_incident_active
+			}
+			set_country_flag = show_effect_tooltips
+			clear_variable = attacker_state_vs_@FROM.FROM
+			clear_variable = defender_state_vs_@FROM.FROM
+		}
+	}
+	
+	option = {
+		name = fpt.20.a
+		army_experience = 30
+		add_political_power = 50
+		if = {
+			limit = { has_country_flag = show_effect_tooltips }
+			event_target:their_country = {
+				effect_tooltip = {
+					army_experience = 15
+				}
+			}
+			clr_country_flag = show_effect_tooltips
+		}
+	}	
+}
+
+country_event = {#Re-Enable Border Conflicts
+	id = fpt.21
+	title = fpt.21.t
+	desc = fpt.21.d
+	
+	picture = GFX_report_event_fascist_militia
+	
+	is_triggered_only = yes
+	
+	option = {#Let's go
+		name = fpt.21.a
+		clr_country_flag = FPT_has_recently_done_border_conflict
+		custom_effect_tooltip = FPT_enable_border_conflicts_tt
+	}
+}

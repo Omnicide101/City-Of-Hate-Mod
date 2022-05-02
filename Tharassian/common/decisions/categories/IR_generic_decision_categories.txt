@@ -1,0 +1,32 @@
+GENERIC_institutions_governance = {
+	
+	icon = GFX_decision_category_generic_political_actions
+	
+	allowed = {
+		always = yes
+	}
+}
+
+GENERIC_join_wars = {
+	
+	icon = GFX_decision_category_hol_war_on_pacifism
+	
+	allowed = {
+		always = yes
+	}
+}
+
+
+GENERIC_war_exhaustion_category = {
+	
+	icon = GFX_decision_category_border_conflicts
+	
+	allowed = {
+		always = yes
+	}
+
+	visible = {
+		has_war = yes
+	}
+	visible_when_empty = yes
+}

@@ -1,0 +1,26 @@
+state={
+	id=224
+	name="STATE_224"
+	provinces={
+		1073 1754 2243 4008
+	}
+	state_category = city
+	manpower=709923
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 1
+		mount = 5
+	}
+	history={
+		victory_points = { 1754 51}
+		owner = SNF
+		buildings = {
+			infrastructure = 2	
+			forge = 2
+			workshop = 3
+
+		}
+		add_core_of = SNF
+
+	}
+}
