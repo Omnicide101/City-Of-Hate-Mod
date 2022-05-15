@@ -317,6 +317,13 @@ leader_traits = {
 		political_power_gain = -0.25
 		experience_gain_army_factor = 0.15
 	}
+
+	taboo_farmer = {
+		random = no
+		local_resources_factor = 0.1
+		base_fuel_gain_factor = 0.2
+		stability_factor = -0.1
+	}
 	
 	has_magic_sword = {
 		random = no

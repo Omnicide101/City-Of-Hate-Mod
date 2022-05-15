@@ -1,0 +1,104 @@
+characters = {
+
+UNG_heinrich_brengst = {
+		name= "Heinrich Brengst"
+		portraits={
+			civilian={
+			small="gfx/interface/ideas/ung_brengst.dds"
+			}
+		}
+			advisor={
+			slot = political_advisor
+			idea_token = heinrich_brengst
+			allowed = {
+				original_tag = UNG
+			}
+		
+			available = {
+				has_government = monarchy_constitutional	
+				has_completed_focus = UNG_gentle_hand
+			}
+			
+			traits = {
+				calming_unifier
+			}
+		}
+
+}
+UNG_stella_galde = {
+		name= "Stella Galde"
+		portraits={
+			civilian={
+			small="gfx/interface/ideas/ung_galde.dds"
+			}
+		}
+			advisor={
+			slot = political_advisor
+			idea_token = stella_galde
+			allowed = {
+				original_tag = UNG
+			}
+		
+			available = {
+				has_government = monarchy_absolute
+				has_completed_focus = UNG_secret_service
+			}
+			
+			traits = {
+				spymaster_general
+			}
+		}
+
+}
+UNG_alko_blau = {
+		name= "Alko Blau"
+		portraits={
+			civilian={
+			small="gfx/interface/ideas/ung_blau.dds"
+			}
+		}
+			advisor={
+			slot = political_advisor
+			idea_token = alko_blau
+			
+			allowed = {
+				original_tag = UNG
+			}
+		
+			available = {
+				has_government = republic_aristocrat
+				has_completed_focus = UNG_support_zeitung
+			}
+			
+			traits = {
+				foppish_journalist
+			}
+		}
+
+}
+UNG_cecilia_freisler = {
+		name= "Cecilia Freisler"
+		portraits={
+			civilian={
+			small="gfx/interface/ideas/ung_freisler.dds"
+			}
+		}
+			advisor={
+			slot = political_advisor
+			idea_token = cecilia_freisler
+			
+			allowed = {
+				original_tag = UNG
+			}
+		
+			available = {
+				has_completed_focus = UNG_genius_schlosserhelmer
+			}
+			
+			traits = {
+				genius_inventor
+			}
+		}
+
+}
+}
