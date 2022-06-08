@@ -144,86 +144,6 @@ ideas = {
 			}
 		}
 		
-		STA_adelina_troop_loyalty_idea = {
-			
-			allowed = {
-				always = no
-			}
-			
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			picture = STA_faustburg_loyalties_1
-			
-			removal_cost = -1
-			
-			modifier = {
-				army_org_factor = -0.08
-				war_support_factor = -0.10
-				stability_factor = -0.10
-			}
-		}
-		STA_adelina_troop_loyalty_idea_dealt = {
-			
-			allowed = {
-				always = no
-			}
-			
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			picture = STA_faustburg_loyalties_4
-			
-			removal_cost = -1
-			
-			modifier = {
-				war_support_factor = 0.1	
-			}
-			targeted_modifier = { tag = UNG attack_bonus_against = 0.1 }
-			targeted_modifier = { tag = UNG defense_bonus_against = 0.05 }
-		}
-		STA_adelina_troop_loyalty_idea2 = {
-			
-			allowed = {
-				always = no
-			}
-			
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			picture = STA_faustburg_loyalties_2
-			
-			removal_cost = -1
-			
-			modifier = {
-				war_support_factor = -0.05
-				stability_factor = -0.05
-				army_org_factor = -0.04
-			}
-		}
-		STA_adelina_troop_loyalty_idea3 = {
-			
-			allowed = {
-				always = no
-			}
-			
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			picture = STA_faustburg_loyalties_3
-			
-			removal_cost = -1
-			
-			modifier = {
-				war_support_factor = 0.05
-				stability_factor = 0.10
-			}
-		}
-		
 		STA_the_bear_of_stahlhof_idea = {
 			
 			allowed = {
@@ -968,6 +888,103 @@ ideas = {
 			}
 		
 		}
+
+		STA_adelina_troop_loyalty_idea_dealt = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_4
+			
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = 0.1	
+			}
+			targeted_modifier = {  #Omni, I'm assuming you're the one who did it in two different targeted_modifier = {} sections. You don't gotta.
+				tag = UNG 
+				attack_bonus_against = 0.1 
+				defense_bonus_against = 0.05 
+			}
+		}
+		STA_adelina_troop_loyalty_idea3 = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_3
+			
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = 0.05
+				stability_factor = 0.10
+			}
+		}
 		
 	}
+
+	mercenary_company = {
+
+		STA_adelina_troop_loyalty_idea = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			allowed_to_remove = {
+				has_war_with = UNG
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = -0.08
+				war_support_factor = -0.10
+				stability_factor = -0.10
+			}
+		}
+		STA_adelina_troop_loyalty_idea2 = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			allowed_to_remove = {
+				has_war_with = UNG
+			}
+			
+			picture = STA_faustburg_loyalties_2
+			
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = -0.05
+				stability_factor = -0.05
+				army_org_factor = -0.04
+			}
+		}
+
+	}
+
 }

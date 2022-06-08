@@ -1,0 +1,451 @@
+on_actions = {
+	
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					has_war = yes
+					has_war_support < 0.23
+					NOT = {
+						has_idea = IR_deserting_soldiers
+					}
+				}
+				random_list = {
+					33 = {
+						country_event = { id = merc.2 random = 240 }
+					}
+					66 = {
+
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_war_support > 0.5
+					has_war = no
+					OR = { #is lathweyne
+						tag = GMR
+						tag = NPC
+						tag = VRG
+						tag = RMT
+						tag = LIR
+						tag = LEX
+						tag = BLD
+						tag = IRI
+						tag = TLA
+						tag = MER
+						tag = KUR
+						tag = SKA
+						tag = RTH
+						tag = ORD
+						tag = BER
+						tag = PRK
+						tag = UNG
+						tag = KRT
+						tag = NAS
+						tag = FEL
+						tag = TRI
+						tag = NAV
+						tag = ARK
+						tag = TEI
+						tag = STA
+						tag = NOC
+						tag = WIS
+						tag = SNF
+						tag = SVT
+						tag = SPW
+						tag = NRK
+						tag = FTH
+						tag = WSZ
+						tag = HLZ
+						tag = FAU
+						tag = RKS
+					}
+				}
+				if = {
+					limit = {
+						has_idea = human_country
+					}
+					add_to_variable = {
+						global.lathweyne_human_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_idea = halfling_country
+							has_idea = gnome_country
+						}
+					}
+					add_to_variable = {
+						global.lathweyne_smallfolk_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						has_idea = elf_country
+					}
+					add_to_variable = {
+						global.lathweyne_elf_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						has_idea = dwarf_country
+					}
+					add_to_variable = {
+						global.lathweyne_dwarf_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						has_idea = lizardmen_country
+					}
+					add_to_variable = {
+						global.lathweyne_lizardmen_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						has_idea = orc_country
+					}
+					add_to_variable = {
+						global.lathweyne_orc_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						has_idea = ogre_country
+					}
+					add_to_variable = {
+						global.lathweyne_ogre_merc_pool = 15
+					}
+				}
+			}
+		}
+	}
+
+	on_weekly = {
+		effect = {
+			if = {
+				limit = { 
+					OR = {
+						#has idea that adds 5 manpower weekly
+						has_idea = IR_limited_mercenary_work
+						#has_idea = IR_recruit_mercs_from_occupied_territory
+					}
+					OR = { #is lathweyne
+						tag = GMR
+						tag = NPC
+						tag = VRG
+						tag = RMT
+						tag = LIR
+						tag = LEX
+						tag = BLD
+						tag = IRI
+						tag = TLA
+						tag = MER
+						tag = KUR
+						tag = SKA
+						tag = RTH
+						tag = ORD
+						tag = BER
+						tag = PRK
+						tag = UNG
+						tag = KRT
+						tag = NAS
+						tag = FEL
+						tag = TRI
+						tag = NAV
+						tag = ARK
+						tag = TEI
+						tag = STA
+						tag = NOC
+						tag = WIS
+						tag = SNF
+						tag = SVT
+						tag = SPW
+						tag = NRK
+						tag = FTH
+						tag = WSZ
+						tag = HLZ
+						tag = FAU
+						tag = RKS
+					}
+				}
+				if = {
+					limit = {
+						has_idea = human_country
+					}
+					add_to_variable = {
+						global.lathweyne_human_merc_pool = 5
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_idea = halfling_country
+							has_idea = gnome_country
+						}
+					}
+					add_to_variable = {
+						global.lathweyne_smallfolk_merc_pool = 5
+					}
+				}
+				if = {
+					limit = {
+						has_idea = elf_country
+					}
+					add_to_variable = {
+						global.lathweyne_elf_merc_pool = 5
+					}
+				}
+				if = {
+					limit = {
+						has_idea = dwarf_country
+					}
+					add_to_variable = {
+						global.lathweyne_dwarf_merc_pool = 5
+					}
+				}
+				if = {
+					limit = {
+						has_idea = lizardmen_country
+					}
+					add_to_variable = {
+						global.lathweyne_lizardmen_merc_pool = 5
+					}
+				}
+				if = {
+					limit = {
+						has_idea = orc_country
+					}
+					add_to_variable = {
+						global.lathweyne_orc_merc_pool = 5
+					}
+				}
+				if = {
+					limit = {
+						has_idea = ogre_country
+					}
+					add_to_variable = {
+						global.lathweyne_ogre_merc_pool = 5
+					}
+				}
+			}
+			if = {
+				limit = { 
+					OR = {
+						#has idea that adds 10 manpower weekly
+						has_idea = IR_deserting_soldiers
+						#has_idea = IR_extensive_mercenary_work
+					}
+					OR = { #is lathweyne
+						tag = GMR
+						tag = NPC
+						tag = VRG
+						tag = RMT
+						tag = LIR
+						tag = LEX
+						tag = BLD
+						tag = IRI
+						tag = TLA
+						tag = MER
+						tag = KUR
+						tag = SKA
+						tag = RTH
+						tag = ORD
+						tag = BER
+						tag = PRK
+						tag = UNG
+						tag = KRT
+						tag = NAS
+						tag = FEL
+						tag = TRI
+						tag = NAV
+						tag = ARK
+						tag = TEI
+						tag = STA
+						tag = NOC
+						tag = WIS
+						tag = SNF
+						tag = SVT
+						tag = SPW
+						tag = NRK
+						tag = FTH
+						tag = WSZ
+						tag = HLZ
+						tag = FAU
+						tag = RKS
+					}
+				}
+				if = {
+					limit = {
+						has_idea = human_country
+					}
+					add_to_variable = {
+						global.lathweyne_human_merc_pool = 10
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_idea = halfling_country
+							has_idea = gnome_country
+						}
+					}
+					add_to_variable = {
+						global.lathweyne_smallfolk_merc_pool = 10
+					}
+				}
+				if = {
+					limit = {
+						has_idea = elf_country
+					}
+					add_to_variable = {
+						global.lathweyne_elf_merc_pool = 10
+					}
+				}
+				if = {
+					limit = {
+						has_idea = dwarf_country
+					}
+					add_to_variable = {
+						global.lathweyne_dwarf_merc_pool = 10
+					}
+				}
+				if = {
+					limit = {
+						has_idea = lizardmen_country
+					}
+					add_to_variable = {
+						global.lathweyne_lizardmen_merc_pool = 10
+					}
+				}
+				if = {
+					limit = {
+						has_idea = orc_country
+					}
+					add_to_variable = {
+						global.lathweyne_orc_merc_pool = 10
+					}
+				}
+				if = {
+					limit = {
+						has_idea = ogre_country
+					}
+					add_to_variable = {
+						global.lathweyne_ogre_merc_pool = 10
+					}
+				}
+			}
+			if = {
+				limit = { 
+					OR = {
+						#has idea that adds 15 manpower weekly
+						#has_idea = IR_widespread_mercenary_work
+						has_idea = IR_open_mercenary_trade
+					}
+					OR = { #is lathweyne
+						tag = GMR
+						tag = NPC
+						tag = VRG
+						tag = RMT
+						tag = LIR
+						tag = LEX
+						tag = BLD
+						tag = IRI
+						tag = TLA
+						tag = MER
+						tag = KUR
+						tag = SKA
+						tag = RTH
+						tag = ORD
+						tag = BER
+						tag = PRK
+						tag = UNG
+						tag = KRT
+						tag = NAS
+						tag = FEL
+						tag = TRI
+						tag = NAV
+						tag = ARK
+						tag = TEI
+						tag = STA
+						tag = NOC
+						tag = WIS
+						tag = SNF
+						tag = SVT
+						tag = SPW
+						tag = NRK
+						tag = FTH
+						tag = WSZ
+						tag = HLZ
+						tag = FAU
+						tag = RKS
+					}
+				}
+				if = {
+					limit = {
+						has_idea = human_country
+					}
+					add_to_variable = {
+						global.lathweyne_human_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_idea = halfling_country
+							has_idea = gnome_country
+						}
+					}
+					add_to_variable = {
+						global.lathweyne_smallfolk_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						has_idea = elf_country
+					}
+					add_to_variable = {
+						global.lathweyne_elf_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						has_idea = dwarf_country
+					}
+					add_to_variable = {
+						global.lathweyne_dwarf_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						has_idea = lizardmen_country
+					}
+					add_to_variable = {
+						global.lathweyne_lizardmen_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						has_idea = orc_country
+					}
+					add_to_variable = {
+						global.lathweyne_orc_merc_pool = 15
+					}
+				}
+				if = {
+					limit = {
+						has_idea = ogre_country
+					}
+					add_to_variable = {
+						global.lathweyne_ogre_merc_pool = 15
+					}
+				}
+			}
+		}
+	}
+
+}

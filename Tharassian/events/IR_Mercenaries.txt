@@ -46,3 +46,21 @@ country_event = {#Perkav Contract Over
 		clr_country_flag = MERCS_perkav_raiders_contract_already_ending_flag
 	}
 }
+
+country_event = {#deserting soldiers
+	id = merc.2
+	title = merc.2.t
+	desc = merc.2.d
+	picture = GFX_report_event_romanian_soldiers
+	is_triggered_only = yes
+
+	trigger = {
+		has_war = yes
+		has_war_support < 0.25
+	}
+	
+	option = {#Very Well
+		name = merc.2.a
+		add_ideas = IR_deserting_soldiers
+	}
+}

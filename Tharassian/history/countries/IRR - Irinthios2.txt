@@ -1,9 +1,10 @@
 ﻿capital = 396
-
 set_stability = 0.25
 
 set_oob = "IRI_1936"
 set_research_slots = 3
+
+set_cosmetic_tag = IRI
 
 set_technology ={
 	tech_tribal_pride = 1
@@ -57,36 +58,10 @@ set_variable = { IRI_cyttra_loyalty = 0 }
 set_variable = { IRI_marakai_loyalty = 0 }
 set_variable = { IRI_tikynthaios_loyalty = 0 }
 set_variable = { IRI_cinyras_coup_chance = 3 }
-set_variable = { IRI_chance_of_discovery = 5 }
-set_variable = { IRI_fraud_chance = 5 }
-set_variable = { IRI_cost_for_weapons = 25 }
-set_variable = { IRI_lizardmen_resistance_var = -0.33 }
-set_variable = { IRI_ogre_resistance_var = -0.33 }
 
 add_dynamic_modifier = {
 	modifier = IRI_faction_modifier
 }
-
-recruit_character = IRI_therseandros_chairophon 
-recruit_character = IRI_ignatius_chairophon
-recruit_character = IRI_aclepiades_thersilochus
-recruit_character = IRI_aggelos_cinyras
-recruit_character = IRI_amarhyllis_agrotis
-recruit_character = IRI_tryphena_vettias
-recruit_character = IRI_kephalos_sosibios
-recruit_character = IRI_Ioanna_Cinyras
-recruit_character = IRI_Alexander_Kyriaziss
-recruit_character = IRI_Anna_Chalkia
-recruit_character = IRI_Chrisos_Florou
-recruit_character = IRI_asteia_rinoloasc
-recruit_character = IRI_Tosteratos
-recruit_character = IRI_perthecles_thaurun
-recruit_character = IRI_diomedes_stathis
-recruit_character = IRI_cassandra_reahossi
-recruit_character = IRI_lysimachus_monophthal
-recruit_character = IRI_ephina_pession
-recruit_character = IRI_commera_vennado
-recruit_character = IRI_lucius_agrippa
 
 set_politics = {
 	ruling_party = monarchy_constitutional
@@ -96,19 +71,37 @@ set_politics = {
 }
 
 set_popularities = {
-	monarchy_absolute = 5
+	monarchy_absolute = 2
 
-	monarchy_constitutional = 63
+	monarchy_constitutional = 72
 
 	republic_peasant = 0
 
-	republic_aristocrat = 17
+	republic_aristocrat = 16
 
-	republic_merchant = 6
+	republic_merchant = 4
 
 	theocrat = 6
 
-	puritan = 3
+	puritan = 0
+}
+
+create_country_leader = {
+	name = "Therseandros Chairophon"
+	desc = "politics_IRI_chairophon_desc"
+	picture = "gfx/leaders/IRI/Portrait_IRI_Chairophon.dds"
+	ideology = monarchy_absolute_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Therseandros Chairophon"
+	desc = "politics_IRI_chairophon_desc"
+	picture = "gfx/leaders/IRI/Portrait_IRI_Chairophon.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
 }
 
 add_ideas = {

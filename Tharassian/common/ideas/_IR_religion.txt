@@ -1321,6 +1321,15 @@ ideas = {
 				OR = {
 					original_tag = IRI
 					original_tag = MER
+					original_tag = CAI
+					original_tag = TYK
+					original_tag = IRR
+					original_tag = TIO
+					original_tag = SAS
+					original_tag = TKT
+					original_tag = TOF
+					original_tag = MAK
+					original_tag = CYT
 				}
 			}
 			
@@ -1328,6 +1337,15 @@ ideas = {
 				OR = {
 					original_tag = IRI
 					original_tag = MER
+					original_tag = CAI
+					original_tag = TYK
+					original_tag = IRR
+					original_tag = TIO
+					original_tag = SAS
+					original_tag = TKT
+					original_tag = TOF
+					original_tag = MAK
+					original_tag = CYT
 				}
 			}
 			
@@ -1335,6 +1353,15 @@ ideas = {
 				OR = {
 					original_tag = IRI
 					original_tag = MER
+					original_tag = CAI
+					original_tag = TYK
+					original_tag = IRR
+					original_tag = TIO
+					original_tag = SAS
+					original_tag = TKT
+					original_tag = TOF
+					original_tag = MAK
+					original_tag = CYT
 				}
 			}
 			

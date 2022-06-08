@@ -1,0 +1,766 @@
+ideas = {
+	
+	mercenary_company = {
+
+		IR_no_mercenaries = {
+
+			picture = disarmed_nation
+
+			cost = 0
+
+			default = yes
+
+			modifier = {
+				stability_factor = 0.01
+			}
+
+		}
+
+		IR_perkav_raider_company = {
+
+			picture = generic_naval_manufacturer_1
+
+			allowed = {
+				NOT = {
+					tag = ORD
+				}
+			}
+
+			available = {
+				if = {
+					limit = {
+						OR = {
+							tag = UNG
+							is_subject_of = UNG
+						}
+					}
+					NOT = {
+						UNG = {
+							has_country_flag = UNG_schneefilde_sacked
+						}
+					}
+				}
+				NOT = {
+					has_war_with = PRK
+				}
+				if = {
+					limit = { NOT = { has_idea = human_country } }
+					NOT = {
+						has_government = puritan
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = merc_not_hired_by_enemies
+					NOT = {
+						any_enemy_country = {
+							has_country_flag = hired_perkav_raiders_flag
+						}
+					}
+				}
+			}
+
+			on_add = {
+				set_country_flag = hired_perkav_raiders_flag
+			}
+
+			on_remove = {
+				custom_effect_tooltip = allow_mercs_for_enemies
+				#once we make the decisions for hiring the mercs, make this cancel the decision for hiring them
+				clr_country_flag = hired_perkav_raiders_flag
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			cost = 75
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				weekly_manpower = 15
+				supply_consumption_factor = -0.05
+				amphibious_invasion = 0.1
+				invasion_preparation = 0.1
+				resistance_growth = 0.025
+			}
+
+		}
+
+		IR_irinthian_mercenary_company = {
+
+			picture = IRI_Irinthios_Will_Rise_Again
+
+			allowed = {
+				NOT = {
+					OR = {
+						tag = ORD
+						tag = IRI
+						#non-lathweyne countries
+						tag = TAR
+						tag = GET
+						tag = ITH
+						tag = DIA
+						tag = GOW
+						tag = TES
+						tag = SUL
+					}
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			available = {
+				NOT = {
+					has_war_with = IRI
+				}
+				if = {
+					limit = { NOT = { has_idea = human_country } }
+					NOT = {
+						has_government = puritan
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = merc_not_hired_by_enemies
+					NOT = {
+						any_enemy_country = {
+							has_country_flag = hired_irinthian_mercs_flag
+						}
+					}
+				}
+			}
+
+			on_add = {
+				set_country_flag = hired_irinthian_mercs_flag
+			}
+
+			on_remove = {
+				custom_effect_tooltip = allow_mercs_for_enemies
+				#once we make the decisions for hiring the mercs, make this cancel the decision for hiring them
+				clr_country_flag = hired_irinthian_mercs_flag
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.08
+				weekly_manpower = 20
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				attrition = 0.05
+			}
+
+		}
+
+		IR_tlarthingian_paladin_company = {
+
+			picture = religion_ouborism
+
+			allowed = {
+				NOT = {
+					OR = {
+						tag = IRI
+						tag = ORD
+						#non-lathweyne countries
+						tag = TAR
+						tag = GET
+						tag = ITH
+						tag = DIA
+						tag = GOW
+						tag = TES
+						tag = SUL
+					}
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			available = {
+				if = {
+					limit = {
+						NOT = { tag = TLA }
+					}
+					has_country_flag = TLA_allowed_pilgrims
+					NOT = {
+						has_war_with = TLA
+					}
+				}
+				if = {
+					limit = { NOT = { has_idea = lizardmen_country } }
+					NOT = {
+						has_government = puritan
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = merc_not_hired_by_enemies
+					NOT = {
+						any_enemy_country = {
+							has_country_flag = hired_tlarthingian_mercs_flag
+						}
+					}
+				}
+			}
+
+			on_add = {
+				set_country_flag = hired_tlarthingian_mercs_flag
+			}
+
+			on_remove = {
+				custom_effect_tooltip = allow_mercs_for_enemies
+				#once we make the decisions for hiring the mercs, make this cancel the decision for hiring them
+				clr_country_flag = hired_tlarthingian_mercs_flag
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.08
+				weekly_manpower = 10
+				army_morale_factor = 0.07
+				breakthrough_factor = 0.05
+			}
+
+		}
+
+		ORD_corsair_raiders = {
+
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				tag = ORD
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				weekly_manpower = 5
+				convoy_raiding_efficiency_factor = 0.2
+				naval_retreat_speed = 0.2
+				naval_speed_factor = 0.2
+			}
+
+		}
+
+		ORD_drakeskins_company = {
+
+			picture = itheryn_justice
+
+			allowed = {
+				tag = ORD
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.08
+				weekly_manpower = 10
+				army_core_defence_factor = 0.1
+				army_attack_factor = 0.05
+				experience_loss_factor = -0.05
+			}
+
+		}
+
+		UNG_green_bastards_company = {
+
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				OR = { #basically all undergaler and bergialer can use them
+					tag = UNG
+					tag = ARK
+					tag = FTH
+					tag = WSZ
+					tag = WIS
+					tag = SNF
+					tag = STA
+					tag = NRK
+					tag = HLZ
+					tag = NOC
+					tag = SPW
+					tag = TEI
+					tag = SVT
+					tag = BER
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			available = {
+				if = {
+					limit = { NOT = { OR = { tag = IRI has_idea = human_country } } }
+					NOT = {
+						has_government = puritan
+					}
+				}
+				if = {
+					limit = { NOT = { tag = FTH } }
+					NOT = {
+						has_war_with = FTH
+					}
+				}
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				weekly_manpower = 15
+				army_speed_factor = 0.03
+				army_fuel_consumption_factor = -0.05
+				attrition = -0.05
+			}
+
+		}
+
+		UNG_red_talons_company = {
+
+			picture = extensive_conscription
+
+			allowed = {
+				OR = { #basically all undergaler can use them
+					tag = UNG
+					tag = ARK
+					tag = FTH
+					tag = WSZ
+					tag = WIS
+					tag = SNF
+					tag = STA
+					tag = NRK
+					tag = HLZ
+					tag = NOC
+					tag = SPW
+					tag = TEI
+					tag = SVT
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			available = {
+				if = {
+					limit = { NOT = { OR = { tag = IRI has_idea = human_country } } }
+					NOT = {
+						has_government = puritan
+					}
+				}
+				if = {
+					limit = { NOT = { tag = TEI } }
+					NOT = {
+						has_war_with = TEI
+					}
+				}
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				weekly_manpower = 20
+				army_attack_factor = 0.03
+				training_time_factor = -0.05
+			}
+
+		}
+
+		UNG_the_hand_company = {
+
+			picture = prk_tribal_nation
+
+			allowed = {
+				OR = { #basically all undergaler and bergialer can use them
+					tag = UNG
+					tag = ARK
+					tag = FTH
+					tag = WSZ
+					tag = WIS
+					tag = SNF
+					tag = STA
+					tag = NRK
+					tag = HLZ
+					tag = NOC
+					tag = SPW
+					tag = TEI
+					tag = SVT
+					tag = BER
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			available = {
+				if = {
+					limit = { NOT = { OR = { tag = IRI has_idea = human_country } } }
+					NOT = {
+						has_government = puritan
+					}
+				}
+				if = {
+					limit = { NOT = { tag = NOC } }
+					NOT = {
+						has_war_with = NOC
+					}
+				}
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				weekly_manpower = 10
+				org_loss_when_moving = -0.1
+				special_forces_min = 3
+				recon_factor = 0.05
+			}
+
+		}
+
+		RMT_twin_axe_band_company = {
+
+			picture = IRI_Military_Parades
+
+			allowed = {
+				NOT = {
+					OR = {
+						tag = ORD
+						#non-lathweyne countries
+						tag = TAR
+						tag = GET
+						tag = ITH
+						tag = DIA
+						tag = GOW
+						tag = TES
+						tag = SUL
+					}
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			available = {
+				if = {
+					limit = { NOT = { tag = RMT } }
+					NOT = { has_war_with = RMT }
+				}
+				if = {
+					limit = { NOT = { OR = { tag = IRI has_idea = dwarf_country } } }
+					NOT = {
+						has_government = puritan
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = merc_not_hired_by_enemies
+					NOT = {
+						any_enemy_country = {
+							has_country_flag = hired_rimatan_mercs_flag
+						}
+					}
+				}
+			}
+
+			on_add = {
+				set_country_flag = hired_rimatan_mercs_flag
+			}
+
+			on_remove = {
+				custom_effect_tooltip = allow_mercs_for_enemies
+				#once we make the decisions for hiring the mercs, make this cancel the decision for hiring them
+				clr_country_flag = hired_rimatan_mercs_flag
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				weekly_manpower = 15
+				breakthrough_factor = 0.03
+				dig_in_speed_factor = 0.1
+				attrition = -0.05
+			}
+
+		}
+
+		BLD_roaming_gathering = {
+
+			picture = IRI_Ogre_Riots
+
+			allowed = {
+				NOT = {
+					OR = {
+						tag = ORD
+						#non-lathweyne countries
+						tag = TAR
+						tag = GET
+						tag = ITH
+						tag = DIA
+						tag = GOW
+						tag = TES
+						tag = SUL
+					}
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			available = {
+				if = {
+					limit = { NOT = { tag = BLD } }
+					NOT = { has_war_with = BLD }
+				}
+				if = {
+					limit = { NOT = { has_idea = ogre_country } }
+					NOT = {
+						has_government = puritan
+					}
+				}
+				if = {
+					limit = {
+						tag = IRI
+					}
+					OR = {
+						has_completed_focus = IRI_brute_troops
+						has_completed_focus = IRI_ogre_integration
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = merc_not_hired_by_enemies
+					NOT = {
+						any_enemy_country = {
+							has_country_flag = hired_bilodyan_mercs_flag
+						}
+					}
+				}
+			}
+
+			on_add = {
+				set_country_flag = hired_bilodyan_mercs_flag
+			}
+
+			on_remove = {
+				custom_effect_tooltip = allow_mercs_for_enemies
+				#once we make the decisions for hiring the mercs, make this cancel the decision for hiring them
+				clr_country_flag = hired_bilodyan_mercs_flag
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.06
+				weekly_manpower = 5
+				breakthrough_factor = 0.06
+				army_attack_factor = 0.02
+			}
+
+		}
+
+		IR_gowie_mercenaries = {
+
+			picture = extensive_conscription
+
+			allowed = {
+				OR = { #misthal guys I think? the center continent
+					tag = GOW
+					tag = TES
+					tag = SUL
+					tag = TAR
+					tag = GET
+					tag = ITH
+					tag = DIA
+				}
+			}
+
+			available = {
+				if = {
+					limit = { NOT = { tag = GOW } }
+					NOT = {
+						has_war_with = GOW
+					}
+				}
+				if = {
+					limit = { NOT = { has_idea = halfling_country } }
+					NOT = {
+						has_government = puritan
+					}
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.06
+				weekly_manpower = 10
+				army_attack_factor = 0.03
+				army_defence_factor = 0.03
+				industrial_capacity_factory = 0.05
+			}
+
+		}
+
+	}
+
+	status_mercenaries = {
+
+		IR_outlawed_mercenary_work = {
+
+			picture = disarmed_nation
+
+			cost = 150
+
+			modifier = {
+				political_power_cost = 0.05
+				consumer_goods_factor = 0.01
+			}
+
+		}
+
+		IR_limited_mercenary_work = {
+
+			default = yes
+
+			picture = volunteer_only
+
+			cost = 150
+
+			modifier = {
+				weekly_manpower = -5
+				custom_modifier_tooltip = merc_adds_5_to_pool_weekly
+			}
+
+		}
+
+		IR_open_mercenary_trade = {
+
+			picture = mercantilism_economy
+
+			cost = 150
+
+			modifier = {
+				weekly_manpower = -15
+				custom_modifier_tooltip = merc_adds_15_to_pool_weekly
+				trade_opinion_factor = 0.1
+				consumer_goods_factor = -0.05
+			}
+
+		}
+
+		IR_deserting_soldiers = {
+
+			picture = service_by_requirement
+
+			allowed_to_remove = {
+				OR = {
+					has_war = no
+					has_war_support > 0.25
+				}
+			}
+
+			cost = 0
+
+			available = {
+				has_war = yes
+				has_war_support < 0.26
+			}
+
+			modifier = {
+				weekly_manpower = -15
+				army_morale_factor = -0.1
+				custom_modifier_tooltip = merc_adds_10_to_pool_weekly
+			}
+
+		}
+
+	}
+
+}

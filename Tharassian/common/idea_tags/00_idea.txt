@@ -37,8 +37,8 @@ idea_categories = {
 	}
 	
 	research_production = {
-		slot = tank_manufacturer
-		slot = naval_manufacturer
+		slot = mercenary_company
+		slot = status_mercenaries
 		slot = aircraft_manufacturer
 		slot = materiel_manufacturer
 		slot = industrial_concern

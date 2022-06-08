@@ -56,7 +56,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				recruitable_population = 0.01
+				conscription = 0.01
 			}
 		}
 		
@@ -186,5 +186,45 @@ ideas = {
 				land_doctrine = 0.25
 			}
 		}
+	}
+
+	mercenary_company = {
+
+		DIA_veteran_tutors = {
+
+			picture = prk_tribal_nation
+
+			allowed = {
+				tag = DIA
+			}
+
+			available = {
+				OR = {
+					has_government = theocrat
+					has_government = puritan
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.03
+				weekly_manpower = 15
+				training_time_factor = -0.1
+				org_loss_when_moving = -0.05
+			}
+
+		}
+
 	}
 }
