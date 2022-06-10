@@ -5,10 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 11
-			OR = {
-				original_tag = IRI
-				original_tag = IRR
-			}
+			original_tag = IRI
 		}
 	}
 

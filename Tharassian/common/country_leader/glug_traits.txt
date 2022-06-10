@@ -51,6 +51,13 @@ leader_traits = {
 		party_popularity_stability_factor = 0.1
 		conscription = 0.005
 	}
+	
+	ambitious_noble = {
+		random = no
+		stability_factor = -0.05
+		consumer_goods_factor = -0.025
+		mobilization_speed = 0.1
+	}
 
 	ambitious_noble = {
 		random = no

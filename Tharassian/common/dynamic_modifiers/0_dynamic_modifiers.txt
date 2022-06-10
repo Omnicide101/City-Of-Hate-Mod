@@ -98,7 +98,6 @@ very_infertile_land = {
 
 ongoing_border_conflict = {
     icon = GFX_modifier_ongoing_conflict
-    local_org_regain = -1
     army_speed_factor_for_controller = -0.5
 	disable_strategic_redeployment = 1
 }

@@ -7,5 +7,4 @@ TLA_pilgrimages_category = {
 	visible = {
 		has_country_flag = TLA_ritual_signs_seen
 	}
-
 }

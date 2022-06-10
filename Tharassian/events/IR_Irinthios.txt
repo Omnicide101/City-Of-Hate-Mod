@@ -4308,3 +4308,55 @@ country_event = {#FUCKING PEACE OUT GUYS
 		add_war_support = -0.05
 	}
 }
+
+country_event = {#irinthian civil war - IRR victory
+	id = iri.145
+	title = iri.145.t
+	desc = iri.145.d
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = IRR
+		NOT = {
+			country_exists = IRI
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 21
+	}
+	
+	option = {#aggelos more like aggeloser B)
+		name = iri.145.a
+		hidden_effect = {
+			IRI = {
+				transfer_state = ROOT.capital
+				set_politics = {
+					ruling_party = monarchy_absolute
+				}
+				set_political_party = {
+					ideology = monarchy_absolute
+					popularity = 37
+				}
+				set_political_party = {
+					ideology = monarchy_constitutional
+					popularity = 23
+				}
+				change_tag_from = IRR
+			}
+			IRI = {
+				annex_country = {
+					target = IRR
+					transfer_troops = yes
+				}
+				uncomplete_national_focus = {
+				  focus = IRI_aggelos_ambition
+				  uncomplete_children = yes
+				  refund_political_power = no
+				}
+				complete_national_focus = IRI_the_theresandrean_restoration
+			}
+		}
+	}
+}
