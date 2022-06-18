@@ -3045,6 +3045,10 @@ GENERIC_war_exhaustion_category = {
 			}
 		}
 
+		allowed = {
+			tag = IRI
+		}
+
 		cost = 100
 
 		fire_only_once = yes
