@@ -10,6 +10,24 @@
 # protect
 # influence
 
+give_union_access = {#Let the Union fuck up Irinthios
+	enable = {
+		tag = TLA
+		has_war_with = IRI
+		UNG = {
+			has_war_with = IRI
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = "UNG"
+		value = 50
+	}
+}
+
 ungerdaler_buddies = {
 	enable = {
 		tag = TLA

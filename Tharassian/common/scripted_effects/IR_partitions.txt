@@ -10,7 +10,10 @@ divide_spoils_ferdinism = {
 			limit = {
 				has_country_flag = FPT_loyalist_freiprinztum
 			}
-			PREV.random_owned_state = {
+			random_state = {
+				limit = {
+					is_core_of = THIS
+				}
 				add_core_of = PREV
 				transfer_state = PREV
 			}
@@ -904,6 +907,8 @@ shatter_the_realm = {
 			add_state_core = 22
 			add_state_core = 723
 			add_state_core = 49
+			add_state_core = 23
+			add_state_core = 24
 			
 			transfer_state = 25
 			transfer_state = 49
@@ -913,6 +918,8 @@ shatter_the_realm = {
 			transfer_state = 20
 			transfer_state = 21
 			transfer_state = 22
+			transfer_state = 23
+			transfer_state = 24
 			load_oob = "NAS_empty"
 		}
 	}
@@ -1047,8 +1054,6 @@ shatter_the_realm = {
 			add_state_core = 18
 			add_state_core = 16
 			add_state_core = 27
-			add_state_core = 23
-			add_state_core = 24
 			add_state_core = 12
 			add_state_core = 30
 			add_state_core = 19
@@ -1060,8 +1065,6 @@ shatter_the_realm = {
 			transfer_state = 18
 			transfer_state = 16
 			transfer_state = 27
-			transfer_state = 23
-			transfer_state = 24
 			transfer_state = 12
 			transfer_state = 30
 			transfer_state = 19

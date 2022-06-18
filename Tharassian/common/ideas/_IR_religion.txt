@@ -1531,6 +1531,33 @@ ideas = {
 			removal_cost = -1
 		}
 		
+		idealism_religion = {
+			
+			visible = {
+				original_tag = TRX
+			}
+			
+			allowed = {
+				original_tag = TRX
+			}
+			
+			available = {
+				original_tag = TRX
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = religion_idealism
+			
+			traits = {
+				idealism_bonuses
+			}
+			
+			removal_cost = -1
+		}
+		
 		trans_rights_religion = {
 			
 			allowed = {

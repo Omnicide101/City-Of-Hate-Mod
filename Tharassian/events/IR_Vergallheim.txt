@@ -21,7 +21,9 @@ country_event = {#Restored Zarathum!
 			id = 7798
 			name = "Zarathum"
 		}
-		set_capital = 174
+		set_capital = {
+			state = 174
+		}
 		news_event = {
 			id = news.8
 			days = 10

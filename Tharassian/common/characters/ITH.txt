@@ -1,0 +1,95 @@
+characters={
+	ITH_kjallak_bjornulfsson={
+		name="Kjallak Bjornulfsson"
+		portraits={
+			civilian={
+				large="gfx/leaders/SUL/Portrait_Sulfurisle_Generic_land_1.dds"
+			}
+		}
+		country_leader={
+			desc="politics_ITH_donodaigh_desc"
+			ideology=republic_merchant_ideology
+			traits={ nationalist_symbol dealbroker }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	ITH_lucia_connolly={
+		name="Lucia Connolly"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_navy_2.dds"
+			}
+		}
+		country_leader={
+			ideology=monarchy_absolute_ideology
+			expire="903.1.1.12"
+			id=-1
+		}
+	}
+	ITH_joseph_plunket={
+		name="Joseph Plunket"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_navy_1.dds"
+			}
+		}
+		country_leader={
+			ideology=monarchy_constitutional_ideology
+			expire="897.1.1.12"
+			id=-1
+		}
+	}
+	ITH_mary_mulcahy={
+		name="Mary Mulcahy"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_land_2.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_peasant_ideology
+			expire="907.1.1.12"
+			id=-1
+		}
+	}
+	ITH_harry_obrien={
+		name="Harry O'Brien"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_land_1.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_aristocrat_ideology
+			expire="902.1.1.12"
+			id=-1
+		}
+	}
+	ITH_euginia_lynch={
+		name="Euginia Lynch"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_navy_2.dds"
+			}
+		}
+		country_leader={
+			ideology=theocrat_ideology
+			expire="896.1.1.12"
+			id=-1
+		}
+	}
+	ITH_patrick_breen={
+		name="Patrick Breen"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_navy_1.dds"
+			}
+		}
+		country_leader={
+			ideology=puritan_ideology
+			expire="906.1.1.12"
+			id=-1
+		}
+	}
+}

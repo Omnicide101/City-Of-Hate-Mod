@@ -1,0 +1,137 @@
+characters={
+	RTH_kastyne_solverin={
+		name="Kastyne Solverin"
+		portraits={
+			civilian={
+				large="gfx/leaders/RTH/Portrait_RTH_Solverin.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RTH_solverin_desc"
+			ideology=republic_peasant_ideology
+			traits={ lack_of_charisma red_general }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RTH_alucien_derathur={
+		name="Alucien Derathur"
+		portraits={
+			civilian={
+				large="gfx/leaders/RTH/Portrait_RTH_Derathur.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RTH_derathur_desc"
+			ideology=republic_peasant_ideology
+			traits={ hero_of_the_revolution }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RTH_farnaur_ithinis={
+		name="Farnaur Ithinis"
+		portraits={
+			civilian={
+				large="gfx/leaders/RTH/Portrait_RTH_Ithinis.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RTH_itihnis_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RTH_ternise_locthorin={
+		name="Ternise Locthorin"
+		portraits={
+			civilian={
+				large="gfx/leaders/RTH/Portrait_RTH_Locthorin.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RTH_locthorin_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_RTH_locthorin_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RTH_sacrene_hinassus={
+		name="Sacrene Hinassus"
+		portraits={
+			civilian={
+				large="gfx/leaders/RTH/Portrait_RTH_Hinassus.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RTH_hinassus_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RTH_burthys_vrinter={
+		name="Burthys Vrinter"
+		portraits={
+			civilian={
+				large="gfx/leaders/RTH/Portrait_RTH_Vrinther.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RTH_vrinther_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RTH_gerdaurin_varinnis={
+		name="Gerdaurin Varinnis"
+		portraits={
+			civilian={
+				large="gfx/leaders/RTH/Portrait_RTH_Varinnis.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RTH_varinnis_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RTH_alyssyna_lavynthis = {
+		name="Alyssyna Lavynthis"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/rth_lavynthis.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = -1 #Not allowed to fire the Union's gal
+			slot = political_advisor
+			idea_token = alyssyna_lavynthis
+			allowed = {
+				original_tag = RTH
+			}
+			visible = {
+				has_country_flag = RTH_ungerdaler_pressure
+			}
+			available = {
+				has_country_flag = RTH_ungerdaler_pressure
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				blue_blooded_noblewoman
+			}
+		}
+	}
+}

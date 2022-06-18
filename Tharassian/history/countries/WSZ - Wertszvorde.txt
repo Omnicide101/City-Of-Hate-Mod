@@ -69,9 +69,6 @@ set_variable = {
 	value = 100
 }
 
-1939.1.1 = {
-}
-
 set_politics = {
 	ruling_party = monarchy_absolute
 	last_election = "1936.1.1"
@@ -95,6 +92,13 @@ set_popularities = {
 	puritan = 0
 }
 
+recruit_character = WSZ_kristin_kindl
+recruit_character = WSZ_anton_beckmann
+recruit_character = WSZ_thorsten_weingand
+recruit_character = WSZ_rupprecht_pelzer
+recruit_character = WSZ_karin_söllner
+recruit_character = WSZ_tanja_spitz
+
 add_ideas = {
 	human_country
 	nurhelm_patron
@@ -113,66 +117,3 @@ give_military_access = ARK
 give_military_access = SNF
 give_military_access = FTH
 give_military_access = WIS
-
-create_country_leader = {
-	name = "Kristin Kindl"
-	desc = "politics_WSZ_kindl_desc"
-	picture = "gfx/leaders/WSZ/Portrait_WSZ_Kindl.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Anton Beckmann"
-	desc = "politics_WSZ_Beckmann_desc"
-	picture = "gfx/leaders/WSZ/Portrait_WSZ_Beckmann.dds"
-	ideology = republic_peasant_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Thorsten Weingand"
-	desc = "politics_WSZ_weingand_desc"
-	picture = "gfx/leaders/WSZ/Portrait_WSZ_Weingand.dds"
-	ideology = puritan_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Kristin Kindl"
-	desc = "politics_WSZ_kindl_desc"
-	picture = "gfx/leaders/WSZ/Portrait_WSZ_Kindl.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Rupprecht Pelzer"
-	desc = "politics_WSZ_pelzer_desc"
-	picture = "gfx/leaders/WSZ/Portrait_WSZ_Pelzer.dds"
-	ideology = theocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Karin Söllner"
-	desc = "politics_WSZ_sollner_desc"
-	picture = "gfx/leaders/WSZ/Portrait_WSZ_Sollner.dds"
-	ideology = republic_aristocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Tanja Spitz"
-	desc = "politics_WSZ_spitz_desc"
-	picture = "gfx/leaders/WSZ/Portrait_WSZ_Spitz.dds"
-	ideology = republic_merchant_ideology
-	traits = {
-	}
-}

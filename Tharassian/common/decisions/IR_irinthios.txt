@@ -1,4 +1,4 @@
-MIRI_debug_category = {
+IRI_debug_category = {
 	
 	IRI_collapse_irinthios = {
 
@@ -1044,13 +1044,10 @@ IRI_buying_from_trade_cities = {
 	IRI_ask_for_reopening_markets = {
 
 		cost = 50
-<<<<<<< Updated upstream
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		target_trigger = {
 			FROM = {
@@ -1086,13 +1083,10 @@ IRI_buying_from_trade_cities = {
 
 		cost = var:IRI_cost_for_weapons
 
-<<<<<<< Updated upstream
-=======
 		ai_will_do = {
 			factor = 5
 		}
 
->>>>>>> Stashed changes
 		available = {
 			NOT = {
 				has_country_flag = MER_embargo
@@ -1140,15 +1134,11 @@ IRI_buying_from_trade_cities = {
 	IRI_buy_bows_trade_cities = {
 
 		cost = var:IRI_cost_for_weapons
-<<<<<<< Updated upstream
-
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
 		
->>>>>>> Stashed changes
 		available = {
 			NOT = {
 				has_country_flag = MER_embargo
@@ -1196,15 +1186,11 @@ IRI_buying_from_trade_cities = {
 	IRI_buy_wood_trade_cities = {
 
 		cost = var:IRI_cost_for_weapons
-<<<<<<< Updated upstream
-
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
 		
->>>>>>> Stashed changes
 		available = {
 			NOT = {
 				has_country_flag = MER_embargo
@@ -1249,15 +1235,11 @@ IRI_buying_from_trade_cities = {
 	IRI_buy_steel_trade_cities = {
 
 		cost = var:IRI_cost_for_weapons
-<<<<<<< Updated upstream
-
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
 		
->>>>>>> Stashed changes
 		available = {
 			NOT = {
 				has_country_flag = MER_embargo
@@ -1366,7 +1348,11 @@ IRI_mercenaries_category = {
 		cost = 50
 
 		icon = generic_prepare_civil_war
-
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
 		available = {
 			puritan > 0.3
 			custom_trigger_tooltip = {
@@ -1402,13 +1388,10 @@ IRI_mercenaries_category = {
 		cost = 50
 
 		icon = generic_industry
-<<<<<<< Updated upstream
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		available = {
 			has_war = yes
@@ -1430,16 +1413,13 @@ IRI_mercenaries_category = {
 	IRI_mercenary_colony_decision_example = {
 
 		cost = 50
-<<<<<<< Updated upstream
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = generic_political_discourse
-
+		
 		available = {
 			396 = {
 				NOT = {
@@ -1470,13 +1450,10 @@ IRI_mercenaries_category = {
 	IRI_mercenary_colony_decision = {
 
 		cost = 50
-<<<<<<< Updated upstream
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = generic_political_discourse
 
@@ -1508,13 +1485,10 @@ IRI_mercenaries_category = {
 	IRI_targeted_merc_attack_decision = {
 
 		cost = 75
-<<<<<<< Updated upstream
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = generic_prepare_civil_war
 
@@ -1633,13 +1607,10 @@ IRI_integrating_tlarthingians = {
 	IRI_tlarthingian_irinthian_pride = {
 
 		icon = generic_nationalism
-<<<<<<< Updated upstream
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		cost = 50
 
@@ -1777,13 +1748,10 @@ IRI_settling_tlarthingia = {
 	IRI_promote_frontier_life = {
 
 		cost = 50
-<<<<<<< Updated upstream
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = eng_propaganda_campaigns
 
@@ -2227,9 +2195,6 @@ IRI_merchant_hand_trade_league = {
 IRI_managing_TLA_occupation = {
 	
 	IRI_spread_anti_monarchist_propaganda = {
-<<<<<<< Updated upstream
-
-=======
 		
 		ai_will_do = {
 			factor = 5
@@ -2239,7 +2204,6 @@ IRI_managing_TLA_occupation = {
 			}
 		}
 		
->>>>>>> Stashed changes
 		icon = eng_propaganda_campaigns
 
 		cost = var:IRI_occupation_royalist_power
@@ -2284,9 +2248,6 @@ IRI_managing_TLA_occupation = {
 	}
 
 	IRI_spread_anti_republican_propaganda = {
-<<<<<<< Updated upstream
-
-=======
 		
 		ai_will_do = {
 			factor = 5
@@ -2296,7 +2257,6 @@ IRI_managing_TLA_occupation = {
 			}
 		}
 		
->>>>>>> Stashed changes
 		icon = eng_propaganda_campaigns
 
 		cost = var:IRI_occupation_republican_power
@@ -2341,9 +2301,6 @@ IRI_managing_TLA_occupation = {
 	}
 
 	IRI_spread_pro_republican_propaganda = {
-<<<<<<< Updated upstream
-
-=======
 		
 		ai_will_do = {
 			factor = 5
@@ -2353,7 +2310,6 @@ IRI_managing_TLA_occupation = {
 			}
 		}
 		
->>>>>>> Stashed changes
 		icon = eng_propaganda_campaigns
 
 		cost = 50
@@ -2398,8 +2354,6 @@ IRI_managing_TLA_occupation = {
 	}
 
 	IRI_spread_pro_monarchist_propaganda = {
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
@@ -2408,7 +2362,6 @@ IRI_managing_TLA_occupation = {
 				has_country_flag = IRI_republican_collaboration
 			}
 		}
->>>>>>> Stashed changes
 
 		icon = eng_propaganda_campaigns
 
@@ -2454,8 +2407,6 @@ IRI_managing_TLA_occupation = {
 	}
 
 	IRI_foment_monarchist_split = {
-<<<<<<< Updated upstream
-=======
 		
 		ai_will_do = {
 			factor = 5
@@ -2464,7 +2415,6 @@ IRI_managing_TLA_occupation = {
 				has_country_flag = IRI_royalist_collaboration
 			}
 		}
->>>>>>> Stashed changes
 
 		icon = generic_prepare_civil_war
 
@@ -2509,13 +2459,10 @@ IRI_managing_TLA_occupation = {
 	}
 
 	IRI_enforce_demands_on_collaborators = {
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = oppression
 
@@ -2681,15 +2628,11 @@ IRI_managing_TLA_occupation = {
 	}
 
 	IRI_promise_representation_to_tlarthingians = {
-<<<<<<< Updated upstream
-
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
 		
->>>>>>> Stashed changes
 		icon = generic_political_discourse
 
 		cost = 100
@@ -2756,15 +2699,11 @@ IRI_managing_TLA_occupation = {
 	}
 
 	IRI_promise_autonomous_kingdom_under_iri = {
-<<<<<<< Updated upstream
-
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
 		
->>>>>>> Stashed changes
 		icon = generic_political_discourse
 
 		cost = var:IRI_occupation_royalist_loyalty
@@ -2807,13 +2746,10 @@ IRI_managing_TLA_occupation = {
 
 	IRI_rebuild_tlarthingian_steel_road = {
 
-<<<<<<< Updated upstream
-=======
 		ai_will_do = {
 			factor = 5
 		}
 
->>>>>>> Stashed changes
 		icon = generic_construction
 
 		cost = 50
@@ -2936,13 +2872,10 @@ IRI_managing_TLA_occupation = {
 
 	IRI_hold_military_march_example = {
 
-<<<<<<< Updated upstream
-=======
 		ai_will_do = {
 			factor = 5
 		}
 
->>>>>>> Stashed changes
 		cost = 25
 
 		visible = {
@@ -2989,13 +2922,10 @@ IRI_managing_TLA_occupation = {
 
 	IRI_hold_military_march_in_TLA_FROM = {
 
-<<<<<<< Updated upstream
-=======
 		ai_will_do = {
 			factor = 5
 		}
 
->>>>>>> Stashed changes
 		cost = 25
 
 		state_target = yes
@@ -3155,13 +3085,10 @@ IRI_bureaucracy_expand_core = {
 				has_country_flag = IRI_establishing_bureacracy_in_southern_swamps
 			}
 		}
-<<<<<<< Updated upstream
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		days_remove = 100
 
@@ -3193,13 +3120,10 @@ IRI_bureaucracy_expand_core = {
 				has_country_flag = IRI_establishing_bureacracy_in_eastern_steppes
 			}
 		}
-<<<<<<< Updated upstream
-=======
 		
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		days_remove = 100
 
@@ -3229,13 +3153,10 @@ IRI_bureaucracy_expand_core = {
 IRI_dealing_with_terrorists = {
 	
 	IRI_root_out_imperialists = { #time to solve racism
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = generic_prepare_civil_war
 
@@ -3317,13 +3238,10 @@ IRI_dealing_with_terrorists = {
 	}
 
 	IRI_increase_occupation_in_tlarthingia = {
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = oppression
 
@@ -3400,13 +3318,10 @@ IRI_dealing_with_terrorists = {
 	}
 
 	IRI_increase_convoy_protection = { #anti bandit aktion
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = generic_industry
 
@@ -3461,13 +3376,10 @@ IRI_dealing_with_terrorists = {
 	}
 
 	IRI_infiltrate_terrorists = {
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = generic_political_discourse
 
@@ -3512,13 +3424,10 @@ IRI_dealing_with_terrorists = {
 	}
 
 	IRI_destroy_terrorists = {
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = generic_industry
 
@@ -3593,13 +3502,10 @@ IRI_dealing_with_terrorists = {
 	}
 
 	IRI_solve_terrorism = { #tempted to make an edgy joke here
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		available = {
 			custom_trigger_tooltip = {
@@ -3625,13 +3531,10 @@ IRI_dealing_with_terrorists = {
 IRI_debts_to_tlarthingia_category = {
 
 	IRI_speed_up_payments_decision = {
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		cost = 25
 
@@ -3665,13 +3568,10 @@ IRI_debts_to_tlarthingia_category = {
 	}
 
 	IRI_slow_down_payments_decision = {
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		cost = 25
 
@@ -3763,13 +3663,10 @@ IRI_debts_to_tlarthingia_category = {
 IRI_sosibos_scheming_category = {
 	
 	IRI_sosibos_blame_current_leader = {
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = generic_political_discourse
 
@@ -3789,13 +3686,10 @@ IRI_sosibos_scheming_category = {
 	}
 
 	IRI_sosibos_state_need_for_militant_leadership = {
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = generic_prepare_civil_war
 
@@ -3821,13 +3715,10 @@ IRI_sosibos_scheming_category = {
 	}
 
 	IRI_sosibos_court_senators = {
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = ger_mefo_bills
 
@@ -3857,13 +3748,10 @@ IRI_sosibos_scheming_category = {
 	}
 
 	IRI_sosibos_brag_about_exploits = {
-<<<<<<< Updated upstream
-=======
 	
 		ai_will_do = {
 			factor = 5
 		}
->>>>>>> Stashed changes
 
 		icon = eng_propaganda_campaigns
 

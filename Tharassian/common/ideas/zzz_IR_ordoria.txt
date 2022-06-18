@@ -50,6 +50,46 @@ ideas = {
 			}
 		}
 		
+		ORD_looming_steel_crisis = {
+			allowed = {
+				original_tag = ORD
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = IRI_Forges_Mobilisation
+			
+			removal_cost = -1
+			
+			modifier = {
+				
+			}
+		}
+		
+		ORD_fragmented_government = {
+			allowed = {
+				OR = {
+					original_tag = ORD
+					original_tag = ORB
+				}
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			picture = generic_disjointed_gov
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.2
+				political_power_gain = -0.5
+			}
+		}
+		
 		ORD_disrupted_industry = {
 			
 			allowed = {
@@ -215,13 +255,13 @@ ideas = {
 				always = yes
 			}
 			
-			picture = generic_exploit_mines
+			picture = IRI_Slavery_Allowed
 			
 			removal_cost = -1
 			
 			modifier = {
 				production_factory_efficiency_gain_factor = 0.1
-				line_change_production_efficiency_factor = -0.05
+				line_change_production_efficiency_factor = -0.25
 			}
 			
 		}
@@ -236,13 +276,13 @@ ideas = {
 				always = yes
 			}
 			
-			picture = generic_exploit_mines
+			picture = IRI_Slavery_Allowed
 			
 			removal_cost = -1
 			
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.1
-				line_change_production_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.13
+				line_change_production_efficiency_factor = -0.2
 			}
 			
 		}
@@ -257,13 +297,13 @@ ideas = {
 				always = yes
 			}
 			
-			picture = generic_exploit_mines
+			picture = IRI_Slavery_Allowed
 			
 			removal_cost = -1
 			
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.1
-				line_change_production_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.15
+				line_change_production_efficiency_factor = -0.18
 			}
 			
 		}
@@ -278,13 +318,13 @@ ideas = {
 				always = yes
 			}
 			
-			picture = generic_exploit_mines
+			picture = IRI_Slavery_Allowed
 			
 			removal_cost = -1
 			
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.1
-				line_change_production_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.17
+				line_change_production_efficiency_factor = -0.15
 			}
 			
 		}
@@ -299,13 +339,13 @@ ideas = {
 				always = yes
 			}
 			
-			picture = generic_exploit_mines
+			picture = IRI_Slavery_Allowed
 			
 			removal_cost = -1
 			
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.1
-				line_change_production_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.2
+				line_change_production_efficiency_factor = -0.12
 			}
 			
 		}
@@ -320,13 +360,13 @@ ideas = {
 				always = yes
 			}
 			
-			picture = generic_exploit_mines
+			picture = IRI_Slavery_Allowed
 			
 			removal_cost = -1
 			
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.1
-				line_change_production_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.22
+				line_change_production_efficiency_factor = -0.1
 			}
 			
 		}
@@ -341,13 +381,13 @@ ideas = {
 				always = yes
 			}
 			
-			picture = generic_exploit_mines
+			picture = IRI_Slavery_Allowed
 			
 			removal_cost = -1
 			
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.1
-				line_change_production_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.25
+				line_change_production_efficiency_factor = -0.07
 			}
 			
 		}
@@ -362,12 +402,12 @@ ideas = {
 				always = yes
 			}
 			
-			picture = generic_exploit_mines
+			picture = IRI_Slavery_Allowed
 			
 			removal_cost = -1
 			
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.3
 				line_change_production_efficiency_factor = -0.05
 			}
 			
@@ -420,6 +460,27 @@ ideas = {
 			}
 		}
 		
+		ORD_politics_chaos = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_disjointed_gov
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = -0.008
+				puritan_drift = -0.06
+				theocrat_drift = -0.06
+			}
+		}
+		
 		ORD_reverse_engineer_arcanotech = {
 			
 			allowed = {
@@ -449,7 +510,7 @@ ideas = {
 				always = yes
 			}
 			
-			picture = mex_callistas
+			picture = MEX_callistas
 			
 			removal_cost = -1
 			
@@ -477,6 +538,49 @@ ideas = {
 				conscription = 0.002
 				production_speed_buildings_factor = 0.03
 				stability_factor = -0.04
+			}
+		}
+		
+		ORD_economic_instability = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = chi_hyper_inflation
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.07
+				stability_weekly = -0.0075
+				war_support_weekly = -0.0075
+				conscription_factor = 0.02
+			}
+		}
+		
+		ORD_corpserot_plague = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = low_devastation
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.35
+				stability_factor = -0.15
+				war_support_factor = -0.15
 			}
 		}
 		
@@ -1339,65 +1443,6 @@ ideas = {
 			targeted_modifier = {
 				tag = UNG
 				intel_network_gain = -0.15
-			}
-		}
-	}
-
-	#ADVISORS
-		
-	political_advisor = {
-		
-		alstora_holynthor = {
-			
-			picture = ord_holynthor
-			
-			allowed = {
-				tag = ORD
-			}
-		
-			available = {
-				has_government = monarchy_absolute
-				has_completed_focus = ORD_thaw
-			}
-			
-			traits = {
-				governess_in_exile
-			}
-		}
-		
-		dalyn_rohyis = {
-			
-			picture = ord_rohyis
-			
-			allowed = {
-				tag = ORD
-			}
-		
-			available = {
-				has_government = puritan
-				has_completed_focus = ORD_pure_empire
-			}
-			
-			traits = {
-				old_war_companion
-			}
-		}
-		
-		thulyen_gyume = {
-			
-			picture = ord_gyume
-			
-			allowed = {
-				tag = ORD
-			}
-		
-			available = {
-				has_government = theocrat
-				has_completed_focus = ORD_pure_priests
-			}
-			
-			traits = {
-				guardian_angel
 			}
 		}
 	}

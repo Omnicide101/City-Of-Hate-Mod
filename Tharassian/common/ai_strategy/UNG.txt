@@ -88,6 +88,49 @@ realm_buddies = {
 	}
 }
 
+go_through_bergial = {#Get MA through BER if at war with TLA
+	enable = {
+		has_war_with = IRI
+		country_exists = BER
+		BER = {
+			is_not_sphered = yes
+		}
+		TLA = {
+			has_war_with = IRI
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = "BER"
+		target = military_access
+		value = 200
+	}
+}
+
+go_through_tlarthingia = {#Get MA through TLA if at war with IRI
+	enable = {
+		has_war_with = IRI
+		country_exists = TLA
+		TLA = {
+			is_not_sphered = yes
+			has_war_with = IRI
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = "TLA"
+		target = military_access
+		value = 200
+	}
+}
+
+
 eat_tlarthingia = {#Go after Tlarthingia if you've got the wargoal
 	enable = {
 		has_completed_focus = UNG_conquer_tlarthingia
@@ -101,17 +144,17 @@ eat_tlarthingia = {#Go after Tlarthingia if you've got the wargoal
 	
 	ai_strategy = {
 		type = antagonize
-		id = "TLA"			
+		id = "TLA"
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "TLA"			
+		id = "TLA"
 		value = 200
 	}
 	ai_strategy = {
 		type = declare_war
-		id = "TLA"			
+		id = "TLA"
 		value = 200
 	}
 }
@@ -129,17 +172,17 @@ eat_irinthios = {#Go after Irinthios if you've got the wargoal
 	
 	ai_strategy = {
 		type = antagonize
-		id = "IRI"			
+		id = "IRI"
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "IRI"			
+		id = "IRI"
 		value = 200
 	}
 	ai_strategy = {
 		type = declare_war
-		id = "IRI"			
+		id = "IRI"
 		value = 200
 	}
 }
@@ -157,17 +200,17 @@ eat_bergial = {#Go after Bergial if you've got the wargoal
 	
 	ai_strategy = {
 		type = antagonize
-		id = "BER"			
+		id = "BER"
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "BER"			
+		id = "BER"
 		value = 200
 	}
 	ai_strategy = {
 		type = declare_war
-		id = "BER"			
+		id = "BER"
 		value = 200
 	}
 }

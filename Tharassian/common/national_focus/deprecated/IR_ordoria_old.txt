@@ -1881,57 +1881,10 @@ random_owned_state= {
 		x = 15
 		y = 1
 		completion_reward = {
-			create_field_marshal = {
-				name = "Thinyria Asrenthyne"
-				picture = "Portrait_Ordoria_Asrenthyne.dds"
-				traits = {
-				brilliant_strategist
-				infantry_officer
-				infantry_leader
-				infantry_expert
-				jungle_rat
-				commando
-				}
-				skill = 3
-				attack_skill = 4
-				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 4
-			}
-			
-			create_corps_commander = {
-				name = "Loventha Isthere"
-				picture = "Portrait_Ordoria_Isthere.dds"
-				traits = {
-				inflexible_strategist
-				infantry_officer
-				infantry_leader
-				ambusher
-				jungle_rat
-				}
-				skill = 3
-				attack_skill = 2
-				defense_skill = 4
-				planning_skill = 3
-				logistics_skill = 2
-			}
-			
-			create_corps_commander = {
-				name = "Thinstorys Wacthyne"
-				picture = "Portrait_Ordoria_Wacthyne.dds"
-				traits = {
-				cavalry_officer
-				cavalry_leader
-				cavalry_expert
-				jungle_rat
-				commando
-				}
-				skill = 3
-				attack_skill = 4
-				defense_skill = 2
-				planning_skill = 4
-				logistics_skill = 3
-			}
+			recruit_character = ORD_thinyria_asrenthyne
+			recruit_character = ORD_loventha_isthere
+			recruit_character = ORD_thinstorys_wacthyne
+
 			add_research_slot = 1
 		}
 	}

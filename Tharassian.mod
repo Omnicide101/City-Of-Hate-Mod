@@ -51,6 +51,7 @@ replace_path="history/states"
 replace_path="history/units"
 replace_path="map"
 replace_path="map/strategicregions"
+replace_path="gfx/interface/equipmentdesigner/tanks"
 replace_path="music"
 tags={
 	"Total Conversion"

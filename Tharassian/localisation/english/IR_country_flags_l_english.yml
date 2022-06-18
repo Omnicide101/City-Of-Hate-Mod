@@ -27,6 +27,8 @@
  GMR_lorthorian:0 "We have adopted the local religion."
  GMR_ungerdaler_buddies:0 "Irenthar has aligned itself with the Union."
  ORD_autumn_debate_done:0 "The Autumn Debate is done."
+ ORD_align_gentry:0 "They will be enticed."
+ ORD_stop_gentry:0 "They will be crushed."
  ORD_ordorian_thaw:0 "Moderate victory at the Autumn Debate."
  ORD_empire_purity:0 "Traditionalist victory at the Autumn Debate."
  ORD_pure_priests_flag:0 "Faithful victory at the Autumn Debate."

@@ -1,0 +1,5 @@
+﻿l_english:
+ operation_vanquish_monster:0 "Vanquish Monster"
+ operation_vanquish_monster_desc:0 "§LA horrible monster is rampaging through our lands. We must send a brave Adventurer to quell this threat, before it hurts anyone else.§!"
+ operation_vanquish_monster_outcome:0 "§LVanquish Monster§! success chance" 
+ operation_vanquish_monster_risk:0 "§LVanquish Monster§! risk"

@@ -555,7 +555,7 @@ country_event = {#Military Policy
 				country_event = {
 					id = ord.8
 					days = 10
-					}
+				}
 			}
 		}
 	}
@@ -589,10 +589,12 @@ country_event = {# Moderate Victory
 			ideology = monarchy_absolute
 			popularity = 0.15
 		}
+		remove_ideas = ORD_fragmented_government
+		deactivate_advisor = isvenith_lothinnys
+		activate_advisor = larennis_valinthir
 		hidden_effect = {
 			set_country_flag = ORD_ordorian_thaw
-		}
-		hidden_effect = {
+			set_country_flag = ORD_moderate_government
 			set_country_flag = {
 				flag = ORD_moderate_success
 				value = 0
@@ -601,6 +603,14 @@ country_event = {# Moderate Victory
 				flag = ORD_moderate_failure
 				value = 0
 			}
+			set_variable = {
+				larennis_idealism = 100
+			}
+			set_variable = {
+				larennis_naivete = 0
+			}
+			mark_focus_tree_layout_dirty = yes
+			unlock_national_focus = ORD_moderates
 		}
 	}
 }
@@ -626,6 +636,7 @@ country_event = {# Imperialist Victory
 			ideology = puritan
 			popularity = 0.15
 		}
+		remove_ideas = ORD_fragmented_government
 		news_event = {
 			id = news.1
 			days = 3
@@ -633,6 +644,7 @@ country_event = {# Imperialist Victory
 		hidden_effect = {
 			set_country_flag = ORD_empire_purity
 		}
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 
@@ -656,6 +668,8 @@ country_event = {# Theocrat Victory
 		set_politics = {
 			ruling_party = theocrat
 		}
+		deactivate_advisor = isvenith_lothinnys
+		activate_advisor = histarine_vernythe
 		news_event = {
 			id = news.2
 			days = 3
@@ -664,9 +678,11 @@ country_event = {# Theocrat Victory
 			ideology = theocrat
 			popularity = 0.15
 		}
+		remove_ideas = ORD_fragmented_government
 		hidden_effect = {
 			set_country_flag = ORD_pure_priests_flag
 		}
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 
@@ -1463,7 +1479,9 @@ country_event = { # Traditionalist Civil War
 		hidden_effect = {
 
 			ORD = {
-				set_capital = 111
+				set_capital = {
+					state = 111
+				}
 			}
 			
 			ORB = {
@@ -1490,7 +1508,9 @@ country_event = { # Traditionalist Civil War
 				add_state_core = 108
 				add_state_core = 86
 				
-				set_capital = 85
+				set_capital = {
+					state = 85
+				}
 			}
 			
 			every_state = {
@@ -3459,5 +3479,424 @@ country_event = {#Runaway Slaves
 		}
 		add_manpower = -7
 		add_war_support = 0.01
+	}
+}
+
+country_event = {#Dealing with the Gentry
+	id = ord.63
+	title = ord.63.t
+	desc = ord.63.d
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Be nice
+		name = ord.63.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = ORD_align_gentry
+	}
+	
+	option = {#Be a bitch about it
+		name = ord.63.b
+		ai_chance = {
+			factor = 15
+		}
+		set_country_flag = ORD_stop_gentry
+	}
+}
+
+country_event = {#Larennis' First Speech
+	id = ord.64
+	title = ord.64.t
+	desc = ord.64.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#That definitely went over well yessir this is definitely not causing problems
+		name = ord.64.a
+		effect_tooltip = {
+			add_political_power = 35
+			add_stability = 0.03
+		}
+		hidden_effect = {
+			add_political_power = -35
+			add_stability = -0.03
+		}
+		larennis_idealism_big = yes
+		add_to_variable = {
+			larennis_naivete = 10
+		}
+	}
+}
+
+country_event = {#Lothinnys DESTROYS College-Educated Princeling with Facts and Logic
+	id = ord.65
+	title = ord.65.t
+	desc = ord.65.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Left Wing Destroyed
+		name = ord.65.a
+		larennis_cynicism_big = yes
+		subtract_from_variable = {
+			larennis_naivete = 10
+		}
+	}
+}
+
+country_event = {#Larennis tries to convince the nobles to think with their hearts instead of their purses
+	id = ord.66
+	title = ord.66.t
+	desc = ord.66.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#I mean... what do you think is going to happen mate
+		name = ord.66.a
+		larennis_cynicism_big = yes
+		subtract_from_variable = {
+			larennis_naivete = 10
+		}
+	}
+}
+
+country_event = {#Try to pass the first law
+	id = ord.67
+	title = ord.67.t
+	desc = ord.67.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Failed
+		name = ord.67.a
+		custom_effect_tooltip = ORD_waiting_game_tt
+		trigger = {
+			check_variable = {
+				larennis_naivete > 0
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = ord.70
+				days = 21
+			}
+		}
+	}
+	
+	option = {#Succeeded
+		name = ord.67.a
+		custom_effect_tooltip = ORD_waiting_game_tt
+		trigger = {
+			check_variable = {
+				larennis_naivete < 1
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = ord.71
+				days = 21
+			}
+		}
+	}
+}
+
+country_event = {#Hey maybe we should bludgeon the most powerful religious institution in the country into submission
+	id = ord.68
+	title = ord.68.t
+	desc = ord.68.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Yeah that'll go well
+		name = ord.68.a
+		add_stability = -0.05
+		custom_effect_tooltip = ORD_displease_faiths_7
+		subtract_from_variable = {
+			ORD_faithful_loyalty = 7
+		}
+		custom_effect_tooltip = ORD_disempower_faiths_2
+		subtract_from_variable = {
+			ORD_faithful_influence = 2
+		}
+	}
+}
+
+country_event = {#Hey maybe we should bludgeon the most powerful political institution in the country into submission
+	id = ord.69 #nice
+	title = ord.69.t
+	desc = ord.69.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Yeah that'll go well
+		name = ord.69.a
+		add_stability = -0.05
+		custom_effect_tooltip = ORD_displease_trads_7
+		subtract_from_variable = {
+			ORD_traditionalists_loyalty = 7
+		}
+		custom_effect_tooltip = ORD_disempower_trads_2
+		subtract_from_variable = {
+			ORD_traditionalists_influence = 2
+		}
+	}
+}
+
+country_event = {#The decree is rejected (Idealist to Cynic)
+	id = ord.70 #nice
+	title = ord.70.t
+	desc = ord.70.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#F in the chat
+		name = ord.70.a
+		
+		set_country_flag = ORD_first_decree_failed
+		
+		add_political_power = -300
+		add_stability = -0.37
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = -0.14
+		}
+		multiply_variable = {
+			larennis_naivete = -2
+		}
+		
+		add_to_variable = {
+			larennis_idealism = larennis_naivete
+		}
+		
+		mark_focus_tree_layout_dirty = yes
+		
+		complete_national_focus = ORD_decree_fails
+	}
+}
+
+country_event = {#The decree is accepted (Cynic to Idealist)
+	id = ord.71
+	title = ord.71.t
+	desc = ord.71.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Scrumptious dub bossman
+		name = ord.71.a
+		
+		set_country_flag = ORD_first_decree_success
+		
+		add_political_power = 50
+		add_stability = 0.03
+		
+		ORD_weaken_slavery = yes
+		
+		multiply_variable = {
+			larennis_naivete = -2
+		}
+		
+		add_to_variable = {
+			larennis_idealism = larennis_naivete
+		}
+		
+		mark_focus_tree_layout_dirty = yes
+		
+		complete_national_focus = ORD_decree_passes
+	}
+}
+
+country_event = {#Angery
+	id = ord.72
+	title = ord.72.t
+	desc = ord.72.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Nay I say
+		name = ord.72.a
+		larennis_idealism_big = yes
+		add_to_variable = {
+			larennis_naivete = 10
+		}
+		hidden_effect = {
+			country_event = ord.73
+		}
+	}
+}
+
+country_event = {#Whomst'd've should be giving advice?
+	id = ord.73
+	title = ord.73.t
+	desc = ord.73.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Pops
+		name = ord.73.a
+		set_country_flag = ORD_larennis_rely_parent
+	}
+	
+	option = {#The Homies
+		name = ord.73.b
+		set_country_flag = ORD_larennis_rely_friend
+	}
+	
+	option = {#The Vassals
+		name = ord.73.c
+		set_country_flag = ORD_larennis_rely_vassal
+	}
+}
+
+country_event = {#Advice - The High King
+	id = ord.74
+	title = ord.74.t
+	desc = ord.74.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Yey
+		name = ord.74.a
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = galerin_valinthir
+		
+		add_stability = 0.02
+		
+		larennis_idealism_small = yes
+		add_to_variable = {
+			larennis_naivete = 3
+		}
+	}
+}
+
+country_event = {#Advice - The Five
+	id = ord.75
+	title = ord.75.t
+	desc = ord.75.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Ahw :(
+		name = ord.75.a
+		country_event = ord.76
+	}
+}
+
+country_event = {#Advice - The Five - Cont.
+	id = ord.76
+	title = ord.76.t
+	desc = ord.76.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Yey
+		name = ord.76.a
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = yntha
+		show_ideas_tooltip = alwyen
+		show_ideas_tooltip = gylar
+		show_ideas_tooltip = thrysmere
+		
+		add_stability = 0.01
+		
+		larennis_idealism_big = yes
+		add_to_variable = {
+			larennis_naivete = 10
+		}
+	}
+}
+
+country_event = {#Advice - Alstora
+	id = ord.77
+	title = ord.77.t
+	desc = ord.77.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Boo
+		name = ord.77.a
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = alstora_holynthor
+
+		add_political_power = 25
+		
+		larennis_cynicism_small = yes
+		subtract_from_variable = {
+			larennis_naivete = 3
+		}
+	}
+}
+
+country_event = {#Steward's Countercoup
+	id = ord.78
+	title = ord.78.t
+	desc = ord.78.d
+	
+	is_triggered_only = yes
+	
+	option = {#This is getting complciated...
+		name = ord.78.a
+		set_politics = {
+			ruling_party = puritan
+		}
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.23
+		}
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = -0.13
+		}
+		
+		custom_effect_tooltip = ORD_empower_trads_20
+		add_to_variable = {
+			ORD_traditionalists_influence = 20
+		}
+		custom_effect_tooltip = ORD_please_trads_20
+		add_to_variable = {
+			ORD_traditionalists_loyalty = 20
+		}
+		custom_effect_tooltip = ORD_disempower_mods_10
+		subtract_from_variable = {
+			ORD_moderates_influence = 10
+		}
+		
+		retire_character = ORD_galerin_valinthir
+		retire_character = ORD_larennis_valinthir
+		retire_character = ORD_yntha
+		retire_character = ORD_alwyen
+		retire_character = ORD_gylar
+		retire_character = ORD_thrysmere
 	}
 }

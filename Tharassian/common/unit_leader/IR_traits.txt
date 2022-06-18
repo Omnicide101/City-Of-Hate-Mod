@@ -55,9 +55,201 @@ leader_traits = {
 ##################################
 # Mod Traits
 ##################################
+	ord_league = {
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = ORD
+			}
+		}
+		
+		new_commander_weight = {
+			factor = 5
+			modifier = {
+				factor = 0
+				OR = {
+					has_trait = ord_sophist
+					has_trait = ord_royalist
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					check_variable = {
+						ORD_traditionalists_influence < 1
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_traditionalists_influence > 4
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_traditionalists_influence > 19
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_traditionalists_influence > 34
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_traditionalists_influence > 49
+					}
+				}
+			}
+		}
+	}
+	
+	ord_sophist = {
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = ORD
+			}
+		}
+		
+		new_commander_weight = {
+			factor = 5
+			modifier = {
+				factor = 0
+				OR = {
+					has_trait = ord_league
+					has_trait = ord_royalist
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					check_variable = {
+						ORD_faithful_influence < 1
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_faithful_influence > 4
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_faithful_influence > 19
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_faithful_influence > 34
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_faithful_influence > 49
+					}
+				}
+			}
+		}
+	}
+	
+	ord_royalist = {
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = ORD
+			}
+		}
+		
+		new_commander_weight = {
+			factor = 5
+			modifier = {
+				factor = 0
+				OR = {
+					has_trait = ord_league
+					has_trait = ord_sophist
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					check_variable = {
+						ORD_moderates_influence < 1
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_moderates_influence > 4
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_moderates_influence > 19
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_moderates_influence > 34
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					check_variable = {
+						ORD_moderates_influence > 49
+					}
+				}
+			}
+		}
+	}
+	
 	has_magic_sword_commander = {
 		type = all
-		trait_type = basic_trait
+		trait_type = personality_trait
 		gain_xp = {
 			always = no # not gainable
 		}
@@ -66,7 +258,16 @@ leader_traits = {
 		}
 		
 		new_commander_weight = {
-			factor = 1 # Big Rare
+			factor = 0.1 # Big Rare
+			modifier = {
+				FROM = {
+					OR = {
+						tag = ORD
+						tag = EOR
+					}
+				}
+				factor = 0
+			}
 		}
 		
 		modifier = {
@@ -79,7 +280,7 @@ leader_traits = {
 	
 	has_magic_ring_commander = {
 		type = all
-		trait_type = basic_trait
+		trait_type = personality_trait
 		gain_xp = {
 			always = no # not gainable
 		}
@@ -88,7 +289,16 @@ leader_traits = {
 		}
 		
 		new_commander_weight = {
-			factor = 1 # Big Rare
+			factor = 0.1 # Big Rare
+			modifier = {
+				FROM = {
+					OR = {
+						tag = ORD
+						tag = EOR
+					}
+				}
+				factor = 0
+			}
 		}
 		
 		modifier = {
@@ -101,7 +311,7 @@ leader_traits = {
 	
 	has_magic_armour_commander = {
 		type = all
-		trait_type = basic_trait
+		trait_type = personality_trait
 		gain_xp = {
 			always = no # not gainable
 		}
@@ -110,7 +320,16 @@ leader_traits = {
 		}
 		
 		new_commander_weight = {
-			factor = 1 # Big Rare
+			factor = 0.1 # Big Rare
+			modifier = {
+				FROM = {
+					OR = {
+						tag = ORD
+						tag = EOR
+					}
+				}
+				factor = 0
+			}
 		}
 		
 		modifier = {
@@ -139,13 +358,14 @@ leader_traits = {
 					}
 				}
 			}
-			NOT = {
-				has_trait = lumotheurge
-			}
 		}
 		
 		new_commander_weight = {
-			factor = 1 # Big Rare
+			factor = 0.1 # Big Rare
+			modifier = {
+				factor = 0
+				has_trait = lumotheurge
+			}
 		}
 		
 		modifier = {
@@ -179,10 +399,149 @@ leader_traits = {
 		}
 		
 		new_commander_weight = {
-			factor = 1  # Big Rare
+			factor = 0.1  # Big Rare
+			modifier = {
+				factor = 0
+				has_trait = noctheurge
+			}
 		}
 		
 		attack_skill = 1
 		defense_skill = 1
+	}
+	
+	operative_has_magic_sword = {
+		type = operative
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			always = yes
+		}
+		
+		new_commander_weight = {
+			factor = 0.1 # Big Rare
+		}
+		
+		modifier = {
+			operation_vanquish_monster_outcome = 0.25
+		}
+	}
+	
+	operative_has_magic_ring = {
+		type = operative
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			always = yes
+		}
+		
+		new_commander_weight = {
+			factor = 0.1 # Big Rare
+		}
+		
+		modifier = {
+			own_operative_detection_chance_factor = -0.2
+		}
+	}
+	
+	operative_has_magic_armour = {
+		type = operative
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			always = yes
+		}
+		
+		new_commander_weight = {
+			factor = 0.1 # Big Rare
+		}
+		
+		modifier = {
+			operation_vanquish_monster_risk = -0.25
+		}
+	}
+	
+	monster_slayer = {
+		type = operative
+		trait_type = personality_trait
+
+		new_commander_weight = {
+			factor = 0.1
+		}
+
+		modifier = {
+			operation_vanquish_monster_risk = -0.25
+		}
+	}
+	
+	warrior_class = {
+		type = operative
+		trait_type = personality_trait
+
+		new_commander_weight = {
+			factor = 0 #assigned in on_actions
+		}
+
+		modifier = {
+		
+		}
+	}
+	
+	barbarian_class = {
+		type = operative
+		trait_type = personality_trait
+
+		new_commander_weight = {
+			factor = 0 #assigned in on_actions
+		}
+
+		modifier = {
+		
+		}
+	}
+	
+	priest_class = {
+		type = operative
+		trait_type = personality_trait
+
+		new_commander_weight = {
+			factor = 0 #assigned in on_actions
+		}
+
+		modifier = {
+		
+		}
+	}
+	
+	thief_class = {
+		type = operative
+		trait_type = personality_trait
+
+		new_commander_weight = {
+			factor = 0 #assigned in on_actions
+		} 
+
+		modifier = {
+		
+		}
+	}
+	
+	wizard_class = {
+		type = operative
+		trait_type = personality_trait
+
+		new_commander_weight = {
+			factor = 0 #assigned in on_actions
+		}
+
+		modifier = {
+		
+		}
 	}
 }

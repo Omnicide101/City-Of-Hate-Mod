@@ -260,7 +260,9 @@ country_event = { #Choose Capital
 	option = { # Ierethayne
 		name = npc.3.b
 		
-		set_capital = 1
+		set_capital = {
+			state = 1
+		}
 	}
 	
 	option = { # Other
@@ -283,13 +285,17 @@ country_event = { #2 Choose 2 Capital
 	option = { # Kortinall
 		name = npc.4.a
 		
-		set_capital = 17
+		set_capital = {
+			state = 17
+		}
 	}
 	
 	option = { # Felweyne
 		name = npc.4.b
 		
-		set_capital = 28
+		set_capital = {
+			state = 28
+		}
 	}
 	
 	option = { # Other
@@ -312,19 +318,25 @@ country_event = { #Choosing the Capital: the Third
 	option = { # Kaltire
 		name = npc.5.a
 		
-		set_capital = 34
+		set_capital = {
+			state = 34
+		}
 	}
 	
 	option = { # Navandonne
 		name = npc.5.b
 		
-		set_capital = 72
+		set_capital = {
+			state = 72
+		}
 	}
 
 	option = { # Trifersi
 		name = npc.5.c
 		
-		set_capital = 29
+		set_capital = {
+			state = 29
+		}
 	}
 	
 	option = { # Back

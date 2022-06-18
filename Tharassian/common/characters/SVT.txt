@@ -1,0 +1,92 @@
+characters={
+	SVT_gabriela_schober={
+		name="Gabriela Schober"
+		portraits={
+			civilian={
+				large="gfx/leaders/SVT/Portrait_SVT_Schober.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SVT_schober_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_SVT_schober_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	SVT_gunther_grasshoff={
+		name="Gunther Grasshoff"
+		portraits={
+			civilian={
+				large="gfx/leaders/SVT/Portrait_SVT_Grasshoff.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SVT_grasshoff_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	SVT_isabelle_beckmann={
+		name="Isabelle Beckmann"
+		portraits={
+			civilian={
+				large="gfx/leaders/SVT/Portrait_SVT_Beckmann.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SVT_beckmann_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	SVT_dietlind_rosenstock__septa_kirchoff_iv={
+		name="Dietlind Rosenstock - Septa Kirchoff IV"
+		portraits={
+			civilian={
+				large="gfx/leaders/SVT/Portrait_SVT_Rosenstock.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SVT_rosenstock_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	SVT_artur_kehlmann={
+		name="Artur Kehlmann"
+		portraits={
+			civilian={
+				large="gfx/leaders/SVT/Portrait_SVT_Kehlmann.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SVT_kehlmann_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	SVT_lucas_gessler={
+		name="Lucas Gessler"
+		portraits={
+			civilian={
+				large="gfx/leaders/SVT/Portrait_SVT_Gessler.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SVT_gessler_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

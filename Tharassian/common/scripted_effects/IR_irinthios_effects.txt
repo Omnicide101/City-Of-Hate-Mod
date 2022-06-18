@@ -625,6 +625,7 @@ IRI_strategos_civil_war_effect = { #if this doesn't work first try I'm going to 
 			transfer_state = 758
 			transfer_state = 756
 			transfer_state = 751
+			unlock_national_focus = IRI_the_theresandrean_restoration
 		}
 		396 = {
 			create_unit = {

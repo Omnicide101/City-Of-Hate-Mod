@@ -84,9 +84,6 @@ recruit_character = IRI_perthecles_thaurun
 recruit_character = IRI_diomedes_stathis
 recruit_character = IRI_cassandra_reahossi
 recruit_character = IRI_lysimachus_monophthal
-recruit_character = IRI_ephina_pession
-recruit_character = IRI_commera_vennado
-recruit_character = IRI_lucius_agrippa
 
 set_politics = {
 	ruling_party = monarchy_constitutional

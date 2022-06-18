@@ -1,0 +1,94 @@
+characters={
+	SUL_sulfie_darrow={
+		name="Sulfie Darrow"
+		portraits={
+			civilian={
+				large="gfx/leaders/SUL/Portrait_SUL_Darrow.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SUL_darrow_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	SUL_ingie_lorpo={
+		name="Ingie Lorpo"
+		portraits={
+			civilian={
+				large="gfx/leaders/SUL/Portrait_Sulfurisle_Generic_land_2.dds"
+			}
+		}
+		country_leader={
+			ideology=monarchy_absolute_ideology
+			expire="899.1.1.12"
+			id=-1
+		}
+	}
+	SUL_dannis_riss={
+		name="Dannis Riss"
+		portraits={
+			civilian={
+				large="gfx/leaders/SUL/Portrait_Sulfurisle_Generic_land_1.dds"
+			}
+		}
+		country_leader={
+			ideology=monarchy_constitutional_ideology
+			expire="896.1.1.12"
+			id=-1
+		}
+	}
+	SUL_tinsie_danga={
+		name="Tinsie Danga"
+		portraits={
+			civilian={
+				large="gfx/leaders/SUL/Portrait_Sulfurisle_Generic_navy_2.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_peasant_ideology
+			expire="894.1.1.12"
+			id=-1
+		}
+	}
+	SUL_lefte_danga={
+		name="Lefte Danga"
+		portraits={
+			civilian={
+				large="gfx/leaders/SUL/Portrait_Sulfurisle_Generic_navy_1.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_aristocrat_ideology
+			expire="892.1.1.12"
+			id=-1
+		}
+	}
+	SUL_wesney_riss={
+		name="Wesney Riss"
+		portraits={
+			civilian={
+				large="gfx/leaders/SUL/Portrait_Sulfurisle_Generic_navy_1.dds"
+			}
+		}
+		country_leader={
+			ideology=theocrat_ideology
+			expire="906.1.1.12"
+			id=-1
+		}
+	}
+	SUL_jeffie_danga={
+		name="Jeffie Danga"
+		portraits={
+			civilian={
+				large="gfx/leaders/SUL/Portrait_Sulfurisle_Generic_land_1.dds"
+			}
+		}
+		country_leader={
+			ideology=puritan_ideology
+			expire="903.1.1.12"
+			id=-1
+		}
+	}
+}

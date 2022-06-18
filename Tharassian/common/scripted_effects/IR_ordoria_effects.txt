@@ -1,3 +1,45 @@
+larennis_cynicism_big = {
+	custom_effect_tooltip = ORD_larennis_cynicism_big
+	subtract_from_variable = {
+		larennis_idealism = 10
+	}
+}
+
+larennis_cynicism_medium = {
+	custom_effect_tooltip = ORD_larennis_cynicism_medium
+	subtract_from_variable = {
+		larennis_idealism = 5
+	}
+}
+
+larennis_cynicism_small = {
+	custom_effect_tooltip = ORD_larennis_cynicism_small
+	subtract_from_variable = {
+		larennis_idealism = 3
+	}
+}
+
+larennis_idealism_big = {
+	custom_effect_tooltip = ORD_larennis_idealism_big
+	add_to_variable = {
+		larennis_idealism = 10
+	}
+}
+
+larennis_idealism_medium = {
+	custom_effect_tooltip = ORD_larennis_idealism_medium
+	add_to_variable = {
+		larennis_idealism = 5
+	}
+}
+
+larennis_idealism_small = {
+	custom_effect_tooltip = ORD_larennis_idealism_small
+	add_to_variable = {
+		larennis_idealism = 3
+	}
+}
+
 ORD_strengthen_slavery = {
 	if = {
 		limit = {
@@ -15,13 +57,22 @@ ORD_strengthen_slavery = {
 	}
 	if = {
 		limit = {
-			has_idea = ORD_slavery_1
+			has_idea = ORD_slavery_4
 		}
 		swap_ideas = {
-			remove_idea = ORD_slavery_1
-			add_idea = ORD_slavery_2
+			remove_idea = ORD_slavery_4
+			add_idea = ORD_slavery_5
 		}
 	}
+	if = {
+		limit = {
+			has_idea = ORD_slavery_3
+		}
+		swap_ideas = {
+			remove_idea = ORD_slavery_3
+			add_idea = ORD_slavery_4
+		}
+	}	
 	if = {
 		limit = {
 			has_idea = ORD_slavery_2
@@ -33,10 +84,22 @@ ORD_strengthen_slavery = {
 	}
 	if = {
 		limit = {
-			has_idea = ORD_slavery_3
+			has_idea = ORD_slavery_1
 		}
 		swap_ideas = {
-			remove_idea = ORD_slavery_3
+			remove_idea = ORD_slavery_1
+			add_idea = ORD_slavery_2
+		}
+	}
+}
+
+ORD_weaken_slavery = {
+	if = {
+		limit = {
+			has_idea = ORD_slavery_5
+		}
+		swap_ideas = {
+			remove_idea = ORD_slavery_5
 			add_idea = ORD_slavery_4
 		}
 	}
@@ -46,17 +109,17 @@ ORD_strengthen_slavery = {
 		}
 		swap_ideas = {
 			remove_idea = ORD_slavery_4
-			add_idea = ORD_slavery_5
+			add_idea = ORD_slavery_3
 		}
 	}
-}
-
-ORD_weaken_slavery = {
 	if = {
 		limit = {
-			has_idea = ORD_slavery_1
+			has_idea = ORD_slavery_3
 		}
-		remove_ideas = ORD_slavery_1
+		swap_ideas = {
+			remove_idea = ORD_slavery_3
+			add_idea = ORD_slavery_2
+		}
 	}
 	if = {
 		limit = {
@@ -69,29 +132,91 @@ ORD_weaken_slavery = {
 	}
 	if = {
 		limit = {
-			has_idea = ORD_slavery_3
+			has_idea = ORD_slavery_1
+		}
+		remove_ideas = ORD_slavery_1
+	}
+}
+
+ORD_industrialize = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_idea = ORD_manufactories_1
+					has_idea = ORD_manufactories_2
+					has_idea = ORD_manufactories_3
+					has_idea = ORD_manufactories_4
+					has_idea = ORD_manufactories_5
+					has_idea = ORD_manufactories_6
+					has_idea = ORD_manufactories_7
+					has_idea = ORD_manufactories_8
+				}
+			}
+		}
+		add_ideas = ORD_manufactories_1
+	}
+	if = {
+		limit = {
+			has_idea = ORD_manufactories_7
 		}
 		swap_ideas = {
-			remove_idea = ORD_slavery_3
-			add_idea = ORD_slavery_2
+			remove_idea = ORD_manufactories_7
+			add_idea = ORD_manufactories_8
 		}
 	}
 	if = {
 		limit = {
-			has_idea = ORD_slavery_4
+			has_idea = ORD_manufactories_6
 		}
 		swap_ideas = {
-			remove_idea = ORD_slavery_4
-			add_idea = ORD_slavery_3
+			remove_idea = ORD_manufactories_6
+			add_idea = ORD_manufactories_7
 		}
 	}
 	if = {
 		limit = {
-			has_idea = ORD_slavery_5
+			has_idea = ORD_manufactories_5
 		}
 		swap_ideas = {
-			remove_idea = ORD_slavery_5
-			add_idea = ORD_slavery_4
+			remove_idea = ORD_manufactories_5
+			add_idea = ORD_manufactories_6
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ORD_manufactories_4
+		}
+		swap_ideas = {
+			remove_idea = ORD_manufactories_4
+			add_idea = ORD_manufactories_5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ORD_manufactories_3
+		}
+		swap_ideas = {
+			remove_idea = ORD_manufactories_3
+			add_idea = ORD_manufactories_4
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ORD_manufactories_2
+		}
+		swap_ideas = {
+			remove_idea = ORD_manufactories_2
+			add_idea = ORD_manufactories_3
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ORD_manufactories_1
+		}
+		swap_ideas = {
+			remove_idea = ORD_manufactories_1
+			add_idea = ORD_manufactories_2
 		}
 	}
 }

@@ -123,7 +123,9 @@ country_event = { # Arkanisturm Civil War
 			}
 			
 			ARK = {
-				set_capital = 206
+				set_capital = {
+					state = 206
+				}
 			}
 			
 			ARB = {
@@ -135,7 +137,9 @@ country_event = { # Arkanisturm Civil War
 				add_state_core = 207
 				add_state_core = 218
 				
-				set_capital = 218
+				set_capital = {
+					state = 218
+				}
 			}
 			
 			every_state = {

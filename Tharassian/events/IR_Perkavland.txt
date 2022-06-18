@@ -619,7 +619,9 @@ country_event = {#Reactionary Civil War!
 		
 		hidden_effect = {
 			PRK = {
-				set_capital = 415
+				set_capital = {
+					state = 415
+				}
 			}
 		}
 
@@ -778,7 +780,9 @@ country_event = {#Rename Krell's Hall on Victory
 	option = {#Rename
 		name = prk.18.a
 		hidden_effect = {
-			set_capital = 415
+			set_capital = {
+				state = 415
+			}
 		}
 		413 = {
 			set_state_name = "Zlatko's Hall"
@@ -792,7 +796,9 @@ country_event = {#Rename Krell's Hall on Victory
 	
 	option = {#Rename and move capital
 		name = prk.18.b
-		set_capital = 413
+		set_capital = {
+			state = 413
+		}
 		413 = {
 			set_state_name = "Zlatko's Hall"
 		}

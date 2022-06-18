@@ -7,3 +7,13 @@ defined_text = { # Get a specific state name for the 'City Requests Privileges' 
         localization_key = [?THIS.RND_city_privileges_state_id.GetName]
     }
 }
+
+defined_text = { # Get a specific state name for the 'Roaming Monster' random event
+    name = GetStateName2
+    text = {
+        trigger = {
+            has_variable = RND_roaming_monster_state_id
+        }
+        localization_key = [?THIS.RND_roaming_monster_state_id.GetName]
+    }
+}

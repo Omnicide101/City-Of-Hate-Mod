@@ -60,7 +60,6 @@ country_event = { #Best Served
 	id = ord_lore.3
 	title = ord_lore.3.t
 	desc = ord_lore.3.d
-	picture = GFX_report_event_lothinnys
 	
 	fire_only_once = yes
 	
@@ -209,5 +208,119 @@ country_event = { #I am a dwarf and I'm tilling a field
 	option = {#Tilly tilly field
 		name = ord_lore.10.a
 		add_stability = -0.001
+	}
+}
+
+country_event = { #Corpserot Plague
+	id = ord_lore.11
+	title = ord_lore.11.t
+	desc = ord_lore.11.d
+	
+	fire_only_once = yes
+	
+	option = {
+		name = ord_lore.11.a
+		random_owned_controlled_state = {
+			add_manpower = -938
+		}
+		random_owned_controlled_state = {
+			add_manpower = -1023
+		}
+		random_owned_controlled_state = {
+			add_manpower = -819
+		}
+		random_owned_controlled_state = {
+			add_manpower = -770
+		}
+		random_owned_controlled_state = {
+			add_manpower = -612
+		}
+		random_owned_controlled_state = {
+			add_manpower = -705
+		}
+		random_owned_controlled_state = {
+			add_manpower = -542
+		}
+		add_ideas = ORD_corpserot_plague
+	}
+}
+
+country_event = { #Enough fighting leads to the Autumn Debate
+	id = ord_lore.12
+	title = ord_lore.12.t
+	desc = ord_lore.12.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Destroy with facts and logic
+		name = ord_lore.12.a
+		custom_effect_tooltip = ordoria_important
+		
+		add_stability = -0.07
+	}
+}
+
+country_event = { #Prepping for the Autumn Debate - Vernythe
+	id = ord_lore.13
+	title = ord_lore.13.t
+	desc = ord_lore.13.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Spookily Ghost
+		name = ord_lore.13.a
+		
+		add_popularity = {
+			ideology = theocrat
+			popularity = 0.05
+		}
+		
+		add_stability = -0.01
+	}
+}
+
+country_event = { #Prepping for the Autumn Debate - Lothinnys
+	id = ord_lore.14
+	title = ord_lore.14.t
+	desc = ord_lore.14.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Shamk
+		name = ord_lore.14.a
+		
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.05
+		}
+		
+		add_manpower = -3
+	}
+}
+
+country_event = { #Prepping for the Autumn Debate - Larennis
+	id = ord_lore.15
+	title = ord_lore.15.t
+	desc = ord_lore.15.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Wholesome Chungus 100
+		name = ord_lore.15.a
+		
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.05
+		}
+		
+		add_political_power = -5
 	}
 }

@@ -1,0 +1,10 @@
+spriteTypes = {
+
+	### ORD
+	#override operative portraits
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Jhylere"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Jhylere.dds"
+	}
+}

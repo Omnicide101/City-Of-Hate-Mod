@@ -1,3 +1,5 @@
+-Began rework of Intelligence Agencies into Adventurer's Guild
+-Added new random event
 -Made out of food combat penalties significantly harsher
 -Starvation is now absolutely devastating to a nation; avoid it at all costs
 -Improved AI's ability to feed itself
@@ -30,3 +32,14 @@
 -Added generic decisions to buff stability and/or war support
 -Added VPs across the board
 -Ordoria and the Commissiaries now always have resistance/compliance mechanics enabled in conquered lands, though they do get the full building slots
+-Updated portraits used in foci for SVT, STA, and UNG
+-Updated the mod to use the new character system
+-Tweaked Skaelinger AI behaviour
+-Added non-aggression pact between Stalhof and Neureik
+-Added advisors to Ordoria
+-Began migrating advisor portraits to a new folder to prevent clutter (internal mod structure thing)
+-Fixed a bug that would prevent the player from taking the The Two Thrones focus as the Union
+-Made AI actually more likely to invade navally
+-Reduced Kurgur rations consumption to represent self-sufficiency (placeholder solution)
+-Made the AI far more happy to trade, especially for fuel
+-Various bugfixes

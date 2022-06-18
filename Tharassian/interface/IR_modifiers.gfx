@@ -45,6 +45,18 @@ spriteTypes = {
 		textureFile = "gfx/interface/modifiers/modifier_state_autonomous_region.dds"
 	}
 	spriteType = {
+		name = "GFX_modifier_state_roaming_monster"
+		textureFile = "gfx/interface/modifiers/modifier_state_roaming_monster.dds"
+	}
+	spriteType = {
+		name = "GFX_modifier_state_diseased_region"
+		textureFile = "gfx/interface/modifiers/modifier_state_diseased_region.dds"
+	}
+	spriteType = {
+		name = "GFX_modifier_smog_choked_skies"
+		textureFile = "gfx/interface/modifiers/modifier_smog_choked_skies.dds"
+	}
+	spriteType = {
 		name = "GFX_modifier_ongoing_conflict"
 		textureFile = "gfx/interface/modifiers/modifier_ongoing_conflict.dds"
 	}

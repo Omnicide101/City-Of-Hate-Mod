@@ -151,7 +151,7 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Dietlind Rosenstock"
+	name = "Dietlind Rosenstock - Septa Kirchoff IV"
 	desc = "politics_SVT_rosenstock_desc"
 	picture = "gfx/leaders/SVT/Portrait_SVT_Rosenstock.dds"
 	ideology = theocrat_ideology

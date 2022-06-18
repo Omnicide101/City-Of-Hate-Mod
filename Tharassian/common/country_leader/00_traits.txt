@@ -76,24 +76,53 @@ leader_traits = {
 		war_support_factor = -0.07
 	}
 	
+	fathers_embrace = {
+		random = no
+		political_power_gain = 0.25
+		surrender_limit = 0.1
+	}
+	
+	moral_firebrand = {
+		random = no
+		war_support_factor = 0.12
+		army_morale_factor = 0.08
+	}
+	
+	cheerful_optimist = {
+		random = no
+		stability_factor = 0.12
+		pocket_penalty = -0.08
+	}
+	
+	grounded_dealmaker = {
+		random = no
+		war_stability_factor = 0.18
+		research_speed_factor = 0.05
+	}
+	
+	awkward_administrator = {
+		political_power_cost = 0.15
+		production_factory_max_efficiency_factor = 0.17
+	}
+	
 	guardian_angel = {
 		random = no
 		army_morale_factor = 0.08
 		resistance_decay = 0.07
-		intel_network_gain_factor = 0.06
+		intel_network_gain_factor = 0.09
 	}
 	
 	old_war_companion = {
 		random = no
-		war_support_factor = 0.1
-		training_time_factor = -0.1
-		surrender_limit = 0.05
+		war_support_factor = 0.16
+		training_time_factor = -0.12
+		surrender_limit = 0.07
 	}
 	
 	governess_in_exile = {
 		random = no
-		opinion_gain_monthly_factor = 0.1
-		drift_defence_factor = 0.1
+		opinion_gain_monthly_factor = 0.2
+		drift_defence_factor = 0.15
 		compliance_growth = 0.075
 	}
 	
@@ -177,7 +206,7 @@ leader_traits = {
 	
 	power_behind_throne = {
 		random = no
-		political_power_factor = 0.15
+		political_power_factor = 0.25
 	}
 	
 	hollow_avenger = {
@@ -190,18 +219,18 @@ leader_traits = {
 		}
 	}
 	
-	unyielding_defender = {
+	autocratic_ideologue = {
 		random = no
 		hidden_modifier = {
-			ai_focus_defense_factor = 0.5
+			required_garrison_factor = 0.12
+			resistance_decay = 0.08
 		}
 	}
 	
-	zealous_crusader = {
+	youthful_princeling = {
 		random = no
 		hidden_modifier = {
-			ai_focus_aggressive_factor = 0.3
-			ai_badass_factor = 0.70
+			compliance_growth_on_our_occupied_states = -0.06
 		}
 	}
 	
@@ -213,6 +242,14 @@ leader_traits = {
 		hidden_modifier = {
 			ai_focus_aggressive_factor = -0.1
 		}
+	}
+	
+	unstoppable_justicar = {
+		random = no
+		political_power_gain = 2
+		stability_factor = 0.3
+		war_support_factor = 0.3
+		monarchy_absolute_drift = 0.3
 	}
 	
 	hero_of_the_revolution = {
@@ -314,9 +351,10 @@ leader_traits = {
 	}
 	
 	blue_blooded_noblewoman = {
+		random = no
 		political_power_gain = -0.25
 		experience_gain_army_factor = 0.15
-	}
+	}	
 	
 	has_magic_sword = {
 		random = no
@@ -579,6 +617,12 @@ leader_traits = {
 		random = no
 		river_crossing_factor = -0.07
 		naval_accidents_chance = -0.05
+	}
+	
+	idealism_bonuses = {
+		random = no
+		war_stability_factor = -0.07
+		breakthrough_factor = 0.05
 	}
 	
 	trans_rights_bonuses = {
@@ -2508,10 +2552,6 @@ leader_traits = {
 		
 		ai_will_do = {
 			factor = 3
-			modifier = {
-				factor = 0
-				has_navy_size = { unit = carrier size < 1 }
-			}
 		}
 	}
 }

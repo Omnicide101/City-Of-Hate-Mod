@@ -17,6 +17,19 @@ focus_tree = {
 		cost = 10
 		x = 9
 		y = 0
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 100
+				OR = {
+					AND = {
+						has_completed_focus = SKA_attempting_stabilize_nation
+						has_completed_focus = SKA_fortify_loris_path
+					}
+					has_country_flag = SKA_king_died
+				}
+			}
+		}
 		completion_reward = {
 			country_event = { id = skaelinger.1 hours = 2 }
 		}
@@ -2901,37 +2914,52 @@ focus_tree = {
 		ai_will_do = {
 			factor = 3
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_CHARTIST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_CHARTIST
+					}
+					has_country_flag = SKA_ai_charter_path_flag
 				}
 				factor = 0
 			}
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_COUNCIL
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_COUNCIL
+					}
+					has_country_flag = SKA_ai_council_path_flag
 				}
 				factor = 0
 			}
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_HELLIRFAST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_HELLIRFAST
+					}
+					has_country_flag = SKA_ai_hellirfast_path_flag
 				}
 				factor = 0
 			}
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_GRIMVALD
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_GRIMVALD
+					}
+					has_country_flag = SKA_ai_grimvald_path_flag
 				}
 				factor = 0
 			}
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_PALMKEVIST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_PALMKEVIST
+					}
+					has_country_flag = SKA_ai_palmkevist_path_flag
 				}
 				factor = 0
 			}
@@ -3081,6 +3109,29 @@ focus_tree = {
 			}
 		}
 		relative_position_id = SKA_dissolve_the_lore_council
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_CHARTIST
+					}
+					has_country_flag = SKA_ai_charter_path_flag
+				}
+				factor = 0
+			}
+		}
 		x = -1
 		y = 1
 		completion_reward = {
@@ -3111,23 +3162,6 @@ focus_tree = {
 		available = {
 			hidden_trigger = {
 				NOT = { has_country_flag = SKA_palmekvist_couped_iron_bloods }
-			}
-		}
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_SOLTRUIST
-				}
-				factor = 0
-			}
-			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_BROTHERHOOD
-				}
-				factor = 0
 			}
 		}
 		relative_position_id = SKA_shore_up_the_caste_system
@@ -3846,9 +3880,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_IRONBLOOD
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_IRONBLOOD
+					}
+					has_country_flag = SKA_ai_ironbloods_path_flag
 				}
 				factor = 0
 			}
@@ -3883,9 +3920,18 @@ focus_tree = {
 		ai_will_do = {
 			factor = 3
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_SOLTRUIST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+					
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
 				}
 				factor = 0
 			}
@@ -3916,9 +3962,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_BROTHERHOOD
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
 				}
 				factor = 0
 			}

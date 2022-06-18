@@ -352,7 +352,7 @@ formalize_waterways_steelroad = {
 check_steel_road_change = {
 	
 	if = {
-		limit {
+		limit = {
 			check_variable = {
 				STLRD_state_control_var < 1
 			}
@@ -361,7 +361,7 @@ check_steel_road_change = {
 		clear_variable = STLRD_state_control_var
 	}
 	if = {
-		limit {
+		limit = {
 			check_variable = {
 				STLRD_state_control_var > 0
 				STLRD_state_control_var < 5
@@ -378,7 +378,7 @@ check_steel_road_change = {
 		remove_ideas = STLRD_control_5
 	}
 	if = {
-		limit {
+		limit = {
 			check_variable = {
 				STLRD_state_control_var > 4
 				STLRD_state_control_var < 10
@@ -393,7 +393,7 @@ check_steel_road_change = {
 		remove_ideas = STLRD_control_5
 	}
 	if = {
-		limit {
+		limit = {
 			check_variable = {
 				STLRD_state_control_var > 9
 				STLRD_state_control_var < 15
@@ -408,7 +408,7 @@ check_steel_road_change = {
 		remove_ideas = STLRD_control_5
 	}
 	if = {
-		limit {
+		limit = {
 			check_variable = {
 				STLRD_state_control_var > 14
 				STLRD_state_control_var < 20
@@ -423,7 +423,7 @@ check_steel_road_change = {
 		remove_ideas = STLRD_control_5
 	}
 	if = {
-		limit {
+		limit = {
 			check_variable = {
 				STLRD_state_control_var > 19
 			}
@@ -437,7 +437,7 @@ check_steel_road_change = {
 		remove_ideas = STLRD_control_3
 	}
 	if = {
-		limit {
+		limit = {
 			check_variable = {
 				STLRD_state_control_var > 25
 			}

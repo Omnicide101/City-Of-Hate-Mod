@@ -1,0 +1,92 @@
+characters={
+	RMT_valkrün_skyldske={
+		name="Valkrün Skyldske"
+		portraits={
+			civilian={
+				large="gfx/leaders/RMT/Portrait_RMT_Skyldske_ii.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RMT_skyldske_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_RMT_skyldske_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RMT_bjarne_röndskun={
+		name="Bjarne Röndskun"
+		portraits={
+			civilian={
+				large="gfx/leaders/RMT/Portrait_RMT_Rondskun.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RMT_rondskun_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RMT_søren_räsk={
+		name="Søren Räsk"
+		portraits={
+			civilian={
+				large="gfx/leaders/RMT/Portrait_RMT_Rask.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RMT_rask_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RMT_joris_skyldske={
+		name="Joris Skyldske"
+		portraits={
+			civilian={
+				large="gfx/leaders/RMT/Portrait_RMT_Skyldske.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RMT_skyldske_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RMT_elena_thurgensen={
+		name="Elena Thurgensen"
+		portraits={
+			civilian={
+				large="gfx/leaders/RMT/Portrait_RMT_Thurgensen.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RMT_thurgensen_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	RMT_maibritt_narkünd={
+		name="Maibritt Narkünd"
+		portraits={
+			civilian={
+				large="gfx/leaders/RMT/Portrait_RMT_Narkund.dds"
+			}
+		}
+		country_leader={
+			desc="politics_RMT_narkund_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

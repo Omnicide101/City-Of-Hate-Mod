@@ -36,9 +36,6 @@ set_technology ={
 	basic_ship_hull = 1
 }
 
-1939.1.1 = {
-}
-
 set_politics = {
 	ruling_party = republic_aristocrat
 	last_election = "1936.1.1"
@@ -62,6 +59,13 @@ set_popularities = {
 	puritan = 6
 }
 
+recruit_character = BER_joris_zilversteen
+recruit_character = BER_willemijn_doeringa
+recruit_character = BER_alexander_goudhand
+recruit_character = BER_tessa_hoevering
+recruit_character = BER_jasper_ijzerbaard
+
+
 add_ideas = {
 	dwarf_country
 	dwarven_ancestor_worship_religion
@@ -80,67 +84,4 @@ add_opinion_modifier = {
 add_opinion_modifier = {
 	target = TAR
 	modifier = dislike_opinion
-}
-
-create_country_leader = {
-	name = "Joris Zilversteen"
-	desc = "politics_BER_zilversteen_desc"
-	picture = "gfx/leaders/BER/Portrait_BER_Zilversteen.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Willemijn Doeringa"
-	desc = "politics_BER_doeringa_desc"
-	picture = "gfx/leaders/BER/Portrait_BER_Doeringa.dds"
-	ideology = republic_peasant_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Alexander Goudhand"
-	desc = "politics_BER_goudhand_desc"
-	picture = "gfx/leaders/BER/Portrait_BER_Goudhand.dds"
-	ideology = puritan_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Joris Zilversteen"
-	desc = "politics_BER_zilversteen_desc"
-	picture = "gfx/leaders/BER/Portrait_BER_Zilversteen.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Tessa Hoevering"
-	desc = "politics_BER_hoevering_desc"
-	picture = "gfx/leaders/BER/Portrait_BER_Hoevering.dds"
-	ideology = theocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Joris Zilversteen"
-	desc = "politics_BER_zilversteen_desc"
-	picture = "gfx/leaders/BER/Portrait_BER_Zilversteen.dds"
-	ideology = republic_aristocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Jasper Ijzerbaard"
-	desc = "politics_BER_ijzerbaard_desc"
-	picture = "gfx/leaders/BER/Portrait_BER_Ijzerbaard.dds"
-	ideology = republic_merchant_ideology
-	traits = {
-	}
 }

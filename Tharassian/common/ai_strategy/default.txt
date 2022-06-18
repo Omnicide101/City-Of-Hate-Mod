@@ -28,6 +28,30 @@
 #	}
 #}
 
+
+#Always have food
+do_not_starve = {
+	enable = {
+		OR = {
+			has_fuel < 100
+			fuel_ratio < 0.1
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = fuel_buffer
+		value = 1000 #No documentation or usecase on this so this is a test to see if it's an absolute value or a percentage of total capacity
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = farm
+		value = 1000 #No documentation or usecase on this so this is a test to see if it's an absolute value or a percentage of total capacity
+	}
+}
+
 #Delete units if you can't afford their upkeep
 avoid_famine_by_disbanding_army = {
 	enable = {
@@ -95,7 +119,7 @@ build_logistics_stuff = {
 	
 	ai_strategy = {
 		type = equipment_production_min_factories
-		id = light_cavalry
+		id = cavalry
 		value = 1
 	}
 }

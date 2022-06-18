@@ -331,6 +331,7 @@
  
  #Unique Techs
  
+ STA_path_clearer_battalion_tech:0 "Path-Clearer Battalions§! \n £GFX_unit_swordsmen_icon_small §YAll Forces§! Movement Speed in Jungle: §G+20%§! \n £GFX_unit_swordsmen_icon_small §YAll Forces§! Attack in Jungle: §G+10%§! \n £GFX_unit_swordsmen_icon_small §YAll Forces§! Movement Speed in Forests: §G+20%§! \n £GFX_unit_swordsmen_icon_small §YAll Forces§! Attack in Forests: §G+10%§!"
  freiprinz_uniform_polearms:0 "Standardized Polearms§! \n £GFX_unit_halberdier_icon_small §YHalberdier§! Breakthrough: §G+5%§!"
  freiprinz_tag_im_monat_manner:0 "Tag-im-Monat Männer§! \n £GFX_unit_men_at_arms_icon_small §YMen-at-Arms§! Attack: §G+5%§!\n £GFX_unit_men_at_arms_icon_small §YMen-at-Arms§! Defense: §G+5%§!"
  freiprinz_freiprinztums_finest:0 "The Freiprinztum's Finest§! \n £GFX_unit_heavy_cavalry_icon_small §YHeavy Cavalry§! Attack: §G+5%§!\n £GFX_unit_heavy_cavalry_icon_small §YHeavy Cavalry§! Defense: §G+5%§!"

@@ -1710,9 +1710,11 @@ focus = {#Excommunicate Traitoris
 	cancel = {
 		has_government = monarchy_absolute
 	}
-	cancel_if_invalid = no
-	completion_reward = {
+	continue_if_invalid  = yes
+	select_effect = {
 		add_political_power = -50
+	}
+	completion_reward = {
 		add_popularity = {
 			ideology = theocrat
 			popularity = 0.08
@@ -1803,9 +1805,11 @@ focus = {#Push for Banishment
 	ai_will_do = {
 		factor = 25
 	}
-	cancel_if_invalid = no
-	completion_reward = {
+	continue_if_invalid  = yes
+	select_effect = {
 		add_political_power = -75
+	}
+	completion_reward = {
 		if = {
 			limit = {
 				has_active_mission = HLZ_pressler_on_the_move

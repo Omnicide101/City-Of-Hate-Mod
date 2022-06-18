@@ -6,10 +6,19 @@ state={
 		8537 8554 8582 
 	}
 	buildings_max_level_factor=1.000
-	manpower=1
+	manpower=503
 	state_category=pastoral
 	history={
-		owner = XXX
-		add_core_of = XXX
+		owner = TRX
+		add_core_of = TRX
+		
+		victory_points = {
+			8554 5
+		}
+		
+		buildings = {
+			infrastructure = 2
+			farm = 1
+		}
 	}
 }

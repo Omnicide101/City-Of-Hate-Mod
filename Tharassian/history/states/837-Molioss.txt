@@ -5,10 +5,22 @@ state={
 		522 2713 8808 8844 
 	}
 	buildings_max_level_factor=1.000
-	manpower=1
-	state_category=pastoral
+	manpower=11923
+	state_category=town
 	history={
-		owner = XXX
-		add_core_of = XXX
+		owner = TRX
+		add_core_of = TRX
+		
+		victory_points = {
+			522 4
+		}
+		buildings = {
+			infrastructure = 3
+			forge = 1
+			dockyard = 1
+			522 = {
+				naval_base = 1
+			}
+		}
 	}
 }

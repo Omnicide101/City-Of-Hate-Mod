@@ -1,203 +1,84 @@
-characters = {
-	BLD_kar_thaurun = {
-		name = "Kar Thaurun"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/BLD/Portrait_BLD_Thaurun.dds"
+characters={
+	BLD_kar_thaurun={
+		name="Kar Thaurun"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLD/Portrait_BLD_Thaurun.dds"
 			}
 		}
-		
-		country_leader = {
-			ideology = monarchy_absolute_ideology
-			desc = "politics_BLD_thaurun_absolutist_desc"
-			expire = "1965.1.1.1"
-			id = -1
+		country_leader={
+			desc="politics_BLD_thaurun_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
 		}
-		
-		country_leader = {
-			ideology = monarchy_constitutional_ideology
-			desc = "politics_BLD_thaurun_constitutionalist_desc"
-			expire = "1965.1.1.1"
-			id = -1
+		country_leader={
+			desc="politics_BLD_thaurun_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
 		}
 	}
-	
-	BLD_kar_kurbah = {
-		name = "Kar Kurbah"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/BLD/Portrait_BLD_Kurbah.dds"
+	BLD_kar_kurbah={
+		name="Kar Kurbah"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLD/Portrait_BLD_Kurbah.dds"
 			}
 		}
-		
-		country_leader = {
-			ideology = republic_peasant_ideology
-			desc = "politics_BLD_kurbah_desc"
-			expire = "1965.1.1.1"
-			id = -1
+		country_leader={
+			desc="politics_BLD_kurbah_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
 		}
 	}
-	
-	BLD_kar_reimvan = {
-		name = "Kar Reimvan"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/BLD/Portrait_Bilodya_Generic_land_1.dds"
+	BLD_kar_vurkun={
+		name="Kar Vurkun"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLD/Portrait_BLD_Vurkun.dds"
 			}
 		}
-		
-		country_leader = {
-			ideology = puritan_ideology
-			desc = "politics_BLD_reimvan_desc"
-			expire = "1965.1.1.1"
-			id = -1
+		country_leader={
+			desc="politics_BLD_vurkun_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
 		}
-	}
-	
-	BLD_kar_stoya = {
-		name = "Kar Stoya"
-		gender = female
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/BLD/Portrait_Bilodya_Generic_land_4.dds"
-			}
-		}
-		
-		country_leader = {
-			ideology = theocrat_ideology
-			desc = "politics_BLD_stoya_desc"
-			expire = "1965.1.1.1"
-			id = -1
+		country_leader={
+			desc="politics_BLD_vurkun_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
 		}
 	}
-	
-	BLD_kar_vurkun = {
-		name = "Kar Vurkun"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/BLD/Portrait_BLD_Vurkun.dds"
+	BLD_kar_stoya={
+		name="Kar Stoya"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLD/Portrait_Bilodya_Generic_land_4.dds"
 			}
 		}
-		
-		country_leader = {
-			ideology = republic_aristocrat_ideology
-			desc = "politics_BLD_vurkun_aristocratic_desc"
-			expire = "1965.1.1.1"
-			id = -1
-		}
-		
-		country_leader = {
-			ideology = republic_merchant_ideology
-			desc = "politics_BLD_vurkun_republican_desc"
-			expire = "1965.1.1.1"
-			id = -1
+		country_leader={
+			desc="politics_BLD_stoya_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
 		}
 	}
-	
-	BLD_wun_orvar = {
-		name = "Wun Orvar"
-		portraits = {
-			army = {
-				small = "gfx/leaders/BLD/Portrait_BLD_Wun_Orvar.dds"
-			}
-			army = {
-				large = "gfx/leaders/BLD/Portrait_BLD_Wun_Orvar.dds"
+	BLD_kar_reimvan={
+		name="Kar Reimvan"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLD/Portrait_Bilodya_Generic_land_1.dds"
 			}
 		}
-		
-		corps_commander = {
-			traits = {
-				trickster
-				harsh_leader
-				infantry_officer
-			}
-			skill = 4
-			
-			attack_skill = 4
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 4
-			
-			legacy_id = 0
-		}
-	}
-	
-	BLD_gur_tarvak = {
-		name = "Gur Tarvak"
-		portraits = {
-			army = {
-				small = "gfx/leaders/BLD/Portrait_BLD_Gur_Tarvak.dds"
-			}
-			army = {
-				large = "gfx/leaders/BLD/Portrait_BLD_Gur_Tarvak.dds"
-			}
-		}
-		
-		corps_commander = {
-			traits = {
-				trait_cautious
-				defensive_doctrine
-			}
-			skill = 3
-			
-			attack_skill = 3
-			defense_skill = 4
-			planning_skill = 1
-			logistics_skill = 3
-			
-			legacy_id = 0
-		}
-	}
-	
-	BLD_pav_karbun = {
-		name = "Pav Karbun"
-		portraits = {
-			army = {
-				small = "gfx/leaders/BLD/Portrait_BLD_Pav_Karbun.dds"
-			}
-			army = {
-				large = "gfx/leaders/BLD/Portrait_BLD_Pav_Karbun.dds"
-			}
-		}
-		
-		corps_commander = {
-			traits = {
-				infantry_officer
-			}
-			skill = 2
-			
-			attack_skill = 1
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 2
-			
-			legacy_id = 0
-		}
-	}
-	
-	BLD_ren_dirgal = {
-		name = "Ren Dirgal"
-		portraits = {
-			army = {
-				small = "gfx/leaders/BLD/Portrait_BLD_Ren_Dirgal.dds"
-			}
-			army = {
-				large = "gfx/leaders/BLD/Portrait_BLD_Ren_Dirgal.dds"
-			}
-		}
-		
-		corps_commander = {
-			traits = {
-				commando
-			}
-			skill = 2
-			
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 3
-			
-			legacy_id = 0
+		country_leader={
+			desc="politics_BLD_reimvan_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
 		}
 	}
 }

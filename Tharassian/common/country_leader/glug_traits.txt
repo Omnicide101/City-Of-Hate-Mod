@@ -59,11 +59,4 @@ leader_traits = {
 		mobilization_speed = 0.1
 	}
 
-	ambitious_noble = {
-		random = no
-		stability_factor = -0.05
-		consumer_goods_factor = -0.025
-		mobilization_speed = 0.1
-	}
-
 }

@@ -144,13 +144,11 @@ technologies = {
 		research_cost = 1
 		
 		on_research_complete = {
-			
-		}
-		
-		modify_building_resources = {
-			building = farm
-			resource = food
-			amount = 1
+			modify_building_resources = {
+				building = farm
+				resource = food
+				amount = 1
+			}
 		}
 		
 		path = {

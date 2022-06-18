@@ -1053,23 +1053,32 @@ country_event = { #Emergency Conclave
 		ai_chance = {
 			factor = 3
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_HELLIRFAST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_HELLIRFAST
+					}
+					has_country_flag = SKA_ai_hellirfast_path_flag
 				}
 				factor = 0
 			}
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_GRIMVALD
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_GRIMVALD
+					}
+					has_country_flag = SKA_ai_grimvald_path_flag
 				}
 				factor = 0
 			}
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_PALMKEVIST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_PALMKEVIST
+					}
+					has_country_flag = SKA_ai_palmkevist_path_flag
 				}
 				factor = 0
 			}
@@ -1081,16 +1090,22 @@ country_event = { #Emergency Conclave
 		ai_chance = {
 			factor = 7
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_CHARTIST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_CHARTIST
+					}
+					has_country_flag = SKA_ai_charter_path_flag
 				}
 				factor = 0
 			}
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_COUNCIL
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_COUNCIL
+					}
+					has_country_flag = SKA_ai_council_path_flag
 				}
 				factor = 0
 			}
@@ -1111,9 +1126,12 @@ country_event = { #Republic options
 		ai_chance = {
 			factor = 3
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_CHARTIST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_CHARTIST
+					}
+					has_country_flag = SKA_ai_charter_path_flag
 				}
 				factor = 0
 			}
@@ -1129,9 +1147,12 @@ country_event = { #Republic options
 		ai_chance = {
 			factor = 1
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_COUNCIL
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_COUNCIL
+					}
+					has_country_flag = SKA_ai_council_path_flag
 				}
 				factor = 0
 			}
@@ -1193,16 +1214,22 @@ country_event = { #Monarch options
 		ai_chance = {
 			factor = 5
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_GRIMVALD
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_GRIMVALD
+					}
+					has_country_flag = SKA_ai_grimvald_path_flag
 				}
 				factor = 0
 			}
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_PALMKEVIST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_PALMKEVIST
+					}
+					has_country_flag = SKA_ai_palmkevit_path_flag
 				}
 				factor = 0
 			}
@@ -1230,16 +1257,22 @@ country_event = { #Monarch options
 		ai_chance = {
 			factor = 3
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_HELLIRFAST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_HELLIRFAST
+					}
+					has_country_flag = SKA_ai_hellirfast_path_flag
 				}
 				factor = 0
 			}
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_PALMKEVIST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_PALMKEVIST
+					}
+					has_country_flag = SKA_ai_palmkevist_path_flag
 				}
 				factor = 0
 			}
@@ -1271,16 +1304,22 @@ country_event = { #Monarch options
 		ai_chance = {
 			factor = 2
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_HELLIRFAST
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_HELLIRFAST
+					}
+					has_country_flag = SKA_ai_hellirfast_path_flag
 				}
 				factor = 0
 			}
 			modifier = {
-				has_game_rule = {
-					rule = SKA_game_plan
-					option = SKA_GRIMVALD
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_GRIMVALD
+					}
+					has_country_flag = SKA_ai_grimvald_path_flag
 				}
 				factor = 0
 			}
@@ -1700,16 +1739,46 @@ country_event = { #Deciding how to restore Vergallheim
 	
 	option = { #
 		name = skaelinger.21.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				OR = {
+					has_government = republic_merchant
+					has_government = puritan
+				}
+			}
+		}
 		set_country_flag = SKA_minor_restoration
 		add_political_power = 50
 	}
 	option = { #
 		name = skaelinger.21.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 3
+				OR = {
+					has_government = monarchy_constitutional
+					has_government = republic_aristocrat
+				}
+			}
+		}
 		set_country_flag = SKA_major_restoration
 		add_war_support = 0.05
 	}
 	option = { #
 		name = skaelinger.21.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 3
+				OR = {
+					has_government = monarchy_absolute
+					has_government = republic_peasant
+				}
+			}
+		}
 		set_country_flag = SKA_diplomatic_restoration
 		add_stability = 0.05
 	}

@@ -1,0 +1,558 @@
+characters={
+	ORD_isvenith_lothinnys={
+		name="Isvenith Lothinnys"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORD/Portrait_ORD_Lothinnys.dds"
+			}
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_lothinnys.dds"
+			}
+		}
+		advisor = {
+			cost = -1 #no
+			removal_cost = -1 #no
+			slot = political_advisor
+			idea_token = isvenith_lothinnys
+			desc = politics_ORD_lothinnys_desc
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				always = yes
+			}
+			available = {
+				has_government = puritan
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				power_behind_throne
+			}
+		}
+	}
+	ORD_galerin_valinthir={
+		name="Galerin Valinthir"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORD/Portrait_ORD_Valinthir.dds"
+			}
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_valinthir.dds"
+			}
+		}
+		country_leader={
+			desc="politics_ORD_valinthir_desc"
+			ideology=monarchy_absolute_ideology
+			traits={ melancholy_struck }
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_ORD_valinthir_desc"
+			ideology=puritan_ideology
+			traits={ melancholy_struck }
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_ORD_valinthir_desc"
+			ideology=theocrat_ideology
+			traits={ melancholy_struck }
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_ORD_valinthir_desc"
+			ideology=monarchy_constitutional_ideology
+			traits={ melancholy_struck }
+			expire="1.1.1.1"
+			id=-1
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = galerin_valinthir
+			desc = ORD_galerin_advisor_desc
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				has_government = monarchy_absolute
+			}
+			available = {
+				has_country_flag = ORD_autumn_debate_done
+				has_completed_focus = ORD_guidance_high_king
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				fathers_embrace
+			}
+		}
+	}
+	ORD_larennis_valinthir={
+		name="Larennis Valinthir"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORD/Portrait_ORD_Valinthir_ii.dds"
+			}
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_valinthir_ii.dds"
+			}
+		}
+		country_leader={
+			desc="politics_ORD_valinthir_ii_desc"
+			ideology=republic_aristocrat_ideology
+			traits={ }
+			expire="1.1.1.1"
+			id=-1
+		}
+		advisor = {
+			cost = -1 #no
+			removal_cost = -1 #no
+			slot = political_advisor
+			idea_token = larennis_valinthir
+			desc = politics_ORD_valinthir_ii_desc
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				always = yes
+			}
+			available = {
+				has_government = monarchy_absolute
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				youthful_princeling
+			}
+		}
+	}
+	ORD_histarine_vernythe={
+		name="Histarine Vernythe"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORD/Portrait_ORD_Vernythe.dds"
+			}
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_vernythe.dds"
+			}
+		}
+		advisor = {
+			cost = -1 #no
+			removal_cost = -1 #no
+			slot = political_advisor
+			idea_token = histarine_vernythe
+			desc = politics_ORD_vernythe_desc
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				always = yes
+			}
+			available = {
+				has_government = theocrat
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				autocratic_ideologue
+			}
+		}
+	}
+	ORD_vernusa_jiseyne={
+		name="Vernusa Jiseyne"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORD/Portrait_ORD_Jiseyne.dds"
+			}
+		}
+		country_leader={
+			desc="politics_ORD_jiseyne_desc"
+			ideology=republic_merchant_ideology
+			traits={ }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	ORD_wenaura_feryd={
+		name="Wenaura Feryd"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORD/Portrait_ORD_Feryd.dds"
+			}
+		}
+		country_leader={
+			desc="politics_ORD_feryd_desc"
+			ideology=republic_peasant_ideology
+			traits={ }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	ORD_thylmar_ghirian={
+		name="Thylmar Ghirian"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_ORD_Ghirian.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_ghirian.dds"
+			}
+		}
+		field_marshal={
+			traits={ ord_league jungle_rat old_guard }
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	ORD_ghylsin_dhysmarin={
+		name="Ghylsin Dhysmarin"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_ORD_Dhysmarin.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_dhysmarin.dds"
+			}
+		}
+		corps_commander={
+			traits={ ord_royalist jungle_rat politically_connected }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	ORD_tholsthyr_ghylauden={
+		name="Tholsthyr Ghylauden"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_ORD_Ghylauden.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_ghylauden.dds"
+			}
+		}
+		corps_commander={
+			traits={ ord_sophist jungle_rat war_hero }
+			skill=2
+			attack_skill=3
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	ORD_alyniss_quynara={
+		name="Alyniss Quynara"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_ORD_Quynara.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_quynara.dds"
+			}
+		}
+		corps_commander={
+			traits={ jungle_rat }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	ORD_mynaud_thurys={
+		name="Mynaud Thurys"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_ORD_Thurys.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_thurys.dds"
+			}
+		}
+		corps_commander={
+			traits={ jungle_rat }
+			skill=1
+			attack_skill=1
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	ORD_thinyria_asrenthyne={
+		name="Thinyria Asrenthyne"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_Ordoria_Asrenthyne.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_asrenthyne.dds"
+			}
+		}
+		field_marshal={
+			traits={ brilliant_strategist infantry_officer infantry_leader commando jungle_rat infantry_expert }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+	ORD_loventha_isthere={
+		name="Loventha Isthere"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_Ordoria_Isthere.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_isthere.dds"
+			}
+		}
+		corps_commander={
+			traits={ inflexible_strategist infantry_officer infantry_leader jungle_rat ambusher }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	ORD_thinstorys_wacthyne={
+		name="Thinstorys Wacthyne"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_Ordoria_Wacthyne.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_wacthyne.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer cavalry_leader commando jungle_rat cavalry_expert }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	ORD_dalyn_rohyis = {
+		name="Dalyn Rohyis"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_rohyis.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = dalyn_rohyis
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				has_government = theocrat
+			}
+			available = {
+				has_country_flag = ORD_autumn_debate_done
+				has_government = puritan
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				old_war_companion
+			}
+		}
+	}
+	ORD_thulyen_gyume = {
+		name="Thulyen Gyume"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_gyume.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = thulyen_gyume
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				has_government = theocrat
+			}
+			available = {
+				has_country_flag = ORD_autumn_debate_done
+				has_government = theocrat
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				guardian_angel
+			}
+		}
+	}
+	ORD_alstora_holynthor = {
+		name="Alstora Holynthor"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_holynthor.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = alstora_holynthor
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				has_government = monarchy_absolute
+			}
+			available = {
+				has_country_flag = ORD_autumn_debate_done
+				has_completed_focus = ORD_loyal_vassals
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				governess_in_exile
+			}
+		}
+	}
+	ORD_yntha = {
+		name="Yntha"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_yntha.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = yntha
+			desc = ORD_yntha_desc
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				has_government = monarchy_absolute
+			}
+			available = {
+				has_country_flag = ORD_autumn_debate_done
+				has_completed_focus = ORD_steadfast_friends
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				moral_firebrand
+			}
+		}
+	}
+	ORD_alwyen = {
+		name="Alwyen"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_alwyen.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = alwyen
+			desc = ORD_alwyen_desc
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				has_government = monarchy_absolute
+			}
+			available = {
+				has_country_flag = ORD_autumn_debate_done
+				has_completed_focus = ORD_steadfast_friends
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				cheerful_optimist
+			}
+		}
+	}
+	ORD_gylar = {
+		name="Gylar"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_gylar.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = gylar
+			desc = ORD_gylar_desc
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				has_government = monarchy_absolute
+			}
+			available = {
+				has_country_flag = ORD_autumn_debate_done
+				has_completed_focus = ORD_steadfast_friends
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				grounded_dealmaker
+			}
+		}
+	}
+	ORD_thrysmere = {
+		name="Thrysmere"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_thrysmere.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = thrysmere
+			desc = ORD_thrysmere_desc
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				has_government = monarchy_absolute
+			}
+			available = {
+				has_country_flag = ORD_autumn_debate_done
+				has_completed_focus = ORD_steadfast_friends
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				awkward_administrator
+			}
+		}
+	}
+}
