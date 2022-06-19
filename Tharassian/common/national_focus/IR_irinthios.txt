@@ -1571,7 +1571,10 @@ focus_tree = {
 
 		available = {
 			NOT = {
-				has_government = puritan
+				OR = {
+					has_government = puritan
+					has_completed_focus = IRI_land_of_mercenaries
+				}
 			}
 		}
 
@@ -1883,7 +1886,10 @@ focus_tree = {
 
 		available = {
 			NOT = {
-				has_government = puritan
+				OR = {
+					has_government = puritan
+					has_completed_focus = IRI_land_of_mercenaries
+				}
 			}
 		}
 
@@ -4839,6 +4845,7 @@ focus_tree = {
 				OR = {
 					has_government = puritan
 					has_government = republic_aristocrat
+					has_completed_focus = IRI_land_of_mercenaries
 				}
 			}
 		}
