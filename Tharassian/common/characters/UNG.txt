@@ -1,104 +1,213 @@
-characters = {
-
-UNG_heinrich_brengst = {
-		name= "Heinrich Brengst"
+characters={
+	UNG_adalina_vlussinger={
+		name="Adalina Vlussinger"
 		portraits={
 			civilian={
-			small="gfx/interface/ideas/ung_brengst.dds"
+				large="gfx/leaders/UNG/Portrait_UNG_Vlussinger.dds"
 			}
 		}
-			advisor={
+		country_leader={
+			desc="politics_UNG_vlussinger_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_UNG_vlussinger_desc"
+			ideology=monarchy_constitutional_ideology
+			traits={ unproven_hochprinzessin }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	UNG_thirza_lichtenfels={
+		name="Thirza Lichtenfels"
+		portraits={
+			civilian={
+				large="gfx/leaders/UNG/Portrait_UNG_Lichtenfels.dds"
+			}
+		}
+		country_leader={
+			desc="politics_UNG_lichtenfels_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	UNG_severin_tauber={
+		name="Severin Tauber"
+		portraits={
+			civilian={
+				large="gfx/leaders/UNG/Portrait_UNG_Tauber.dds"
+			}
+		}
+		country_leader={
+			desc="politics_UNG_tauber_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	UNG_achimer_kümmel={
+		name="Achimer Kümmel"
+		portraits={
+			civilian={
+				large="gfx/leaders/UNG/Portrait_UNG_Kummel.dds"
+			}
+		}
+		country_leader={
+			desc="politics_UNG_kummel_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	UNG_aristokratischer_rat={
+		name="Aristokratischer Rat"
+		portraits={
+			civilian={
+				large="gfx/leaders/UNG/Portrait_UNG_Aristocratic_Council.dds"
+			}
+		}
+		country_leader={
+			desc="politics_UNG_council_desc"
+			ideology=republic_aristocrat_ideology
+			traits={ informal_council }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	UNG_ferdinand_holzer={
+		name="Ferdinand Holzer"
+		portraits={
+			civilian={
+				large="gfx/leaders/UNG/Portrait_UNG_Holzer.dds"
+			}
+		}
+		country_leader={
+			desc="politics_UNG_holzer_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	UNG_heinrich_brengst = {
+		name="Heinrich Brengst"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/ung_brengst.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
 			slot = political_advisor
 			idea_token = heinrich_brengst
 			allowed = {
 				original_tag = UNG
 			}
-		
+			visible = {
+				always = yes
+			}
 			available = {
 				has_government = monarchy_constitutional	
 				has_completed_focus = UNG_gentle_hand
 			}
-			
+			ai_will_do = {
+				factor = 10
+			}
 			traits = {
 				calming_unifier
 			}
 		}
-
-}
-UNG_stella_galde = {
-		name= "Stella Galde"
-		portraits={
-			civilian={
-			small="gfx/interface/ideas/ung_galde.dds"
+	}
+	UNG_stella_galde = {
+		name="Stella Galde"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/ung_galde.dds"
 			}
 		}
-			advisor={
+		advisor = {
+			cost = 150
+			removal_cost = 150
 			slot = political_advisor
 			idea_token = stella_galde
 			allowed = {
 				original_tag = UNG
 			}
-		
+			visible = {
+				always = yes
+			}
 			available = {
 				has_government = monarchy_absolute
 				has_completed_focus = UNG_secret_service
 			}
-			
+			ai_will_do = {
+				factor = 10
+			}
 			traits = {
 				spymaster_general
 			}
 		}
-
-}
-UNG_alko_blau = {
-		name= "Alko Blau"
-		portraits={
-			civilian={
-			small="gfx/interface/ideas/ung_blau.dds"
+	}
+	UNG_alko_blau = {
+		name="Alko Blau"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/ung_blau.dds"
 			}
 		}
-			advisor={
+		advisor = {
+			cost = 150
+			removal_cost = 150
 			slot = political_advisor
 			idea_token = alko_blau
-			
 			allowed = {
 				original_tag = UNG
 			}
-		
+			visible = {
+				always = yes
+			}
 			available = {
 				has_government = republic_aristocrat
 				has_completed_focus = UNG_support_zeitung
 			}
-			
+			ai_will_do = {
+				factor = 10
+			}
 			traits = {
 				foppish_journalist
 			}
 		}
-
-}
-UNG_cecilia_freisler = {
-		name= "Cecilia Freisler"
-		portraits={
-			civilian={
-			small="gfx/interface/ideas/ung_freisler.dds"
+	}
+	UNG_cecilia_freisler = {
+		name="Cecilia Freisler"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/ung_freisler.dds"
 			}
 		}
-			advisor={
+		advisor = {
+			cost = 150
+			removal_cost = 150
 			slot = political_advisor
 			idea_token = cecilia_freisler
-			
 			allowed = {
 				original_tag = UNG
 			}
-		
+			visible = {
+				always = yes
+			}
 			available = {
 				has_completed_focus = UNG_genius_schlosserhelmer
 			}
-			
+			ai_will_do = {
+				factor = 10
+			}
 			traits = {
 				genius_inventor
 			}
 		}
-
-}
+	}
 }
