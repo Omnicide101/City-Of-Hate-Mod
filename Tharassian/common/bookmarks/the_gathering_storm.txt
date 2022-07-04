@@ -35,17 +35,19 @@ bookmarks = {
 			}
 		}
 		
-		"IRI"={
-			history = "IRI_CITY_OF_HATE_DESC"
+		"SKA"={
+			history = "SKA_CITY_OF_HATE_DESC"
 			ideology = monarchy_constitutional
 			ideas = {
-				IRI_Irinthios_Will_Rise_Again
-				IRI_topheavy_military
+				SKA_food_imports
+				SKA_penal_levy
+				SKA_memories_of_vergallheim
+				SKA_destabilization_caste_system
 			}
 			focuses = {
-				IRI_the_king_and_his_many_faces
-				IRI_the_rightful_dynasty_returns
-				IRI_reclaiming_burdvin
+				SKA_hellirfasts_final_decree
+				SKA_peace_for_the_dwarfes
+				SKA_sun_beneath_stone
 			}
 		}
 		
@@ -95,23 +97,6 @@ bookmarks = {
 				SNF_southern_reclamation
 				SNF_demand_noble_surrender
 				SNF_support_rural_farms
-			}
-		}
-
-		"SKA"={
-			history = "SKA_CITY_OF_HATE_DESC"
-			ideology = monarchy_constitutional
-			minor = yes
-			ideas = {
-				SKA_food_imports
-				SKA_penal_levy
-				SKA_memories_of_vergallheim
-				SKA_destabilization_caste_system
-			}
-			focuses = {
-				SKA_hellirfasts_final_decree
-				SKA_peace_for_the_dwarfes
-				SKA_sun_beneath_stone
 			}
 		}
 		
