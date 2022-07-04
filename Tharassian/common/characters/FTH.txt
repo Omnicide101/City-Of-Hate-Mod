@@ -1,0 +1,92 @@
+characters={
+	FTH_alois_ehrenbaum={
+		name="Alois Ehrenbaum"
+		portraits={
+			civilian={
+				large="gfx/leaders/FTH/Portrait_FTH_Ehrenbaum.dds"
+			}
+		}
+		country_leader={
+			desc="politics_FTH_ehrenbaum_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_FTH_ehrenbaum_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	FTH_petrus_rothenstein={
+		name="Petrus Rothenstein"
+		portraits={
+			civilian={
+				large="gfx/leaders/FTH/Portrait_FTH_Rothenstein.dds"
+			}
+		}
+		country_leader={
+			desc="politics_FTH_rothenstein_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	FTH_seraphine_bodenfeld={
+		name="Seraphine Bodenfeld"
+		portraits={
+			civilian={
+				large="gfx/leaders/FTH/Portrait_FTH_Bodenfeld.dds"
+			}
+		}
+		country_leader={
+			desc="politics_FTH_bodenfeld_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	FTH_lucie_gartner={
+		name="Lucie Gartner"
+		portraits={
+			civilian={
+				large="gfx/leaders/FTH/Portrait_FTH_Gartner.dds"
+			}
+		}
+		country_leader={
+			desc="politics_FTH_gartner_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	FTH_nicola_schauerte={
+		name="Nicola Schauerte"
+		portraits={
+			civilian={
+				large="gfx/leaders/FTH/Portrait_FTH_Schauerte.dds"
+			}
+		}
+		country_leader={
+			desc="politics_FTH_schauerte_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	FTH_dorothea_feininger={
+		name="Dorothea Feininger"
+		portraits={
+			civilian={
+				large="gfx/leaders/FTH/Portrait_FTH_Feininger.dds"
+			}
+		}
+		country_leader={
+			desc="politics_FTH_feininger_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

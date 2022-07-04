@@ -1,0 +1,94 @@
+characters={
+	TAR_damian_lefuge={
+		name="Damian Lefuge"
+		portraits={
+			civilian={
+				large="gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+			}
+		}
+		country_leader={
+			desc="politics_TAR_lefuge_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	TAR_tinsie_leve={
+		name="Tinsie Leve"
+		portraits={
+			civilian={
+				large="gfx/leaders/SUL/Portrait_Sulfurisle_Generic_land_2.dds"
+			}
+		}
+		country_leader={
+			ideology=monarchy_absolute_ideology
+			expire="905.1.1.12"
+			id=-1
+		}
+	}
+	TAR_janthie_danga={
+		name="Janthie Danga"
+		portraits={
+			civilian={
+				large="gfx/leaders/SUL/Portrait_Sulfurisle_Generic_navy_1.dds"
+			}
+		}
+		country_leader={
+			ideology=monarchy_constitutional_ideology
+			expire="905.1.1.12"
+			id=-1
+		}
+	}
+	TAR_dannis_lorpo={
+		name="Dannis Lorpo"
+		portraits={
+			civilian={
+				large="gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_peasant_ideology
+			expire="906.1.1.12"
+			id=-1
+		}
+	}
+	TAR_ingie_smith={
+		name="Ingie Smith"
+		portraits={
+			civilian={
+				large="gfx/leaders/SUL/Portrait_Sulfurisle_Generic_navy_2.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_aristocrat_ideology
+			expire="907.1.1.12"
+			id=-1
+		}
+	}
+	TAR_jed_stoker={
+		name="Jed Stoker"
+		portraits={
+			civilian={
+				large="gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+			}
+		}
+		country_leader={
+			ideology=theocrat_ideology
+			expire="907.1.1.12"
+			id=-1
+		}
+	}
+	TAR_tinsie_handa={
+		name="Tinsie Handa"
+		portraits={
+			civilian={
+				large="gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_2.dds"
+			}
+		}
+		country_leader={
+			ideology=puritan_ideology
+			expire="892.1.1.12"
+			id=-1
+		}
+	}
+}

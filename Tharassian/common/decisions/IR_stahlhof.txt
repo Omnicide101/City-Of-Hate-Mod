@@ -484,6 +484,12 @@ STA_a_convincing_act_category = {
 			}
 		}
 		
+		target_trigger = {
+			FROM = {
+				state = 96
+			}
+		}
+		
 		state_target = yes
 		
 		on_map_mode = map_only
@@ -573,6 +579,12 @@ STA_a_convincing_act_category = {
 		visible = {
 			NOT = {
 				owns_state = 194
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 194
 			}
 		}
 		
@@ -669,6 +681,12 @@ STA_a_convincing_act_category = {
 			}
 		}
 		
+		target_trigger = {
+			FROM = {
+				state = 198
+			}
+		}
+		
 		state_target = yes
 
 		on_map_mode = map_only
@@ -762,6 +780,12 @@ STA_a_convincing_act_category = {
 			}
 		}
 		
+		target_trigger = {
+			FROM = {
+				state = 195
+			}
+		}
+		
 		state_target = yes
 		
 		on_map_mode = map_only
@@ -852,6 +876,12 @@ STA_a_convincing_act_category = {
 		visible = {
 			NOT = {
 				owns_state = 193
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 193
 			}
 		}
 		
@@ -949,6 +979,12 @@ STA_a_convincing_act_category = {
 			}
 		}
 		
+		target_trigger = {
+			FROM = {
+				state = 105
+			}
+		}
+		
 		state_target = yes
 	
 		on_map_mode = map_only
@@ -1040,6 +1076,12 @@ STA_a_convincing_act_category = {
 		visible = {
 			NOT = {
 				owns_state = 106
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 106
 			}
 		}
 		
@@ -1137,6 +1179,12 @@ STA_a_convincing_act_category = {
 			}
 		}
 		
+		target_trigger = {
+			FROM = {
+				state = 104
+			}
+		}
+		
 		state_target = yes
 		
 		on_map_mode = map_only
@@ -1227,6 +1275,12 @@ STA_a_convincing_act_category = {
 		visible = {
 			NOT = {
 				owns_state = 107
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 107
 			}
 		}
 		
@@ -1323,6 +1377,12 @@ STA_a_convincing_act_category = {
 		visible = {
 			NOT = {
 				owns_state = 107
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 107
 			}
 		}
 		

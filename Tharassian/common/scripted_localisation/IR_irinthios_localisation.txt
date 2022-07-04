@@ -1,0 +1,202 @@
+defined_text = { # Country
+	name = GetCaiStrategosLoyalty
+	text = { 
+		trigger = {
+			check_variable = { IRI_cai_loyalty = 0 }
+		}
+		localization_key = IRI_cai_neutral
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_cai_loyalty = 1 }
+		}
+		localization_key = IRI_cai_chairophon
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_cai_loyalty = -1 }
+		}
+		localization_key = IRI_cai_cinyras
+	}
+}
+defined_text = { # Country
+	name = GetTionStrategosLoyalty
+	text = { 
+		trigger = {
+			check_variable = { IRI_tion_loyalty = 0 }
+		}
+		localization_key = IRI_tion_neutral
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_tion_loyalty = 1 }
+		}
+		localization_key = IRI_tion_chairophon
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_tion_loyalty = -1 }
+		}
+		localization_key = IRI_tion_cinyras
+	}
+}
+defined_text = { # Country
+	name = GetSasnaiStrategosLoyalty
+	text = { 
+		trigger = {
+			check_variable = { IRI_sasnai_loyalty = 0 }
+		}
+		localization_key = IRI_sasnai_neutral
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_sasnai_loyalty = 1 }
+		}
+		localization_key = IRI_sasnai_chairophon
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_sasnai_loyalty = -1 }
+		}
+		localization_key = IRI_sasnai_cinyras
+	}
+}
+defined_text = { # Country
+	name = GetTykinthosStrategosLoyalty
+	text = { 
+		trigger = {
+			check_variable = { IRI_tykinthos_loyalty = 0 }
+		}
+		localization_key = IRI_tykinthos_neutral
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_tykinthos_loyalty = 1 }
+		}
+		localization_key = IRI_tykinthos_chairophon
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_tykinthos_loyalty = -1 }
+		}
+		localization_key = IRI_tykinthos_cinyras
+	}
+}
+defined_text = { # Country
+	name = GetTofnosStrategosLoyalty
+	text = { 
+		trigger = {
+			check_variable = { IRI_tofnos_loyalty = 0 }
+		}
+		localization_key = IRI_tofnos_neutral
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_tofnos_loyalty = 1 }
+		}
+		localization_key = IRI_tofnos_chairophon
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_tofnos_loyalty = -1 }
+		}
+		localization_key = IRI_tofnos_cinyras
+	}
+}
+defined_text = { # Country
+	name = GetCyttraStrategosLoyalty
+	text = { 
+		trigger = {
+			check_variable = { IRI_cyttra_loyalty = 0 }
+		}
+		localization_key = IRI_cyttra_neutral
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_cyttra_loyalty = 1 }
+		}
+		localization_key = IRI_cyttra_chairophon
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_cyttra_loyalty = -1 }
+		}
+		localization_key = IRI_cyttra_cinyras
+	}
+}
+defined_text = { # Country
+	name = GetMarakaiStrategosLoyalty
+	text = { 
+		trigger = {
+			check_variable = { IRI_marakai_loyalty = 0 }
+		}
+		localization_key = IRI_marakai_neutral
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_marakai_loyalty = 1 }
+		}
+		localization_key = IRI_marakai_chairophon
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_marakai_loyalty = -1 }
+		}
+		localization_key = IRI_marakai_cinyras
+	}
+}
+defined_text = { # Country
+	name = GetTikynthaiosStrategosLoyalty
+	text = { 
+		trigger = {
+			check_variable = { IRI_tikynthaios_loyalty = 0 }
+		}
+		localization_key = IRI_tikynthaios_neutral
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_tikynthaios_loyalty = 1 }
+		}
+		localization_key = IRI_tikynthaios_chairophon
+	}
+	text = { 
+		trigger = {
+			check_variable = { IRI_tikynthaios_loyalty = -1 }
+		}
+		localization_key = IRI_tikynthaios_cinyras
+	}
+}
+defined_text = { # Country
+	name = GetCinyrasReturnText
+	text = { 
+		trigger = {
+			has_government = republic_aristocrat
+		}
+		localization_key = IRI_cinyras_holding_on
+	}
+	text = { 
+		trigger = {
+			NOT = {
+				has_government = republic_aristocrat
+			}
+		}
+		localization_key = IRI_cinyrasreturn
+	}
+}
+defined_text = { # Country
+	name = GetCinyrasReturnDesc
+	text = { 
+		trigger = {
+			has_government = republic_aristocrat
+		}
+		localization_key = IRI_cinyras_holding_on_desc
+	}
+	text = { 
+		trigger = {
+			NOT = {
+				has_government = republic_aristocrat
+			}
+		}
+		localization_key = IRI_cinyrasreturn_desc
+	}
+}

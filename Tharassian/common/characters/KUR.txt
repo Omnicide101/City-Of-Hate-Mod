@@ -1,0 +1,84 @@
+characters={
+	KUR_hulren_gulthur={
+		name="Hulren Gulthur"
+		portraits={
+			civilian={
+				large="gfx/leaders/KUR/Portrait_KUR_Gulthur.dds"
+			}
+		}
+		country_leader={
+			desc="politics_KUR_gulthur_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_KUR_gulthur_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_KUR_gulthur_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	KUR_kuurl_morgs={
+		name="Kuurl Morgs"
+		portraits={
+			civilian={
+				large="gfx/leaders/KUR/Portrait_KUR_Morgs.dds"
+			}
+		}
+		country_leader={
+			desc="politics_KUR_morgs_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	KUR_arulg_hinglur={
+		name="Arulg Hinglur"
+		portraits={
+			civilian={
+				large="gfx/leaders/KUR/Portrait_KUR_Hinglur.dds"
+			}
+		}
+		country_leader={
+			desc="politics_KUR_hinglur_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	KUR_lorgen_valger={
+		name="Lorgen Valger"
+		portraits={
+			civilian={
+				large="gfx/leaders/KUR/Portrait_KUR_Valger.dds"
+			}
+		}
+		country_leader={
+			desc="politics_KUR_valger_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	KUR_buugor_hisgen={
+		name="Buugor Hisgen"
+		portraits={
+			civilian={
+				large="gfx/leaders/KUR/Portrait_KUR_Hisgen.dds"
+			}
+		}
+		country_leader={
+			desc="politics_KUR_hisgen_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

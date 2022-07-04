@@ -30,6 +30,18 @@
 
 ###FORCE AI TO DO MORE NAVAL INVASIONS###
 
+#Make them more likely in general
+invade_navally_pls = {
+	enable = {
+		always = yes
+	}
+	
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 50 #Probably hella overtuned lol
+	}
+}
+
 #Northern Plains
 
 invade_GMR = {

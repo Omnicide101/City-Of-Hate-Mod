@@ -7,9 +7,22 @@ state={
 	}
 	manpower=1
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=city
 	history={
-		owner = XXX
-		add_core_of = XXX
+		owner = TRX
+		add_core_of = TRX
+		
+		victory_points = {
+			4088 30
+		}
+		victory_points = {
+			938 8
+		}
+		
+		buildings = {
+			infrastructure = 3
+			farm = 3
+			workshop = 2
+		}
 	}
 }

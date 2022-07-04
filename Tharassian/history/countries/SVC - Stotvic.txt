@@ -2,6 +2,15 @@
 
 set_oob = "PRK_empty"
 
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		perkav_raiders_naval = 1
+	}
+}
+
 set_technology ={
 	tech_tribal_pride = 1
 	tech_wheel = 1

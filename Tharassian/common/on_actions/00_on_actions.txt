@@ -12,6 +12,60 @@
 	#	}
 	#}
 	
+	#Give heads up about Adventurers (Operatives)
+	#Should only fire once
+	on_operative_recruited = {
+		effect = {
+			FROM = {
+				country_event = ai.2
+			}
+		}
+	}
+	
+	#Sets Adventurers (Operatives) to have classes
+	#THIS is the operative, FROM the country that created them
+	on_operative_created = {
+		effect = {
+			random_list = {
+				45 = {
+					THIS = {
+						add_trait = {
+							trait = warrior_class
+						}
+					}
+				}
+				15 = {
+					THIS = {
+						add_trait = {
+							trait = barbarian_class
+						}
+					}
+				}
+				10 = {
+					THIS = {
+						add_trait = {
+							trait = priest_class
+						}
+					}
+				}
+				25 = {
+					THIS = {
+						add_trait = {
+							trait = thief_class
+						}
+					}
+				}
+				5 = {
+					THIS = {
+						add_trait = {
+							trait = wizard_class
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	###STATE MODIFIERS WITH COUNTRY SCOPES###
 	#This sets hidden ideas that conflate with 'state' modifiers that actually affect the entire country scope
 	#ROOT is new controller, FROM is old controller, FROM.FROM is state ID.
@@ -19,7 +73,9 @@
 		effect = {
 			if = {
 				limit = {
-					FROM.FROM = 111
+					FROM.FROM = {
+						state = 111
+					}
 					ORD = {
 						has_completed_focus = ORD_improve_varinthia
 					}
@@ -33,7 +89,9 @@
 			}
 			if = {
 				limit = {
-					FROM.FROM = 85
+					FROM.FROM = {
+						state = 85
+					}
 					ORD = {
 						has_completed_focus = ORD_improve_istaroth
 					}
@@ -47,7 +105,9 @@
 			}
 			if = {
 				limit = {
-					FROM.FROM = 112
+					FROM.FROM = {
+						state = 112
+					}
 					ORD = {
 						has_completed_focus = ORD_improve_ythelmare
 						NOT = {
@@ -64,7 +124,9 @@
 			}
 			if = {
 				limit = {
-					FROM.FROM = 112
+					FROM.FROM = {
+						state = 112
+					}
 					ORD = {
 						has_completed_focus = ORD_ythelmare_slave_market
 					}
@@ -78,7 +140,9 @@
 			}
 			if = {
 				limit = {
-					FROM.FROM = 84
+					FROM.FROM = {
+						state = 84
+					}
 					ORD = {
 						has_completed_focus = ORD_improve_vuid
 					}
@@ -373,7 +437,7 @@
 						}
 					}
 					if = {
-						limit {
+						limit = {
 							check_variable = {
 								STLRD_state_control_var > 4
 								STLRD_state_control_var < 10
@@ -385,7 +449,7 @@
 						}
 					}
 					if = {
-						limit {
+						limit = {
 							check_variable = {
 								STLRD_state_control_var > 9
 								STLRD_state_control_var < 15
@@ -397,7 +461,7 @@
 						}
 					}
 					if = {
-						limit {
+						limit = {
 							check_variable = {
 								STLRD_state_control_var > 14
 								STLRD_state_control_var < 20
@@ -409,7 +473,7 @@
 						}
 					}
 					if = {
-						limit {
+						limit = {
 							check_variable = {
 								STLRD_state_control_var > 19
 							}
@@ -420,7 +484,7 @@
 						}
 					}
 					if = {
-						limit {
+						limit = {
 							check_variable = {
 								STLRD_state_control_var > 25
 							}
@@ -433,7 +497,7 @@
 						add_ideas = STLRD_dominated
 					}
 					if = {
-						limit {
+						limit = {
 							check_variable = {
 								STLRD_state_control_var > 25
 							}
@@ -503,7 +567,7 @@
 							remove_ideas = STLRD_control_5
 						}
 						if = {
-							limit {
+							limit = {
 								check_variable = {
 									STLRD_state_control_var > 0
 									STLRD_state_control_var < 5
@@ -520,7 +584,7 @@
 							remove_ideas = STLRD_control_5
 						}
 						if = {
-							limit {
+							limit = {
 								check_variable = {
 									STLRD_state_control_var > 4
 									STLRD_state_control_var < 10
@@ -537,7 +601,7 @@
 							remove_ideas = STLRD_control_5
 						}
 						if = {
-							limit {
+							limit = {
 								check_variable = {
 									STLRD_state_control_var > 9
 									STLRD_state_control_var < 15
@@ -554,7 +618,7 @@
 							remove_ideas = STLRD_control_5
 						}
 						if = {
-							limit {
+							limit = {
 								check_variable = {
 									STLRD_state_control_var > 14
 									STLRD_state_control_var < 20

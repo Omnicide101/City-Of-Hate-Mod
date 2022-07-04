@@ -2,6 +2,41 @@ spriteTypes = {
 
 	#### Mod-specific goal icons
 	SpriteType = {
+	name = "GFX_focus_ord_lothinnys"
+	texturefile = "gfx/interface/goals/focus_ord_lothinnys.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ord_vernythe"
+	texturefile = "gfx/interface/goals/focus_ord_vernythe.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ord_holynthor"
+	texturefile = "gfx/interface/goals/focus_ord_holynthor.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ord_galerin"
+	texturefile = "gfx/interface/goals/focus_ord_galerin.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ord_larennis"
+	texturefile = "gfx/interface/goals/focus_ord_larennis.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ung_empower_nobles"
+	texturefile = "gfx/interface/goals/focus_ung_empower_nobles.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ord_dare_dream"
+	texturefile = "gfx/interface/goals/focus_ord_dare_dream.dds"
+	}
+	
+	SpriteType = {
 	name = "GFX_focus_generic_tech_beat_magic"
 	texturefile = "gfx/interface/goals/focus_generic_tech_beat_magic.dds"
 	}

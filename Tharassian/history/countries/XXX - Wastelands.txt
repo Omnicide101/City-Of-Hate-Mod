@@ -32,14 +32,8 @@ set_popularities = {
 	puritan = 0
 }
 
+recruit_character = XXX__
+
 add_ideas = {
 	hidden_all_seeing_observer
-}
-
-create_country_leader = {
-	name = " "
-	picture = "gfx/leaders/Portrait_XXX.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	}
 }

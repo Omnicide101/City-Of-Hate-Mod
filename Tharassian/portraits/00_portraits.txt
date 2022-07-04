@@ -21,7 +21,215 @@ default = {
 	}
 }
 
+TRX = {
+	army = {
+		male = {
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+		}
+		female = {
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds"
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds"
+		}
+	}
+	
+	navy = {
+		male = {
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds"
+		}
+		female = {
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_2.dds"
+		}
+	}
+	political = {
+			puritan = {
+			male = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds"
+			}
+			female = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_2.dds"
+			}
+		}
+		monarchy_absolute = {
+			male = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds"
+			}
+			female = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_2.dds"
+			}
+		}
+		monarchy_constitutional = {
+			male = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds"
+			}
+			female = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_2.dds"
+			}
+		}
+		republic_aristocrat = {
+			male = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds"
+			}
+			female = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_2.dds"
+			}
+		}
+		republic_peasant = {
+			male = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds"
+			}
+			female = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_2.dds"
+			}
+		}
+		republic_merchant = {
+			male = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds"
+			}
+			female = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_2.dds"
+			}
+		}
+		theocrat = {
+			male = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds"
+			}
+			female = {
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds"
+				"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_2.dds"
+			}
+		}
+	}
+}
+
 NBI = {
+	
+	operative = {
+		male = {
+			"gfx/leaders/BLD/Portrait_Bilodya_Generic_land_1.dds"
+			"gfx/leaders/BLD/Portrait_Bilodya_Generic_land_2.dds"
+			"gfx/leaders/BLD/Portrait_Bilodya_Generic_land_3.dds"
+			"gfx/leaders/BLD/Portrait_Bilodya_Generic_land_4.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_6.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_1.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_2.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_4.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_5.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_6.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_7.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_8.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_1.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_2.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_3.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_4.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_5.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_6.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_7.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_8.dds"
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds"
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds"
+			"gfx/leaders/RTH/Portrait_Rthauiaur_Generic_land_1.dds"
+			"gfx/leaders/RTH/Portrait_Rthauiaur_Generic_land_2.dds"
+			"gfx/leaders/RTH/Portrait_Rthauiaur_Generic_land_3.dds"
+			"gfx/leaders/RTH/Portrait_Rthauiaur_Generic_land_4.dds"
+			"gfx/leaders/LIR/Portrait_Lirothlind_Generic_land_1.dds"
+			"gfx/leaders/LIR/Portrait_Lirothlind_Generic_land_2.dds"
+			"gfx/leaders/LIR/Portrait_Lirothlind_Generic_land_3.dds"
+			"gfx/leaders/LIR/Portrait_Lirothlind_Generic_land_4.dds"
+			"gfx/leaders/TLA/Portrait_Tlarthingia_Generic_land_1.dds"
+			"gfx/leaders/TLA/Portrait_Tlarthingia_Generic_land_2.dds"
+			"gfx/leaders/SUL/Portrait_Sulfurisle_Generic_land_1.dds"
+			"gfx/leaders/SUL/Portrait_Sulfurisle_Generic_land_2.dds"
+			"gfx/leaders/KUR/Portrait_Kurgur_Generic_land_1.dds"
+			"gfx/leaders/KUR/Portrait_Kurgur_Generic_land_2.dds"
+			"gfx/leaders/KUR/Portrait_Kurgur_Generic_land_3.dds"
+			"gfx/leaders/KUR/Portrait_Kurgur_Generic_land_4.dds"
+		}
+		female = {
+			"gfx/leaders/BLD/Portrait_Bilodya_Generic_land_1.dds"
+			"gfx/leaders/BLD/Portrait_Bilodya_Generic_land_2.dds"
+			"gfx/leaders/BLD/Portrait_Bilodya_Generic_land_3.dds"
+			"gfx/leaders/BLD/Portrait_Bilodya_Generic_land_4.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_6.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_1.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_2.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_4.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_5.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_6.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_7.dds"
+			"gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_8.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_1.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_2.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_3.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_4.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_5.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_6.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_7.dds"
+			"gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_8.dds"
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds"
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds"
+			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds"
+			"gfx/leaders/RTH/Portrait_Rthauiaur_Generic_land_1.dds"
+			"gfx/leaders/RTH/Portrait_Rthauiaur_Generic_land_2.dds"
+			"gfx/leaders/RTH/Portrait_Rthauiaur_Generic_land_3.dds"
+			"gfx/leaders/RTH/Portrait_Rthauiaur_Generic_land_4.dds"
+			"gfx/leaders/LIR/Portrait_Lirothlind_Generic_land_1.dds"
+			"gfx/leaders/LIR/Portrait_Lirothlind_Generic_land_2.dds"
+			"gfx/leaders/LIR/Portrait_Lirothlind_Generic_land_3.dds"
+			"gfx/leaders/LIR/Portrait_Lirothlind_Generic_land_4.dds"
+			"gfx/leaders/TLA/Portrait_Tlarthingia_Generic_land_1.dds"
+			"gfx/leaders/TLA/Portrait_Tlarthingia_Generic_land_2.dds"
+			"gfx/leaders/SUL/Portrait_Sulfurisle_Generic_land_1.dds"
+			"gfx/leaders/SUL/Portrait_Sulfurisle_Generic_land_2.dds"
+			"gfx/leaders/KUR/Portrait_Kurgur_Generic_land_1.dds"
+			"gfx/leaders/KUR/Portrait_Kurgur_Generic_land_2.dds"
+			"gfx/leaders/KUR/Portrait_Kurgur_Generic_land_3.dds"
+			"gfx/leaders/KUR/Portrait_Kurgur_Generic_land_4.dds"
+		}
+	}
+	
 	army = {
 		male = {
 			"gfx/leaders/BLD/Portrait_Bilodya_Generic_land_1.dds"
@@ -222,6 +430,16 @@ NBI = {
 }
 
 TAR = {
+
+	operative = {
+		male = {
+			"GFX_portrait_operative_unknown"
+		}
+		female = {
+			"GFX_portrait_operative_unknown"
+		}
+	}
+	
 	army = {
 		male = {
 			"gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
@@ -362,6 +580,16 @@ TAR = {
 }
 
 GOW = {
+
+	operative = {
+		male = {
+			"GFX_portrait_operative_unknown"
+		}
+		female = {
+			"GFX_portrait_operative_unknown"
+		}
+	}
+	
 	army = {
 		male = {
 			"gfx/leaders/RKS/Portrait_Rooks_Generic_land_1.dds"
@@ -454,6 +682,16 @@ GOW = {
 }
 
 ITH = {
+	
+	operative = {
+		male = {
+			"GFX_portrait_operative_unknown"
+		}
+		female = {
+			"GFX_portrait_operative_unknown"
+		}
+	}
+	
 	army = {
 		male = {
 			"gfx/leaders/RKS/Portrait_Rooks_Generic_land_1.dds"
@@ -546,6 +784,16 @@ ITH = {
 }
 
 DIA = {
+	
+	operative = {
+		male = {
+			"GFX_portrait_operative_unknown"
+		}
+		female = {
+			"GFX_portrait_operative_unknown"
+		}
+	}
+	
 	army = {
 		male = {
 			"gfx/leaders/RKS/Portrait_Rooks_Generic_land_1.dds"
@@ -638,6 +886,16 @@ DIA = {
 }
 
 RKS = {
+
+	operative = {
+		male = {
+			"GFX_portrait_operative_unknown"
+		}
+		female = {
+			"GFX_portrait_operative_unknown"
+		}
+	}
+
 	army = {
 		male = {
 			"gfx/leaders/RKS/Portrait_Rooks_Generic_land_1.dds"
@@ -730,6 +988,16 @@ RKS = {
 }
 
 BLD = {
+
+	operative = {
+		male = {
+			"GFX_portrait_operative_unknown"
+		}
+		female = {
+			"GFX_portrait_operative_unknown"
+		}
+	}
+
 	army = {
 		male = {
 			"gfx/leaders/BLD/Portrait_Bilodya_Generic_land_1.dds"
@@ -838,6 +1106,23 @@ BLD = {
 }
 
 ORB = {
+
+	operative = {
+		male = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
+			}
+			female = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_6.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
+			}
+	}
+
 	army = {
 		male = {
 			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
@@ -970,6 +1255,23 @@ ORB = {
 }
 
 YTH = {
+
+	operative = {
+		male = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
+			}
+			female = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_6.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
+			}
+	}
+
 	army = {
 		male = {
 			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
@@ -1102,6 +1404,23 @@ YTH = {
 }
 
 VAR = {
+
+	operative = {
+		male = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
+			}
+			female = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_6.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
+			}
+	}
+
 	army = {
 		male = {
 			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
@@ -1234,6 +1553,23 @@ VAR = {
 }
 
 VUD = {
+	
+	operative = {
+		male = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
+			}
+			female = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_6.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
+			}
+	}
+	
 	army = {
 		male = {
 			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
@@ -1366,6 +1702,23 @@ VUD = {
 }
 
 IST = {
+
+	operative = {
+		male = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
+			}
+			female = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_6.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
+			}
+	}
+
 	army = {
 		male = {
 			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
@@ -1498,6 +1851,7 @@ IST = {
 }
 
 EOR = {
+
 	army = {
 		male = {
 			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
@@ -1630,6 +1984,23 @@ EOR = {
 }
 
 ORD = {
+
+	operative = {
+		male = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
+			}
+			female = {
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_6.dds"
+				"gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
+			}
+	}
+
 	army = {
 		male = {
 			"gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"

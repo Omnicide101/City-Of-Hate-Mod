@@ -78,6 +78,18 @@ set_popularities = {
 	puritan = 1
 }
 
+recruit_character = UNG_adalina_vlussinger
+recruit_character = UNG_thirza_lichtenfels
+recruit_character = UNG_severin_tauber
+recruit_character = UNG_achimer_kümmel
+recruit_character = UNG_aristokratischer_rat
+recruit_character = UNG_ferdinand_holzer
+recruit_character = UNG_heinrich_brengst
+recruit_character = UNG_stella_galde
+recruit_character = UNG_alko_blau
+recruit_character = UNG_cecilia_freisler
+
+
 add_ideas = {
 	UNG_trade_realm
 	human_country

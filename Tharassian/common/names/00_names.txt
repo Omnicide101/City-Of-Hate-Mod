@@ -40,6 +40,24 @@ NBI = {
 }
 
 ###############################################################
+# Thryxvanor
+###############################################################
+TRX = {
+	male = {
+		names = {
+		 	Dalian Gharias Anxian Cilder Thorrom Ulider Aghaxan Laxare Thammax Palarix Juvix Soldarax
+		}
+	}
+	female = {
+		names = { Ghira Thila Soldara Palara Jomena Thorrana Hulaxa Cestama Rexala }
+	}
+	
+	surnames = { 
+		Ghiax Thoriax Delax Polamax Ghuriax Welderax Kildorax "the Noble" "the Genteel" "the Chivalrous"
+	}
+}
+
+###############################################################
 # Getaland
 ###############################################################
 GET = {

@@ -93,6 +93,15 @@ set_popularities = {
 	puritan = 3
 }
 
+recruit_character = ARK_jithe_lafdaren
+recruit_character = ARK_loster_ignawyne
+recruit_character = ARK_falstinnion_resmayer
+recruit_character = ARK_vignatius_harthennion
+recruit_character = ARK_bhalus_ianin
+recruit_character = ARK_althwyne_serigan
+recruit_character = ARK_hautlir_polthore
+
+
 add_ideas = {
 	human_country
 	arkanimism_religion
@@ -115,67 +124,4 @@ give_military_access = WSZ
 add_opinion_modifier = {
 	target = SVT
 	modifier = bitter_rivals
-}
-
-create_country_leader = {
-	name = "Jithe Lafdaren"
-	desc = "politics_ARK_lafdaren_desc"
-	picture = "gfx/leaders/ARK/Portrait_ARK_Lafdaren.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Loster Ignawyne"
-	desc = "politics_ARK_ignawyne_desc"
-	picture = "gfx/leaders/ARK/Portrait_ARK_Ignawyne.dds"
-	ideology = republic_peasant_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Vignatius Harthennion"
-	desc = "politics_ARK_harthennion_desc"
-	picture = "gfx/leaders/ARK/Portrait_ARK_Harthennion.dds"
-	ideology = puritan_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Falstinnion Resmayer"
-	desc = "politics_ARK_resmayer_desc"
-	picture = "gfx/leaders/ARK/Portrait_ARK_Resmayer.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Bhalus Ianin"
-	desc = "politics_ARK_ianin_desc"
-	picture = "gfx/leaders/ARK/Portrait_ARK_Ianin.dds"
-	ideology = theocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Althwyne Serigan"
-	desc = "politics_ARK_serigan_desc"
-	picture = "gfx/leaders/ARK/Portrait_ARK_Serigan.dds"
-	ideology = republic_aristocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Hautlir Polthore"
-	desc = "politics_ARK_polthore_desc"
-	picture = "gfx/leaders/ARK/Portrait_ARK_Polthore.dds"
-	ideology = republic_merchant_ideology
-	traits = {
-	}
 }

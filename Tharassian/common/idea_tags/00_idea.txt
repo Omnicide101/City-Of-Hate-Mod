@@ -28,6 +28,18 @@ idea_categories = {
 		slot = economy
 		slot = country_race
 		slot = patron_deity
+		
+		ledger = civilian
+		
+		cost = 150
+		removal_cost = 0
+	}
+	
+	advisors = {
+		character_slot = political_advisor
+		character_slot = political_advisor
+		character_slot = political_advisor
+		character_slot = political_advisor
 		character_slot = political_advisor
 		
 		ledger = civilian
@@ -37,8 +49,8 @@ idea_categories = {
 	}
 	
 	research_production = {
-		slot = tank_manufacturer
-		slot = naval_manufacturer
+		slot = mercenary_company
+		slot = status_mercenaries
 		slot = aircraft_manufacturer
 		slot = materiel_manufacturer
 		slot = industrial_concern

@@ -64,6 +64,15 @@ set_popularities = {
 	puritan = 3
 }
 
+recruit_character = RTH_alucien_derathur
+recruit_character = RTH_kastyne_solverin
+recruit_character = RTH_farnaur_ithinis
+recruit_character = RTH_ternise_locthorin
+recruit_character = RTH_sacrene_hinassus
+recruit_character = RTH_burthys_vrinter
+recruit_character = RTH_gerdaurin_varinnis
+recruit_character = RTH_alyssyna_lavynthis
+
 add_ideas = {
 	RTH_disorganized_revolution
 	RTH_inexperienced_commanders

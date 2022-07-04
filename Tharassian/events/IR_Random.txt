@@ -488,12 +488,12 @@ country_event = {#Disease!
 		add_political_power = -75
 		add_stability = -0.03
 		custom_effect_tooltip = RND_quarantine_tt
-		random_owned_state = {
-			limit = {
-				has_state_flag = RND_disease_state_flag
-			}
-			add_dynamic_modifier = quarantined_region
-		}
+		#random_owned_state = {
+		#	limit = {
+		#		has_state_flag = RND_disease_state_flag
+		#	}
+		#	add_dynamic_modifier = quarantined_region
+		#}
 	}
 	
 	option = {#We'll be fine
@@ -527,5 +527,143 @@ country_event = {#Clear 'recent random event flag'
 	
 	option = {
 		clr_country_flag = RND_recent_random_event
+	}
+}
+
+country_event = {#Roaming monster!
+	id = random.12
+	title = random.12.t
+	desc = random.12.d
+	#picture = GFX_report_event_canada_treaty
+	
+	trigger = {
+		has_dlc = "La Resistance"
+		
+		NOT = {
+			has_country_flag = RND_recent_random_event
+			any_owned_state = {
+				has_state_flag = RND_roaming_monster_flag
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3650
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = RND_recent_random_event
+			random_owned_controlled_state = {
+				limit = {
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = roaming_monster
+						}
+					}
+				}
+				set_state_flag = RND_roaming_monster_flag
+				PREV = {
+					set_variable = {
+						var = RND_roaming_monster_state_id
+						value = PREV
+					}
+				}
+			}
+		}
+	}
+	
+	option = {#Drat
+		name = random.12.a
+
+		random_owned_controlled_state = {
+			limit = {
+				has_state_flag = RND_roaming_monster_flag
+			}
+			add_dynamic_modifier = {
+				modifier = roaming_monster
+			}
+		}
+		
+		custom_effect_tooltip = RND_get_guild_tt
+	}
+}
+
+country_event = {#Roaming monster - kills people!
+	id = random.13
+	title = random.13.t
+	desc = random.13.d
+	picture = GFX_report_event_europe_funeral
+	
+	trigger = {
+		any_owned_state = {
+			has_state_flag = RND_roaming_monster_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 150
+	}
+	
+	option = {#Drat
+		name = random.13.a
+
+		random_owned_state = {
+			limit = {
+				has_state_flag = RND_roaming_monster_flag
+			}
+			add_manpower = -16
+		}
+	}
+}
+
+country_event = {#Roaming monster - destroys things!
+	id = random.14
+	title = random.14.t
+	desc = random.14.d
+	picture = GFX_report_event_europe_funeral
+	
+	trigger = {
+		any_owned_state = {
+			has_state_flag = RND_roaming_monster_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 150
+	}
+	
+	option = {#Drat
+		name = random.14.a
+		
+		if = {
+			limit = {
+				any_owned_state = {
+					has_state_flag = RND_roaming_monster_flag
+					workshop > 0
+				}
+			}
+			random_owned_state = {
+				limit = {
+					has_state_flag = RND_roaming_monster_flag
+				}
+				damage_building = {
+					type = workshop
+					damage = 1
+				}
+			}
+		}
+		
+		else = {
+			random_owned_state = {
+				limit = {
+					has_state_flag = RND_roaming_monster_flag
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+			}
+		}
 	}
 }

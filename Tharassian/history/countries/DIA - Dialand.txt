@@ -65,6 +65,14 @@ set_popularities = {
 	puritan = 37
 }
 
+recruit_character = DIA_aoibhroid_tuamáistir
+recruit_character = DIA_harry_ashe
+recruit_character = DIA_martha_mcguinness
+recruit_character = DIA_séan_kelly
+recruit_character = DIA_peter_kelly
+recruit_character = DIA_lucia_larkin
+
+
 add_ideas = {
 	halfling_country
 	dochasism_religion
@@ -101,22 +109,4 @@ add_opinion_modifier = {
 add_opinion_modifier = {
 	target = GET
 	modifier = bitter_rivals
-}
-
-create_country_leader = {
-	name = "Aoibhroid Tuamáistir"
-	desc = "politics_DIA_Tuamáistir_desc"
-	picture = "gfx/leaders/RKS/Portrait_Rooks_Generic_navy_1.dds"
-	ideology = puritan_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Aoibhroid Tuamáistir"
-	desc = "politics_DIA_Tuamáistir_desc"
-	picture = "gfx/leaders/RKS/Portrait_Rooks_Generic_navy_1.dds"
-	ideology = theocrat_ideology
-	traits = {
-	}
 }

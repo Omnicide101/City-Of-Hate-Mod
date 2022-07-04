@@ -98,7 +98,6 @@ very_infertile_land = {
 
 ongoing_border_conflict = {
     icon = GFX_modifier_ongoing_conflict
-    local_org_regain = -1
     army_speed_factor_for_controller = -0.5
 	disable_strategic_redeployment = 1
 }
@@ -117,6 +116,25 @@ autonomous_region = {
 	state_resources_factor = -0.1
 	recruitable_population_factor = 0.1
 	resistance_growth = 0.1
+}
+
+roaming_monster = {
+	icon = GFX_modifier_state_roaming_monster
+	local_factories = -0.15
+	state_resources_factor = -0.4
+	recruitable_population_factor = -0.33
+	state_production_speed_buildings_factor = -0.5
+}
+
+smog_choked_skies = {
+	icon = GFX_modifier_state_smog_choked_skies
+	monthly_population = -0.15
+}
+
+diseased_region = {
+    icon = GFX_modifier_state_diseased_region
+    monthly_population = -0.45
+	local_supplies = -0.65
 }
 
 #civilian_food_consumption = { #Need to fix later
@@ -150,12 +168,10 @@ sabotaged_resources = {
 	
 	icon = GFX_modifiers_sabotaged_resource
 	
-	temporary_state_resource_oil = sabotaged_oil
-	temporary_state_resource_aluminium = sabotaged_aluminium
-	temporary_state_resource_rubber = sabotaged_rubber
-	temporary_state_resource_tungsten = sabotaged_tungsten
+	temporary_state_resource_food = sabotaged_food
 	temporary_state_resource_steel = sabotaged_steel
-	temporary_state_resource_chromium = sabotaged_chromium
+	temporary_state_resource_mount = sabotaged_mount
+	temporary_state_resource_lumber = sabotaged_lumber
 }
 
 war_exhaustion_modifier = {

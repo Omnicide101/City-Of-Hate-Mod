@@ -1321,6 +1321,15 @@ ideas = {
 				OR = {
 					original_tag = IRI
 					original_tag = MER
+					original_tag = CAI
+					original_tag = TYK
+					original_tag = IRR
+					original_tag = TIO
+					original_tag = SAS
+					original_tag = TKT
+					original_tag = TOF
+					original_tag = MAK
+					original_tag = CYT
 				}
 			}
 			
@@ -1328,6 +1337,15 @@ ideas = {
 				OR = {
 					original_tag = IRI
 					original_tag = MER
+					original_tag = CAI
+					original_tag = TYK
+					original_tag = IRR
+					original_tag = TIO
+					original_tag = SAS
+					original_tag = TKT
+					original_tag = TOF
+					original_tag = MAK
+					original_tag = CYT
 				}
 			}
 			
@@ -1335,6 +1353,15 @@ ideas = {
 				OR = {
 					original_tag = IRI
 					original_tag = MER
+					original_tag = CAI
+					original_tag = TYK
+					original_tag = IRR
+					original_tag = TIO
+					original_tag = SAS
+					original_tag = TKT
+					original_tag = TOF
+					original_tag = MAK
+					original_tag = CYT
 				}
 			}
 			
@@ -1499,6 +1526,33 @@ ideas = {
 			
 			traits = {
 				rivism_bonuses
+			}
+			
+			removal_cost = -1
+		}
+		
+		idealism_religion = {
+			
+			visible = {
+				original_tag = TRX
+			}
+			
+			allowed = {
+				original_tag = TRX
+			}
+			
+			available = {
+				original_tag = TRX
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = religion_idealism
+			
+			traits = {
+				idealism_bonuses
 			}
 			
 			removal_cost = -1

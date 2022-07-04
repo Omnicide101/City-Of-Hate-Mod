@@ -586,6 +586,11 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_idea_religion_idealism"
+		texturefile = "gfx/interface/ideas/religion_idealism.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_idea_religion_septism"
 		texturefile = "gfx/interface/ideas/religion_septism.dds"
 	}

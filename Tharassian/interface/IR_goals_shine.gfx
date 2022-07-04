@@ -2,6 +2,223 @@ spriteTypes = {
 
 	#### Mod-specific goal icons
 	SpriteType = {
+		name = "GFX_focus_ord_lothinnys_shine"
+		texturefile = "gfx/interface/goals/focus_ord_lothinnys.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_lothinnys.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_lothinnys.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	
+	SpriteType = {
+		name = "GFX_focus_ord_vernythe_shine"
+		texturefile = "gfx/interface/goals/focus_ord_vernythe.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_vernythe.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_vernythe.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	
+	SpriteType = {
+		name = "GFX_focus_ord_holynthor_shine"
+		texturefile = "gfx/interface/goals/focus_ord_holynthor.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_holynthor.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_holynthor.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	
+	SpriteType = {
+		name = "GFX_focus_ord_galerin_shine"
+		texturefile = "gfx/interface/goals/focus_ord_galerin.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_galerin.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_galerin.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	
+	SpriteType = {
+		name = "GFX_focus_ord_larennis_shine"
+		texturefile = "gfx/interface/goals/focus_ord_larennis.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_larennis.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_larennis.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	
+	SpriteType = {
+		name = "GFX_focus_ung_empower_nobles_shine"
+		texturefile = "gfx/interface/goals/focus_ung_empower_nobles.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ung_empower_nobles.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ung_empower_nobles.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	
+	SpriteType = {
+		name = "GFX_focus_ord_dare_dream_shine"
+		texturefile = "gfx/interface/goals/focus_ord_dare_dream.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_dare_dream.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/focus_ord_dare_dream.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 1.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	
+	SpriteType = {
 		name = "GFX_focus_generic_magic_beat_tech_shine"
 		texturefile = "gfx/interface/goals/focus_generic_magic_beat_tech.dds"
 		effectFile = "gfx/FX/buttonstate.lua"

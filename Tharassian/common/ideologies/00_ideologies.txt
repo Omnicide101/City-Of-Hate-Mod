@@ -168,13 +168,6 @@ ideologies = {
 			navy_intel_to_others = 20.0
 			airforce_intel_to_others = 5
 		}
-		
-		modifiers = {
-			civilian_intel_to_others = 20.0
-			army_intel_to_others = 5.0
-			navy_intel_to_others = 20.0
-			airforce_intel_to_others = 5
-		}
 
 		ai_fascist = yes # uses the fascist AI behaviour
 	}

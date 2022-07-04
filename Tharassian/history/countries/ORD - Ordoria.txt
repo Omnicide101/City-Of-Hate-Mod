@@ -70,9 +70,6 @@ set_variable = {
 	value = 5
 }
 
-1939.1.1 = {
-}
-
 set_politics = {
 	ruling_party = puritan
 	last_election = "1936.1.1"
@@ -96,6 +93,26 @@ set_popularities = {
 	puritan = 48
 }
 
+	recruit_character = ORD_dalyn_rohyis
+	recruit_character = ORD_alstora_holynthor
+	recruit_character = ORD_thulyen_gyume
+	recruit_character = ORD_isvenith_lothinnys
+	recruit_character = ORD_galerin_valinthir
+	recruit_character = ORD_larennis_valinthir
+	recruit_character = ORD_histarine_vernythe
+	recruit_character = ORD_vernusa_jiseyne
+	recruit_character = ORD_wenaura_feryd
+	recruit_character = ORD_yntha
+	recruit_character = ORD_alwyen
+	recruit_character = ORD_gylar
+	recruit_character = ORD_thylmar_ghirian
+	recruit_character = ORD_ghylsin_dhysmarin
+	recruit_character = ORD_tholsthyr_ghylauden
+	recruit_character = ORD_alyniss_quynara
+	recruit_character = ORD_mynaud_thurys
+
+	activate_advisor = isvenith_lothinnys
+
 	add_opinion_modifier = {
 		target = RTH
 		modifier = bitter_rivals
@@ -104,76 +121,30 @@ set_popularities = {
 	add_ideas = {
 		autarkic_isolationism
 		ORD_firstborn_state
+		ORD_fragmented_government
 		ORD_rthaur_rebellion
+		ORD_looming_steel_crisis
 		ORD_disrupted_industry
 		ORD_slavery_3
 		elf_country
 		itheryn_vengeance_patron
 	}
 	
-create_country_leader = {
-	name = "Isvenith Lothinnys"
-	desc = "politics_ORD_lothinnys_desc"
-	picture = "gfx/leaders/ORD/Portrait_ORD_Lothinnys.dds"
-	ideology = puritan_ideology
-	traits = {
-		power_behind_throne
-		unyielding_defender
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_operative_leader = {
+			name = "Myla Jhylere"
+			GFX = GFX_Portrait_ORD_Jhylere
+			traits = { ord_league operative_has_magic_sword operative_has_magic_ring }
+			bypass_recruitment = yes
+			female = yes
+			nationalities = { ORD }
+		}
 	}
-}
-
-create_country_leader = {
-	name = "Galerin Valinthir"
-	desc = "poltiics_ORD_valinthir_desc"
-	picture = "gfx/leaders/ORD/Portrait_ORD_Valinthir.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-		melancholy_struck
+	
+	create_intelligence_agency = {
+		name = "Oath of Harquiss"
+		icon = GFX_intelligence_agency_logo_ord
 	}
-}
-
-create_country_leader = {
-	name = "Larennis Valinthir"
-	desc = "politics_ORD_valinthir_ii_desc"
-	picture = "gfx/leaders/ORD/Portrait_ORD_Valinthir_ii.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Histarine Vernythe"
-	desc = "politics_ORD_vernythe_desc"
-	picture = "gfx/leaders/ORD/Portrait_ORD_Vernythe.dds"
-	ideology = theocrat_ideology
-	traits = {
-		zealous_crusader
-	}
-}
-
-create_country_leader = {
-	name = "Larennis Valinthir"
-	desc = "politics_ORD_valinthir_ii_desc"
-	picture = "gfx/leaders/ORD/Portrait_ORD_Valinthir_ii.dds"
-	ideology = republic_aristocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Vernusa Jiseyne"
-	desc = "politics_ORD_jiseyne_desc"
-	picture = "gfx/leaders/ORD/Portrait_ORD_Jiseyne.dds"
-	ideology = republic_peasant_ideology
-		traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Wenaura Feryd"
-	desc = "politics_ORD_feryd_desc"
-	picture = "gfx/leaders/ORD/Portrait_ORD_Feryd.dds"
-	ideology = republic_merchant_ideology
-		traits = {
-	}
-}

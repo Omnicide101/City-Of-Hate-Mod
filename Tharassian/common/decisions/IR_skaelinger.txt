@@ -2106,7 +2106,27 @@ SKA_social_war_decisions = {
 		icon = generic_political_discourse
 
 		ai_will_do = {
-			factor = 5
+			factor = 5	
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				factor = 0
+			}
 		}
 
 		visible = {
@@ -2149,6 +2169,26 @@ SKA_social_war_decisions = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 5
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				factor = 0
+			}
 		}
 
 		modifier = {
@@ -2177,6 +2217,36 @@ SKA_social_war_decisions = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 3
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_IRONBLOOD
+					}
+					has_country_flag = SKA_ai_ironbloods_path_flag
+				}
+				factor = 0
+			}
 		}
 
 		days_re_enable = 240
@@ -2208,7 +2278,37 @@ SKA_social_war_decisions = {
 		days_remove = 75
 
 		ai_will_do = {
-			factor = 2
+			factor = 1
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 10
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_IRONBLOOD
+					}
+					has_country_flag = SKA_ai_ironbloods_path_flag
+				}
+				factor = 0
+			}
 		}
 
 		days_re_enable = 290
@@ -2236,6 +2336,36 @@ SKA_social_war_decisions = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				factor = 2
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_IRONBLOOD
+					}
+					has_country_flag = SKA_ai_ironbloods_path_flag
+				}
+				factor = 0
+			}
 		}
 
 		visible = {
@@ -2269,6 +2399,36 @@ SKA_social_war_decisions = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 1
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_IRONBLOOD
+					}
+					has_country_flag = SKA_ai_ironbloods_path_flag
+				}
+				factor = 3
+			}
 		}
 
 		days_re_enable = 100
@@ -2302,6 +2462,36 @@ SKA_social_war_decisions = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				factor = 5
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_IRONBLOOD
+					}
+					has_country_flag = SKA_ai_ironbloods_path_flag
+				}
+				factor = 0
+			}
 		}
 
 		days_re_enable = 180
@@ -2330,6 +2520,36 @@ SKA_social_war_decisions = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				factor = 2
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_IRONBLOOD
+					}
+					has_country_flag = SKA_ai_ironbloods_path_flag
+				}
+				factor = 0
+			}
 		}
 
 		days_remove = 100
@@ -2362,6 +2582,36 @@ SKA_social_war_decisions = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				factor = 3
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_IRONBLOOD
+					}
+					has_country_flag = SKA_ai_ironbloods_path_flag
+				}
+				factor = 0
+			}
 		}
 
 		cost = 75
@@ -2403,6 +2653,36 @@ SKA_social_war_decisions = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 1
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_IRONBLOOD
+					}
+					has_country_flag = SKA_ai_ironbloods_path_flag
+				}
+				factor = 0
+			}
 		}
 
 		visible = {
@@ -2436,6 +2716,36 @@ SKA_social_war_decisions = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_SOLTRUIST
+					}
+					has_country_flag = SKA_ai_soltruist_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_BROTHERHOOD
+					}
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_IRONBLOOD
+					}
+					has_country_flag = SKA_ai_ironbloods_path_flag
+				}
+				factor = 1
+			}
 		}
 
 		days_re_enable = 100

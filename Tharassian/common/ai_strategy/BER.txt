@@ -10,6 +10,31 @@
 # protect
 # influence
 
+give_union_access = {#Let the Union fuck up Irinthios
+	enable = {
+		tag = BER
+		NOT = {
+			has_war_with = UNG
+			is_subject_of = IRI
+		}
+		IRI = {
+			is_not_sphered = yes
+			has_war_with = TLA
+		}
+		UNG = {
+			has_war_with = IRI
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = "UNG"
+		value = 50
+	}
+}
+
 ungerdaler_buddies = {
 	enable = {
 		tag = BER

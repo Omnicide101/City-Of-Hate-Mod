@@ -53,8 +53,15 @@ NDefines.NMilitary.OUT_OF_FUEL_SPEED_MULT = 0.2								-- speed mult that armies
 
 NDefines.NNavy.NAVAL_INVASION_PRIORITY = 1.5								-- default convoy priority for naval invasions
 NDefines.NNavy.NAVAL_SUPREMACY_CAN_INVADE = -0.05							-- required naval supremacy to perform invasions on an area
-NDefines.NAI.GARRISON_FRACTION = 0.05										-- How large part of a front should always be holding the line rather than advancing at the enemy
 
+NDefines.NOperatives.AGENCY_OPERATIVE_RECRUITMENT_TIME = 0					-- Number of days to wait to have operative to recruit when an operative slot first becomes available
+
+NDefines.NAI.GARRISON_FRACTION = 0.05										-- How large part of a front should always be holding the line rather than advancing at the enemy
+NDefines.NAI.TRADEABLE_FACTORIES_FRACTION = 0.9								-- Will at most trade away this fraction of factories.
+NDefines.NAI.MIN_DELIVERED_TRADE_FRACTION = 0.5								-- AI will cancel trade deals that are not able to deliver more than this fraction of the agreed amount
+NDefines.NAI.MINIMUM_GOOD_TRADE_RATIO_PER_CIV = 0.003					 	-- for each civ factory we have mul with this we are allowed to trade under % of resource on a trade
+NDefines.NAI.MAX_FACTORY_TO_TRADE_FOR_FUEL = 0.9
+NDefines.NAI.MAX_FACTORY_TO_TRADE_FOR_FUEL_IN_PEACE = 0.9
 NDefines.NAI.DIPLOMACY_FACTION_CIVILWAR_WANTS_HELP = -50
 NDefines.NAI.INVASION_COASTAL_PROVS_PER_ORDER = 6							-- AI will consider one extra invasion per number of provinces stated here (num orders = total coast / this)
 NDefines.NAI.MAX_DISTANCE_NALAV_INVASION = 1500.0							-- AI is extremely unwilling to plan naval invasions above this naval distance limit.

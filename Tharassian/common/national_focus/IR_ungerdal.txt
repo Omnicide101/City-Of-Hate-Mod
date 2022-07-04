@@ -3736,7 +3736,7 @@ focus_tree = {
 			factor = 29
 		}
 		available = {
-			has_country_flag = marriage_UNG_GMR
+			has_idea = marriage_UNG_GMR
 		}
 		relative_position_id = UNG_marry_an_arthenon
 		x = 0

@@ -414,7 +414,7 @@ country_event = {#Choose Economic Policy
 	is_triggered_only = yes
 	
 	option = {#Pro-Guild
-		name = generic.8.a
+		name = generic.8.aa #intentional, generic.8.a is bugged for some reason
 		ai_chance = {
 			factor = 5
 		}

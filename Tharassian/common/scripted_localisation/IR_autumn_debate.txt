@@ -46,3 +46,78 @@ defined_text = {
 		localization_key = "[?ORD_faithful_influence|Y0]"
 	}
 }
+
+defined_text = {
+	name = GetLarennisIdealism
+	text = {
+		trigger = {
+			check_variable = {
+				larennis_idealism < 10
+			}
+		}
+		localization_key = GUI_ORD_larennis_very_cynical
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				larennis_idealism > 9
+			}
+			check_variable = {
+				larennis_idealism < 35
+			}
+		}
+		localization_key = GUI_ORD_larennis_cynical
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				larennis_idealism > 34
+			}
+			check_variable = {
+				larennis_idealism < 45
+			}
+		}
+		localization_key = GUI_ORD_larennis_somewhat_cynical
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				larennis_idealism > 44
+			}
+			check_variable = {
+				larennis_idealism < 55
+			}
+		}
+		localization_key = GUI_ORD_larennis_neutral
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				larennis_idealism > 54
+			}
+			check_variable = {
+				larennis_idealism < 65
+			}
+		}
+		localization_key = GUI_ORD_larennis_somewhat_hopeful
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				larennis_idealism > 64
+			}
+			check_variable = {
+				larennis_idealism < 90
+			}
+		}
+		localization_key = GUI_ORD_larennis_hopeful
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				larennis_idealism > 89 #using >= 90 crashes the game for some reason
+			}
+		}
+		localization_key = GUI_ORD_larennis_very_hopeful
+	}
+}

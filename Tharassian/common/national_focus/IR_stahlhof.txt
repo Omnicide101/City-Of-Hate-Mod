@@ -477,8 +477,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			custom_effect_tooltip = STA_path_clearer_batallions_ctt
-			hidden_effect = { set_technology = { STA_path_clearer_battalion_tech = 1 } }
+			set_technology = {
+				STA_path_clearer_battalion_tech = 1
+				popup = no
+			}
 		}
 
 	}

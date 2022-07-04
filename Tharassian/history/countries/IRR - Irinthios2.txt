@@ -1,0 +1,118 @@
+﻿capital = 396
+set_stability = 0.25
+
+set_oob = "IRI_1936"
+set_research_slots = 3
+
+set_cosmetic_tag = IRI
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1 
+}
+
+
+set_variable = { IRI_people_approval_var = 0.02 }
+set_variable = { IRI_people_approval_var_display = 2 }
+set_variable = { IRI_aristocrat_approval_var = 0.01 }
+set_variable = { IRI_aristocrat_approval_var_display = 1 }
+set_variable = { IRI_army_approval_var = 0.01 }
+set_variable = { IRI_army_approval_var_display = 1 }
+set_variable = { IRI_cai_loyalty = 0 }
+set_variable = { IRI_tion_loyalty = 1 }
+set_variable = { IRI_sasnai_loyalty = 0 }
+set_variable = { IRI_tykinthos_loyalty = -1 }
+set_variable = { IRI_tofnos_loyalty = 0 }
+set_variable = { IRI_cyttra_loyalty = 0 }
+set_variable = { IRI_marakai_loyalty = 0 }
+set_variable = { IRI_tikynthaios_loyalty = 0 }
+set_variable = { IRI_cinyras_coup_chance = 3 }
+
+add_dynamic_modifier = {
+	modifier = IRI_faction_modifier
+}
+
+set_politics = {
+	ruling_party = monarchy_constitutional
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 2
+
+	monarchy_constitutional = 72
+
+	republic_peasant = 0
+
+	republic_aristocrat = 16
+
+	republic_merchant = 4
+
+	theocrat = 6
+
+	puritan = 0
+}
+
+create_country_leader = {
+	name = "Therseandros Chairophon"
+	desc = "politics_IRI_chairophon_desc"
+	picture = "gfx/leaders/IRI/Portrait_IRI_Chairophon.dds"
+	ideology = monarchy_absolute_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Therseandros Chairophon"
+	desc = "politics_IRI_chairophon_desc"
+	picture = "gfx/leaders/IRI/Portrait_IRI_Chairophon.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
+}
+
+add_ideas = {
+	human_country
+	selenism_religion
+	IRI_Irinthios_Will_Rise_Again
+	IRI_topheavy_military
+	IRI_bad_mercenary_company
+}
+
+add_opinion_modifier = {
+	target = TLA
+	modifier = bitter_rivals
+}

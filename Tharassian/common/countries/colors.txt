@@ -5,6 +5,11 @@ XXX = { #Wastelands placeholder
 	color_ui = rgb { 14 14 14 }
 }
 
+ADV = {
+	color = rgb { 242  255  0 }
+	color_ui = rgb { 250  255  20 }
+}
+
 TES = {
 	color = rgb { 0 74 127 }
 	color_ui = rgb { 5 83 132 }

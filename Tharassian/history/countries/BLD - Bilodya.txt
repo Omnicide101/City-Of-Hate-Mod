@@ -12,9 +12,6 @@ set_technology ={
 	ogre_warriors = 1
 }
 
-1939.1.1 = {
-}
-
 set_politics = {
 	ruling_party = republic_peasant
 	last_election = "1936.1.1"
@@ -37,6 +34,12 @@ set_popularities = {
 
 	puritan = 4
 }
+
+recruit_character = BLD_kar_thaurun
+recruit_character = BLD_kar_kurbah
+recruit_character = BLD_kar_reimvan
+recruit_character = BLD_kar_stoya
+recruit_character = BLD_kar_vurkun
 
 add_ideas = {
 	BLD_Swamp_Is_Our_Home
@@ -62,13 +65,3 @@ add_opinion_modifier = {
 	target = BER
 	modifier = bitter_rivals
 }
-
-recruit_character = BLD_kar_thaurun
-recruit_character = BLD_kar_kurbah
-recruit_character = BLD_kar_reimvan
-recruit_character = BLD_kar_stoya
-recruit_character = BLD_kar_vurkun
-recruit_character = BLD_wun_orvar
-recruit_character = BLD_gur_tarvak
-recruit_character = BLD_pav_karbun
-recruit_character = BLD_ren_dirgal

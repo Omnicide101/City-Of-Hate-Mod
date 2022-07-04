@@ -6,9 +6,19 @@ state={
 	}
 	buildings_max_level_factor=1.000
 	manpower=1
-	state_category=pastoral
+	state_category=town
 	history={
-		owner = XXX
-		add_core_of = XXX
+		owner = TRX
+		add_core_of = TRX
+		
+		victory_points = {
+			8838 11
+		}
+		buildings = {
+			infrastructure = 4
+			farm = 1
+			workshop = 1
+			forge = 1
+		}
 	}
 }

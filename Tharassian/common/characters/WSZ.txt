@@ -1,0 +1,92 @@
+characters={
+	WSZ_kristin_kindl={
+		name="Kristin Kindl"
+		portraits={
+			civilian={
+				large="gfx/leaders/WSZ/Portrait_WSZ_Kindl.dds"
+			}
+		}
+		country_leader={
+			desc="politics_WSZ_kindl_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_WSZ_kindl_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	WSZ_anton_beckmann={
+		name="Anton Beckmann"
+		portraits={
+			civilian={
+				large="gfx/leaders/WSZ/Portrait_WSZ_Beckmann.dds"
+			}
+		}
+		country_leader={
+			desc="politics_WSZ_Beckmann_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	WSZ_thorsten_weingand={
+		name="Thorsten Weingand"
+		portraits={
+			civilian={
+				large="gfx/leaders/WSZ/Portrait_WSZ_Weingand.dds"
+			}
+		}
+		country_leader={
+			desc="politics_WSZ_weingand_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	WSZ_rupprecht_pelzer={
+		name="Rupprecht Pelzer"
+		portraits={
+			civilian={
+				large="gfx/leaders/WSZ/Portrait_WSZ_Pelzer.dds"
+			}
+		}
+		country_leader={
+			desc="politics_WSZ_pelzer_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	WSZ_karin_söllner={
+		name="Karin Söllner"
+		portraits={
+			civilian={
+				large="gfx/leaders/WSZ/Portrait_WSZ_Sollner.dds"
+			}
+		}
+		country_leader={
+			desc="politics_WSZ_sollner_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	WSZ_tanja_spitz={
+		name="Tanja Spitz"
+		portraits={
+			civilian={
+				large="gfx/leaders/WSZ/Portrait_WSZ_Spitz.dds"
+			}
+		}
+		country_leader={
+			desc="politics_WSZ_spitz_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

@@ -1,5 +1,7 @@
 ﻿capital = 396
 
+set_stability = 0.25
+
 set_oob = "IRI_1936"
 set_research_slots = 3
 
@@ -39,8 +41,49 @@ set_technology ={
 	basic_ship_hull = 1 
 }
 
-1939.1.1 = {
+
+set_variable = { IRI_people_approval_var = 0.02 }
+set_variable = { IRI_people_approval_var_display = 2 }
+set_variable = { IRI_aristocrat_approval_var = 0.01 }
+set_variable = { IRI_aristocrat_approval_var_display = 1 }
+set_variable = { IRI_army_approval_var = 0.01 }
+set_variable = { IRI_army_approval_var_display = 1 }
+set_variable = { IRI_cai_loyalty = 0 }
+set_variable = { IRI_tion_loyalty = 1 }
+set_variable = { IRI_sasnai_loyalty = 0 }
+set_variable = { IRI_tykinthos_loyalty = -1 }
+set_variable = { IRI_tofnos_loyalty = 0 }
+set_variable = { IRI_cyttra_loyalty = 0 }
+set_variable = { IRI_marakai_loyalty = 0 }
+set_variable = { IRI_tikynthaios_loyalty = 0 }
+set_variable = { IRI_cinyras_coup_chance = 3 }
+set_variable = { IRI_chance_of_discovery = 5 }
+set_variable = { IRI_fraud_chance = 5 }
+set_variable = { IRI_cost_for_weapons = 25 }
+set_variable = { IRI_lizardmen_resistance_var = -0.33 }
+set_variable = { IRI_ogre_resistance_var = -0.33 }
+
+add_dynamic_modifier = {
+	modifier = IRI_faction_modifier
 }
+
+recruit_character = IRI_therseandros_chairophon 
+recruit_character = IRI_ignatius_chairophon
+recruit_character = IRI_aclepiades_thersilochus
+recruit_character = IRI_aggelos_cinyras
+recruit_character = IRI_amarhyllis_agrotis
+recruit_character = IRI_tryphena_vettias
+recruit_character = IRI_kephalos_sosibios
+recruit_character = IRI_Ioanna_Cinyras
+recruit_character = IRI_Alexander_Kyriaziss
+recruit_character = IRI_Anna_Chalkia
+recruit_character = IRI_Chrisos_Florou
+recruit_character = IRI_asteia_rinoloasc
+recruit_character = IRI_Tosteratos
+recruit_character = IRI_perthecles_thaurun
+recruit_character = IRI_diomedes_stathis
+recruit_character = IRI_cassandra_reahossi
+recruit_character = IRI_lysimachus_monophthal
 
 set_politics = {
 	ruling_party = monarchy_constitutional
@@ -50,86 +93,30 @@ set_politics = {
 }
 
 set_popularities = {
-	monarchy_absolute = 2
+	monarchy_absolute = 5
 
-	monarchy_constitutional = 72
+	monarchy_constitutional = 63
 
 	republic_peasant = 0
 
-	republic_aristocrat = 16
+	republic_aristocrat = 17
 
-	republic_merchant = 4
+	republic_merchant = 6
 
 	theocrat = 6
 
-	puritan = 0
+	puritan = 3
 }
 
 add_ideas = {
 	human_country
 	selenism_religion
 	IRI_Irinthios_Will_Rise_Again
+	IRI_topheavy_military
+	IRI_bad_mercenary_company
 }
 
 add_opinion_modifier = {
 	target = TLA
 	modifier = bitter_rivals
-}
-
-create_country_leader = {
-	name = "Therseandros Chairophon"
-	desc = "politics_IRI_chairophon_desc"
-	picture = "gfx/leaders/IRI/Portrait_IRI_Chairophon.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Therseandros Chairophon"
-	desc = "politics_IRI_chairophon_desc"
-	picture = "gfx/leaders/IRI/Portrait_IRI_Chairophon.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Aclepiades Thersilochus"
-	desc = "politics_IRI_thersilochus_desc"
-	picture = "gfx/leaders/IRI/Portrait_IRI_Thersilochus.dds"
-	ideology = theocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Aggelos Cinyras"
-	desc = "politics_IRI_cinyras_desc"
-	picture = "gfx/leaders/IRI/Portrait_IRI_Cinyras.dds"
-	ideology = republic_aristocrat_ideology
-	traits = {
-	dishonoured_dynasty
-	}
-}
-
-create_country_leader = {
-	name = "Amarhyllis Agrótis"
-	desc = "politics_IRI_agrotis_desc"
-	picture = "gfx/leaders/IRI/Portrait_IRI_Agrotis.dds"
-	ideology = republic_peasant_ideology
-}
-
-create_country_leader = {
-	name = "Tryphena Vettias"
-	desc = "politics_IRI_vettias_desc"
-	picture = "gfx/leaders/IRI/Portrait_IRI_Vettias.dds"
-	ideology = republic_merchant_ideology
-}
-
-create_country_leader = {
-	name = "Kephalos Sosibios"
-	desc = "politics_IRI_sosibios_desc"
-	picture = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
-	ideology = puritan_ideology
 }

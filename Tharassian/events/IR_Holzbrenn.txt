@@ -295,7 +295,7 @@ country_event = { # Kirschenrevolution
 	}
 }
 
-### NOBILITY PATH EVENTSv
+### NOBILITY PATH EVENTS
 
 country_event = {#Response to Famine - Nobility
 	id = hlz.6

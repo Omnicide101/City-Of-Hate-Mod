@@ -1,65 +1,100 @@
 characters={
-	ARK_jithe_lafdaren = {
-		name = "Jithe Lafdaren"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/ARK/Portrait_ARK_Lafdaren.dds"
+	ARK_jithe_lafdaren={
+		name="Jithe Lafdaren"
+		portraits={
+			civilian={
+				large="gfx/leaders/ARK/Portrait_ARK_Lafdaren.dds"
 			}
 		}
-		
-		country_leader = {
-			ideology = monarchy_constitutional_ideology
-			desc = "politics_ARK_lafdaren_desc"
-			expire = "1965.1.1.1"
-			id = -1
+		country_leader={
+			desc="politics_ARK_lafdaren_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
 		}
 	}
-	
-	ARK_loster_ignawyne = {
-		name = "Loster Ignawyne"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/ARK/Portrait_ARK_Ignawyne.dds"
+	ARK_loster_ignawyne={
+		name="Loster Ignawyne"
+		portraits={
+			civilian={
+				large="gfx/leaders/ARK/Portrait_ARK_Ignawyne.dds"
 			}
 		}
-		
-		country_leader = {
-			ideology = republic_peasant_ideology
-			desc = "politics_ARK_ignawyne_desc"
-			expire = "1965.1.1.1"
-			id = -1
+		country_leader={
+			desc="politics_ARK_ignawyne_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
 		}
 	}
-	
-	ARK_falstinnion_resmayer = {
-		name = "Falstinnion Resmayer"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/ARK/Portrait_ARK_Resmayer.dds"
+	ARK_falstinnion_resmayer={
+		name="Falstinnion Resmayer"
+		portraits={
+			civilian={
+				large="gfx/leaders/ARK/Portrait_ARK_Resmayer.dds"
 			}
 		}
-		
-		country_leader = {
-			ideology = monarchy_absolute_ideology
-			desc = "politics_ARK_resmayer_desc"
-			expire = "1965.1.1.1"
-			id = -1
+		country_leader={
+			desc="politics_ARK_resmayer_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
 		}
 	}
-	
-	ARK_bhalus_tanin = {
-		name = "Bhalus Ianin"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/ARK/Portrait_ARK_Ianin.dds"
+	ARK_vignatius_harthennion={
+		name="Vignatius Harthennion"
+		portraits={
+			civilian={
+				large="gfx/leaders/ARK/Portrait_ARK_Harthennion.dds"
 			}
 		}
-		
-		country_leader = {
-			ideology = theocrat_ideology
-			desc = "politics_ARK_ianin_desc"
-			expire = "1965.1.1.1"
-			id = -1
+		country_leader={
+			desc="politics_ARK_harthennion_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	ARK_bhalus_ianin={
+		name="Bhalus Ianin"
+		portraits={
+			civilian={
+				large="gfx/leaders/ARK/Portrait_ARK_Ianin.dds"
+			}
+		}
+		country_leader={
+			desc="politics_ARK_ianin_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	ARK_althwyne_serigan={
+		name="Althwyne Serigan"
+		portraits={
+			civilian={
+				large="gfx/leaders/ARK/Portrait_ARK_Serigan.dds"
+			}
+		}
+		country_leader={
+			desc="politics_ARK_serigan_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	ARK_hautlir_polthore={
+		name="Hautlir Polthore"
+		portraits={
+			civilian={
+				large="gfx/leaders/ARK/Portrait_ARK_Polthore.dds"
+			}
+		}
+		country_leader={
+			desc="politics_ARK_polthore_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
 		}
 	}
 }

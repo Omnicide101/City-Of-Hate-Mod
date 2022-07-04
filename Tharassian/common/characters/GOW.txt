@@ -1,0 +1,94 @@
+characters={
+	GOW_dàibhidh_macalasdair={
+		name="Dàibhidh MacAlasdair"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_land_1.dds"
+			}
+		}
+		country_leader={
+			desc="politics_GOW_macalasdair_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	GOW_isabella_ballantyne={
+		name="Isabella Ballantyne"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_navy_2.dds"
+			}
+		}
+		country_leader={
+			ideology=monarchy_absolute_ideology
+			expire="897.1.1.12"
+			id=-1
+		}
+	}
+	GOW_archibald_mcdonald={
+		name="Archibald McDonald"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_land_1.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_peasant_ideology
+			expire="905.1.1.12"
+			id=-1
+		}
+	}
+	GOW_malcolm_craig={
+		name="Malcolm Craig"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_land_1.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_aristocrat_ideology
+			expire="896.1.1.12"
+			id=-1
+		}
+	}
+	GOW_margaret_mccoy={
+		name="Margaret McCoy"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_land_2.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_merchant_ideology
+			expire="903.1.1.12"
+			id=-1
+		}
+	}
+	GOW_joseph_clarke={
+		name="Joseph Clarke"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_navy_1.dds"
+			}
+		}
+		country_leader={
+			ideology=theocrat_ideology
+			expire="894.1.1.12"
+			id=-1
+		}
+	}
+	GOW_helen_murdoch={
+		name="Helen Murdoch"
+		portraits={
+			civilian={
+				large="gfx/leaders/RKS/Portrait_Rooks_Generic_navy_2.dds"
+			}
+		}
+		country_leader={
+			ideology=puritan_ideology
+			expire="901.1.1.12"
+			id=-1
+		}
+	}
+}

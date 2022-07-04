@@ -5,10 +5,20 @@ state={
 		1971 2620 3525 8513 
 	}
 	buildings_max_level_factor=1.000
-	manpower=1
-	state_category=pastoral
+	manpower=303492
+	state_category=city
 	history={
-		owner = XXX
-		add_core_of = XXX
+		owner = TRX
+		add_core_of = TRX
+		
+		victory_points = {
+			8628 33
+		}
+		
+		buildings = {
+			infrastructure = 4
+			forge = 5
+			workshop = 1
+		}
 	}
 }

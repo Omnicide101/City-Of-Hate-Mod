@@ -1,5 +1,5 @@
 ideas = {
-
+	
 	hidden_ideas = {
 		
 		FOOD_starvation = {
@@ -41,7 +41,7 @@ ideas = {
 			}
 		}
 	}
-
+	
 	economy = {
 		law = yes
 		
@@ -58,7 +58,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-			consumer_goods_factor = 0.6
+			consumer_goods_factor = 0.3
 			production_factory_max_efficiency_factor = -0.2
 			supply_consumption_factor = -0.2
 			out_of_supply_factor = -0.5
@@ -325,6 +325,7 @@ ideas = {
 			MONTHLY_POPULATION = 0.3
 			attrition = -0.2
 			research_speed_factor = -0.1
+			consumer_goods_factor = 0.4
 			}
 			
 			cancel_if_invalid = no
@@ -345,6 +346,7 @@ ideas = {
 			
 			modifier = {
 			MONTHLY_POPULATION = 0.1
+			consumer_goods_factor = 0.3
 			}
 			
 			default = yes
@@ -367,6 +369,7 @@ ideas = {
 			
 			modifier = {
 			research_speed_factor = 0.05
+			consumer_goods_factor = 0.2
 			}
 			
 			cancel_if_invalid = no
@@ -390,6 +393,7 @@ ideas = {
 			modifier = {
 			MONTHLY_POPULATION = -0.15
 			research_speed_factor = 0.15
+			consumer_goods_factor = 0.1
 			}
 			
 			cancel_if_invalid = no

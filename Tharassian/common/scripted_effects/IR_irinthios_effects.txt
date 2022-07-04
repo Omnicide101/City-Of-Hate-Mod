@@ -43,3 +43,899 @@ IRI_Revolution_In_Air_level_up = {
 		add_ideas = IRI_Revolution_In_Air_1
 	}
 }
+
+IRI_decrease_admin_overextension = {
+	if = {
+		limit = { has_idea = IRI_administrative_overextension_5 }
+		remove_ideas = IRI_administrative_overextension_5
+	}
+	else_if = {
+		limit = { has_idea = IRI_administrative_overextension_4 }
+		swap_ideas = {
+			remove_idea = IRI_administrative_overextension_4
+			add_idea = IRI_administrative_overextension_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = IRI_administrative_overextension_3 }
+		swap_ideas = {
+			remove_idea = IRI_administrative_overextension_3
+			add_idea = IRI_administrative_overextension_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = IRI_administrative_overextension_2 }
+		swap_ideas = {
+			remove_idea = IRI_administrative_overextension_2
+			add_idea = IRI_administrative_overextension_3
+		}		
+	}
+	else_if = {
+		limit = { has_idea = IRI_administrative_overextension_1 }
+		swap_ideas = {
+			remove_idea = IRI_administrative_overextension_1
+			add_idea = IRI_administrative_overextension_2
+		}
+	}
+}
+
+IRI_recalculate_interest_group_vars = {
+	set_variable = { IRI_people_approval_var_display = IRI_people_approval_var }
+	multiply_variable = { IRI_people_approval_var_display = 100 }
+	set_variable = { IRI_guild_approval_var_display = IRI_guild_approval_var }
+	multiply_variable = { IRI_guild_approval_var_display = 100 }
+	set_variable = { IRI_aristocrat_approval_var_display = IRI_aristocrat_approval_var }
+	multiply_variable = { IRI_aristocrat_approval_var_display = 100 }
+	set_variable = { IRI_army_approval_var_display = IRI_army_approval_var }
+	multiply_variable = { IRI_army_approval_var_display = 100 }
+}
+
+IRI_change_lizard_resistance = { #thanks PDX for making state modifiers not take variables
+	if = {
+		limit = { check_variable = { IRI_lizardmen_resistance_var = -0.11 } }
+		every_owned_state = {
+			limit = { 
+				is_core_of = TLA
+				OR = {
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_4 }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_5 }
+				}
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_2 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_2 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier } 
+				}
+				remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_4 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_4 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_5 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_5 }
+			}
+			add_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_1 }
+		}
+	}
+	if = {
+		limit = { check_variable = { IRI_lizardmen_resistance_var = -0.22 } }
+		every_owned_state = {
+			limit = { 
+				is_core_of = TLA
+				OR = {
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_1 }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_4 }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_5 }
+				}
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_1 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_1 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier } 
+				}
+				remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_4 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_4 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_5 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_5 }
+			}
+			add_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 }
+		}
+	}
+	if = {
+		limit = { check_variable = { IRI_lizardmen_resistance_var = -0.33 } }
+		every_owned_state = {
+			limit = { 
+				is_core_of = TLA
+				OR = {
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_1 }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_4 }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_5 }
+				}
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_1 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_1 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 } 
+				}
+				remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_4 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_4 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_5 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_5 }
+			}
+			add_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+		}
+	}
+	if = {
+		limit = { check_variable = { IRI_lizardmen_resistance_var = -0.44 } }
+		every_owned_state = {
+			limit = { 
+				is_core_of = TLA
+				OR = {
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_1 }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_5 }
+				}
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_1 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_1 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 } 
+				}
+				remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_5 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_5 }
+			}
+			add_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_4 }
+		}
+	}
+	if = {
+		limit = { check_variable = { IRI_lizardmen_resistance_var = -0.55 } }
+		every_owned_state = {
+			limit = { 
+				is_core_of = TLA
+				OR = {
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_1 }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_4 }
+				}
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_1 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_1 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 } 
+				}
+				remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_4 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier_4 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_lizardmen_resistance_modifier }
+			}
+			add_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_5 }
+		}
+	}
+}
+
+IRI_remove_lizard_resistance = {
+	every_state = {
+		limit = {
+			has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier } 
+		}
+		remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+	}
+	every_state = {
+		limit = {
+			has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_1 } 
+		}
+		remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_1 }
+	}
+	every_state = {
+		limit = {
+			has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 } 
+		}
+		remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_2 }
+	}
+	every_state = {
+		limit = {
+			has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_4 } 
+		}
+		remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_4 }
+	}
+	every_state = {
+		limit = {
+			has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_5 } 
+		}
+		remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier_5 }
+	}
+}
+
+IRI_remove_ogre_resistance = {
+	every_state = {
+		limit = {
+			has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier } 
+		}
+		remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier }
+	}
+	every_state = {
+		limit = {
+			has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_1 } 
+		}
+		remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_1 }
+	}
+	every_state = {
+		limit = {
+			has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_2 } 
+		}
+		remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_2 }
+	}
+	every_state = {
+		limit = {
+			has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_4 } 
+		}
+		remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_4 }
+	}
+	every_state = {
+		limit = {
+			has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_5 } 
+		}
+		remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_5 }
+	}
+}
+
+IRI_change_ogre_resistance = { #finish later
+	if = {
+		limit = { check_variable = { IRI_ogre_resistance_var = -0.11 } }
+		every_owned_state = {
+			limit = { 
+				is_core_of = BLD
+				NOT = { has_state_flag = IRI_colonized_state }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_2 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_2 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier } 
+				}
+				remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_4 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_4 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_5 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_5 }
+			}
+			add_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_1 }
+		}
+	}
+	if = {
+		limit = { check_variable = { IRI_ogre_resistance_var = -0.22 } }
+		every_owned_state = {
+			limit = { 
+				is_core_of = BLD
+				NOT = { has_state_flag = IRI_colonized_state }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_1 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_1 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier } 
+				}
+				remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_4 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_4 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_5 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_5 }
+			}
+			add_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_2 }
+		}
+	}
+	if = {
+		limit = { check_variable = { IRI_ogre_resistance_var = -0.33 } }
+		every_owned_state = {
+			limit = { 
+				is_core_of = BLD
+				NOT = { has_state_flag = IRI_colonized_state }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_1 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_1 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_2 } 
+				}
+				remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_2 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_4 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_4 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_5 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_5 }
+			}
+			add_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier }
+		}
+	}
+	if = {
+		limit = { check_variable = { IRI_ogre_resistance_var = -0.44 } }
+		every_owned_state = {
+			limit = { 
+				is_core_of = BLD
+				NOT = { has_state_flag = IRI_colonized_state }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_1 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_1 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_2 } 
+				}
+				remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_2 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_5 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_5 }
+			}
+			add_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_4 }
+		}
+	}
+	if = {
+		limit = { check_variable = { IRI_ogre_resistance_var = -0.55 } }
+		every_owned_state = {
+			limit = { 
+				is_core_of = BLD
+				NOT = { has_state_flag = IRI_colonized_state }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_1 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_1 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_2 } 
+				}
+				remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_2 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_4 } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier_4 }
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier } 
+				}
+				remove_dynamic_modifier = { modifier =  IRI_ogre_resistance_modifier }
+			}
+			add_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_5 }
+		}
+	}
+}
+
+IRI_increase_strategos_influence = {
+	if = {
+			limit = {
+				386 = {
+					has_state_flag = IRI_current_strategos_focus
+				}
+			}
+			subtract_from_variable = {
+				tooltip = IRI_raise_strategos_loyalty
+				IRI_cai_loyalty = 1
+			}
+			else_if = {
+				limit = {
+					398 = {
+						has_state_flag = IRI_current_strategos_focus
+					}
+				}
+				subtract_from_variable = {
+					tooltip = IRI_raise_strategos_loyalty
+					IRI_sasnai_loyalty = 1
+				}
+			}
+			else_if = {
+				limit = {
+					399 = {
+						has_state_flag = IRI_current_strategos_focus
+					}
+				}
+				subtract_from_variable = {
+					tooltip = IRI_raise_strategos_loyalty
+					IRI_tofnos_loyalty = 1
+				}
+			}
+			else_if = {
+				limit = {
+					400 = {
+						has_state_flag = IRI_current_strategos_focus
+					}
+				}
+				subtract_from_variable = {
+					tooltip = IRI_raise_strategos_loyalty
+					IRI_cyttra_loyalty = 1
+				}
+			}
+			else_if = {
+				limit = {
+					401 = {
+						has_state_flag = IRI_current_strategos_focus
+					}
+				}
+				subtract_from_variable = {
+					tooltip = IRI_raise_strategos_loyalty
+					IRI_marakai_loyalty = 1
+				}
+			}
+			else_if = {
+				limit = {
+					402 = {
+						has_state_flag = IRI_current_strategos_focus
+					}
+				}
+				subtract_from_variable = {
+					tooltip = IRI_raise_strategos_loyalty
+					IRI_tikynthaios_loyalty = 1
+				}
+			}
+		}
+}
+
+IRI_strategos_civil_war_effect = { #if this doesn't work first try I'm going to cry
+	set_politics = {
+		ruling_party = republic_aristocrat
+		elections_allowed = no
+	}
+	hidden_effect = {
+		every_state = {
+			limit = { is_core_of = IRI }
+			add_core_of = IRR
+		}
+		IRR = {
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.5
+			}
+			set_politics = {
+				ruling_party = monarchy_absolute
+				elections_allowed = no
+			}
+			transfer_state = 396
+			transfer_state = 797
+			transfer_state = 750
+			transfer_state = 758
+			transfer_state = 756
+			transfer_state = 751
+			unlock_national_focus = IRI_the_theresandrean_restoration
+		}
+		396 = {
+			create_unit = {
+				division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+				owner = IRR
+				count = 2
+			}
+		}
+		797 = {
+			create_unit = {
+				division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+				owner = IRR
+				count = 1
+			}
+		}
+	}
+	IRI_strategos_cai_control = yes
+	IRI_strategos_sasnai_control = yes
+	IRI_strategos_tofnos_control = yes
+	IRI_strategos_cyttra_control = yes
+	IRI_strategos_marakai_control = yes
+	IRI_strategos_tikynthaios_control = yes
+	IRI = {
+		transfer_units_fraction = {
+			target = IRR
+			size = 0.5
+		}
+		declare_war_on = {
+			target = IRR
+			type = civil_war
+		}
+	}
+	hidden_effect = {
+		set_capital = { state = 397 }
+		397 = {
+			create_unit = {
+				division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+				owner = IRI
+				count = 2
+			}
+		}
+	}
+}
+
+IRI_strategos_cai_control = {
+	if = {
+		limit = {
+			check_variable = { IRI_cai_loyalty < 0 }
+		}
+		386 = {
+			create_unit = {
+				division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+				owner = IRI
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { IRI_cai_loyalty > 0 }
+			}
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_western_marches
+				hidden_effect = {
+					transfer_state = 386
+					transfer_state = 753
+					transfer_state = 757
+					transfer_state = 755
+					transfer_state = 752
+				}
+				386 = {
+					create_unit = {
+						division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+						owner = PREV
+						count = 2
+					}
+				}
+			}
+		}
+		else = {
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_western_marches
+				hidden_effect = {
+					transfer_state = 386
+					transfer_state = 753
+					transfer_state = 757
+					transfer_state = 755
+					transfer_state = 752
+				}
+			}
+		}
+	}
+}
+
+IRI_strategos_sasnai_control = {
+	if = {
+		limit = {
+			check_variable = { IRI_sasnai_loyalty < 0 }
+		}
+		398 = {
+			create_unit = {
+				division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+				owner = IRI
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { IRI_sasnai_loyalty > 0 }
+			}
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_southern_irinthios
+				hidden_effect = {
+					transfer_state = 398
+					transfer_state = 742
+					transfer_state = 741
+				}
+				398 = {
+					create_unit = {
+						division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+						owner = PREV
+						count = 2
+					}
+				}
+			}
+		}
+		else = {
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_southern_irinthios
+				hidden_effect = {
+					transfer_state = 398
+					transfer_state = 742
+					transfer_state = 741
+				}
+			}
+		}
+	}
+}
+
+IRI_strategos_tofnos_control = {
+	if = {
+		limit = {
+			check_variable = { IRI_tofnos_loyalty < 0 }
+		}
+		399 = {
+			create_unit = {
+				division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+				owner = IRI
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { IRI_tofnos_loyalty > 0 }
+			}
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_tofnos
+				hidden_effect = {
+					transfer_state = 399
+					transfer_state = 740
+					transfer_state = 739
+				}
+				399 = {
+					create_unit = {
+						division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+						owner = PREV
+						count = 2
+					}
+				}
+			}
+		}
+		else = {
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_tofnos
+				hidden_effect = {
+					transfer_state = 399
+					transfer_state = 740
+					transfer_state = 739
+				}
+			}
+		}
+	}
+}
+
+IRI_strategos_cyttra_control = {
+	if = {
+		limit = {
+			check_variable = { IRI_cyttra_loyalty < 0 }
+		}
+		400 = {
+			create_unit = {
+				division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+				owner = IRI
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { IRI_cyttra_loyalty > 0 }
+			}
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_cyttra
+				hidden_effect = {
+					transfer_state = 400
+					transfer_state = 748
+					transfer_state = 749
+				}
+				400 = {
+					create_unit = {
+						division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+						owner = PREV
+						count = 2
+					}
+				}
+			}
+		}
+		else = {
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_cyttra
+				hidden_effect = {
+					transfer_state = 400
+					transfer_state = 748
+					transfer_state = 749
+				}
+			}
+		}
+	}
+}
+
+IRI_strategos_marakai_control = {
+	if = {
+		limit = {
+			check_variable = { IRI_marakai_loyalty < 0 }
+		}
+		401 = {
+			create_unit = {
+				division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+				owner = IRI
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { IRI_marakai_loyalty > 0 }
+			}
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_marakai
+				hidden_effect = {
+					transfer_state = 401
+					transfer_state = 743
+					transfer_state = 747
+				}
+				401 = {
+					create_unit = {
+						division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+						owner = PREV
+						count = 2
+					}
+				}
+			}
+		}
+		else = {
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_marakai
+				hidden_effect = {
+					transfer_state = 401
+					transfer_state = 743
+					transfer_state = 747
+				}
+			}
+		}
+	}
+}
+
+IRI_strategos_tikynthaios_control = {
+	if = {
+		limit = {
+			check_variable = { IRI_tikynthaios_loyalty < 0 }
+		}
+		402 = {
+			create_unit = {
+				division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+				owner = IRI
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { IRI_tikynthaios_loyalty > 0 }
+			}
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_east_coast
+				hidden_effect = {
+					transfer_state = 402
+					transfer_state = 745
+					transfer_state = 746
+					transfer_state = 754
+				}
+				402 = {
+					create_unit = {
+						division = "name = \"Frourá Pólis\" division_template = \"Frourá Pólis\" start_experience_factor = 0.2"
+						owner = PREV
+						count = 2
+					}
+				}
+			}
+		}
+		else = {
+			IRR = {
+				custom_effect_tooltip = IRI_loyalists_get_east_coast
+				hidden_effect = {
+					transfer_state = 402
+					transfer_state = 745
+					transfer_state = 746
+					transfer_state = 754
+				}
+			}
+		}
+	}
+}

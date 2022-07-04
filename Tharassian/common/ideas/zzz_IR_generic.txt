@@ -271,7 +271,6 @@ ideas = {
 	}
 	
 	country = {
-	
 		puritan_drift_idea = {
 		
 			allowed = {

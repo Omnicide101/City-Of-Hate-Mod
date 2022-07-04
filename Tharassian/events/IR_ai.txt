@@ -26,3 +26,23 @@ country_event = {#Set border modifiers
 		}
 	}
 }
+
+country_event = {#Tell player to build intel networks in the Guild
+	id = ai.2
+	title = ai.2.t
+	desc = ai.2.d
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			goto_state = 911
+		}
+	}
+	
+	option = {
+		name = ai.2.a
+	}
+}

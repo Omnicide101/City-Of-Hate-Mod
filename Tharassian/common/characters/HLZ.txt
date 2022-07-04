@@ -1,0 +1,321 @@
+characters={
+	HLZ_edlerrat={
+		name="Edlerrat"
+		portraits={
+			civilian={
+				large="gfx/leaders/HLZ/Portrait_HLZ_Edlerrat.dds"
+			}
+		}
+		country_leader={
+			desc="politics_HLZ_edlerrat_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	HLZ_konrad_beckenbauer={
+		name="Konrad Beckenbauer"
+		portraits={
+			civilian={
+				large="gfx/leaders/HLZ/Portrait_HLZ_Beckenbauer.dds"
+			}
+		}
+		country_leader={
+			desc="politics_HLZ_beckenbauer_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_HLZ_beckenbauer_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	HLZ_bernd_beck={
+		name="Bernd Beck"
+		portraits={
+			civilian={
+				large="gfx/leaders/HLZ/Portrait_HLZ_Beck.dds"
+			}
+		}
+		country_leader={
+			desc="politics_HLZ_beck_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	HLZ_eva_katzmann={
+		name="Eva Katzmann"
+		portraits={
+			civilian={
+				large="gfx/leaders/HLZ/Portrait_HLZ_Katzmann.dds"
+			}
+		}
+		country_leader={
+			desc="politics_HLZ_katzmann_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	HLZ_melchior_speidel={
+		name="Melchior Speidel"
+		portraits={
+			civilian={
+				large="gfx/leaders/HLZ/Portrait_HLZ_Speidel.dds"
+			}
+		}
+		country_leader={
+			desc="politics_HLZ_speidel_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	HLZ_kaspar_rosenblut={
+		name="Kaspar Rosenblut"
+		portraits={
+			civilian={
+				large="gfx/leaders/HLZ/Portrait_HLZ_Rosenblut.dds"
+			}
+		}
+		country_leader={
+			desc="politics_HLZ_rosenblut_desc"
+			ideology=puritan_ideology
+			traits={ blasphemous_freiprinz }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	HLZ_laurenz_reinmann = {
+		name="Laurenz Reinmann"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/hlz_reinmann.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = laurenz_reinmann
+			allowed = {
+				original_tag = HLZ
+			}
+			visible = {
+				always = yes
+			}
+			available = {
+				OR = {
+					has_government = monarchy_constitutional
+					has_government = republic_aristocrat
+				}
+				has_completed_focus = HLZ_relegitimization_institutions
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				aristocratic_paragon
+			}
+		}
+	}
+	HLZ_sabina_heuberger = {
+		name="Sabina Heuberger"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/hlz_heuberger.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = sabina_heuberger
+			allowed = {
+				original_tag = HLZ
+			}
+			visible = {
+				always = yes
+			}
+			available = {
+				OR = {
+					has_government = monarchy_constitutional
+					has_government = republic_aristocrat
+				}
+				has_completed_focus = HLZ_relegitimization_dialogue
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				skilled_orator
+			}
+		}
+	}
+	HLZ_erwin_bloch = {
+		name="Erwin Bloch"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/hlz_bloch.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = erwin_bloch
+			allowed = {
+				original_tag = HLZ
+			}
+			visible = {
+				always = yes
+			}
+			available = {
+				OR = {
+					has_government = monarchy_constitutional
+					has_government = republic_aristocrat
+				}
+				has_completed_focus = HLZ_relegitimization_results
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				eye_for_economics
+			}
+		}
+	}
+	HLZ_alexandra_von_neureim = {
+		name="Alexandra von Neureim"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/hlz_von_neureim.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = alexandra_von_neureim
+			allowed = {
+				original_tag = HLZ
+			}
+			visible = {
+				always = yes
+			}
+			available = {
+				has_government = republic_merchant
+				has_completed_focus = HLZ_support_bauernherren
+			}
+			
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				gentlewoman_farmer
+			}
+		}
+	}
+	HLZ_joachim_fugler = {
+		name="Joachim Fugler"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/hlz_fugler.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = joachim_fugler
+			allowed = {
+				original_tag = HLZ
+			}
+			visible = {
+				always = yes
+			}
+			available = {
+				OR = {
+					AND = {
+						has_government = republic_merchant
+						has_completed_focus = HLZ_support_smallholders
+					}
+					AND = {
+						has_government = republic_peasant
+						has_completed_focus = HLZ_mandate_smallholds
+					}
+				}
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				smallholder_advocate
+			}
+		}
+	}
+	HLZ_karl_stelzner = {
+		name="Karl Stelzner"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/hlz_stelzner.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = karl_stelzner
+			allowed = {
+				original_tag = HLZ
+			}
+			visible = {
+				always = yes
+			}
+			available = {
+				has_government = republic_peasant
+				has_completed_focus = HLZ_republican_farms
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				central_organization_proponent
+			}
+		}
+	}
+	HLZ_ylcatra_isthyne = {
+		name="Ylcatra Isthyne"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/hlz_isthyne.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = ylcatra_isthyne
+			allowed = {
+				original_tag = HLZ
+			}
+			visible = {
+				always = yes
+			}
+			available = {
+				has_government = republic_peasant
+				has_completed_focus = HLZ_encourage_communalization
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				experienced_rosite
+			}
+		}
+	}
+}

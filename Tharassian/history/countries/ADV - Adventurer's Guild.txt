@@ -1,0 +1,39 @@
+﻿capital = 911
+
+set_oob = "empty"
+
+set_technology ={
+
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = monarchy_absolute
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 100
+
+	monarchy_constitutional = 0
+
+	republic_peasant = 0
+
+	republic_aristocrat = 0
+
+	republic_merchant = 0
+
+	theocrat = 0
+
+	puritan = 0
+}
+
+recruit_character = ADV_guild
+
+add_ideas = {
+	hidden_all_seeing_observer
+}
