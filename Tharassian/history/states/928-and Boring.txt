@@ -4,7 +4,18 @@ state={
 	provinces={
 		1791 2499 2665 4206 7952 7975 
 	}
-	manpower=0
+	manpower=4329
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	local_supplies=5
+	state_category = rural
+	
+    history = {
+        owner = SAN
+        add_core_of = SAN
+        buildings = {
+            infrastructure = 4
+		}
+		victory_points = { 4206 3 }
+		victory_points = { 7952 1 }
+	}
 }

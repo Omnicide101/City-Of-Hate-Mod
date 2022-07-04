@@ -1,10 +1,25 @@
 state={
 	id=912
 	name="STATE_912"
+	
 	provinces={
 		1077 1526 2971 3853 8480 8627 
 	}
-	manpower=0
+	resources = {
+        food = 12
+    }
+	manpower=4989
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	local_supplies=5
+	state_category = rural
+	
+    history = {
+        owner = SAN
+        add_core_of = SAN
+        buildings = {
+            infrastructure = 2
+			farm = 1
+		}
+		victory_points = { 1077 3 }
+	}
 }

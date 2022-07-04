@@ -58,5 +58,5 @@ tags={
 }
 picture="Tharassian.png"
 supported_version="1.11.*"
-path="C:/Users/Bfrat/Documents/Paradox Interactive/Hearts of Iron IV/mod/Tharassian"
+path="C:\Users\Thore\Documents\GitHub\City-Of-Hate-Mod"
 remote_file_id="1640248991"
