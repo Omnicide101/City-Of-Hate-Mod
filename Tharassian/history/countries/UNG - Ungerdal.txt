@@ -104,6 +104,11 @@ add_opinion_modifier = {
 	modifier = bitter_rivals
 }
 
+recruit_character = UNG_heinrich_brengst
+recruit_character = UNG_stella_galde
+recruit_character = UNG_alko_blau
+recruit_character = UNG_cecilia_freisler
+
 if = {
 	limit = {
 		has_dlc = "Together for Victory"
