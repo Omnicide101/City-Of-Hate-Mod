@@ -23,7 +23,7 @@ country_event = {#Give Lands to Perkavland?
 	id = snf.2
 	title = snf.2.t
 	desc = snf.2.d
-	picture = GFX_report_event_militaryning
+	picture = GFX_report_event_military_planning
 	
 	fire_only_once = yes
 	
@@ -103,7 +103,7 @@ country_event = {#Nobility end their struggle
 	}
 	
 	mean_time_to_happen = {
-		days = 20
+		days = 10
 	}
 	
 	option = {#Finally!
@@ -176,11 +176,10 @@ country_event = {#Schneefilde asks support from Faustburg
 			days = 2
 			}
 		custom_effect_tooltip = FPT_increase_union_loyalty_tt
-			add_to_variable = {
-				var = FPT_union_loyalty
-				value = 3
-			}
-			set_loyalty_approximations = yes
+				add_to_variable = {
+					var = FPT_union_loyalty
+					value = 3
+				}
 		}
 		
 	}
@@ -202,11 +201,10 @@ country_event = {#Schneefilde asks support from Faustburg
 			days = 2
 			}
 		custom_effect_tooltip = FPT_decrease_union_loyalty_tt
-			add_to_variable = {
-				var = FPT_union_loyalty
-				value = -3
-			}
-			set_loyalty_approximations = yes
+				add_to_variable = {
+					var = FPT_union_loyalty
+					value = -3
+				}
 		}
 	}
 	option = {#actually, fuck you.
@@ -323,11 +321,10 @@ country_event = {#Otto recovers from getting screwed over
 	option = {#crisis averted
 		name = snf.11.a
 		add_to_variable = {
-			var = HLZ.FPT_stahlhof_loyalty
-			value = 5
-		}
-		set_loyalty_approximations = yes
-		custom_effect_tooltip = FPT_increase_stahlhof_loyalty_large_tt
+				var = HLZ.FPT_stahlhof_loyalty
+				value = 5
+			}
+				custom_effect_tooltip = FPT_increase_stahlhof_loyalty_large_tt
 		add_popularity = {
 				ideology = republic_aristocrat
 				popularity = -0.20
@@ -426,7 +423,7 @@ country_event = {#What we gonna do with Drecht?
 	id = snf.14
 	title = snf.14.t
 	desc = snf.14.d
-	picture = GFX_report_event_militaryning
+	picture = GFX_report_event_military_planning
 	
 	fire_only_once = yes
 	
@@ -478,7 +475,7 @@ country_event = {#Perkav warning
 	id = snf.17
 	title = snf.17.t
 	desc = snf.17.d
-	picture = GFX_report_event_militaryning
+	picture = GFX_report_event_military_planning
 	
 	fire_only_once = yes
 	
@@ -678,6 +675,11 @@ country_event = {#yes
 	
 	option = {
 	name = snf.23.a
+	diplomatic_relation = {
+	country = WSZ
+	relation = non_aggression_pact
+	active = yes
+	}
 	add_political_power = 50
 	WSZ = {
 	FROM_improve_THIS_relations = yes
@@ -716,6 +718,9 @@ country_event = {#Ayo Get Kalaster
 	option = {
 	name = snf.25.a
 	add_political_power = 20
+	329 = {
+		add_claim_by = SNF
+		}
 	set_country_flag = SNF_kalaster_flag
 	}
 }
@@ -740,7 +745,7 @@ country_event = {#How about we just show of our love to Hutrig in the Kriegspiel
 	}
 
 	mean_time_to_happen = {
-		days = 160
+		days = 80
 	}
 	
 
@@ -777,6 +782,90 @@ country_event = {#How about we just show of our love to Hutrig in the Kriegspiel
 				var = FPT_piety
 				value = 1
 			}
+	}
+}
+#
+country_event = {#The Exodus(Bruh wtf all my manpower)
+	id = snf.27
+	title = snf.27.t
+	desc = snf.27.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+	tag = SNF
+	AND = {
+			owns_state = 418
+			owns_state = 416
+		}
+	OR = {
+		AND = {
+		has_completed_focus = SNF_retake_nevedenn
+		owns_state = 420
+		}
+		has_completed_focus = SNF_assist_wertzworde
+
+	}
+	}
+	
+
+	option = {
+	name = snf.27.a #crying emoji
+	if = {
+			limit = {
+				owns_state = 420
+			}
+			420 = {
+				add_manpower = -120000
+			}
+			hidden_effect = {
+			414 = {
+				add_manpower = 60000
+			}
+			}
+		} 
+	418 = {
+	add_manpower = -120000
+	}
+	416 = {
+	add_manpower = -180000
+	}
+	hidden_effect = {
+	417 = {
+	add_manpower = 80000
+		}
+	415 = {
+	add_manpower = 100000
+		}
+	PRK = {
+		country_event = {
+			id = snf.28
+			days = 7
+			}
+		}
+	}
+	}
+}
+#
+country_event = {#The Exodus for PRK
+	id = snf.28
+	title = snf.28.t
+	desc = snf.28.d
+	picture = GFX_report_event_chamberlain_announce
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+	name = snf.28.a #yo wtf that's kinda neat of a consolation prize of losing half of my land
+	add_timed_idea = {
+		idea = refugee_crisis
+		days = 120
+		}
 	}
 }
 ################

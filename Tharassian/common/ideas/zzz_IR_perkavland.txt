@@ -166,5 +166,147 @@ ideas = {
 				monarchy_constitutional_drift = 0.1
 			}
 		}
+###########################################################
+		PRK_nevet_support = {
+			allowed = {
+				original_tag = PRK
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_foreign_capital
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		PRK_survival_of_the_greatest = {
+			allowed = {
+				original_tag = PRK
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = BLD_The_Firetrial
+
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = 0.05
+				army_org_factor = 0.03
+				army_org_regain = 0.15
+				attrition = -0.1
+				conscription_factor = -0.08
+			}
+		}
+		PRK_budownolud = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_agrarian_reform
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.2
+				conscription_factor = -0.02
+			}
+		}
+
+###
+
+PRK_looming_war = {
+	allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+	picture = eng_imperial_conscription
+
+	removal_cost = -1
+
+	modifier = {
+	conscription = 0.03
+	war_support_factor = 0.05
+	war_support_weekly = 0.003
 	}
+}
+
+PRK_looming_war2 = {
+	name ="PRK_looming_war"
+	allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+	picture = eng_imperial_conscription
+
+	removal_cost = -1
+
+	modifier = {
+	conscription = 0.03
+	production_factory_efficiency_gain_factor = 0.10
+	production_factory_max_efficiency_factor = 0.05
+	war_support_factor = 0.05
+	war_support_weekly = 0.003
+	}
+}
+
+PRK_looming_war3 = {
+	name ="PRK_looming_war"
+	allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+	picture = eng_imperial_conscription
+
+	removal_cost = -1
+
+	modifier = {
+	occupation_cost = -0.2
+	compliance_growth = 0.2
+	conscription = 0.03
+	production_factory_efficiency_gain_factor = 0.10
+	production_factory_max_efficiency_factor = 0.05
+	war_support_factor = 0.05
+	war_support_weekly = 0.003
+	}
+	targeted_modifier = {
+					tag = UNG
+					attack_bonus_against = 0.05
+					defense_bonus_against = 0.05
+			}
+	targeted_modifier = {
+					tag = SNF
+					attack_bonus_against = 0.05
+					defense_bonus_against = 0.05
+			}
+	targeted_modifier = {
+					tag = TEI
+					attack_bonus_against = 0.05
+					defense_bonus_against = 0.05
+			}
+	targeted_modifier = {
+					tag = WSZ
+					attack_bonus_against = 0.05
+					defense_bonus_against = 0.05
+			}
 }
