@@ -4,21 +4,7 @@ state={
 	provinces={
 		1270 3708 4216 5184 8407 8419 
 	}
-	manpower=4213
+	manpower=0
 	buildings_max_level_factor=1.000
-	local_supplies=5
-	state_category = rural
-	resources = {
-		lumber = 2
-	}
-	history = {
-        owner = SAN
-        add_core_of = SAN
-        buildings = {
-            infrastructure = 3
-			farm = 1
-		}
-		victory_points = { 5184 3 }
-		victory_points = { 8419 1 }
-	}
+	local_supplies=0.000
 }
