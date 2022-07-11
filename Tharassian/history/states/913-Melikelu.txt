@@ -1,0 +1,22 @@
+state={
+	id=913
+	name="STATE_913"
+	provinces={
+		3224 8334 8357 8385 8398 
+	}
+	manpower=2846
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = rural
+
+	history = {
+        owner = SAN
+        add_core_of = SAN
+        buildings = {
+            infrastructure = 1
+			farm = 1
+		}
+		victory_points = { 3224 1 }
+		victory_points = { 8357 1 }
+	}
+}

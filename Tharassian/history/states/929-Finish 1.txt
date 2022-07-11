@@ -4,7 +4,18 @@ state={
 	provinces={
 		472 554 1138 8181 
 	}
-	manpower=0
+	manpower=37385
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	local_supplies=5
+	state_category = town
+	
+    history = {
+        owner = SAN
+        add_core_of = SAN
+        buildings = {
+            infrastructure = 4
+			farm = 2
+		}
+		victory_points = { 8181 10 }
+	}
 }
