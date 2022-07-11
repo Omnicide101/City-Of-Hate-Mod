@@ -1,0 +1,19 @@
+state={
+	id=941
+	name="STATE_941"
+	provinces={
+		943 1136 3394 7659 7722 
+	}
+	manpower=243
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = pastoral
+	
+    history = {
+        owner = AKS
+        add_core_of = AKS
+        buildings = {
+            infrastructure = 1
+		}
+	}
+}
