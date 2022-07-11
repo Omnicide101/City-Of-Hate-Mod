@@ -120,35 +120,7 @@ give_military_access = FTH
 give_military_access = WIS
 give_military_access = WSZ
 
-create_country_leader = {
-	name = "Otto Kolb"
-	desc = "politics_SNF_kolb_desc"
-	picture = "gfx/leaders/SNF/Portrait_SNF_Kolb.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	ambitious_prince
-	}
-}
 
-create_country_leader = {
-	name = "Otto Kolb"
-	desc = "politics_SNF_kolb_desc"
-	picture = "gfx/leaders/SNF/Portrait_SNF_Kolb.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	ambitious_prince
-	}
-}
-
-create_country_leader = {
-	name = "Ulrich Drecht"
-	desc = "politics_SNF_Drecht_desc"
-	picture = "gfx/leaders/SNF/Portrait_SNF_Drecht.dds"
-	ideology = republic_aristocrat_ideology
-	traits = {
-	disliked_dynasty ####powerful_noble added later
-	}
-}
 
 create_country_leader = {
 	name = "Hans Werthner"
@@ -185,6 +157,11 @@ create_country_leader = {
 	traits = {
 	}
 }
+
+recruit_character = ulrich_drecht
+recruit_character = SNF_otto_kolb
+recruit_character = SNF_fridrich_huber
+recruit_character = SNF_till_lehmkuhl
 
 #create_field_marshal = {
 #				name = "Otto Kolb"
