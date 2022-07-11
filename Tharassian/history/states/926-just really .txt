@@ -4,20 +4,7 @@ state={
 	provinces={
 		1917 3401 4115 4911 8209 
 	}
-	manpower=1596
+	manpower=0
 	buildings_max_level_factor=1.000
-	local_supplies=5
-	state_category = rural
-	
-    history = {
-        owner = SAN
-        add_core_of = SAN
-        buildings = {
-            infrastructure = 4
-			3401 = {
-				naval_base = 1
-			}
-		}
-		victory_points = { 3401 2 }
-	}
+	local_supplies=0.000
 }

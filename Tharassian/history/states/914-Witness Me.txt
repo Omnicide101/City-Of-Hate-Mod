@@ -4,19 +4,7 @@ state={
 	provinces={
 		1096 5553 8327 8345 8366 8386 8416 
 	}
-	manpower=1628
+	manpower=0
 	buildings_max_level_factor=1.000
-	local_supplies=5
-	state_category = rural
-	resources = {
-		lumber = 4
-	}
-	history = {
-        owner = SAN
-        add_core_of = SAN
-        buildings = {
-            infrastructure = 1
-		}
-		victory_points = { 8327 1 }
-	}
+	local_supplies=0.000
 }
