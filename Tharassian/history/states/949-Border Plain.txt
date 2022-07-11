@@ -5,7 +5,21 @@ state={
 	provinces={
 		723 4584 7619 7630 7654 7660 
 	}
-	manpower=0
+	manpower=4181
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	local_supplies=5
+	state_category = rural
+	
+	resources = {
+        food = 8
+    }
+    history = {
+        owner = AKS
+        add_core_of = AKS
+        buildings = {
+            infrastructure = 2
+		}
+		victory_points = { 4584 3 }
+		victory_points = { 7619 1 }
+	}
 }

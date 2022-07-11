@@ -4,7 +4,20 @@ state={
 	provinces={
 		1900 2873 3008 3072 5552 7518 
 	}
-	manpower=0
+	manpower=267
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	local_supplies=5
+	state_category = pastoral
+	
+	resources = {
+        lumber = 7
+    }
+    history = {
+        owner = EAQ
+        add_core_of = EAQ
+        buildings = {
+            infrastructure = 1
+		}
+		victory_points = { 2873 1 }
+	}
 }

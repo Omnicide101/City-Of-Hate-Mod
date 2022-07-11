@@ -4,7 +4,20 @@ state={
 	provinces={
 		2076 4085 4113 4434 4968 5349 7306 7325 
 	}
-	manpower=0
+	manpower=290
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	local_supplies=5
+	state_category = pastoral
+	
+	resources = {
+		food = 8
+	}
+    history = {
+        owner = AKS
+        add_core_of = AKS
+        buildings = {
+            infrastructure = 1
+		}
+		victory_points = { 2076 1 }
+	}
 }

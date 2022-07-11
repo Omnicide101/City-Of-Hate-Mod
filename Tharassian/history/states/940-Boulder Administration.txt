@@ -4,7 +4,20 @@ state={
 	provinces={
 		278 2131 4328 7820 7876 7914 
 	}
-	manpower=0
+	manpower=4503
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	local_supplies=5
+	state_category = rural
+	
+	resources = {
+        lumber = 7
+    }
+    history = {
+        owner = EAQ
+        add_core_of = EAQ
+        buildings = {
+            infrastructure = 1
+		}
+		victory_points = { 4318 2 }
+	}
 }
