@@ -1,19 +1,20 @@
-
 state={
 	id=521
 	name="STATE_521"
-
-	history={
-		owner = XXX
-		add_core_of = XXX
-
-	}
-
 	provinces={
 		580 1994 3671 4470 4471 7219 7242 
-	}
-	manpower=1
+	}	
+	manpower = 369262
 	buildings_max_level_factor=1.000
-	state_category=rural
-	local_supplies=0.000
+	state_category=City
+	local_supplies=10
+	history={
+		owner = EAQ
+		add_core_of = EAQ
+		buildings = {
+			infrastructure = 3
+			workshop = 1
+			forge = 1
+		}
+	}
 }

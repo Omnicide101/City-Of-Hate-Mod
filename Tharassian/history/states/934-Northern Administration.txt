@@ -1,11 +1,25 @@
-
 state={
 	id=934
 	name="STATE_934"
 	provinces={
 		138 299 322 954 1658 3472 3788 5000 7268 7304 7341 7342 9715 
 	}
-	manpower=0
+	manpower=4147
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	local_supplies=5
+	state_category = rural
+	
+	resources = {
+        lumber = 7
+	}
+    history = {
+        owner = EAQ
+        add_core_of = EAQ
+        buildings = {
+            infrastructure = 2
+			dockyard = 1
+		}
+		victory_points = { 954 2 }
+		victory_points = { 322 1 }
+	}
 }

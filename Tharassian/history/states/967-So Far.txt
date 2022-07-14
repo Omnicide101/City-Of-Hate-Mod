@@ -2,9 +2,23 @@ state={
 	id=967
 	name="STATE_967"
 	provinces={
-		4286 4985 7022 7049 7052 7084 7103 
+		4286 4985 6961 7022 7049 7052 7084 7103 
 	}
-	manpower=0
+	manpower=814
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	local_supplies=5
+	state_category = pastoral
+	
+	resources = {
+        lumber = 4
+	}
+    history = {
+        owner = AKS
+        add_core_of = AKS
+        buildings = {
+            infrastructure = 2
+			dockyard = 1
+		}
+		victory_points = { 7052 2 }
+	}
 }

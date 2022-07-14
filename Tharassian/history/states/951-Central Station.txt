@@ -1,11 +1,24 @@
-
 state={
 	id=951
 	name="STATE_951"
 	provinces={
 		1753 4585 5155 7519 7546 
 	}
-	manpower=0
+	manpower=5383	
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	local_supplies=5
+	state_category = rural
+	
+	resources = {
+        lumber = 3
+		food = 8
+	}
+    history = {
+        owner = AKS
+        add_core_of = AKS
+        buildings = {
+            infrastructure = 2
+		}
+		victory_points = { 7546 2 }
+	}
 }
