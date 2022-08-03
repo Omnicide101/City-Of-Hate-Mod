@@ -35,6 +35,20 @@ bookmarks = {
 			}
 		}
 		
+		"IRI"={
+			history = "IRI_CITY_OF_HATE_DESC"
+			ideology = monarchy_constitutional
+			ideas = {
+				IRI_Irinthios_Will_Rise_Again
+				IRI_topheavy_military
+			}
+			focuses = {
+				IRI_the_king_and_his_many_faces
+				IRI_the_rightful_dynasty_returns
+				IRI_reclaiming_burdvin
+			}
+		}
+		
 		"SKA"={
 			history = "SKA_CITY_OF_HATE_DESC"
 			ideology = monarchy_constitutional
