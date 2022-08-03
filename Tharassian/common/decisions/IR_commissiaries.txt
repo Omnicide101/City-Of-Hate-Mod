@@ -317,6 +317,22 @@ commissiaries = {
 		
 		complete_effect = {
 			
+			hidden_effect = {
+				every_state = {
+					limit = {
+						has_dynamic_modifier = {
+							modifier = ORD_drakeskin_guarded_lands
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = ORD_drakeskin_guarded_lands
+					}
+				}
+				ORD = {
+					set_country_flag = ORD_drakeskins_not_guarding_border
+				}
+			}
+			
 			192 = {
 				set_state_name = "Stauhyte"
 			}

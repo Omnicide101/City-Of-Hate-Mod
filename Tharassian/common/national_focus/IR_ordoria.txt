@@ -165,6 +165,563 @@ focus_tree = {
 
 ### POLITICAL BRANCH ###
 
+## GLORY LEAGUE ##
+	focus = { #Lothinnys Holds On
+		id = ORD_glory_league
+		icon = GFX_focus_generic_military_dictatorship
+		cost = 1
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		allow_branch = {
+			has_country_flag = ORD_puritan_government
+		}
+		mutually_exclusive = {
+			focus = 
+		}
+		x = 20
+		y = 0
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #The Army
+		id = ORD_army
+		icon = GFX_focus_generic_manpower
+		cost = 1
+		prerequisite = {
+			focus = ORD_glory_league
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		relative_position_id = ORD_glory_league
+		x = -4
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = dalyn_rohyis
+			add_war_support = 0.02
+		}
+	}
+	
+	focus = { #Exacting our Vengeance...
+		id = ORD_exacting_vengeance
+		icon = GFX_IRI_Ensure_Loyalty_Of_Generals
+		cost = 3
+		prerequisite = {
+			focus = ORD_army
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_army
+		x = -1
+		y = 1
+		completion_reward = {
+			country_event = ORD_lore.16
+		}
+	}
+	
+	focus = { #...by Sword...
+		id = ORD_by_sword
+		icon = GFX_goal_generic_major_war
+		cost = 2
+		prerequisite = {
+			focus = ORD_exacting_vengeance
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		mutually_exclusive = {
+			focus = ORD_by_bow
+		}
+		relative_position_id = ORD_exacting_vengeance
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_lothinnys_bodyguards_sword
+			hidden_effect = {
+				load_oob = "ORD_vengeance_sword"
+			}
+		}
+	}
+	
+	focus = { #...by Bow...
+		id = ORD_by_bow
+		icon = GFX_focus_generic_air_defense
+		cost = 2
+		prerequisite = {
+			focus = ORD_exacting_vengeance
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		mutually_exclusive = {
+			focus = ORD_by_sword
+		}
+		relative_position_id = ORD_exacting_vengeance
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_lothinnys_bodyguards_bow
+			hidden_effect = {
+				load_oob = "ORD_vengeance_bow"
+			}
+		}
+	}
+	
+	focus = { #...and by Blood
+		id = ORD_by_blood
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 1
+		prerequisite = {
+			focus = ORD_by_sword
+			focus = ORD_by_bow
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		relative_position_id = ORD_by_sword
+		x = 1
+		y = 1
+		completion_reward = {
+			add_field_marshal_role = {
+			  character = ORD_isvenith_lothinnys
+			  traits = {
+					ord_league
+					harsh_leader
+				}
+			  skill = 4
+			  attack_skill = 4
+			  defense_skill = 2
+			  planning_skill = 3
+			  logistics_skill = 4
+			}
+		}
+	}
+	
+	focus = { #The Steward's Blade
+		id = ORD_stewards_blade
+		icon = GFX_BLD_Revive_The_Tradition_Of_Firetrial
+		cost = 3
+		prerequisite = {
+			focus = ORD_by_blood
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		relative_position_id = ORD_by_blood
+		x = 1
+		y = 1
+		completion_reward = {
+			add_war_support = 0.05
+		}
+	}
+	
+	focus = { #The League
+		id = ORD_league
+		icon = GFX_focus_ord_evil
+		cost = 1
+		prerequisite = {
+			focus = ORD_glory_league
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		relative_position_id = ORD_glory_league
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_trads_1
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 1
+			}
+			custom_effect_tooltip = ORD_empower_trads_1
+			add_to_variable = {
+				ORD_traditionalists_influence = 1
+			}
+		}
+	}
+	
+	focus = { #The Loyalty of Our Generals...
+		id = ORD_loyalty_generals
+		icon = GFX_focus_generic_military_mission
+		cost = 3
+		prerequisite = {
+			focus = ORD_army
+		}
+		prerequisite = {
+			focus = ORD_league
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_army
+		x = 1
+		y = 1
+		completion_reward = {
+			country_event = ORD_lore.17
+		}
+	}
+	
+	focus = { #...and the Devotion of our Troops
+		id = ORD_devotion_troops
+		icon = GFX_focus_generic_little_entente
+		cost = 3
+		prerequisite = {
+			focus = ORD_army
+		}
+		prerequisite = {
+			focus = ORD_league
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_league
+		x = -1
+		y = 1
+		completion_reward = {
+			country_event = ORD_lore.18
+		}
+	}
+	
+	focus = { #Expanding our Glory
+		id = ORD_expanding_glory
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 3
+		prerequisite = {
+			focus = ORD_league
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_league
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_empower_trads_1
+			add_to_variable = {
+				ORD_traditionalists_influence = 1
+			}
+		}
+	}
+	
+	focus = { #Promote 'Fates-Clubs'
+		id = ORD_fates_clubs
+		icon = GFX_goal_demand_sudetenland
+		cost = 3
+		prerequisite = {
+			focus = ORD_loyalty_generals
+		}
+		prerequisite = {
+			focus = ORD_devotion_troops
+		}
+		prerequisite = {
+			focus = ORD_expanding_glory
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		relative_position_id = ORD_devotion_troops
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_trads_3
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 3
+			}
+		}
+	}
+	
+	focus = { #Chapter-Houses
+		id = ORD_chapter_houses
+		icon = GFX_focus_hlz_bauernherren
+		cost = 4
+		prerequisite = {
+			focus = ORD_expanding_glory
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		relative_position_id = ORD_expanding_glory
+		x = -1
+		y = 1
+		completion_reward = {
+			country_event = ORD_lore.19
+		}
+	}
+	
+	focus = { #On the Fora...
+		id = ORD_on_fora
+		icon = GFX_IRI_Open_Officer_Schools
+		cost = 2
+		prerequisite = {
+			focus = ORD_fates_clubs
+		}
+		prerequisite = {
+			focus = ORD_chapter_houses
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		relative_position_id = ORD_fates_clubs
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_faiths_1
+			add_to_variable = {
+				ORD_faithful_loyalty = 1
+			}
+		}
+	}
+	
+	focus = { #In the Streets...
+		id = ORD_in_streets
+		icon = GFX_IRI_Meritocratic_Promotions
+		cost = 2
+		prerequisite = {
+			focus = ORD_fates_clubs
+		}
+		prerequisite = {
+			focus = ORD_chapter_houses
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		relative_position_id = ORD_fates_clubs
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_empower_trads_1
+			add_to_variable = {
+				ORD_traditionalists_influence = 1
+			}
+		}
+	}
+	
+	focus = { #...And in the Manors
+		id = ORD_in_manors
+		icon = GFX_focus_generic_temple
+		cost = 2
+		prerequisite = {
+			focus = ORD_chapter_houses
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		relative_position_id = ORD_chapter_houses
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_mods_1
+			add_to_variable = {
+				ORD_moderate_loyalty = 1
+			}
+		}
+	}
+	
+	focus = { #The Steward's Voice
+		id = ORD_stewards_voice
+		icon = GFX_focus_ord_lothinnys
+		cost = 3
+		prerequisite = {
+			focus = ORD_on_fora
+		}
+		prerequisite = {
+			focus = ORD_in_streets
+		}
+		prerequisite = {
+			focus = ORD_in_manors
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		relative_position_id = ORD_in_streets
+		x = 1
+		y = 1
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	
+	focus = { #The Oath
+		id = ORD_oath
+		icon = GFX_focus_generic_secret_treaty
+		cost = 1
+		prerequisite = {
+			focus = ORD_glory_league
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		relative_position_id = ORD_glory_league
+		x = 4
+		y = 1
+		completion_reward = {
+			add_stability = 0.03
+		}
+	}
+	
+	focus = { #Covert Recruitment
+		id = ORD_covert_recruitment
+		icon = GFX_focus_prc_infiltration
+		cost = 2
+		prerequisite = {
+			focus = ORD_oath
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_oath
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = ord_lore.20
+		}
+	}
+	
+	focus = { #Once Bitten...
+		id = ORD_once_bitten
+		icon = GFX_IRI_Program_Of_Purity
+		cost = 1
+		prerequisite = {
+			focus = ORD_covert_recruitment
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		mutually_exclusive = {
+			focus = ORD_expand_authorizations
+		}
+		relative_position_id = ORD_covert_recruitment
+		x = -1
+		y = 1
+		completion_reward = {
+			country_event = ord_lore.21
+		}
+	}
+	
+	focus = { #Expand the Authorizations
+		id = ORD_expand_authorizations
+		icon = GFX_IRI_Spoils_Of_War
+		cost = 2
+		prerequisite = {
+			focus = ORD_covert_recruitment
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		mutually_exclusive = {
+			focus = ORD_once_bitten
+		}
+		relative_position_id = ORD_covert_recruitment
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_more_magic_items_tt
+		}
+	}
+	
+	focus = { #The Oath in the Barracks...
+		id = ORD_oath_barracks
+		icon = GFX_IRI_New_Warfare_Experiences
+		cost = 2
+		prerequisite = {
+			focus = ORD_once_bitten
+			focus = ORD_expand_authorizations
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		relative_position_id = ORD_once_bitten
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = ord_lore.22
+		}
+	}
+	
+	focus = { #...and in the Ballrooms
+		id = ORD_oath_ballrooms
+		icon = GFX_IRI_Rebuild_Burdvin
+		cost = 2
+		prerequisite = {
+			focus = ORD_once_bitten
+			focus = ORD_expand_authorizations
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		relative_position_id = ORD_expand_authorizations
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = ord_lore.23
+		}
+	}
+	
+	focus = { #The Steward's Right Hand
+		id = ORD_stewards_hand
+		icon = GFX_goal_generic_military_deal
+		cost = 3
+		prerequisite = {
+			focus = ORD_oath_barracks
+		}
+		prerequisite = {
+			focus = ORD_oath_ballrooms
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		relative_position_id = ORD_oath_barracks
+		x = 1
+		y = 1
+		completion_reward = {
+			add_political_power = 200
+		}
+	}
+	
+	focus = { #Eyes Turned East
+		id = ORD_eyes_turned_east
+		icon = GFX_ung_focus_radicalism_both_sides
+		cost = 5
+		prerequisite = {
+			focus = ORD_stewards_blade
+		}
+		prerequisite = {
+			focus = ORD_stewards_voice
+		}
+		prerequisite = {
+			focus = ORD_stewards_hand
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		bypass = {
+			OR = {
+				RTH = {
+					is_not_threat = yes
+				}
+				has_war_with = RTH
+			}
+		}
+		relative_position_id = ORD_stewards_voice
+		x = 0
+		y = 1
+		completion_reward = {
+			declare_war_on = {
+				target = RTH
+				type = annex_everything
+			}
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
 ## MODERATES ##
 
 	focus = { #Moderate Victory
@@ -1020,6 +1577,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ORD_decree_fails
 		}
+		mutually_exclusive = {
+			focus = ORD_damage_control
+		}
 		ai_will_do = {
 			factor = 5
 		}
@@ -1076,6 +1636,13 @@ focus_tree = {
 		prerequisite = {
 			focus = ORD_expand_smuggle_schemes
 		}
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_government = puritan
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 5
 		}
@@ -1085,7 +1652,7 @@ focus_tree = {
 		select_effect = {
 			hidden_effect = {
 				country_event = {
-					event = ord.78
+					id = ord.78
 					days = 30
 				}
 			}
@@ -1135,6 +1702,1338 @@ focus_tree = {
 		}
 	}
 	
+	##STEWARDS COUNTERCOUP
+	focus = { #Restoring Sanity
+		id = ORD_restoring_sanity
+		icon = GFX_focus_ord_evil
+		cost = 1
+		prerequisite = {
+			focus = ORD_expand_smuggle_schemes
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		allow_branch = {
+			has_country_flag = ORD_stewards_countercoup_flag
+		}
+		x = 20
+		y = 0
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = dalyn_rohyis
+			
+			add_field_marshal_role = {
+				character = ORD_isvenith_lothinnys
+				traits = {
+					ord_league
+					harsh_leader
+				}
+				skill = 4
+				attack_skill = 4
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 4
+			}
+			
+			add_popularity = {
+				ideology = puritan
+				popularity = 0.23
+			}
+		}
+	}
+	
+	focus = { #Sideline the Son...
+		id = ORD_sideline_son
+		icon = GFX_focus_rom_handle_king
+		cost = 3
+		prerequisite = {
+			focus = ORD_restoring_sanity
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		relative_position_id = ORD_restoring_sanity
+		x = -2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_disempower_mods_7
+			subtract_from_variable = {
+				ORD_moderates_influence = 7
+			}
+		}
+	}
+	
+	focus = { #...but Reassure the Father
+		id = ORD_reassure_father
+		icon = GFX_goal_generic_major_alliance
+		cost = 1
+		prerequisite = {
+			focus = ORD_sideline_son
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_sideline_son
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.03
+		}
+	}
+	
+	focus = { #Rescind the Decree
+		id = ORD_rescind_decree
+		icon = GFX_focus_generic_monarchy_1
+		cost = 2
+		prerequisite = {
+			focus = ORD_restoring_sanity
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		relative_position_id = ORD_restoring_sanity
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.04
+		}
+	}
+	
+	focus = { #Preventing a second 819
+		id = ORD_prevent_second_819
+		icon = GFX_goal_generic_defence
+		cost = 4
+		prerequisite = {
+			focus = ORD_rescind_decree
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_rescind_decree
+		x = 0
+		y = 1
+		completion_reward = {
+			add_war_support = 0.06
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				add_ideas = ORD_the_oath_idea_2
+				
+				else = {
+					add_ideas = ORD_the_oath_idea_vanilla_2
+				}
+			}
+		}
+	}
+	
+	focus = { #Wooing the Pragmatic...
+		id = ORD_wooing_pragmatic
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 3
+		prerequisite = {
+			focus = ORD_restoring_sanity
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		relative_position_id = ORD_restoring_sanity
+		x = 2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_mods_5
+			add_to_variable = {
+				ORD_moderates_loyalty = 5
+			}
+			custom_effect_tooltip = ORD_empower_trads_2
+			add_to_variable = {
+				ORD_traditionalists_influence = 2
+			}
+		}
+	}
+	
+	focus = { #..and Offing the Rest
+		id = ORD_disposing_rest
+		icon = GFX_goal_generic_major_war
+		cost = 4
+		prerequisite = {
+			focus = ORD_wooing_pragmatic
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_wooing_pragmatic
+		x = 0
+		y = 1
+		completion_reward = {
+			add_political_power = 125
+		}
+	}
+	
+	focus = { #Where We Left Off
+		id = ORD_left_off
+		icon = GFX_focus_ord_destroy_revolution
+		cost = 1
+		prerequisite = {
+			focus = ORD_reassure_father
+		}
+		prerequisite = {
+			focus = ORD_prevent_second_819
+		}
+		prerequisite = {
+			focus = ORD_disposing_rest
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_prevent_second_819
+		x = 0
+		y = 1
+		completion_reward = {
+			declare_war_on = {
+				target = RTH
+				type = annex_everything
+			}
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
+### WAR WITH RTHAUIAUR ###
+
+	## GLORY LEAGUE ##
+	
+	focus = { #Army-centric branch
+		id = ORD_army_might
+		icon = GFX_IRI_Mandatory_Army_Service
+		cost = 3
+		#Temporarily disabled to make programming the tree easier
+		#TODO re-enable
+		#allow_branch = {
+		#	OR = {
+		#		has_country_flag = ORD_stewards_countercoup_flag
+		#		has_completed_focus = ORD_eyes_turned_east
+		#		has_completed_focus = ORD_left_off
+		#	}
+		#}
+		prerequisite = {
+			focus = ORD_left_off
+			focus = ORD_eyes_turned_east
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		mutually_exclusive = {
+			focus = ORD_league_propaganda
+			focus = ORD_oath_operations
+		}
+		relative_position_id = ORD_eyes_turned_east
+		x = -5
+		y = 1
+		offset = {
+			x = 0
+			y = -3
+			trigger = {
+				has_country_flag = ORD_stewards_countercoup_flag
+			}
+		}
+		completion_reward = {
+			army_experience = 15
+		}
+	}
+	
+	focus = { # Purity is our Shield
+		id = ORD_defense
+		icon = GFX_goal_generic_small_arms
+		cost = 3
+		prerequisite = {
+			focus = ORD_army_might
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_army_might
+		x = -5
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				ORD_defense_idea
+			}
+		}
+	}
+	
+	focus = { # Hatred is our Sword
+		id = ORD_offense
+		icon = GFX_goal_generic_military_sphere
+		cost = 3
+		prerequisite = {
+			focus = ORD_defense
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		relative_position_id = ORD_defense
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				ORD_offense_idea
+			}
+		}
+	}
+	
+	focus = { #Expand the Borderwatch Program
+		id = ORD_fortify_the_border
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+		cost = 10
+		prerequisite = {
+			focus = ORD_army_might
+		}
+		mutually_exclusive = {
+			focus = ORD_war_machine
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_army_might
+		x = -3
+		y = 1
+		completion_reward = {
+			country_event = ord_lore.24
+		}
+	}
+	
+	focus = { #Bulwark of Traditionalism
+		id = ORD_bulwark_tradition
+		icon = GFX_goal_generic_defence
+		cost = 7
+		prerequisite = {
+			focus = ORD_fortify_the_border
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		relative_position_id = ORD_fortify_the_border
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_bulwark_tradition_idea
+		}
+	}
+	
+	focus = { #The Ordorian War Machine
+		id = ORD_war_machine
+		icon = GFX_focus_generic_japanese_imperial_glory
+		cost = 10
+		prerequisite = {
+			focus = ORD_army_might
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		mutually_exclusive = {
+			focus = ORD_fortify_the_border
+		}
+		relative_position_id = ORD_army_might
+		x = -1
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Masters of the Craft
+		id = ORD_masters_craft
+		icon = GFX_focus_generic_strike_at_democracy1
+		cost = 7
+		prerequisite = {
+			focus = ORD_war_machine
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		relative_position_id = ORD_war_machine
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_masters_craft_idea
+		}
+	}
+	
+	focus = { #Deploy the Drakeskins
+		id = ORD_deploy_drakeskins
+		icon = GFX_focus_ord_deploy_drakeskins
+		cost = 5
+		prerequisite = {
+			focus = ORD_army_might
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_army_might
+		x = 1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = ORD_drakeskins_company
+					}
+				}
+				add_ideas = ORD_drakeskins_company
+			}
+			custom_effect_tooltip = ORD_drakeskins_free_tt
+		}
+	}
+	
+	focus = { #Commission Alsyon
+		id = ORD_commission_alsyon
+		icon = GFX_focus_ord_alsyon
+		cost = 2
+		prerequisite = {
+			focus = ORD_deploy_drakeskins
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		relative_position_id = ORD_deploy_drakeskins
+		x = -1
+		y = 1
+		completion_reward = {
+			random_country = {
+				limit = {
+					has_character = ORD_captain_alsyon
+				}
+				random_character = {
+					limit = {
+						is_character = ORD_captain_alsyon
+					}
+					set_nationality = {
+						target_country = ORD
+						character = ORD_captain_alsyon
+					}
+				}
+			}
+			remove_trait = {
+				character = ORD_captain_alsyon
+				trait = mercenary_commander
+			}
+			custom_effect_tooltip = ORD_commission_alsyon_tt
+		}
+	}
+	
+	focus = { #The League's Propaganda
+		id = ORD_league_propaganda
+		icon = GFX_focus_ord_league
+		cost = 3
+		#Temporarily disabled to make programming the tree easier
+		#TODO re-enable
+		#allow_branch = {
+		#	OR = {
+		#		has_country_flag = ORD_stewards_countercoup_flag
+		#		has_completed_focus = ORD_eyes_turned_east
+		#		has_completed_focus = ORD_left_off
+		#	}
+		#}
+		prerequisite = {
+			focus = ORD_left_off
+			focus = ORD_eyes_turned_east
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		mutually_exclusive = {
+			focus = ORD_army_might
+			focus = ORD_oath_operations
+		}
+		relative_position_id = ORD_eyes_turned_east
+		x = 0
+		y = 1
+		offset = {
+			x = 0
+			y = -3
+			trigger = {
+				has_country_flag = ORD_stewards_countercoup_flag
+			}
+		}
+		completion_reward = {
+			add_war_support = 0.07
+		}
+	}
+	
+	focus = { #Deploy the Paramilitaries
+		id = ORD_deploy_paramilitaries
+		icon = GFX_goal_generic_CAS
+		cost = 5
+		prerequisite = {
+			focus = ORD_league_propaganda
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_league_propaganda
+		x = -2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_phoenix_corps_tt
+			hidden_effect = {
+				load_oob = "ORD_paramilitaries"
+			}
+		}
+	}
+	
+	focus = { #Overlook Age Requirements
+		id = ORD_child_soldiers
+		icon = GFX_goal_generic_secret_weapon
+		cost = 2
+		prerequisite = {
+			focus = ORD_deploy_paramilitaries
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		relative_position_id = ORD_deploy_paramilitaries
+		x = -1
+		y = 1
+		completion_reward = {
+			add_manpower = 35000
+		}
+	}
+	
+	focus = { #Armament Drive
+		id = ORD_armament_drive
+		icon = GFX_BLD_Combined_Arsenal_Projects
+		cost = 3
+		prerequisite = {
+			focus = ORD_league_propaganda
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_league_propaganda
+		x = 0
+		y = 1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2500
+				producer = ORD
+			}
+		}
+	}
+	
+	focus = { #Funding the Bladesmiths
+		id = ORD_fund_bladesmiths
+		icon = GFX_BLD_Exchange_Of_Builders
+		cost = 3
+		prerequisite = {
+			focus = ORD_armament_drive
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		mutually_exclusive = {
+			focus = ORD_fund_bowyers
+		}
+		relative_position_id = ORD_armament_drive
+		x = -1
+		y = 1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 3500
+				producer = ORD
+			}
+		}
+	}
+	
+	focus = { #Funding the Bowyers
+		id = ORD_fund_bowyers
+		icon = GFX_BLD_Help_Hunters
+		cost = 3
+		prerequisite = {
+			focus = ORD_armament_drive
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		mutually_exclusive = {
+			focus = ORD_fund_bladesmiths
+		}
+		relative_position_id = ORD_armament_drive
+		x = 1
+		y = 1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ranged_equipment
+				amount = 3500
+				producer = ORD
+			}
+		}
+	}
+	
+	focus = { #Propaganda Offensives
+		id = ORD_propaganda_offensives
+		icon = GFX_goal_generic_propaganda
+		cost = 2
+		prerequisite = {
+			focus = ORD_league_propaganda
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_league_propaganda
+		x = 2
+		y = 1
+		completion_reward = {
+			add_political_power = 125
+			add_war_support = 0.12
+		}
+	}
+	
+	focus = { #Honouring Inskyllithe
+		id = ORD_honouring_inskyllithe
+		icon = GFX_focus_generic_temple
+		cost = 1
+		prerequisite = {
+			focus = ORD_propaganda_offensives
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		relative_position_id = ORD_propaganda_offensives
+		x = 1
+		y = 1
+		completion_reward = {
+			add_stability = 0.07
+			add_war_support = 0.12
+		}
+	}
+	
+	focus = { #The Great March Eastwards
+		id = ORD_great_march_eastwards
+		icon = GFX_focus_ORD_hegemony
+		cost = 5
+		prerequisite = {
+			focus = ORD_offense
+			focus = ORD_honouring_inskyllithe
+		}
+		prerequisite = {
+			focus = ORD_bulwark_tradition
+			focus = ORD_masters_craft
+			focus = ORD_fund_bowyers
+			focus = ORD_fund_bladesmiths
+		}
+		prerequisite = {
+			focus = ORD_commission_alsyon
+			focus = ORD_child_soldiers
+		}
+		bypass = {
+			RTH = {
+				is_not_threat = yes
+			}
+		}
+		ai_will_do = {
+			factor = 23
+		}
+		relative_position_id = ORD_commission_alsyon
+		x = 1
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = ORD_great_march
+				days = 100
+			}
+		}
+	}
+	
+	focus = { #The Oath's Operations
+		id = ORD_oath_operations
+		icon = GFX_goal_anti_comintern_pact
+		cost = 3
+		#Temporarily disabled to make programming the tree easier
+		#TODO re-enable
+		#allow_branch = {
+		#	OR = {
+		#		has_country_flag = ORD_stewards_countercoup_flag
+		#		has_completed_focus = ORD_eyes_turned_east
+		#		has_completed_focus = ORD_left_off
+		#	}
+		#}
+		prerequisite = {
+			focus = ORD_left_off
+			focus = ORD_eyes_turned_east
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		mutually_exclusive = {
+			focus = ORD_army_might
+			focus = ORD_league_propaganda
+		}
+		relative_position_id = ORD_eyes_turned_east
+		x = 6
+		y = 1
+		offset = {
+			x = 0
+			y = -3
+			trigger = {
+				has_country_flag = ORD_stewards_countercoup_flag
+			}
+		}
+		completion_reward = {
+			RTH = {
+				add_stability = -0.09
+			}
+		}
+	}
+	
+	focus = { #Burning the Granaries...
+		id = ORD_burn_granaries
+		icon = GFX_IRI_Scorch_The_Earth
+		cost = 6
+		prerequisite = {
+			focus = ORD_oath_operations
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		available = {
+			network_strength = {
+				target = RTH
+				value > 35
+			}
+		}
+		bypass = {
+			RTH = {
+				is_not_threat = yes
+			}
+		}
+		relative_position_id = ORD_oath_operations
+		x = -2
+		y = 1
+		completion_reward = {
+			RTH = {
+				country_event = spy.1
+			}
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				#custom_effect_tooltip = ORD_enable_granary_op_tt
+				#TODO - The intel op is a broken mess. Fix.
+			}
+		}
+	}
+	
+	focus = { #...and Poisoning the Wells
+		id = ORD_poison_wells
+		icon = GFX_IRI_Remove_Rodents
+		cost = 6
+		prerequisite = {
+			focus = ORD_burn_granaries
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		available = {
+			network_strength = {
+				target = RTH
+				value > 35
+			}
+		}
+		bypass = {
+			RTH = {
+				is_not_threat = yes
+			}
+		}
+		relative_position_id = ORD_burn_granaries
+		x = 1
+		y = 1
+		completion_reward = {
+			RTH = {
+				country_event = spy.2
+			}
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				#custom_effect_tooltip = ORD_enable_well_op_tt
+				#TODO - The intel op is a broken mess. Fix.
+			}
+		}
+	}
+	
+	focus = { #All in on the Oath
+		id = ORD_all_in_oath
+		icon = GFX_goal_demand_sudetenland
+		cost = 5
+		prerequisite = {
+			focus = ORD_oath_operations
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_oath_operations
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				swap_ideas = {
+					remove_idea = ORD_the_oath_idea_2
+					add_idea = ORD_the_oath_idea_3
+				}
+				
+				else = {
+					swap_ideas = {
+						remove_idea = ORD_the_oath_idea_vanilla_2
+						add_idea = ORD_the_oath_idea_vanilla_3
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { #Terror Tactics
+		id = ORD_terror_tactics
+		icon = GFX_goal_generic_major_war
+		cost = 4
+		prerequisite = {
+			focus = ORD_oath_operations
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		available = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				network_strength = {
+					target = RTH
+					value > 35
+				}
+			}
+		}
+		bypass = {
+			RTH = {
+				is_not_threat = yes
+			}
+		}
+		relative_position_id = ORD_oath_operations
+		x = 2
+		y = 1
+		completion_reward = {
+			RTH = {
+				country_event = spy.3
+			}
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				#custom_effect_tooltip = ORD_enable_terror_campaign_op_tt
+				#TODO - The intel op is a broken mess. Fix.
+			}
+		}
+	}
+	
+	focus = { #Finding Sympathisers
+		id = ORD_finding_sympathisers
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 5
+		prerequisite = {
+			focus = ORD_terror_tactics
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		available = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				network_strength = {
+					target = RTH
+					value > 50
+				}
+			}
+		}
+		bypass = {
+			RTH = {
+				is_not_threat = yes
+			}
+		}
+		relative_position_id = ORD_terror_tactics
+		x = -1
+		y = 1
+		completion_reward = {
+			RTH = {
+				country_event = rth.1
+			}
+		}
+	}
+	
+	focus = { #Decapacitate the Snake
+		id = ORD_decapacitate_snake
+		icon = GFX_focus_ord_slay_heresiarch
+		cost = 5
+		prerequisite = {
+			focus = ORD_poison_wells
+		}
+		prerequisite = {
+			focus = ORD_all_in_oath
+		}
+		prerequisite = {
+			focus = ORD_finding_sympathisers
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		available = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				network_strength = {
+					target = RTH
+					value > 80
+				}
+			}
+		}
+		bypass = {
+			RTH = {
+				is_not_threat = yes
+			}
+		}
+		relative_position_id = ORD_all_in_oath
+		x = 0
+		y = 2
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "La Resistance"
+					}
+				}
+				add_political_power = -200
+				random_list = {
+					65 = {
+						RTH = {
+							country_event = rth.9
+						}
+					}
+					35 = {
+						RTH = {
+							country_event = rth.10
+						}
+					}
+				}
+			}
+			else = {
+				random_list = {
+					65 = {
+						RTH = {
+							country_event = rth.9
+						}
+					}
+					35 = {
+						RTH = {
+							country_event = rth.10
+						}
+					}
+				}
+			}
+			
+			custom_effect_tooltip = ORD_counterrevolution_tt
+		}
+	}
+	
+	focus = { #The Revolution Crushed
+		id = ORD_revolution_crushed
+		icon = GFX_focus_ord_destroy_revolution
+		cost = 5
+		prerequisite = {
+			focus = ORD_great_march_eastwards
+			focus = ORD_decapacitate_snake
+		}
+		ai_will_do = {
+			factor = 23
+		}
+		allow_branch = {
+			always = yes #TODO remove - only for dev purposes
+			#OR = {
+			#	NOT = {
+			#		country_exists = RTH
+			#	}
+			#	RTH = {
+			#		has_capitulated = yes
+			#	}
+			#}
+		}
+		available = {
+			OR = {
+				NOT = {
+					country_exists = RTH
+				}
+				RTH = {
+					has_capitulated = yes
+				}
+			}
+		}
+		relative_position_id = ORD_great_march_eastwards
+		x = 5
+		y = 1
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.05
+			add_political_power = 125
+		}
+	}
+	
+	focus = { #The Matter of the Dwarves
+		id = ORD_matter_dwarves
+		icon = GFX_focus_ung_seventh_campaign
+		cost = 3
+		prerequisite = {
+			focus = ORD_revolution_crushed
+		}
+		bypass = {
+			OR = {
+				NOT = {
+					country_exists = SKA
+				}
+				NOT = {
+					has_war_with = SKA
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 25
+		}
+		relative_position_id = ORD_revolution_crushed
+		x = 6
+		y = 1
+		completion_reward = {
+			country_event = ord.79
+		}
+	}
+	
+	focus = { #Liquidate the Remnant
+		id = ORD_liquidate_remnant
+		icon = GFX_focus_spa_eliminate_the_carlists
+		cost = 1
+		prerequisite = {
+			focus = ORD_matter_dwarves
+		}
+		available = {
+			has_country_flag = ORD_kill_skaelinger
+		}
+		bypass = {
+			NOT = {
+				country_exists = SKA
+			}
+		}
+		ai_will_do = {
+			factor = 28
+		}
+		mutually_exclusive = {
+			focus = ORD_let_rot
+		}
+		relative_position_id = ORD_matter_dwarves
+		x = -3
+		y = 1
+		completion_reward = {
+			add_war_support = 0.03
+		}
+	}
+	
+	focus = { #Execute Vergallheim
+		id = ORD_execute_vergallheim
+		icon = GFX_BLD_Kugur_Warriors_Cooperation
+		cost = 4
+		prerequisite = {
+			focus = ORD_liquidate_remnant
+		}
+		ai_will_do = {
+			factor = 31
+		}
+		relative_position_id = ORD_liquidate_remnant
+		x = -1
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = ORD_death_to_dwarves_idea
+				days = 150
+			}
+		}
+	}
+	
+	focus = { #Warn the Rest
+		id = ORD_warn_rest
+		icon = GFX_focus_ord_evil
+		cost = 2
+		prerequisite = {
+			focus = ORD_liquidate_remnant
+		}
+		ai_will_do = {
+			factor = 31
+		}
+		relative_position_id = ORD_liquidate_remnant
+		x = 1
+		y = 1
+		completion_reward = {
+			add_political_power = 50
+			SKA = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.12
+			}
+			BER = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_war_support = -0.08
+			}
+			RMT = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_war_support = -0.08
+			}
+		}
+	}
+	
+	focus = { #Searching for the Tomb
+		id = ORD_search_tomb
+		icon = GFX_goal_generic_position_armies
+		cost = 1
+		prerequisite = {
+			focus = ORD_execute_vergallheim
+			focus = ORD_warn_rest
+		}
+		ai_will_do = {
+			factor = 34
+		}
+		relative_position_id = ORD_execute_vergallheim
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_search_for_tomb_tt
+		}
+	}
+	
+	focus = { #Let them Rot
+		id = ORD_let_rot
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 1
+		prerequisite = {
+			focus = ORD_matter_dwarves
+		}
+		available = {
+			has_country_flag = ORD_dwarves_conceded
+		}
+		bypass = {
+			country_exists = SKA
+			NOT = {
+				has_war_with = SKA
+			}
+		}
+		ai_will_do = {
+			factor = 28
+		}
+		mutually_exclusive = {
+			focus = ORD_liquidate_remnant
+		}
+		relative_position_id = ORD_matter_dwarves
+		x = 3
+		y = 1
+		completion_reward = {
+			add_stability = 0.03
+		}
+	}
+	
+	focus = { #Exploiting Their Mines...
+		id = ORD_exploiting_mines
+		icon = GFX_IRI_Reach_Southern_Mineral_Deposits
+		cost = 8
+		prerequisite = {
+			focus = ORD_let_rot
+		}
+		ai_will_do = {
+			factor = 31
+		}
+		relative_position_id = ORD_let_rot
+		x = -1
+		y = 1
+		completion_reward = {
+			189 = {
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+			}
+			150 = {
+				add_resource = {
+					type = steel
+					amount = 7
+				}
+			}
+			#TODO add stuff related to the Looming Steel Crisis to this once that's properly implemented
+		}
+	}
+	
+	focus = { #...And Taking Their Forts
+		id = ORD_taking_fortresses
+		icon = GFX_goal_generic_fortify_city
+		cost = 3
+		prerequisite = {
+			focus = ORD_let_rot
+		}
+		ai_will_do = {
+			factor = 31
+		}
+		relative_position_id = ORD_let_rot
+		x = 1
+		y = 1
+		completion_reward = {
+			191 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			189 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			178 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			154 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			155 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { #Demand Inskyllithe's Remains
+		id = ORD_demand_remains
+		icon = GFX_goal_demand_sudetenland
+		cost = 3
+		prerequisite = {
+			focus = ORD_exploiting_mines
+			focus = ORD_taking_fortresses
+		}
+		ai_will_do = {
+			factor = 33
+		}
+		relative_position_id = ORD_exploiting_mines
+		x = 1
+		y = 1
+		completion_reward = {
+			SKA = {
+				country_event = {
+					id = ska.18
+				}
+			}
+		}
+	}
+	
+	focus = { #Peace in the east
+		id = ORD_peace_east
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 1
+		available = {
+			OR = {
+				NOT = {
+					country_exists = SKA
+				}
+				NOT = {
+					has_war_with = SKA
+				}
+			}
+		}
+		prerequisite = {
+			focus = ORD_search_tomb
+			focus = ORD_demand_remains
+		}
+		ai_will_do = {
+			factor = 35
+		}
+		relative_position_id = ORD_search_tomb
+		x = 3
+		y = 1
+		completion_reward = {
+			add_stability = 0.07
+		}
+	}
 	
 ### INDUSTRIAL BRANCH ###
 
@@ -1550,6 +3449,9 @@ focus_tree = {
 					ORD_moderates_influence < 5
 				}
 			}
+		}
+		mutually_exclusive = {
+			focus = ORD_wartime_expropriation
 		}
 		relative_position_id = ORD_gloves_off
 		x = 1

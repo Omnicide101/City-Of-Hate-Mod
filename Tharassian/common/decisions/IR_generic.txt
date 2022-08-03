@@ -918,6 +918,7 @@ GENERIC_war_exhaustion_category = {
 
 		timeout_effect = {
 			random_list = {
+				
 				33 = {
 					add_to_variable = { war_exhaustion_mobilization = -0.03 }
 					add_to_variable = { war_exhaustion_mobilization_display = -3 }

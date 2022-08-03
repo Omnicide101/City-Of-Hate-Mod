@@ -443,6 +443,7 @@ FPT_border_skirmishes = {
 			}
 			FROM = {
 				any_owned_state = {
+					is_capital = no
 					is_controlled_by = FROM
 					any_neighbor_state = {
 						is_fully_controlled_by = ROOT
@@ -459,7 +460,6 @@ FPT_border_skirmishes = {
 					NOT = {
 						has_state_flag = border_incident_active
 					}
-					is_capital = no
 					set_temp_variable = {
 						var:defender_state_temp = id
 					}
@@ -486,7 +486,7 @@ FPT_border_skirmishes = {
 					is_subject_of = ROOT
 				}
 				NOT = {
-					is_in_faction_with = ROOT
+					has_war_together_with = ROOT
 				}
 			}
 			NOT = {
@@ -505,10 +505,7 @@ FPT_border_skirmishes = {
 
 		target_trigger = {
 			FROM = {	
-				is_og_freiprinz = yes
-				NOT = {
-					tag = UNG
-				}
+				is_subject_of = UNG
 			}
 		}
 		
@@ -528,6 +525,7 @@ FPT_border_skirmishes = {
 								NOT = {
 									has_state_flag = border_incident_active
 								}
+								is_capital = no
 							}
 							has_ROOT_at_least_1_div_in_current_state_scope = yes
 							is_fully_controlled_by = ROOT
@@ -556,6 +554,7 @@ FPT_border_skirmishes = {
 								NOT = {
 									has_state_flag = border_incident_active
 								}
+								is_capital = no
 							}
 							any_neighbor_state = {
 								hidden_trigger = {
@@ -601,10 +600,6 @@ FPT_border_skirmishes = {
 				}
 			}
 			FROM = {
-				country_event = {
-					id = fpt.15
-					hours = 1
-				}
 				activate_targeted_decision = {
 					target = ROOT
 					decision = FPT_border_conflict_incident_warning_defender
@@ -683,15 +678,17 @@ FPT_border_skirmishes = {
 			
 			activate_mission = FPT_border_conflict_timeout
 			
-			country_event = ai.1
-			
-			FROM = {
+			hidden_effect = {
 				country_event = ai.1
-			}
+				
+				FROM = {
+					country_event = ai.1
+				}
 			
-			country_event = {
-				id = fpt.21
-				days = 183
+				country_event = {
+					id = fpt.21
+					days = 183
+				}
 			}
 		}
 	}

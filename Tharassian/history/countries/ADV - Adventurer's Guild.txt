@@ -33,6 +33,7 @@ set_popularities = {
 }
 
 recruit_character = ADV_guild
+recruit_character = ORD_captain_alsyon
 
 add_ideas = {
 	hidden_all_seeing_observer

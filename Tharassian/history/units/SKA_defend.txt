@@ -2,7 +2,7 @@
 
 	division = {
 		name = "Clan Hafahlíf"
-		location = 7005
+		location = 6996
 		division_template = "Mountainbreakers"
 		start_experience_factor = 0.8
 
@@ -50,7 +50,7 @@
 
 	division = {
 		name = "Skaeskind Pass Watch"
-		location = 3481
+		location = 6895
 		division_template = "Hearthguards"
 		start_experience_factor = 0.6
 
@@ -66,7 +66,7 @@
 	
 	division = {
 		name = "Solskadr Southguard"
-		location = 2594
+		location = 329
 		division_template = "Hearthguards"
 		start_experience_factor = 0.7
 
@@ -74,7 +74,7 @@
 	
 	division = {
 		name = "Votrosr Southguard"
-		location = 7267
+		location = 5506
 		division_template = "Hearthguards"
 		start_experience_factor = 0.7
 
@@ -114,7 +114,7 @@
 	
 	division = {
 		name = "3rd Miner's Militia"
-		location = 1841
+		location = 3248
 		division_template = "Tunnel Fighters"
 		start_experience_factor = 0.5
 

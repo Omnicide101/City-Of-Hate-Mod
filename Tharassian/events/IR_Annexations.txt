@@ -3868,6 +3868,22 @@ country_event = { #Conquest of Ordoria
 		GMR = {
 			clr_country_flag = GMR_trade_harassment
 		}
+		
+		hidden_effect = {
+			every_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = ORD_drakeskin_guarded_lands
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+				ORD = {
+					set_country_flag = ORD_drakeskins_not_guarding_border
+				}
+			}
+		}
 	}
 
 	option = {# Liberate
@@ -12918,15 +12934,15 @@ country_event = { #Conquest of Sulfurisle
 				SUL = {
 					has_capitulated = yes
 				}
-				controls_state = 496
+				controls_state = 488
 			}
 			AND = {
 				NOT = {
 					country_exists = SUL
 				}
-				controls_state = 496
+				controls_state = 488
 			}
-			owns_state = 496
+			owns_state = 488
 		}
 		NOT = {
 			ROOT = {

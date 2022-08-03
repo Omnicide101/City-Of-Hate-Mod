@@ -1,0 +1,83 @@
+﻿division_template = {
+	name = "Phoenix Corps"
+	is_locked = yes
+	
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		men_at_arms = { x = 0 y = 1 }
+		men_at_arms = { x = 0 y = 2 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "1st Phoenix Corps"
+		location = 3881
+		division_template = "Phoenix Corps"
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "2nd Phoenix Corps"
+		location = 4464
+		division_template = "Phoenix Corps"
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "3rd Phoenix Corps"
+		location = 1696
+		division_template = "Phoenix Corps"
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "4th Phoenix Corps"
+		location = 2441
+		division_template = "Phoenix Corps"
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "5th Phoenix Corps"
+		location = 2473
+		division_template = "Phoenix Corps"
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "6st Phoenix Corps"
+		location = 4600
+		division_template = "Phoenix Corps"
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "7nd Phoenix Corps"
+		location = 60
+		division_template = "Phoenix Corps"
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "8rd Phoenix Corps"
+		location = 7738
+		division_template = "Phoenix Corps"
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "9th Phoenix Corps"
+		location = 4178
+		division_template = "Phoenix Corps"
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "10th Phoenix Corps"
+		location = 7739
+		division_template = "Phoenix Corps"
+		start_experience_factor = 0.1
+	}
+}

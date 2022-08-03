@@ -515,6 +515,10 @@ country_event = {#Alucien Found Dead!
 		}
 		set_country_flag = RTH_alucien_murdered
 		hidden_effect = {
+			country_event = {
+				id = rth.2
+				days = 10
+			}
 			if = {
 				limit = { has_country_flag = RTH_alucien_cult_established }
 				country_event = { id = rth.77 days = 2 random = 24 }
@@ -523,7 +527,7 @@ country_event = {#Alucien Found Dead!
 	}
 }
 
-country_event = {#Alucien Murdered!
+country_event = {#Attempt on Alucien's Life!
 	id = rth.10
 	title = rth.10.t
 	desc = rth.10.d
@@ -533,7 +537,6 @@ country_event = {#Alucien Murdered!
 	
 	option = {#Death to Ordoria!
 		name = rth.10.a
-		kill_country_leader = yes
 		add_stability = 0.1
 		add_political_power = 50
 		add_war_support = 0.3
@@ -541,13 +544,6 @@ country_event = {#Alucien Murdered!
 		add_timed_idea = {
 			idea = RTH_vengeful
 			days = 100
-		}
-		set_country_flag = RTH_alucien_murdered
-		hidden_effect = {
-			if = {
-				limit = { has_country_flag = RTH_alucien_cult_established }
-				country_event = { id = rth.77 days = 2 random = 24 }
-			}
 		}
 	}
 }

@@ -6,6 +6,7 @@ state={
 	}
 	state_category = rural
 	manpower=1720
+	impassable = yes
 	buildings_max_level_factor=1.000
 	history={
 		owner = SKA

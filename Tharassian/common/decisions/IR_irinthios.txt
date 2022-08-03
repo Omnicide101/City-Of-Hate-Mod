@@ -424,7 +424,7 @@ IRI_aggelos_scheming = {
 
 		icon = generic_political_discourse
 
-		cost = 100
+		cost = 150
 
 		fire_only_once = yes
 
@@ -449,7 +449,7 @@ IRI_aggelos_scheming = {
 
 		icon = generic_political_discourse
 
-		cost = 20
+		cost = 25
 
 		fire_only_once = yes
 
@@ -509,7 +509,7 @@ IRI_aggelos_scheming = {
 			has_completed_focus = IRI_mandate_of_the_moon
 		}
 
-		cost = 40
+		cost = 50
 
 		fire_only_once = yes
 
@@ -545,7 +545,7 @@ IRI_aggelos_scheming = {
 			factor = 10
 		}
 
-		cost = 30
+		cost = 35
 
 		fire_only_once = yes
 
@@ -575,7 +575,7 @@ IRI_aggelos_scheming = {
 			factor = 10
 		}
 
-		cost = 20
+		cost = 25
 
 		days_re_enable = 35
 
@@ -673,14 +673,14 @@ IRI_aggelos_scheming = {
 	
 	IRI_aggelos_swaying_cai_strategos = {
 
-		cost = 20
+		cost = 25
 
 		icon = generic_nationalism
 
 		state_target = yes
 
 		ai_will_do = {
-			factor = 8
+			factor = 5
 		}
 
 		target_trigger = {
@@ -724,12 +724,12 @@ IRI_aggelos_scheming = {
 
 	IRI_aggelos_swaying_sasnai_strategos = {
 
-		cost = 20
+		cost = 25
 
 		icon = generic_nationalism
 
 		ai_will_do = {
-			factor = 8
+			factor = 5
 		}
 
 		state_target = yes
@@ -775,14 +775,14 @@ IRI_aggelos_scheming = {
 
 	IRI_aggelos_swaying_tofnos_strategos = {
 
-		cost = 20
+		cost = 25
 
 		icon = generic_nationalism
 
 		state_target = yes
 
 		ai_will_do = {
-			factor = 8
+			factor = 5
 		}
 
 		target_trigger = {
@@ -826,14 +826,14 @@ IRI_aggelos_scheming = {
 
 	IRI_aggelos_swaying_cyttra_strategos = {
 
-		cost = 20
+		cost = 25
 
 		icon = generic_nationalism
 
 		state_target = yes
 
 		ai_will_do = {
-			factor = 8
+			factor = 5
 		}
 
 		target_trigger = {
@@ -877,14 +877,14 @@ IRI_aggelos_scheming = {
 
 	IRI_aggelos_swaying_marakai_strategos = {
 
-		cost = 20
+		cost = 25
 
 		icon = generic_nationalism
 
 		state_target = yes
 
 		ai_will_do = {
-			factor = 8
+			factor = 5
 		}
 
 		target_trigger = {
@@ -926,12 +926,12 @@ IRI_aggelos_scheming = {
 
 	IRI_aggelos_swaying_tikynthaios_strategos = {
 
-		cost = 20
+		cost = 25
 
 		icon = generic_nationalism
 
 		ai_will_do = {
-			factor = 8
+			factor = 5
 		}
 
 		state_target = yes
@@ -1112,6 +1112,7 @@ IRI_buying_from_trade_cities = {
 					check_variable = { IRI_fraud_chance > 10 }
 				}
 				random_list = {
+					
 					40 = {
 					}
 					var:IRI_fraud_chance = {
@@ -1164,6 +1165,7 @@ IRI_buying_from_trade_cities = {
 					check_variable = { IRI_fraud_chance > 10 }
 				}
 				random_list = {
+					
 					40 = {
 					}
 					var:IRI_fraud_chance = {
@@ -1213,6 +1215,7 @@ IRI_buying_from_trade_cities = {
 					check_variable = { IRI_fraud_chance > 10 }
 				}
 				random_list = {
+					
 					40 = {
 					}
 					var:IRI_fraud_chance = {
@@ -1262,6 +1265,7 @@ IRI_buying_from_trade_cities = {
 					check_variable = { IRI_fraud_chance > 10 }
 				}
 				random_list = {
+					
 					40 = {
 					}
 					var:IRI_fraud_chance = {
@@ -2501,6 +2505,7 @@ IRI_managing_TLA_occupation = {
 				if = {
 					limit = { has_country_flag = IRI_republican_collaboration }
 					random_list = {
+						
 						var:IRI_occupation_republican_loyalty = {
 							set_country_flag = IRI_collaborator_demand_success
 						}
@@ -2512,6 +2517,7 @@ IRI_managing_TLA_occupation = {
 				if = {
 					limit = { has_country_flag = IRI_royalist_collaboration }
 					random_list = {
+						
 						var:IRI_occupation_royalist_loyalty = {
 							set_country_flag = IRI_collaborator_demand_success
 						}
@@ -2528,6 +2534,7 @@ IRI_managing_TLA_occupation = {
 				limit = { NOT = { has_country_flag = IRI_demanding_from_collaborators } has_country_flag = IRI_republican_collaboration }
 				effect_tooltip = {
 					random_list = {
+						
 						var:IRI_occupation_republican_loyalty = {
 							custom_effect_tooltip = IRI_increases_TLA_republican_loyalty_5
 							custom_effect_tooltip = IRI_increases_TLA_republican_power_5
@@ -3043,10 +3050,6 @@ GENERIC_war_exhaustion_category = {
 				tag = TLA
 				has_war_with = IRI
 			}
-		}
-
-		allowed = {
-			tag = IRI
 		}
 
 		cost = 100

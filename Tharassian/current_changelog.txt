@@ -38,6 +38,8 @@
 -Added non-aggression pact between Stalhof and Neureik
 -Added advisors to Ordoria
 -Began migrating advisor portraits to a new folder to prevent clutter (internal mod structure thing)
+-Added Thryxvanor
+-Prevented Stahlhof from using generic ideology decisions until they've taken the 'The Crown Infallible' focus
 -Fixed a bug that would prevent the player from taking the The Two Thrones focus as the Union
 -Made AI actually more likely to invade navally
 -Reduced Kurgur rations consumption to represent self-sufficiency (placeholder solution)

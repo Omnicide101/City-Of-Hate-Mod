@@ -345,6 +345,7 @@ characters={
 		name="Dalyn Rohyis"
 		portraits = {
 			army={
+				large="gfx/leaders/ORD/Portrait_ORD_Rohys.dds"
 				small="gfx/interface/ideas/characters/ORD/ord_rohyis.dds"
 			}
 		}
@@ -357,11 +358,22 @@ characters={
 				tag = ORD
 			}
 			visible = {
-				has_government = theocrat
+				has_government = puritan
 			}
 			available = {
 				has_country_flag = ORD_autumn_debate_done
-				has_government = puritan
+				if = {
+					limit = {
+						has_country_flag = ORD_stewards_countercoup_flag
+					}
+					OR = {
+						has_completed_focus = ORD_army
+						has_completed_focus = ORD_restoring_sanity
+					}
+				}
+				else = {
+					has_completed_focus = ORD_army
+				}
 			}
 			ai_will_do = {
 				factor = 10
@@ -369,6 +381,47 @@ characters={
 			traits = {
 				old_war_companion
 			}
+		}
+	}
+	ORD_captain_alsyon = {
+		name="Captain Alsyon"
+		portraits = {
+			army={
+				large="gfx/leaders/ORD/Portrait_ORD_Alsyon.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_alsyon.dds"
+			}
+		}
+		advisor = {
+			cost = 0
+			removal_cost = 0
+			slot = high_command
+			idea_token = alsyon
+			desc = ORD_alsyon_desc
+			allowed = {
+				always = yes
+			}
+			visible = {
+				OR = {
+					tag = ORD
+					tag = ORB
+					tag = EOR
+				}
+			}
+			ai_will_do = {
+				factor = 50 #OP
+			}
+			traits = {
+				captain_of_the_iron_line
+			}
+		}
+		corps_commander={
+			traits={ mercenary_commander drakeskin inflexible_strategist jungle_rat }
+			skill=7
+			attack_skill=5
+			defense_skill=8
+			planning_skill=6
+			logistics_skill=6
+			legacy_id=-1
 		}
 	}
 	ORD_thulyen_gyume = {

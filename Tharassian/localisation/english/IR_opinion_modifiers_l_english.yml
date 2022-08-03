@@ -35,6 +35,8 @@
  FPT_sore_loser:0 "Sore Loser"
  ORD_thaw_modifier:0 "The Ordorian Thaw"
  ORD_demand_land_modifier:0 "Demanded Land"
+ ORD_horrified:0 "Horrified"
+ ORD_outraged:0 "Outraged"
  RTH_monarchist_scum:0 "Monarchist Scum"
  closed_economy_trade_modifier:0 "We have a §YClosed Economy§!"
  limited_exports_trade_modifier:0 "We allow §YLimited Exports§!"

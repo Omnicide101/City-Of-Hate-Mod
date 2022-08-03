@@ -7,6 +7,31 @@ ruins_anthyriss = {
 	}
 }
 
+ORD_searching_inskyllithe = {
+	
+	icon = GFX_decision_category_SOV_soviet_academy_of_sciences
+	
+	allowed = {
+		tag = ORD
+	}
+	
+	visible = {
+		has_completed_focus = ORD_search_tomb
+		NOT = {
+			has_country_flag = ORD_recovered_inskyllithe
+		}
+		OR = {
+			any_owned_state = {
+				is_core_of = SKA
+			}
+			SKA = {
+				is_subject_of = ORD
+			}
+		}
+	}
+	
+}
+
 ORD_princelings_idealism = {
 	
 	icon = GFX_decision_category_hol_bernhard
@@ -273,11 +298,6 @@ FPT_border_skirmishes = {
 	visible = {
 		is_subject_of = UNG
 		has_country_flag = FPT_border_conflicts_enabled
-		NOT = {
-			STA = {
-				has_country_flag = STA_started_civil_war
-			}
-		}
 	}
 }
 

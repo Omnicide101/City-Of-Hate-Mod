@@ -2797,7 +2797,7 @@ SKA_social_war_decisions = {
 		days_mission_timeout = 90
 
 		fixed_random_seed = no
-
+		
 		complete_effect = {
 			set_country_flag = SKA_social_war_STOP
 			clr_country_flag = social_war_beginning
@@ -2809,6 +2809,7 @@ SKA_social_war_decisions = {
 			clr_country_flag = SKA_soltruist_delay_ironblood_conspiracy
 			hidden_effect = {
 				random_list = {
+					
 					25 = {
 						country_event = { id = skaelinger.49 days = 10 random = 120 }
 					}
@@ -2960,7 +2961,7 @@ SKA_digging_deeper = {
 
 		days_mission_timeout = 35
 
-		fixed_random_seed = no
+		
 
 		complete_effect = {
 			country_event = { id = skaelinger.62 hours = 2 random = 6 }
@@ -3016,6 +3017,7 @@ SKA_digging_deeper = {
 						check_variable = { 191_mining_progress > 2 }
 					}
 					random_list = {
+						
 						66 = {
 
 						}
@@ -3085,6 +3087,7 @@ SKA_digging_deeper = {
 						check_variable = { 160_mining_progress > 2 }
 					}
 					random_list = {
+						
 						66 = {
 
 						}
@@ -3197,6 +3200,7 @@ SKA_digging_deeper = {
 						check_variable = { 151_mining_progress > 2 }
 					}
 					random_list = {
+						
 						66 = {
 
 						}
@@ -3309,6 +3313,7 @@ SKA_digging_deeper = {
 						check_variable = { 162_mining_progress > 2 }
 					}
 					random_list = {
+						
 						66 = {
 
 						}
@@ -3439,6 +3444,7 @@ SKA_runesmithing_category = {
 			custom_effect_tooltip = SKA_runesmith_random_result
 			hidden_effect = {
 				random_list = {
+					
 					25 = {
 						add_ideas = SKA_runesmithing_attack_modifier_1
 						set_variable = { SKA_runesmithing_attack_var = -5 }
@@ -3456,6 +3462,7 @@ SKA_runesmithing_category = {
 					}
 				}
 				random_list = {
+					
 					25 = {
 						add_ideas = SKA_runesmithing_defence_modifier_1
 						set_variable = { SKA_runesmithing_defence_var = -5 }
@@ -3473,6 +3480,7 @@ SKA_runesmithing_category = {
 					}
 				}
 				random_list = {
+					
 					25 = {
 						add_ideas = SKA_runesmithing_breakthrough_modifier_1
 						set_variable = { SKA_runesmithing_breakthrough_var = -5 }
@@ -3486,6 +3494,7 @@ SKA_runesmithing_category = {
 					}
 				}
 				random_list = {
+					
 					25 = {
 						add_ideas = SKA_runesmithing_attrition_modifier_1
 						set_variable = { SKA_runesmithing_attrition_var = 10 }
@@ -3503,6 +3512,7 @@ SKA_runesmithing_category = {
 					}
 				}
 				random_list = {
+					
 					25 = {
 						add_ideas = SKA_runesmithing_org_modifier_1
 						set_variable = { SKA_runesmithing_org_var = -10 }
@@ -3520,6 +3530,7 @@ SKA_runesmithing_category = {
 					}
 				}
 				random_list = {
+					
 					25 = {
 						add_ideas = SKA_runesmithing_plan_modifier_1
 						set_variable = { SKA_runesmithing_plan_var = -5 }

@@ -642,9 +642,10 @@ country_event = {# Imperialist Victory
 			days = 3
 		}
 		hidden_effect = {
-			set_country_flag = ORD_empire_purity
+			set_country_flag = ORD_puritan_government
 		}
 		mark_focus_tree_layout_dirty = yes
+		unlock_national_focus = ORD_glory_league
 	}
 }
 
@@ -1850,34 +1851,6 @@ country_event = { #Concessions - Skaelinger Accepts
 	
 	option = {#Good
 		name = ord.31.a
-		add_state_core = 155
-		add_state_core = 153
-		add_state_core = 150
-		add_state_core = 154
-		add_state_core = 188
-		add_state_core = 180
-		add_state_core = 165
-		add_state_core = 161
-		add_state_core = 184
-		add_state_core = 147
-		add_state_core = 191
-		add_state_core = 189
-		add_state_core = 120
-		add_state_core = 181
-		add_state_core = 121
-		add_state_core = 178
-		
-		custom_effect_tooltip = ORD_resistance_skaelinger_concessions
-		
-		hidden_effect = {
-			every_state = {
-				limit = {
-					is_core_of = SKA
-					is_core_of = ORD
-				}
-				force_enable_resistance = ORD
-			}
-		}
 		
 		set_country_flag = ORD_dwarves_conceded
 	}
@@ -1895,6 +1868,8 @@ country_event = { #Concessions - Skaelinger Declines
 	
 	option = {#Their loss
 		name = ord.32.a
+		
+		set_country_flag = ORD_kill_skaelinger
 	}
 }
 
@@ -3416,8 +3391,6 @@ country_event = {#Transfer Rthaur land to Eastern Ordoria
 					is_owned_by = ORD
 					is_core_of = SKA
 				}
-				remove_core_of = ORD
-				add_core_of = EOR
 				EOR = {
 					transfer_state = PREV
 				}
@@ -3865,14 +3838,10 @@ country_event = {#Steward's Countercoup
 	
 	is_triggered_only = yes
 	
-	option = {#This is getting complciated...
+	option = {#This is getting complicated...
 		name = ord.78.a
 		set_politics = {
 			ruling_party = puritan
-		}
-		add_popularity = {
-			ideology = puritan
-			popularity = 0.23
 		}
 		add_popularity = {
 			ideology = monarchy_absolute
@@ -3892,11 +3861,269 @@ country_event = {#Steward's Countercoup
 			ORD_moderates_influence = 10
 		}
 		
-		retire_character = ORD_galerin_valinthir
-		retire_character = ORD_larennis_valinthir
+		activate_advisor = isvenith_lothinnys
+		
+		remove_advisor_role = {
+		  character = "ORD_galerin_valinthir"
+		  slot = political_advisor
+		}
+		remove_advisor_role = {
+		  character = "ORD_larennis_valinthir"
+		  slot = political_advisor
+		}
 		retire_character = ORD_yntha
 		retire_character = ORD_alwyen
 		retire_character = ORD_gylar
 		retire_character = ORD_thrysmere
+		
+		clr_country_flag = ORD_moderate_government
+		clr_country_flag = ORD_first_decree_failed
+		set_country_flag = ORD_stewards_countercoup_flag
+		
+		mark_focus_tree_layout_dirty = yes
+		
+		hidden_effect = {
+			complete_national_focus = ORD_restoring_sanity #For some reason the focus says the requirements are not complete even if there are none, so workaround
+		}
+	}
+}
+
+country_event = {#Peace With Skaelinger?
+	id = ord.79
+	title = ord.79.t
+	desc = ord.79.d
+	picture = GFX_report_event_hungary_refused
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#For Concessions
+		name = ord.79.a
+		hidden_effect = {
+			SKA = {
+				country_event = {
+					id = ska.5
+					days = 1
+				}
+			}
+		}
+	}
+	
+	option = {#No
+		name = ord.79.b
+		set_country_flag = ORD_kill_skaelinger
+	}
+}
+
+country_event = {#Searching for Inskyllithe - Nada
+	id = ord.80
+	title = ord.80.t
+	desc = ord.80.d
+	
+	is_triggered_only = yes
+	
+	option = {#Darn
+		name = ord.80.a
+	}
+}
+
+country_event = {#Searching for Inskyllithe - We found him!
+	id = ord.81
+	title = ord.81.t
+	desc = ord.81.d
+	
+	is_triggered_only = yes
+	
+	option = {#LET'S GOOOOOOOOOOOOOOOOOOO
+		name = ord.81.a
+		add_stability = 0.15
+		add_war_support = 0.1
+		add_political_power = 175
+		
+		85 = {
+			add_dynamic_modifier = {
+				modifier = tomb_of_inskyllithe
+			}
+		}
+		hidden_effect = {
+			add_ideas = CITY_istaroth_tomb_of_inskyllithe
+		}
+		set_country_flag = ORD_recovered_inskyllithe
+		
+		custom_effect_tooltip = ORD_empower_trads_5
+		add_to_variable = {
+			ORD_traditionalists_influence = 5
+		}
+		custom_effect_tooltip = ORD_please_trads_10
+		add_to_variable = {
+			ORD_traditionalists_loyalty = 10
+		}
+	}
+}
+
+country_event = {#Demanding Inskyllithe's Remains - Granted
+	id = ord.82
+	title = ord.82.t
+	desc = ord.82.d
+	
+	is_triggered_only = yes
+	
+	option = {#W
+		name = ord.82.a		
+		add_stability = 0.05
+		add_war_support = 0.03
+		add_political_power = 35
+		
+		85 = {
+			add_dynamic_modifier = {
+				modifier = tomb_of_inskyllithe
+			}
+		}
+		hidden_effect = {
+			add_ideas = CITY_istaroth_tomb_of_inskyllithe
+		}
+		set_country_flag = ORD_recovered_inskyllithe
+		
+		custom_effect_tooltip = ORD_empower_trads_3
+		add_to_variable = {
+			ORD_traditionalists_influence = 3
+		}
+		custom_effect_tooltip = ORD_please_trads_10
+		add_to_variable = {
+			ORD_traditionalists_loyalty = 10
+		}
+	}
+}
+
+country_event = {#Demanding Inskyllithe's Remains - Declined
+	id = ord.83
+	title = ord.83.t
+	desc = ord.83.d
+	
+	is_triggered_only = yes
+	
+	option = {#L
+		name = ord.83.a
+		
+		ai_chance = {
+			factor = 3
+		}
+		
+		add_stability = -0.05
+		add_war_support = 0.03
+		add_political_power = -75
+		
+		custom_effect_tooltip = ORD_empower_mods_7
+		add_to_variable = {
+			ORD_traditionalists_influence = 7
+		}
+
+		custom_effect_tooltip = ORD_displease_trads_10
+		subtract_from_variable = {
+			ORD_traditionalists_loyalty = 10
+		}
+	}
+	
+	option = {#War
+		name = ord.83.b
+		
+		ai_chance = {
+			factor = 1
+		}
+		
+		add_stability = -0.25
+		add_war_support = -0.13
+		
+		custom_effect_tooltip = ORD_displease_mods_10
+		subtract_from_variable = {
+			ORD_moderates_loyalty = 10
+		}
+		
+		declare_war_on = {
+			target = SKA
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {#Demanding Inskyllithe's Remains - Desecrated
+	id = ord.84
+	title = ord.84.t
+	desc = ord.84.d
+	
+	is_triggered_only = yes
+	
+	option = {#Bruh
+		name = ord.84.a
+		
+		ai_chance = {
+			factor = 0.1
+		}
+		
+		add_stability = -0.35
+		add_war_support = -0.35
+		add_political_power = -150
+		
+		add_timed_idea = {
+			idea = ORD_inskyllithe_desecrated_idea
+			days = 365
+		}
+		
+		custom_effect_tooltip = ORD_displease_trads_10
+		subtract_from_variable = {
+			ORD_traditionalists_loyalty = 10
+		}
+		
+		custom_effect_tooltip = ORD_displease_mods_7
+		subtract_from_variable = {
+			ORD_moderates_loyalty = 7
+		}
+		
+		custom_effect_tooltip = ORD_displease_faiths_10
+		subtract_from_variable = {
+			ORD_faithful_loyalty = 10
+		}
+		
+		set_country_flag = ORD_inskyllithe_desecrated
+	}
+	
+	option = {#War
+		name = ord.84.b
+	
+		ai_chance = {
+			factor = 50
+		}
+	
+		add_stability = -0.15
+		add_war_support = -0.15
+		add_political_power = -75
+		
+		add_timed_idea = {
+			idea = ORD_inskyllithe_desecrated_idea
+			days = 183
+		}
+		
+		custom_effect_tooltip = ORD_displease_trads_5
+		subtract_from_variable = {
+			ORD_traditionalists_loyalty = 5
+		}
+		
+		custom_effect_tooltip = ORD_displease_mods_10
+		subtract_from_variable = {
+			ORD_moderates_loyalty = 10
+		}
+		
+		custom_effect_tooltip = ORD_displease_faiths_5
+		subtract_from_variable = {
+			ORD_faithful_loyalty = 5
+		}
+		
+		declare_war_on = {
+			target = SKA
+			type = annex_everything
+		}
+		
+		set_country_flag = ORD_inskyllithe_desecrated
 	}
 }

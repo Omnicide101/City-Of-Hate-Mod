@@ -5,6 +5,15 @@ GENERIC_institutions_governance = {
 	allowed = {
 		always = yes
 	}
+	
+	visible = {
+		OR = {
+			NOT = {
+				tag = STA
+			}
+			has_completed_focus = STA_the_crown_infallible
+		}
+	}
 }
 
 GENERIC_join_wars = {

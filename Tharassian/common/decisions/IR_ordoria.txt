@@ -1,3 +1,50 @@
+ORD_searching_inskyllithe = {
+
+	ORD_search_state = {
+		icon = border_war
+		
+		available = {
+			has_completed_focus = ORD_search_tomb
+			NOT = {
+				has_country_flag = ORD_recovered_inskyllithe
+			}
+			any_owned_state = {
+				is_core_of = SKA
+				is_controlled_by = ROOT
+			}
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = ORD_recovered_inskyllithe
+			}
+		}
+		
+		ai_will_do = {
+			base = 50
+		}
+		
+		fixed_random_seed = no
+		
+		cost = 35
+		
+		days_remove = 34
+		
+		complete_effect = {
+			hidden_effect = {
+				random_list = {
+					97 = {#Nada
+						country_event = ord.80
+					}
+					3 = {#We found it!
+						country_event = ord.81
+					}
+				}
+			}
+		}
+	}
+}
+
 ORD_slave_economy = {
 
 	ORD_crush_slave_revolt = {
