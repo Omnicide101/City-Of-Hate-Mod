@@ -777,6 +777,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_list = {
+				
 				var:IRI_cinyras_coup_chance = {
 					country_event = { id = iri.58 hours = 3 }
 				}
@@ -1571,10 +1572,7 @@ focus_tree = {
 
 		available = {
 			NOT = {
-				OR = {
-					has_government = puritan
-					has_completed_focus = IRI_land_of_mercenaries
-				}
+				has_government = puritan
 			}
 		}
 
@@ -1588,7 +1586,6 @@ focus_tree = {
 			hidden_effect = {
 				IRI_change_lizard_resistance = yes
 			}
-			custom_effect_tooltip = IRI_ominous_future_TLA_spooky
 		}
 	}
 
@@ -1610,6 +1607,7 @@ focus_tree = {
 				country_event = { id = iri.106 days = 35 random = 720 }
 				country_event = { id = iri.102 days = 730 random = 700 }
 				random_list = {
+					
 					50 = {
 						country_event = { id = iri.92 days = 35 random = 1080 }
 					}
@@ -1694,6 +1692,7 @@ focus_tree = {
 			IRI_recalculate_interest_group_vars = yes
 			hidden_effect = {
 				random_list = {
+					
 					50 = {
 						country_event = { id = iri.107 days = 25 random = 480 }
 					}
@@ -1741,7 +1740,6 @@ focus_tree = {
 			TLA = {
 				country_event = { id = iri.72 hours = 6 random = 12 }
 			}
-			custom_effect_tooltip = IRI_ominous_future_TLA_spooky
 		}
 	}
 
@@ -1886,10 +1884,7 @@ focus_tree = {
 
 		available = {
 			NOT = {
-				OR = {
-					has_government = puritan
-					has_completed_focus = IRI_land_of_mercenaries
-				}
+				has_government = puritan
 			}
 		}
 
@@ -1903,7 +1898,6 @@ focus_tree = {
 			hidden_effect = {
 				IRI_change_lizard_resistance = yes
 			}
-			custom_effect_tooltip = IRI_ominous_future_TLA_spooky
 			#event deciding whether to side with the nationalist and monarchists, which are harder to control but more powerful, or the more republicans, who are weaker but more manageable
 			country_event = { id = iri.89 hours = 2 }
 		}
@@ -2079,7 +2073,6 @@ focus_tree = {
 				IRI_change_lizard_resistance = yes
 				country_event = { id = iri.101 days = 30 hours = 12 random = 36 }
 			}
-			custom_effect_tooltip = IRI_ominous_future_TLA_spooky
 			unlock_decision_category_tooltip = IRI_lizard_genocide
 		}
 	}
@@ -2635,14 +2628,10 @@ focus_tree = {
 	focus = {
 		id = IRI_an_empire_for_all_races
 		icon = GFX_goal_generic_national_unity
-		x = 32
+		x = 25
 		y = 5
 
 		cost = 5
-
-		allow_branch = {
-			has_country_flag = IRI_unlock_anti_racism_tree
-		}
 
 		available = {
 			has_completed_focus = IRI_a_pacified_nation
@@ -2672,6 +2661,9 @@ focus_tree = {
 		mutually_exclusive = { focus = IRI_non_interference_in_party_formation }
 		relative_position_id = IRI_an_empire_for_all_races
 		cost = 5
+		allow_branch = {
+			has_country_flag = IRI_unlock_anti_racism_tree
+		}
 
 		completion_reward = {
 			add_popularity = {
@@ -2691,6 +2683,9 @@ focus_tree = {
 		mutually_exclusive = { focus = IRI_break_up_racial_parties }
 		relative_position_id = IRI_an_empire_for_all_races
 		cost = 5
+		allow_branch = {
+			has_country_flag = IRI_unlock_anti_racism_tree
+		}
 
 		completion_reward = {
 			add_ideas = IRI_racial_parties
@@ -2728,6 +2723,7 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas = IRI_breaking_up_racial_parties
 			random_list = {
+				
 				25 = {
 					add_popularity = {
 						ideology = monarchy_constitutional
@@ -2754,6 +2750,7 @@ focus_tree = {
 				}
 			}
 			random_list = {
+				
 				25 = {
 					add_popularity = {
 						ideology = monarchy_constitutional
@@ -2913,10 +2910,6 @@ focus_tree = {
 
 		cost = 2
 
-		allow_branch = {
-			has_country_flag = IRI_unlock_slight_racism_tree
-		}
-
 		available = {
 			has_completed_focus = IRI_a_pacified_nation
 			OR = {
@@ -2949,6 +2942,10 @@ focus_tree = {
 		y = 1
 
 		cost = 5
+
+		allow_branch = {
+			has_country_flag = IRI_unlock_slight_racism_tree
+		}
 
 		available = {
 			OR = {
@@ -3002,6 +2999,10 @@ focus_tree = {
 		relative_position_id = IRI_balance_the_racial_disparity
 		x = -1
 		y = 1
+
+		allow_branch = {
+			has_country_flag = IRI_unlock_slight_racism_tree
+		}
 
 		cost = 5
 
@@ -3225,12 +3226,8 @@ focus_tree = {
 	focus = {
 		id = IRI_human_supremacy
 		icon = GFX_focus_ung_freisler
-		x = 32
+		x = 37
 		y = 5
-
-		allow_branch = {
-			has_country_flag = IRI_unlock_racism_tree
-		}
 
 		cost = 3
 
@@ -3260,6 +3257,10 @@ focus_tree = {
 		relative_position_id = IRI_human_supremacy
 		x = 2
 		y = 1
+
+		allow_branch = {
+			has_country_flag = IRI_unlock_racism_tree
+		}
 
 		cost = 5
 
@@ -3297,6 +3298,10 @@ focus_tree = {
 		x = 0
 		y = 1
 
+		allow_branch = {
+			has_country_flag = IRI_unlock_racism_tree
+		}
+
 		cost = 5
 
 		completion_reward = {
@@ -3311,6 +3316,10 @@ focus_tree = {
 		relative_position_id = IRI_human_supremacy
 		x = -2
 		y = 1
+
+		allow_branch = {
+			has_country_flag = IRI_unlock_racism_tree
+		}
 
 		cost = 5
 
@@ -4845,7 +4854,6 @@ focus_tree = {
 				OR = {
 					has_government = puritan
 					has_government = republic_aristocrat
-					has_completed_focus = IRI_land_of_mercenaries
 				}
 			}
 		}
@@ -4861,7 +4869,6 @@ focus_tree = {
 			hidden_effect = {
 				IRI_change_ogre_resistance = yes
 			}
-			custom_effect_tooltip = IRI_ominous_future_BLD_spooky
 		}
 	}
 
@@ -4877,6 +4884,7 @@ focus_tree = {
 
 		select_effect = {
 			random_list = {
+				
 				50 = {
 					country_event = { id = iri.120 days = 30 random = 240 }
 				}
@@ -4947,7 +4955,6 @@ focus_tree = {
 				IRI_change_ogre_resistance = yes
 			}
 			add_ideas = IRI_ogre_resource
-			custom_effect_tooltip = IRI_ominous_future_BLD_spooky
 		}
 	}
 
@@ -5003,7 +5010,6 @@ focus_tree = {
 				country_event = { id = iri.109 days = 100 random = 480 }
 			}
 			unlock_decision_category_tooltip = IRI_recolonization_of_bilodya
-			custom_effect_tooltip = IRI_ominous_future_BLD_spooky
 		}
 	}
 

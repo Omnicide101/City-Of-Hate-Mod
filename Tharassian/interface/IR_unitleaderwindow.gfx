@@ -47,6 +47,11 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_trait_drakeskin"
+		texturefile = "gfx/interface/traits/trait_drakeskin.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_trait_lumotheurge"
 		texturefile = "gfx/interface/traits/trait_lumotheurge.dds"
 	}
@@ -54,6 +59,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_trait_noctheurge"
 		texturefile = "gfx/interface/traits/trait_noctheurge.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_mercenary_commander"
+		texturefile = "gfx/interface/traits/trait_mercenary_commander.dds"
 	}
 	
 	spriteType = {

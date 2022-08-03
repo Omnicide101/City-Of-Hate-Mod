@@ -1,4 +1,4 @@
-	on_actions = {	
+on_actions = {
 	
 	#Makes sure puppets have access to everyone's land
 	#on_peaceconference_ended = {
@@ -26,37 +26,30 @@
 	#THIS is the operative, FROM the country that created them
 	on_operative_created = {
 		effect = {
-			random_list = {
-				45 = {
-					THIS = {
+			THIS = {
+				random_list = {
+					
+					45 = {
 						add_trait = {
 							trait = warrior_class
 						}
 					}
-				}
-				15 = {
-					THIS = {
+					15 = {
 						add_trait = {
 							trait = barbarian_class
 						}
 					}
-				}
-				10 = {
-					THIS = {
+					10 = {
 						add_trait = {
 							trait = priest_class
 						}
 					}
-				}
-				25 = {
-					THIS = {
+					25 = {
 						add_trait = {
 							trait = thief_class
 						}
 					}
-				}
-				5 = {
-					THIS = {
+					5 = {
 						add_trait = {
 							trait = wizard_class
 						}
@@ -101,6 +94,42 @@
 				}
 				ROOT = {
 					add_ideas = CITY_istaroth
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 85
+					}
+					85 = {
+						has_dynamic_modifier = {
+							modifier = tomb_of_inskyllithe
+						}
+					}
+				}
+				FROM = {
+					remove_ideas = CITY_istaroth_tomb_of_inskyllithe
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 85
+					}
+					85 = {
+						has_dynamic_modifier = {
+							modifier = tomb_of_inskyllithe
+						}
+					}
+					OR = {
+						ROOT = {
+							original_tag = ORD
+							tag = EOR
+						}
+					}
+				}
+				ROOT = {
+					add_ideas = CITY_istaroth_tomb_of_inskyllithe
 				}
 			}
 			if = {
@@ -299,6 +328,37 @@
 				country_event = { id = rth.18 days = 90 random = 720 } 
 				country_event = { id = rth.24 days = 71 random = 120 }
 				country_event = { id = rth.27 days = 100 random = 1200 } 
+			}
+		}
+	}
+	
+	#Deploy the Drakeskins
+	on_startup = {	
+		effect = {
+			100 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			104 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			105 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			107 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			116 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
 			}
 		}
 	}

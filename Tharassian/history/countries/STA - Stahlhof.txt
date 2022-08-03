@@ -45,12 +45,6 @@ set_variable = {
 	value = 0
 }
 
-diplomatic_relation = {
-	country = NRK
-	relation = non_aggression_pact
-	active = yes
-	}
-
 set_country_flag = FPT_is_freiprinztum
 
 1939.1.1 = {

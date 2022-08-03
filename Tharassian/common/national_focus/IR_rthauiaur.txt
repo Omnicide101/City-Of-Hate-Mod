@@ -189,6 +189,7 @@ focus_tree = {
 			if = {
 				limit = { has_idea = RTH_regionalism_thurgithon_dominant }
 				random_list = {
+					
 					25 = {
 						country_event = { id = rth.28 hours = 3 random = 3 }
 					}
@@ -204,6 +205,7 @@ focus_tree = {
 			if = {
 				limit = { has_idea = RTH_regionalism_quellion_dominant }
 				random_list = {
+					
 					25 = {
 						country_event = { id = rth.29 hours = 3 random = 3 }
 					}

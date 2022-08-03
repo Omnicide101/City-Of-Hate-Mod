@@ -349,6 +349,7 @@ focus_tree = {
 			}
 			}
 		random_list = {
+				
 				60 = {
 					country_event = {
 						id = snf.12
@@ -919,9 +920,7 @@ focus = { #improve farming
 		x = 2
 		y = 1
 		completion_reward = {
-		custom_effect_tooltip = available_political_advisor
-		show_ideas_tooltip = till_lehmkuhl
-		#add_ideas = SNF_supported_farmers
+		add_ideas = SNF_supported_farmers
 		}
 	}
 focus = { #Steel Prospecting

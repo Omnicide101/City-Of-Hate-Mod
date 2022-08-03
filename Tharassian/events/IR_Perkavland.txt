@@ -15,11 +15,6 @@ country_event = { # Union offers Schneefilder Land
 		ai_chance = {
 			factor = 3
 		}
-		custom_effect_tooltip = KRZ_increase_var_tooltip
-		add_to_variable = {
-				var = krz_var
-				value = 2
-			}
 		SNF = {
 			country_event = {
 				id = snf.2
@@ -56,11 +51,6 @@ country_event = { # Union offers Wertszer Land
 		ai_chance = {
 			factor = 3
 		}
-		custom_effect_tooltip = KRZ_increase_var_tooltip
-		add_to_variable = {
-				var = krz_var
-				value = 1
-			}
 		WSZ = {
 			country_event = {
 				id = wsz.1
@@ -125,11 +115,6 @@ country_event = {#Schneefilde Rejects
 		ai_chance = {
 			factor = 2
 		}
-		custom_effect_tooltip = KRZ_increase_var_tooltip
-		add_to_variable = {
-				var = krz_var
-				value = 1
-			}
 		start_border_war = {
 			change_state_after_war = yes
 			attacker = {
@@ -226,11 +211,6 @@ country_event = {#Wertszvorde Rejects
 		ai_chance = {
 			factor = 2
 		}
-		custom_effect_tooltip = KRZ_increase_var_tooltip
-		add_to_variable = {
-				var = krz_var
-				value = 1
-			}
 		start_border_war = {
 			change_state_after_war = yes
 			attacker = {
@@ -300,11 +280,6 @@ country_event = {#The Union Reaches Out
 		ai_chance = {
 			factor = 7
 		}
-		custom_effect_tooltip = KRZ_decrease_var_tooltip
-		subtract_from_variable = {
-				var = krz_var
-				value = 5
-			}
 		UNG = {
 			country_event = {
 				days = 5
@@ -318,11 +293,6 @@ country_event = {#The Union Reaches Out
 		ai_chance = {
 			factor = 3
 		}
-		custom_effect_tooltip = KRZ_increase_var_tooltip
-		add_to_variable = {
-				var = krz_var
-				value = 3
-			}
 		add_war_support = 0.05
 		UNG = {
 			country_event = {
@@ -343,11 +313,6 @@ country_event = {#The Perkav Census
 	
 	option = {#Good Stuff
 		name = prk.12.a
-		custom_effect_tooltip = KRZ_decrease_var_tooltip
-		subtract_from_variable = {
-				var = krz_var
-				value = 2
-			}
 		swap_ideas = {
 			remove_idea = PRK_perkav_script
 			add_idea = PRK_beginnings_literacy
@@ -384,11 +349,6 @@ country_event = {#Perkav Script
 	
 	option = {#Good Stuff
 		name = prk.14.a
-		custom_effect_tooltip = KRZ_decrease_var_tooltip
-		subtract_from_variable = {
-				var = krz_var
-				value = 2
-			}
 		swap_ideas = {
 			remove_idea = PRK_oral_tradition
 			add_idea = PRK_perkav_script
@@ -406,11 +366,6 @@ country_event = {#Union Proselytizing
 	
 	option = {#Let Them
 		name = prk.15.a
-		custom_effect_tooltip = VTZ_decrease_var_tooltip
-		subtract_from_variable = {
-				var = vtz_var
-				value = 3
-			}
 		custom_effect_tooltip = PRK_proselytize_tt
 		
 		ai_chance = {
@@ -454,11 +409,6 @@ country_event = {#Conversion Time
 	
 	option = {#Praise the Seven
 		name = prk.16.a
-		custom_effect_tooltip = VTZ_decrease_var_tooltip
-		subtract_from_variable = {
-				var = vtz_var
-				value = 5
-			}
 		
 		clr_country_flag = PRK_union_proselytizing
 		set_country_flag = PRK_converted_to_septism
@@ -666,9 +616,14 @@ country_event = {#Reactionary Civil War!
 		ai_chance = {
 			factor = 0
 		}
+		
+		hidden_effect = {
 			PRK = {
-				set_capital = 415
+				set_capital = {
+					state = 415
+				}
 			}
+		}
 
 		start_civil_war = {
 			ideology = monarchy_constitutional
@@ -824,7 +779,11 @@ country_event = {#Rename Krell's Hall on Victory
 	
 	option = {#Rename
 		name = prk.18.a
-			set_capital = 415
+		hidden_effect = {
+			set_capital = {
+				state = 415
+			}
+		}
 		413 = {
 			set_state_name = "Zlatko's Hall"
 		}
@@ -837,7 +796,9 @@ country_event = {#Rename Krell's Hall on Victory
 	
 	option = {#Rename and move capital
 		name = prk.18.b
-		set_capital = 413
+		set_capital = {
+			state = 413
+		}
 		413 = {
 			set_state_name = "Zlatko's Hall"
 		}
@@ -859,11 +820,6 @@ country_event = {#Reformed Administration
 	
 	option = {#Good Stuff
 		name = prk.19.a
-		custom_effect_tooltip = KRZ_decrease_var_tooltip
-		subtract_from_variable = {
-				var = krz_var
-				value = 5
-			}
 		swap_ideas = {
 			remove_idea = PRK_tribal_nation
 			add_idea = PRK_administrative_reform
@@ -885,11 +841,7 @@ country_event = {#Crown Wendelin
 	
 	option = {#Hail to the King
 		name = prk.20.a
-		custom_effect_tooltip = WLT_decrease_var_tooltip
-		subtract_from_variable = {
-				var = wlt_var
-				value = 5
-			}
+		
 		set_politics = {
 			ruling_party = monarchy_constitutional
 		}
@@ -957,16 +909,6 @@ country_event = {#Goods Plundered!
 	
 	option = {#Yay
 		name = prk.22.a
-		custom_effect_tooltip = KRZ_increase_var_tooltip
-		add_to_variable = {
-				var = krz_var
-				value = 1
-			}
-		custom_effect_tooltip = VLN_increase_var_tooltip
-		add_to_variable = {
-				var = vln_var
-				value = 1
-			}
 		add_timed_idea = {
 			idea = ARR_economic_booty
 			days = 80
@@ -990,16 +932,6 @@ country_event = {#Arms Plundered!
 	
 	option = {#Yay
 		name = prk.23.a
-		custom_effect_tooltip = KRZ_increase_var_tooltip
-		add_to_variable = {
-				var = krz_var
-				value = 1
-			}
-		custom_effect_tooltip = VLN_increase_var_tooltip
-		add_to_variable = {
-				var = vln_var
-				value = 1
-			}
 		add_timed_idea = {
 			idea = ARR_military_booty
 			days = 80
@@ -1023,16 +955,6 @@ country_event = {#Tech Plundered!
 	
 	option = {#Yay
 		name = prk.24.a
-		custom_effect_tooltip = KRZ_increase_var_tooltip
-		add_to_variable = {
-				var = krz_var
-				value = 1
-			}
-		custom_effect_tooltip = VLN_increase_var_tooltip
-		add_to_variable = {
-				var = vln_var
-				value = 1
-			}
 		add_timed_idea = {
 			idea = ARR_tech_booty
 			days = 80
@@ -1056,16 +978,6 @@ country_event = {#Artifact Plundered!
 	
 	option = {#Yay
 		name = prk.25.a
-		custom_effect_tooltip = KRZ_increase_var_tooltip
-		add_to_variable = {
-				var = krz_var
-				value = 3
-			}
-		custom_effect_tooltip = VLN_increase_var_tooltip
-		add_to_variable = {
-				var = vln_var
-				value = 3
-			}
 		grant_magic_item_to_country_leader = yes
 		add_manpower = -13
 		add_equipment_to_stockpile = {
@@ -1078,16 +990,6 @@ country_event = {#Artifact Plundered!
 	
 	option = {#Yay
 		name = prk.25.b
-		custom_effect_tooltip = KRZ_increase_var_tooltip
-		add_to_variable = {
-				var = krz_var
-				value = 3
-			}
-		custom_effect_tooltip = VLN_increase_var_tooltip
-		add_to_variable = {
-				var = vln_var
-				value = 3
-			}
 		random_unit_leader = {
 			grant_magic_item_to_commander = yes
 		}
@@ -1130,16 +1032,6 @@ country_event = {#Raiders Fought Off
 	
 	option = {#Dang
 		name = prk.27.a
-		custom_effect_tooltip = KRZ_decrease_var_tooltip
-		subtract_from_variable = {
-				var = krz_var
-				value = 1
-			}
-		custom_effect_tooltip = VLN_decrease_var_tooltip
-		subtract_from_variable = {
-				var = vln_var
-				value = 1
-			}
 		add_manpower = -32
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
@@ -1159,58 +1051,10 @@ country_event = {#Union-Bergialer Joint Patrols
 	
 	option = { #Curses
 		name = prk.28.a
-		custom_effect_tooltip = VLN_decrease_var_tooltip
-		subtract_from_variable = {
-				var = vln_var
-				value = 5
-			}
 		set_country_flag = UNG_fight_perkav_pirates
 		custom_effect_tooltip = PRK_raids_harder_tt
 	}
 }
-
-###################################### Focuses - Spoils
-
-country_event = {#So What we doin'?
-	id = prk.30
-	title = prk.30.t
-	desc = prk.30.d
-	picture = GFX_report_event_perkavland_sacked
-	
-	is_triggered_only = yes
-	
-	option = { #Wee bit of raidin'
-		name = prk.30.a
-		set_country_flag = prk_enjoy_the_spoils_flag
-	}
-	option = { #lil' druidry
-		name = prk.30.b
-		set_country_flag = prk_enrich_temples_flag
-	}
-	option = { #bit'o industry
-		name = prk.30.c
-		set_country_flag = prk_sigma_krell
-	}
-}
-########
-country_event = {#Tribal Dispute
-	id = prk.31
-	title = prk.31.t
-	desc = prk.31.d
-	picture = GFX_report_event_czech_soldiers_01
-	
-	is_triggered_only = yes
-	
-	option = { #lyrning about
-		name = prk.31.a
-		set_country_flag = prk_sided_with_lyrn
-	}
-	option = { #nevet!
-		name = prk.31.b
-		set_country_flag = prk_sided_with_nevet
-	}
-}
-#######
 
 
 ###################################### REBELLIONS
@@ -1789,3 +1633,4 @@ country_event = {#Rebels win
 }
 
 #####################################
+

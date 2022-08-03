@@ -1,6 +1,14 @@
 spriteTypes = {
 
 	spriteType = {
+		name = "GFX_modifier_tomb_of_inskyllithe"
+		textureFile = "gfx/interface/modifiers/modifier_tomb_of_inskyllithe.dds"
+	}
+	spriteType = {
+		name = "GFX_modifier_drakeskin_guarded_lands"
+		textureFile = "gfx/interface/modifiers/modifier_drakeskin_guarded_lands.dds"
+	}
+	spriteType = {
 		name = "GFX_modifier_city_erudition"
 		textureFile = "gfx/interface/modifiers/modifier_city_erudition.dds"
 	}

@@ -54,8 +54,6 @@ NDefines.NMilitary.OUT_OF_FUEL_SPEED_MULT = 0.2								-- speed mult that armies
 NDefines.NNavy.NAVAL_INVASION_PRIORITY = 1.5								-- default convoy priority for naval invasions
 NDefines.NNavy.NAVAL_SUPREMACY_CAN_INVADE = -0.05							-- required naval supremacy to perform invasions on an area
 
-NDefines.NOperatives.AGENCY_OPERATIVE_RECRUITMENT_TIME = 0					-- Number of days to wait to have operative to recruit when an operative slot first becomes available
-
 NDefines.NAI.GARRISON_FRACTION = 0.05										-- How large part of a front should always be holding the line rather than advancing at the enemy
 NDefines.NAI.TRADEABLE_FACTORIES_FRACTION = 0.9								-- Will at most trade away this fraction of factories.
 NDefines.NAI.MIN_DELIVERED_TRADE_FRACTION = 0.5								-- AI will cancel trade deals that are not able to deliver more than this fraction of the agreed amount
@@ -80,3 +78,4 @@ NDefines.NSupply.RIVER_RAILWAY_LEVEL = 3									-- Significantly buffed
 
 
 NDefines.NOperatives.MAX_OPERATIVE_SLOT_FROM_AGENCY_UPGRADES = 5			-- max operative slots gained from upgrades
+NDefines.NOperatives.AGENCY_OPERATIVE_RECRUITMENT_TIME = 3					-- Number of days to wait to have operative to recruit when an operative slot first becomes available
