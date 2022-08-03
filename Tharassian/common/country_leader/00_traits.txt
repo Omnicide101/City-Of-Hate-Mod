@@ -37,7 +37,8 @@ leader_traits = {
 	
 	nationalist_symbol = {
 		random = no
-		stability_factor = 0.05
+		party_popularity_stability_factor = 0.1
+		political_power_gain = 0.1
 	}
 	
 	dealbroker = {
@@ -334,6 +335,11 @@ leader_traits = {
 		production_factory_efficiency_gain_factor = 0.15
 	}
 	
+	smallholder_advocate_weak = {
+		random = no
+		local_resources_factor = 0.1
+	}
+	
 	smallholder_advocate = {
 		random = no
 		local_resources_factor = 0.15
@@ -371,6 +377,32 @@ leader_traits = {
 		political_power_gain = -0.25
 		experience_gain_army_factor = 0.15
 	}	
+	
+	taboo_farmer = {
+		random = no
+		local_resources_factor = 0.1
+		base_fuel_gain_factor = 0.2
+		stability_factor = -0.1
+	}
+	
+	Irredentist = {
+		random = no
+		war_support_factor = 0.05
+		army_morale_factor = 0.05
+	}
+
+	authoritative_speaker = {
+		random = no
+		political_power_cost = 0.05
+		party_popularity_stability_factor = 0.1
+		conscription_factor = 0.03
+	}
+
+	nobility_plantation_representative = {
+		random = no
+		consumer_goods_factor = -0.05
+		country_resource_food = 10
+	}
 	
 	has_magic_sword = {
 		random = no
@@ -697,8 +729,8 @@ leader_traits = {
 	}
 	rosite_activist = {
 		random = no
-		stability_factor = 0.1
-		republic_peasant_drift = 0.2
+		republic_peasant_drift = 0.05
+		global_building_slots_factor = 0.1
 	}
 	first_lady_of_tykhintos = {
 		random = no
@@ -726,8 +758,7 @@ leader_traits = {
 
 	visionary_architect = {
 		random = no
-		consumer_goods_factor = 0.02
-		production_speed_buildings_factor = 0.04
+		production_speed_buildings_factor = 0.075
 	}
 	dishonoured_dynasty = {
 		random = no

@@ -10,30 +10,98 @@ characters={
 			desc="politics_SNF_kolb_desc"
 			ideology=monarchy_absolute_ideology
 			traits={ ambitious_prince }
-			expire="1.1.1.1"
+			expire="1965.1.1.1"
 			id=-1
 		}
 		country_leader={
 			desc="politics_SNF_kolb_desc"
 			ideology=monarchy_constitutional_ideology
 			traits={ ambitious_prince }
-			expire="1.1.1.1"
+			expire="1965.1.1.1"
 			id=-1
 		}
+		field_marshal={
+			traits={ inflexible_strategist winter_specialist }
+			skill=3
+			attack_skill=1
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=11
+		}
 	}
+
+	SNF_fridrich_huber={
+		name="Fridrich Huber"
+		portraits={
+			army={
+				large= "gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer commando }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=4
+		}
+	}
+
 	SNF_ulrich_drecht={
 		name="Ulrich Drecht"
 		portraits={
 			civilian={
 				large="gfx/leaders/SNF/Portrait_SNF_Drecht.dds"
+				small="gfx/interface/ideas/IRI_Diamantis.dds"
 			}
 		}
 		country_leader={
 			desc="politics_SNF_Drecht_desc"
 			ideology=republic_aristocrat_ideology
 			traits={ disliked_dynasty }
-			expire="1.1.1.1"
+			expire="1965.1.1.1"
 			id=-1
+		}
+		advisor={
+			slot=political_advisor
+			idea_token=ulrich_drecht
+			allowed ={
+				original_tag =SNF
+			}
+			available={
+				has_government=monarchy_absolute	
+				has_country_flag=SNF_Drecht_advisor
+				NOT={
+					has_country_leader={
+						name="Ulrich Drecht"
+						ruling_only=yes
+					}
+				}
+			}
+			traits={
+				second_prince
+			}
+		}
+	}
+	SNF_till_lehmkuhl={
+		name= "Till Lehmkuhl "
+		portraits={
+			civilian={
+			small="gfx/interface/ideas/IRI_Diamantis.dds"
+			}
+		}
+		advisor={
+			slot=political_advisor
+			idea_token=till_lehmkuhl
+			allowed ={
+				original_tag =SNF
+			}
+		available={
+			has_completed_focus=SNF_improve_farming
+		}
+		traits={
+			taboo_farmer
 		}
 	}
 	SNF_hans_werthner={

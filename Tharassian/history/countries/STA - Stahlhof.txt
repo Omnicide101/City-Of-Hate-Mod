@@ -73,6 +73,12 @@ set_popularities = {
 	puritan = 8
 }
 
+diplomatic_relation = {
+	country = NRK
+	relation = non_aggression_pact
+	active = yes
+}
+
 recruit_character = STA_ferdinand_schwarzenbach
 recruit_character = STA_florentin_stieler
 recruit_character = STA_christine_brockhaus

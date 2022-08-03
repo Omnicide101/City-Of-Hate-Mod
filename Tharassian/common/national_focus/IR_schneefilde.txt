@@ -920,7 +920,9 @@ focus = { #improve farming
 		x = 2
 		y = 1
 		completion_reward = {
-		add_ideas = SNF_supported_farmers
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = till_lehmkuhl
+		#add_ideas = SNF_supported_farmers
 		}
 	}
 focus = { #Steel Prospecting

@@ -942,3 +942,17 @@ country_event = {#Re-Enable Border Conflicts
 		custom_effect_tooltip = FPT_enable_border_conflicts_tt
 	}
 }
+
+country_event = {#Border Conflict Warning
+	id = fpt.22
+	title = fpt.22.t
+	desc = fpt.22.d
+
+	picture = GFX_report_event_fascist_militia
+
+	is_triggered_only = yes
+
+	option = {#oh no
+		name = fpt.22.a
+	}
+}
