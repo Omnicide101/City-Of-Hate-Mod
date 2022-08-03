@@ -189,3 +189,4 @@
  FPT_has_recently_done_border_conflict:0 "We have launched a border conflict in the last §Ysix months§!."
  RMT_UNG_invade_skaelinger:0 "The Union has declare war on Skaelinger on our behalf."
  DORF_we_got_zarathum:0 "We have restored the city of Zarathum to its ancient glory."
+ country_resource_food:0 "Food"

@@ -109,6 +109,7 @@ ideas = {
 						tag = GOW
 						tag = TES
 						tag = SUL
+						tag = TRX
 					}
 				}
 			}
@@ -182,6 +183,7 @@ ideas = {
 						tag = GOW
 						tag = TES
 						tag = SUL
+						tag = TRX
 					}
 				}
 			}
@@ -497,6 +499,7 @@ ideas = {
 						tag = GOW
 						tag = TES
 						tag = SUL
+						tag = TRX
 					}
 				}
 			}
@@ -570,6 +573,7 @@ ideas = {
 						tag = GOW
 						tag = TES
 						tag = SUL
+						tag = TRX
 					}
 				}
 			}
@@ -648,6 +652,7 @@ ideas = {
 					tag = GET
 					tag = ITH
 					tag = DIA
+					tag = TRX
 				}
 			}
 
