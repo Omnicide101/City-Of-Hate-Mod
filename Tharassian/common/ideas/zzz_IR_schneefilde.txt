@@ -239,7 +239,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_factor = 0.1
 				industrial_capacity_factory = -0.15
 				base_fuel_gain_factor = -0.10
 				local_resources_factor = -0.20
@@ -404,7 +404,7 @@ SNF_brittle_economy2 = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_factor = 0.1
 				industrial_capacity_factory = -0.10
 				local_resources_factor = -0.10
 				production_factory_efficiency_gain_factor = -0.25
@@ -428,7 +428,7 @@ SNF_brittle_economy3 = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.10
+				consumer_goods_factor = 0.05
 				industrial_capacity_factory = -0.10
 				production_factory_efficiency_gain_factor = -0.20
 				trade_opinion_factor = -0.25
@@ -451,7 +451,7 @@ SNF_brittle_economy4 = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.10
+				consumer_goods_factor = 0.05
 				production_factory_efficiency_gain_factor = -0.10
 				trade_opinion_factor = -0.25
 				min_export = -0.50
@@ -497,6 +497,24 @@ SNF_supported_farmers = {
 				base_fuel_gain_factor = 0.25
 			}
 		}
+SNF_UNG_food_trade = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_constitutional_guarantees
+
+			removal_cost = -1
+
+			modifier = {
+				base_fuel_gain = 180
+			}
+		}	
 SNF_mil_equipment_standart = {
 			
 			allowed = {
