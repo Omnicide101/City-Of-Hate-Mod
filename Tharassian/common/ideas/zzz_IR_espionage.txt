@@ -1,0 +1,65 @@
+ideas = {
+
+	country = {
+		
+		SPY_burnt_granaries = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = high_devastation
+			
+			removal_cost = -1
+			
+			modifier = {
+				supply_factor = -0.35
+				army_morale_factor = -0.15
+			}		
+		}
+		
+		SPY_poisoned_wells = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = IRI_Sacked_North
+			
+			removal_cost = -1
+			
+			modifier = {
+				attrition = 0.3
+				army_org_regain = -0.15
+			}		
+		}
+		
+		SPY_terrorized_populace = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = IRI_Glory_Built_On_Blood
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.3
+				planning_speed = -0.15
+			}		
+		}
+	}
+}

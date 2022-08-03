@@ -13,6 +13,10 @@ operation_vanquish_monster = { ### 0 1/0
 	days = 21
 	network_strength = 0
 	operatives = 1
+	
+	ai_will_do = {
+		factor = 100
+	}
 
 	visible = {
 		ROOT = {
@@ -21,28 +25,7 @@ operation_vanquish_monster = { ### 0 1/0
 			}
 		}
 	}
-
-	###SHIT FOR FIGURING OUT HOW TO BYPASS THE NETWORK STRENGTH REQUIREMENT
-	#
-	#DYNAMIC VARIABLE:
-	#"operation_state":	{
-	#	"description":	"the state location the operative is assigned. 0 if it is not assigned to a state"
-	#},
-	#
-	#Tell player to assign to another state, then click decision to set operation_state to [ROOT.capital]?
-	#
-	#CONSOLE COMMAND:
-	#"grow_intel_network":	{
-	#	"description":	"Grow the intel network in the specified tag"
-	#},
-	#Doesn't seem to work all that well, but potentially useful?
-	#
-	#MISSION TOKEN:
-	#build_intel_network
-	#
-	#Likely won't do anything?
-	#
-
+	
 	requirements = {
 		ROOT = {
 			any_owned_state = {
@@ -56,7 +39,7 @@ operation_vanquish_monster = { ### 0 1/0
 	}
 	
 	experience = 2
-	cost_multiplier = 0 # we dont scale in cost for rescues
+	cost_multiplier = 1
 	outcome_extra_chance = 0.1
 
 	outcome_extra_execute = { # SCOPE_OPERATION
@@ -65,10 +48,10 @@ operation_vanquish_monster = { ### 0 1/0
 				limit = {
 					has_state_flag = RND_roaming_monster_flag
 				}
-			}
-			clr_state_flag = RND_roaming_monster_flag
-			remove_dynamic_modifier = {
-				modifier = roaming_monster
+				clr_state_flag = RND_roaming_monster_flag
+				remove_dynamic_modifier = {
+					modifier = roaming_monster
+				}
 			}
 			
 			random_operative = {
@@ -88,10 +71,10 @@ operation_vanquish_monster = { ### 0 1/0
 				limit = {
 					has_state_flag = RND_roaming_monster_flag
 				}
-			}
-			clr_state_flag = RND_roaming_monster_flag
-			remove_dynamic_modifier = {
-				modifier = roaming_monster
+				clr_state_flag = RND_roaming_monster_flag
+				remove_dynamic_modifier = {
+					modifier = roaming_monster
+				}
 			}
 		}
 	}
@@ -102,10 +85,10 @@ operation_vanquish_monster = { ### 0 1/0
 				limit = {
 					has_state_flag = RND_roaming_monster_flag
 				}
-			}
-			clr_state_flag = RND_roaming_monster_flag
-			remove_dynamic_modifier = {
-				modifier = roaming_monster
+				clr_state_flag = RND_roaming_monster_flag
+				remove_dynamic_modifier = {
+					modifier = roaming_monster
+				}
 			}
 		}
 	}
@@ -119,17 +102,17 @@ operation_vanquish_monster = { ### 0 1/0
 		}
 		journey_teleport = { 
 			base = 50
-			modifier = {
-				ROOT = { 
-					any_operative_leader = {
-						operative_leader_operation = operation_vanquish_monster
-						NOT = {
-							has_trait = wizard_class
-						}
-					}
-				}
-				factor = 0
-			}
+			#modifier = { #This doesn't work, TODO - figure out how to make this work
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_vanquish_monster
+			#			NOT = {
+			#				has_trait = wizard_class
+			#			}
+			#		}
+			#	}
+			#	factor = 0
+			#}
 		}
 	}
 	phases = { #scouting
@@ -138,84 +121,216 @@ operation_vanquish_monster = { ### 0 1/0
 		}
 		scouting_track_path = {
 			base = 25
-			modifier = {
-				ROOT = { 
-					any_operative_leader = {
-						operative_leader_operation = operation_vanquish_monster
-						has_trait = warrior_class
-					}
-				}
-				factor = 2
-			}
+			#modifier = {
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_vanquish_monster
+			#			has_trait = warrior_class
+			#		}
+			#	}
+			#	factor = 2
+			#}
 		}
-		scouting_infiltrate_lair = { 
+		scouting_infiltrate_lair = {
 			base = 50
-			modifier = {
-				ROOT = { 
-					any_operative_leader = {
-						operative_leader_operation = operation_vanquish_monster
-						NOT = {
-							has_trait = thief_class
-						}
-					}
-				}
-				factor = 0
-			}
+			#modifier = {
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_vanquish_monster
+			#			NOT = {
+			#				has_trait = thief_class
+			#			}
+			#		}
+			#	}
+			#	factor = 0
+			#}
 		}
 	}
 	phases = { #the girls are fightiiiing
-		fighting_lead_militia = { 
+		fighting_lead_militia = {
 			base = 15
-			modifier = {
-				ROOT = { 
-					any_operative_leader = {
-						operative_leader_operation = operation_vanquish_monster
-						OR = {
-							has_trait = warrior_class
-							has_trait = priest_class
-						}
-					}
-				}
-				factor = 2
-			}
+			#modifier = {
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_vanquish_monster
+			#			OR = {
+			#				has_trait = warrior_class
+			#				has_trait = priest_class
+			#			}
+			#		}
+			#	}
+			#	factor = 2
+			#}
 		}
-		fighting_charge_in = { 
+		fighting_charge_in = {
 			base = 35
-			modifier = {
-				ROOT = { 
-					any_operative_leader = {
-						operative_leader_operation = operation_vanquish_monster
-						has_trait = barbarian_class
-					}
-				}
-				factor = 5
-			}
+			#modifier = {
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_vanquish_monster
+			#			has_trait = barbarian_class
+			#		}
+			#	}
+			#	factor = 5
+			#}
 		}
-		fighting_ambush = { 
+		fighting_ambush = {
 			base = 10
-			modifier = {
-				ROOT = { 
-					any_operative_leader = {
-						operative_leader_operation = operation_vanquish_monster
-						has_trait = thief_class
-					}
-				}
-				factor = 5
+			#modifier = {
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_vanquish_monster
+			#			has_trait = thief_class
+			#		}
+			#	}
+			#	factor = 5
+			#}
+		}
+		fighting_magical_barrage = {
+			base = 50
+			#modifier = {
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_vanquish_monster
+			#			NOT = {
+			#				has_trait = wizard_class
+			#			}
+			#		}
+			#	}
+			#	factor = 0
+			#}
+		}
+	}
+}
+
+operation_burn_granaries = { ### 1 2/35
+	icon = GFX_infiltrate_armed_forces
+	map_icon = GFX_infiltrate_armed_forces_map
+	name = operation_burn_granaries
+	desc = operation_burn_granaries_desc
+	priority = 1
+
+	days = 100
+	network_strength = 35
+	operatives = 2
+	
+	ai_will_do = {
+		factor = 11
+	}
+	
+	allowed = {
+		always = no #broken, TODO fix
+		#tag = ORD
+	}
+
+	visible = {
+		has_completed_focus = ORD_burn_granaries
+		has_war_with = FROM
+		FROM = {
+			NOT = {
+				has_idea = SPY_burnt_granaries
 			}
 		}
-		fighting_magical_barrage = { 
-			base = 50
-			modifier = {
-				ROOT = { 
-					any_operative_leader = {
-						operative_leader_operation = operation_vanquish_monster
-						NOT = {
-							has_trait = wizard_class
-						}
-					}
-				}
-				factor = 0
+	}
+	
+	experience = 1.0
+	
+	outcome_execute = { # SCOPE_OPERATION
+		FROM = {
+			country_event = {
+				id = spy.1
 			}
+		}
+	}
+
+	outcome_potential = {
+		FROM = {
+			country_event = {
+				id = spy.1
+			}
+		}
+	}
+	
+	phases = { #infiltration
+		infiltration_mole = {
+			base = 25
+		}
+		infiltration_identity_theft = {
+			base = 25
+		}
+		infiltration_glamour = {
+			base = 25
+			#modifier = {
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_burn_granaries
+			#			NOT = {
+			#				has_trait = wizard_class
+			#			}
+			#		}
+			#	}
+			#	factor = 0
+			#}
+		}
+	}
+	phases = { #burning
+		burning_hired_thugs = {
+			base = 25
+		}
+		burning_flaming_arrow = {
+			base = 25
+			#modifier = {
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_burn_granaries
+			#			has_trait = warrior_class
+			#		}
+			#	}
+			#	factor = 2
+			#}
+		}
+		burning_sneaky = {
+			base = 25
+			#modifier = {
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_burn_granaries
+			#			has_trait = thief_class
+			#		}
+			#	}
+			#	factor = 2
+			#}
+		}
+	}
+	phases = { #exfiltration
+		exfiltration_flee = {
+			base = 25
+		}
+		exfiltration_sneak_out = {
+			base = 25
+			#modifier = {
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_burn_granaries
+			#			has_trait = thief_class
+			#		}
+			#	}
+			#	factor = 2
+			#}
+		}
+		exfiltration_teleport = {
+			base = 25
+			#modifier = {
+			#	ROOT = {
+			#		any_operative_leader = {
+			#			operative_leader_operation = operation_burn_granaries
+			#			NOT = {
+			#				has_trait = wizard_class
+			#			}
+			#		}
+			#	}
+			#	factor = 0
+			#}
 		}
 	}
 }

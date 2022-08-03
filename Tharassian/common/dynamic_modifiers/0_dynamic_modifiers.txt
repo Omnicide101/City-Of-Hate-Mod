@@ -29,7 +29,20 @@ ai_division_limiter = {
 	ai_desired_divisions_factor = -1
 }
 
+#Country-specific modifiers
+ORD_drakeskin_guarded_lands = {
+	icon = GFX_modifier_drakeskin_guarded_lands
+	resistance_damage_to_garrison = 0.5
+	resistance_target = 0.35
+}
+
 #Generic state modifiers
+
+tomb_of_inskyllithe = {
+	icon = GFX_modifier_drakeskin_guarded_lands
+	army_morale_factor = 0.2
+	army_core_defence_factor = 0.25
+}
 
 city_of_erudition = {
 	icon = GFX_modifier_city_erudition

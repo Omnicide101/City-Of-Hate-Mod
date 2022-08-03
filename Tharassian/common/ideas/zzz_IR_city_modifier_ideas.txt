@@ -2,7 +2,7 @@ ideas = {
 	
 	hidden_ideas = {
 		CITY_varinthia = {
-			allowed = {
+			available = {
 				controls_state = 111
 			}
 			
@@ -18,7 +18,7 @@ ideas = {
 		}
 		
 		CITY_istaroth = {
-			allowed = {
+			available = {
 				controls_state = 85
 			}
 			
@@ -32,8 +32,30 @@ ideas = {
 			}
 		}
 		
-		CITY_ythelmare = {
+		CITY_istaroth_tomb_of_inskyllithe = {
 			allowed = {
+				OR = {
+					original_tag = ORD
+					tag = EOR
+				}
+			}
+			
+			available = {
+				controls_state = 85
+			}
+			
+			allowed_civil_war = {
+				controls_state = 85
+			}
+			
+			modifier = {
+				army_morale_factor = 0.2
+				army_core_defence_factor = 0.25
+			}
+		}
+		
+		CITY_ythelmare = {
+			available = {
 				controls_state = 112
 			}
 			
@@ -49,7 +71,7 @@ ideas = {
 		}
 		
 		CITY_ythelmare_slavery = {
-			allowed = {
+			available = {
 				controls_state = 112
 			}
 			
@@ -66,7 +88,7 @@ ideas = {
 		}
 		
 		CITY_vuid = {
-			allowed = {
+			available = {
 				controls_state = 84
 			}
 			

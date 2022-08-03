@@ -224,6 +224,221 @@ ideas = {
 			}
 		}
 		
+		ORD_the_oath_idea = {
+			
+			allowed = {
+				original_tag = ORD
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_spy_political
+			
+			removal_cost = -1
+			
+			modifier = {
+				operative_slot = 1
+			}
+			
+		}
+		
+		ORD_the_oath_idea_2 = {
+			
+			allowed = {
+				original_tag = ORD
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_spy_political
+			
+			removal_cost = -1
+			
+			modifier = {
+				operative_slot = 1
+				army_morale_factor = 0.03
+			}
+			
+		}
+		
+		ORD_the_oath_idea_3 = {
+			
+			allowed = {
+				original_tag = ORD
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_spy_political
+			
+			removal_cost = -1
+			
+			modifier = {
+				operative_slot = 2
+				army_morale_factor = 0.03
+			}
+			
+		}
+		
+		ORD_the_oath_idea_vanilla = {
+			
+			allowed = {
+				original_tag = ORD
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_spy_political
+			
+			removal_cost = -1
+			
+			modifier = {
+				encryption = 0.5
+			}
+			
+		}
+		
+		ORD_the_oath_idea_vanilla_2 = {
+			
+			allowed = {
+				original_tag = ORD
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_spy_political
+			
+			removal_cost = -1
+			
+			modifier = {
+				encryption = 0.5
+				army_morale_factor = 0.03
+			}
+			
+		}
+		
+		ORD_the_oath_idea_vanilla_3 = {
+			
+			allowed = {
+				original_tag = ORD
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_spy_political
+			
+			removal_cost = -1
+			
+			modifier = {
+				encryption = 0.75
+				army_morale_factor = 0.03
+			}
+			
+		}
+		
+		ORD_bulwark_tradition_idea = {
+			
+			allowed = {
+				original_tag = ORD
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = spa_crusade_against_democracy
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = 0.1
+			}
+			
+		}
+		
+		ORD_masters_craft_idea = {
+			
+			allowed = {
+				original_tag = ORD
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+			}
+			
+		}
+		
+		ORD_great_march = {
+			
+			allowed = {
+				original_tag = ORD
+				has_war_with = RTH
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = high_devastation
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = 0.15
+			}
+			
+			targeted_modifier = {
+				tag = RTH
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+			
+		}
+		
+		ORD_inskyllithe_desecrated_idea = {
+			
+			allowed = {
+				original_tag = ORD
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = great_depression
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = -0.25
+				army_attack_factor = -0.5
+				army_defence_factor = -0.15
+				
+				surrender_limit = -0.33
+			}
+			
+		}
+		
 		ORD_rebuilding_glory_idea = {
 			
 			allowed = {

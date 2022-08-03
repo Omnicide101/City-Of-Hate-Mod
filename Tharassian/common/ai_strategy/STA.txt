@@ -148,12 +148,9 @@ arkanisturm_civil_war = {#Let's not take Arkanisturm land if we're fighting for 
 
 neureik_besties = {
 	enable = {
-	original_tag = STA
-	country_exists = NRK
-	has_government = monarchy_absolute
-	NRK = {
-	has_government = monarchy_absolute
-		}
+		original_tag = STA
+		country_exists = NRK
+		has_government = monarchy_absolute
 	}
 	ai_strategy = {
 		type = befriend
@@ -164,11 +161,10 @@ neureik_besties = {
 
 neureik_besties_NRK = {
 	enable = {
-	original_tag = NRK
-	country_exists = STA
-	has_government = monarchy_absolute
-	STA = {
-	has_government = monarchy_absolute
+		original_tag = NRK
+		country_exists = STA
+		STA = {
+			has_government = monarchy_absolute
 		}
 	}
 	ai_strategy = {

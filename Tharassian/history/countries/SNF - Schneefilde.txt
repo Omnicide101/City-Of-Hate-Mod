@@ -120,73 +120,11 @@ give_military_access = FTH
 give_military_access = WIS
 give_military_access = WSZ
 
-
-
-create_country_leader = {
-	name = "Hans Werthner"
-	desc = "politics_SNF_werthner_desc"
-	picture = "gfx/leaders/SNF/Portrait_SNF_Werthner.dds"
-	ideology = theocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Andrea Schiefer"
-	desc = "politics_SNF_schiefer_desc"
-	picture = "gfx/leaders/SNF/Portrait_SNF_Schiefer.dds"
-	ideology = republic_peasant_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Madlen Bodenheimer"
-	desc = "politics_SNF_bodenheimer_desc"
-	picture = "gfx/leaders/SNF/Portrait_SNF_Bodenheimer.dds"
-	ideology = republic_merchant_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Louise Straussler"
-	desc = "politics_SNF_straussler_desc"
-	picture = "gfx/leaders/SNF/Portrait_SNF_Straussler.dds"
-	ideology = puritan_ideology
-	traits = {
-	}
-}
-
-recruit_character = ulrich_drecht
+recruit_character = SNF_ulrich_drecht
 recruit_character = SNF_otto_kolb
 recruit_character = SNF_fridrich_huber
 recruit_character = SNF_till_lehmkuhl
-
-#create_field_marshal = {
-#				name = "Otto Kolb"
-#				picture = "Portrait_SNF_Kolb.dds"
-#				id = 11
-#				traits = {
-#				inflexible_strategist
-#				winter_specialist
-#				}
-#				skill = 3
-#				attack_skill = 1
-#				defense_skill = 3
-#				planning_skill = 3
-#				logistics_skill = 2
-#			}
-#create_corps_commander = {
-#				name = "Fridrich Huber"
-#				picture = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds
-#				traits = {
-#				cavalry_officer
-#				commando
-#				}
-#				skill = 3
-#				attack_skill = 2
-#				defense_skill = 2
-#				planning_skill = 2
-#				logistics_skill = 4
-#			}
+recruit_character = SNF_hans_werthner
+recruit_character = SNF_andrea_schiefer
+recruit_character = SNF_madlen_bodenheimer
+recruit_character = SNF_louise_straussler

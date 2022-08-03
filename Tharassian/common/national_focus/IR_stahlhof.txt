@@ -236,6 +236,7 @@ focus_tree = {
 			custom_effect_tooltip = WIP_not_done_note
 			hidden_effect = {
 				random_list = {
+					
 					60 = { #Nobody noticed all died
 						ORD = { country_event = { id = sta.13 days = 2 } }
 						country_event = { id = sta.12 days = 2 }

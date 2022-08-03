@@ -2,6 +2,26 @@ spriteTypes = {
 
 	#### Mod-specific goal icons
 	SpriteType = {
+	name = "GFX_focus_ord_league"
+	texturefile = "gfx/interface/goals/focus_ord_league.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ord_destroy_revolution"
+	texturefile = "gfx/interface/goals/focus_ord_destroy_revolution.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ord_alsyon"
+	texturefile = "gfx/interface/goals/focus_ord_alsyon.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ord_deploy_drakeskins"
+	texturefile = "gfx/interface/goals/focus_ord_deploy_drakeskins.dds"
+	}
+	
+	SpriteType = {
 	name = "GFX_focus_ord_lothinnys"
 	texturefile = "gfx/interface/goals/focus_ord_lothinnys.dds"
 	}

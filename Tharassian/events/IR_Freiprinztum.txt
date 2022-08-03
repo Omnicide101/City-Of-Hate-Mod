@@ -508,9 +508,9 @@ country_event = {#We won!
 			days = 365
 		}
 		army_experience = 35
-		load_oob = "FPT_kriegsspiele_winner"
 		
 		hidden_effect = {
+			load_oob = "FPT_kriegsspiele_winner"
 			country_event = {
 				id = fpt.13
 				days = 1
@@ -643,14 +643,13 @@ country_event = {#Shanking each other with word shivs
 			}
 			set_country_flag = FPT_border_conflicts_enabled
 		}
-		hidden_effect = {
-			if = {
-				limit = {
-					tag = UNG
-				}
-				STA = {
-					set_country_flag = FPT_border_conflicts_enabled
-				}
+		if = {
+			limit = {
+				tag = STA
+			}
+			custom_effect_tooltip = STA_get_some_troops_tt
+			hidden_effect = {
+				load_oob = "STA_border_conflict_troops"
 			}
 		}
 	}
@@ -944,16 +943,15 @@ country_event = {#Re-Enable Border Conflicts
 	}
 }
 
-
 country_event = {#Border Conflict Warning
 	id = fpt.22
 	title = fpt.22.t
 	desc = fpt.22.d
-	
+
 	picture = GFX_report_event_fascist_militia
-	
+
 	is_triggered_only = yes
-	
+
 	option = {#oh no
 		name = fpt.22.a
 	}

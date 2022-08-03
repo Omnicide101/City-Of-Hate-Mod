@@ -49,6 +49,22 @@ bookmarks = {
 			}
 		}
 		
+		"SKA"={
+			history = "SKA_CITY_OF_HATE_DESC"
+			ideology = monarchy_constitutional
+			ideas = {
+				SKA_food_imports
+				SKA_penal_levy
+				SKA_memories_of_vergallheim
+				SKA_destabilization_caste_system
+			}
+			focuses = {
+				SKA_hellirfasts_final_decree
+				SKA_peace_for_the_dwarfes
+				SKA_sun_beneath_stone
+			}
+		}
+		
 		
 		
 		#Minors
@@ -95,23 +111,6 @@ bookmarks = {
 				SNF_southern_reclamation
 				SNF_demand_noble_surrender
 				SNF_support_rural_farms
-			}
-		}
-
-		"SKA"={
-			history = "SKA_CITY_OF_HATE_DESC"
-			ideology = monarchy_constitutional
-			minor = yes
-			ideas = {
-				SKA_food_imports
-				SKA_penal_levy
-				SKA_memories_of_vergallheim
-				SKA_destabilization_caste_system
-			}
-			focuses = {
-				SKA_hellirfasts_final_decree
-				SKA_peace_for_the_dwarfes
-				SKA_sun_beneath_stone
 			}
 		}
 		

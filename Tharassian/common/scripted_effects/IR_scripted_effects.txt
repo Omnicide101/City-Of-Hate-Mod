@@ -1,3 +1,67 @@
+# Damage food supplies
+destroy_food = {
+	if = {
+		limit = {
+			fuel_ratio > 0.75
+			NOT = {
+				has_country_flag = food_already_burnt
+			}
+		}
+		set_fuel_ratio = 0.75
+		
+		set_country_flag = food_already_burnt
+	}
+	if = {
+		limit = {
+			fuel_ratio < 0.76
+			fuel_ratio > 0.50
+			NOT = {
+				has_country_flag = food_already_burnt
+			}
+		}
+		set_fuel_ratio = 0.50
+		
+		set_country_flag = food_already_burnt
+	}
+	if = {
+		limit = {
+			fuel_ratio < 0.51
+			fuel_ratio > 0.35
+			NOT = {
+				has_country_flag = food_already_burnt
+			}
+		}
+		set_fuel_ratio = 0.35
+		
+		set_country_flag = food_already_burnt
+	}
+	if = {
+		limit = {
+			fuel_ratio < 0.36
+			fuel_ratio > 0.15
+			NOT = {
+				has_country_flag = food_already_burnt
+			}
+		}
+		set_fuel_ratio = 0.15
+		
+		set_country_flag = food_already_burnt
+	}
+	if = {
+		limit = {
+			fuel_ratio < 0.16
+			NOT = {
+				has_country_flag = food_already_burnt
+			}
+		}
+		set_fuel_ratio = 0
+		
+		set_country_flag = food_already_burnt
+	}
+	
+	clr_country_flag = food_already_burnt
+}
+
 # Drifts towards ruling party ideology
 ruling_ideology_drift = {
 	if = {
@@ -455,6 +519,7 @@ check_steel_road_change = {
 
 grant_magic_item_to_country_leader = {
 	random_list = {
+		
 		33 = {
 			add_country_leader_trait = has_magic_sword
 		}
@@ -471,6 +536,7 @@ grant_magic_item_to_country_leader = {
 
 grant_magic_item_to_commander = {
 	random_list = {
+		
 		33 = {
 			add_unit_leader_trait = has_magic_sword_commander
 		}

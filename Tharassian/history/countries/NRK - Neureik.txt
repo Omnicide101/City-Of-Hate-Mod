@@ -76,6 +76,12 @@ set_politics = {
 	elections_allowed = no
 }
 
+diplomatic_relation = {
+	country = STA
+	relation = non_aggression_pact
+	active = yes
+}
+
 set_popularities = {
 	monarchy_absolute = 28
 

@@ -199,8 +199,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				army_defence_factor = -0.1
-				surrender_limit = -0.25
+				surrender_limit = -0.15
 			}
 		}
 		
@@ -956,6 +955,5 @@ ideas = {
 				conscription = 0.05
 			}
 		}
-
 	}
 }

@@ -125,6 +125,14 @@ opinion_modifiers = {
 		value = -15
 	}
 	
+	ORD_horrified = {
+		value = -75
+	}
+	
+	ORD_outraged = {
+		value = -100
+	}
+	
 	RTH_monarchist_scum = {
 		value = -25
 	}
