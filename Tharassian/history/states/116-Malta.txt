@@ -10,7 +10,7 @@ state={
 	resources = {
 		lumber = 5
 	}
-		history={	
+	history={	
 		victory_points = {
 			7738 1
 		}
@@ -20,5 +20,5 @@ state={
 			forge = 1
 		}
 		add_core_of = ORD
-		}
+	}
 }

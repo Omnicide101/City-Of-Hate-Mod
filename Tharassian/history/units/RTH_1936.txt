@@ -118,7 +118,7 @@ units = {
 
 	division = {
 		name = "Unspykaur Miner's Self-Defense League"
-		location = 7736
+		location = 7777
 		division_template = "Rose Wardens"
 		start_experience_factor = 0.3
 

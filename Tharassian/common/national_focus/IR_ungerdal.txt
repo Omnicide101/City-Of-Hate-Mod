@@ -1131,7 +1131,7 @@ focus_tree = {
 		y = 1
 		
 		ai_will_do = {
-			factor = 5
+			factor = 80
 		}
 		
 		completion_reward = {
@@ -1197,7 +1197,7 @@ focus_tree = {
 		y = 1
 		
 		ai_will_do = {
-			factor = 3
+			factor = 75
 		}
 		
 		completion_reward = {
@@ -1334,6 +1334,7 @@ focus_tree = {
 				popularity = 0.05
 			}
 			random_list = {
+				
 				60 = {
 					country_event = {
 						id = ung.47

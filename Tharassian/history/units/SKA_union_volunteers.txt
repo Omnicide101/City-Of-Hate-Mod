@@ -25,7 +25,7 @@ units = {
 
 	division = {
 		name = "Schlosserhelmer Expeditionary Force"
-		location = 3707
+		location = 5506
 		division_template = "Ungerdaler Expeditionary Force"
 		start_experience_factor = 1
 

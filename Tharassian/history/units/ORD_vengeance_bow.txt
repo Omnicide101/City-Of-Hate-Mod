@@ -1,0 +1,8 @@
+﻿units = {
+	division = {
+		name = "The Vengeful"
+		location = 4644
+		division_template = "Arrowslingers"
+		start_experience_factor = 1
+	}
+}

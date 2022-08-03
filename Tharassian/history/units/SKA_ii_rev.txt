@@ -9,7 +9,7 @@
 
 	division = {
 		name = "Clan Hraustr"
-		location = 5329
+		location = 6890
 		division_template = "Mountainbreakers"
 		start_experience_factor = 0.8
 
@@ -17,7 +17,7 @@
 
 	division = {
 		name = "Clan Hvassøx"
-		location = 7076
+		location = 7034
 		division_template = "Mountainbreakers"
 		start_experience_factor = 0.8
 
@@ -25,7 +25,7 @@
 
 	division = {
 		name = "Clan Stinnrstál"
-		location = 7212
+		location = 3444
 		division_template = "Mountainbreakers"
 		start_experience_factor = 0.8
 
@@ -49,7 +49,7 @@
 
 	division = {
 		name = "Skaeskind Pass Watch"
-		location = 6793
+		location = 1848
 		division_template = "Hearthguards"
 		start_experience_factor = 0.6
 
@@ -81,7 +81,7 @@
 	
 	division = {
 		name = "2nd Miner's Militia"
-		location = 1249
+		location = 7372
 		division_template = "Hearthguards"
 		start_experience_factor = 0.5
 
@@ -89,7 +89,7 @@
 	
 	division = {
 		name = "3rd Miner's Militia"
-		location = 1299
+		location = 7154
 		division_template = "Hearthguards"
 		start_experience_factor = 0.5
 

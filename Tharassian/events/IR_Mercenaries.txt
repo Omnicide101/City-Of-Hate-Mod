@@ -64,3 +64,113 @@ country_event = {#deserting soldiers
 		add_ideas = IR_deserting_soldiers
 	}
 }
+
+country_event = {#Drakeskin Contract Over
+	id = merc.3
+	title = merc.3.t
+	desc = merc.3.d
+	picture = GFX_report_event_romanian_soldiers
+	
+	immediate = {
+		set_country_flag = MERCS_drakeskins_contract_already_ending_flag
+	}
+	
+	trigger = {
+		has_country_flag = MERCS_hiring_drakeskins_flag
+		NOT = {
+			has_idea = MERCS_hiring_drakeskins_idea
+		}
+		NOT = {
+			has_country_flag = MERCS_drakeskins_contract_already_ending_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {#Very Well
+		name = merc.3.a
+		delete_unit_template_and_units = {
+			division_template = "Drakeskin Mercenaries"
+		}
+		random_character = {
+			limit = {
+				is_character = ORD_captain_alsyon
+			}
+			set_nationality = {
+				target_country = ADV
+				character = ORD_captain_alsyon
+			}
+		}
+		clr_country_flag = MERCS_hiring_drakeskins_flag
+		clr_country_flag = MERCS_drakeskins_contract_already_ending_flag
+		if = {
+			limit = {
+				NOT = {
+					ORD = {
+						has_country_flag = ORD_drakeskins_not_guarding_border
+					}
+				}
+			}
+			100 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			104 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			105 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			107 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			116 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+		}
+	}
+	
+	option = {#Renew Contract
+		name = merc.3.b
+		
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = ORD_deploy_drakeskins
+				}
+			}
+			add_timed_idea = {
+				idea = MERCS_hiring_drakeskins_idea
+				days = 183
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					ORD = {
+						has_completed_focus = ORD_deploy_drakeskins
+					}
+				}
+				any_other_country = {
+					has_character = ORD_captain_alsyon
+					NOT = {
+						has_country_flag = MERCS_hiring_drakeskins_flag
+					}
+				}
+			}
+		}
+		clr_country_flag = MERCS_hiring_drakeskins_flag
+		clr_country_flag = MERCS_drakeskins_contract_already_ending_flag
+	}
+}

@@ -4,7 +4,7 @@ state={
 	provinces={
 	2127 8614 3412 8628 3923 1097
 	}
-	state_category = rural manpower = 1
+	state_category = rural manpower = 212840
 	buildings_max_level_factor=1.000
 	history={
 		owner = TRX

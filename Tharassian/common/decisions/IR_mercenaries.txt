@@ -98,4 +98,190 @@ hire_mercenaries = {
 			}
 		}
 	}
+	
+	MERCS_drakeskins = {
+		
+		icon = GFX_decision_hire_drakeskins
+		
+		allowed = {
+			always = yes
+		}
+		
+		available = {
+			has_idea = ORD_drakeskins_company
+			OR = {
+				num_of_civilian_factories > 5
+				has_completed_focus = ORD_deploy_drakeskins
+			}
+			NOT = {
+				has_country_flag = MERCS_hiring_drakeskins_flag
+			}
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		
+		visible = {
+			OR = {
+				tag = ORD
+				tag = ORB
+				tag = EOR
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				NOT = {
+					has_completed_focus = ORD_deploy_drakeskins
+				}
+				num_of_available_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Let's not if we are very low on factories
+				NOT = {
+					has_completed_focus = ORD_deploy_drakeskins
+				}
+				num_of_available_civilian_factories < 13
+				factor = 0.25
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = ORD_deploy_drakeskins
+					}
+				}
+				custom_effect_tooltip = MERCS_hire_drakeskins_effects_tt
+			}
+			if = {
+				limit = {
+					has_completed_focus = ORD_deploy_drakeskins
+				}
+				custom_effect_tooltip = MERCS_hire_drakeskins_effects_free_tt
+			}
+			if = {
+				limit = {
+					NOT = {	
+						tag = ORD
+					}
+					ORD = {
+						has_completed_focus = ORD_deploy_drakeskins
+					}
+				}
+				custom_effect_tooltip = MERCS_alsyon_commissioned_tt
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						has_character = ORD_captain_alsyon
+						has_country_flag = MERCS_hiring_drakeskins_flag
+					}
+				}
+				custom_effect_tooltip = MERCS_alsyon_hired_tt
+			}
+			if = {
+				limit = {
+					NOT = {
+						ORD = {
+							has_completed_focus = ORD_deploy_drakeskins
+						}
+					}
+					any_other_country = {
+						has_character = ORD_captain_alsyon
+						NOT = {
+							has_country_flag = MERCS_hiring_drakeskins_flag
+						}
+					}
+				}
+				every_possible_country = {
+					limit = {
+						has_character = ORD_captain_alsyon
+					}
+					random_character = {
+						limit = {
+							is_character = ORD_captain_alsyon
+						}
+						set_nationality = ROOT
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = ORD_drakeskin_guarded_lands
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = ORD
+					}
+					load_oob = "ORD_hire_drakeskins"
+				}
+				
+				if = {
+					limit = {
+						tag = ORB
+					}
+					load_oob = "ORB_hire_drakeskins"
+				}
+				
+				if = {
+					limit = {
+						tag = EOR
+					}
+					load_oob = "EOR_hire_drakeskins"
+				}
+				
+				if = {
+					limit = {
+						NOT = {
+							has_completed_focus = ORD_deploy_drakeskins
+						}
+					}
+					add_timed_idea = {
+						idea = MERCS_hiring_drakeskins_idea
+						days = 183
+					}
+				}
+				
+				set_country_flag = MERCS_hiring_drakeskins_flag	
+			}
+		}
+	}
 }

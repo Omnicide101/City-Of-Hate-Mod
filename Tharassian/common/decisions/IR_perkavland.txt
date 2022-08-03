@@ -328,6 +328,7 @@ perkav_piracy = {
 						}
 					}
 					random_list = {
+						
 						60 = { #Merchant Fleet Raided!
 							random_country = {
 								limit = {
@@ -362,6 +363,7 @@ perkav_piracy = {
 						has_country_flag = UNG_fight_perkav_pirates
 					}
 					random_list = {
+						
 						40 = { #Merchant Fleet Raided!
 							random_country = {
 								limit = {

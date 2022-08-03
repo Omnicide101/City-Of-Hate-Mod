@@ -64,6 +64,8 @@ SNF_drechts_opportunity = {
 		modifier = {
 		}	
 		
+		fixed_random_seed = no
+		
 		timeout_effect = {
 		add_popularity = {
 			ideology = republic_aristocrat
@@ -76,6 +78,7 @@ SNF_drechts_opportunity = {
 			activate_mission = SNF_drecht_gathering_nobles
 			else = {
 			random_list = {
+				
 				60 = {
 					activate_mission = SNF_drecht_consolidation
 				}
@@ -849,7 +852,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -947,7 +950,7 @@ SNF_invade_perkav = {
 		
 		
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -1041,7 +1044,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -1137,7 +1140,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -1233,7 +1236,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -1328,7 +1331,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -1423,7 +1426,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -1432,7 +1435,7 @@ SNF_invade_perkav = {
 		} on_map_mode = map_only
 		
 		cost = 25
-		days_remove = 30
+		days_remove = 70
 		
 		ai_will_do = {
 			factor = 20
@@ -1519,7 +1522,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -1615,7 +1618,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -1711,7 +1714,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -1807,7 +1810,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -1903,7 +1906,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -2000,7 +2003,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -2097,7 +2100,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -2195,7 +2198,7 @@ SNF_invade_perkav = {
 		
 		
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -2289,7 +2292,7 @@ SNF_invade_perkav = {
 			}
 		}
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		ai_will_do = {
 			factor = 20
@@ -2385,7 +2388,7 @@ SNF_invade_perkav = {
 		
 		
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -2481,7 +2484,7 @@ SNF_invade_perkav = {
 		
 		
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -2577,7 +2580,7 @@ SNF_retake_biscle_wsz = {
 		
 		
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -2672,7 +2675,7 @@ SNF_retake_resa_wsz = {
 		
 		
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {
@@ -2767,7 +2770,7 @@ SNF_retake_nilse_wsz = {
 		
 		
 		
-		} cost = 50 days_remove = 30 state_target = yes
+		} cost = 50 days_remove = 70 state_target = yes
 		
 		target_trigger = {
 			FROM = {

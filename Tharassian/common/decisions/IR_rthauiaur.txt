@@ -713,6 +713,8 @@ RTH_flip_vuid = {
                 check_variable = { RTH_vuid_infiltration = 100 }
             }
         }
+		
+		fixed_random_seed = no
 
         complete_effect = {
             custom_effect_tooltip = RTH_vuid_revolution_success_depends_infiltration
@@ -722,6 +724,7 @@ RTH_flip_vuid = {
                         check_variable = { RTH_vuid_infiltration < 20 }
                     }
                     random_list = {
+						
                         10 = {
                             country_event = { id = rth.38 hours = 2 }
                             ORD = {
@@ -742,6 +745,7 @@ RTH_flip_vuid = {
                         check_variable = { RTH_vuid_infiltration < 41 }
                     }
                     random_list = {
+						
                         33 = {
                             country_event = { id = rth.38 hours = 2 }
                             ORD = {
@@ -762,6 +766,7 @@ RTH_flip_vuid = {
                         check_variable = { RTH_vuid_infiltration < 61 }
                     }
                     random_list = {
+						
                         50 = {
                             country_event = { id = rth.38 hours = 2 }
                             ORD = {
@@ -782,6 +787,7 @@ RTH_flip_vuid = {
                         check_variable = { RTH_vuid_infiltration < 81 }
                     }
                     random_list = {
+						
                         75 = {
                             country_event = { id = rth.38 hours = 2 }
                             ORD = {
@@ -817,6 +823,7 @@ RTH_flip_vuid = {
                         check_variable = { RTH_vuid_infiltration < 20 }
                     }
                     random_list = {
+						
                         10 = {
                             country_event = { id = rth.38 hours = 2 }
                             ORD = {
@@ -837,6 +844,7 @@ RTH_flip_vuid = {
                         check_variable = { RTH_vuid_infiltration < 41 }
                     }
                     random_list = {
+						
                         33 = {
                             country_event = { id = rth.38 hours = 2 }
                             ORD = {
@@ -857,6 +865,7 @@ RTH_flip_vuid = {
                         check_variable = { RTH_vuid_infiltration < 61 }
                     }
                     random_list = {
+						
                         50 = {
                             country_event = { id = rth.38 hours = 2 }
                             ORD = {
@@ -877,6 +886,7 @@ RTH_flip_vuid = {
                         check_variable = { RTH_vuid_infiltration < 81 }
                     }
                     random_list = {
+						
                         75 = {
                             country_event = { id = rth.38 hours = 2 }
                             ORD = {
