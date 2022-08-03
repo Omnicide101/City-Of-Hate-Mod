@@ -1,0 +1,25 @@
+state={
+	id=944
+	name="STATE_944"
+	provinces={
+		818 1490 2455 2944 4596 7516 
+	}
+	resources={
+		lumber=10.000
+		food=3.000
+	}
+	manpower=3092
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=5.000
+	history={
+		owner = AKS
+		add_core_of = AKS
+		buildings = {
+			infrastructure = 3
+			workshop = 1
+
+		}
+		victory_points = {	1490 3 }
+	}
+}

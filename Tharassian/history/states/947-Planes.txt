@@ -1,0 +1,29 @@
+
+state={
+	id=947
+	name="STATE_947"
+	resources={
+		food=8.000
+	}
+
+	history={
+		owner = AKS
+		add_core_of = AKS
+		buildings = {
+			infrastructure = 1
+
+		}
+		victory_points = {
+			2076 1 
+		}
+
+	}
+
+	provinces={
+		2076 4085 4113 4434 4968 5349 
+	}
+	manpower=290
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=5.000
+}

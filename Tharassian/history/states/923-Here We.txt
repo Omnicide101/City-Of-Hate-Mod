@@ -1,0 +1,21 @@
+state={
+	id=923
+	name="STATE_923"
+	provinces={
+		1001 3396 4920 5339 8094 
+	}
+	manpower=760
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = pastoral
+	resources = {
+        lumber = 3
+    }
+    history = {
+        owner = SAN
+        add_core_of = SAN
+        buildings = {
+            infrastructure = 1
+		}
+	}
+}

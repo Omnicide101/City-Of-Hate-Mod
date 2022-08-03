@@ -1,0 +1,24 @@
+state={
+	id=932
+	name="STATE_932"
+	provinces={
+		977 4893 7462 7498 7528 7543 
+	}
+	manpower=2896
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = rural
+	
+	resources = {
+        lumber = 7
+    }
+    history = {
+        owner = EAQ
+        add_core_of = EAQ
+        buildings = {
+            infrastructure = 3
+			workshop = 1
+		}
+		victory_points = { 7528 3 }
+	}
+}

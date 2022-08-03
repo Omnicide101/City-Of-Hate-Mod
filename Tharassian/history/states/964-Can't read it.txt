@@ -1,0 +1,24 @@
+state={
+	id=964
+	name="STATE_964"
+	provinces={
+		1298 2939 4890 5180 7220 7238 7271 7290 7320 
+	}
+	manpower=9569
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = town 
+	
+	resources = {
+        lumber = 12
+		food = 6
+    }
+    history = {
+        owner = AKS
+        add_core_of = AKS
+        buildings = {
+            infrastructure = 4
+		}
+		victory_points = { 7238 10 }
+	}
+}

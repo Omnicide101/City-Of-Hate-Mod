@@ -1,0 +1,21 @@
+state={
+	id=929
+	name="STATE_929"
+	provinces={
+		472 554 1138 8181 
+	}
+	manpower=37385
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = town
+	
+    history = {
+        owner = SAN
+        add_core_of = SAN
+        buildings = {
+            infrastructure = 4
+			farm = 2
+		}
+		victory_points = { 8181 10 }
+	}
+}

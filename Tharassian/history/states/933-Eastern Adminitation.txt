@@ -1,0 +1,24 @@
+state={
+	id=933
+	name="STATE_933"
+	provinces={
+		4201 4790 4929 7366 7386 
+	}
+	manpower=624
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = pastoral
+	
+	resources = {
+        lumber = 2
+		food = 2
+    }
+    history = {
+        owner = EAQ
+        add_core_of = EAQ
+        buildings = {
+            infrastructure = 2
+		}
+		victory_points = { 4201 1 }
+	}
+}

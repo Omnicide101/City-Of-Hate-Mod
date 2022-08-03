@@ -1,0 +1,23 @@
+state={
+	id=927
+	name="STATE_927"
+	provinces={
+		189 916 1256 4562 5095 8040 8059 
+	}
+	manpower=3824
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = rural
+	resources = {
+        food = 12
+    }
+    history = {
+        owner = SAN
+        add_core_of = SAN
+        buildings = {
+            infrastructure = 1
+			farm = 1
+		}
+		victory_points = { 916 3 }
+	}
+}
