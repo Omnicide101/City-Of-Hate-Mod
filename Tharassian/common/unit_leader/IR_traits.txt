@@ -247,9 +247,49 @@ leader_traits = {
 		}
 	}
 	
+	drakeskin = {
+		type = all
+		trait_type = basic_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			always = yes #assigned to a specific character
+		}
+		
+		new_commander_weight = {
+			factor = 0 #no
+		}
+		
+		modifier = {
+			army_core_defence_factor = 0.25
+			army_morale_factor = 0.15
+			breakthrough_factor = 0.15
+		}
+	}
+	
+	mercenary_commander = {
+		type = all
+		trait_type = basic_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			always = yes #assigned to a specific character
+		}
+		
+		new_commander_weight = {
+			factor = 0 #no
+		}
+		
+		modifier = {
+			promote_cost_factor = 10
+		}
+	}
+	
 	has_magic_sword_commander = {
 		type = all
-		trait_type = personality_trait
+		trait_type = basic_trait
 		gain_xp = {
 			always = no # not gainable
 		}
@@ -280,7 +320,7 @@ leader_traits = {
 	
 	has_magic_ring_commander = {
 		type = all
-		trait_type = personality_trait
+		trait_type = basic_trait
 		gain_xp = {
 			always = no # not gainable
 		}
@@ -311,7 +351,7 @@ leader_traits = {
 	
 	has_magic_armour_commander = {
 		type = all
-		trait_type = personality_trait
+		trait_type = basic_trait
 		gain_xp = {
 			always = no # not gainable
 		}
@@ -342,7 +382,7 @@ leader_traits = {
 	
 	noctheurge = {
 		type = land
-		trait_type = personality_trait
+		trait_type = basic_trait
 		gain_xp = {
 			always = no # not gainable
 		}
@@ -377,7 +417,7 @@ leader_traits = {
 	
 	lumotheurge = {
 		type = land
-		trait_type = personality_trait
+		trait_type = basic_trait
 		gain_xp = {
 			always = no # not gainable
 		}
@@ -412,7 +452,7 @@ leader_traits = {
 	
 	operative_has_magic_sword = {
 		type = operative
-		trait_type = personality_trait
+		trait_type = basic_trait
 		gain_xp = {
 			always = no # not gainable
 		}
@@ -422,6 +462,12 @@ leader_traits = {
 		
 		new_commander_weight = {
 			factor = 0.1 # Big Rare
+			modifier = {	
+				FROM = {
+					has_completed_focus = ORD_expand_authorizations
+				}
+				factor = 3
+			}
 		}
 		
 		modifier = {
@@ -431,7 +477,7 @@ leader_traits = {
 	
 	operative_has_magic_ring = {
 		type = operative
-		trait_type = personality_trait
+		trait_type = basic_trait
 		gain_xp = {
 			always = no # not gainable
 		}
@@ -441,6 +487,12 @@ leader_traits = {
 		
 		new_commander_weight = {
 			factor = 0.1 # Big Rare
+			modifier = {	
+				FROM = {
+					has_completed_focus = ORD_expand_authorizations
+				}
+				factor = 3
+			}
 		}
 		
 		modifier = {
@@ -450,7 +502,7 @@ leader_traits = {
 	
 	operative_has_magic_armour = {
 		type = operative
-		trait_type = personality_trait
+		trait_type = basic_trait
 		gain_xp = {
 			always = no # not gainable
 		}
@@ -460,6 +512,12 @@ leader_traits = {
 		
 		new_commander_weight = {
 			factor = 0.1 # Big Rare
+			modifier = {	
+				FROM = {
+					has_completed_focus = ORD_expand_authorizations
+				}
+				factor = 3
+			}
 		}
 		
 		modifier = {
@@ -469,7 +527,7 @@ leader_traits = {
 	
 	monster_slayer = {
 		type = operative
-		trait_type = personality_trait
+		trait_type = basic_trait
 
 		new_commander_weight = {
 			factor = 0.1

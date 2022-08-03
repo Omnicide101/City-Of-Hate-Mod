@@ -103,7 +103,7 @@ country_event = {#Nobility end their struggle
 	}
 	
 	mean_time_to_happen = {
-		days = 10
+		days = 20
 	}
 	
 	option = {#Finally!
@@ -176,10 +176,11 @@ country_event = {#Schneefilde asks support from Faustburg
 			days = 2
 			}
 		custom_effect_tooltip = FPT_increase_union_loyalty_tt
-				add_to_variable = {
-					var = FPT_union_loyalty
-					value = 3
-				}
+			add_to_variable = {
+				var = FPT_union_loyalty
+				value = 3
+			}
+			set_loyalty_approximations = yes
 		}
 		
 	}
@@ -201,10 +202,11 @@ country_event = {#Schneefilde asks support from Faustburg
 			days = 2
 			}
 		custom_effect_tooltip = FPT_decrease_union_loyalty_tt
-				add_to_variable = {
-					var = FPT_union_loyalty
-					value = -3
-				}
+			add_to_variable = {
+				var = FPT_union_loyalty
+				value = -3
+			}
+			set_loyalty_approximations = yes
 		}
 	}
 	option = {#actually, fuck you.
@@ -321,10 +323,11 @@ country_event = {#Otto recovers from getting screwed over
 	option = {#crisis averted
 		name = snf.11.a
 		add_to_variable = {
-				var = HLZ.FPT_stahlhof_loyalty
-				value = 5
-			}
-				custom_effect_tooltip = FPT_increase_stahlhof_loyalty_large_tt
+			var = HLZ.FPT_stahlhof_loyalty
+			value = 5
+		}
+		set_loyalty_approximations = yes
+		custom_effect_tooltip = FPT_increase_stahlhof_loyalty_large_tt
 		add_popularity = {
 				ideology = republic_aristocrat
 				popularity = -0.20
@@ -674,15 +677,15 @@ country_event = {#yes
 	is_triggered_only = yes
 	
 	option = {
-	name = snf.23.a
-	diplomatic_relation = {
-	country = WSZ
-	relation = non_aggression_pact
-	active = yes
-	}
-	add_political_power = 50
-	WSZ = {
-	FROM_improve_THIS_relations = yes
+		name = snf.23.a
+		add_political_power = 50
+		WSZ = {
+			FROM_improve_THIS_relations = yes
+		}
+		diplomatic_relation = {
+			country = WSZ
+			relation = non_aggression_pact
+			active = yes
 		}
 	}
 }
@@ -698,8 +701,8 @@ country_event = {#no
 	is_triggered_only = yes
 	
 	option = {
-	name = snf.24.a
-	add_political_power = -25
+		name = snf.24.a
+		add_political_power = -25
 	}
 }
 #########
@@ -717,11 +720,11 @@ country_event = {#Ayo Get Kalaster
 
 	option = {
 	name = snf.25.a
-	add_political_power = 20
-	329 = {
-		add_claim_by = SNF
+		add_political_power = 20
+		set_country_flag = SNF_kalaster_flag
+		329 = {
+			add_claim_by = SNF
 		}
-	set_country_flag = SNF_kalaster_flag
 	}
 }
 #########
@@ -784,16 +787,17 @@ country_event = {#How about we just show of our love to Hutrig in the Kriegspiel
 			}
 	}
 }
+
 #
 country_event = {#The Exodus(Bruh wtf all my manpower)
 	id = snf.27
 	title = snf.27.t
 	desc = snf.27.d
 	picture = GFX_report_event_spr_anarchist_uprising
-	
-	
+
+
 	fire_only_once = yes
-	
+
 	trigger = {
 	tag = SNF
 	AND = {
@@ -809,7 +813,7 @@ country_event = {#The Exodus(Bruh wtf all my manpower)
 
 	}
 	}
-	
+
 
 	option = {
 	name = snf.27.a #crying emoji
@@ -854,12 +858,12 @@ country_event = {#The Exodus for PRK
 	title = snf.28.t
 	desc = snf.28.d
 	picture = GFX_report_event_chamberlain_announce
-	
-	
+
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 	name = snf.28.a #yo wtf that's kinda neat of a consolation prize of losing half of my land
 	add_timed_idea = {
@@ -868,6 +872,7 @@ country_event = {#The Exodus for PRK
 		}
 	}
 }
+
 ################
 country_event = {#Drecht wins
 	id = snf.100

@@ -11,6 +11,7 @@ on_actions = {
 					}
 				}
 				random_list = {
+					
 					33 = {
 						country_event = { id = merc.2 random = 240 }
 					}

@@ -3,7 +3,12 @@
 @tier3 = 10
 
 leader_traits = {
-	
+
+	welcoming_guild = {
+		random = no
+		enemy_operative_detection_chance_factor = -5
+	}
+
 	the_grand_master = {
 		random = no
 		political_power_gain = 0.5
@@ -75,6 +80,15 @@ leader_traits = {
 		mic_to_overlord_factor = 0.15
 		stability_factor = 0.12
 		war_support_factor = -0.07
+	}
+	
+	captain_of_the_iron_line = {
+		sprite = 7
+		random = no
+		army_core_defence_factor = 0.15
+		army_org_factor = 0.1
+		breakthrough_factor = 0.1
+		experience_gain_army = 0.02
 	}
 	
 	fathers_embrace = {
@@ -206,11 +220,13 @@ leader_traits = {
 	}
 	
 	power_behind_throne = {
+		sprite = 13
 		random = no
 		political_power_factor = 0.25
 	}
 	
 	hollow_avenger = {
+		sprite = 7
 		random = no
 		war_support_factor = -0.15
 		army_morale_factor = -0.1
@@ -318,21 +334,15 @@ leader_traits = {
 		random = no
 		production_factory_efficiency_gain_factor = 0.15
 	}
-	taboo_farmer = {
+	
+	smallholder_advocate_weak = {
 		random = no
 		local_resources_factor = 0.1
-		base_fuel_gain_factor = 0.2
-		stability_factor = -0.1
 	}
 	
 	smallholder_advocate = {
 		random = no
 		local_resources_factor = 0.15
-	}
-
-	smallholder_advocate_weak = {
-		random = no
-		local_resources_factor = 0.1
 	}
 	
 	central_organization_proponent = {
@@ -367,7 +377,14 @@ leader_traits = {
 		political_power_gain = -0.25
 		experience_gain_army_factor = 0.15
 	}	
-
+	
+	taboo_farmer = {
+		random = no
+		local_resources_factor = 0.1
+		base_fuel_gain_factor = 0.2
+		stability_factor = -0.1
+	}
+	
 	Irredentist = {
 		random = no
 		war_support_factor = 0.05

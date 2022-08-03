@@ -349,6 +349,7 @@ focus_tree = {
 			}
 			}
 		random_list = {
+				
 				60 = {
 					country_event = {
 						id = snf.12

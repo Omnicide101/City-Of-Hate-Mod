@@ -21,12 +21,28 @@ ideas = {
 			picture = generic_naval_manufacturer_1
 
 			allowed = {
-				NOT = {
-					tag = ORD
-				}
+				always = yes
 			}
 
 			available = {
+				custom_trigger_tooltip = {
+					tooltip = merc_not_racist_tt
+					#puritans
+					NOT = {
+						OR = {
+							AND = {	
+								NOT = {
+									has_idea = human_country
+								}
+								has_government = puritan
+							}
+							AND = {
+								tag = ORD
+								has_government = theocrat
+							}
+						}
+					}
+				}
 				if = {
 					limit = {
 						OR = {
@@ -99,7 +115,6 @@ ideas = {
 			allowed = {
 				NOT = {
 					OR = {
-						tag = ORD
 						tag = IRI
 						#non-lathweyne countries
 						tag = TAR
@@ -109,7 +124,6 @@ ideas = {
 						tag = GOW
 						tag = TES
 						tag = SUL
-						tag = TRX
 					}
 				}
 			}
@@ -125,6 +139,24 @@ ideas = {
 			}
 
 			available = {
+				custom_trigger_tooltip = {
+					tooltip = merc_not_racist_tt
+					#puritans
+					NOT = {
+						OR = {
+							AND = {	
+								NOT = {
+									has_idea = human_country
+								}
+								has_government = puritan
+							}
+							AND = {
+								tag = ORD
+								has_government = theocrat
+							}
+						}
+					}
+				}
 				NOT = {
 					has_war_with = IRI
 				}
@@ -173,8 +205,9 @@ ideas = {
 			allowed = {
 				NOT = {
 					OR = {
+						#rivals
 						tag = IRI
-						tag = ORD
+						tag = IRB
 						#non-lathweyne countries
 						tag = TAR
 						tag = GET
@@ -183,7 +216,6 @@ ideas = {
 						tag = GOW
 						tag = TES
 						tag = SUL
-						tag = TRX
 					}
 				}
 			}
@@ -199,6 +231,24 @@ ideas = {
 			}
 
 			available = {
+				custom_trigger_tooltip = {
+					tooltip = merc_not_racist_tt
+					#puritans
+					NOT = {
+						OR = {
+							AND = {	
+								NOT = {
+									has_idea = lizardmen_country
+								}
+								has_government = puritan
+							}
+							AND = {
+								tag = ORD
+								has_government = theocrat
+							}
+						}
+					}
+				}
 				if = {
 					limit = {
 						NOT = { tag = TLA }
@@ -280,7 +330,11 @@ ideas = {
 			picture = itheryn_justice
 
 			allowed = {
-				tag = ORD
+				OR = {
+					tag = ORD
+					tag = ORB
+					tag = EOR
+				}
 			}
 
 			ai_will_do = {
@@ -311,19 +365,7 @@ ideas = {
 
 			allowed = {
 				OR = { #basically all undergaler and bergialer can use them
-					tag = UNG
-					tag = ARK
-					tag = FTH
-					tag = WSZ
-					tag = WIS
-					tag = SNF
-					tag = STA
-					tag = NRK
-					tag = HLZ
-					tag = NOC
-					tag = SPW
-					tag = TEI
-					tag = SVT
+					is_og_freiprinz = yes
 					tag = BER
 				}
 			}
@@ -339,6 +381,16 @@ ideas = {
 			}
 
 			available = {
+				custom_trigger_tooltip = {
+					tooltip = merc_not_racist_tt
+					#puritans
+					NOT = {
+						NOT = {
+							has_idea = human_country
+						}
+						has_government = puritan
+					}
+				}
 				if = {
 					limit = { NOT = { OR = { tag = IRI has_idea = human_country } } }
 					NOT = {
@@ -371,19 +423,7 @@ ideas = {
 
 			allowed = {
 				OR = { #basically all undergaler can use them
-					tag = UNG
-					tag = ARK
-					tag = FTH
-					tag = WSZ
-					tag = WIS
-					tag = SNF
-					tag = STA
-					tag = NRK
-					tag = HLZ
-					tag = NOC
-					tag = SPW
-					tag = TEI
-					tag = SVT
+					is_og_freiprinz = yes
 				}
 			}
 
@@ -398,6 +438,16 @@ ideas = {
 			}
 
 			available = {
+				custom_trigger_tooltip = {
+					tooltip = merc_not_racist_tt
+					#puritans
+					NOT = {
+						NOT = {
+							has_idea = human_country
+						}
+						has_government = puritan
+					}
+				}
 				if = {
 					limit = { NOT = { OR = { tag = IRI has_idea = human_country } } }
 					NOT = {
@@ -429,19 +479,7 @@ ideas = {
 
 			allowed = {
 				OR = { #basically all undergaler and bergialer can use them
-					tag = UNG
-					tag = ARK
-					tag = FTH
-					tag = WSZ
-					tag = WIS
-					tag = SNF
-					tag = STA
-					tag = NRK
-					tag = HLZ
-					tag = NOC
-					tag = SPW
-					tag = TEI
-					tag = SVT
+					is_og_freiprinz = yes
 					tag = BER
 				}
 			}
@@ -457,9 +495,13 @@ ideas = {
 			}
 
 			available = {
-				if = {
-					limit = { NOT = { OR = { tag = IRI has_idea = human_country } } }
+				custom_trigger_tooltip = {
+					tooltip = merc_not_racist_tt
+					#puritans
 					NOT = {
+						NOT = {
+							has_idea = human_country
+						}
 						has_government = puritan
 					}
 				}
@@ -490,7 +532,6 @@ ideas = {
 			allowed = {
 				NOT = {
 					OR = {
-						tag = ORD
 						#non-lathweyne countries
 						tag = TAR
 						tag = GET
@@ -499,7 +540,6 @@ ideas = {
 						tag = GOW
 						tag = TES
 						tag = SUL
-						tag = TRX
 					}
 				}
 			}
@@ -515,6 +555,24 @@ ideas = {
 			}
 
 			available = {
+				custom_trigger_tooltip = {
+					tooltip = merc_not_racist_tt
+					#puritans
+					NOT = {
+						OR = {
+							AND = {
+								NOT = {
+									has_idea = dwarf_country
+								}
+								has_government = puritan
+							}
+							AND = {
+								tag = ORD
+								has_government = theocrat
+							}
+						}
+					}
+				}
 				if = {
 					limit = { NOT = { tag = RMT } }
 					NOT = { has_war_with = RMT }
@@ -564,7 +622,6 @@ ideas = {
 			allowed = {
 				NOT = {
 					OR = {
-						tag = ORD
 						#non-lathweyne countries
 						tag = TAR
 						tag = GET
@@ -573,7 +630,6 @@ ideas = {
 						tag = GOW
 						tag = TES
 						tag = SUL
-						tag = TRX
 					}
 				}
 			}
@@ -589,6 +645,24 @@ ideas = {
 			}
 
 			available = {
+				custom_trigger_tooltip = {
+					tooltip = merc_not_racist_tt
+					#puritans
+					NOT = {
+						OR = {
+							AND = {	
+								NOT = {
+									has_idea = ogre_country
+								}
+								has_government = puritan
+							}
+							AND = {
+								tag = ORD
+								has_government = theocrat
+							}
+						}
+					}
+				}
 				if = {
 					limit = { NOT = { tag = BLD } }
 					NOT = { has_war_with = BLD }
@@ -652,11 +726,22 @@ ideas = {
 					tag = GET
 					tag = ITH
 					tag = DIA
-					tag = TRX
 				}
 			}
 
 			available = {
+				custom_trigger_tooltip = {
+					tooltip = merc_not_racist_tt
+					#puritans
+					NOT = {
+						AND = {	
+							NOT = {
+								has_idea = halfling_country
+							}
+							has_government = puritan
+						}
+					}
+				}
 				if = {
 					limit = { NOT = { tag = GOW } }
 					NOT = {
@@ -767,5 +852,4 @@ ideas = {
 		}
 
 	}
-
 }

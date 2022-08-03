@@ -997,8 +997,11 @@ UNG_union_influence_sphere_category = {
 			factor = 1
 		}
 		
+		fixed_random_seed = no
+		
 		complete_effect = {
 			random_list = {
+			
 			80 = {
 			custom_effect_tooltip = UNG_shufflesuccess_tt
 			clr_country_flag = flag_councilbusy
