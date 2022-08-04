@@ -2,9 +2,14 @@ state={
 	id=1100
 	name="STATE_1100"
 	provinces={
-		2475 3120 6320 6338 6358 6378 6395 
+		2475 3120 6358 6395
 	}
-	manpower=0
+	manpower=1
+	state_category=pastoral
+	history = {
+		owner = XXX
+		add_core_of = XXX
+	}
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }

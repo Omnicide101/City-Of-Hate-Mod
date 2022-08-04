@@ -20,10 +20,7 @@ ideas = {
 				civilian_factory_use = 5
 			}
 		}
-	}
-	
-	country = {
-	
+
 		MERCS_hiring_drakeskins_idea = {
 			
 			allowed = {
@@ -35,6 +32,44 @@ ideas = {
 			}
 			
 			picture = merc_hiring_drakeskins
+			
+			removal_cost = -1
+			
+			modifier = {
+				civilian_factory_use = 5
+			}
+		}
+
+		MERCS_hiring_irinthian_legion_idea = {
+			
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = IRI_Irinthios_Will_Rise_Again
+			
+			removal_cost = -1
+			
+			modifier = {
+				civilian_factory_use = 5
+			}
+		}
+
+		MERCS_hiring_tlarthingian_paladin_idea = {
+			
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = religion_ouborism
 			
 			removal_cost = -1
 			
