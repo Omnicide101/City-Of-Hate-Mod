@@ -2,7 +2,7 @@ state={
 	id=944
 	name="STATE_944"
 	provinces={
-		818 1490 2455 2944 4596 7516 
+		818 1490 2944 4596 7516 
 	}
 	resources={
 		lumber=10.000
