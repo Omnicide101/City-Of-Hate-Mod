@@ -92,14 +92,6 @@ units = {
 	}
 
 	division = {
-		name = "Jolskane Hearthguards"
-		location = 2563
-		division_template = "Hearthguards"
-		start_experience_factor = 0.6
-
-	}
-
-	division = {
 		name = "Skaeskind Pass Watch"
 		location = 1848
 		division_template = "Hearthguards"
@@ -126,14 +118,6 @@ units = {
 	division = {
 		name = "Solskadr Southguard"
 		location = 7573
-		division_template = "Hearthguards"
-		start_experience_factor = 0.7
-
-	}
-	
-	division = {
-		name = "Linkadr Southguard"
-		location = 3563
 		division_template = "Hearthguards"
 		start_experience_factor = 0.7
 

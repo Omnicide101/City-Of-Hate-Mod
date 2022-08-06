@@ -9,7 +9,7 @@ hire_mercenaries = {
 		}
 		
 		available = {
-			num_of_civilian_factories > 5
+			num_of_civilian_factories > 9
 			if = {
 				limit = {
 					NOT = {
@@ -81,11 +81,11 @@ hire_mercenaries = {
 				factor = 0
 			}
 			modifier = { #Let's not if we are low on factories
-				num_of_available_civilian_factories < 23
+				num_of_civilian_factories < 23
 				factor = 0.5
 			}
 			modifier = { #Let's not if we are very low on factories
-				num_of_available_civilian_factories < 13
+				num_of_civilian_factories < 13
 				factor = 0.25
 			}
 			modifier = { #Best to get units if we're at war
@@ -174,7 +174,7 @@ hire_mercenaries = {
 		available = {
 			has_idea = ORD_drakeskins_company
 			OR = {
-				num_of_civilian_factories > 5
+				num_of_civilian_factories > 9
 				has_completed_focus = ORD_deploy_drakeskins
 			}
 			NOT = {
@@ -213,14 +213,14 @@ hire_mercenaries = {
 				NOT = {
 					has_completed_focus = ORD_deploy_drakeskins
 				}
-				num_of_available_civilian_factories < 23
+				num_of_civilian_factories < 23
 				factor = 0.5
 			}
 			modifier = { #Let's not if we are very low on factories
 				NOT = {
 					has_completed_focus = ORD_deploy_drakeskins
 				}
-				num_of_available_civilian_factories < 13
+				num_of_civilian_factories < 13
 				factor = 0.25
 			}
 			modifier = { #Best to get units if we're at war
@@ -380,7 +380,7 @@ hire_mercenaries = {
 		}
 		
 		available = {
-			num_of_civilian_factories > 5
+			num_of_civilian_factories > 9
 			if = {
 				limit = {
 					NOT = {
@@ -450,11 +450,11 @@ hire_mercenaries = {
 				factor = 0
 			}
 			modifier = { #Let's not if we are low on factories
-				num_of_available_civilian_factories < 23
+				num_of_civilian_factories < 23
 				factor = 0.5
 			}
 			modifier = { #Let's not if we are very low on factories
-				num_of_available_civilian_factories < 13
+				num_of_civilian_factories < 13
 				factor = 0.25
 			}
 			modifier = { #Best to get units if we're at war
@@ -533,14 +533,14 @@ hire_mercenaries = {
 
 	MERCS_tlarthingian_paladins = {
 		
-		icon = GFX_decision_hol_draw_up_staff_plans
+		icon = generic_prepare_civil_war
 		
 		allowed = {
 			always = yes
 		}
 		
 		available = {
-			num_of_civilian_factories > 5
+			num_of_civilian_factories > 9
 			if = {
 				limit = {
 					NOT = { tag = STA }
@@ -600,11 +600,11 @@ hire_mercenaries = {
 				factor = 0
 			}
 			modifier = { #Let's not if we are low on factories
-				num_of_available_civilian_factories < 23
+				num_of_civilian_factories < 23
 				factor = 0.5
 			}
 			modifier = { #Let's not if we are very low on factories
-				num_of_available_civilian_factories < 13
+				num_of_civilian_factories < 13
 				factor = 0.25
 			}
 			modifier = { #Best to get units if we're at war
@@ -683,7 +683,7 @@ hire_mercenaries = {
 
 	MERCS_green_bastards = {
 		
-		icon = GFX_decision_hol_draw_up_staff_plans
+		icon = generic_prepare_civil_war
 		
 		allowed = {
 			OR = {
@@ -693,7 +693,7 @@ hire_mercenaries = {
 		}
 		
 		available = {
-			num_of_civilian_factories > 5
+			num_of_civilian_factories > 9
 			if = {
 				limit = {
 					NOT = { tag = STA }
@@ -749,11 +749,11 @@ hire_mercenaries = {
 				factor = 0
 			}
 			modifier = { #Let's not if we are low on factories
-				num_of_available_civilian_factories < 23
+				num_of_civilian_factories < 23
 				factor = 0.5
 			}
 			modifier = { #Let's not if we are very low on factories
-				num_of_available_civilian_factories < 13
+				num_of_civilian_factories < 13
 				factor = 0.25
 			}
 			modifier = { #Best to get units if we're at war
@@ -829,14 +829,14 @@ hire_mercenaries = {
 
 	MERCS_red_talons = {
 		
-		icon = GFX_decision_hol_draw_up_staff_plans
+		icon = generic_industry
 		
 		allowed = {
 			is_og_freiprinz = yes
 		}
 		
 		available = {
-			num_of_civilian_factories > 5
+			num_of_civilian_factories > 9
 			if = {
 				limit = {
 					NOT = { tag = STA }
@@ -892,11 +892,11 @@ hire_mercenaries = {
 				factor = 0
 			}
 			modifier = { #Let's not if we are low on factories
-				num_of_available_civilian_factories < 23
+				num_of_civilian_factories < 23
 				factor = 0.5
 			}
 			modifier = { #Let's not if we are very low on factories
-				num_of_available_civilian_factories < 13
+				num_of_civilian_factories < 13
 				factor = 0.25
 			}
 			modifier = { #Best to get units if we're at war
@@ -972,14 +972,14 @@ hire_mercenaries = {
 
 	MERCS_the_hand = {
 		
-		icon = GFX_decision_hol_draw_up_staff_plans
+		icon = generic_civil_support
 		
 		allowed = {
 			is_og_freiprinz = yes
 		}
 		
 		available = {
-			num_of_civilian_factories > 5
+			num_of_civilian_factories > 9
 			if = {
 				limit = {
 					NOT = { tag = STA }
@@ -1035,11 +1035,11 @@ hire_mercenaries = {
 				factor = 0
 			}
 			modifier = { #Let's not if we are low on factories
-				num_of_available_civilian_factories < 23
+				num_of_civilian_factories < 23
 				factor = 0.5
 			}
 			modifier = { #Let's not if we are very low on factories
-				num_of_available_civilian_factories < 13
+				num_of_civilian_factories < 13
 				factor = 0.25
 			}
 			modifier = { #Best to get units if we're at war
@@ -1119,7 +1119,7 @@ hire_mercenaries = {
 
 	MERCS_twin_axes = {
 		
-		icon = GFX_decision_hol_draw_up_staff_plans
+		icon = generic_civil_support
 		
 		allowed = {
 			OR = {
@@ -1140,7 +1140,7 @@ hire_mercenaries = {
 		}
 		
 		available = {
-			num_of_civilian_factories > 5
+			num_of_civilian_factories > 9
 			if = {
 				limit = {
 					NOT = { tag = STA }
@@ -1196,11 +1196,11 @@ hire_mercenaries = {
 				factor = 0
 			}
 			modifier = { #Let's not if we are low on factories
-				num_of_available_civilian_factories < 23
+				num_of_civilian_factories < 23
 				factor = 0.5
 			}
 			modifier = { #Let's not if we are very low on factories
-				num_of_available_civilian_factories < 13
+				num_of_civilian_factories < 13
 				factor = 0.25
 			}
 			modifier = { #Best to get units if we're at war
@@ -1265,7 +1265,7 @@ hire_mercenaries = {
 
 	MERCS_roaming_gathering = {
 		
-		icon = GFX_decision_hol_draw_up_staff_plans
+		icon = generic_civil_support
 		
 		allowed = {
 			OR = {
@@ -1286,7 +1286,7 @@ hire_mercenaries = {
 		}
 		
 		available = {
-			num_of_civilian_factories > 5
+			num_of_civilian_factories > 9
 			if = {
 				limit = {
 					NOT = { tag = STA }
@@ -1342,11 +1342,11 @@ hire_mercenaries = {
 				factor = 0
 			}
 			modifier = { #Let's not if we are low on factories
-				num_of_available_civilian_factories < 23
+				num_of_civilian_factories < 23
 				factor = 0.5
 			}
 			modifier = { #Let's not if we are very low on factories
-				num_of_available_civilian_factories < 13
+				num_of_civilian_factories < 13
 				factor = 0.25
 			}
 			modifier = { #Best to get units if we're at war
@@ -1405,7 +1405,7 @@ hire_mercenaries = {
 
 	MERCS_gowie_mercenaries = {
 		
-		icon = GFX_decision_hol_draw_up_staff_plans
+		icon = generic_industry
 		
 		allowed = {
 			OR = { #misthal guys I think? the center continent
@@ -1420,7 +1420,7 @@ hire_mercenaries = {
 		}
 		
 		available = {
-			num_of_civilian_factories > 5
+			num_of_civilian_factories > 9
 			custom_trigger_tooltip = {
 				tooltip = MERCS_not_already_hiring_a_group
 				check_variable = { num_mercs_hiring < 1 }
@@ -1462,11 +1462,11 @@ hire_mercenaries = {
 				factor = 0
 			}
 			modifier = { #Let's not if we are low on factories
-				num_of_available_civilian_factories < 23
+				num_of_civilian_factories < 23
 				factor = 0.5
 			}
 			modifier = { #Let's not if we are very low on factories
-				num_of_available_civilian_factories < 13
+				num_of_civilian_factories < 13
 				factor = 0.25
 			}
 			modifier = { #Best to get units if we're at war
@@ -1536,6 +1536,282 @@ hire_mercenaries = {
 				}
 				country_event = { id = merc.11 days = 184 }
 				set_country_flag = MERCS_hiring_gowie_mercs_flag	
+			}
+		}
+	}
+
+	SKA_hire_soltruists = {
+		
+		icon = eng_propaganda_campaigns
+		
+		allowed = {
+			tag = SKA
+		}
+		
+		available = {
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			has_idea = SKA_paramilitary_support
+		}
+		
+		visible = {
+			has_idea = SKA_paramilitary_support
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 25
+
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				add_to_variable = { SKA_social_war_soltruist_inf = 1 }
+				if = {
+					limit = {
+						NOT = { has_template = "Paramilitarists" }
+					}
+					division_template = {
+						name = "Paramilitarists"
+						is_locked = yes
+						
+						regiments = {
+							men_at_arms = { x = 0 y = 0 }
+							men_at_arms = { x = 0 y = 1 }
+							men_at_arms = { x = 0 y = 2 }
+					    men_at_arms = { x = 1 y = 0 }
+							men_at_arms = { x = 1 y = 1 }
+							men_at_arms = { x = 1 y = 2 }
+						}
+					}
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					  division = "name = \"Soltruist Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+				    owner = ROOT
+				}
+				create_unit = {
+					  division = "name = \"Soltruist Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+				    owner = ROOT
+				}
+			}
+		}
+	}
+
+	SKA_hire_equalists = {
+		
+		icon = eng_propaganda_campaigns
+		
+		allowed = {
+			tag = SKA
+		}
+		
+		available = {
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			has_idea = SKA_paramilitary_support
+		}
+		
+		visible = {
+			has_idea = SKA_paramilitary_support
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 25
+
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				add_to_variable = { SKA_social_war_boe_inf = 1 }
+				if = {
+					limit = {
+						NOT = { has_template = "Paramilitarists" }
+					}
+					division_template = {
+						name = "Paramilitarists"
+						is_locked = yes
+						
+						regiments = {
+							men_at_arms = { x = 0 y = 0 }
+							men_at_arms = { x = 0 y = 1 }
+							men_at_arms = { x = 0 y = 2 }
+					    men_at_arms = { x = 1 y = 0 }
+							men_at_arms = { x = 1 y = 1 }
+							men_at_arms = { x = 1 y = 2 }
+						}
+					}
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					  division = "name = \"Equalist Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+				    owner = ROOT
+				}
+				create_unit = {
+					  division = "name = \"Equalist Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+				    owner = ROOT
+				}
+			}
+		}
+	}
+
+	SKA_hire_iron_bloods = {
+		
+		icon = generic_industry
+		
+		allowed = {
+			tag = SKA
+		}
+		
+		available = {
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			has_idea = SKA_paramilitary_support
+		}
+		
+		visible = {
+			has_idea = SKA_paramilitary_support
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 25
+
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				add_to_variable = { SKA_social_war_iron_blood_inf = 1 }
+				if = {
+					limit = {
+						NOT = { has_template = "Paramilitarists" }
+					}
+					division_template = {
+						name = "Paramilitarists"
+						is_locked = yes
+						
+						regiments = {
+							men_at_arms = { x = 0 y = 0 }
+							men_at_arms = { x = 0 y = 1 }
+							men_at_arms = { x = 0 y = 2 }
+					    men_at_arms = { x = 1 y = 0 }
+							men_at_arms = { x = 1 y = 1 }
+							men_at_arms = { x = 1 y = 2 }
+						}
+					}
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					  division = "name = \"Iron Blood Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+				    owner = ROOT
+				}
+				create_unit = {
+					  division = "name = \"Iron Blood Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+				    owner = ROOT
+				}
 			}
 		}
 	}

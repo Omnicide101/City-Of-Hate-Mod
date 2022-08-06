@@ -115,3 +115,6 @@
  MERCS_hiring_gowie_mercs_flag:0 "We are already hiring Gowie Mercenaries"
  MERCS_hire_gowie_mercs_effects_tt:0 "§YFive to Six§! mercenary divisions from [GOW.GetNameDef] will spawn around our capital. They will be hired for §Ysix months§!, after which we will have the option to terminate or renew their contract. We will pay them a cost of §Rfive civilian factories§! for as long as their contract lasts."
  MERCS_gowie_mercenaries:0 "Hire [GOW.GetAdjective] Mercenaries"
+ SKA_hire_iron_bloods:0 "Utilize Iron Blood Paramilitaries"
+ SKA_hire_equalists:0 "Utilize the Brotherhood Rabble"
+ SKA_hire_soltruists:0 "Utilize the Mohrokian Madmen"
