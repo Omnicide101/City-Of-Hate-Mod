@@ -1,16 +1,23 @@
-
 state={
 	id=980
 	name="STATE_980"
 	provinces={
-		1404 3252 3758 8755 8763 8782 8852 
+		1404 3252 3758 8755 8763 8782 8845 8852 
 	}
-	manpower=1
-	state_category=pastoral
-	history = {
-		owner = XXX
-		add_core_of = XXX
-	}
+	manpower=5161
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
+	
+	resources = {
+		food = 6
+	}
+	history = {
+		owner = ATH
+		add_core_of = ATH
+		buildings = {
+			infrastructure = 3
+			forge = 1
+		}
+		victory_points = { 3252 5 }
+	}
 }

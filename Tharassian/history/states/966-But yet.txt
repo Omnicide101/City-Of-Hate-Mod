@@ -15,8 +15,8 @@ state={
     history = {
         owner = AKS
         add_core_of = AKS
-		buildings = {
-			infrastructure = 2
+        buildings = {
+            infrastructure = 2
 			workshop = 2
 			forge = 1
 		}
