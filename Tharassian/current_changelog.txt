@@ -39,9 +39,11 @@
 -Added advisors to Ordoria
 -Began migrating advisor portraits to a new folder to prevent clutter (internal mod structure thing)
 -Added Thryxvanor
+-Added some achievements
 -Prevented Stahlhof from using generic ideology decisions until they've taken the 'The Crown Infallible' focus
 -Fixed a bug that would prevent the player from taking the The Two Thrones focus as the Union
 -Made AI actually more likely to invade navally
+-Added generic unit leader traits for more personality in your generals
 -Reduced Kurgur rations consumption to represent self-sufficiency (placeholder solution)
 -Made the AI far more happy to trade, especially for fuel
--Various bugfixes
+-Various bugfixes and UI improvements

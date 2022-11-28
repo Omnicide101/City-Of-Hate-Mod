@@ -1,0 +1,93 @@
+# frames: Frame numbers for ribbon sprite layers.
+# colors: Tint colors (R G B A) for ribbon sprite layers
+
+# possible - filters out achivements on game start so we dont have to check everything all the 
+#time
+## happened - checks if achivement happened
+#
+
+unique_id = cityofhate
+
+###########################
+## 1 VERY EASY ACHIEVEMENTS
+#############################
+
+sic_semper_tyrannis = {
+	name = "sic_semper_tyrannis_NAME"
+	description = "sic_semper_tyrannis_DESCRIPTION"
+	
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = HLZ
+	}
+	happened = {
+		has_completed_focus = HLZ_last_straw
+	}
+}
+
+you_bastard = {
+	name = "you_bastard_NAME"
+	description = "you_bastard_DESCRIPTION"
+	
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = HLZ
+	}
+	happened = {
+		has_country_leader = HLZ_marius_pressler
+	}
+}
+
+###########################
+## 2 EASY ACHIEVEMENTS
+#############################
+
+just_a_warmup = {
+	name = "just_a_warmup_NAME"
+	description = "just_a_warmup_DESC"
+	
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		is_og_freiprinz = yes
+	}
+	happened = {
+		has_country_flag = FPT_kriegsspiele_winner
+	}
+}
+
+
+###########################
+## 4 HARD ACHIEVEMENTS
+#############################
+something_done_right = {
+	name = "something_done_right_NAME"
+	description = "something_done_right_DESCRIPTION"
+	
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = SNF
+	}
+	happened = {
+		OR = {
+			owns_state = 413
+			PRK = {
+				is_subject_of = SNF
+			}
+			KRL = {
+				is_subject_of = SNF
+			}
+		}
+	}
+}

@@ -2,6 +2,26 @@ spriteTypes = {
 
 	#### Mod stuff####
 	spriteType = {
+		name = "GFX_trait_hardy"
+		texturefile = "gfx/interface/traits/trait_hardy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_stubborn"
+		texturefile = "gfx/interface/traits/trait_stubborn.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_obedient"
+		texturefile = "gfx/interface/traits/trait_obedient.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_counterrevolutionary"
+		texturefile = "gfx/interface/traits/trait_counterrevolutionary.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_trait_warrior_class"
 		texturefile = "gfx/interface/traits/trait_warrior_class.dds"
 	}

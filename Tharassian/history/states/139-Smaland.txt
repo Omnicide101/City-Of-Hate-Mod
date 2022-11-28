@@ -1,21 +1,26 @@
+
 state={
 	id=139
 	name="STATE_139"
-	provinces={
-		7860 7841 7813 7819 1513 7769 7775 7777 3324 7743 7736 5621 7688 939 7647 7603 
+	resources={
+		steel=5.000
 	}
-	state_category = rural
-	manpower=1092
-	buildings_max_level_factor=1.000
-	resources = {
-		steel = 5
-	}
-	history={	
+
+	history={
 		owner = RTH
-		buildings = {	
-		infrastructure = 1
-		}	
-		add_core_of = RTH
+		buildings = {
+			infrastructure = 1
 
 		}
+		add_core_of = RTH
+
+	}
+
+	provinces={
+		4053 5621 7603
+	}
+	manpower=1092
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
 }

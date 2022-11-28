@@ -87,7 +87,6 @@ recruit_character = STA_rosemarie_hornberger
 recruit_character = STA_jeremias_niedermeyer
 recruit_character = STA_alcanthyre_losennys
 
-
 add_ideas = {
 	human_country
 	septism_religion

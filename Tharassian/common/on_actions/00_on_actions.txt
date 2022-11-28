@@ -12,6 +12,23 @@ on_actions = {
 	#	}
 	#}
 	
+	#Add a small chance for a general to be captured on defeat
+	on_army_leader_lost_combat = {
+		random = {
+			chance = 3
+			FROM = {
+				unit_leader_event = random.15
+			}
+			ROOT = {
+				add_unit_leader_trait = captured_unit_leader
+				#Set nationality so we know who to send relevant events back to
+				set_variable = {
+					char_nationality = @FROM
+				}
+			}
+		}
+	}
+	
 	#Give heads up about Adventurers (Operatives)
 	#Should only fire once
 	on_operative_recruited = {
@@ -333,7 +350,7 @@ on_actions = {
 	}
 	
 	#Deploy the Drakeskins
-	on_startup = {	
+	on_startup = {
 		effect = {
 			100 = {
 				add_dynamic_modifier = {
@@ -732,7 +749,7 @@ on_actions = {
 		}
 	}
 
-		#remove state flag from tribal territories that don't belong to PRK anymore
+	#remove state flag from tribal territories that don't belong to PRK anymore
 	on_state_owner_changed = {
 	 effect = {
 	   every_state = {
@@ -760,6 +777,7 @@ on_actions = {
 	  }
 	 }
 	}
+	
 	#Sets up the tribal territories
 	on_startup = {
 		effect = {

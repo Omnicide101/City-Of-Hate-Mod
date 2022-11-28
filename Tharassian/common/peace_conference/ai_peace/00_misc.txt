@@ -1,0 +1,380 @@
+# Scripted AI desire for peace actions.
+# See documentation.info file for more detailed scripting information.
+# Copy-pasted from pre-BBA CoH peace scripts
+
+peace_ai_desires = {
+	civilwar_peace = {
+		# ROOT = Taker, FROM = Giver
+		enable = {
+			has_civil_war = yes
+			OR = {
+				original_tag = FROM
+				FROM = {
+					original_tag = ROOT
+				}
+			}
+		}
+
+		annex_randomness = 0
+		liberate_randomness = 0
+		puppet_randomness = 0
+		take_states_randomness = 0
+		force_government_randomness = 0
+		
+		# ROOT = Taker, FROM = Giver
+		annex = {
+			factor = 1000
+		}
+
+		# ROOT = Taker, FROM = Liberated
+		liberate = {
+			factor = 0
+		}
+
+		# ROOT = Taker, FROM = Giver
+		puppet = {
+			factor = 0
+		}
+
+		# ROOT = Taker, FROM = State
+		take_states = {
+			factor = 0
+		}
+
+		# ROOT = Taker, FROM = Giver
+		force_government = {
+			factor = 0
+		}
+	}
+	
+	#AI peace deal logic, the real peace deals happen in the events.
+	#Eat as much as possible without making the map ugly
+	#Bastardized KR code since they know what they're doing, unlike me. Massive shoutout to the Kaiserreich devs for being competent and wise sages of code.
+
+	peace_default = {#Default peace option
+		enable = {
+			NOT = {
+				tag = NBI
+			}
+		}
+		
+		annex_randomness = 0
+		liberate_randomness = 0
+		puppet_randomness = 0
+		take_states_randomness = 0
+		force_government_randomness = 0
+		
+		# ROOT = Taker, FROM = Giver
+		annex = {
+			factor = 500
+		}
+		liberate = {
+			factor = -500
+		}
+		puppet = {
+			factor = -500
+		}
+		take_states = {
+			factor = 50
+			
+			#Leave Rthauiaur to the Ordorians
+			modifier = {
+				factor = 0
+				OR = {
+					original_tag = UNG
+					original_tag = GMR
+					is_puppet_of = UNG
+				}
+				has_war_with = RTH
+				is_in_faction_with = ORD
+			}
+			
+			#Leave Ordoria to the Rthaur
+			modifier = {
+				factor = 0
+				original_tag = SKA
+				has_war_with = ORD
+				RTH = {
+					has_war_with = ORD
+				}
+			}
+			
+			#Stahlhof won't take Arkanisturm land if fighting for Resmayer
+			modifier = {
+				factor = 0
+				original_tag = STA
+				has_war_with = ARK
+				ARB = {
+					has_war_with = ARK
+				}
+			}
+			
+			#Won't take Oramfell land if allied to Dwarves
+			modifier = {
+				factor = 0
+				NOT = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				OR = {
+					AND = {
+						has_war_with = SKA
+						OR = {
+							is_in_faction_with = RMT
+							is_in_faction_with = BER
+							is_subject_of = RMT
+							is_subject_of = BER
+							RMT = {
+								is_subject_of = ROOT
+							}
+							BER = {
+								is_subject_of = ROOT
+							}
+							has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
+							AND = {
+								is_subject_of = UNG
+								UNG = {
+									has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
+								}
+							}
+						}
+					}
+					AND = {
+						has_war_with = RMT
+						OR = {
+							is_in_faction_with = SKA
+							is_in_faction_with = BER
+							is_subject_of = SKA
+							is_subject_of = BER
+							SKA = {
+								is_subject_of = ROOT
+							}
+							BER = {
+								is_subject_of = ROOT
+							}
+							has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
+							AND = {
+								is_subject_of = UNG
+								UNG = {
+									has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			# prioritize cores and claims
+			modifier = {
+				factor = 25
+				FROM = { 
+					is_core_of = ROOT
+				}
+			}
+			modifier = {
+				factor = 15
+				FROM = {
+					NOT = { 
+						is_core_of = ROOT
+					}
+					is_claimed_by = ROOT
+				}
+			}
+			
+			# prioritize neighboring states
+			modifier = {
+				factor = 20
+				FROM = {
+					num_owned_neighbour_states = {
+						count > 0
+						owner = ROOT
+					}
+				}
+			}
+
+			# prefer states next to ones we've already claimed
+			modifier = {
+				factor = 20
+				FROM = {
+					num_claimed_peace_conference_neighbour_states = {
+						count > 0
+						owner = ROOT
+					}
+				}
+			}
+
+			# prioritize states closer to capital
+			modifier = {
+				factor = 5.0
+				capital_scope = {
+					distance_to = {
+						target = FROM
+						value < 25
+					}
+				}
+			}
+			modifier = {
+				factor = 4.0
+				capital_scope = {
+					NOT = { 
+						distance_to = { 
+							target = FROM 
+							value < 25
+						}
+					}
+					distance_to = {
+						target = FROM
+						value < 50
+					}
+				}
+			}
+			modifier = {
+				factor = 3.0
+				capital_scope = {
+					NOT = { 
+						distance_to = { 
+							target = FROM 
+							value < 50
+						}
+					}
+					distance_to = {
+						target = FROM
+						value < 75
+					}
+				}
+			}
+			modifier = {
+				factor = 2.0
+				capital_scope = {
+					NOT = { 
+						distance_to = { 
+							target = FROM 
+							value < 75
+						}
+					}
+					distance_to = {
+						target = FROM
+						value < 100
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				capital_scope = {
+					NOT = { 
+						distance_to = { 
+							target = FROM 
+							value < 100
+						}
+					}
+					distance_to = {
+						target = FROM
+						value < 150
+					}
+				}
+			}
+			modifier = {
+				factor = 1.25
+				capital_scope = {
+					NOT = { 
+						distance_to = { 
+							target = FROM 
+							value < 150
+						}
+					}
+					distance_to = {
+						target = FROM
+						value < 200
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				capital_scope = {
+					NOT = { 
+						distance_to = { 
+							target = FROM 
+							value > 400
+						}
+					}
+					distance_to = {
+						target = FROM
+						value < 300
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				capital_scope = {
+					distance_to = {
+						target = FROM
+						value > 400
+					}
+				}
+			}
+		}
+		# prioritize controlled states
+		modifier = {
+			factor = 1.5
+			FROM = { 
+				is_controlled_by = ROOT
+			}
+		}
+		force_government = {
+			factor = 0
+		}
+		# de-prioritize states on a different continent unless it's important or we already own land there
+		modifier = {
+			factor = 0.5
+			FROM = {
+				NOT = { 
+					is_in_home_area = yes
+				}
+				NOT = {
+					num_owned_neighbour_states = {
+						count > 0 owner = ROOT
+					}
+				}
+			}
+		}
+		
+		# don't take states we can't actually reach
+		modifier = {
+			factor = 0
+			FROM = {
+				num_owned_neighbour_states = {
+					count = 0
+					owner = ROOT
+				}
+				is_coastal = no
+			}
+		}
+	}
+
+	peace_nonbinary = {#Nonbinary Gang doesn't give a fuck about state distance or whatever, just annex shit
+		enable = {
+			tag = NBI
+		}
+		
+		annex_randomness = 0
+		liberate_randomness = 0
+		puppet_randomness = 0
+		take_states_randomness = 0
+		force_government_randomness = 0
+		
+		# ROOT = Taker, FROM = Giver
+		annex = {
+			factor = 500
+		}
+		liberate = {
+			factor = -500
+		}
+		puppet = {
+			factor = -500
+		}
+		take_states = {
+			factor = 50
+		}
+	}
+}

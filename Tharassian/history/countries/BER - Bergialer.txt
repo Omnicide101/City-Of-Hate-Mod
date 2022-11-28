@@ -65,7 +65,6 @@ recruit_character = BER_alexander_goudhand
 recruit_character = BER_tessa_hoevering
 recruit_character = BER_jasper_ijzerbaard
 
-
 add_ideas = {
 	dwarf_country
 	dwarven_ancestor_worship_religion

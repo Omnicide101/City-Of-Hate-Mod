@@ -74,7 +74,6 @@
  SKA_intellectual_commissars_desc:0 ""
  SKA_central_planning:0 "Centrally Planned Economy"
  SKA_central_planning_desc:0 ""
- SKA_paramilitary_support:0 "Paramilitary Support"
  #focuses
  SKA_aftermath_of_miners_blight:0 "Aftermath of the Miner's Blight"
  SKA_aftermath_of_miners_blight_desc:0 "It's been more than a century since the 774-778 Miner's Blight epidemic wiped out a third of Skaelinger's dwarfs. The legacy of such a critical depopulation of our mountain home still makes ripples across dwarfen society. Countless shuttered businesses and severely depleted manpower led the Riksdag - the central government of the old Vergallheim Empire - to desperately institute a penal levy to funnel criminals and vagabonds into necessary military and production roles. Though this was intended as an emergency measure until Skaelinger recovered, the Ordorian crisis has ensured that Skaelinger remains in a permanant state of emergency. High prices on basic goods and rent along with mounting taxes to refill the state coffers ensure that most in the levy system are little more than unfortunate debtors. This has resulted in uproarious protests from the guild lobby, represented in the Riksdag by the CDL, angry that the levy is pulling bodies (and therefore representation) away from guild labor. The net effect of this crisis has been the wholesale destabilization of the dwarfen caste system, with many calling out for reforms to the helm charter to amend or abolish caste completely."
@@ -933,7 +932,6 @@
  SKA_KUR_stir_up_restorationist_sentiments:0 "Stir Up Restorationist Sentiments"
  SKA_KUR_seize_private_weaponry:0 "Seize Private Weaponry"
  SKA_for_king:0 "For the King!"
- SKA_utilize_paramilitaries:0 "Use the Radical Paramilitaries"
  SKA_all_or_nothing_RMT:0 "Preparing for the Destruction of the Rimatans"
  SKA_all_or_nothing_RMT_desc:0 "The secessionists of the north will not be forgotten, and they will be crushed under our heel, so they will not rebel again."
  SKA_start_operation_rmt:0 "Start Preparations"

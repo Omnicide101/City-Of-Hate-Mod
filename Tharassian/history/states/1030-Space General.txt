@@ -5,12 +5,7 @@ state={
 	provinces={
 		393 756 883 2241 2294 7921 7950 
 	}
-	manpower=1
-	state_category=pastoral
-	history = {
-		owner = XXX
-		add_core_of = XXX
-	}
+	manpower=1 state_category=pastoral history = {owner = XXX add_core_of = XXX}
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }

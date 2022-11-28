@@ -1,5 +1,9 @@
 spriteTypes = {
-
+	
+	spriteType = {
+		name = "GFX_modifier_local_government"
+		textureFile = "gfx/interface/modifiers/modifier_local_government.dds"
+	}
 	spriteType = {
 		name = "GFX_modifier_tomb_of_inskyllithe"
 		textureFile = "gfx/interface/modifiers/modifier_tomb_of_inskyllithe.dds"

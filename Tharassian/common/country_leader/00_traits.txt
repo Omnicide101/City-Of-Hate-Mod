@@ -275,6 +275,15 @@ leader_traits = {
 		army_core_defence_factor = 0.05
 
 	}
+	
+	viceroy_of_the_east = {
+		random = no
+		political_power_gain = 0.25
+		local_resources_factor = 0.15
+		production_speed_buildings_factor = 0.1
+		cic_to_overlord_factor = 0.1
+		mic_to_overlord_factor = 0.1
+	}
 
 	father_of_the_revolution = {
 		random = no
@@ -793,6 +802,9 @@ leader_traits = {
 		stability_factor = 0.1
 		army_morale_factor = 0.05
 		republic_aristocrat_drift = -0.1
+	}
+	courtly_captured = {
+		random = no
 	}
 	
 	### Military Minister Traits

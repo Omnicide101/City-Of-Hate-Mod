@@ -3,14 +3,9 @@ state={
 	id=1134
 	name="STATE_1134"
 	provinces={
-		1502 1721 2087 3443 6285 6317 
+		1502 2087 3443 6285 6317 
 	}
-	manpower=1
-	state_category=pastoral
-	history = {
-		owner = XXX
-		add_core_of = XXX
-	}
+	manpower=1 state_category=pastoral history = {owner = XXX add_core_of = XXX}
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }

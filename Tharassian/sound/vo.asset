@@ -7,6 +7,11 @@ category =
 	BER_infantry_neutral_combat
 	BER_infantry_positive_combat
 	BER_infantry_retreat
+	
+	TAR_infantry_idle
+	TAR_infantry_neutral_combat
+	TAR_infantry_positive_combat
+	TAR_infantry_retreat
  }
   compressor = 
  {
@@ -40,6 +45,65 @@ soundeffect =
 	volume = 0.45
 	volume_random_offset = { 0.0 -0.15 }
 	playbackrate_random_offset = { 0.0 -0.15 }
+}
+
+########## TAR
+
+soundeffect = 
+{
+    name = "TAR_infantry_idle"
+    sounds = {
+		sound = tr_Idle_001
+        sound = tr_Idle_002
+        sound = tr_Idle_003
+        sound = tr_Idle_004
+        sound = tr_Idle_005
+		sound = tr_Idle_006
+	}
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15 }
+}
+
+soundeffect = 
+{
+    name = "TAR_infantry_neutral_combat"
+    sounds = {
+        sound = tr_Neutral_001
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+
+soundeffect = 
+{
+    name = "TAR_infantry_positive_combat"
+    sounds = {
+        sound = tr_Positive_001
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+
+soundeffect = 
+{
+    name = "TAR_infantry_retreat"
+    sounds = {
+        sound = tr_Retreat_001
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
 }
 ########## 
 
@@ -89,4 +153,55 @@ sound =
 {
 	name = "br_Idle_011"
 	file = "ber/br_Idle_011.wav"
+}
+
+################# TAR
+sound = 
+{
+	name = "tr_Idle_001"
+	file = "tar/tr_Idle_001.wav"
+}
+sound = 
+{
+	name = "tr_Idle_002"
+	file = "tar/tr_Idle_002.wav"
+}
+sound = 
+{
+	name = "tr_Idle_003"
+	file = "tar/tr_Idle_003.wav"
+}
+
+sound = 
+{
+	name = "tr_Idle_004"
+	file = "tar/tr_Idle_004.wav"
+}
+
+sound = 
+{
+	name = "tr_Idle_005"
+	file = "tar/tr_Idle_005.wav"
+}
+
+sound = 
+{
+	name = "tr_Idle_006"
+	file = "tar/tr_Idle_006.wav"
+}
+
+sound = 
+{
+	name = "tr_Neutral_001"
+	file = "tar/tr_Neutral_001.wav"
+}
+sound = 
+{
+	name = "tr_Positive_001"
+	file = "tar/tr_Positive_001.wav"
+}
+sound = 
+{
+	name = "tr_Retreat_001"
+	file = "tar/tr_Retreat_001.wav"
 }

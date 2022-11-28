@@ -72,7 +72,6 @@ recruit_character = DIA_séan_kelly
 recruit_character = DIA_peter_kelly
 recruit_character = DIA_lucia_larkin
 
-
 add_ideas = {
 	halfling_country
 	dochasism_religion

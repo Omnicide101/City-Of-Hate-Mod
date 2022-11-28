@@ -1,21 +1,26 @@
+
 state={
 	id=183
 	name="STATE_183"
-	provinces={
-		2503 7033 7047 7075 
+	resources={
+		steel=3.000
 	}
-	state_category = rural
-	manpower=6992
-	buildings_max_level_factor=1.000
-	resources = {
-		steel = 3
-	}
+
 	history={
 		owner = SKA
 		buildings = {
 			infrastructure = 2
+
 		}
 		add_core_of = SKA
 
 	}
+
+	provinces={
+		2503 7047 7075 
+	}
+	manpower=6992
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
 }

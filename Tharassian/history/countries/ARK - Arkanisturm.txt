@@ -101,7 +101,6 @@ recruit_character = ARK_bhalus_ianin
 recruit_character = ARK_althwyne_serigan
 recruit_character = ARK_hautlir_polthore
 
-
 add_ideas = {
 	human_country
 	arkanimism_religion

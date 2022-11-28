@@ -1,20 +1,27 @@
+
 state={
 	id=709
 	name="STATE_709"
-	provinces={
-		3972 6437 6465
+	resources={
+		steel=5.000
 	}
-	state_category = pastoral
-	manpower=1099
-	buildings_max_level_factor=1.000
-	resources = {
-		steel = 5
-	}
+
 	history={
 		owner = RMT
 		buildings = {
 			infrastructure = 1
+
 		}
 		add_core_of = RMT
+
 	}
+
+	provinces={
+		3972 6465 
+	}
+	manpower=99
+	impassable = yes
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
 }

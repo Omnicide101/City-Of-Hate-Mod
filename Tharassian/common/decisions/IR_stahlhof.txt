@@ -1618,23 +1618,7 @@ STA_convince_freiprinzen = {
 		target_trigger = {
 			FROM = {
 				state = THIS
-			}
-		}
-		
-		allowed = {
-			tag = STA
-		}
-		
-		visible = {
-			tag = STA
-			NOT = {
-				has_country_flag = STA_civil_war_started
-			}
-			FROM = {
 				is_capital = yes
-			}
-			
-			FROM = {
 				owner = {
 					is_subject_of = UNG
 					NOT = {
@@ -1644,16 +1628,24 @@ STA_convince_freiprinzen = {
 			}
 		}
 		
+		allowed = {
+			tag = STA
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = STA_civil_war_started
+			}
+		}
+		
 		available = {
 			NOT = {
 				has_country_flag = STA_already_convincing_someone
 			}
-			FROM = {
-				owner = {
-					is_subject_of = UNG
-					NOT = {
-						tag = STA
-					}
+			FROM.owner = {
+				is_subject_of = UNG
+				NOT = {
+					tag = STA
 				}
 			}
 			
@@ -1764,19 +1756,15 @@ STA_convince_freiprinzen = {
 				var = FROM.owner.FPT_stahlhof_loyalty
 				value = 1
 			}
-			FROM = {
-				owner = {
-					custom_effect_tooltip = FPT_increase_stahlhof_loyalty_small_tt
-				}
+			FROM.owner = {
+				custom_effect_tooltip = FPT_increase_stahlhof_loyalty_small_tt
 			}
 			set_country_flag = {
 				flag = recently_convinced_freiprinz
 				days = 50
 			}
-			FROM = {
-				owner = {
-					set_loyalty_approximations = yes
-				}
+			FROM.owner = {
+				set_loyalty_approximations = yes
 			}
 		}
 	}
@@ -1789,23 +1777,7 @@ STA_convince_freiprinzen = {
 		target_trigger = {
 			FROM = {
 				state = THIS
-			}
-		}
-		
-		allowed = {
-			tag = STA
-		}
-		
-		visible = {
-			tag = STA
-			NOT = {
-				has_country_flag = STA_civil_war_started
-			}
-			FROM = {
 				is_capital = yes
-			}
-			
-			FROM = {
 				owner = {
 					is_subject_of = UNG
 					NOT = {
@@ -1815,16 +1787,24 @@ STA_convince_freiprinzen = {
 			}
 		}
 		
+		allowed = {
+			tag = STA
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = STA_civil_war_started
+			}
+		}
+		
 		available = {
 			NOT = {
 				has_country_flag = STA_already_convincing_someone
 			}
-			FROM = {
-				owner = {
-					is_subject_of = UNG
-					NOT = {
-						tag = STA
-					}
+			FROM.owner = {
+				is_subject_of = UNG
+				NOT = {
+					tag = STA
 				}
 			}
 			
@@ -1935,19 +1915,15 @@ STA_convince_freiprinzen = {
 				var = FROM.owner.FPT_stahlhof_loyalty
 				value = 3
 			}
-			FROM = {
-				owner = {
-					custom_effect_tooltip = FPT_increase_stahlhof_loyalty_tt
-				}
+			FROM.owner = {
+				custom_effect_tooltip = FPT_increase_stahlhof_loyalty_tt
 			}
 			set_country_flag = {
 				flag = recently_convinced_freiprinz
 				days = 75
 			}
-			FROM = {
-				owner = {
-					set_loyalty_approximations = yes
-				}
+			FROM.owner = {
+				set_loyalty_approximations = yes
 			}
 		}
 	}
@@ -1960,23 +1936,7 @@ STA_convince_freiprinzen = {
 		target_trigger = {
 			FROM = {
 				state = THIS
-			}
-		}
-		
-		allowed = {
-			tag = STA
-		}
-		
-		visible = {
-			tag = STA
-			NOT = {
-				has_country_flag = STA_civil_war_started
-			}
-			FROM = {
 				is_capital = yes
-			}
-			
-			FROM = {
 				owner = {
 					is_subject_of = UNG
 					NOT = {
@@ -1986,16 +1946,24 @@ STA_convince_freiprinzen = {
 			}
 		}
 		
+		allowed = {
+			tag = STA
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = STA_civil_war_started
+			}
+		}
+		
 		available = {
 			NOT = {
 				has_country_flag = STA_already_convincing_someone
 			}
-			FROM = {
-				owner = {
-					is_subject_of = UNG
-					NOT = {
-						tag = STA
-					}
+			FROM.owner = {
+				is_subject_of = UNG
+				NOT = {
+					tag = STA
 				}
 			}
 			
@@ -2106,19 +2074,15 @@ STA_convince_freiprinzen = {
 				var = FROM.owner.FPT_stahlhof_loyalty
 				value = 5
 			}
-			FROM = {
-				owner = {
-					custom_effect_tooltip = FPT_increase_stahlhof_loyalty_large_tt
-				}
+			FROM.owner = {
+				custom_effect_tooltip = FPT_increase_stahlhof_loyalty_large_tt
 			}
 			set_country_flag = {
 				flag = recently_convinced_freiprinz
 				days = 100
 			}
-			FROM = {
-				owner = {
-					set_loyalty_approximations = yes
-				}
+			FROM.owner = {
+				set_loyalty_approximations = yes
 			}
 		}
 	}

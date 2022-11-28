@@ -106,6 +106,14 @@ create_import = {
     exporter = GMR
 }
 
+recruit_character = SNF_ulrich_drecht
+recruit_character = SNF_otto_kolb
+recruit_character = SNF_fridrich_huber
+recruit_character = SNF_till_lehmkuhl
+recruit_character = SNF_hans_werthner
+recruit_character = SNF_andrea_schiefer
+recruit_character = SNF_madlen_bodenheimer
+recruit_character = SNF_louise_straussler
 
 give_military_access = UNG
 give_military_access = HLZ
@@ -119,12 +127,3 @@ give_military_access = ARK
 give_military_access = FTH
 give_military_access = WIS
 give_military_access = WSZ
-
-recruit_character = SNF_ulrich_drecht
-recruit_character = SNF_otto_kolb
-recruit_character = SNF_fridrich_huber
-recruit_character = SNF_till_lehmkuhl
-recruit_character = SNF_hans_werthner
-recruit_character = SNF_andrea_schiefer
-recruit_character = SNF_madlen_bodenheimer
-recruit_character = SNF_louise_straussler

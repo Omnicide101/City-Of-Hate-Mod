@@ -5,7 +5,8 @@ state={
 		250 5584
 	}
 	state_category = pastoral
-	manpower=1091
+	manpower=109
+	impassable = yes
 	buildings_max_level_factor=1.000
 	history={
 		owner = SKA

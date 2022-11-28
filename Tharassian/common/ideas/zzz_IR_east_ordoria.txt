@@ -1,0 +1,43 @@
+ideas = {
+	
+	country = {
+		EOR_bardic_resistance = {
+			allowed = {
+				original_tag = EOR
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_instrument
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = -0.002
+				resistance_target = 0.35
+			}
+		}
+		
+		EOR_ideological_cleansing = {
+			allowed = {
+				original_tag = EOR
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = SWI_spirit_of_helvetia_defensive_war
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = -0.12
+				stability_factor = -0.17
+				republic_peasant_drift = -0.13
+			}
+		}
+	}
+}
