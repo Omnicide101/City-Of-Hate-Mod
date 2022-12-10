@@ -179,9 +179,7 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = ORD_puritan_government
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		x = 20
 		y = 0
 		completion_reward = {
@@ -737,9 +735,7 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = ORD_moderate_government
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		x = 20
 		y = 0
 		completion_reward = {
@@ -971,9 +967,7 @@ focus_tree = {
 		available = {
 			
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		relative_position_id = ORD_moderates
 		x = 0
 		y = 1
@@ -1145,9 +1139,7 @@ focus_tree = {
 		available = {
 			
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		relative_position_id = ORD_steadfast_friends
 		x = 0
 		y = 1
@@ -1190,9 +1182,7 @@ focus_tree = {
 		available = {
 			
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		relative_position_id = ORD_courts_sway
 		x = -1
 		y = 1
@@ -1314,9 +1304,7 @@ focus_tree = {
 		available = {
 			
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		relative_position_id = ORD_tackle_sophistium
 		x = 0
 		y = 1
@@ -3882,6 +3870,899 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			
+		}
+	}
+
+	## SOPHISTS ##
+	focus = { #Salvation of the Righteous
+		id = ORD_salvation_of_the_righteous
+		icon = GFX_focus_ord_faithful_society
+		cost = 1
+		ai_will_do = {
+			factor = 5
+		}
+		allow_branch = {
+			has_country_flag = ORD_pure_priests_flag
+		}
+		x = 20
+		y = 0
+		completion_reward = {
+			custom_effect_tooltip = ORD_empower_faiths_3
+			add_to_variable = {
+				ORD_faithful_influence = 3
+			}
+		}
+	}
+
+	focus = { #eliminating the puritans branch
+		id = ORD_embrace_children_harquiss
+		icon = GFX_focus_generic_national_security
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_salvation_of_the_righteous
+		prerequisite = {
+			focus = ORD_salvation_of_the_righteous
+		}
+		x = -2
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_sophist_oath_1
+		}
+	}
+
+	focus = { #
+		id = ORD_prosyletize_agents_oath
+		icon = GFX_IRI_Meritocratic_Promotions
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_embrace_children_harquiss
+		prerequisite = {
+			focus = ORD_embrace_children_harquiss
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = theocrat
+				popularity = 0.05
+			}
+			add_political_power = 75
+		}
+	}
+
+	focus = { #
+		id = ORD_redemption_to_those_heed
+		icon = GFX_focus_spa_eliminate_the_carlists
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_prosyletize_agents_oath
+		prerequisite = {
+			focus = ORD_prosyletize_agents_oath
+		}
+		mutually_exclusive = {
+			focus = ORD_simony_for_others
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ORD_sophist_oath_1
+				add_idea = ORD_sophist_oath_redemption
+			}
+			#Recruit a harquiss agent/general depending on LaR
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				create_operative_leader = {
+					name = "Rethmel Qureya"
+					GFX = "gfx/leaders/RTH/Portrait_RTH_Locthorin.dds"
+					traits = { ord_sophist }
+					bypass_recruitment = yes
+					nationalities = { ORD RTH }
+				}
+				else = {
+					create_corps_commander = {
+						name = "Rethmel Qureya"
+						picture = "gfx/leaders/RTH/Portrait_RTH_Locthorin.dds"
+						traits = { ord_sophist counterrevolutionary hardy }
+						skill = 3
+						attack_skill = 3
+						defense_skill = 2
+						planning_skill = 2
+						logistics_skill = 4
+					}
+				}
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_simony_for_others
+		icon = GFX_focus_hlz_compensate_nobles
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_prosyletize_agents_oath
+		prerequisite = {
+			focus = ORD_prosyletize_agents_oath
+		}
+		mutually_exclusive = {
+			focus = ORD_redemption_to_those_heed
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ORD_sophist_oath_1
+				add_idea = ORD_sophist_oath_simony
+			}
+			create_corps_commander = {
+				name = "Patellie Alyxen"
+				picture = "gfx/leaders/RTH/Portrait_RTH_Locthorin.dds"
+				traits = { ord_sophist mercenary_commander }
+				skill = 4
+				attack_skill = 3
+				defense_skill = 5
+				planning_skill = 3
+				logistics_skill = 3
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_righteous_deeds_wicked_elves
+		icon = GFX_focus_ord_slay_heresiarch
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_simony_for_others
+		prerequisite = {
+			focus = ORD_simony_for_others
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					OR = {
+						network_strength = {
+							target = RTH
+							value > 50
+						}
+						strength_ratio = {
+							tag = RTH
+							ratio > 2
+						}
+					}
+				}
+				random_list = {
+					80 = {
+						RTH = {
+							country_event = ord.98
+						}
+					}
+					20 = {
+						RTH = {
+							country_event = rth.10
+						}
+					}
+				}
+				else = {
+					random_list = {
+						50 = {
+							RTH = {
+								country_event = ord.98
+							}
+						}
+						50 = {
+							RTH = {
+								country_event = rth.10
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_establish_sophist_branch_oath
+		icon = GFX_focus_ITA_topple_amhara_rulers
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_redemption_to_those_heed
+		prerequisite = {
+			focus = ORD_redemption_to_those_heed
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ORD_sophist_oath_redemption
+				add_idea = ORD_sophist_oath_redemption_2
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_correct_wayward_doctrines
+		icon = GFX_IRI_Quantity_Over_Quality
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_prosyletize_agents_oath
+		prerequisite = {
+			focus = ORD_establish_sophist_branch_oath
+			focus = ORD_righteous_deeds_wicked_elves
+		}
+		x = 0
+		y = 3
+		completion_reward = {
+			#reduces league influence and loyalty
+			custom_effect_tooltip = ORD_displease_trads_5
+			subtract_from_variable = {
+				ORD_traditionalists_loyalty = 5
+			}
+			custom_effect_tooltip = ORD_disempower_trads_4
+			subtract_from_variable = {
+				ORD_traditionalists_influence = 4
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_oath_within_oath
+		icon = GFX_focus_generic_secret_treaty
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_correct_wayward_doctrines
+		prerequisite = {
+			focus = ORD_correct_wayward_doctrines
+		}
+		mutually_exclusive = {
+			focus = ORD_undermine_the_nobility
+			focus = ORD_raid_sus_manors
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ORD_sophist_oath_redemption_2
+				}
+				remove_ideas = ORD_sophist_oath_redemption_2
+			}
+			if = {
+				limit = {
+					has_idea = ORD_sophist_oath_simony
+				}
+				remove_ideas = ORD_sophist_oath_simony
+			}
+			add_ideas = ORD_sophist_oath_2
+			country_event = { id = ord.86 hours = 2 }
+		}
+	}
+
+	focus = { #
+		id = ORD_harquiss_right_hand
+		icon = GFX_focus_generic_annex_country_2
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_oath_within_oath
+		prerequisite = {
+			focus = ORD_oath_within_oath
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			add_corps_commander_role = {
+				character = ORD_marinalle_nuriopan
+				skill = 4
+				attack_skill = 5
+				defense_skill = 3
+				planning_skill = 5
+				logistics_skill = 3
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_dedicate_all_to_harquiss
+		icon = GFX_focus_ord_evil
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_oath_within_oath
+		prerequisite = {
+			focus = ORD_oath_within_oath
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			#makes new, more powerful version of the harquiss isvenyth that cannot be unequipped if you're theocrat
+			custom_effect_tooltip = ORD_empower_harquiss_itheryn
+			hidden_effect = {
+				add_ideas = itheryn_vengeance_patron_2
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_defang_glory_league
+		icon = GFX_IRI_New_Warfare_Experiences
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_oath_within_oath
+		prerequisite = {
+			focus = ORD_harquiss_right_hand
+		}
+		prerequisite = {
+			focus = ORD_dedicate_all_to_harquiss
+		}
+		x = 0
+		y = 2
+		completion_reward = {
+			country_event = { id = ord.87 hours = 2 }
+			hidden_effect = {
+				country_event = { id = ord.96 days = 12 hours = 12 random = 240 }
+			}
+		}
+	}
+
+	focus = { #eliminating the moderates
+		id = ORD_establish_inquisition
+		icon = GFX_focus_generic_self_management
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_salvation_of_the_righteous
+		prerequisite = {
+			focus = ORD_salvation_of_the_righteous
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_disempower_mods_3
+			subtract_from_variable = {
+				ORD_moderates_influence = 3
+			}
+			custom_effect_tooltip = ORD_displease_mods_5
+			subtract_from_variable = {
+				ORD_moderates_loyalty = 5
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_weapons_forged_in_hate
+		icon = GFX_BLD_Kugur_Warriors_Cooperation
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_establish_inquisition
+		prerequisite = {
+			focus = ORD_establish_inquisition
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = forge
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = forge
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_end_era_of_blind
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_establish_inquisition
+		prerequisite = {
+			focus = ORD_establish_inquisition
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_ending_blindness
+		}
+	}
+
+	focus = { #
+		id = ORD_intercept_escapees
+		icon = GFX_focus_ung_elven_internment_act
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_end_era_of_blind
+		prerequisite = {
+			focus = ORD_end_era_of_blind
+		}
+		prerequisite = {
+			focus = ORD_weapons_forged_in_hate
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			country_event = { id = ord.89 hours = 2 }
+		}
+	}
+
+	focus = { #
+		id = ORD_noble_oversight_campaign
+		icon = GFX_IRI_Reign_Of_Strategos
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_intercept_escapees
+		prerequisite = {
+			focus = ORD_intercept_escapees
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = { id = ord.90 hours = 2 }
+			#sets country flag ORD_tolerate_nobles or ORD_devoted_inquisition
+		}
+	}
+
+	focus = { #
+		id = ORD_utilize_great_nobles
+		icon = GFX_focus_generic_monarchy_2
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_noble_oversight_campaign
+		prerequisite = {
+			focus = ORD_noble_oversight_campaign
+		}
+		mutually_exclusive = {
+			focus = ORD_encourage_noble_infighting
+			focus = ORD_investigate_all_nobles
+		}
+		available = {
+			has_country_flag = ORD_tolerate_nobles
+		}
+		x = -2
+		y = 1
+		completion_reward = {
+			add_advisor_role = {
+				character = ORD_taenaran_sylquinal
+				advisor = {
+					slot = political_advisor
+					cost = 50
+					available = {
+						has_government = theocrat
+					}
+					traits = {
+						noble_militarized_fiefdom
+					}
+				}
+			}
+			add_advisor_role = {
+				character = ORD_namys_yesydark
+				advisor = {
+					slot = political_advisor
+					cost = 50
+					available = {
+						has_government = theocrat
+					}
+					traits = {
+						nobility_plantation_representative
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_idea = ORD_noble_chaos
+				}
+				remove_ideas = ORD_noble_chaos
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_encourage_noble_infighting
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_noble_oversight_campaign
+		prerequisite = {
+			focus = ORD_noble_oversight_campaign
+		}
+		mutually_exclusive = {
+			focus = ORD_utilize_great_nobles
+			focus = ORD_investigate_all_nobles
+		}
+		available = {
+			has_country_flag = ORD_tolerate_nobles
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = { id = ord.93 hours = 3 }
+		}
+	}
+
+	focus = { #
+		id = ORD_investigate_all_nobles
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_noble_oversight_campaign
+		prerequisite = {
+			focus = ORD_noble_oversight_campaign
+		}
+		mutually_exclusive = {
+			focus = ORD_utilize_great_nobles
+			focus = ORD_encourage_noble_infighting
+		}
+		available = {
+			has_country_flag = ORD_devoted_inquisition
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = ORD_noble_chaos_lesser
+				days = 35
+			}
+			add_advisor_role = {
+				character = ORD_tasar_beijyre
+				advisor = {
+					slot = prisoners_guests
+					cost = 25
+					available = {
+						has_government = theocrat
+					}
+					traits = {
+						state_seized_assets
+					}
+				}
+			}
+			add_advisor_role = {
+				character = ORD_arun_fenmys
+				advisor = {
+					slot = prisoners_guests
+					cost = 25
+					available = {
+						has_government = theocrat
+					}
+					traits = {
+						arrested_pacifist
+					}
+				}
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_undermine_the_nobility
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_investigate_all_nobles
+		prerequisite = {
+			focus = ORD_investigate_all_nobles
+			focus = ORD_encourage_noble_infighting
+		}
+		mutually_exclusive = {
+			focus = ORD_raid_sus_manors
+			focus = ORD_oath_within_oath
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_empower_faiths_5
+			add_to_variable = {
+				ORD_faithful_influence = 5
+			}
+			add_political_power = 100
+		}
+	}
+
+	focus = { #TIME TO SWAT SOME NOBLES BAY-BEEE
+		id = ORD_raid_sus_manors
+		icon = GFX_IRI_Supreme_Arsenal
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_noble_oversight_campaign
+		prerequisite = {
+			focus = ORD_utilize_great_nobles
+			focus = ORD_encourage_noble_infighting
+		}
+		mutually_exclusive = {
+			focus = ORD_undermine_the_nobility
+			focus = ORD_oath_within_oath
+		}
+		x = -1
+		y = 2
+		completion_reward = {
+			country_event = { id = ord.91 hours = 2 }
+		}
+	}
+
+	focus = { #
+		id = ORD_isolate_princeling
+		icon = GFX_focus_ord_larennis
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_undermine_the_nobility
+		prerequisite = {
+			focus = ORD_undermine_the_nobility
+			focus = ORD_raid_sus_manors
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = { id = ord.94 hours = 3 }
+		}
+	}
+
+	focus = { #
+		id = ORD_starve_moderates
+		icon = GFX_BLD_Promote_Farming
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_raid_sus_manors
+		prerequisite = {
+			focus = ORD_raid_sus_manors
+			focus = ORD_undermine_the_nobility
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_disempower_mods_4
+			subtract_from_variable = {
+				ORD_moderates_influence = 4
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_supplant_oath
+		icon = GFX_focus_generic_military_dictatorship
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_isolate_princeling
+		prerequisite = {
+			focus = ORD_isolate_princeling
+			focus = ORD_starve_moderates
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ORD_ending_blindness
+				add_idea = ORD_inquisition
+			}
+			hidden_effect = {
+				country_event = { id = ord.97 days = 12 hours = 12 random = 240 }
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_mobilize_vuid
+		icon = GFX_focus_ord_vuid
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_defang_glory_league
+		prerequisite = {
+			focus = ORD_defang_glory_league
+			focus = ORD_supplant_oath
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			84 = {
+				create_unit = {
+					division = "name = \"1st Vuid Corps\" division_template = \"Bladesingers\" start_experience_factor = 0.4"
+					owner = ORD
+				}
+				create_unit = {
+					division = "name = \"2nd Vuid Corps\" division_template = \"Bladesingers\" start_experience_factor = 0.4"
+					owner = ORD
+				}
+				create_unit = {
+					division = "name = \"Vuid Arrowslingers\" division_template = \"Arrowslingers\" start_experience_factor = 0.4"
+					owner = ORD
+				}
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_last_minute_wargames
+		icon = GFX_goal_generic_small_arms
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_mobilize_vuid
+		prerequisite = {
+			focus = ORD_mobilize_vuid
+		}
+		available = {
+			NOT = {
+				count_triggers = {
+					amount = 2
+					has_completed_focus = ORD_sow_terror_among_revolutionaries
+					has_completed_focus = ORD_demand_private_armories
+				}
+			}
+		}
+		x = -2
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = ORD_last_minute_wargames
+				days = 90
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_sow_terror_among_revolutionaries
+		icon = GFX_focus_ord_cleanse_traitors
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_mobilize_vuid
+		prerequisite = {
+			focus = ORD_mobilize_vuid
+		}
+		available = {
+			NOT = {
+				count_triggers = {
+					amount = 2
+					has_completed_focus = ORD_demand_private_armories
+					has_completed_focus = ORD_last_minute_wargames
+				}
+			}
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			RTH = {
+				country_event = { id = ord.95 hours = 2 }
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_demand_private_armories
+		icon = GFX_IRI_Supreme_Arsenal
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_mobilize_vuid
+		prerequisite = {
+			focus = ORD_mobilize_vuid
+		}
+		available = {
+			NOT = {
+				count_triggers = {
+					amount = 2
+					has_completed_focus = ORD_sow_terror_among_revolutionaries
+					has_completed_focus = ORD_last_minute_wargames
+				}
+			}
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = ranged_equipment
+				amount = 500
+			}
+		}
+	}
+
+	focus = { #
+		id = ORD_unleash_harquiss_vengeance
+		icon = GFX_focus_ord_destroy_revolution
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = ORD_mobilize_vuid
+		prerequisite = {
+			focus = ORD_last_minute_wargames
+			focus = ORD_sow_terror_among_revolutionaries
+			focus = ORD_demand_private_armories
+		}
+		available = {
+			count_triggers = {
+				amount = 2
+				has_completed_focus = ORD_last_minute_wargames
+				has_completed_focus = ORD_sow_terror_among_revolutionaries
+				has_completed_focus = ORD_demand_private_armories
+			}
+		}
+		x = 0
+		y = 2
+		will_lead_to_war_with = RTH
+		completion_reward = {
+			declare_war_on = {
+				target = RTH
+				type = annex_everything
+			}
 		}
 	}
 

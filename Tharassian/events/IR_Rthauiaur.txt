@@ -515,9 +515,16 @@ country_event = {#Alucien Found Dead!
 		}
 		set_country_flag = RTH_alucien_murdered
 		hidden_effect = {
-			country_event = {
-				id = rth.2
-				days = 10
+			if = {
+				limit = {
+					ORD = {
+						has_completed_focus = ORD_decapacitate_snake
+					}
+				}
+				country_event = {
+					id = rth.2
+					days = 10
+				}
 			}
 			if = {
 				limit = { has_country_flag = RTH_alucien_cult_established }

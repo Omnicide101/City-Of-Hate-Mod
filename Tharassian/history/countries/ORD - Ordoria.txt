@@ -111,6 +111,11 @@ set_popularities = {
 	recruit_character = ORD_tholsthyr_ghylauden
 	recruit_character = ORD_alyniss_quynara
 	recruit_character = ORD_mynaud_thurys
+	recruit_character = ORD_marinalle_nuriopan
+	recruit_character = ORD_tasar_beijyre
+	recruit_character = ORD_arun_fenmys
+	recruit_character = ORD_taenaran_sylquinal
+	recruit_character = ORD_namys_yesydark
 
 	activate_advisor = isvenith_lothinnys
 
