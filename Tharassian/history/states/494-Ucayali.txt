@@ -17,8 +17,8 @@ state={
 		
 		buildings = {
 			infrastructure = 4
-			workshop = 3
-			forge = 3
+			workshop = 5
+			forge = 1
 			dockyard = 1
 			4396 = {
 				naval_base = 4

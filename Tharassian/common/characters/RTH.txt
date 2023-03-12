@@ -134,4 +134,95 @@ characters={
 			}
 		}
 	}
+	RTH_lylwelyn_thyrial={
+		name="Lylwelyn Thyrial"
+		portraits={
+			army={
+				large="gfx/leaders/RTH/Portrait_RTH_Thyrial.dds"
+				small="gfx/interface/ideas/characters/RTH/rth_thyrial.dds"
+			}
+		}
+		corps_commander={
+			traits={ jungle_rat }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	
+	RTH_islwyn_crynan={
+		name="Islwyn Crynan"
+		portraits={
+			army={
+				small="gfx/interface/ideas/characters/RTH/rth_crynan.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 0
+			slot = political_advisor
+			idea_token = islwyn_crynan
+			allowed = {
+				original_tag = RTH
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				skilled_orator
+			}
+		}
+	}
+	
+	RTH_thwysyld_mynirad={
+		name="Thwysyld Mynirad"
+		portraits={
+			army={
+				small="gfx/interface/ideas/characters/RTH/rth_mynirad.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 0
+			slot = political_advisor
+			idea_token = thwysyld_mynirad
+			allowed = {
+				original_tag = RTH
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				experienced_rosite
+			}
+		}
+	}
+	
+	RTH_tyndwyl_thysara={
+		name="Tyndwyl Thysara"
+		portraits={
+			army={
+				small="gfx/interface/ideas/characters/RTH/rth_thysara.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 0
+			slot = political_advisor
+			idea_token = tyndwyl_thysara
+			allowed = {
+				original_tag = RTH
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				champion_of_the_people
+				drunkard
+			}
+		}
+	}
 }

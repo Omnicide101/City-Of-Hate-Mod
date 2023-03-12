@@ -30,10 +30,107 @@ ai_division_limiter = {
 }
 
 #Country-specific modifiers
+SPW_bandit_haven = {
+	icon = GFX_modifier_bandit_haven
+	resistance_damage_to_garrison = 0.5
+	resistance_target = 0.35
+}
+
+SPW_darkweald_bandits = {
+	icon = GFX_modifier_darkweald_bandits
+	army_speed_factor_for_controller = -0.35
+	attrition_for_controller = 0.2
+}
+
+
+SPW_darkweald_bandits_aligned = {
+	icon = GFX_modifier_darkweald_bandits_aligned
+	army_speed_factor_for_controller = 0.2
+	local_supplies = 0.15
+}
+
+SPW_darkweald_bandits_empowered = {
+	icon = GFX_modifier_darkweald_bandits_empowered
+	army_speed_factor_for_controller = -0.5
+	attrition_for_controller = 0.4
+}
+
+
+SPW_newheart_bandits = {
+	icon = GFX_modifier_newheart_bandits
+	resistance_damage_to_garrison = 0.5
+	resistance_target = 0.35
+}
+
+
+SPW_newheart_bandits_aligned = {
+	icon = GFX_modifier_newheart_bandits_empowered
+	local_org_regain = 0.15
+	local_manpower = 0.2
+}
+
+
+SPW_newheart_bandits_empowered = {
+	icon = GFX_modifier_newheart_bandits_aligned
+	resistance_damage_to_garrison = 0.5
+	resistance_target = 0.35
+}
+
+
+SPW_ominous_presences = {
+	icon = GFX_modifier_ominous_presences
+	resistance_damage_to_garrison = 0.5
+	resistance_target = 0.35
+}
+
 ORD_drakeskin_guarded_lands = {
 	icon = GFX_modifier_drakeskin_guarded_lands
 	resistance_damage_to_garrison = 0.5
 	resistance_target = 0.35
+}
+
+EOR_neglected_lands = {
+	icon = GFX_modifier_state_diseased_region
+	compliance_growth = -0.15
+	state_resources_factor = -0.1
+	mobilization_speed = -0.05
+}
+
+EOR_local_government = {
+	icon = GFX_modifier_local_government
+	compliance_growth = 0.15
+	state_resources_factor = 0.1
+	mobilization_speed = 0.05
+}
+
+#Fertility
+
+very_fertile_land = {
+    icon = GFX_modifier_state_big_fertility
+    state_resource_food = 3
+    monthly_population = 0.1
+	local_supplies_for_controller = 0.25
+}
+
+fertile_land = {
+    icon = GFX_modifier_state_fertility
+    state_resource_food = 1
+    monthly_population = 0.025
+	local_supplies_for_controller = 0.1
+}
+
+infertile_land = {
+    icon = GFX_modifier_state_infertility
+    state_resource_food = -1
+    monthly_population = -0.025
+	local_supplies_for_controller = -0.1
+}
+
+very_infertile_land = {
+    icon = GFX_modifier_state_big_infertility
+    state_resource_food = -3
+    monthly_population = -0.1
+	local_supplies_for_controller = -0.25
 }
 
 #Generic state modifiers
@@ -77,36 +174,6 @@ city_of_generals = {
 	army_leader_cost_factor = -0.1
 	experience_gain_army_unit_factor = 0.05
 	army_org_regain = 0.03
-}
-
-#Fertility
-
-very_fertile_land = {
-    icon = GFX_modifier_state_big_fertility
-    state_resource_food = 3
-    monthly_population = 0.1
-	local_supplies_for_controller = 0.25
-}
-
-fertile_land = {
-    icon = GFX_modifier_state_fertility
-    state_resource_food = 1
-    monthly_population = 0.025
-	local_supplies_for_controller = 0.1
-}
-
-infertile_land = {
-    icon = GFX_modifier_state_infertility
-    state_resource_food = -1
-    monthly_population = -0.025
-	local_supplies_for_controller = -0.1
-}
-
-very_infertile_land = {
-    icon = GFX_modifier_state_big_infertility
-    state_resource_food = -3
-    monthly_population = -0.1
-	local_supplies_for_controller = -0.25
 }
 
 ongoing_border_conflict = {

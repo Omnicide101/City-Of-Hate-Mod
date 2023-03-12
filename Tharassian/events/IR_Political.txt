@@ -93,30 +93,3 @@ country_event = {#Clears Civil War NS
 		remove_ideas = GENERIC_civil_war_isolation
 	}
 }
-
-country_event = {#War exhaustion debuffs start
-	id = ir.political.6
-	title = ir.political.6.t
-	desc = ir.political.6.d
-
-	is_triggered_only = yes
-	
-	trigger = {
-		has_war = yes
-	}
-	
-	option = {
-		name = ir.political.6.a
-		activate_mission = war_exhaustion_mission
-		set_country_flag = war_exhaustion_kicks_in
-		hidden_effect = {
-			add_dynamic_modifier = {
-				modifier = war_exhaustion_modifier
-			}
-			set_variable = { war_exhaustion_mobilization = -0.05 }
-			set_variable = { war_exhaustion_surrender_limit = -0.05 }
-			set_variable = { war_exhaustion_mobilization_display = -5 }
-			set_variable = { war_exhaustion_surrender_limit_display = -5 }
-		}
-	}
-}

@@ -9,6 +9,43 @@ leader_traits = {
 		enemy_operative_detection_chance_factor = -5
 	}
 
+	first_oberjarl_elect = {
+		random = no
+		political_power_gain = 0.2
+		stability_factor = 0.1
+		surrender_limit = 0.1
+		republic_peasant_acceptance = 15
+	}
+	
+	last_victim_miners_blight = {
+		random = no
+		stability_weekly = -0.001
+	}
+	
+	king_of_republicans = {
+		random = no
+		stability_factor = -0.02
+		party_popularity_stability_factor = 0.12
+		army_morale_factor = 0.05
+		republic_merchant_acceptance = 20
+		republic_peasant_acceptance = 20
+	}
+
+	stone_hermit = {
+		random = no
+		command_power_gain = 0.25
+		army_leader_start_defense_level = 1
+		war_support_factor = -0.06
+		consumer_goods_factor = -0.05
+	}
+	
+	last_vergallheimer = {
+		random = no
+		war_support_factor = 0.12
+		industrial_capacity_factory = 0.1
+		opinion_gain_monthly_factor = -0.16
+	}
+
 	the_grand_master = {
 		random = no
 		political_power_gain = 0.5
@@ -274,6 +311,15 @@ leader_traits = {
 		army_core_attack_factor = 0.05
 		army_core_defence_factor = 0.05
 
+	}
+	
+	viceroy_of_the_east = {
+		random = no
+		political_power_gain = 0.25
+		local_resources_factor = 0.15
+		production_speed_buildings_factor = 0.1
+		cic_to_overlord_factor = 0.1
+		mic_to_overlord_factor = 0.1
 	}
 
 	father_of_the_revolution = {
@@ -669,7 +715,7 @@ leader_traits = {
 	
 	idealism_bonuses = {
 		random = no
-		war_stability_factor = -0.07
+		war_stability_factor = 0.07
 		breakthrough_factor = 0.05
 	}
 	
@@ -684,6 +730,11 @@ leader_traits = {
 		republic_aristocrat_drift = -1
 		puritan_drift = -1
 		theocrat_drift = -1
+	}
+	
+	generic_religion_bonuses = {
+		stability_factor = 0.12
+		war_support_factor = 0.07
 	}
 	
 	gallant_paladin = {
@@ -716,11 +767,6 @@ leader_traits = {
 		trade_opinion_factor = 0.15
 	}
 	
-	drunkard = {
-		random = no
-		political_power_factor = -0.15
-		stability_factor = -0.1
-	}
 	champion_of_the_people = {
 		random = no
 		political_power_factor = 0.1
@@ -794,6 +840,82 @@ leader_traits = {
 		army_morale_factor = 0.05
 		republic_aristocrat_drift = -0.1
 	}
+	courtly_captured = {
+		random = no
+	}
+	
+	### Generic traits	
+	drunkard = {
+		random = yes
+		political_power_factor = -0.15
+		stability_factor = -0.1
+	}
+	
+	adept_logistician = {
+		random = yes
+		supply_consumption_factor = -0.04
+		army_org_factor = 0.03
+	}
+	
+	glib_charmer = {
+		random = yes
+		political_power_gain = 0.12
+		improve_relations_maintain_cost_factor = -0.06
+	}
+	
+	architect = {
+		random = yes
+		production_speed_buildings_factor = 0.03
+	}
+	
+	adventurous = {
+		random = yes
+		agency_upgrade_time = -0.12
+	}
+	
+	well_connected = {
+		random = yes
+		political_power_gain = 0.06
+		command_power_gain = 0.06
+	}
+	
+	warmonger = {
+		random = yes
+		stability_factor = -0.05
+		war_support_factor = 0.07
+	}
+	
+	dove = {
+		random = yes
+		war_support_factor = -0.05
+		stability_factor = 0.07
+	}
+	
+	#Prisoners and Guests traits
+	unbreakable_loyalty_trait = {
+		random = yes
+	}
+	
+	guest_trait = {
+		random = no
+	}
+	
+	captured_unit_leader_prisoner_trait = {
+		random = no
+	}
+	
+	captured_party_leader_prisoner_trait = {
+		random = no
+	}
+	
+	captured_advisor_prisoner_trait = {
+		random = no
+	}
+	
+	captured_rebel_trait = {
+		random = no
+	}
+	
 	
 	### Military Minister Traits
 	

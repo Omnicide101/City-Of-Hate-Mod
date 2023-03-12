@@ -166,7 +166,10 @@ country_event = { #Union Backs Hellirfast
 		
 		if = {
 			limit = {
-				has_opinion_modifier = staunch_allies
+				has_relation_modifier = {
+					target = UNG
+					modifier = staunch_allies
+				}
 			}
 		
 			remove_opinion_modifier = {
@@ -174,10 +177,19 @@ country_event = { #Union Backs Hellirfast
 				modifier = staunch_allies
 			}
 			
+			remove_relation_modifier = {
+				target = UNG
+				modifier = staunch_allies_opinion_modifier
+			}
+			
 			UNG = {
 				remove_opinion_modifier = {
 					target = RMT
 					modifier = staunch_allies
+				}
+				remove_relation_modifier = {
+					target = RMT
+					modifier = staunch_allies_opinion_modifier
 				}
 			}
 		}
@@ -275,6 +287,10 @@ country_event = {#Skaelinger Accepts
 			target = SKA
 			modifier = bitter_rivals
 		}
+		remove_relation_modifier = {
+			target = SKA
+			modifier = bitter_rivals_opinion_modifier
+		}
 
 		add_opinion_modifier = {
 			target = SKA
@@ -296,6 +312,10 @@ country_event = {#Skaelinger Accepts
 			remove_opinion_modifier = {
 				target = RMT
 				modifier = bitter_rivals
+			}
+			remove_relation_modifier = {
+				target = RMT
+				modifier = bitter_rivals_opinion_modifier
 			}
 		}
 	}

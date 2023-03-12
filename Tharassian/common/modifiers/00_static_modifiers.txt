@@ -24,6 +24,12 @@ dislike_opinion_modifier = {
 threatened_opinion_modifier = {
 }
 
+staunch_allies_opinion_modifier = {
+}
+
+bitter_rivals_opinion_modifier = {
+}
+
 # VANILLA MODIFIERS
 
 weather_rain_light = { # on Region 
@@ -236,6 +242,9 @@ war_support_bad_modifier = {
 	surrender_limit = -0.3
 }
 
+war_support_during_war = { #Applied during war, scaled from 0-100% with war support, not split.
+	stability_factor = -0.3
+}
 
 attache_sent = {
 	war_support_factor = 0.1

@@ -71,6 +71,12 @@ add_ideas = {
 		target = RTH
 		modifier = staunch_allies
 	}
+	
+	add_relation_modifier = {
+		target = RTH
+		modifier = staunch_allies_opinion_modifier
+	}
+	
 	diplomatic_relation = {
 		country = RTH
 		relation = military_access

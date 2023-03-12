@@ -70,7 +70,7 @@ add_ideas = {
 }
 
 create_country_leader = {
-	name = "Miroslav Zlatko "
+	name = "Miroslav Zlatko"
 	desc = "politics_PRK_zlatko_desc"
 	picture = "gfx/leaders/PRK/Portrait_PRK_Zlatko.dds"
 	ideology = monarchy_absolute_ideology

@@ -1,6 +1,7 @@
 ﻿l_english:
  incredible_betrayal:0 "Incredible Betrayal"
  bitter_rivals:0 "Bitter Rivals"
+ bitter_rivals_opinion_modifier:0 "Bitter Rivals"
  staunch_allies:0 "Staunch Allies"
  threatened_opinion:0 "Threatened"
  annoyed_opinion:0 "Annoyed"
@@ -15,6 +16,8 @@
  embargo_trade:0 "Embargoed"
  closed_economy_trade_modifier:0 "Closed Economy"
  targeted_by_faction:0 "Targeted by Faction"
+ executed_prisoner:0 "Executed Prisoner"
+ released_prisoner:0 "Released Prisoner"
  UNG_heavy_concessions:0 "Demanded Heavy Concessions"
  UNG_medium_concessions:0 "Demanded Medium Concessions"
  UNG_exchange:0 "Suggested Trade"

@@ -223,6 +223,7 @@ ideas = {
 				consumer_goods_factor = 0.1
 				production_speed_buildings_factor = 0.2
 				industrial_capacity_factory = 0.15
+				trade_opinion_factor = -0.35
 				min_export = 0.8
 			}
 			

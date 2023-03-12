@@ -98,6 +98,30 @@ no_garrison = {
 	}
 }
 
+counterrevolutionary_operations = {
+	icon = 12
+	sound_effect = "Martial_Law_Interface_Secret_Police_Oversight"
+	
+	visible = {
+		tag = EOR
+	}
+	
+	available = {
+		FROM = { original_tag = RTH }
+	}
+	
+	state_modifier = {
+		resistance_target				= -0.25
+		compliance_gain 				= -0.02
+		required_garrison_factor 		= -0.1
+		resistance_damage_to_garrison 	= 0.15
+	}
+	
+	ai_will_do = {
+		base = 1000
+	}
+}
+
 autonomous_occupation = {
 	icon = 2
 	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"

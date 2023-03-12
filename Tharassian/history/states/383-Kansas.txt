@@ -18,6 +18,15 @@ state={
 			infrastructure = 3
 			workshop = 3
 			forge = 2
+			6215 = {
+				bunker = 3
+			}
+			6195 = {
+				bunker = 3
+			}
+			4692 = {
+				bunker = 3
+			}
 		}
 		add_core_of = RMT
 	}

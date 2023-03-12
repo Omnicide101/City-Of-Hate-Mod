@@ -120,3 +120,8 @@ add_opinion_modifier = {
 	target = TLA
 	modifier = bitter_rivals
 }
+
+add_relation_modifier = {
+	target = TLA
+	modifier = bitter_rivals_opinion_modifier
+}

@@ -1,3 +1,67 @@
+
+#Hidden until I can figure out how to make this work
+FPT_aid_seventh_campaign = {
+	FPT_send_expeditionary_force = {
+		icon = GFX_decision_generic_military
+		
+		allowed = {
+			always = no
+			is_og_freiprinz = yes
+		}
+		available = {
+			UNG = {
+				has_country_flag = UNG_helping_seventh_campaign
+			}
+			divisions_in_state = {
+				size > 0
+				state = ROOT.CAPITAL
+			}
+		}
+		
+		days_re_enable = 120
+		
+		complete_effect = {
+			if = {
+				limit = {
+					SKA = {
+						has_country_flag = SKA_seventh_campaign_with_UNG
+					}
+				}
+				
+				if = {
+					limit = {
+						NOT = {
+							has_military_access_to = SKA
+						}
+					}					
+					SKA = {
+						give_military_access = ROOT
+					}
+				}
+				
+				
+				#damage_units = {
+				#	state = ROOT.CAPITAL
+				#	str_damage = 0.3
+				#	ratio = yes
+				#	army = yes
+				#}
+				
+				random_core_state = {
+					
+					limit = {
+						is_capital = yes
+					}
+					
+					teleport_armies = {
+						to_state = SKA.CAPITAL
+					}
+				}
+			}
+		}
+	}
+}
+
 FPT_kriegsspiele_preparations = {
 	FPT_kriegsspiele_countdown = {
 		icon = GFX_decision_eng_puppet_usa

@@ -18,13 +18,19 @@ country_event = {#Attacker Wins
 				save_event_target_as = DORF_border_conflict_state
 				set_state_name = "Asolfsskali"
 			}
+			176 = { #Impassable state, so paired with this one
+				set_state_name = "Hvanneyrr"
+			}
 		}
 	}
+	
+	is_triggered_only = yes
 	
 	option = {#Yay
 		name = dorf_invade_invader_win.a
 		add_political_power = 25
 		transfer_state = 179
+		transfer_state = 176
 	}
 }
 
@@ -254,7 +260,7 @@ country_event = {#Defender Loss
 	}
 }
 
-#HVANNEYRR SKIRMISH
+#FROSTCART PASS SKIRMISH
 
 country_event = {#Attacker Wins
 	id = dorf_invade.13
@@ -266,9 +272,8 @@ country_event = {#Attacker Wins
 	
 	immediate = {
 		hidden_effect = {
-			176 = {
+			1270 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Hvanneyrr"
 			}
 		}
 	}
@@ -276,7 +281,8 @@ country_event = {#Attacker Wins
 	option = {#Yay
 		name = dorf_invade_invader_win.a
 		add_political_power = 25
-		transfer_state = 176
+		transfer_state = 1270
+		transfer_state = 1272 #Impassable
 	}
 }
 
@@ -288,7 +294,7 @@ country_event = {#Attacker Loss
 	is_triggered_only = yes
 	
 	immediate = {
-		176 = {
+		1270 = {
 			save_event_target_as = DORF_border_conflict_state
 		}
 	}
@@ -308,7 +314,7 @@ country_event = {#Attacker Draw
 	is_triggered_only = yes
 	
 	immediate = {
-		176 = {
+		1270 = {
 			save_event_target_as = DORF_border_conflict_state
 		}
 	}
@@ -328,7 +334,7 @@ country_event = {#Defender Wins
 	is_triggered_only = yes
 	
 	immediate = {
-		176 = {
+		1270 = {
 			save_event_target_as = DORF_border_conflict_state
 		}
 	}
@@ -349,7 +355,7 @@ country_event = {#Defender Loss
 	is_triggered_only = yes
 	
 	immediate = {
-		176 = {
+		1270 = {
 			save_event_target_as = DORF_border_conflict_state
 		}
 	}
@@ -369,7 +375,7 @@ country_event = {#Defender Draw
 	is_triggered_only = yes
 	
 	immediate = {
-		176 = {
+		1270 = {
 			save_event_target_as = DORF_border_conflict_state
 		}
 	}
@@ -529,6 +535,7 @@ country_event = {#Attacker Wins
 		name = dorf_invade_invader_win.a
 		add_political_power = 25
 		transfer_state = 173
+		transfer_state = 1276 #Impassable
 	}
 }
 
@@ -648,6 +655,9 @@ country_event = {#Attacker Wins
 				save_event_target_as = DORF_border_conflict_state
 				set_state_name = "Álfrskaut"
 			}
+			1274 = { #Impassable
+				set_state_name = "Álfrskaut Peaks"
+			}
 		}
 	}
 	
@@ -655,6 +665,7 @@ country_event = {#Attacker Wins
 		name = dorf_invade_invader_win.a
 		add_political_power = 25
 		transfer_state = 106
+		transfer_state = 1274
 	}
 }
 
@@ -781,6 +792,7 @@ country_event = {#Attacker Wins
 		name = dorf_invade_invader_win.a
 		add_political_power = 25
 		transfer_state = 139
+		transfer_state = 1271 #Impassable
 	}
 }
 
@@ -1026,6 +1038,9 @@ country_event = {#Attacker Wins
 				save_event_target_as = DORF_border_conflict_state
 				set_state_name = "Neðar Perkafell"
 			}
+			1362 = { #Impassable
+				set_state_name = "Perkafell Peaks"
+			}
 		}
 	}
 	
@@ -1033,6 +1048,7 @@ country_event = {#Attacker Wins
 		name = dorf_invade_invader_win.a
 		add_political_power = 25
 		transfer_state = 203
+		transfer_state = 1362
 	}
 }
 
@@ -1278,6 +1294,9 @@ country_event = {#Attacker Wins
 				save_event_target_as = DORF_border_conflict_state
 				set_state_name = "Teitrvín"
 			}
+			1273 = { #Impassable
+				set_state_name = "High Teitrvín"
+			}
 		}
 	}
 	
@@ -1285,6 +1304,7 @@ country_event = {#Attacker Wins
 		name = dorf_invade_invader_win.a
 		add_political_power = 25
 		transfer_state = 207
+		transfer_state = 1273
 	}
 }
 
@@ -2147,6 +2167,8 @@ country_event = {#Defender Draw
 
 # WASLGAR SKIRMISH
 
+#Obsolete
+
 country_event = {#Attacker Wins
 	id = dorf_invade.103
 	title = dorf_invade_invader_win.t
@@ -2297,6 +2319,12 @@ country_event = {#Attacker Wins
 		add_political_power = 25
 		transfer_state = 165
 		165 = {
+			remove_core_of = ORD
+			add_claim_by = ORD
+		}
+		
+		transfer_state = 180 #Impassable
+		180 = {
 			remove_core_of = ORD
 			add_claim_by = ORD
 		}
@@ -3050,6 +3078,8 @@ country_event = {#Defender Draw
 
 #NESKADR SKIRMISH
 
+#Obsolete
+
 country_event = {#Attacker Wins
 	id = dorf_invade.145
 	title = dorf_invade_invader_win.t
@@ -3440,6 +3470,11 @@ country_event = {#Attacker Wins
 		add_political_power = 25
 		transfer_state = 191
 		191 = {
+			remove_core_of = ORD
+			add_claim_by = ORD
+		}
+		transfer_state = 189 #Impassable
+		189 = {
 			remove_core_of = ORD
 			add_claim_by = ORD
 		}

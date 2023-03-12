@@ -3871,10 +3871,22 @@ country_event = {#Steward's Countercoup
 		  character = "ORD_larennis_valinthir"
 		  slot = political_advisor
 		}
-		retire_character = ORD_yntha
-		retire_character = ORD_alwyen
-		retire_character = ORD_gylar
-		retire_character = ORD_thrysmere
+		remove_advisor_role = {
+		  character = "ORD_yntha"
+		  slot = political_advisor
+		}
+		remove_advisor_role = {
+		  character = "ORD_alwyen"
+		  slot = political_advisor
+		}
+		remove_advisor_role = {
+		  character = "ORD_gylar"
+		  slot = political_advisor
+		}
+		remove_advisor_role = {
+		  character = "ORD_thrysmere"
+		  slot = political_advisor
+		}
 		
 		clr_country_flag = ORD_moderate_government
 		clr_country_flag = ORD_first_decree_failed
@@ -4125,5 +4137,50 @@ country_event = {#Demanding Inskyllithe's Remains - Desecrated
 		}
 		
 		set_country_flag = ORD_inskyllithe_desecrated
+	}
+}
+
+country_event = {#Selecting a new governor
+	id = ord.85
+	title = ord.85.t
+	desc = ord.85.d
+	
+	is_triggered_only = yes
+	
+	option = {#Larennis
+		name = ord.85.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		
+		set_country_flag = ORD_governor_larennis_flag
+		
+		EOR = {
+			set_country_flag = EOR_governor_larennis_flag
+		}
+		
+		custom_effect_tooltip = ORD_empower_mods_1
+		add_to_variable	= {
+			ORD_moderates_influence = 1
+		}
+	}
+	
+	option = {#Ithinis
+		name = ord.85.b
+		
+		ai_chance = {
+			factor = 3
+		}
+		
+		set_country_flag = ORD_governor_ithinis_flag
+		
+		EOR = {
+			set_country_flag = EOR_governor_ithinis_flag
+		}
+		custom_effect_tooltip = ORD_empower_trads_1
+		add_to_variable = {
+			ORD_traditionalists_influence = 1
+		}
 	}
 }

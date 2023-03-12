@@ -38,6 +38,11 @@ country_event = { #Ordoria Threatens Us
 			modifier = staunch_allies
 		}
 		
+		remove_relation_modifier = {
+			target = RTH
+			modifier = staunch_allies_opinion_modifier
+		}
+		
 		RTH = {
 			country_event = {
 				id = rth.3
@@ -225,6 +230,8 @@ country_event = { #Ordoria Demands Concessions
 			transfer_state = 181
 			transfer_state = 121
 			transfer_state = 178
+			transfer_state = 1277
+			transfer_state = 1281
 		}
 		hidden_effect = {
 			ORD = {
@@ -431,6 +438,10 @@ country_event = { #Second Rthaur Revolution
 			add_opinion_modifier = {
 				target = RTH
 				modifier = staunch_allies
+			}
+			add_relation_modifier = {
+				target = RTH
+				modifier = staunch_allies_opinion_modifier
 			}
 		}
 
@@ -723,6 +734,10 @@ country_event = { #Union Assists Seventh Campaign
 			target = UNG
 			modifier = trusted_opinion
 		}
+		add_relation_modifier = {
+			target = UNG
+			modifier = staunch_allies_opinion_modifier
+		}
 		UNG = {
 			remove_opinion_modifier = {
 				target = SKA
@@ -731,6 +746,10 @@ country_event = { #Union Assists Seventh Campaign
 			add_opinion_modifier = {
 				target = SKA
 				modifier = staunch_allies
+			}
+			add_relation_modifier = {
+				target = SKA
+				modifier = staunch_allies_opinion_modifier
 			}
 			reverse_add_opinion_modifier = {
 				target = SKA
@@ -890,10 +909,19 @@ country_event = { #Union Backs Skyldske
 				modifier = staunch_allies
 			}
 			
+			remove_relation_modifier = {
+				target = UNG
+				modifier = staunch_allies_opinion_modifier
+			}
+			
 			UNG = {
 				remove_opinion_modifier = {
 					target = SKA
 					modifier = staunch_allies
+				}
+				remove_relation_modifier = {
+					target = SKA
+					modifier = staunch_allies_opinion_modifier
 				}
 			}
 		}
@@ -977,6 +1005,11 @@ country_event = {#Rimatu Accepts
 			target = RMT
 			modifier = bitter_rivals
 		}
+		
+		remove_relation_modifier = {
+			target = RMT
+			modifier = bitter_rivals_opinion_modifier
+		}
 
 		add_opinion_modifier = {
 			target = RMT
@@ -992,6 +1025,11 @@ country_event = {#Rimatu Accepts
 			remove_opinion_modifier = {
 				target = SKA
 				modifier = bitter_rivals
+			}
+
+			remove_relation_modifier = {
+				target = SKA
+				modifier = bitter_rivals_opinion_modifier
 			}
 		}
 	}
@@ -1319,13 +1357,16 @@ country_event = { #Monarch options
 		hidden_effect = {
 			retire_ideology_leader = monarchy_constitutional
 		}
-		create_country_leader = {
-			name = "Reev Hellirfast"
-			desc = "POLITICS_REEV_HELLIRFAST_DESC"
-			picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_1.dds"
-			expire = "990.1.1"
-			ideology = monarchy_constitutional_ideology
-			traits = {
+		add_country_leader_role={
+			character = SKA_reev_hellirfast
+			promote_leader = yes
+			country_leader = {
+				desc = "politics_SKA_hellirfast_ii_desc"
+				ideology = monarchy_constitutional_ideology
+				traits = {
+					king_of_republicans
+				}
+				expire="1.1.1.1"
 			}
 		}
 	}
@@ -1367,13 +1408,16 @@ country_event = { #Monarch options
 				long_name = SKA_grimvald_party
 			}
 		}
-		create_country_leader = {
-			name = "Petar Grimvald"
-			desc = "POLITICS_REEV_HELLIRFAST_DESC"
-			picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds"
-			expire = "990.1.1"
-			ideology = monarchy_constitutional_ideology
-			traits = {
+		add_country_leader_role={
+			character = SKA_petar_grimvald
+			promote_leader = yes
+			country_leader = {
+				desc = "politics_SKA_grimvald_desc"
+				ideology = monarchy_constitutional_ideology
+				traits = {
+					stone_hermit
+				}
+				expire="1.1.1.1"
 			}
 		}
 	}
@@ -1415,13 +1459,16 @@ country_event = { #Monarch options
 			}
 			retire_ideology_leader = monarchy_constitutional
 		}
-		create_country_leader = {
-			name = "Kytos Palmekvist"
-			desc = "POLITICS_REEV_HELLIRFAST_DESC"
-			picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_2.dds"
-			expire = "990.1.1"
-			ideology = monarchy_constitutional_ideology
-			traits = {
+		add_country_leader_role={
+			character = SKA_kytos_palmkevist
+			promote_leader = yes
+			country_leader = {
+				desc = "politics_SKA_palmkevist_desc"
+				ideology = monarchy_constitutional_ideology
+				traits = {
+					last_vergallheimer
+				}
+				expire="1.1.1.1"
 			}
 		}
 	}
@@ -1618,7 +1665,7 @@ country_event = { #Iron Blood Power Struggle
 		create_country_leader = {
 			name = "Gayra Hafahlif"
 			desc = "POLITICS_REEV_HELLIRFAST_DESC"
-			picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_7.dds"
+			picture = "gfx/leaders/SKA/Portrait_SKA_Hafahlif.dds"
 			expire = "990.1.1"
 			ideology = monarchy_absolute_ideology
 			traits = {
@@ -1635,7 +1682,7 @@ country_event = { #Iron Blood Power Struggle
 		create_country_leader = {
 			name = "Egviel Hvassøx"
 			desc = "POLITICS_REEV_HELLIRFAST_DESC"
-			picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_navy_1.dds"
+			picture = "gfx/leaders/SKA/Portrait_SKA_Hvassox.dds"
 			expire = "990.1.1"
 			ideology = monarchy_absolute_ideology
 			traits = {
@@ -2161,7 +2208,7 @@ country_event = { #Heljarchen Froki debates for the legalization of the brotherh
 
 	immediate = {
 		hidden_effect = {
-			country_event = { id = skaelinger.33 days = 15 }
+			country_event = { id = skaelinger.33 days = 30 }
 		}
 	}
 	
@@ -2204,7 +2251,7 @@ country_event = { #Using guild funds to help sponsor debates
 
 	immediate = {
 		hidden_effect = {
-			country_event = { id = skaelinger.34 days = 15 }
+			country_event = { id = skaelinger.34 days = 30 }
 			if = {
 				limit = {
 					NOT = { has_country_flag = SKA_legalized_boe_debates }
@@ -2889,9 +2936,6 @@ country_event = { #Social War Ends, Tie
 		add_ideas = GENERIC_civil_war_isolation
 		set_country_flag = SKA_social_war_tie_occurred
 		hidden_effect = {
-			delete_unit_template_and_units = {
-				division_template = "Paramilitarists"
-			}
 			SKR = {
 				add_ideas = GENERIC_civil_war_isolation
 				add_popularity = {
@@ -3047,9 +3091,6 @@ country_event = { #Social War Ends, Soltruist Victory
 	immediate = {
 		set_country_flag = SKA_social_war_puritan_victory
 		hidden_effect = {
-			delete_unit_template_and_units = {
-				division_template = "Paramilitarists"
-			}
 			add_ideas = GENERIC_civil_war_isolation
 			SKP = {
 				add_ideas = GENERIC_civil_war_isolation
@@ -3141,9 +3182,6 @@ country_event = { #Social War Ends, Brotherhood victory
 	immediate = {
 		set_country_flag = SKA_social_war_radical_republican_victory
 		hidden_effect = {
-			delete_unit_template_and_units = {
-				division_template = "Paramilitarists"
-			}
 			add_ideas = GENERIC_civil_war_isolation
 			SKR = {
 				add_ideas = GENERIC_civil_war_isolation
@@ -3954,7 +3992,7 @@ country_event = { #Hardliner Legionnaire Revolt
 				create_country_leader = {
 					name = "Sigurdar Hakonson"
 					desc = "POLITICS_REEV_HELLIRFAST_DESC"
-					picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds"
+					picture = "gfx/leaders/SKA/Portrait_SKA_Hakonson.dds"
 					expire = "990.1.1"
 					ideology = puritan_ideology
 					traits = {
@@ -4007,7 +4045,7 @@ country_event = { #Hardliner Legionnaire Revolt
 		create_country_leader = {
 			name = "Sigurdar Hakonson"
 			desc = "POLITICS_REEV_HELLIRFAST_DESC"
-			picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds"
+			picture = "gfx/leaders/SKA/Portrait_SKA_Hakonson.dds"
 			expire = "990.1.1"
 			ideology = puritan_ideology
 			traits = {
@@ -4150,6 +4188,10 @@ country_event = { #RMT civil war event for SKA, they can ally with radicals
 				remove_opinion_modifier = {
 					target = SKA
 					modifier = bitter_rivals
+				}
+				remove_relation_modifier = {
+					target = SKA
+					modifier = bitter_rivals_opinion_modifier
 				}
 				add_ai_strategy = {
 					type = alliance
@@ -4422,7 +4464,7 @@ country_event = { #Choosing which noble or glc member to lead the Vergall Riks P
 			retire_ideology_leader = republic_aristocrat
 		}
 		create_country_leader = {
-			name = "Generallete"
+			name = "Thruska Goldir"
 			desc = "POLITICS_REEV_HELLIRFAST_DESC"
 			picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds"
 			expire = "990.1.1"
@@ -5305,6 +5347,10 @@ country_event = { # SKA wants the Khorinor mountains back now
 			remove_opinion_modifier = {
 				target = RTH
 				modifier = staunch_allies
+			}
+			remove_relation_modifier = {
+				target = RTH
+				modifier = staunch_allies_opinion_modifier
 			}
 			country_event = { id = rth.26 hours = 3 }
 		}

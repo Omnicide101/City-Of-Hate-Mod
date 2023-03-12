@@ -5,13 +5,13 @@ state={
 		5931 3218 3864
 	}
 	state_category = pastoral
-	manpower=692
+	manpower=6
+	impassable = yes
 	buildings_max_level_factor=1.000
 	history={
 		owner = RMT
 		buildings = {
 			infrastructure = 1
-			farm = 1
 		}
 		add_core_of = RMT
 	}

@@ -50,6 +50,7 @@ NDefines.NMilitary.MIN_SUPPLY_CONSUMPTION = 0.03							-- minimum value of suppl
 NDefines.NMilitary.FUEL_PENALTY_START_RATIO = 0.45							-- ratio of fuel in an army to start getting penalties
 NDefines.NMilitary.OUT_OF_FUEL_EQUIPMENT_MULT = 0.05						-- ratio of the stats that you get from equipments that uses fuel and you lack it
 NDefines.NMilitary.OUT_OF_FUEL_SPEED_MULT = 0.2								-- speed mult that armies get when out of fuel
+NDefines.NMilitary.BASE_FEMALE_DIVISIONAL_COMMANDER_CHANCE = 0.35			--Chance to receive a female divisonal commander. This is set to zero in the base game, as we do not have generic female portraits for many graphical culture groups.
 
 NDefines.NNavy.NAVAL_INVASION_PRIORITY = 1.5								-- default convoy priority for naval invasions
 NDefines.NNavy.NAVAL_SUPREMACY_CAN_INVADE = -0.05							-- required naval supremacy to perform invasions on an area

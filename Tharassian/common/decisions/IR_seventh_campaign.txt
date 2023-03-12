@@ -706,7 +706,7 @@ DORF_border_skirmishes = {
 		}
 	}
 	
-	DORF_invade_hvanneyrr = {#Ruzkorgen
+	DORF_invade_frostcart_pass = {#Frostcart
 		
 		icon = generic_prepare_civil_war
 		
@@ -723,14 +723,14 @@ DORF_border_skirmishes = {
 				}
 			}
 			NOT = {
-				owns_state = 176
+				owns_state = 1270
 			}
 			
 		}
 		
 		available = {
 		
-			176 = {
+			1270 = {
 				custom_trigger_tooltip = {
 					tooltip = DORF_not_border_war_tt
 					hidden_trigger = {
@@ -741,14 +741,14 @@ DORF_border_skirmishes = {
 			
 			custom_trigger_tooltip = {
 				tooltip = DORF_controls_border_state_tt
-				176 = {
+				1270 = {
 					any_neighbor_state = {
 						is_controlled_by = ROOT
 						ROOT = {
 							divisions_in_border_state = {
 								size > 2
 								state = PREV
-								border_state = 176
+								border_state = 1270
 							}
 						}
 					}
@@ -759,7 +759,7 @@ DORF_border_skirmishes = {
 				tooltip = DORF_not_allied_to_target_tt
 				hidden_trigger = {
 					any_other_country = {
-						has_full_control_of_state = 176
+						has_full_control_of_state = 1270
 						NOT = {
 							OR = {
 								is_in_faction_with = ROOT
@@ -777,7 +777,7 @@ DORF_border_skirmishes = {
 		
 		visible = {
 			any_other_country = {
-				owns_state = 176
+				owns_state = 1270
 				NOT = {
 					OR = {
 						has_war_with = ROOT
@@ -796,7 +796,7 @@ DORF_border_skirmishes = {
 		
 		target_trigger = {
 			FROM = {
-				state = 176
+				state = 1270
 			}
 		}
 
@@ -814,13 +814,13 @@ DORF_border_skirmishes = {
 				limit = {
 					is_controlled_by = ROOT
 					any_neighbor_state = {
-						state = 176
+						state = 1270
 					}
 					ROOT = {
 						divisions_in_border_state = {
 							size > 2
 							state = PREV
-							border_state = 176
+							border_state = 1270
 						}
 					}
 				}
@@ -834,7 +834,7 @@ DORF_border_skirmishes = {
 			modifier = ongoing_border_conflict
 			}
 		}
-		176 = {
+		1270 = {
 			add_dynamic_modifier = {
 			modifier = ongoing_border_conflict
 			}
@@ -849,7 +849,7 @@ DORF_border_skirmishes = {
 					on_cancel = dorf_invade.15
 				}
 				defender = {
-					state = 176
+					state = 1270
 					num_provinces = 1
 					on_win = dorf_invade.16
 					on_lose = dorf_invade.17
@@ -862,13 +862,13 @@ DORF_border_skirmishes = {
 			limit = {
 				is_controlled_by = ROOT
 				any_neighbor_state = {
-				state = 176
+				state = 1270
 				}
 				ROOT = {
 				divisions_in_border_state = {
 					size > 2
 					state = PREV
-					border_state = 176
+					border_state = 1270
 					}
 				}
 			}
@@ -885,7 +885,7 @@ DORF_border_skirmishes = {
 				modifier = ongoing_border_conflict
 				}
 			}
-		176 = {
+		1270 = {
 		remove_dynamic_modifier = {
 			modifier = ongoing_border_conflict
 		}
@@ -894,13 +894,13 @@ DORF_border_skirmishes = {
 		 limit = {
 		 has_border_war_between = {
  		   attacker = var:border_conflict_state
-  		   defender = 176
+  		   defender = 1270
 		 }
 		 }
 		finalize_border_war = {
    		defender_win = yes
   		attacker = var:border_conflict_state
-  		defender = 176
+  		defender = 1270
 		}
 		}
 		}
@@ -3712,215 +3712,6 @@ DORF_border_skirmishes = {
 }
 
 DORF_retake_west_skaelinger = {
-
-	DORF_invade_waslgar= {
-		
-		icon = generic_ignite_civil_war
-		
-		visible = {
-			OR = {
-				original_tag = SKA
-				original_tag = RMT
-				AND = {
-					original_tag = BER
-					OR = {
-						has_government = monarchy_absolute
-						has_government = puritan
-					}
-				}
-			}
-			OR = {
-				ORD = {
-					owns_state = 165
-				}
-				EOR = {
-					owns_state = 165
-				}
-			}
-			is_subject = no
-			ORD = {
-				has_country_flag = ORD_dwarves_conceded
-			}
-		}
-		
-		available = {
-			
-			ORD = {
-				has_war = yes
-			}
-			
-			hidden_trigger = {
-				ORD ={
-					has_country_flag = ORD_dwarves_conceded
-				}
-			}
-			
-			180 = {
-				custom_trigger_tooltip = {
-					tooltip = DORF_not_border_war_tt
-					hidden_trigger = {
-						has_border_war = no
-					}
-				}
-			}
-			
-			custom_trigger_tooltip = {
-				tooltip = DORF_controls_border_state_tt
-				180 = {
-					any_neighbor_state = {
-						is_controlled_by = ROOT
-						ROOT = {
-							divisions_in_border_state = {
-								size > 2
-								state = PREV
-								border_state = 180
-							}
-						}
-					}
-				}
-            }
-			
-			custom_trigger_tooltip = {
-				tooltip = DORF_not_allied_to_target_tt
-				hidden_trigger = {
-					any_other_country = {
-						has_full_control_of_state = 180
-						NOT = {
-							OR = {
-								is_in_faction_with = ROOT
-								is_subject_of = ROOT
-								has_subject = ROOT
-								has_non_aggression_pact_with = ROOT
-								has_guaranteed = ROOT
-								is_guaranteed_by = ROOT
-							}
-						}
-					}
-				}
-			}
-		}
-
-		state_target = yes
-		
-		target_trigger = {
-			FROM = {
-				state = 180
-			}
-		}
-
-		on_map_mode = map_only
-		
-		cost = 50
-		days_remove = 35
-		
-		ai_will_do = {
-			factor = 20
-		}
-		
-		complete_effect = {
-			
-			ORD = {
-				country_event = {
-					id = ord.60
-					days = 1
-				}
-			}
-			
-			every_owned_state = {
-				limit = {
-					is_controlled_by = ROOT
-					any_neighbor_state = {
-						state = 180
-					}
-					ROOT = {
-						divisions_in_border_state = {
-							size > 2
-							state = PREV
-							border_state = 180
-						}
-					}
-				}
-				set_temp_variable = {
-					border_conflict_state = THIS
-				}
-			}
-		var:border_conflict_state = {
-		set_state_flag = ongoing_border_war_state_flag
-			add_dynamic_modifier = {
-			modifier = ongoing_border_conflict
-			}
-		}
-		180 = {
-			add_dynamic_modifier = {
-			modifier = ongoing_border_conflict
-			}
-		}
-			start_border_war = {
-				change_state_after_war = no
-				attacker = {
-					state = var:border_conflict_state
-					num_provinces = 1
-					on_win = dorf_invade.103
-					on_lose = dorf_invade.104
-					on_cancel = dorf_invade.105
-				}
-				defender = {
-					state = 180
-					num_provinces = 1
-					on_win = dorf_invade.106
-					on_lose = dorf_invade.107
-					on_cancel = dorf_invade.108
-				}
-			}
-		}
-		remove_effect = {
-		every_owned_state = {
-			limit = {
-				is_controlled_by = ROOT
-				any_neighbor_state = {
-				state = 180
-				}
-				ROOT = {
-				divisions_in_border_state = {
-					size > 2
-					state = PREV
-					border_state = 180
-					}
-				}
-			}
-		set_temp_variable = {
-					border_conflict_state = THIS
-				}
-		}
-		every_owned_state = {
-			limit = {
-				has_state_flag = ongoing_border_war_state_flag
-				}
-			clr_state_flag = ongoing_border_war_state_flag
-			remove_dynamic_modifier = {
-				modifier = ongoing_border_conflict
-				}
-			}
-		180 = {
-		remove_dynamic_modifier = {
-			modifier = ongoing_border_conflict
-		}
-		}
-		if = {
-		 limit = {
-		 has_border_war_between = {
- 		   attacker = var:border_conflict_state
-  		   defender = 180
-		 }
-		 }
-		finalize_border_war = {
-   		defender_win = yes
-  		attacker = var:border_conflict_state
-  		defender = 180
-		}
-		}
-		}
-	}
 	
 	DORF_invade_derganr= {
 		
@@ -5385,214 +5176,6 @@ DORF_retake_west_skaelinger = {
 		}
 	}
 	
-	DORF_invade_neskadr= {
-		
-		icon = generic_ignite_civil_war
-		
-		visible = {
-			OR = {
-				original_tag = SKA
-				original_tag = RMT
-				AND = {
-					original_tag = BER
-					OR = {
-						has_government = monarchy_absolute
-						has_government = puritan
-					}
-				}
-			}
-			OR = {
-				ORD = {
-					owns_state = 189
-				}
-				EOR = {
-					owns_state = 189
-				}
-			}
-			is_subject = no
-			ORD = {
-				has_country_flag = ORD_dwarves_conceded
-			}
-		}
-		
-		available = {
-			
-			ORD = {
-				has_war = yes
-			}
-			
-			hidden_trigger = {
-				ORD ={
-					has_country_flag = ORD_dwarves_conceded
-				}
-			}
-			
-			189 = {
-				custom_trigger_tooltip = {
-					tooltip = DORF_not_border_war_tt
-					hidden_trigger = {
-						has_border_war = no
-					}
-				}
-			}
-			
-			custom_trigger_tooltip = {
-				tooltip = DORF_controls_border_state_tt
-				189 = {
-					any_neighbor_state = {
-						is_controlled_by = ROOT
-						ROOT = {
-							divisions_in_border_state = {
-								size > 2
-								state = PREV
-								border_state = 189
-							}
-						}
-					}
-				}
-            }
-			
-			custom_trigger_tooltip = {
-				tooltip = DORF_not_allied_to_target_tt
-				hidden_trigger = {
-					any_other_country = {
-						has_full_control_of_state = 189
-						NOT = {
-							OR = {
-								is_in_faction_with = ROOT
-								is_subject_of = ROOT
-								has_subject = ROOT
-								has_non_aggression_pact_with = ROOT
-								has_guaranteed = ROOT
-								is_guaranteed_by = ROOT
-							}
-						}
-					}
-				}
-			}
-		}
-		
-		state_target = yes
-		
-		target_trigger = {
-			FROM = {
-				state = 189
-			}
-		}
-
-		on_map_mode = map_only
-		
-		cost = 50
-		days_remove = 35
-		
-		ai_will_do = {
-			factor = 20
-		}
-		
-		complete_effect = {
-			
-			ORD = {
-				country_event = {
-					id = ord.60
-					days = 1
-				}
-			}
-			
-			every_owned_state = {
-				limit = {
-					is_controlled_by = ROOT
-					any_neighbor_state = {
-						state = 189
-					}
-					ROOT = {
-						divisions_in_border_state = {
-							size > 2
-							state = PREV
-							border_state = 189
-						}
-					}
-				}
-				set_temp_variable = {
-					border_conflict_state = THIS
-				}
-			}
-		var:border_conflict_state = {
-		set_state_flag = ongoing_border_war_state_flag
-			add_dynamic_modifier = {
-			modifier = ongoing_border_conflict
-			}
-		}
-		189 = {
-			add_dynamic_modifier = {
-			modifier = ongoing_border_conflict
-			}
-		}
-			start_border_war = {
-				change_state_after_war = no
-				attacker = {
-					state = var:border_conflict_state
-					num_provinces = 1
-					on_win = dorf_invade.145
-					on_lose = dorf_invade.146
-					on_cancel = dorf_invade.147
-				}
-				defender = {
-					state = 189
-					num_provinces = 1
-					on_win = dorf_invade.148
-					on_lose = dorf_invade.149
-					on_cancel = dorf_invade.150
-				}
-			}
-		}
-		remove_effect = {
-		every_owned_state = {
-			limit = {
-				is_controlled_by = ROOT
-				any_neighbor_state = {
-				state = 189
-				}
-				ROOT = {
-				divisions_in_border_state = {
-					size > 2
-					state = PREV
-					border_state = 189
-					}
-				}
-			}
-		set_temp_variable = {
-					border_conflict_state = THIS
-				}
-		}
-		every_owned_state = {
-			limit = {
-				has_state_flag = ongoing_border_war_state_flag
-				}
-			clr_state_flag = ongoing_border_war_state_flag
-			remove_dynamic_modifier = {
-				modifier = ongoing_border_conflict
-				}
-			}
-		189 = {
-		remove_dynamic_modifier = {
-			modifier = ongoing_border_conflict
-		}
-		}
-		if = {
-		 limit = {
-		 has_border_war_between = {
- 		   attacker = var:border_conflict_state
-  		   defender = 189
-		 }
-		 }
-		finalize_border_war = {
-   		defender_win = yes
-  		attacker = var:border_conflict_state
-  		defender = 189
-		}
-		}
-		}
-	}
 	DORF_invade_vaether= {
 		
 		icon = generic_ignite_civil_war

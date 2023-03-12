@@ -8,13 +8,21 @@ characters={
 		}
 		country_leader={
 			desc="politics_SPW_weisz_desc"
-			ideology=monarchy_absolute_ideology
+			ideology=monarchy_constitutional_ideology
 			expire="1.1.1.1"
 			id=-1
 		}
+	}
+	SPW_matthias_jager={
+		name="Matthias Jäger"
+		portraits={
+			civilian={
+				large="gfx/leaders/SPW/Portrait_SPW_Jager.dds"
+			}
+		}
 		country_leader={
-			desc="politics_SPW_weisz_desc"
-			ideology=monarchy_constitutional_ideology
+			desc="politics_SPW_jager_desc"
+			ideology=monarchy_absolute_ideology
 			expire="1.1.1.1"
 			id=-1
 		}

@@ -1,23 +1,26 @@
+
 state={
 	id=310
 	name="STATE_310"
-	provinces={
-		8990 5031 2067 1481 8943 8891 8863 3414 8865 
+	resources={
+		mount=3.000
 	}
-	state_category = pastoral
-	manpower=3281
-	buildings_max_level_factor=1.000
-	resources = {
-		mount = 3
-	}
+
 	history={
-		victory_points = {
-			2067 2
-		}
 		owner = SPW
 		buildings = {
 			infrastructure = 1
+
 		}
 		add_core_of = SPW
-		}
+
+	}
+
+	provinces={
+		3414 5031 8863 8865 8891
+	}
+	manpower=2781
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
 }

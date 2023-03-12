@@ -72,6 +72,15 @@ recruit_character = RTH_sacrene_hinassus
 recruit_character = RTH_burthys_vrinter
 recruit_character = RTH_gerdaurin_varinnis
 recruit_character = RTH_alyssyna_lavynthis
+recruit_character = RTH_lylwelyn_thyrial
+recruit_character = RTH_islwyn_crynan
+recruit_character = RTH_thwysyld_mynirad
+recruit_character = RTH_tyndwyl_thysara
+
+activate_advisor = islwyn_crynan
+activate_advisor = thwysyld_mynirad
+activate_advisor = tyndwyl_thysara	
+
 
 add_ideas = {
 	RTH_disorganized_revolution
@@ -100,83 +109,18 @@ add_ideas = {
 		target = SKA
 		modifier = staunch_allies
 	}
+	
+	add_relation_modifier = {
+		target = SKA
+		modifier = staunch_allies_opinion_modifier
+	}
 
 	add_opinion_modifier = {
 		target = ORD
 		modifier = bitter_rivals
 	}
 	
-create_country_leader = {
-	name = "Kastyne Solverin"
-	desc = "politics_RTH_solverin_desc"
-	picture = "gfx/leaders/RTH/Portrait_RTH_Solverin.dds"
-	ideology = republic_peasant_ideology
-	traits = {
-		lack_of_charisma
-		red_general 
+	add_relation_modifier = {
+		target = ORD
+		modifier = bitter_rivals_opinion_modifier
 	}
-}
-	
-create_country_leader = {
-	name = "Alucien Derathur"
-	desc = "politics_RTH_derathur_desc"
-	picture = "gfx/leaders/RTH/Portrait_RTH_Derathur.dds"
-	ideology = republic_peasant_ideology
-	traits = {
-		hero_of_the_revolution
-	}
-}
-
-create_country_leader = {
-	name = "Farnaur Ithinis"
-	desc = "politics_RTH_itihnis_desc"
-	picture = "gfx/leaders/RTH/Portrait_RTH_Ithinis.dds"
-	ideology = puritan_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Ternise Locthorin"
-	desc = "politics_RTH_locthorin_desc"
-	picture = "gfx/leaders/RTH/Portrait_RTH_Locthorin.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Ternise Locthorin"
-	desc = "politics_RTH_locthorin_desc"
-	picture = "gfx/leaders/RTH/Portrait_RTH_Locthorin.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Sacrene Hinassus"
-	desc = "politics_RTH_hinassus_desc"
-	picture = "gfx/leaders/RTH/Portrait_RTH_Hinassus.dds"
-	ideology = theocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Burthys Vrinter"
-	desc = "politics_RTH_vrinther_desc"
-	picture = "gfx/leaders/RTH/Portrait_RTH_Vrinther.dds"
-	ideology = republic_aristocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Gerdaurin Varinnis"
-	desc = "politics_RTH_varinnis_desc"
-	picture = "gfx/leaders/RTH/Portrait_RTH_Varinnis.dds"
-	ideology = republic_merchant_ideology
-	traits = {
-	}
-}

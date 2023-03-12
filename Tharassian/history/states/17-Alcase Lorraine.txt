@@ -20,6 +20,12 @@ state={
 			forge = 3
 			workshop = 2
 			farm = 1
+			6633 = {
+				bunker = 2
+			}
+			2818 = {
+				bunker = 1
+			}
 		}
 		add_core_of = GMR
 	}

@@ -229,6 +229,12 @@ shatter_perkavland = {
 				253 = {
 					is_owned_by = PRK
 				}
+				OR = {
+					SNF = {
+						is_sphered = yes
+					}
+					is_subject_of = SNF
+				}
 			}
 			SNF = {
 				transfer_state = 253
@@ -238,13 +244,19 @@ shatter_perkavland = {
 		
 		if = {
 			limit = {
-				336 = {
+				254 = {
 					is_owned_by = PRK
+				}
+				OR = {
+					SNF = {
+						is_sphered = yes
+					}
+					is_subject_of = SNF
 				}
 			}
 			SNF = {
-				transfer_state = 336
-				add_state_core = 336
+				transfer_state = 254
+				add_state_core = 254
 			}
 		}
 		
@@ -328,35 +340,156 @@ shatter_perkavland = {
 		}
 		
 		LNK = {
-			add_state_core = 418
-			add_state_core = 629
-			add_state_core = 642
-			add_state_core = 622
-			add_state_core = 621
-			add_state_core = 630
-			
-			transfer_state = 418
-			transfer_state = 629
-			transfer_state = 642
-			transfer_state = 622
-			transfer_state = 621
-			transfer_state = 630
+			if = {
+				limit = {
+					NOT = {
+						418 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 418
+				transfer_state = 418
+			}
+			if = {
+				limit = {
+					NOT = {
+						622 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 622
+				transfer_state = 622
+			}
+			if = {
+				limit = {
+					NOT = {
+						642 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 642
+				transfer_state = 642
+			}
+			if = {
+				limit = {
+					NOT = {
+						642 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 642
+				transfer_state = 642
+			}
+			if = {
+				limit = {
+					NOT = {
+						629 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 629
+				transfer_state = 629
+			}
+			if = {
+				limit = {
+					NOT = {
+						630 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 630
+				transfer_state = 630
+			}
+			if = {
+				limit = {
+					NOT = {
+						621 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 621
+				transfer_state = 621
+			}
+			if = {
+				limit = {
+					NOT = {
+						629 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 629
+				transfer_state = 629
+			}
 			load_oob = "PRK_empty"
 		}
 		
 		KRZ = {
-			add_state_core = 416
-			add_state_core = 645
-			add_state_core = 650
-			add_state_core = 649
-			add_state_core = 631
+			if = {
+				limit = {
+					NOT = {
+						645 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 645
+				transfer_state = 645
+			}
+			if = {
+				limit = {
+					NOT = {
+						416 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 416
+				transfer_state = 416
+			}
+			if = {
+				limit = {
+					NOT = {
+						650 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 650
+				transfer_state = 650
+			}
+			if = {
+				limit = {
+					NOT = {
+						649 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 649
+				transfer_state = 649
+			}
+			if = {
+				limit = {
+					NOT = {
+						631 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 631
+				transfer_state = 631
+			}
+			
 			add_state_core = 648
 			
-			transfer_state = 416
-			transfer_state = 645
-			transfer_state = 650
-			transfer_state = 649
-			transfer_state = 631
 			transfer_state = 648
 			load_oob = "PRK_empty"
 		}
@@ -375,31 +508,81 @@ shatter_perkavland = {
 		}
 		
 		NVT = {
-			add_state_core = 420
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							420 = {
+								is_owned_by = SNF
+							}
+							420 = {
+								is_owned_by = WSZ
+							}
+						}
+					}
+				}
+				add_state_core = 420
+				transfer_state = 420
+			}
+			if = {
+				limit = {
+					NOT = {
+						334 = {
+							is_owned_by = WSZ
+						}
+					}
+				}
+				add_state_core = 334
+				transfer_state = 334
+			}
+			if = {
+				limit = {
+					NOT = {
+						355 = {
+							is_owned_by = WSZ
+						}
+					}
+				}
+				add_state_core = 355
+				transfer_state = 355
+			}
+			if = {
+				limit = {
+					NOT = {
+						354 = {
+							is_owned_by = WSZ
+						}
+					}
+				}
+				add_state_core = 354
+				transfer_state = 354
+			}
+			if = {
+				limit = {
+					NOT = {
+						329 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 329
+				transfer_state = 329
+			}
 			add_state_core = 623
 			add_state_core = 620
 			add_state_core = 619
 			add_state_core = 624
-			add_state_core = 329
 			add_state_core = 332
 			add_state_core = 336
 			add_state_core = 337
-			add_state_core = 334
-			add_state_core = 354
-			add_state_core = 355
 			
-			transfer_state = 420
 			transfer_state = 623
 			transfer_state = 620
 			transfer_state = 619
 			transfer_state = 624
-			transfer_state = 329
 			transfer_state = 332
 			transfer_state = 336
 			transfer_state = 337
-			transfer_state = 334
-			transfer_state = 354
-			transfer_state = 355
 			load_oob = "PRK_empty"
 		}
 	}

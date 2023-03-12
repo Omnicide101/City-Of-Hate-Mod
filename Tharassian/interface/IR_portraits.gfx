@@ -1,0 +1,387 @@
+spriteTypes = {
+
+	#### Mod stuff####
+	
+	### Dwarves ###
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_1
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_1.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_1_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_land_1.png
+	}
+	
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_2
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_2.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_2_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_land_2.png
+	}
+	
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_3
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_3_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_land_3.png
+	}
+	
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_4
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_4.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_4_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_land_4.png
+	}
+	
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_5
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_5.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_5_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_land_5.png
+	}
+	
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_6
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_6.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_6_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_land_6.png
+	}
+	
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_7
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_7.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_7_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_land_7.png
+	}
+	
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_8
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_8.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_army_leader_8_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_land_8.png
+	}
+	
+	spriteType = {
+		name = GFX_dwarf_generic_navy_leader_1
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_navy_1.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_navy_leader_1_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_navy_1.png
+	}
+	
+	spriteType = {
+		name = GFX_dwarf_generic_navy_leader_2
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_navy_2.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_navy_leader_2_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_navy_2.png
+	}
+	
+	spriteType = {
+		name = GFX_dwarf_generic_navy_leader_3
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_navy_3.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_navy_leader_3_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_navy_3.png
+	}
+	
+	spriteType = {
+		name = GFX_dwarf_generic_navy_leader_4
+		texturefile = gfx/leaders/Dwarves/Portrait_Dwarves_Generic_navy_4.dds
+	}
+	spriteType = {
+		name = GFX_dwarf_generic_navy_leader_4_small
+		texturefile = gfx/interface/ideas/characters/Dwarves/DORF_navy_4.png
+	}
+	
+	### UNION NORTH ###
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_1
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_1.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_1_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_land_1.png
+	}
+	
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_2
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_2.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_2_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_land_2.png
+	}
+	
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_3
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_3.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_3_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_land_3.png
+	}
+	
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_4
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_4.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_4_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_land_4.png
+	}
+	
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_5
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_5.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_5_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_land_5.png
+	}
+	
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_6
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_6.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_6_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_land_6.png
+	}
+	
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_7
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_7.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_7_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_land_7.png
+	}
+	
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_8
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_8.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_army_leader_8_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_land_8.png
+	}
+	
+	spriteType = {
+		name = GFX_union_north_generic_navy_leader_1
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_navy_1.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_navy_leader_1_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_navy_1.png
+	}
+	
+	spriteType = {
+		name = GFX_union_north_generic_navy_leader_2
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_navy_2.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_navy_leader_2_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_navy_2.png
+	}
+	
+	spriteType = {
+		name = GFX_union_north_generic_navy_leader_3
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_navy_3.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_navy_leader_3_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_navy_3.png
+	}
+	
+	spriteType = {
+		name = GFX_union_north_generic_navy_leader_4
+		texturefile = gfx/leaders/UnionNorth/Portrait_Union_North_Generic_navy_4.dds
+	}
+	spriteType = {
+		name = GFX_union_north_generic_navy_leader_4_small
+		texturefile = gfx/interface/ideas/characters/UnionNorth/Union_North_navy_4.png
+	}
+	
+	###UNION SOUTH###
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_1
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_1.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_1_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_land_1.png
+	}
+	
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_2
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_2.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_2_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_land_2.png
+	}
+	
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_3
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_3_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_land_3.png
+	}
+	
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_4
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_4.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_4_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_land_4.png
+	}
+	
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_5
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_5.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_5_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_land_5.png
+	}
+	
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_6
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_6.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_6_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_land_6.png
+	}
+	
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_7
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_7.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_7_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_land_7.png
+	}
+	
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_8
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_8.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_army_leader_8_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_land_8.png
+	}
+	
+	spriteType = {
+		name = GFX_union_south_generic_navy_leader_1
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_navy_leader_1_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_navy_1.png
+	}
+	
+	spriteType = {
+		name = GFX_union_south_generic_navy_leader_2
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_2.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_navy_leader_2_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_navy_2.png
+	}
+	
+	spriteType = {
+		name = GFX_union_south_generic_navy_leader_3
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_3.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_navy_leader_3_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_navy_3.png
+	}
+	
+	spriteType = {
+		name = GFX_union_south_generic_navy_leader_4
+		texturefile = gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_4.dds
+	}
+	spriteType = {
+		name = GFX_union_south_generic_navy_leader_4_small
+		texturefile = gfx/interface/ideas/characters/UnionSouth/Union_South_navy_4.png
+	}
+	
+	### ARK ###
+	spriteType = {
+		name = GFX_ARK_generic_army_leader_1
+		texturefile = gfx/leaders/ARK/Portrait_Arkanisturm_Generic_land_1.dds
+	}
+	spriteType = {
+		name = GFX_ARK_generic_army_leader_1_small
+		texturefile = gfx/interface/ideas/characters/ARK/ARK_land_1.png
+	}
+	
+	spriteType = {
+		name = GFX_ARK_generic_army_leader_2
+		texturefile = gfx/leaders/ARK/Portrait_Arkanisturm_Generic_land_2.dds
+	}
+	spriteType = {
+		name = GFX_ARK_generic_army_leader_2_small
+		texturefile = gfx/interface/ideas/characters/ARK/ARK_land_2.png
+	}
+	
+	spriteType = {
+		name = GFX_ARK_generic_army_leader_3
+		texturefile = gfx/leaders/ARK/Portrait_Arkanisturm_Generic_land_3.dds
+	}
+	spriteType = {
+		name = GFX_ARK_generic_army_leader_3_small
+		texturefile = gfx/interface/ideas/characters/ARK/ARK_land_3.png
+	}
+	
+	spriteType = {
+		name = GFX_ARK_generic_army_leader_4
+		texturefile = gfx/leaders/ARK/Portrait_Arkanisturm_Generic_land_4.dds
+	}
+	spriteType = {
+		name = GFX_ARK_generic_army_leader_4_small
+		texturefile = gfx/interface/ideas/characters/ARK/ARK_land_4.png
+	}
+	
+	spriteType = {
+		name = GFX_ARK_generic_navy_leader_1
+		texturefile = gfx/leaders/ARK/Portrait_Arkanisturm_Generic_navy_1.dds
+	}
+	spriteType = {
+		name = GFX_ARK_generic_navy_leader_1_small
+		texturefile = gfx/interface/ideas/characters/ARK/ARK_navy_1.png
+	}
+	
+	spriteType = {
+		name = GFX_ARK_generic_navy_leader_2
+		texturefile = gfx/leaders/ARK/Portrait_Arkanisturm_Generic_navy_2.dds
+	}
+	spriteType = {
+		name = GFX_ARK_generic_navy_leader_2_small
+		texturefile = gfx/interface/ideas/characters/ARK/ARK_navy_2.png
+	}
+	
+}

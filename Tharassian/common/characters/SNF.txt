@@ -84,8 +84,9 @@ characters={
 			}
 		}
 	}
+	
 	SNF_till_lehmkuhl={
-		name= "Till Lehmkuhl "
+		name= "Till Lehmkuhl"
 		portraits={
 			civilian={
 			small="gfx/interface/ideas/IRI_Diamantis.dds"
@@ -95,15 +96,17 @@ characters={
 			slot=political_advisor
 			idea_token=till_lehmkuhl
 			allowed ={
-				original_tag =SNF
+				original_tag = SNF
 			}
-		available={
-			has_completed_focus=SNF_improve_farming
-		}
-		traits={
-			taboo_farmer
+			traits={
+				taboo_farmer
+			}			
+			available={
+				has_completed_focus=SNF_improve_farming
+			}
 		}
 	}
+	
 	SNF_hans_werthner={
 		name="Hans Werthner"
 		portraits={
@@ -118,6 +121,7 @@ characters={
 			id=-1
 		}
 	}
+	
 	SNF_andrea_schiefer={
 		name="Andrea Schiefer"
 		portraits={
@@ -132,6 +136,7 @@ characters={
 			id=-1
 		}
 	}
+	
 	SNF_madlen_bodenheimer={
 		name="Madlen Bodenheimer"
 		portraits={
@@ -146,6 +151,7 @@ characters={
 			id=-1
 		}
 	}
+	
 	SNF_louise_straussler={
 		name="Louise Straussler"
 		portraits={
