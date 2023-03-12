@@ -1,0 +1,16 @@
+characters={
+	DEL_karstora_brightblade={
+		name="Karstora Brightblade"
+		portraits={
+			civilian={
+				large="gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_6.dds"
+			}
+		}
+		country_leader={
+			desc="politics_DEL_brightblade_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

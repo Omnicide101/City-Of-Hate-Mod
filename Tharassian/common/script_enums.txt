@@ -1,0 +1,36 @@
+script_enum_equipment_bonus_type = {
+	## Air
+
+	## Land
+	infantry_equipment
+	melee_equipment
+	ranged_equipment
+	crossbow_equipment
+	
+	support_equipment
+	
+	light_cavalry_equipment
+	heavy_cavalry_equipment
+	
+	cart_equipment
+
+	## Sea
+	
+}
+
+script_enum_operative_mission_type = {
+	build_intel_network
+	counter_intelligence
+	quiet_network
+	root_out_resistance
+	control_trade
+}
+
+script_enum_advisor_slot_type = {
+	theorist
+	high_command
+	army_chief
+	navy_chief
+	air_chief
+	political_advisor
+}
