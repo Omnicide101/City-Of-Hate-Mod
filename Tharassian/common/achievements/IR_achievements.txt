@@ -41,7 +41,7 @@ you_bastard = {
 	}
 	happened = {
 		has_country_leader = {
-			name = "Marius Pressler"
+			character = HLZ_marius_pressler
 		}
 	}
 }

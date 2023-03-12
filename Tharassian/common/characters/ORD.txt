@@ -609,4 +609,52 @@ characters={
 			}
 		}
 	}
+	#gonna be given role later
+	ORD_marinalle_nuriopan={
+		name="Marinalle Nuriopan"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_Ordoria_Wacthyne.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_wacthyne.dds"
+			}
+		}
+	}
+	#gonna be given role later
+	ORD_tasar_beijyre={
+		name="Tasar Beijyre"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_Ordoria_Wacthyne.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_wacthyne.dds"
+			}
+		}
+	}
+	#gonna be given role later
+	ORD_arun_fenmys = {
+		name="Arun Fenmys"
+		portraits = {
+			army={
+				large="gfx/leaders/ORD/Portrait_ORD_Rohys.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_rohyis.dds"
+			}
+		}
+	}
+	#gonna be given role later
+	ORD_taenaran_sylquinal = {
+		name="Taenaran Sylquinal"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_gylar.dds"
+			}
+		}
+	}
+	#gonna be given role later
+	ORD_namys_yesydark = {
+		name="Namys Yesydark"
+		portraits = {
+			army={
+				small="gfx/interface/ideas/characters/ORD/ord_land_6.dds"
+			}
+		}
+	}
 }
