@@ -2,6 +2,16 @@ spriteTypes = {
 
 	#### Mod-specific goal icons
 	SpriteType = {
+	name = "GFX_focus_ORD_erase_derathur"
+	texturefile = "gfx/interface/goals/focus_ORD_erase_derathur.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ord_farnaur_ithinis"
+	texturefile = "gfx/interface/goals/focus_ORD_farnaur_ithinis.dds"
+	}
+	
+	SpriteType = {
 	name = "GFX_focus_ord_league"
 	texturefile = "gfx/interface/goals/focus_ord_league.dds"
 	}

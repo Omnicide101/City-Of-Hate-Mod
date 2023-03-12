@@ -12,12 +12,41 @@ on_actions = {
 	#	}
 	#}
 	
+	#Add a small chance for a general to be captured on defeat
+	on_army_leader_lost_combat = {
+		effect = {
+			#random = {
+			#	chance = 3
+				FROM = {
+					country_event = random.15
+				}
+				ROOT = {
+					add_trait = {
+						character = THIS
+						trait = captured_unit_leader
+					}
+					#Set nationality so we know who to send relevant events back to
+					set_variable = {
+						original_nationality = FROM.id
+					}
+				}
+			#}
+		}
+	}
+	
 	#Give heads up about Adventurers (Operatives)
 	#Should only fire once
 	on_operative_recruited = {
 		effect = {
-			FROM = {
-				country_event = ai.2
+			if = {
+				limit = {
+					FROM = {
+						is_ai = no
+					}
+				}
+				FROM = {
+					country_event = ai.2
+				}
 			}
 		}
 	}
@@ -28,31 +57,20 @@ on_actions = {
 		effect = {
 			THIS = {
 				random_list = {
-					
 					45 = {
-						add_trait = {
-							trait = warrior_class
-						}
+						add_unit_leader_trait = warrior_class
 					}
 					15 = {
-						add_trait = {
-							trait = barbarian_class
-						}
+						add_unit_leader_trait = barbarian_class
 					}
 					10 = {
-						add_trait = {
-							trait = priest_class
-						}
+						add_unit_leader_trait = priest_class
 					}
 					25 = {
-						add_trait = {
-							trait = thief_class
-						}
+						add_unit_leader_trait = thief_class
 					}
 					5 = {
-						add_trait = {
-							trait = wizard_class
-						}
+						add_unit_leader_trait = wizard_class
 					}
 				}
 			}
@@ -205,6 +223,7 @@ on_actions = {
 						AND = {
 							is_major = yes
 							NOT = {
+								tag = RTH #Needs to fight Ordoria
 								tag = STA #Needs a leg up against the Union
 								tag = ORD #Fighting everyone means they need more dudes
 								tag = BLD #Not enough infrastructure for a large army
@@ -217,6 +236,7 @@ on_actions = {
 						AND = {
 							is_major = no
 							NOT = {
+								tag = RTH
 								tag = STA
 								tag = ORD
 								tag = BLD
@@ -225,6 +245,10 @@ on_actions = {
 								tag = NBI
 							}
 							num_divisions > 23
+						}
+						AND = {
+							tag = RTH
+							num_divisions > 47
 						}
 						AND = {
 							tag = STA
@@ -262,7 +286,8 @@ on_actions = {
 					OR = {
 						AND = {
 							is_major = yes
-							NOT = {
+							NOT = {	
+								tag = RTH #Needs to fight Ordoria
 								tag = STA #Needs a leg up against the Union
 								tag = ORD #Fighting everyone means they need more dudes
 								tag = BLD #Not enough infrastructure for a large army
@@ -275,6 +300,7 @@ on_actions = {
 						AND = {
 							is_major = no
 							NOT = {
+								tag = RTH
 								tag = STA
 								tag = ORD
 								tag = BLD
@@ -283,6 +309,10 @@ on_actions = {
 								tag = NBI
 							}
 							num_divisions < 24
+						}
+						AND = {
+							tag = RTH
+							num_divisions < 48
 						}
 						AND = {
 							tag = STA
@@ -333,7 +363,7 @@ on_actions = {
 	}
 	
 	#Deploy the Drakeskins
-	on_startup = {	
+	on_startup = {
 		effect = {
 			100 = {
 				add_dynamic_modifier = {
@@ -732,7 +762,7 @@ on_actions = {
 		}
 	}
 
-		#remove state flag from tribal territories that don't belong to PRK anymore
+	#remove state flag from tribal territories that don't belong to PRK anymore
 	on_state_owner_changed = {
 	 effect = {
 	   every_state = {
@@ -760,6 +790,7 @@ on_actions = {
 	  }
 	 }
 	}
+	
 	#Sets up the tribal territories
 	on_startup = {
 		effect = {
@@ -880,11 +911,11 @@ on_actions = {
 	on_declare_war = {
 		effect = {
 			ROOT = {
-				country_event = {
-					id = ir.political.6
-					days = 1000
-					random = 1000
-				}
+				#country_event = {
+				#	id = ir.political.6 #Nonexistent event. Was this the war exhaustion mechanic?
+				#	days = 1000
+				#	random = 1000
+				#}
 				country_event = {
 					id = ir.political.2
 					days = 1
@@ -894,17 +925,17 @@ on_actions = {
 					days = 3
 				}
 			}
-			FROM = {
-				country_event = { id = ir.political.6 days = 1000 random = 1000 }
-			}
+			#FROM = {
+			#	country_event = { id = ir.political.6 days = 1000 random = 1000 }
+			#}
 		}
 	}
 	
 	on_war = {
 		effect = {
-			ROOT = {
-				country_event = { id = ir.political.6 days = 1000 random = 1000 }
-			}
+			#ROOT = {
+			#	country_event = { id = ir.political.6 days = 1000 random = 1000 }
+			#}
 		}
 
 	}

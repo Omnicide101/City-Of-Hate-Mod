@@ -466,6 +466,7 @@ characters={
 			removal_cost = 150
 			slot = political_advisor
 			idea_token = alstora_holynthor
+			desc = ORD_alstora_holynthor_desc
 			allowed = {
 				tag = ORD
 			}

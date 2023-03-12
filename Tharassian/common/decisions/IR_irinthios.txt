@@ -3063,8 +3063,19 @@ GENERIC_war_exhaustion_category = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				NOT = {
-					controls_state = 374
+				OR = {
+					NOT = {
+						controls_state = 398
+					}
+					AND = {
+						any_other_country = {
+							NOT = {
+								tag = TLA
+							}
+							has_war_with = IRI
+						}
+						surrender_progress > 0.1
+					}
 				}
 				add = 2
 			}

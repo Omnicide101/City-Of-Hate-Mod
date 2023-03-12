@@ -73,6 +73,11 @@ add_ideas = {
 		target = IRI
 		modifier = bitter_rivals
 	}
+		
+	add_relation_modifier = {
+		target = IRI
+		modifier = bitter_rivals_opinion_modifier
+	}
 	
 create_country_leader = {
 	name = "Gluthor Hurin"

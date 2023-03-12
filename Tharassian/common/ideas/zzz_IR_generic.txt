@@ -1034,5 +1034,22 @@ ideas = {
 				ai_join_ally_desire_factor = -1250
 			}
 		}
+		
+		GENERIC_ransomed_prisoner = {
+		
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_economic_increase
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
 	}
 }

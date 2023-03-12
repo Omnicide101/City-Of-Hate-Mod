@@ -1,0 +1,22 @@
+state={
+	id=1288
+	name="STATE_1288"
+	provinces={
+		2872 3692 3697 5556 9107 
+	}
+	
+	history={
+		owner = SPW
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = SPW
+
+	}
+	
+	manpower=3138
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

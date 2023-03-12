@@ -1,13 +1,19 @@
+
 state={
 	id=461
 	name="STATE_461"
-	provinces={
-		5609 6182 6189 6205 6213
-	}
-	state_category = rural manpower = 1
-	buildings_max_level_factor=1.000
+
 	history={
 		owner = XXX
 		add_core_of = XXX
+
 	}
+
+	provinces={
+		4186 5609 6170 6182 6189 6204 6205 6213 
+	}
+	manpower=1
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
 }

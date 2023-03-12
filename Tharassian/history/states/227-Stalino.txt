@@ -12,7 +12,7 @@ state={
 		steel = 3
 	}
 	history={
-		victory_points = { 9285 49 }
+		victory_points = { 9285 54 }
 		owner = SVT
 		buildings = {
 			infrastructure = 2	

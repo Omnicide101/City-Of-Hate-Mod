@@ -1558,6 +1558,34 @@ ideas = {
 			removal_cost = -1
 		}
 		
+		generic_religion = {
+			allowed = {
+				OR = {
+					tag = ATH
+					tag = DEL
+				}
+			}
+			
+			available = {
+				OR = {
+					tag = ATH
+					tag = DEL
+				}
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_temple
+			
+			traits = {
+				generic_religion_bonuses
+			}
+			
+			removal_cost = -1
+		}
+		
 		trans_rights_religion = {
 			
 			allowed = {

@@ -283,56 +283,6 @@ ideas = {
 		}
 	}
 	
-	army_chief = {
-		
-		generic_knightly_paragon = {
-			
-			picture = generic_knightly_paragon
-			
-			allowed = {
-				always = yes
-			}
-			
-			available = {
-				OR = {
-					has_government = monarchy_absolute
-					has_government = monarchy_constitutional
-					has_government = republic_aristocrat
-				}
-			}
-			
-			traits = {
-				gallant_paladin
-			}
-		}
-		
-		generic_folk_hero = {
-		
-			picture = generic_folk_hero
-			
-			allowed = {
-				always = yes
-			}
-			
-			traits = {
-				heroic_commoner
-			}
-		}
-		
-		generic_veteran = {
-		
-			picture = generic_veteran
-			
-			allowed = {
-				always = yes
-			}
-			
-			traits = {
-				grizzled_warrior
-			}
-		}
-	}
-	
 	navy_chief = {
 		
 		generic_privateer = {

@@ -93,6 +93,14 @@ opinion_modifiers = {
 		value = -50
 	}
 	
+	executed_prisoner = {
+		value = -25
+	}
+	
+	released_prisoner = {
+		value = 35
+	}
+	
 	UNG_heavy_concessions = {
 		value = -50
 	}

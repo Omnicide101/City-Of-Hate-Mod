@@ -2156,66 +2156,6 @@ SKA_social_war_decisions = {
 		}
 
 	}
-
-	SKA_utilize_paramilitaries = {
-
-		icon = generic_political_discourse
-
-		ai_will_do = {
-			factor = 5	
-			modifier = {
-				NOT = {
-					OR = {
-						has_game_rule = {
-							rule = SKA_game_plan
-							option = SKA_SOLTRUIST
-						}
-						has_country_flag = SKA_ai_soltruist_path_flag
-						has_game_rule = {
-							rule = SKA_game_plan
-							option = SKA_BROTHERHOOD
-						}
-						has_country_flag = SKA_ai_brotherhood_path_flag
-					}
-				}
-				factor = 0
-			}
-			modifier = {
-				OR = {
-					RTH = {
-						OR = {
-							surrender_progress > 0.5
-							exists = no
-							has_capitulated = yes
-						}
-					}
-					surrender_progress > 0.1
-				}
-			}
-		}
-
-		visible = {
-			OR = {
-				has_government = monarchy_constitutional
-				has_government = republic_merchant
-			}
-			NOT = {
-				has_idea = SKA_paramilitary_support
-			}
-		}
-
-		cost = 50
-
-		fire_only_once = yes
-
-		complete_effect = {
-			add_ideas = SKA_paramilitary_support
-			unlock_decision_tooltip = SKA_hire_soltruists
-			unlock_decision_tooltip = SKA_hire_equalists
-			unlock_decision_tooltip = SKA_hire_iron_bloods
-		}
-
-	}
 	
 	SKA_social_war_defeat_elves = {
 
@@ -2307,10 +2247,6 @@ SKA_social_war_decisions = {
 				}
 				factor = 0
 			}
-		}
-
-		visible = {
-			country_exists = RTH
 		}
 
 		days_re_enable = 240

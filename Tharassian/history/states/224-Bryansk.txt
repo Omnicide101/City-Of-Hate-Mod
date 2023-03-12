@@ -5,14 +5,14 @@ state={
 		1073 1754 2243 4008
 	}
 	state_category = city
-	manpower=709923
+	manpower=309923
 	buildings_max_level_factor=1.000
 	resources = {
 		steel = 1
 		mount = 5
 	}
 	history={
-		victory_points = { 1754 51}
+		victory_points = { 1754 31}
 		owner = SNF
 		buildings = {
 			infrastructure = 2	

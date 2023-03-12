@@ -1,3 +1,63 @@
+# Free prisoner
+free_prisoner = {
+	random_character = {
+		limit = {
+			is_prisoner = yes
+		}
+		custom_effect_tooltip = released_prisoner_tt
+		hidden_effect = {
+			remove_trait = {
+				character = THIS
+				trait = captured_unit_leader_prisoner_trait
+			}
+			remove_trait = {
+				character = THIS
+				trait = captured_party_leader_prisoner_trait
+			}
+			remove_trait = {
+				character = THIS
+				trait = captured_advisor_prisoner_trait
+			}
+			remove_trait = {
+				character = THIS
+				trait = captured_unit_leader
+			}
+			remove_advisor_role = {
+			  slot = prisoners_guests
+			}
+		}
+		set_nationality = var:original_nationality
+	}
+}
+
+# Free character (for prisoners that have additional trigger requirements beyond being imprisoned)
+free_character = {
+	custom_effect_tooltip = released_prisoner_tt
+	hidden_effect = {
+		remove_trait = {
+			character = THIS
+			trait = captured_unit_leader_prisoner_trait
+		}
+		remove_trait = {
+			character = THIS
+			trait = captured_party_leader_prisoner_trait
+		}
+		remove_trait = {
+			character = THIS
+			trait = captured_advisor_prisoner_trait
+		}
+		remove_trait = {
+			character = THIS
+			trait = captured_unit_leader
+		}
+		remove_advisor_role = {
+		  character = THIS
+		  slot = prisoners_guests
+		}
+	}
+	set_nationality = var:original_nationality
+}
+
 # Damage food supplies
 destroy_food = {
 	if = {

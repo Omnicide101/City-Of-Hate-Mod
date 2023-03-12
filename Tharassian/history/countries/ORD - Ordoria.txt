@@ -119,6 +119,11 @@ set_popularities = {
 		modifier = bitter_rivals
 	}
 	
+	add_relation_modifier = {
+		target = RTH
+		modifier = bitter_rivals_opinion_modifier
+	}
+	
 	add_ideas = {
 		autarkic_isolationism
 		ORD_firstborn_state

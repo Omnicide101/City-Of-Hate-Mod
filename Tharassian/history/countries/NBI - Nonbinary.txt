@@ -68,49 +68,9 @@ add_ideas = {
 	NBI_be_trans_throw_hands
 }
 
-create_country_leader = {
-	name = "Committee of Nonbinary Rights"
-	desc = "politics_NBI_nonbinary_desc"
-	picture = "gfx/leaders/NBI/Portrait_NBI_Nonbinary.dds"
-	ideology = republic_peasant_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Committee of Trans Rights"
-	desc = "politics_NBI_trans_desc"
-	picture = "gfx/leaders/NBI/Portrait_NBI_Trans.dds"
-	ideology = republic_merchant_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "None"
-	ideology = monarchy_absolute_ideology
-}
-
-create_country_leader = {
-	name = "None"
-	ideology = monarchy_constitutional_ideology
-}
-
-create_country_leader = {
-	name = "None"
-	ideology = republic_aristocrat_ideology
-}
-
-
-create_country_leader = {
-	name = "None"
-	ideology = theocrat_ideology
-}
-
-create_country_leader = {
-	name = "None"
-	ideology = puritan_ideology
-}
+recruit_character = NBI_committee_enby
+recruit_character = NBI_committee_trans
+recruit_character = NBI_none
 
 create_field_marshal = {
 	name = "'Gnarly' Carly"

@@ -265,6 +265,18 @@ UNG_perkav_census_decisions = {
 	}
 }
 
+FPT_aid_seventh_campaign = {
+	allowed = {
+		is_og_freiprinz = yes
+	}
+	
+	visible = {
+		UNG = {
+			has_country_flag = UNG_helping_seventh_campaign
+		}
+	}
+}
+
 FPT_kriegsspiele_preparations = {
 	
 	icon = GFX_decision_category_kriegsspiele
@@ -426,7 +438,9 @@ SNF_invade_perkav = {
 		OR = {
 			AND = {
 				tag = SNF
-				has_country_flag = SNF_kalaster_flag
+				OR = {
+					has_country_flag = SNF_kalaster_flag
+				}
 			}
 			AND = {
 				tag = WSZ

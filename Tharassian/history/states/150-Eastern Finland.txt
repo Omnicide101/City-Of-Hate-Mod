@@ -1,25 +1,30 @@
+
 state={
 	id=150
 	name="STATE_150"
-	provinces={
-		7217 4222 5400 7310 3794
+	resources={
+		food=2.000
 	}
-	state_category = pastoral
-	manpower=2034
-	buildings_max_level_factor=1.000
-	resources = {
-		food = 2
-	}
+
 	history={
 		victory_points = {
-			4222 1
+			4222 1 
 		}
 		owner = SKA
 		buildings = {
 			infrastructure = 1
 			farm = 1
+
 		}
 		add_core_of = SKA
 
 	}
+
+	provinces={
+		4222 5400 7217 7310 
+	}
+	manpower=2034
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
 }

@@ -1,5 +1,31 @@
 ###General Scripted Triggers
 
+# checks to see if country has a prisoner
+has_prisoner = {
+	any_character = {
+		custom_trigger_tooltip = {
+		tooltip = is_prisoner_tt
+			OR = {
+				has_trait = captured_unit_leader_prisoner_trait
+				has_trait = captured_party_leader_prisoner_trait
+				has_trait = captured_advisor_prisoner_trait
+			}
+		}
+	}
+}
+
+# checks to see if character is a prisoner
+is_prisoner = {
+	custom_trigger_tooltip = {
+	tooltip = is_prisoner_tt
+		OR = {
+			has_trait = captured_unit_leader_prisoner_trait
+			has_trait = captured_party_leader_prisoner_trait
+			has_trait = captured_advisor_prisoner_trait
+		}
+	}
+}
+
 # checks for loyalty to Adalina
 is_loyal_to_union = {
 	is_subject_of = UNG

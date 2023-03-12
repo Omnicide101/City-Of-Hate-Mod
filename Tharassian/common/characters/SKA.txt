@@ -9,14 +9,46 @@ characters={
 		country_leader={
 			desc="politics_SKA_hellirfast_desc"
 			ideology=monarchy_absolute_ideology
+			traits={
+				first_oberjarl_elect
+				last_victim_miners_blight
+			}
 			expire="1.1.1.1"
 			id=-1
 		}
 		country_leader={
 			desc="politics_SKA_hellirfast_desc"
 			ideology=monarchy_constitutional_ideology
+			traits={
+				first_oberjarl_elect
+				last_victim_miners_blight
+			}
 			expire="1.1.1.1"
 			id=-1
+		}
+	}
+	SKA_reev_hellirfast={
+		name = "Reev Hellirfast"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Hellirfast_ii.dds"
+			}
+		}
+	}
+	SKA_petar_grimvald={
+		name = "Petar Grimvald"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Grimvald.dds"
+			}
+		}
+	}
+	SKA_kytos_palmkevist={
+		name = "Kytos Palmekvist"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Palmkevist.dds"
+			}
 		}
 	}
 	SKA_yngvild_rettrdaga={

@@ -47,7 +47,11 @@ rthaur_buddies = {
 	enable = {
 		original_tag = SKA
 		NOT = {
-			has_government = puritan
+			OR = {
+				has_government = puritan
+				has_completed_focus = SKA_cut_ties_with_rthauriaur
+				has_completed_focus = SKA_end_alliance_convenience
+			}
 		}
 		country_exists = RTH
 		has_opinion_modifier = staunch_allies

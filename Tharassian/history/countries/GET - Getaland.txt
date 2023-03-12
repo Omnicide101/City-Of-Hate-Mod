@@ -63,6 +63,11 @@ add_opinion_modifier = {
 	modifier = bitter_rivals
 }
 
+add_relation_modifier = {
+	target = DIA
+	modifier = bitter_rivals_opinion_modifier
+}
+
 create_country_leader = {
 	name = "Halgryn Thrusr"
 	desc = "politics_GET_thrusr_desc"

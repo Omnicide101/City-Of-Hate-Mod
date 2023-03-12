@@ -557,3 +557,39 @@ country_event = { #Idle Speculation
 		}
 	}
 }
+
+country_event = { #Job Security
+	id = ord_lore.25
+	title = ord_lore.25.t
+	desc = ord_lore.25.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Spoilers bro
+		name = ord_lore.25.a
+	}
+}
+
+country_event = { #Derathur's head on a pike
+	id = ord_lore.26
+	title = ord_lore.26.t
+	desc = ord_lore.26.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Spoilers bro
+		name = ord_lore.26.a
+		
+		EOR = {
+			add_stability = -0.01
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.06
+			}
+		}
+	}
+}

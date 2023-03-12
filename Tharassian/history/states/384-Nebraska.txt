@@ -1,22 +1,30 @@
+
 state={
 	id=384
 	name="STATE_384"
-	provinces={
-		2836 2839 3602 4783 4997 5927 5951 5969 5974 5979 6024
+	resources={
+		steel=57.000
 	}
-	state_category = large_city
-	manpower=502449
-	buildings_max_level_factor=1.000
-	resources = {
-		steel = 57
-	}
+
 	history={
-		victory_points = { 5974 30 }
+		victory_points = {
+			5974 30 
+		}
 		owner = RMT
 		buildings = {
 			infrastructure = 3
 			forge = 5
+
 		}
 		add_core_of = RMT
+
 	}
+
+	provinces={
+		5974 5951
+	}
+	manpower=502449
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
 }

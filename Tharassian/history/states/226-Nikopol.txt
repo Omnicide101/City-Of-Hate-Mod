@@ -4,8 +4,8 @@ state={
 	provinces={
 		2708 9005 9061 9028 9085 9056
 	}
-	state_category = city
-	manpower=592551
+	state_category = large_town
+	manpower=120984
 	buildings_max_level_factor=1.000
 	resources = {
 		steel = 2

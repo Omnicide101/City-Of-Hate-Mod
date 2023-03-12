@@ -4,12 +4,25 @@ state={
 	provinces={
 		1071 8414 8447 8488 
 	}
-	manpower=1
-	state_category=pastoral
-	history = {
-		owner = XXX
-		add_core_of = XXX
-	}
+	state_category = rural
+	manpower=1262
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	history={
+		owner = ATH
+		buildings = {
+			infrastructure = 5
+			forge = 2
+			8447 = {
+				bunker = 2
+			}
+			8488 = {
+				bunker = 2
+			}
+			1071 = {
+				bunker = 2
+			}
+		}
+		add_core_of = ATH
+
+	}
 }

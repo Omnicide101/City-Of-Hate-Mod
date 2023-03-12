@@ -10,42 +10,6 @@
 # protect
 # influence
 
-ungerdaler_buddies = {
-	enable = {
-		original_tag = ORD
-		has_country_flag = ORD_pact_with_union
-		NOT = {
-			has_completed_focus = ORD_break_pact
-		}
-	}
-
-	abort_when_not_enabled = yes
-	
-	ai_strategy = {
-		type = befriend
-		id = "UNG"
-		value = 200
-	}
-}
-
-realm_buddies = {
-	enable = {
-		original_tag = ORD
-		has_country_flag = ORD_pact_with_realm
-		NOT = {
-			has_completed_focus = ORD_break_pact
-		}
-	}
-
-	abort_when_not_enabled = yes
-	
-	ai_strategy = {
-		type = befriend
-		id = "GMR"
-		value = 200
-	}
-}
-
 defend_heartlands = {
 	enable = {
 		original_tag = ORD
@@ -92,11 +56,11 @@ not_ready_for_wars = {
 			country_exists = GMR
 		}
 		NOT = {
-			has_completed_focus = ORD_united_once_more
+			has_completed_focus = ORD_ordoria_reunited
 		}
 	}
 	abort = {
-		has_completed_focus = ORD_united_once_more
+		has_completed_focus = ORD_ordoria_reunited
 	}
 	ai_strategy = {
 		type = ignore

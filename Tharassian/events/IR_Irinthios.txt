@@ -649,6 +649,10 @@ country_event = {# Tlarthingians getting the land exchange offer
 		target = TLA
 		modifier = bitter_rivals
 	}
+	remove_relation_modifier = {
+		target = TLA
+		modifier = bitter_rivals_opinion_modifier
+	}
 	country_event = {
 		id = iri.16
 		days = 1
@@ -663,6 +667,10 @@ country_event = {# Tlarthingians getting the land exchange offer
 	remove_opinion_modifier = {
 		target = IRI
 		modifier = bitter_rivals
+	}
+	remove_relation_modifier = {
+		target = IRI
+		modifier = bitter_rivals_opinion_modifier
 	}
 	hidden_effect = {
 		set_global_flag = IRI_Lizardmen_Accepted_Deal
@@ -693,6 +701,10 @@ country_event = {# Tlarthingians getting the land exchange offer
 		target = TLA
 		modifier = bitter_rivals
 	}
+	remove_relation_modifier = {
+		target = TLA
+		modifier = bitter_rivals_opinion_modifier
+	}
 	} 
 	remove_state_core = 773
 	remove_state_core = 377
@@ -703,6 +715,10 @@ country_event = {# Tlarthingians getting the land exchange offer
 	remove_opinion_modifier = {
 		target = IRI
 		modifier = bitter_rivals
+	}
+	remove_relation_modifier = {
+		target = IRI
+		modifier = bitter_rivals_opinion_modifier
 	}
 	hidden_effect = {
 		set_global_flag = IRI_Lizardmen_Accepted_Deal
@@ -1245,7 +1261,6 @@ country_event = {
 	desc = iri.35.d
 	picture = GFX_report_event_irinthios_sanctions
 	
-	fire_only_once = yes
 	is_triggered_only = yes
 	
 	trigger = {
@@ -1814,6 +1829,13 @@ country_event = {# TLA surrenders northern half
 		name = iri.54.a
 		ai_chance = {
 			factor = 8
+			modifier = {
+				factor = 0
+				strength_ratio = {
+					tag = TLA
+					ratio > 1.5
+				}
+			}
 		}
 		white_peace = TLA
 		transfer_state = 773
@@ -1859,8 +1881,19 @@ country_event = {# TLA surrenders northern half
 			factor = 2
 			modifier = {
 				factor = 0
-				NOT = {
-					controls_state = 374
+				OR = {
+					NOT = {
+						controls_state = 398
+					}
+					AND = {
+						any_other_country = {
+							NOT = {
+								tag = TLA
+							}
+							has_war_with = IRI
+						}
+						surrender_progress > 0.1
+					}
 				}
 			}
 		}

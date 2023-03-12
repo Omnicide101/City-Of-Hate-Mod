@@ -101,7 +101,6 @@ recruit_character = ARK_bhalus_ianin
 recruit_character = ARK_althwyne_serigan
 recruit_character = ARK_hautlir_polthore
 
-
 add_ideas = {
 	human_country
 	arkanimism_religion
@@ -124,4 +123,9 @@ give_military_access = WSZ
 add_opinion_modifier = {
 	target = SVT
 	modifier = bitter_rivals
+}
+
+add_relation_modifier = {
+	target = SVT
+	modifier = bitter_rivals_opinion_modifier
 }

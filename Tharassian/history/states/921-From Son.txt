@@ -6,7 +6,6 @@ state={
 		152 879 2380 3423 8047 
 	}
 	manpower=4989
-	victory_points = { 152 2 }
 	buildings_max_level_factor=1.000
 	local_supplies= 5
 
@@ -15,8 +14,9 @@ state={
 	}
     
 	history = {
-		owner = SAN
-		add_core_of = SAN
+		owner  = XXX
+		victory_points = { 152 2 }
+		add_core_of  = XXX
 		buildings = {
 			infrastructure = 2
 			farm = 1

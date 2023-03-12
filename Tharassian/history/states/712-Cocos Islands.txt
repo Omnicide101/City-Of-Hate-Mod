@@ -1,20 +1,29 @@
+
 state={
 	id=712
 	name="STATE_712"
-	provinces={
-		3575 441 2926
+	resources={
+		steel=4.000
 	}
-	state_category = rural
-	manpower=3309
-	buildings_max_level_factor=1.000
-	resources = {
-		steel = 4
-	}
+
 	history={
+		victory_points = {
+			5179 8 
+		}
 		owner = RMT
 		buildings = {
 			infrastructure = 2
+			forge = 3
 		}
 		add_core_of = RMT
+
 	}
+
+	provinces={
+		441 5179 6437 
+	}
+	manpower=14292
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
 }

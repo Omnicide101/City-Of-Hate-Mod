@@ -741,6 +741,8 @@ technologies = {
 		research_cost = 1
 		start_year = 613
 		
+		land_reinforce_rate = 0.01
+		
 		category_recon = {
 			recon = 0.5
 		}
@@ -771,6 +773,8 @@ technologies = {
 		
 		army_speed_factor = 0.02
 		
+		land_reinforce_rate = 0.01
+		
 		path = {
             leads_to_tech = cartography
             research_cost_coeff = 1
@@ -796,6 +800,8 @@ technologies = {
 		start_year = 639
 		
 		planning_speed = 0.03
+		
+		land_reinforce_rate = 0.02
 		
 		folder = {
 			name = landcombat_folder

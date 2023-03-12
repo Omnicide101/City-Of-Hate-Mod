@@ -302,9 +302,13 @@ country_event = { #Skaelinger Abandons Us
 			relation = military_access
 			active = no
 		}	
-	remove_opinion_modifier = {
+		remove_opinion_modifier = {
 			target = SKA
 			modifier = staunch_allies
+		}
+		remove_relation_modifier = {
+			target = SKA
+			modifier = staunch_allies_opinion_modifier
 		}
 	}
 }
@@ -567,6 +571,10 @@ country_event = {#Second Rthaur Revolution - Skaelinger Joins!
 			add_opinion_modifier = {
 				target = SKA
 				modifier = staunch_allies
+			}
+			add_relation_modifier = {
+				target = SKA
+				modifier = staunch_allies_opinion_modifier
 			}
 		}
 		ORD = {
@@ -971,6 +979,10 @@ country_event = { # SKA wants the Khorinor mountains back now
 			remove_opinion_modifier = {
 				target = RTH
 				modifier = staunch_allies
+			}
+			remove_relation_modifier = {
+				target = SKA
+				modifier = staunch_allies_opinion_modifier
 			}
 			country_event = { id = rth.26 hours = 3 }
 		}
