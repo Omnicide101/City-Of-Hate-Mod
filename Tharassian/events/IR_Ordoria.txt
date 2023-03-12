@@ -1,4 +1,4 @@
-﻿### ORDORIAN EVENTS
+﻿	### ORDORIAN EVENTS
 
 add_namespace = ord
 
@@ -4181,6 +4181,465 @@ country_event = {#Selecting a new governor
 		custom_effect_tooltip = ORD_empower_trads_1
 		add_to_variable = {
 			ORD_traditionalists_influence = 1
+		}
+	}
+}
+
+country_event = {#lothinnys losing his oath
+	id = ord.86
+	title = ord.86.t
+	desc = ord.86.d
+	
+	is_triggered_only = yes
+	
+	option = {#He thought sophist influence was for one day only!!! He MAD!!
+		name = ord.86.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		
+		custom_effect_tooltip = ORD_disempower_trads_3
+		subtract_from_variable = {
+			ORD_traditionalists_influence = 3
+		}
+	}
+}
+
+country_event = {#faithful take control of the oath
+	id = ord.87
+	title = ord.87.t
+	desc = ord.87.d
+	
+	is_triggered_only = yes
+	
+	option = {#
+		name = ord.87.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		
+		custom_effect_tooltip = ORD_make_trads_powerless
+		set_variable = {
+			ORD_traditionalists_influence = 0
+		}
+		hidden_effect = {
+			country_event = { id = ord.88 days = 2 random = 12 }
+		}
+	}
+}
+
+country_event = {#mom! Vernythe is talking to himself again!
+	id = ord.88
+	title = ord.88.t
+	desc = ord.88.d
+	
+	is_triggered_only = yes
+	
+	option = {#put lothinnys out of his misery
+		name = ord.88.b
+		
+		ai_chance = {
+			factor = 1
+		}
+		remove_advisor_role = {
+			character = ORD_isvenith_lothinnys
+			slot = political_advisor
+		}
+		add_advisor_role = {
+			character = ORD_isvenith_lothinnys
+			advisor = {
+				slot = prisoners_guests
+				cost = 25
+				available = {
+					has_government = theocrat
+				}
+				traits = {
+					steward_house_arrest
+				}
+			}
+		}
+		add_political_power = -50
+		add_popularity = {
+			ideology = puritan
+			popularity = -0.1
+		}
+	}
+}
+
+country_event = {#inquisition finds moderates trying to get non-pure elves out
+	id = ord.89
+	title = ord.89.t
+	desc = ord.89.d
+	
+	is_triggered_only = yes
+	
+	option = {#arrest them all
+		name = ord.89.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		custom_effect_tooltip = ORD_disempower_mods_1
+		subtract_from_variable = {
+			ORD_moderates_influence = 1
+		}
+	}
+	option = {#send them to labor camps
+		name = ord.89.b
+		
+		ai_chance = {
+			factor = 1
+		}
+		custom_effect_tooltip = ORD_disempower_mods_2
+		subtract_from_variable = {
+			ORD_moderates_influence = 2
+		}
+		custom_effect_tooltip = ORD_displease_mods_4
+		subtract_from_variable = {
+			ORD_moderates_loyalty = 4
+		}
+	}
+}
+
+country_event = {#varnythethte deciding what to do about the noble supporters of the moderates
+	id = ord.90
+	title = ord.90.t
+	desc = ord.90.d
+	
+	is_triggered_only = yes
+	
+	option = {#devote the inquisition on them
+		name = ord.90.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = ORD_devoted_inquisition
+		add_timed_idea = {
+			idea = ORD_inquisition_investigating_nobles
+			days = 35
+		}
+	}
+	option = {#get supportive nobles to do their own investigation
+		name = ord.90.b
+		
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = ORD_tolerate_nobles
+	}
+}
+
+country_event = {#raiding sus moderate nobles
+	id = ord.91
+	title = ord.91.t
+	desc = ord.91.d
+	
+	is_triggered_only = yes
+	
+	option = {#arrest them
+		name = ord.91.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		custom_effect_tooltip = ORD_disempower_mods_1
+		subtract_from_variable = {
+			ORD_moderates_influence = 1
+		}
+		#make 2 advisors for prisoners, yum!
+		add_advisor_role = {
+			character = ORD_tasar_beijyre
+			advisor = {
+				slot = prisoners_guests
+				cost = 25
+				available = {
+					has_government = theocrat
+				}
+				traits = {
+					state_seized_assets
+				}
+			}
+		}
+		add_advisor_role = {
+			character = ORD_alwyen
+			advisor = {
+				slot = prisoners_guests
+				cost = 25
+				available = {
+					has_government = theocrat
+				}
+				traits = {
+					former_optimist
+				}
+			}
+		}
+	}
+	option = {#exile them
+		name = ord.91.b
+		
+		ai_chance = {
+			factor = 1
+		}
+		custom_effect_tooltip = ORD_disempower_mods_3
+		subtract_from_variable = {
+			ORD_moderates_influence = 3
+		}
+		#weakens the moderates, if the ungerdaler have not chosen the elf internment act, they get an advisor
+		hidden_effect = {
+			set_nationality = {
+				target_country = UNG
+				character = ORD_tasar_beijyre
+			}
+			UNG = {
+				country_event = { id = ord.92 days = 5 random = 240 }
+			}
+		}
+	}
+	option = {#work camps
+		name = ord.91.c
+		
+		ai_chance = {
+			factor = 1
+		}
+		custom_effect_tooltip = ORD_disempower_mods_1
+			subtract_from_variable = {
+				ORD_moderates_influence = 1
+			}
+		random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = workshop
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+	}
+}
+
+country_event = {#ordoria exiles rich person, wants to come to ungerdaler
+	id = ord.92
+	title = ord.92.t
+	desc = ord.92.d
+	
+	is_triggered_only = yes
+	
+	option = {#sure
+		name = ord.92.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		ORD = {
+			add_opinion_modifier = {
+				target = UNG
+				modifier = small_decrease
+			}
+		}
+		add_advisor_role = {
+			character = ORD_tasar_beijyre
+			advisor = {
+				slot = prisoners_guests
+				cost = 50
+				available = {
+					NOT = {
+						is_subject_of = ORD
+					}
+				}
+				traits = {
+					rich_exiled_noble
+				}
+			}
+		}
+	}
+	option = {#nah
+		name = ord.92.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		add_stability = 0.03
+	}
+}
+
+country_event = {#minor chaos, noble battle royale with accusations, assassinations, slander, price wars, etc
+	id = ord.93
+	title = ord.93.t
+	desc = ord.93.d
+	
+	is_triggered_only = yes
+	
+	option = {#let them do their shtuff
+		name = ord.93.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		add_timed_idea = {
+			idea = ORD_noble_chaos
+			days = 70
+		}
+	}
+	option = {#intervene with the inquisitors
+		name = ord.93.b
+		
+		ai_chance = {
+			factor = 1
+		}
+		add_timed_idea = {
+			idea = ORD_noble_chaos_lesser
+			days = 35
+		}
+	}
+}
+
+country_event = {#princeling put under house arrest
+	id = ord.94
+	title = ord.94.t
+	desc = ord.94.d
+	
+	is_triggered_only = yes
+	
+	option = {#let them do their shtuff
+		name = ord.94.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		add_advisor_role = {
+			character = ORD_larennis_valinthir
+			advisor = {
+				slot = prisoners_guests
+				cost = 50
+				available = {
+					has_government = theocrat
+				}
+				traits = {
+					princeling_house_arrest
+				}
+			}
+		}
+	}
+}
+
+country_event = {#campaign of terror
+	id = ord.95
+	title = ord.95.t
+	desc = ord.95.d
+	
+	is_triggered_only = yes
+	
+	option = {#ruh roh
+		name = ord.95.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		add_idea = ORD_guerilla_campaign
+	}
+}
+
+country_event = {#traditionalists flock to moderates
+	id = ord.96
+	title = ord.96.t
+	desc = ord.96.d
+	
+	is_triggered_only = yes
+	
+	option = {#huh
+		name = ord.96.a
+		custom_effect_tooltip = ORD_displease_mods_3
+		subtract_from_variable = {
+			ORD_moderates_loyalty = 3
+		}
+		custom_effect_tooltip = ORD_empower_mods_5
+			add_to_variable = {
+				ORD_moderates_influence = 5
+			}
+	}
+}
+
+country_event = {#moderates flock to traditionalists
+	id = ord.97
+	title = ord.97.t
+	desc = ord.97.d
+	
+	is_triggered_only = yes
+	
+	option = {#huh
+		name = ord.97.a
+		custom_effect_tooltip = ORD_displease_trads_3
+		subtract_from_variable = {
+			ORD_traditionalists_loyalty = 3
+		}
+		custom_effect_tooltip = ORD_empower_trads_3
+			add_to_variable = {
+				ORD_traditionalists_influence = 3
+			}
+	}
+}
+
+country_event = {#derathur kidnapped!
+	id = ord.98
+	title = ord.98.t
+	desc = ord.98.d
+	
+	is_triggered_only = yes
+	
+	option = {#wtf bro
+		name = ord.98.a
+		set_nationality = {
+			target_country = ORD
+			character = RTH_alucien_derathur
+		}
+		hidden_effect = {
+			ORD = {
+				country_event = { id = ord.99 days = 1 hours = 12 random = 12 }
+			}
+		}
+		add_stability = -0.1
+		add_war_support = 0.1
+		set_country_flag = RTH_alucien_murdered
+		if = {
+			limit = { has_country_flag = RTH_alucien_cult_established }
+			country_event = { id = rth.77 days = 2 random = 24 }
+		}
+	}
+}
+
+country_event = {#derathur kidnapped yo
+	id = ord.99
+	title = ord.99.t
+	desc = ord.99.d
+	
+	is_triggered_only = yes
+	
+	option = {#yooooo sick
+		name = ord.99.a
+		add_war_support = 0.1
+		add_advisor_role = {
+			character = RTH_alucien_derathur
+			advisor = {
+				slot = prisoners_guests
+				cost = 25
+				available = {
+					NOT = {
+						is_subject_of = RTH
+					}
+				}
+				traits = {
+					heresiarch
+				}
+			}
 		}
 	}
 }

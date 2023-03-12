@@ -1551,6 +1551,139 @@ ideas = {
 			}
 		}
 		
+		ORD_sophist_oath_1 = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = theocrat
+			}
+			
+			picture = generic_spy_coup
+			
+			removal_cost = -1
+			
+			modifier = {
+				theocrat_drift = 0.05
+				political_power_gain = 0.1
+				intel_network_gain_factor = 0.1
+			}
+		}
+
+		ORD_sophist_oath_simony = {
+
+			name = ORD_sophist_oath_1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = theocrat
+			}
+			
+			picture = generic_spy_coup
+			
+			removal_cost = -1
+			
+			modifier = {
+				theocrat_drift = 0.05
+				production_speed_buildings_factor = -0.1
+				political_power_gain = 0.1
+				intel_network_gain_factor = 0.1
+			}
+		}
+
+		ORD_sophist_oath_redemption = {
+
+			name = ORD_sophist_oath_1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = theocrat
+			}
+			
+			picture = generic_spy_coup
+			
+			removal_cost = -1
+			
+			modifier = {
+				theocrat_drift = 0.05
+				intel_network_gain_factor = 0.1
+			}
+		}
+
+		ORD_sophist_oath_redemption_2 = {
+
+			name = ORD_sophist_oath_1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = theocrat
+			}
+			
+			picture = generic_spy_coup
+			
+			removal_cost = -1
+			
+			modifier = {
+				theocrat_drift = 0.05
+				political_power_factor = 0.1
+				party_popularity_stability_factor = 0.15
+			}
+		}
+
+		ORD_sophist_oath_2 = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = theocrat
+			}
+			
+			picture = generic_spy_coup
+			
+			removal_cost = -1
+			
+			modifier = {
+				theocrat_drift = 0.05
+				political_power_factor = 0.1
+				encryption_factor = 0.2
+				decryption_factor = 0.2
+				intel_network_gain_factor = 0.1
+			}
+		}
+
+		ORD_ending_blindness = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = theocrat
+			}
+			
+			picture = generic_spy_coup
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.15
+				decryption_factor = 0.15
+			}
+		}
+		
 		ORD_inquisition = {
 			
 			allowed = {
@@ -1566,9 +1699,121 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
+				encryption_factor = 0.2
 				decryption_factor = 0.2
 				drift_defence_factor = 0.33
 				resistance_target = -0.25
+			}
+		}
+		
+		ORD_guerilla_campaign = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			cancel = {
+				OR = {
+					NOT = {
+						country_exists = ORD
+					}
+					is_subject_of = ORD
+					surrender_progress > 0.75
+				}
+			}
+			
+			picture = ast_volunteer_defence_corps
+		
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = -0.2
+				supply_factor = -0.2
+				army_defence_factor = -0.2
+			}
+		}
+
+		ORD_last_minute_wargames = {
+			
+			allowed = {
+				always = no
+			}
+			
+			picture = chi_war_of_resistance2
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+			}
+		}
+
+		ORD_inquisition_investigating_nobles = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = chi_army_corruption2
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.2
+				monarchy_absolute_drift = -0.05
+				stability_weekly = 0.005
+			}
+		}
+
+		ORD_noble_chaos = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = chi_hyper_inflation
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				stability_factor = -0.1
+				political_power_cost = 0.2
+				conscription_factor = -0.02
+			}
+		}
+
+		ORD_noble_chaos_lesser = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = chi_hyper_inflation
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = -0.1
+				political_power_cost = 0.25
 			}
 		}
 		

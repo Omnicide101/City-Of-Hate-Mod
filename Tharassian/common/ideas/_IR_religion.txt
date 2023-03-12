@@ -1143,6 +1143,38 @@ ideas = {
 			}
 		}
 		
+		itheryn_vengeance_patron_2 = {
+
+			name = itheryn_vengeance_patron
+
+			visible = {
+				original_tag = ORD
+				has_completed_focus = ORD_dedicate_all_to_harquiss
+			}
+			
+			available = {
+				original_tag = ORD
+				has_completed_focus = ORD_dedicate_all_to_harquiss
+				has_government = theocrat
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			allowed_to_remove = {
+				NOT = {
+					has_government = theocrat
+				}
+			}
+			
+			picture = itheryn_vengeance
+			
+			traits = {
+				vengeance_itheryn_bonuses_2
+			}
+		}
+		
 		itheryn_labour_patron = {
 
 			visible = {
