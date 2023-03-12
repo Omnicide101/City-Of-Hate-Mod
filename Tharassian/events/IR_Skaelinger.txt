@@ -734,10 +734,6 @@ country_event = { #Union Assists Seventh Campaign
 			target = UNG
 			modifier = trusted_opinion
 		}
-		add_relation_modifier = {
-			target = UNG
-			modifier = staunch_allies_opinion_modifier
-		}
 		UNG = {
 			remove_opinion_modifier = {
 				target = SKA
@@ -748,13 +744,17 @@ country_event = { #Union Assists Seventh Campaign
 				modifier = staunch_allies
 			}
 			add_relation_modifier = {
-				target = SKA
+				target = SLA
 				modifier = staunch_allies_opinion_modifier
 			}
 			reverse_add_opinion_modifier = {
 				target = SKA
 				modifier = staunch_allies
 			}
+		}
+		add_relation_modifier = {
+			target = UNG
+			modifier = staunch_allies_opinion_modifier
 		}
 	}
 }
@@ -1005,7 +1005,6 @@ country_event = {#Rimatu Accepts
 			target = RMT
 			modifier = bitter_rivals
 		}
-		
 		remove_relation_modifier = {
 			target = RMT
 			modifier = bitter_rivals_opinion_modifier
@@ -1026,7 +1025,6 @@ country_event = {#Rimatu Accepts
 				target = SKA
 				modifier = bitter_rivals
 			}
-
 			remove_relation_modifier = {
 				target = SKA
 				modifier = bitter_rivals_opinion_modifier
@@ -2208,7 +2206,7 @@ country_event = { #Heljarchen Froki debates for the legalization of the brotherh
 
 	immediate = {
 		hidden_effect = {
-			country_event = { id = skaelinger.33 days = 30 }
+			country_event = { id = skaelinger.33 days = 15 }
 		}
 	}
 	
@@ -2251,7 +2249,7 @@ country_event = { #Using guild funds to help sponsor debates
 
 	immediate = {
 		hidden_effect = {
-			country_event = { id = skaelinger.34 days = 30 }
+			country_event = { id = skaelinger.34 days = 15 }
 			if = {
 				limit = {
 					NOT = { has_country_flag = SKA_legalized_boe_debates }
@@ -2936,6 +2934,9 @@ country_event = { #Social War Ends, Tie
 		add_ideas = GENERIC_civil_war_isolation
 		set_country_flag = SKA_social_war_tie_occurred
 		hidden_effect = {
+			delete_unit_template_and_units = {
+				division_template = "Paramilitarists"
+			}
 			SKR = {
 				add_ideas = GENERIC_civil_war_isolation
 				add_popularity = {
@@ -3091,6 +3092,9 @@ country_event = { #Social War Ends, Soltruist Victory
 	immediate = {
 		set_country_flag = SKA_social_war_puritan_victory
 		hidden_effect = {
+			delete_unit_template_and_units = {
+				division_template = "Paramilitarists"
+			}
 			add_ideas = GENERIC_civil_war_isolation
 			SKP = {
 				add_ideas = GENERIC_civil_war_isolation
@@ -3182,6 +3186,9 @@ country_event = { #Social War Ends, Brotherhood victory
 	immediate = {
 		set_country_flag = SKA_social_war_radical_republican_victory
 		hidden_effect = {
+			delete_unit_template_and_units = {
+				division_template = "Paramilitarists"
+			}
 			add_ideas = GENERIC_civil_war_isolation
 			SKR = {
 				add_ideas = GENERIC_civil_war_isolation

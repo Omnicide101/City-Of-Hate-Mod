@@ -646,7 +646,14 @@ leader_traits = {
 		war_support_factor = 0.07
 		industrial_capacity_factory = 0.05
 	}
-		
+	
+	vengeance_itheryn_bonuses_2 = {
+		random = no
+		war_support_factor = 0.1
+		industrial_capacity_factory = 0.1
+		conscription_factor = 0.05
+	}
+	
 	labour_itheryn_bonuses = {
 		random = no
 		production_factory_start_efficiency_factor = 0.07
@@ -916,6 +923,67 @@ leader_traits = {
 		random = no
 	}
 	
+	noble_militarized_fiefdom = {
+		random = no
+		army_morale = 5
+		conscription_factor = 0.06
+	}
+
+	#prisoner/guest traits
+
+	state_seized_assets = {
+		random = no
+		consumer_goods_factor = -0.03
+		industrial_capacity_factory = 0.05
+	}
+
+	rich_exiled_noble = {
+		random = no
+		consumer_goods_factor = -0.03
+		political_power_cost = 0.05
+	}
+
+	former_optimist = {
+		random = no
+		absolute_monarchy_drift = -0.02
+		stability_factor = 0.05
+	}
+
+	princeling_house_arrest = {
+		random = no
+		absolute_monarchy_drift = -0.05
+		political_power_factor = 0.1
+	}
+
+	arrested_pacifist = {
+		random = no
+		war_support_factor = 0.1
+		conscription = 0.005
+	}
+
+	steward_house_arrest = {
+		random = no
+		puritan_drift = -0.05
+		political_power_factor = 0.1
+	}
+
+	damsel_in_distress = {
+		random = no
+		conscription = 0.002
+		monthly_population = 0.05
+	}
+
+	arrested_rosite = {
+		random = no
+		republic_peasant_drift = -0.03
+		production_speed_buildings_factor = 0.05
+	}
+
+	heresiarch = {
+		random = no
+		political_power_factor = 0.1
+		party_popularity_stability_factor = 0.1
+	}
 	
 	### Military Minister Traits
 	
