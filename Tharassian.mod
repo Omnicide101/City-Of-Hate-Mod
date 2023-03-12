@@ -65,5 +65,5 @@ tags={
 }
 picture="Tharassian.png"
 supported_version="1.12.*"
-path="C:/mod/Tharassian"
+path="mod/Tharassian"
 remote_file_id="1640248991"
