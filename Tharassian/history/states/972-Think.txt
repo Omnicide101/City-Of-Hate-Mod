@@ -5,25 +5,21 @@ state={
 	provinces={
 		145 1057 8362 8392 
 	}
-	state_category = town
-	manpower=8999
+	manpower=4031
 	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = rural
+	
 	resources = {
-		lumber = 8
+        lumber = 6
 	}
-	history={
-		owner = ATH
-		victory_points = {
-			145 4
+    history = {
+        owner = ATH
+        add_core_of = ATH
+        buildings = {
+            infrastructure = 2
 		}
-		buildings = {
-			infrastructure = 2
-			farm = 1
-			145 = {
-				naval_base = 1
-			}
-		}
-		add_core_of = ATH
-
+		victory_points = { 8362 2 }
+		victory_points = { 1057 2 }
 	}
 }

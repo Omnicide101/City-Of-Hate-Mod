@@ -1,23 +1,29 @@
-
 state={
 	id=970
 	name="STATE_970"
 	provinces={
 		882 3197 4292 5590 
 	}
-	state_category = pastoral
-	manpower=172
+	manpower=1240
 	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = rural
+	
 	resources = {
-		lumber = 2
+        lumber = 6
 	}
-	history={
-		owner = ATH
-		buildings = {
-			infrastructure = 1
-			farm = 1
+    history = {
+        owner = ATH
+        add_core_of = ATH
+        buildings = {
+            infrastructure = 2
+			882= {
+				bunker = 1
+			}
+			3197= {
+				bunker = 1
+			}
 		}
-		add_core_of = ATH
-
+		victory_points = { 3197 2 }
 	}
 }

@@ -14,11 +14,11 @@ state={
 		food = 6
     }
     history = {
-        owner = XXX
-        add_core_of = XXX
+        owner = AKS
+        add_core_of = AKS
         buildings = {
             infrastructure = 4
 		}
-		victory_points = { 7238 10 }
+		victory_points = { 2939 10 }
 	}
 }

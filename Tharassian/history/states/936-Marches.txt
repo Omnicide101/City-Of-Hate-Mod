@@ -13,8 +13,8 @@ state={
         food = 6
     }
     history = {
-        owner = XXX
-        add_core_of = XXX
+        owner = EAQ
+        add_core_of = EAQ
         buildings = {
             infrastructure = 1
 		}
