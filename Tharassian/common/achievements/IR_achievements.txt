@@ -40,9 +40,7 @@ you_bastard = {
 		tag = HLZ
 	}
 	happened = {
-		has_country_leader = {
-			character = HLZ_marius_pressler
-		}
+		has_country_leader = HLZ_marius_pressler
 	}
 }
 
