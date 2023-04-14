@@ -76,19 +76,19 @@ set_variable = {
 }
 
 set_popularities = {
-	monarchy_absolute = 2
+	monarchy_absolute = 8
 
-	monarchy_constitutional = 92
+	monarchy_constitutional = 52
 
 	republic_peasant = 1
 
 	republic_aristocrat = 2
 
-	republic_merchant = 1
+	republic_merchant = 7
 
-	theocrat = 1
+	theocrat = 14
 
-	puritan = 1
+	puritan = 16
 }
 
 add_ideas = {
@@ -96,6 +96,14 @@ add_ideas = {
 	tergewelft_patron
 	FPT_bauernfreistellung
 }
+
+recruit_character = SPW_wilhelm_weisz
+recruit_character = SPW_matthias_jager
+recruit_character = SPW_moritz_lohmann
+recruit_character = SPW_august_wissmann
+recruit_character = SPW_lea_eichenwald
+recruit_character = SPW_magdalene_schichau
+recruit_character = SPW_nicolas_krauser
 
 give_military_access = UNG
 give_military_access = HLZ
@@ -109,66 +117,3 @@ give_military_access = SNF
 give_military_access = FTH
 give_military_access = WIS
 give_military_access = WSZ
-
-create_country_leader = {
-	name = "Wilhelm Weisz"
-	desc = "politics_SPW_weisz_desc"
-	picture = "gfx/leaders/SPW/Portrait_SPW_Weisz.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Moritz Lohmann"
-	desc = "politics_SPW_lohmann_desc"
-	picture = "gfx/leaders/SPW/Portrait_SPW_Lohmann.dds"
-	ideology = republic_peasant_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "August Wissmann"
-	desc = "politics_SPW_Wissmann_desc"
-	picture = "gfx/leaders/SPW/Portrait_SPW_Wissmann.dds"
-	ideology = puritan_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Wilhelm Weisz"
-	desc = "politics_SPW_weisz_desc"
-	picture = "gfx/leaders/SPW/Portrait_SPW_Weisz.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Lea Eichenwald"
-	desc = "politics_SPW_eichenwald_desc"
-	picture = "gfx/leaders/SPW/Portrait_SPW_Eichenwald.dds"
-	ideology = theocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Magdalene Schichau"
-	desc = "politics_SPW_schichau_desc"
-	picture = "gfx/leaders/SPW/Portrait_SPW_Schichau.dds"
-	ideology = republic_aristocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Nicolas Krauser"
-	desc = "politics_SPW_krauser_desc"
-	picture = "gfx/leaders/SPW/Portrait_SPW_Krauser.dds"
-	ideology = republic_merchant_ideology
-	traits = {
-	}
-}

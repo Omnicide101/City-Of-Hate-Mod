@@ -1,0 +1,20 @@
+state={
+	id=1270
+	name="STATE_1270"
+	provinces={
+		7769 7775 7777 
+	}
+	state_category = pastoral
+	manpower=173
+	buildings_max_level_factor=1.000
+	history={
+		owner = RTH
+		buildings = {
+			infrastructure = 3
+			7769 = {	
+				bunker = 1
+			}
+		}
+		add_core_of = RTH
+	}
+}

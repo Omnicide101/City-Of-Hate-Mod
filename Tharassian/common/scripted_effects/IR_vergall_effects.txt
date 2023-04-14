@@ -25,6 +25,12 @@ claim_vergallheim_territory = {
 				state = 22
 				state = 125
 				state = 135
+				state = 1271
+				state = 1272
+				state = 1273
+				state = 1274
+				state = 1275
+				state = 1276
 			}
 		}
 		add_claim_by = ROOT
@@ -69,6 +75,12 @@ reform_vergallheim = {
 				state = 22
 				state = 125
 				state = 135
+				state = 1271
+				state = 1272
+				state = 1273
+				state = 1274
+				state = 1275
+				state = 1276
 			}
 		}
 		add_core_of = VRG

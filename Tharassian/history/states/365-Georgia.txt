@@ -1,22 +1,30 @@
+
 state={
 	id=365
 	name="STATE_365"
-	provinces={
-		7999 7979 
+	resources={
+		steel=7.000
 	}
-	state_category = town
-	manpower=19826
-	buildings_max_level_factor=1.000
-	resources = {
-		steel = 7
-	}
+
 	history={
-		victory_points = { 7999 19 }
+		victory_points = {
+			7999 19 
+		}
 		owner = BER
 		buildings = {
 			infrastructure = 2
 			forge = 3
+
 		}
 		add_core_of = BER
+
 	}
+
+	provinces={
+		7999 
+	}
+	manpower=19826
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
 }

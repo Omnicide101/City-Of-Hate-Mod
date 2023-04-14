@@ -1546,6 +1546,7 @@ focus = { #reclaim lost territory
 					modifier = threatened_opinion
 				}
 			}
+			
 		hidden_effect = {
 		329 = {
 		add_claim_by = SNF

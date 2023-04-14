@@ -1,19 +1,27 @@
+
 state={
 	id=715
 	name="STATE_715"
-	provinces={
-		4820 6307 3043 6255
-	}
-	state_category = town
-	manpower=12468
-	buildings_max_level_factor=1.000
+
 	history={
-		victory_points = { 4820 11 }
+		victory_points = {
+			4820 11 
+		}
 		owner = RMT
 		buildings = {
 			infrastructure = 2
 			forge = 2
+
 		}
 		add_core_of = RMT
+
 	}
+
+	provinces={
+		3043 4820 6255 
+	}
+	manpower=12468
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
 }

@@ -89,7 +89,6 @@ recruit_character = UNG_stella_galde
 recruit_character = UNG_alko_blau
 recruit_character = UNG_cecilia_freisler
 
-
 add_ideas = {
 	UNG_trade_realm
 	human_country
@@ -102,6 +101,11 @@ add_ideas = {
 add_opinion_modifier = {
 	target = STA
 	modifier = bitter_rivals
+}
+
+add_relation_modifier = {
+	target = STA
+	modifier = bitter_rivals_opinion_modifier
 }
 
 if = {

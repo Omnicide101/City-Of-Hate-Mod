@@ -2138,6 +2138,11 @@ country_event = {#RMT Accepts
 					target = RMT
 					modifier = bitter_rivals
 				}
+				
+				remove_relation_modifier = {
+					target = RMT
+					modifier = bitter_rivals_opinion_modifier
+				}
 
 				add_opinion_modifier = {
 					target = RMT
@@ -2154,6 +2159,11 @@ country_event = {#RMT Accepts
 				remove_opinion_modifier = {
 					target = SKA
 					modifier = bitter_rivals
+				}
+				
+				remove_relation_modifier = {
+					target = SKA
+					modifier = bitter_rivals_opinion_modifier
 				}
 			}
 		}
@@ -2198,12 +2208,21 @@ country_event = {#SKA accepts
 					target = SKA
 					modifier = bitter_rivals
 				}
+				remove_relation_modifier = {
+					target = SKA
+					modifier = bitter_rivals_opinion_modifier
+				}
 			}
 			SKA = {
 				remove_opinion_modifier = {
 					target = RMT
 					modifier = bitter_rivals
 				}
+				remove_relation_modifier = {
+					target = RMT
+					modifier = bitter_rivals_opinion_modifier
+				}
+				
 				add_opinion_modifier = {
 					target = RMT
 					modifier = dislike_opinion
@@ -2650,7 +2669,7 @@ country_event = {#Stahlhof Defeated
 			create_country_leader = {
 				name = "Hubert Hundlär"
 				desc = "politics_STA_hundlar_desc"
-				picture = "gfx/leaders/UnionNorth/Portrait_Union_North_Generic_land_1.dds"
+				picture = "gfx/leaders/STA/Portrait_STA_Hundlar.dds"
 				expire = "1965.1.1"
 				ideology = monarchy_absolute_ideology
 				traits = {

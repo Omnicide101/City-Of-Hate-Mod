@@ -1,6 +1,11 @@
 spriteTypes = {	
 
 	spriteType = {
+		name = "GFX_idea_generic_instrument"
+		texturefile = "gfx/interface/ideas/generic_instrument.dds"
+	}
+
+	spriteType = {
 		name = "GFX_idea_generic_rosites_imprisoned"
 		texturefile = "gfx/interface/ideas/generic_rosites_imprisoned.dds"
 	}
@@ -363,36 +368,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_generic_royal_marriage"
 		texturefile = "gfx/interface/ideas/generic_royal_marriage.dds"
-	}
-
-	spriteType = {
-		name = "GFX_idea_generic_privateer"
-		texturefile = "gfx/interface/ideas/generic_privateer.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_idea_generic_merchant_captain"
-		texturefile = "gfx/interface/ideas/generic_merchant_captain.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_idea_generic_distinguished_admiral"
-		texturefile = "gfx/interface/ideas/generic_distinguished_admiral.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_idea_generic_knightly_paragon"
-		texturefile = "gfx/interface/ideas/generic_knightly_paragon.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_idea_generic_veteran"
-		texturefile = "gfx/interface/ideas/generic_veteran.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_idea_generic_folk_hero"
-		texturefile = "gfx/interface/ideas/generic_folk_hero.dds"
 	}
 	
 	spriteType = {
@@ -890,5 +865,40 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_snf_brittle_economy"
 		texturefile = "gfx/interface/ideas/SNF_brittle_economy.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_generic_guests_prisoners"
+		texturefile = "gfx/interface/ideas/characters/generic/generic_guests_prisoners.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_generic_privateer"
+		texturefile = "gfx/interface/ideas/characters/generic/generic_privateer.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_generic_merchant_captain"
+		texturefile = "gfx/interface/ideas/characters/generic/generic_merchant_captain.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_generic_distinguished_admiral"
+		texturefile = "gfx/interface/ideas/characters/generic/generic_distinguished_admiral.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_generic_knightly_paragon"
+		texturefile = "gfx/interface/ideas/characters/generic/generic_knightly_paragon.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_generic_veteran"
+		texturefile = "gfx/interface/ideas/characters/generic/generic_veteran.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_generic_folk_hero"
+		texturefile = "gfx/interface/ideas/characters/generic/generic_folk_hero.dds"
 	}
 }

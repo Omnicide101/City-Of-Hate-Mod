@@ -545,9 +545,17 @@ country_event = { #Conquest of Rthauiaur
 					target = SKA
 					modifier = staunch_allies
 				}
+				add_relation_modifier = {
+					target = SKA
+					modifier = staunch_allies_opinion_modifier
+				}
 				add_opinion_modifier = {
 					target = ORD
 					modifier = bitter_rivals
+				}
+				add_relation_modifier = {
+					target = ORD
+					modifier = bitter_rivals_opinion_modifier
 				}
 			}
 			ORD = {
@@ -555,10 +563,18 @@ country_event = { #Conquest of Rthauiaur
 					target = RTH
 					modifier = bitter_rivals
 				}
+				add_relation_modifier = {
+					target = ORD
+					modifier = bitter_rivals_opinion_modifier
+				}
 			}
 			add_opinion_modifier = {
 				target = RTH
 				modifier = staunch_allies
+			}
+			add_relation_modifier = {
+				target = RTH
+				modifier = staunch_allies_opinion_modifier
 			}
 		}
 	}
@@ -8591,6 +8607,7 @@ country_event = { #Conquest of Kurgur
 					state = 173
 					state = 172
 					state = 365
+					state = 1276
 				}
 			}
 			KUR = {
@@ -8628,6 +8645,7 @@ country_event = { #Conquest of Kurgur
 						state = 173
 						state = 172
 						state = 365
+						state = 1276
 					}
 				}
 				BER = {
@@ -8666,6 +8684,7 @@ country_event = { #Conquest of Kurgur
 						state = 173
 						state = 172
 						state = 365
+						state = 1276
 					}
 				}
 				SKA = {

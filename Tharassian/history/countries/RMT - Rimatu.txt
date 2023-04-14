@@ -73,9 +73,19 @@ add_opinion_modifier = {
 	modifier = bitter_rivals
 }
 
+add_relation_modifier = {
+	target = LIR
+	modifier = bitter_rivals_opinion_modifier
+}
+
 add_opinion_modifier = {
 	target = BLD
 	modifier = bitter_rivals
+}
+
+add_relation_modifier = {
+	target = BLD
+	modifier = bitter_rivals_opinion_modifier
 }
 
 create_country_leader = {

@@ -41,6 +41,16 @@ set_fertility = {
 			modifier = very_fertile_land
 		}
 	}
+	267 = {
+		add_dynamic_modifier = {
+			modifier = very_fertile_land
+		}
+	}
+	322 = {
+		add_dynamic_modifier = {
+			modifier = very_fertile_land
+		}
+	}
 	every_state = {
 		limit = {
 			OR = {

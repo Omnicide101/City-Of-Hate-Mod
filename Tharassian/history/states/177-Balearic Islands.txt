@@ -1,15 +1,11 @@
+
 state={
 	id=177
 	name="STATE_177"
-	provinces={
-		4545 7048
+	resources={
+		steel=3.000
 	}
-	state_category = rural
-	manpower=4592
-	buildings_max_level_factor=1.000
-	resources = {
-		steel = 3
-	}
+
 	history={
 		owner = SKA
 		buildings = {
@@ -18,4 +14,13 @@ state={
 		add_core_of = SKA
 
 	}
+
+	provinces={
+		4545 7048 7076 
+	}
+	manpower=45
+	buildings_max_level_factor=1.000
+	impassable = yes
+	state_category=pastoral
+	local_supplies=0.000
 }

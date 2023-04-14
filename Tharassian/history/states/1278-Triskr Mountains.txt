@@ -1,0 +1,19 @@
+state={
+	id=1278
+	name="STATE_1278"
+	provinces={
+		4299 7429 
+	}
+	manpower=2
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	impassable = yes
+	local_supplies=0.000
+	history={
+		owner = SKA
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = SKA
+	}
+}

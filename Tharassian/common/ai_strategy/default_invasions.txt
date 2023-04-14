@@ -38,7 +38,17 @@ invade_navally_pls = {
 	
 	ai_strategy = {
 		type = naval_invasion_focus
-		value = 50 #Probably hella overtuned lol
+		value = 20 #Probably hella overtuned lol
+	}
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		country_trigger = {
+			any_country = {
+				has_war_with = ROOT
+			}
+		}
+		value = 10
 	}
 }
 
@@ -54,6 +64,24 @@ invade_GMR = {
 		type = invade
 		id = "GMR"
 		value = 200
+	}
+	
+	ai_strategy = {
+		type = front_control
+		state = 1
+		priority = 1
+		ratio = 0.2
+		ordertype = invasion
+		execute_order = yes
+	}
+	
+	ai_strategy = {
+		type = front_control
+		state = 72
+		priority = 1
+		ratio = 0.2
+		ordertype = invasion
+		execute_order = yes
 	}
 }
 

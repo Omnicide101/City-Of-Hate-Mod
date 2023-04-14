@@ -40,6 +40,9 @@ Shawniepie
 Actual Spook
 Imperial_Warlord
 
+#Voicelines
+Tarnland - ZacmanTheDamned
+
 #Unit Models by Xangelo7
 
 #Map Reworks by Veag

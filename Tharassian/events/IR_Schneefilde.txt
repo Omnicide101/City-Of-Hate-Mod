@@ -725,6 +725,7 @@ country_event = {#Ayo Get Kalaster
 		329 = {
 			add_claim_by = SNF
 		}
+		custom_effect_tooltip = retake_kalaster_tt
 	}
 }
 #########
@@ -1378,15 +1379,15 @@ country_event = {#Tsotoff Victory
 
 country_event = {#Cena Victory
 	id = schneefilde_invade.20
-	title = schneefilde_invade.7.t
-	desc = schneefilde_invade.7.d
+	title = schneefilde_invade.20.t
+	desc = schneefilde_invade.20.d
 	
 	picture = GFX_report_event_dutch_soldiers_indonesia
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = schneefilde_invade.7.a
+		name = schneefilde_invade.20.a
 		add_political_power = 15
 		transfer_state = 329
 		add_state_core = 329

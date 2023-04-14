@@ -64,53 +64,23 @@ set_popularities = {
 	puritan = 64
 }
 
+recruit_character = EOR_darnaur_vlys
+recruit_character = EOR_syldin_kalmarys
+recruit_character = EOR_klysmaryn_thuvalys
+
 add_ideas = {
 	elf_country
 	itherynism_religion
 	autarkic_isolationism
-}
-	add_opinion_modifier = {
-		target = ORD
-		modifier = staunch_allies
-	}
-	
-	add_opinion_modifier = {
-		target = RTH
-		modifier = bitter_rivals
-	}
-
-create_country_leader = {
-	name = "Farnaur Ithinis"
-	desc = "politics_EOR_itihnis_desc"
-	picture = "gfx/leaders/RTH/Portrait_RTH_Ithinis.dds"
-	ideology = puritan_ideology
-	traits = {
-	}
+	EOR_bardic_resistance
 }
 
-create_country_leader = {
-	name = "Larennis Valinthir"
-	desc = "politics_EOR_valinthir_desc"
-	picture = "gfx/leaders/ORD/Portrait_ORD_Valinthir_ii.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	}
+add_opinion_modifier = {
+	target = ORD
+	modifier = staunch_allies
 }
 
-create_country_leader = {
-	name = "Larennis Valinthir"
-	desc = "politics_EOR_valinthir_desc"
-	picture = "gfx/leaders/ORD/Portrait_ORD_Valinthir_ii.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Larennis Valinthir"
-	desc = "politics_EOR_valinthir_desc"
-	picture = "gfx/leaders/ORD/Portrait_ORD_Valinthir_ii.dds"
-	ideology = republic_aristocrat_ideology
-	traits = {
-	}
+add_opinion_modifier = {
+	target = RTH
+	modifier = bitter_rivals
 }

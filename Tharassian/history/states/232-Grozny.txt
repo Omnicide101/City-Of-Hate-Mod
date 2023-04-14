@@ -4,8 +4,8 @@ state={
 	provinces={
 		2797 5547 234 2465 5595 8241 1467 3425
 	}
-	state_category = large_town
-	manpower=20984
+	state_category = city
+	manpower=592551
 	buildings_max_level_factor=1.000
 	history={
 		victory_points = {1467 47 }

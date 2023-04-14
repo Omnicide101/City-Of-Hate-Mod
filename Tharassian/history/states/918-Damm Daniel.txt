@@ -12,8 +12,8 @@ state={
         food = 32
     }
 	history = {
-        owner = SAN
-        add_core_of = SAN
+        owner  = XXX
+        add_core_of  = XXX
         buildings = {
             infrastructure = 4
 		}

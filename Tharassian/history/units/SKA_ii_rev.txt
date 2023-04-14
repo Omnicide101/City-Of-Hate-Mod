@@ -1,7 +1,7 @@
 ﻿units = {
 	division = {
 		name = "Clan Hafahlíf"
-		location = 5584
+		location = 2260
 		division_template = "Mountainbreakers"
 		start_experience_factor = 0.8
 

@@ -1,5 +1,5 @@
 characters={
-	DIA_aoibhroid_tuamáistir={
+	DIA_aoibhroid_tuamaistir={
 		name="Aoibhroid Tuamáistir"
 		portraits={
 			civilian={

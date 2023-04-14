@@ -1,0 +1,67 @@
+characters={
+	NBI_committee_enby={
+		name = "Committee of Nonbinary Rights"
+		portraits={
+			civilian={
+				large = "gfx/leaders/NBI/Portrait_NBI_Nonbinary.dds"
+			}
+		}
+		country_leader={
+			desc="politics_NBI_nonbinary_desc"
+			ideology=republic_peasant_ideology
+			traits={ }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	
+	NBI_committee_trans={
+		name = "Committee of Trans Rights"
+		portraits={
+			civilian={
+				large = "gfx/leaders/NBI/Portrait_NBI_Trans.dds"
+			}
+		}
+		country_leader={
+			desc="politics_NBI_trans_desc"
+			ideology=republic_merchant_ideology
+			traits={ }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	
+	NBI_none={
+		name = "None"
+		country_leader={
+			ideology=monarchy_absolute_ideology
+			traits={ }
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=monarchy_constitutional_ideology
+			traits={ }
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=republic_aristocrat_ideology
+			traits={ }
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=theocrat_ideology
+			traits={ }
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=puritan_ideology
+			traits={ }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

@@ -544,6 +544,8 @@ country_event = {#Roaming monster!
 			any_owned_state = {
 				has_state_flag = RND_roaming_monster_flag
 			}
+			
+			tag = XXX
 		}
 	}
 	
@@ -664,6 +666,75 @@ country_event = {#Roaming monster - destroys things!
 					damage = 1
 				}
 			}
+		}
+	}
+}
+
+unit_leader_event = {#General captured!
+	id = random.15
+	title = random.15.t
+	desc = random.15.d
+	
+	is_triggered_only = yes
+	
+	option = {#Curses!
+		name = random.15.a
+		
+		random_unit_leader = {
+			#limit = {
+			#	has_trait = captured_unit_leader
+			#}
+			#remove_unit_leader_role = yes
+			random_country = {
+				country_event = random.16
+				#limit = {
+				#	has_war_with = ROOT
+				#}
+				#PREV = {
+				#	set_nationality = PREV
+				#}
+				#This one might seem weird to parse
+				#The PREV = { } refers to the random_unit_leader scope
+				#The set_nationality = PREV refers to the random_country scope
+			}
+		}
+	}
+}
+
+country_event = {#We captured a general!
+	id = random.16
+	title = random.16.t
+	desc = random.16.d
+	
+	is_triggered_only = yes
+	
+	option = {#W
+		name = random.16.a
+		
+		random_unit_leader = {
+			limit = {
+				has_trait = captured_unit_leader
+				#check_variable = {
+				#	char_nationality = @FROM
+				#}
+			}
+			
+			#remove_unit_leader_role = yes
+			
+			#add_advisor_role = {
+			#	advisor = {
+			#		slot = prisoners_guests
+			#		traits = {
+			#			captured_unit_leader_prisoner_trait
+			#		}
+			#		allowed = {
+			#			always = yes
+			#		}
+			#		available = {
+			#			always = no
+			#		}
+			#	}
+			#}
 		}
 	}
 }

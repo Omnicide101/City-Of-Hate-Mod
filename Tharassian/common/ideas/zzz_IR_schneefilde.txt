@@ -409,7 +409,7 @@ SNF_brittle_economy2 = {
 				local_resources_factor = -0.10
 				production_factory_efficiency_gain_factor = -0.25
 				trade_opinion_factor = -0.25
-				min_export = -0.50
+				min_export = -0.40
 			}
 		}
 SNF_brittle_economy3 = {
@@ -432,7 +432,7 @@ SNF_brittle_economy3 = {
 				industrial_capacity_factory = -0.10
 				production_factory_efficiency_gain_factor = -0.20
 				trade_opinion_factor = -0.25
-				min_export = -0.50
+				min_export = -0.35
 			}
 		}
 SNF_brittle_economy4 = {
@@ -454,7 +454,7 @@ SNF_brittle_economy4 = {
 				consumer_goods_factor = 0.05
 				production_factory_efficiency_gain_factor = -0.10
 				trade_opinion_factor = -0.25
-				min_export = -0.50
+				min_export = -0.2
 			}
 		}
 SNF_brittle_economy5 = {
@@ -475,7 +475,7 @@ SNF_brittle_economy5 = {
 			modifier = {
 				consumer_goods_factor = 0.05
 				trade_opinion_factor = -0.25
-				min_export = -0.50
+				min_export = -0.1
 			}
 		}
 SNF_supported_farmers = {

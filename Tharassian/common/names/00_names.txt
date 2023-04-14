@@ -40,6 +40,66 @@ NBI = {
 }
 
 ###############################################################
+# Duchy of El
+###############################################################
+DEL = {
+	male = {
+		names = {
+		 	Troskar Delbrod Berthund Mildrosk Mitskard
+		}
+	}
+	female = {
+		names = {
+			Karstora Delaria Bethara Meldora Meskara
+		}
+	}
+	
+	surnames = { 
+		Brightblade Glorysword Hopelance Sunbringer Prideshield
+	}
+}
+
+###############################################################
+# High Hall
+###############################################################
+HIH = {
+	male = {
+		names = {
+		 	Bruskal Drogmar Simgrad Lorkar Prostor Derkost
+		}
+	}
+	female = {
+		names = {
+			Phira Soldrast Melkra Priskad Weldrad
+		}
+	}
+	
+	surnames = { 
+		Darkstone Strongpick Brewbeard Bronzehelm Irongate Stoutstand
+	}
+}
+
+###############################################################
+# Aethellian Dominion
+###############################################################
+ATH = {
+	male = {
+		names = {
+		 	Trabian Denmar Valkis Soldrim Waldem Prevod Solkam Wolros Surod Virian Treldem Deris
+		}
+	}
+	female = {
+		names = {
+			Bilad Yurim Larmain Lered Alar Berem Yalad Ariad
+		}
+	}
+	
+	surnames = { 
+		Dralk Salb Frond Prosh Delb Valm Sord Brid Vuld
+	}
+}
+
+###############################################################
 # Thryxvanor
 ###############################################################
 TRX = {
@@ -257,16 +317,16 @@ SUL = {
 ORD = {
 	male = {
 		names = {
-			Thorys Lancthyr Usyne Wycthir Istvenys Wyngeryn Lorthyrys Orthyryn Asdyrgys Lycthyrys Pythylyn Uthyrs
+			Thorys Lancthyr Usyne Wycthir Istvenys Wyngeryn Lorthyrys Orthyryn Asdyrgys Lycthyrys Pythylyn Uthyrs Ythyr Arysyn
 		}
 	}
 	female = {
 		names = {
-			Ancyta Lythrica Thorya Lycthynith Pythrys Wythene Ycthyna Systhyn
+			Ancyta Lythrica Thorya Lycthynith Pythrys Wythene Ycthyna Systhyn Leryn
 		}
 	}
 	surnames = {
-		Dythene Incythre Lothinnys Ythynne Wycynnis Hynthythe Lyliryn
+		Dythene Incythre Lothinnys Ythynne Wycynnis Hynthythe Lyliryn Nythyrin
 	}
 }
 

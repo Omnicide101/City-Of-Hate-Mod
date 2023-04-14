@@ -557,3 +557,17 @@ country_event = { #Idle Speculation
 		}
 	}
 }
+
+country_event = { #Job Security
+	id = ord_lore.25
+	title = ord_lore.25.t
+	desc = ord_lore.25.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Spoilers bro
+		name = ord_lore.25.a
+	}
+}

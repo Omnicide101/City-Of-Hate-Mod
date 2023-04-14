@@ -69,15 +69,30 @@ add_ideas = {
 		target = RMT
 		modifier = bitter_rivals
 	}
+	
+	add_relation_modifier = {
+		target = RMT
+		modifier = bitter_rivals_opinion_modifier
+	}
 
 	add_opinion_modifier = {
 		target = KUR
 		modifier = bitter_rivals
 	}
 	
+	add_relation_modifier = {
+		target = KUR
+		modifier = bitter_rivals_opinion_modifier
+	}
+	
 	add_opinion_modifier = {
 		target = BLD
 		modifier = bitter_rivals
+	}
+	
+	add_relation_modifier = {
+		target = BLD
+		modifier = bitter_rivals_opinion_modifier
 	}
 
 

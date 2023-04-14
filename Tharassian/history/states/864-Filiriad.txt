@@ -10,5 +10,8 @@ state={
 	history={
 		owner = TRX
 		add_core_of = TRX
+		buildings = {
+			farm = 1
+		}
 	}
 }

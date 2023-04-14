@@ -1,22 +1,25 @@
+
 state={
 	id=734
 	name="STATE_734"
-	provinces={
-		3253 5911 5924 1728
+	resources={
+		steel=15.000
 	}
-	state_category = town
-	manpower=12542
-	buildings_max_level_factor=1.000
-	resources = {
-		steel = 15
-	}
+
 	history={
-		victory_points = { 5924 8 }
 		owner = RMT
 		buildings = {
-			infrastructure = 2
-			workshop = 2
+			infrastructure = 1
 		}
 		add_core_of = RMT
 	}
+
+	provinces={
+		1531 1728 3253 5554 5911 
+	}
+	manpower=12
+	buildings_max_level_factor=1.000
+	impassable = yes
+	state_category=pastoral
+	local_supplies=0.000
 }

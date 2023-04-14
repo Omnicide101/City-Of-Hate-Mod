@@ -75,6 +75,11 @@ add_opinion_modifier = {
 	modifier = bitter_rivals
 }
 
+add_relation_modifier = {
+	target = RMT
+	modifier = bitter_rivals_opinion_modifier
+}
+
 create_country_leader = {
 	name = "Jean-Philippe Ansoudin"
 	desc = "politics_LIR_ansoudin_desc"

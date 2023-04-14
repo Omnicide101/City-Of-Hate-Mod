@@ -7,29 +7,23 @@ UNG_convince_freiprinzen = {
 		target_trigger = {
 			FROM = {
 				state = THIS
-			}
-		}
-		
-		allowed = {
-			tag = UNG
-		}
-			
-		visible = {
-			tag = UNG
-			NOT = {
-				has_country_flag = UNG_civil_war_started
-			}
-			FROM = {
 				is_capital = yes
-			}
-			
-			FROM = {
 				owner = {
 					is_subject_of = UNG
 					NOT = {
 						tag = STA
 					}
 				}
+			}
+		}
+		
+		allowed = {
+			tag = UNG
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = UNG_civil_war_started
 			}
 		}
 		
@@ -149,13 +143,13 @@ UNG_convince_freiprinzen = {
 		
 		remove_effect = {
 			clr_country_flag = UNG_already_convincing_someone
+			add_to_variable = {
+				var = FROM.owner.FPT_union_loyalty
+				value = 1
+			}
 			FROM = {
 				owner = {
 					custom_effect_tooltip = FPT_increase_union_loyalty_small_tt
-					add_to_variable = {
-						var = FPT_union_loyalty
-						value = 1
-					}
 				}
 			}
 			set_country_flag = {
@@ -179,6 +173,13 @@ UNG_convince_freiprinzen = {
 		target_trigger = {
 			FROM = {
 				state = THIS
+				is_capital = yes
+				owner = {
+					is_subject_of = UNG
+					NOT = {
+						tag = STA
+					}
+				}
 			}
 		}
 		
@@ -187,21 +188,8 @@ UNG_convince_freiprinzen = {
 		}
 		
 		visible = {
-			tag = UNG
 			NOT = {
 				has_country_flag = UNG_civil_war_started
-			}
-			FROM = {
-				is_capital = yes
-			}
-			
-			FROM = {
-				owner = {
-					is_subject_of = UNG
-					NOT = {
-						tag = STA
-					}
-				}
 			}
 		}
 		
@@ -321,13 +309,13 @@ UNG_convince_freiprinzen = {
 		
 		remove_effect = {
 			clr_country_flag = UNG_already_convincing_someone
+			add_to_variable = {
+				var = FROM.owner.FPT_union_loyalty
+				value = 3
+			}
 			FROM = {
 				owner = {
 					custom_effect_tooltip = FPT_increase_union_loyalty_tt
-					add_to_variable = {
-						var = FPT_union_loyalty
-						value = 3
-					}
 				}
 			}
 			set_country_flag = {
@@ -350,6 +338,13 @@ UNG_convince_freiprinzen = {
 		target_trigger = {
 			FROM = {
 				state = THIS
+				is_capital = yes
+				owner = {
+					is_subject_of = UNG
+					NOT = {
+						tag = STA
+					}
+				}
 			}
 		}
 		
@@ -358,21 +353,8 @@ UNG_convince_freiprinzen = {
 		}
 		
 		visible = {
-			tag = UNG
 			NOT = {
 				has_country_flag = UNG_civil_war_started
-			}
-			FROM = {
-				is_capital = yes
-			}
-			
-			FROM = {
-				owner = {
-					is_subject_of = UNG
-					NOT = {
-						tag = STA
-					}
-				}
 			}
 		}
 		
@@ -492,13 +474,13 @@ UNG_convince_freiprinzen = {
 		
 		remove_effect = {
 			clr_country_flag = UNG_already_convincing_someone
+			add_to_variable = {
+				var = FROM.owner.FPT_union_loyalty
+				value = 5
+			}
 			FROM = {
 				owner = {
 					custom_effect_tooltip = FPT_increase_union_loyalty_large_tt
-					add_to_variable = {
-						var = FPT_union_loyalty
-						value = 5
-					}
 				}
 			}
 			set_country_flag = {

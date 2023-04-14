@@ -65,13 +65,13 @@ set_popularities = {
 	puritan = 37
 }
 
+
 recruit_character = DIA_aoibhroid_tuamáistir
 recruit_character = DIA_harry_ashe
 recruit_character = DIA_martha_mcguinness
 recruit_character = DIA_séan_kelly
 recruit_character = DIA_peter_kelly
 recruit_character = DIA_lucia_larkin
-
 
 add_ideas = {
 	halfling_country
@@ -109,4 +109,9 @@ add_opinion_modifier = {
 add_opinion_modifier = {
 	target = GET
 	modifier = bitter_rivals
+}
+
+add_relation_modifier = {
+	target = GET
+	modifier = bitter_rivals_opinion_modifier
 }

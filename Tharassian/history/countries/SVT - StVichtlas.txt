@@ -114,6 +114,11 @@ add_opinion_modifier = {
 	modifier = bitter_rivals
 }
 
+add_relation_modifier = {
+	target = ARK
+	modifier = bitter_rivals_opinion_modifier
+}
+
 create_country_leader = {
 	name = "Gabriela Schober"
 	desc = "politics_SVT_schober_desc"

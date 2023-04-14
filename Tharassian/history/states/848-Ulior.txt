@@ -21,7 +21,7 @@ state={
 		
 		buildings = {
 			infrastructure = 2
-			workshop = 1
+			workshop = 3
 			forge = 1
 		}
 	}

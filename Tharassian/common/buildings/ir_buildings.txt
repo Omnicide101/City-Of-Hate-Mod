@@ -202,4 +202,19 @@ buildings = {
 		value = 5
 		infrastructure_construction_effect = yes
 	}
+	
+	air_base = {
+		show_on_map = 1
+		base_cost = -1
+		icon_frame = 5
+		max_level = 0
+		value = 0
+	}
+	
+	rocket_site = {
+		show_on_map = 1
+		base_cost = -1
+		icon_frame = 12
+		max_level = 0
+	}
 }
