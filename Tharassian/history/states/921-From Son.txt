@@ -14,9 +14,9 @@ state={
 	}
     
 	history = {
-		owner  = XXX
+		owner = SAN
 		victory_points = { 152 2 }
-		add_core_of  = XXX
+		add_core_of = SAN
 		buildings = {
 			infrastructure = 2
 			farm = 1

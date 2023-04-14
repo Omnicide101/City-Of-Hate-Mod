@@ -670,7 +670,7 @@ country_event = {#Roaming monster - destroys things!
 	}
 }
 
-country_event = {#General captured!
+unit_leader_event = {#General captured!
 	id = random.15
 	title = random.15.t
 	desc = random.15.d
@@ -681,29 +681,23 @@ country_event = {#General captured!
 		name = random.15.a
 		
 		random_unit_leader = {
-			limit = {
-				has_trait = captured_unit_leader
-				check_variable = {
-					original_nationality = PREV.id
-				}
-			}
-			add_trait = { #Not 100% sure why I made this add the same trait again, but it was a headache and a half to make this work, so I'm not messing with it, just in case
-				character = THIS
-				trait = captured_unit_leader
-			}
+			#limit = {
+			#	has_trait = captured_unit_leader
+			#}
+			#remove_unit_leader_role = yes
 			random_country = {
-				limit = {
-					has_war_with = ROOT
-				}
 				country_event = random.16
-				PREV = {
-					set_nationality = PREV
-				}
+				#limit = {
+				#	has_war_with = ROOT
+				#}
+				#PREV = {
+				#	set_nationality = PREV
+				#}
+				#This one might seem weird to parse
+				#The PREV = { } refers to the random_unit_leader scope
+				#The set_nationality = PREV refers to the random_country scope
 			}
 		}
-		#This one might seem weird to parse
-		#The PREV = { } refers to the random_unit_leader scope
-		#The set_nationality = PREV refers to the random_country scope
 	}
 }
 
@@ -720,98 +714,27 @@ country_event = {#We captured a general!
 		random_unit_leader = {
 			limit = {
 				has_trait = captured_unit_leader
-				check_variable = {
-					original_nationality = FROM.id
-				}
+				#check_variable = {
+				#	char_nationality = @FROM
+				#}
 			}
 			
-			custom_effect_tooltip = RND_captured_enemy_tt
+			#remove_unit_leader_role = yes
 			
-			hidden_effect = {
-				add_advisor_role = {
-					advisor = {
-						slot = prisoners_guests
-						traits = {
-							captured_unit_leader_prisoner_trait
-						}
-						
-						cost = 9999
-					}
-				}
-			}
+			#add_advisor_role = {
+			#	advisor = {
+			#		slot = prisoners_guests
+			#		traits = {
+			#			captured_unit_leader_prisoner_trait
+			#		}
+			#		allowed = {
+			#			always = yes
+			#		}
+			#		available = {
+			#			always = no
+			#		}
+			#	}
+			#}
 		}
-	}
-}
-
-country_event = {#FROM offers prisoner exchange
-	id = random.17
-	title = random.17.t
-	desc = random.17.d
-	
-	is_triggered_only = yes
-	
-	option = {#Sure
-		name = random.17.a
-		
-		FROM = {
-			country_event = random.18
-		}
-	}
-	
-	option = {#Nah
-		name = random.17.b
-		ai_chance=  {
-			factor = 0 #Just give this one to the player
-		}
-		
-		FROM = {
-			country_event = random.19
-		}
-	}
-}
-
-country_event = {#Prisoner exchange accepted
-	id = random.18
-	title = random.18.t
-	desc = random.18.d
-	
-	is_triggered_only = yes
-	
-	option = {#W
-		name = random.18.a
-		
-		random_character = {
-			limit = {
-				is_prisoner = yes					
-				var:original_nationality = {
-					tag = FROM
-				}
-			}
-			free_character = yes
-		}
-		
-		FROM = {
-			random_character = {
-				limit = {
-					is_prisoner = yes					
-					var:original_nationality = {
-						tag = ROOT
-					}
-				}
-				free_character = yes
-			}
-		}
-	}
-}
-
-country_event = {#Prisoner exchange rejected
-	id = random.19
-	title = random.19.t
-	desc = random.19.d
-	
-	is_triggered_only = yes
-	
-	option = {#L
-		name = random.19.a
 	}
 }

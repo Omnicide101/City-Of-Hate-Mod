@@ -180,7 +180,7 @@ characters = {
 				has_government = republic_aristocrat
 			}
 			traits = {
-				first_lady_of_tykhintos_2
+				first_lady_of_tykinthos_2
 			}
 			cost = 100
 			ai_will_do = {

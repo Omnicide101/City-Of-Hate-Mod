@@ -80,17 +80,7 @@ add_opinion_modifier = {
 	modifier = staunch_allies
 }
 
-add_relation_modifier = {
-	target = ORD
-	modifier = staunch_allies_opinion_modifier
-}
-
 add_opinion_modifier = {
 	target = RTH
 	modifier = bitter_rivals
-}
-
-add_relation_modifier = {
-	target = RTH
-	modifier = bitter_rivals_opinion_modifier
 }

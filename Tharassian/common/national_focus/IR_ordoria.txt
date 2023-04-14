@@ -179,9 +179,7 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = ORD_puritan_government
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		x = 20
 		y = 0
 		completion_reward = {
@@ -737,9 +735,7 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = ORD_moderate_government
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		x = 20
 		y = 0
 		completion_reward = {
@@ -971,9 +967,7 @@ focus_tree = {
 		available = {
 			
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		relative_position_id = ORD_moderates
 		x = 0
 		y = 1
@@ -1145,9 +1139,7 @@ focus_tree = {
 		available = {
 			
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		relative_position_id = ORD_steadfast_friends
 		x = 0
 		y = 1
@@ -1190,9 +1182,7 @@ focus_tree = {
 		available = {
 			
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		relative_position_id = ORD_courts_sway
 		x = -1
 		y = 1
@@ -1314,9 +1304,7 @@ focus_tree = {
 		available = {
 			
 		}
-		mutually_exclusive = {
-			focus = 
-		}
+		
 		relative_position_id = ORD_tackle_sophistium
 		x = 0
 		y = 1
@@ -2780,7 +2768,6 @@ focus_tree = {
 						puritan = 47
 					}
 				}
-				#Event that imprisons various rebel leaders
 			}
 		}
 	}
@@ -3363,9 +3350,11 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
-			country_event = {
-				id = ord_lore.26
-				days = 1
+			EOR = {
+				add_popularity = {
+					ideology = republic_peasant
+					popularity = -0.06
+				}
 			}
 		}
 	}
@@ -3884,8 +3873,7 @@ focus_tree = {
 		}
 	}
 
-### SOPHIST BRANCH ###
-
+	## SOPHISTS ##
 	focus = { #Salvation of the Righteous
 		id = ORD_salvation_of_the_righteous
 		icon = GFX_focus_ord_faithful_society
@@ -4777,6 +4765,7 @@ focus_tree = {
 			}
 		}
 	}
+
 	
 ### INDUSTRIAL BRANCH ###
 

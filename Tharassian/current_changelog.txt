@@ -1,23 +1,49 @@
+-Began rework of Intelligence Agencies into Adventurer's Guild
+-Added new random event
+-Made out of food combat penalties significantly harsher
+-Starvation is now absolutely devastating to a nation; avoid it at all costs
+-Improved AI's ability to feed itself
+-AI will now (hopefully) disband units if it is facing starvation
+-Added traits to Arthenon, Astrellion and Stoutfellow
+-Gave Stahlhof some extra troops when the Prinzkriege break out
+-Buffed the amount of troops Stahlhof gets upon dealing with the Adalinatruppen
+-Made Ordorian rebels the agressor in the Traditionalist-Moderate Civil War instead of the legitimate government
+-Improved Ordorian supply lines
+-Made railways and supply hubs a lot cheaper
+-Fixed non-Human Puritans thinking Tesliran is an exception to their racial hatred
+-Added some railways to Getaland
+-Made Commissiaries get the generic focus tree
+-Buffed equipment attack values
+-Fixed ORD-RTH-SKA war peacing out in status quo ante bellum
+-Added a starting national spirit to Ordoria to represent the ancientness of that state
+-Nerfed Rthauiaur again
+-Made Skaelinger not take the Ironblood foci if they'd already committed to other politics
+-Made Skaelinger only able to demand the Khorinor Mountains from Rthauiaur if Rthauiaur actually controls them
+-Added SKA Focus tree descriptions (partially)
+-Added SKA to the interesting countries bookmark
+-Halved infantry equipment IC cost  due to carts taking up more MFs, bringing it back in line with vanilla IC cost
+-Made invading Bilodya and Tlarthingia no longer mutually exclusive for Constitutionalist Irinthios
+-Bumped up BER's Eerherstel-Erkevan railway since the supply node doesn't count as connected otherwise(???)
+-Fixed TLA portraits not fitting in their canvases
+-Fixed a bug where a flag allowing the Union to go to war with Perkavland if they rejected diplomacy would not set properly
+-Fixed Surveying Perkavbland decisions not showing up
+-Fixed continuous foci overlapping with St. Vichtlas' focus tree
+-Fixed a bug where Skaelinger Radicals would revolt in the middle of an Ordorian invasion, leaving the Rthaur to die
+-Added generic decisions to buff stability and/or war support
+-Added VPs across the board
+-Ordoria and the Commissiaries now always have resistance/compliance mechanics enabled in conquered lands, though they do get the full building slots
+-Updated portraits used in foci for SVT, STA, and UNG
+-Updated the mod to use the new character system
+-Tweaked Skaelinger AI behaviour
+-Added non-aggression pact between Stalhof and Neureik
 -Added advisors to Ordoria
--Fixed various Schneefilde bugs
--Added unique portraits to the Skaelinger leaders
--Added more general portraits to the southern Union
--Added division commander portraits
--Made Hellpfad and Flugernacht Very Fertile states
--Tweaked Holzbrenn and Spochwald's capital city populations
--Renamed a few Spochwald states
--Nerfed Schneefilde's capital population and victory points
--Buffed St. Vichtlas' capital victory points
--Fixed archer onmap icons not showing properly
--Incorporated new Oramfell states into the Vergallheim restoration claims and cores
--Fixed various bugs surrounding the recruitment of Adventurers
--Slightly improved Schneefilder food situation
--Tweaked Schneefilde's 'Brittle Economy' national spirit
--Relaxed the division limiter on Rthauiaur
--Stopped Bilodya from having a rivalry with itself
--Added reinforce rate buffs to Astrolabe, Compass and Cartography techs totalling to +5%, equalling vanilla's Radio tech
--Set all provinces to their correct continents
--Made Irinthios less likely to settle with Tlarthingia if they're winning
--Reworked Thryxvanor to have a functioning economy
--Reworked provinces in the Tlarthingian Isthmus as one province bordering both the Merchant's Hand and the wider ocean made the naval invasion system shit itself
--Fixed the Adventurous generic trait making Adventuring Guild upgrades take longer instead of shorter
+-Began migrating advisor portraits to a new folder to prevent clutter (internal mod structure thing)
+-Added Thryxvanor
+-Added some achievements
+-Prevented Stahlhof from using generic ideology decisions until they've taken the 'The Crown Infallible' focus
+-Fixed a bug that would prevent the player from taking the The Two Thrones focus as the Union
+-Made AI actually more likely to invade navally
+-Added generic unit leader traits for more personality in your generals
+-Reduced Kurgur rations consumption to represent self-sufficiency (placeholder solution)
+-Made the AI far more happy to trade, especially for fuel
+-Various bugfixes and UI improvements

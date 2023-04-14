@@ -15,7 +15,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				#stability_weekly = -0.002 #Disabled for the in-between build since it can't be removed with Ordoria's old tree
+				stability_weekly = -0.002
 				resistance_target = 0.35
 			}
 		}

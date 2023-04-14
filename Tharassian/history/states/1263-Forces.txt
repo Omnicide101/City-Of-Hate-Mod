@@ -4,25 +4,7 @@ state={
 	provinces={
 		8506 8528 8551 8560 
 	}
-	state_category = town
-	manpower=7392
+	manpower=1 state_category=pastoral history = {owner = XXX add_core_of = XXX}
 	buildings_max_level_factor=1.000
-	resources = {
-		mount = 4
-	}
-	history={
-		owner = ATH
-		victory_points = {
-			8506 7
-		}
-		buildings = {
-			infrastructure = 3
-			forge = 2
-			8506 = {
-				naval_base = 2
-			}
-		}
-		add_core_of = ATH
-
-	}
+	local_supplies=0.000
 }
