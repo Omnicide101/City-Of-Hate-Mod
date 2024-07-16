@@ -69,4 +69,4 @@ tags={
 }
 picture="Tharassian.png"
 supported_version="1.14.*"
-path="C:/Users/BFrat/Documents/Paradox Interactive/Hearts of Iron IV/mod/Tharassian"
+path = "mod/Tharassian"
