@@ -1,14 +1,31 @@
+
 state={
 	id=907
 	name="STATE_907"
+	resources={
+		steel=5.000
+	}
+
+	history={
+		victory_points = {
+			7926 2 
+		}
+		owner = THA
+		buildings = {
+			infrastructure = 1
+			forge = 1
+
+		}
+		add_core_of = THA
+		add_core_of = HIH
+
+	}
+
 	provinces={
 		1735 7927 7945 7973 
 	}
+	manpower=1331
 	buildings_max_level_factor=1.000
-	manpower=1
 	state_category=pastoral
-	history={
-		owner = XXX
-		add_core_of = XXX
-	}
+	local_supplies=0.000
 }

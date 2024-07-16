@@ -24,22 +24,35 @@
 #	can be added to countries, states or unit leaders
 #	will only updated daily, unless forced by force_update_dynamic_modifier effect
 
-#Stop building so many divisions please
-ai_division_limiter = {
-	ai_desired_divisions_factor = -1
-}
+#Stop building so many divisions please #DEPRECATED
+#ai_division_limiter = {
+#	ai_desired_divisions_factor = -1
+#}
 
 #Country-specific modifiers
+SPW_river_patrol = {
+	icon = GFX_modifier_river_patrol
+	army_speed_factor_for_controller = 0.15
+	local_org_regain = 0.1
+	
+}
+
 SPW_bandit_haven = {
 	icon = GFX_modifier_bandit_haven
-	resistance_damage_to_garrison = 0.5
-	resistance_target = 0.35
+	army_speed_factor_for_controller = -0.05
+	attrition_for_controller = 0.1
+	production_speed_buildings_factor = -0.33
+	resistance_damage_to_garrison = 0.2
+	resistance_target = 0.15
 }
 
 SPW_darkweald_bandits = {
 	icon = GFX_modifier_darkweald_bandits
 	army_speed_factor_for_controller = -0.35
 	attrition_for_controller = 0.2
+	production_speed_buildings_factor = -0.5
+	resistance_damage_to_garrison = 0.4
+	resistance_target = 0.25
 }
 
 
@@ -53,25 +66,35 @@ SPW_darkweald_bandits_empowered = {
 	icon = GFX_modifier_darkweald_bandits_empowered
 	army_speed_factor_for_controller = -0.5
 	attrition_for_controller = 0.4
-}
-
-
-SPW_newheart_bandits = {
-	icon = GFX_modifier_newheart_bandits
+	production_speed_buildings_factor = -0.75
 	resistance_damage_to_garrison = 0.5
 	resistance_target = 0.35
 }
 
 
+SPW_newheart_bandits = {
+	icon = GFX_modifier_newheart_bandits
+	army_speed_factor_for_controller = -0.05
+	attrition_for_controller = 0.1
+	production_speed_buildings_factor = -0.33
+	resistance_damage_to_garrison = 0.2
+	resistance_target = 0.15
+}
+
+
 SPW_newheart_bandits_aligned = {
-	icon = GFX_modifier_newheart_bandits_empowered
+	icon = GFX_modifier_newheart_bandits_aligned
 	local_org_regain = 0.15
 	local_manpower = 0.2
+	attrition_for_controller = 0.2
 }
 
 
 SPW_newheart_bandits_empowered = {
-	icon = GFX_modifier_newheart_bandits_aligned
+	icon = GFX_modifier_newheart_bandits_empowered
+	army_speed_factor_for_controller = -0.5
+	attrition_for_controller = 0.4
+	production_speed_buildings_factor = -0.75
 	resistance_damage_to_garrison = 0.5
 	resistance_target = 0.35
 }
@@ -79,14 +102,28 @@ SPW_newheart_bandits_empowered = {
 
 SPW_ominous_presences = {
 	icon = GFX_modifier_ominous_presences
-	resistance_damage_to_garrison = 0.5
-	resistance_target = 0.35
+	resistance_damage_to_garrison = 0.2
+	resistance_target = 0.15
+	monthly_population = -0.1
+	army_speed_factor_for_controller = -0.5
+	attrition_for_controller = 0.4
+	production_speed_buildings_factor = -0.75
 }
 
 ORD_drakeskin_guarded_lands = {
 	icon = GFX_modifier_drakeskin_guarded_lands
 	resistance_damage_to_garrison = 0.5
 	resistance_target = 0.35
+}
+
+ORD_steel_crisis_hit = {
+	icon = GFX_IRI_Forges_Mobilisation
+	
+	war_support_factor = var:ORD_steel_crisis_multiplier_war_support
+	army_attack_factor = var:ORD_steel_crisis_multiplier_attack
+	army_defence_factor = var:ORD_steel_crisis_multiplier_defence
+	breakthrough_factor = var:ORD_steel_crisis_multiplier_breakthrough
+	production_lack_of_resource_penalty_factor = var:ORD_steel_crisis_multiplier_resource_penalty
 }
 
 EOR_neglected_lands = {

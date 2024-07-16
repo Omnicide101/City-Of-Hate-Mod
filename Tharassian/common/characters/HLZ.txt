@@ -94,7 +94,7 @@ characters={
 		name="Laurenz Reinmann"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_reinmann.dds"
+				small=GFX_idea_hlz_reinmann
 			}
 		}
 		advisor = {
@@ -127,7 +127,7 @@ characters={
 		name="Sabina Heuberger"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_heuberger.dds"
+				small=GFX_idea_hlz_heuberger
 			}
 		}
 		advisor = {
@@ -160,7 +160,7 @@ characters={
 		name="Erwin Bloch"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_bloch.dds"
+				small=GFX_idea_hlz_bloch
 			}
 		}
 		advisor = {
@@ -193,7 +193,7 @@ characters={
 		name="Alexandra von Neureim"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_von_neureim.dds"
+				small=GFX_idea_hlz_von_neureim
 			}
 		}
 		advisor = {
@@ -224,7 +224,7 @@ characters={
 		name="Joachim Fugler"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_fugler.dds"
+				small=GFX_idea_hlz_fugler
 			}
 		}
 		advisor = {
@@ -262,7 +262,7 @@ characters={
 		name="Karl Stelzner"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_stelzner.dds"
+				small=GFX_idea_hlz_stelzner
 			}
 		}
 		advisor = {
@@ -292,7 +292,7 @@ characters={
 		name="Ylcatra Isthyne"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_isthyne.dds"
+				small=GFX_idea_hlz_isthyne
 			}
 		}
 		advisor = {

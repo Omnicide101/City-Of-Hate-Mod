@@ -56,7 +56,9 @@ units = {
 		name = "Quellion Peasant's Self-Defense Guild"
 		location = 1353
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.15
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.32
 
 	}
 
@@ -64,7 +66,9 @@ units = {
 		name = "Thurgithon Peasant's Militia"
 		location = 473
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.07
+		start_equipment_factor = 0.27
+		start_manpower_factor = 0.54
 
 	}
 	
@@ -72,7 +76,9 @@ units = {
 		name = "Vrinnis People's Watch"
 		location = 6954
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.05
+		start_equipment_factor = 0.55
+		start_manpower_factor = 0.19
 
 	}
 
@@ -80,7 +86,9 @@ units = {
 		name = "Ytholine City Watch"
 		location = 4959
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.05
+		start_equipment_factor = 0.80
+		start_manpower_factor = 0.11
 
 	}
 	
@@ -88,7 +96,9 @@ units = {
 		name = "Astrenar Hunter's Union"
 		location = 4347
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.93
+		start_manpower_factor = 0.1
 
 	}
 
@@ -96,7 +106,9 @@ units = {
 		name = "Yctharon Forester's Lodge"
 		location = 6894
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.43
+		start_manpower_factor = 0.42
 
 	}
 	
@@ -104,7 +116,9 @@ units = {
 		name = "Peakwatcher Sentries"
 		location = 7128
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.65
+		start_manpower_factor = 0.85
 
 	}
 
@@ -112,7 +126,9 @@ units = {
 		name = "Gythus Southguard"
 		location = 1897
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
+		start_manpower_factor = 0.21
 
 	}
 
@@ -120,7 +136,9 @@ units = {
 		name = "Unspykaur Miner's Self-Defense League"
 		location = 7777
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.14
+		start_equipment_factor = 0.7
+		start_manpower_factor = 0.95
 
 	}
 
@@ -129,14 +147,18 @@ units = {
 		location = 7276
 		division_template = "Peasant's Guard"
 		start_experience_factor = 0.5
+		start_equipment_factor = 0.4
+		start_manpower_factor = 0.11
 
 	}
 
 	division = {
-		name = "Postal Woker's Self-Defense Guild"
+		name = "Postal Worker's Self-Defense Guild"
 		location = 7095
 		division_template = "Outrider Watchers"
 		start_experience_factor = 0.4
+		start_equipment_factor = 0.3
+		start_manpower_factor = 0.82
 	}
 }
 
@@ -152,7 +174,7 @@ instant_effect = {
 		}
 		requested_factories = 4
 		progress = 0.48
-		efficiency = 37
+		efficiency = 12
 	}
 
 	add_equipment_production = {
@@ -161,7 +183,7 @@ instant_effect = {
 			creator = "RTH" 
 		}
 		requested_factories = 2
-		progress = 0.3
-		efficiency = 12
+		progress = 0.1
+		efficiency = 4
 	}
 }

@@ -1504,7 +1504,7 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 	shared_focus = {#Join the winning team
 		id = FPT_join_winners
 		icon = GFX_goal_generic_attack_allies
-		cost = 10
+		cost = 1
 		prerequisite = {
 			focus = FPT_buying_time
 		}
@@ -1539,7 +1539,7 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 				limit = {
 					UNG = {
 						check_variable = {
-							UNG_num_allies > STA_num_allies
+							UNG_num_allies > sta.STA_num_allies
 						}
 					}
 				}
@@ -1551,7 +1551,7 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 				limit = {
 					STA = {
 						check_variable = {
-							STA_num_allies > UNG_num_allies
+							STA_num_allies > UNG.UNG_num_allies
 						}
 					}
 				}
@@ -1565,7 +1565,7 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 	shared_focus = {#Break from the Union
 		id = FPT_break_from_union
 		icon = GFX_goal_generic_major_war
-		cost = 10
+		cost = 1
 		prerequisite = {
 			focus = FPT_buying_time
 		}
@@ -1599,7 +1599,7 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 	shared_focus = {#Just grill
 		id = FPT_declare_neutrality
 		icon = GFX_focus_generic_home_defense
-		cost = 10
+		cost = 1
 		prerequisite = {
 			focus = FPT_buying_time
 		}
@@ -1630,13 +1630,29 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 				limit = {
 					has_war_with = UNG
 				}
-				white_peace = UNG
+				every_country = {
+					limit = {
+						OR = {
+							tag = UNG
+							is_in_faction_with = UNG
+						}
+					}
+					white_peace = TEI
+				}
 			}
 			if = {
 				limit = {
 					has_war_with = STA
 				}
-				white_peace = STA
+				every_country = {
+					limit = {
+						OR = {
+							tag = STA
+							is_in_faction_with = STA
+						}
+					}
+					white_peace = TEI
+				}
 			}
 		}
 	}

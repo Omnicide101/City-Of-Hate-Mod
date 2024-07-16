@@ -229,6 +229,7 @@
  rth.25.t:0 "[RTH.GetName] Returns the Khorinor Mountains"
  rth.25.d:0 "The Khorinor Mountains, which he had lended to the Rthaur to aid in their revolution several decades ago, have finally been returned to us as thanks for our alliance from [RTH.GetNameDef]."
  rth.25.a:0 "We are thankful"
+ rth.25.b:0 "Return the lands we occupied from the ordorians in exchange."
  rth.26.t:0 "The Khorinor Mountains stay in Rthaur Hands"
  rth.26.d:0 "Refusing to return the mountains we lent them in their time of need, the Rthaur have betrayed us."
  rth.26.a:0 "We shall trust them no longer"

@@ -11,6 +11,7 @@ state={
 	history={
 		owner = DEL
 		add_core_of = DEL
+		add_claim_by = THA
 		
 		buildings = {
 			infrastructure = 3

@@ -1,6 +1,15 @@
 ﻿capital = 236
 
 set_oob = "FTH_1936"
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "FTH_1936_naval_mtg"
+	else = {
+		set_naval_oob = "FTH_1936_naval"
+	}
+}
 
 
 set_technology ={
@@ -36,7 +45,8 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 set_variable = {
@@ -161,5 +171,89 @@ create_country_leader = {
 	picture = "gfx/leaders/FTH/Portrait_FTH_Feininger.dds"
 	ideology = republic_merchant_ideology
 	traits = {
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Handler-Class"
+		type = destroyer_1
+		parent_version = 0
+		upgrades = {
+			destroyer_engine_upgrade = 3
+		}
+	}
+	# Light Cruisers #
+	create_equipment_variant = {
+		name = "Freiheit-Class"
+		type = destroyer_1 #Should be light cruiser
+		parent_version = 0
+		upgrades = {
+			ship_reliability_upgrade = 1
+			ship_engine_upgrade = 3
+			ship_gun_upgrade = 1
+		}
+	}
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "Daskellin-Class"
+		type = heavy_cruiser_1
+		parent_version = 0
+		upgrades = {
+			ship_engine_upgrade = 3
+			ship_armor_upgrade = 1
+			ship_gun_upgrade = 1
+		}
+	}
+}
+
+if = {
+	limit = { 
+		has_dlc = "Man the Guns"
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Handler-Class"
+		type = ship_hull_light_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = light_ship_ballista_0
+			fixed_ship_engine_slot = light_ship_rowers_0
+		}
+	}
+	# Light Cruisers #
+	#create_equipment_variant = {
+	#		name = "Freiheit-Class"
+	#		type = ship_hull_cruiser_0
+	#		parent_version = 0
+	#		modules = {
+	#			fixed_ship_battery_slot = ship_medium_battery_1
+	#			fixed_ship_anti_air_slot = empty
+	#			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+	#			fixed_ship_radar_slot = empty
+	#			fixed_ship_engine_slot = cruiser_ship_engine_2
+	#			fixed_ship_armor_slot = ship_armor_cruiser_2
+	#			mid_1_custom_slot = ship_torpedo_1
+	#			mid_2_custom_slot = ship_secondaries_2
+	#			rear_1_custom_slot = ship_light_medium_battery_2
+	#		}
+	#	}
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "Daskellin-Class"
+		type = ship_hull_heavy_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = heavy_ship_ballista_0
+			fixed_ship_engine_slot = heavy_ship_rowers_0
+		}
 	}
 }

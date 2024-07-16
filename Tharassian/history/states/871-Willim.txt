@@ -17,5 +17,6 @@ state={
 			workshop = 1
 		}
 		add_core_of = TES
+		add_claim_by = THX
 	}
 }

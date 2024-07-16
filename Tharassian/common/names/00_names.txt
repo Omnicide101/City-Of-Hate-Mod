@@ -40,6 +40,158 @@ NBI = {
 }
 
 ###############################################################
+# Tristals
+###############################################################
+TRS = {
+	male = {
+		names = {  
+			Gaius Juilus Cato Plandinius Cerberus Calodeius Severementus Ascontius Perarius Decio Prensus Meliarus Gallicles Egnatius
+		}
+	}
+	female = {
+		names = {
+			Diara Ceiana Quinctilia Caedicia Poplicola Cornelia Maximius Cordia Appripa
+		}
+	}
+	surnames = { 
+		Camerarius Segestes Renes Valentinian Verspucius Malares Syncophatisu Adranius Septumius
+	}
+}
+
+###############################################################
+# Akkanids
+###############################################################
+AKK = {
+	male = {
+		names = {  
+			"Abd Allah" "Abd al-Karim" "Abd al-Malik" "Abd al-Qadir" "Abd al-Rahman" "Abu Bakr" Ahmad Ali 
+			Fawzi Fuad Halil Hasan Hisham Ibrahim Ishaq Iskandar Ja'far Jamal Kamil Khalid 
+			Mustafa "Nur al-Din" "Sa'd al-Din" Salim  Sa'ud Shukri
+			Tawfiq Umar Uthman Yahya Yusuf Zafir 		
+		}
+	}
+	female = {
+		names = {
+			Nadiyya Adila Amsha Asiya Faghira Habiba Hanifa Jahaira Kamala Layla Maryam Nafisa Nyawela Parand 
+			Parween Paymaneh Paywand Qamara Rafiqa Rasa Rashida Reshawna
+			Saaman Sabba Saghar Sahba Sajida Samira Semeah Setara Shahrbano Shahzadah Shameem Shararah 
+			Sheeftah Sheeva Shogofa Shokouh Shola Sholah Simin Souzan
+			Taliba Tanaz Taneen Yagana Yakta Yasmin Zaynab
+		}
+	}
+	surnames = { 
+		"ibn Abd Allah" "ibn Abd al-Qadir" "ibn Abu Bakr" "ibn Ahmad" "ibn Ali"
+			"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
+			"ibn Mustafa" "ibn Salim"  
+			"ibn Umar" "ibn Uthman" "ibn Yusuf"
+			"al-Najdi" "al-Hijazi"   
+	
+	}
+}
+
+
+###############################################################
+# Empire of the Ageless Queen
+###############################################################
+AGE = {
+	male = {
+		names = {
+			Triskard Melskar Dromosk Cassion Neliod Maldran Forask	
+		}
+	}
+	female = {
+		names = {
+			Tasoc Meland Semand Morael Thaliod Drasac
+		}
+	}
+	
+	surnames = {
+		Covernius Sorloth Gascauche Prescott Maldeville Ervantius Promanthus
+	}
+}
+
+###############################################################
+# Salnland
+###############################################################
+SAL = {
+	male = {
+		names = {
+			Triskard Melskar Dromosk Cassion Neliod Maldran Forask	
+		}
+	}
+	female = {
+		names = {
+			Tasoc Meland Semand Morael Thaliod Drasac
+		}
+	}
+	
+	surnames = { 
+		Plescard Aisand Karskand Carnaith Falsand Runarion
+	}
+}
+
+###############################################################
+# Tharothep Princedom
+###############################################################
+THA = {
+	male = {
+		names = {
+		 	Sekhem-ur Sekhepti Ha-her Meshta Mahu Kemkem Set-qesu Setek Hetep-ka Anenit
+		}
+	}
+	female = {
+		names = {
+			Sekhat-Heru Hait Em-qetqet Maat Kehket Shentit Suti-mes Hetep-taui Aniu
+		}
+	}
+	
+	surnames = { 
+		Anb Aneb Re-per Het Heh Heqr Khent Khemenes Smer Smamu Ketet Kemt Tenait
+	}
+}
+
+
+###############################################################
+# Stabba Tribes
+###############################################################
+STB = {
+	male = {
+		names = {
+		 	Graska Trassik Mazknar Prosnik Thrassak Baska Truk Pleskaz
+		}
+	}
+	female = {
+		names = {
+			Skarsa Brazzak Skala Graska Vrasnik
+		}
+	}
+	
+	surnames = { 
+		"da Git" Gutrippa Necksnappa Redbootz "da 'Ungry" "da Meanest" Finga-Masha Pouchpicka Spida-Lova
+	}
+}
+
+###############################################################
+# Tesliran
+###############################################################
+TES = {
+	male = {
+		names = {
+		 	Troskar Delbrod Berthund Mildrosk Mitskard
+		}
+	}
+	female = {
+		names = {
+			Karstora Delaria Bethara Meldora Meskara
+		}
+	}
+	
+	surnames = { 
+		Brightblade Glorysword Hopelance Sunbringer Prideshield
+	}
+}
+
+###############################################################
 # Duchy of El
 ###############################################################
 DEL = {

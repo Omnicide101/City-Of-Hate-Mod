@@ -1,0 +1,39 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Blacksteel Navy"
+		naval_base = 3069 # Irenthar
+		task_force = {
+			name = "Irenthar Command"
+			location = 3069 # Irenthar
+			ship = { name = "Exile" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = GMR version_name = "Azkebaal-Class" } } }
+			ship = { name = "Warlord" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = GMR version_name = "Azkebaal-Class" } } }
+			ship = { name = "Bloodheart" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = GMR version_name = "Azkebaal-Class" } } }
+			ship = { name = "Duskstar" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Pridelord" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Illtiding" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Authority" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Brusque" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Command" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Cravenslayer" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Reaper" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+		}
+		
+		task_force = {
+			name = "Navandon Command"
+			location = 5840 # Navandon
+			ship = { name = "Arthenon" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = GMR version_name = "Azkebaal-Class" } } }
+			ship = { name = "Sothris" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = GMR version_name = "Azkebaal-Class" } } }
+			ship = { name = "Harbinger" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = GMR version_name = "Azkebaal-Class" } } }
+			ship = { name = "Conqueror" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Discipline" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Grimlord" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Merciless" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Indomitable" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Carrionmaker" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Ironwill" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+			ship = { name = "Extinguisher" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GMR version_name = "Dasalmid-Class" } } }
+		}
+	}
+}

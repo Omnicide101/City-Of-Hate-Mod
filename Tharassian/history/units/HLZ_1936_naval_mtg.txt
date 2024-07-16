@@ -1,0 +1,13 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Holzbrenner Marine"
+		naval_base = 1467 # Holzbrenn
+		task_force = {
+			name = "Holzflotte"
+			location = 1467 # Holzbrenn
+			ship = { name = "Edmund" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = HLZ version_name = "Eiche-Class"} } }
+		}
+	}
+}

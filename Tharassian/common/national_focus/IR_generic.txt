@@ -246,6 +246,10 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				has_country_flag = generic_puritan_path
+				NOT = {
+					tag = EOR
+					has_government = monarchy_absolute
+				}
 			}
 			modifier = {
 				factor = 0

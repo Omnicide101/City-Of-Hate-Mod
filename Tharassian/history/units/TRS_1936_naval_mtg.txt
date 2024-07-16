@@ -1,0 +1,17 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "I. Legio Nautica"
+		naval_base = 7149 # Hathliss (Vicinia Classiarii)
+		task_force = {
+			name = "I. Cohors Nautica"
+			location = 7149 # Hathliss (Vicinia Classiarii)
+			ship = { name = "I. Heri Hoc Edificavimus" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TRS version_name = "Per Fluctus-Class" } } }
+			ship = { name = "II. Heri Hoc Edificavimus" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TRS version_name = "Per Fluctus-Class" } } }
+			ship = { name = "III. Heri Hoc Edificavimus" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TRS version_name = "Per Fluctus-Class" } } }
+			ship = { name = "IV. Heri Hoc Edificavimus" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TRS version_name = "Per Fluctus-Class" } } }
+			ship = { name = "V. Heri Hoc Edificavimus" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TRS version_name = "Per Fluctus-Class" } } }
+		}
+	}
+}

@@ -61,7 +61,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = -0.15
 				no_supply_grace = -3
-				land_reinforce_rate	 = -0.05
+				land_reinforce_rate	 = -0.02
 			}
 		}
 		
@@ -82,7 +82,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.1
 				no_supply_grace = 2
-				land_reinforce_rate	 = 0.02
+				land_reinforce_rate	 = 0.01
 			}
 		}
 		

@@ -1,0 +1,15 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Thryxvanian Navy"
+		naval_base = 8945 # Grythe
+		task_force = {
+			name = "Firstfleet"
+			location = 8945 # Grythe
+			ship = { name = "Gloryheart" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TRX } } }
+			ship = { name = "Brightborn" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TRX } } }
+			ship = { name = "Birthright" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TRX } } }
+		}
+	}
+}

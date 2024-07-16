@@ -174,3 +174,367 @@ country_event = {#Drakeskin Contract Over
 		clr_country_flag = MERCS_drakeskins_contract_already_ending_flag
 	}
 }
+
+country_event = {#Irinthian Legion Contract Over
+	id = merc.4
+	title = merc.4.t
+	desc = merc.4.d
+	picture = GFX_report_event_romanian_soldiers
+	
+	immediate = {
+		set_country_flag = MERCS_irinthian_legion_contract_already_ending_flag
+	}
+	
+	trigger = {
+		has_country_flag = MERCS_hiring_irinthian_legion_flag
+		NOT = {
+			has_idea = MERCS_hiring_irinthian_legion_idea
+		}
+		NOT = {
+			has_country_flag = MERCS_irinthian_legion_contract_already_ending_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {#Very Well
+		name = merc.4.a
+		delete_unit_template_and_units = {
+			division_template = "Irinthian Legion Mercenaries"
+		}
+		clr_country_flag = MERCS_hiring_irinthian_legion_flag
+		clr_country_flag = MERCS_irinthian_legion_contract_already_ending_flag
+	}
+	
+	option = {#Renew Contract
+		name = merc.5.b
+		
+		add_timed_idea = {
+			idea = MERCS_hiring_irinthian_legion_idea
+			days = 183
+		}
+		clr_country_flag = MERCS_hiring_irinthian_legion_flag
+		clr_country_flag = MERCS_irinthian_legion_contract_already_ending_flag
+	}
+}
+
+
+
+country_event = {#Tlarthingian Paladins Contract Over
+	id = merc.5
+	title = merc.4.t
+	desc = merc.4.d
+	picture = GFX_report_event_romanian_soldiers
+	
+	immediate = {
+		set_country_flag = MERCS_tlarthingian_paladin_contract_already_ending_flag
+	}
+	
+	trigger = {
+		has_country_flag = MERCS_hiring_tlarthingian_paladin_flag
+		NOT = {
+			has_idea = MERCS_hiring_tlarthingian_paladin_idea
+		}
+		NOT = {
+			has_country_flag = MERCS_tlarthingian_paladin_contract_already_ending_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {#Very Well
+		name = merc.4.a
+		delete_unit_template_and_units = {
+			division_template = "Tlarthingian Paladin Mercenaries"
+		}
+		clr_country_flag = MERCS_hiring_tlarthingian_paladins_flag
+		clr_country_flag = MERCS_tlarthingian_paladins_contract_already_ending_flag
+	}
+	
+	option = {#Renew Contract
+		name = merc.5.b
+		
+		add_timed_idea = {
+			idea = MERCS_hiring_tlarthingian_paladin_idea
+			days = 183
+		}
+		clr_country_flag = MERCS_hiring_tlarthingian_paladin_flag
+		clr_country_flag = MERCS_tlarthingian_paladin_contract_already_ending_flag
+	}
+}
+
+
+
+country_event = {#Green Bastards Contract Over
+	id = merc.6
+	title = merc.4.t
+	desc = merc.4.d
+	picture = GFX_report_event_romanian_soldiers
+	
+	immediate = {
+		set_country_flag = MERCS_green_bastards_contract_already_ending_flag
+	}
+	
+	trigger = {
+		has_country_flag = MERCS_hiring_green_bastards_flag
+		NOT = {
+			has_idea = MERCS_hiring_green_bastards_idea
+		}
+		NOT = {
+			has_country_flag = MERCS_green_bastards_contract_already_ending_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {#Very Well
+		name = merc.4.a
+		delete_unit_template_and_units = {
+			division_template = "Green Bastards Mercenaries"
+		}
+		clr_country_flag = MERCS_hiring_green_bastardss_flag
+		clr_country_flag = MERCS_green_bastardss_contract_already_ending_flag
+	}
+	
+	option = {#Renew Contract
+		name = merc.5.b
+		
+		add_timed_idea = {
+			idea = MERCS_hiring_green_bastards_idea
+			days = 183
+		}
+		clr_country_flag = MERCS_hiring_green_bastards_flag
+		clr_country_flag = MERCS_green_bastards_contract_already_ending_flag
+	}
+}
+
+country_event = {#Red Talons Contract Over
+	id = merc.7
+	title = merc.4.t
+	desc = merc.4.d
+	picture = GFX_report_event_romanian_soldiers
+	
+	immediate = {
+		set_country_flag = MERCS_red_talons_contract_already_ending_flag
+	}
+	
+	trigger = {
+		has_country_flag = MERCS_hiring_red_talons_flag
+		NOT = {
+			has_idea = MERCS_hiring_red_talons_idea
+		}
+		NOT = {
+			has_country_flag = MERCS_red_talons_contract_already_ending_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {#Very Well
+		name = merc.4.a
+		delete_unit_template_and_units = {
+			division_template = "Red Talons Mercenaries"
+		}
+		clr_country_flag = MERCS_hiring_red_talonss_flag
+		clr_country_flag = MERCS_red_talonss_contract_already_ending_flag
+	}
+	
+	option = {#Renew Contract
+		name = merc.5.b
+		
+		add_timed_idea = {
+			idea = MERCS_hiring_red_talons_idea
+			days = 183
+		}
+		clr_country_flag = MERCS_hiring_red_talons_flag
+		clr_country_flag = MERCS_red_talons_contract_already_ending_flag
+	}
+}
+
+country_event = {#The Hand Contract Over
+	id = merc.8
+	title = merc.4.t
+	desc = merc.4.d
+	picture = GFX_report_event_romanian_soldiers
+	
+	immediate = {
+		set_country_flag = MERCS_the_hand_contract_already_ending_flag
+	}
+	
+	trigger = {
+		has_country_flag = MERCS_hiring_the_hand_flag
+		NOT = {
+			has_idea = MERCS_hiring_the_hand_idea
+		}
+		NOT = {
+			has_country_flag = MERCS_the_hand_contract_already_ending_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {#Very Well
+		name = merc.4.a
+		delete_unit_template_and_units = {
+			division_template = "The Hand Mercenaries"
+		}
+		clr_country_flag = MERCS_hiring_the_hand_flag
+		clr_country_flag = MERCS_the_hand_contract_already_ending_flag
+	}
+	
+	option = {#Renew Contract
+		name = merc.5.b
+		
+		add_timed_idea = {
+			idea = MERCS_hiring_the_hand_idea
+			days = 183
+		}
+		clr_country_flag = MERCS_hiring_the_hand_flag
+		clr_country_flag = MERCS_the_hand_contract_already_ending_flag
+	}
+}
+
+country_event = {#Twin Axes Contract Over
+	id = merc.9
+	title = merc.4.t
+	desc = merc.4.d
+	picture = GFX_report_event_romanian_soldiers
+	
+	immediate = {
+		set_country_flag = MERCS_twin_axes_contract_already_ending_flag
+	}
+	
+	trigger = {
+		has_country_flag = MERCS_hiring_twin_axes_flag
+		NOT = {
+			has_idea = MERCS_hiring_twin_axes_idea
+		}
+		NOT = {
+			has_country_flag = MERCS_twin_axes_contract_already_ending_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {#Very Well
+		name = merc.4.a
+		delete_unit_template_and_units = {
+			division_template = "Twin Axes Mercenaries"
+		}
+		clr_country_flag = MERCS_hiring_twin_axes_flag
+		clr_country_flag = MERCS_twin_axes_contract_already_ending_flag
+	}
+	
+	option = {#Renew Contract
+		name = merc.5.b
+		
+		add_timed_idea = {
+			idea = MERCS_hiring_twin_axes_idea
+			days = 183
+		}
+		clr_country_flag = MERCS_hiring_twin_axes_flag
+		clr_country_flag = MERCS_twin_axes_contract_already_ending_flag
+	}
+}
+
+country_event = {#Roaming Gathering Contract Over
+	id = merc.10
+	title = merc.4.t
+	desc = merc.4.d
+	picture = GFX_report_event_romanian_soldiers
+	
+	immediate = {
+		set_country_flag = MERCS_roaming_gathering_contract_already_ending_flag
+	}
+	
+	trigger = {
+		has_country_flag = MERCS_hiring_roaming_gathering_flag
+		NOT = {
+			has_idea = MERCS_hiring_roaming_gathering_idea
+		}
+		NOT = {
+			has_country_flag = MERCS_roaming_gathering_contract_already_ending_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {#Very Well
+		name = merc.4.a
+		delete_unit_template_and_units = {
+			division_template = "Roaming Gathering Mercenaries"
+		}
+		clr_country_flag = MERCS_hiring_roaming_gathering_flag
+		clr_country_flag = MERCS_roaming_gathering_contract_already_ending_flag
+	}
+	
+	option = {#Renew Contract
+		name = merc.5.b
+		
+		add_timed_idea = {
+			idea = MERCS_hiring_roaming_gathering_idea
+			days = 183
+		}
+		clr_country_flag = MERCS_hiring_roaming_gathering_flag
+		clr_country_flag = MERCS_roaming_gathering_contract_already_ending_flag
+	}
+}
+
+country_event = {#Gowie Mercenaries Contract Over
+	id = merc.11
+	title = merc.4.t
+	desc = merc.4.d
+	picture = GFX_report_event_romanian_soldiers
+	
+	immediate = {
+		set_country_flag = MERCS_gowie_mercenaries_contract_already_ending_flag
+	}
+	
+	trigger = {
+		has_country_flag = MERCS_hiring_gowie_mercenaries_flag
+		NOT = {
+			has_idea = MERCS_hiring_gowie_mercs_idea
+		}
+		NOT = {
+			has_country_flag = MERCS_gowie_mercenaries_contract_already_ending_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {#Very Well
+		name = merc.4.a
+		delete_unit_template_and_units = {
+			division_template = "Gowie Mercenaries Mercenaries"
+		}
+		clr_country_flag = MERCS_hiring_gowie_mercenaries_flag
+		clr_country_flag = MERCS_gowie_mercenaries_contract_already_ending_flag
+	}
+	
+	option = {#Renew Contract
+		name = merc.5.b
+		
+		add_timed_idea = {
+			idea = MERCS_hiring_gowie_mercs_idea
+			days = 183
+		}
+		clr_country_flag = MERCS_hiring_gowie_mercenaries_flag
+		clr_country_flag = MERCS_gowie_mercenaries_contract_already_ending_flag
+	}
+}

@@ -1,7 +1,7 @@
 #Clear the opinion modifiers for ideological differences
 
 clear_opinion_modifier = {
-	every_country = {
+	every_other_country = {
 		remove_opinion_modifier = {
 			target = ROOT
 			modifier = IR_same_ideology
@@ -201,7 +201,7 @@ set_opinion_modifiers = {
 		limit = {
 			is_monarchy = yes
 		}
-		every_country = {
+		every_other_country = {
 			limit = {
 				is_monarchy = yes
 				NOT = {
@@ -217,7 +217,7 @@ set_opinion_modifiers = {
 				modifier = IR_similar_ideology
 			}
 		}
-		every_country = {
+		every_other_country = {
 			limit = {
 				is_monarchy = no
 			}
@@ -236,7 +236,7 @@ set_opinion_modifiers = {
 		limit = {
 			is_republic = yes
 		}
-		every_country = {
+		every_other_country = {
 			limit = {
 				is_republic = yes
 				NOT = {
@@ -252,7 +252,7 @@ set_opinion_modifiers = {
 				modifier = IR_similar_ideology
 			}
 		}
-		every_country = {
+		every_other_country = {
 			limit = {
 				is_republic = no
 			}
@@ -271,7 +271,7 @@ set_opinion_modifiers = {
 		limit = {
 			has_government = republic_peasant
 		}
-		every_country = {
+		every_other_country = {
 			limit = {
 				has_aristocracy	 = yes
 			}
@@ -295,7 +295,7 @@ set_opinion_modifiers = {
 				}
 			}
 		}
-		every_country = {
+		every_other_country = {
 			limit = {
 				has_same_government_as_ROOT = yes
 			}
@@ -314,7 +314,8 @@ set_opinion_modifiers = {
 		limit = {
 			has_government = puritan
 		}
-		every_country = {
+		set_country_flag = POLITICAL_puritan_embargoes
+		every_other_country = {
 			limit = {
 				has_same_race_as_ROOT = yes
 				has_government = puritan
@@ -328,7 +329,7 @@ set_opinion_modifiers = {
 				modifier = IR_puritan_pure_brothers
 			}
 		}
-		every_country = {
+		every_other_country = {
 			limit = {
 				has_same_race_as_ROOT = yes
 				NOT = {
@@ -344,7 +345,7 @@ set_opinion_modifiers = {
 				modifier = IR_puritan_good_race
 			}
 		}
-		every_country = {
+		every_other_country = {
 			limit = {
 				has_same_race_as_ROOT = no
 				has_government = puritan
@@ -365,8 +366,14 @@ set_opinion_modifiers = {
 				target = ROOT
 				modifier = IR_wrong_puritans_trade
 			}
+			
+			send_embargo = ROOT
+			
+			ROOT = {
+				send_embargo = PREV
+			}
 		}
-		every_country = {
+		every_other_country = {
 			limit = {
 				has_same_race_as_ROOT = no
 				NOT = {
@@ -389,6 +396,35 @@ set_opinion_modifiers = {
 				target = ROOT
 				modifier = IR_puritan_vermin_trade
 			}
+			
+			send_embargo = ROOT
+			
+			ROOT = {
+				send_embargo = PREV
+			}
+		}
+	}
+	if = {
+		limit = {
+			has_country_flag = POLITICAL_puritan_embargoes
+			NOT = {
+				has_government = puritan
+			}
+		}
+		clr_country_flag = POLITICAL_puritan_embargoes
+		every_other_country = {
+			limit = {
+				has_same_race_as_ROOT = no
+				NOT = {
+					has_government = puritan
+				}
+			}
+			
+			country_event = ir.political.6
+		
+			ROOT = {
+				break_embargo = PREV
+			}
 		}
 	}
 }
@@ -396,7 +432,7 @@ set_opinion_modifiers = {
 #Set religion heresies, heathens and true faith
 
 set_religions = {
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = yes
 			NOT = {
@@ -417,7 +453,7 @@ set_religions = {
 			modifier = IR_same_faith
 		}
 	}
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = no
 			is_heretical = no
@@ -439,7 +475,7 @@ set_religions = {
 			modifier = IR_heathens
 		}
 	}
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = no
 			is_heretical = yes
@@ -461,7 +497,7 @@ set_religions = {
 			modifier = IR_heretics
 		}
 	}
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = yes
 			has_government = theocrat
@@ -480,7 +516,7 @@ set_religions = {
 			modifier = IR_same_faith
 		}
 	}
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = no
 			is_heretical = no
@@ -500,7 +536,7 @@ set_religions = {
 			modifier = IR_heathens
 		}
 	}
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = no
 			is_heretical = yes
@@ -520,7 +556,7 @@ set_religions = {
 			modifier = IR_heretics
 		}
 	}
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = yes
 			NOT = {
@@ -539,7 +575,7 @@ set_religions = {
 			modifier = IR_same_faith_theocrat
 		}
 	}
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = no
 			is_heretical = no
@@ -559,7 +595,7 @@ set_religions = {
 			modifier = IR_heathens_theocrat
 		}
 	}
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = no
 			is_heretical = yes
@@ -579,7 +615,7 @@ set_religions = {
 			modifier = IR_heretics
 		}
 	}
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = yes
 			has_government = theocrat
@@ -596,7 +632,7 @@ set_religions = {
 			modifier = IR_same_faith_theocrat
 		}
 	}
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = no
 			is_heretical = no
@@ -614,7 +650,7 @@ set_religions = {
 			modifier = IR_heathens_theocrat
 		}
 	}
-	every_country = {
+	every_other_country = {
 		limit = {
 			has_same_faith_as_ROOT = no
 			is_heretical = yes
@@ -637,7 +673,7 @@ set_religions = {
 #Clear the opinion modifiers for religious differences
 
 clear_religious_opinion_modifier = {
-	every_country = {
+	every_other_country = {
 		remove_opinion_modifier = {
 			target = ROOT
 			modifier = IR_same_faith

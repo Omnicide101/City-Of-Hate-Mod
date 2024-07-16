@@ -36,7 +36,8 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 set_variable = {
@@ -74,12 +75,6 @@ set_politics = {
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
-}
-
-diplomatic_relation = {
-	country = STA
-	relation = non_aggression_pact
-	active = yes
 }
 
 set_popularities = {
@@ -123,12 +118,6 @@ give_military_access = SNF
 give_military_access = FTH
 give_military_access = WIS
 give_military_access = WSZ
-
-diplomatic_relation = {
-	country = STA
-	relation = non_aggression_pact
-	active = yes
-}
 
 add_opinion_modifier = {
 	target = STA

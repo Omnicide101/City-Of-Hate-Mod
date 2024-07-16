@@ -57,6 +57,10 @@ ideas = {
 
 			modifier = {
 				conscription = 0.01
+				hidden_modifier = {
+					ai_focus_aggressive_factor = 0.7
+					ai_badass_factor = 0.3
+				}
 			}
 		}
 		

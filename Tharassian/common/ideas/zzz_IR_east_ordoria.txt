@@ -15,7 +15,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				stability_weekly = -0.002
+				#stability_weekly = -0.002 #Disabled for the in-between build since it can't be removed with Ordoria's old tree
 				resistance_target = 0.35
 			}
 		}
@@ -37,6 +37,66 @@ ideas = {
 				research_speed_factor = -0.12
 				stability_factor = -0.17
 				republic_peasant_drift = -0.13
+			}
+		}
+		
+		EOR_restratification_of_education = {
+			allowed = {
+				original_tag = EOR
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = tur_tdpa
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.3
+				stability_weekly = 0.008
+			}
+		}
+		
+		EOR_eastern_tithe = {
+			
+			allowed = {
+				original_tag = EOR
+			}
+			
+			allowed_civil_war = {
+				has_government = monarchy_absolute
+			}
+			
+			picture = FRA_national_mobilization_focus
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = -0.02
+				base_fuel_gain_factor = -0.25
+			}
+		}
+		
+		EOR_professional_core = {
+			
+			allowed = {
+				original_tag = EOR
+			}
+			
+			allowed_civil_war = {
+				has_government = monarchy_absolute
+			}
+			
+			picture = ARG_spirit_of_the_conquistadors
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_attack_factor = 0.15
+				army_defence_factor = 0.15
+				army_org_regain = 0.1
 			}
 		}
 	}

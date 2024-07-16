@@ -1,0 +1,15 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Nochwälder Marine"
+		naval_base = 8473 # Nochwald
+		task_force = {
+			name = "Prinzesflotte"
+			location = 8473 # Nochwald
+			ship = { name = "Recht" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = NOC version_name = "Hoffnung-Class"} } }
+			ship = { name = "Freundlichkeit" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = NOC version_name = "Westen-Class"} } }
+			ship = { name = "Aufseherin" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = NOC version_name = "Westen-Class"} } }
+		}
+	}
+}

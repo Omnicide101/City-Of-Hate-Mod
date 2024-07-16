@@ -2,7 +2,6 @@ ogre_warriors_generic = {
 
 	roles = {
 		ogre_warriors
-		infantry
 	}
 	
 	available_for = {
@@ -92,7 +91,6 @@ perkav_raiders_generic = {
 
 	roles = {
 		perkav_raiders
-		infantry
 	}
 	
 	available_for = {
@@ -191,8 +189,6 @@ dwarven_warriors_generic = {
 
 	roles = {
 		dwarven_warriors
-		infantry
-		frontline
 	}
 	
 	available_for = {
@@ -281,98 +277,10 @@ dwarven_warriors_generic = {
 	}
 }
 
-warband_generic = {
-
-	roles = {
-		warband
-		infantry
-	}
-	
-	upgrade_prio = {
-		factor = 1
-
-		modifier = {
-			factor = 0 #Literally the worst
-		}
-	}
-
-	match_to_count = 0.5
-	
-	warband_default = {
-	
-		production_prio = {
-			factor = 0.1
-			
-			modifier = {
-				factor = 0
-				has_tech = peasant_levy #Unlocks MaA
-			}
-		}
-	
-		upgrade_prio = {
-			factor = 0.1
-
-			modifier = {
-				factor = 0
-				has_tech = peasant_levy
-			}
-		}
-		
-		target_width = 20.0
-		width_weight = 1.0
-		column_swap_factor = 0.5
-		
-		stat_weights = {
-			0.00 #-- default_morale
-			0.00 #-- defense
-			0.00 #-- breakthrough
-			0.00 #-- hardness
-			0.00 #-- soft_attack
-			0.00 #-- hard_attack
-			0.00 #-- recon
-			0.00 #-- entrenchment
-			0.00 #-- initiative
-			0.00 #-- casualty_trickleback
-			0.00 #-- supply_consumption_factor
-			1.00 #-- supply_consumption
-			0.00 #-- suppression
-			0.00 #-- suppression_factor
-			0.00 #-- experience_loss_factor
-			0.00 #-- equipment_capture_factor
-			#-- Air Values
-			0.00 #-- air_attack
-			#-- Common Values
-			0.60 #-- max_organisation
-			0.40 #-- max_strength
-			0.00 #-- maximum_speed
-			0.00 #-- armor_value
-			0.20 #-- ap_attack
-			0.00 #-- reliability
-			0.00 #-- reliability_factor
-			0.00 #-- weight
-			0.00 #-- build_cost_ic
-		}
-		
-		target_template = {
-			weight = 0.9
-			match_value = 3000.0
-			
-			regiments = {
-				warband = 10
-			}
-		}
-		
-		allowed_types = {
-			warband
-		}
-	}
-}
-
 garrison_generic = {
 
 	roles = {
 		garrison
-		infantry
 	}
 	
 	upgrade_prio = {
@@ -449,7 +357,6 @@ frontline_infantry_generic = {
 
 	roles = {
 		frontline
-		infantry
 	}
 	
 	upgrade_prio = {
@@ -462,13 +369,91 @@ frontline_infantry_generic = {
 
 	match_to_count = 0.5
 	
+	warband_default = {
+	
+		production_prio = {
+			factor = 0.1
+			
+			modifier = {
+				factor = 0
+				has_tech = peasant_levy #Unlocks MaA
+			}
+		}
+	
+		upgrade_prio = {
+			factor = 0.1
+
+			modifier = {
+				factor = 0
+				has_tech = peasant_levy
+			}
+		}
+		
+		enable = {
+			NOT = {
+				has_tech = peasant_levy #Don't bother once we got the upgrade
+			}	
+		}
+		
+		target_width = 20.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			0.00 #-- breakthrough
+			0.00 #-- hardness
+			0.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			0.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00 #-- supply_consumption_factor
+			1.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- build_cost_ic
+		}
+		
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			
+			regiments = {
+				warband = 10
+			}
+		}
+		
+		allowed_types = {
+			warband
+		}
+		
+		replace_at_match = 0.5
+		replace_with = balanced_infantry_default
+	}
+	
 	balanced_infantry_default = {
 	
 		production_prio = {
 			factor = 1.0 #Frontline
 			
 			modifier = {
-				factor = 1
+				factor = 3
 
 			}
 		}
@@ -477,7 +462,7 @@ frontline_infantry_generic = {
 			factor = 1
 
 			modifier = {
-				factor = 1
+				factor = 3
 			}
 		}
 		
@@ -545,7 +530,7 @@ frontline_infantry_generic = {
 			factor = 1.0 #Frontline
 			
 			modifier = {
-				factor = 1
+				factor = 3
 
 			}
 		}
@@ -554,7 +539,7 @@ frontline_infantry_generic = {
 			factor = 1
 
 			modifier = {
-				factor = 1
+				factor = 3
 			}
 		}
 		
@@ -620,7 +605,7 @@ frontline_infantry_generic = {
 			factor = 1.0 #Frontline
 			
 			modifier = {
-				factor = 1
+				factor = 3
 
 			}
 		}
@@ -629,7 +614,7 @@ frontline_infantry_generic = {
 			factor = 1
 
 			modifier = {
-				factor = 1
+				factor = 3
 			}
 		}
 		
@@ -771,7 +756,6 @@ archer_generic = {
 
 	roles = {
 		archer
-		infantry
 	}
 	
 	upgrade_prio = {
@@ -800,6 +784,12 @@ archer_generic = {
 			modifier = {
 				factor = 1
 			}
+		}
+		
+		enable = {
+			NOT = {
+				has_tech = longbow #Don't bother once we got the upgrade
+			}	
 		}
 		
 		target_width = 20.0
@@ -856,6 +846,9 @@ archer_generic = {
 			archer_shortbow
 			scouts
 		}
+		
+		replace_at_match = 0.6
+		replace_with = archer_default
 	}
 	
 	archer_default = { #Longbows
@@ -1071,18 +1064,17 @@ archer_generic = {
 	}
 }
 
-horsemen_generic = {
+cavalry_generic = {
 
 	roles = {
 		light_cavalry
-		cavalry
 	}
 	
 	upgrade_prio = {
 		factor = 2
 
 		modifier = {
-			factor = 5
+			factor = 5 #Important
 		}
 	}
 
@@ -1099,18 +1091,26 @@ horsemen_generic = {
 		}
 	
 		upgrade_prio = {
-			factor = 1
+			factor = 5
 
 			modifier = {
-				factor = 0
+				factor = 2 #Important to get through ASAP
 			}
+		}
+		
+		reinforce_prio = 1 #default
+		
+		enable = {
+			NOT = {
+				has_tech = light_cavalry #Don't bother once we got the upgrade
+			}	
 		}
 		
 		target_width = 15.0
 		width_weight = 1.0
 		column_swap_factor = 0.5
 		
-		stat_weights = {
+		stat_weights = { #Weights how much the stats affect the score
 			0.00 #-- default_morale
 			0.00 #-- defense
 			5.00 #-- breakthrough
@@ -1158,25 +1158,11 @@ horsemen_generic = {
 			horsemen
 			scouts_cavalry
 		}
+		
+		## Optional replace-with chain: If the match score is at least 'replace_at_match', then replace the currently targeted template with 'replace_with', as long as the match score between best matching template and the next target template is at least 'target_min_match'.
+		replace_at_match = 0.9
+		replace_with = light_cavalry_default
 	}
-}
-
-light_cavalry_generic = {
-
-	roles = {
-		light_cavalry
-		cavalry
-	}
-	
-	upgrade_prio = {
-		factor = 8
-
-		modifier = {
-			factor = 1
-		}
-	}
-
-	match_to_count = 0.5
 	
 	light_cavalry_default = {
 	
@@ -1251,7 +1237,6 @@ heavy_cavalry_generic = {
 
 	roles = {
 		heavy_cavalry
-		cavalry
 	}
 	
 	upgrade_prio = {
@@ -1262,7 +1247,86 @@ heavy_cavalry_generic = {
 		}
 	}
 
-	match_to_count = 0.5
+	match_to_count = 0.1
+	
+	
+	heavy_cavalry_transition_default = {
+		#Light cav with some heavy mixed in
+		#Template to make the AI swap part of its light cav divisions over to heavy cav
+		#Without completely abandoning light cav
+		
+		production_prio = {
+			factor = 8 #Expensive!
+		}
+	
+		upgrade_prio = {
+			factor = 8
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 15.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			5.00 #-- breakthrough
+			0.00 #-- hardness
+			1.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			0.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00 #-- supply_consumption_factor
+			0.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			1.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- build_cost_ic
+		}
+		
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				light_cavalry = 3
+				heavy_cavalry = 2
+			}
+		}
+		
+		allowed_types = {
+			light_cavalry
+			scouts_cavalry
+			heavy_cavalry
+		}
+		
+		## Optional replace-with chain: If the match score is at least 'replace_at_match', then replace the currently targeted template with 'replace_with', as long as the match score between best matching template and the next target template is at least 'target_min_match'.
+		replace_at_match = 0.1 #Immediately, please
+		replace_with = heavy_cavalry_default
+	}
+	
 	
 	heavy_cavalry_default = {
 	
@@ -1332,4 +1396,3 @@ heavy_cavalry_generic = {
 		}
 	}
 }
-

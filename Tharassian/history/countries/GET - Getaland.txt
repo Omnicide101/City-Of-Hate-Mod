@@ -1,6 +1,15 @@
 capital = 449
 
 set_oob = "GET_1936"
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "GET_1936_naval_mtg"
+	else = {
+		set_naval_oob = "GET_1936_naval"
+	}
+}
 
 set_technology ={
 	tech_tribal_pride = 1
@@ -74,5 +83,40 @@ create_country_leader = {
 	picture = "gfx/leaders/SUL/Portrait_Sulfurisle_Generic_navy_1.dds"
 	ideology = monarchy_constitutional_ideology
 	traits = {
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Vatna-Class"
+		type = destroyer_1
+		parent_version = 0
+		upgrades = {
+			
+		}
+	}
+}
+
+if = {
+	limit = { 
+		has_dlc = "Man the Guns"
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Vatna-Class"
+		type = ship_hull_light_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = light_ship_ballista_0
+			fixed_ship_engine_slot = light_ship_rowers_0
+		}
 	}
 }

@@ -107,7 +107,7 @@ focus_tree = {
 	focus = { #Preparing Varinthia
 		id = ORD_preparing_varinthia
 		icon = GFX_IRI_Open_Officer_Schools
-		cost = 5
+		cost = 3
 		prerequisite = {
 			focus = ORD_reformer_proclaims
 		}
@@ -153,8 +153,7 @@ focus_tree = {
 		select_effect = {
 			country_event = {
 				id = ord.1
-				days = 1
-				random = 168
+				days = 12
 			}    
 		}
 		
@@ -173,13 +172,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-		available = {
-			
-		}
 		allow_branch = {
 			has_country_flag = ORD_puritan_government
+			NOT = {
+				has_country_flag = ORD_traditionalists_reunited_ordoria
+			}
 		}
-		
 		x = 20
 		y = 0
 		completion_reward = {
@@ -210,7 +208,7 @@ focus_tree = {
 	focus = { #Exacting our Vengeance...
 		id = ORD_exacting_vengeance
 		icon = GFX_IRI_Ensure_Loyalty_Of_Generals
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_army
 		}
@@ -228,7 +226,7 @@ focus_tree = {
 	focus = { #...by Sword...
 		id = ORD_by_sword
 		icon = GFX_goal_generic_major_war
-		cost = 2
+		cost = 1
 		prerequisite = {
 			focus = ORD_exacting_vengeance
 		}
@@ -252,7 +250,7 @@ focus_tree = {
 	focus = { #...by Bow...
 		id = ORD_by_bow
 		icon = GFX_focus_generic_air_defense
-		cost = 2
+		cost = 1
 		prerequisite = {
 			focus = ORD_exacting_vengeance
 		}
@@ -306,7 +304,7 @@ focus_tree = {
 	focus = { #The Steward's Blade
 		id = ORD_stewards_blade
 		icon = GFX_BLD_Revive_The_Tradition_Of_Firetrial
-		cost = 3
+		cost = 2
 		prerequisite = {
 			focus = ORD_by_blood
 		}
@@ -349,7 +347,7 @@ focus_tree = {
 	focus = { #The Loyalty of Our Generals...
 		id = ORD_loyalty_generals
 		icon = GFX_focus_generic_military_mission
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_army
 		}
@@ -370,7 +368,7 @@ focus_tree = {
 	focus = { #...and the Devotion of our Troops
 		id = ORD_devotion_troops
 		icon = GFX_focus_generic_little_entente
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_army
 		}
@@ -391,7 +389,7 @@ focus_tree = {
 	focus = { #Expanding our Glory
 		id = ORD_expanding_glory
 		icon = GFX_goal_generic_dangerous_deal
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_league
 		}
@@ -412,7 +410,7 @@ focus_tree = {
 	focus = { #Promote 'Fates-Clubs'
 		id = ORD_fates_clubs
 		icon = GFX_goal_demand_sudetenland
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_loyalty_generals
 		}
@@ -439,7 +437,7 @@ focus_tree = {
 	focus = { #Chapter-Houses
 		id = ORD_chapter_houses
 		icon = GFX_focus_generic_improve_the_administration
-		cost = 4
+		cost = 2
 		prerequisite = {
 			focus = ORD_expanding_glory
 		}
@@ -457,7 +455,7 @@ focus_tree = {
 	focus = { #On the Fora...
 		id = ORD_on_fora
 		icon = GFX_IRI_Open_Officer_Schools
-		cost = 2
+		cost = 1
 		prerequisite = {
 			focus = ORD_fates_clubs
 		}
@@ -481,7 +479,7 @@ focus_tree = {
 	focus = { #In the Streets...
 		id = ORD_in_streets
 		icon = GFX_IRI_Meritocratic_Promotions
-		cost = 2
+		cost = 1
 		prerequisite = {
 			focus = ORD_fates_clubs
 		}
@@ -505,7 +503,7 @@ focus_tree = {
 	focus = { #...And in the Manors
 		id = ORD_in_manors
 		icon = GFX_focus_generic_temple
-		cost = 2
+		cost = 1
 		prerequisite = {
 			focus = ORD_chapter_houses
 		}
@@ -526,7 +524,7 @@ focus_tree = {
 	focus = { #The Steward's Voice
 		id = ORD_stewards_voice
 		icon = GFX_focus_ord_lothinnys
-		cost = 3
+		cost = 2
 		prerequisite = {
 			focus = ORD_on_fora
 		}
@@ -607,7 +605,7 @@ focus_tree = {
 	focus = { #Expand the Authorizations
 		id = ORD_expand_authorizations
 		icon = GFX_IRI_Spoils_Of_War
-		cost = 2
+		cost = 1
 		prerequisite = {
 			focus = ORD_covert_recruitment
 		}
@@ -628,7 +626,7 @@ focus_tree = {
 	focus = { #The Oath in the Barracks...
 		id = ORD_oath_barracks
 		icon = GFX_IRI_New_Warfare_Experiences
-		cost = 2
+		cost = 1
 		prerequisite = {
 			focus = ORD_once_bitten
 			focus = ORD_expand_authorizations
@@ -647,7 +645,7 @@ focus_tree = {
 	focus = { #...and in the Ballrooms
 		id = ORD_oath_ballrooms
 		icon = GFX_IRI_Rebuild_Burdvin
-		cost = 2
+		cost = 1
 		prerequisite = {
 			focus = ORD_once_bitten
 			focus = ORD_expand_authorizations
@@ -666,7 +664,7 @@ focus_tree = {
 	focus = { #The Steward's Right Hand
 		id = ORD_stewards_hand
 		icon = GFX_focus_generic_conspiracy
-		cost = 3
+		cost = 2
 		prerequisite = {
 			focus = ORD_oath_barracks
 		}
@@ -699,6 +697,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 17
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ORD_crisis_averted
+				}
+			}
 		}
 		bypass = {
 			OR = {
@@ -714,7 +718,7 @@ focus_tree = {
 		completion_reward = {
 			declare_war_on = {
 				target = RTH
-				type = annex_everything
+				type = civil_war
 			}
 			mark_focus_tree_layout_dirty = yes
 		}
@@ -729,13 +733,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-		available = {
-			
-		}
 		allow_branch = {
 			has_country_flag = ORD_moderate_government
+			NOT = {
+				OR = {
+					has_country_flag = ORD_royalists_reunited_ordoria
+					has_completed_focus = ORD_struggle_ends
+					has_country_flag = ORD_ended_struggle
+				}
+			}
 		}
-		
 		x = 20
 		y = 0
 		completion_reward = {
@@ -746,7 +753,7 @@ focus_tree = {
 	focus = { #The Father's Wisdom
 		id = ORD_fathers_wisdom
 		icon = GFX_focus_ord_galerin
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_moderates
 		}
@@ -768,15 +775,12 @@ focus_tree = {
 	focus = { #Secure Foundations
 		id = ORD_secure_foundations
 		icon = GFX_focus_POL_sanation_left
-		cost = 5
+		cost = 2
 		prerequisite = {
 			focus = ORD_fathers_wisdom
 		}
 		ai_will_do = {
 			factor = 9
-		}
-		available = {
-			
 		}
 		mutually_exclusive = {
 			focus = ORD_careful_strides
@@ -795,15 +799,12 @@ focus_tree = {
 	focus = { #Careful Strides
 		id = ORD_careful_strides
 		icon = GFX_focus_ung_empower_nobles
-		cost = 5
+		cost = 2
 		prerequisite = {
 			focus = ORD_fathers_wisdom
 		}
 		ai_will_do = {
 			factor = 9
-		}
-		available = {
-			
 		}
 		mutually_exclusive = {
 			focus = ORD_secure_foundations
@@ -822,16 +823,13 @@ focus_tree = {
 	focus = { #Persuade where we Can
 		id = ORD_persuade_can
 		icon = GFX_BLD_Crown_For_The_King_Of_Bilodyans
-		cost = 5
+		cost = 1
 		prerequisite = {
 			focus = ORD_secure_foundations
 			focus = ORD_careful_strides
 		}
 		ai_will_do = {
 			factor = 11
-		}
-		available = {
-			
 		}
 		mutually_exclusive = {
 			focus = ORD_compromise_must
@@ -850,16 +848,13 @@ focus_tree = {
 	focus = { #And Compromise where we must
 		id = ORD_compromise_must
 		icon = GFX_IRI_Reign_Of_Strategos
-		cost = 5
+		cost = 1
 		prerequisite = {
 			focus = ORD_secure_foundations
 			focus = ORD_careful_strides
 		}
 		ai_will_do = {
 			factor = 11
-		}
-		available = {
-			
 		}
 		mutually_exclusive = {
 			focus = ORD_persuade_can
@@ -878,16 +873,13 @@ focus_tree = {
 	focus = { #The High King Is Wise...
 		id = ORD_high_king_wise
 		icon = GFX_BLD_Swear_Loyalty_To_Irinthios
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_persuade_can
 			focus = ORD_compromise_must
 		}
 		ai_will_do = {
 			factor = 13
-		}
-		available = {
-			
 		}
 		relative_position_id = ORD_persuade_can
 		x = 1
@@ -901,15 +893,12 @@ focus_tree = {
 	focus = { #...But He is Overly Cautious
 		id = ORD_overly_cautious
 		icon = GFX_IRI_Meritocratic_Promotions
-		cost = 4
+		cost = 1
 		prerequisite = {
 			focus = ORD_high_king_wise
 		}
 		ai_will_do = {
 			factor = 15
-		}
-		available = {
-			
 		}
 		mutually_exclusive = {
 			focus = ORD_ought_heed
@@ -929,15 +918,12 @@ focus_tree = {
 	focus = { #...And He Ought to be Heeded
 		id = ORD_ought_heed
 		icon = GFX_BLD_Protect_Status_Quo
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_high_king_wise
 		}
 		ai_will_do = {
 			factor = 15
-		}
-		available = {
-			
 		}
 		mutually_exclusive = {
 			focus = ORD_overly_cautious
@@ -957,17 +943,13 @@ focus_tree = {
 	focus = { #The Princeling's Passion
 		id = ORD_princelings_passion
 		icon = GFX_focus_ord_larennis
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_moderates
 		}
 		ai_will_do = {
 			factor = 7
 		}
-		available = {
-			
-		}
-		
 		relative_position_id = ORD_moderates
 		x = 0
 		y = 1
@@ -979,15 +961,12 @@ focus_tree = {
 	focus = { #Our Opponents are Many
 		id = ORD_opponents_many
 		icon = GFX_IRI_Theoria_Kataktisis
-		cost = 5
+		cost = 1
 		prerequisite = {
 			focus = ORD_princelings_passion
 		}
 		ai_will_do = {
 			factor = 9
-		}
-		available = {
-			
 		}
 		relative_position_id = ORD_princelings_passion
 		x = -1
@@ -1000,15 +979,12 @@ focus_tree = {
 	focus = { #...and Our Struggles Are Great
 		id = ORD_struggle_great
 		icon = GFX_IRI_Program_Of_Purity
-		cost = 5
+		cost = 1
 		prerequisite = {
 			focus = ORD_princelings_passion
 		}
 		ai_will_do = {
 			factor = 11
-		}
-		available = {
-			
 		}
 		relative_position_id = ORD_princelings_passion
 		x = 1
@@ -1021,7 +997,7 @@ focus_tree = {
 	focus = { #But Our Cause is Just!
 		id = ORD_cause_just
 		icon = GFX_IRI_Found_Coallition_Of_Irinth
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_opponents_many
 		}
@@ -1030,9 +1006,6 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 13
-		}
-		available = {
-			
 		}
 		relative_position_id = ORD_opponents_many
 		x = 1
@@ -1045,7 +1018,7 @@ focus_tree = {
 	focus = { #And with the Guidance of the High King...
 		id = ORD_guidance_high_king
 		icon = GFX_IRI_No_More_Dishonour
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_cause_just
 		}
@@ -1074,7 +1047,7 @@ focus_tree = {
 	focus = { #And with the Steadfastness of our Friends...
 		id = ORD_steadfast_friends
 		icon = GFX_IRI_Immunity_For_All_Nobles
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_cause_just
 		}
@@ -1099,7 +1072,7 @@ focus_tree = {
 	focus = { #And with the Loyalty of our Vassals...
 		id = ORD_loyal_vassals
 		icon = GFX_IRI_Ensure_Loyalty_Of_Generals
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_cause_just
 		}
@@ -1127,7 +1100,7 @@ focus_tree = {
 	focus = { #...We Dare to Dream!
 		id = ORD_dare_to_dream
 		icon = GFX_focus_ord_dare_dream
-		cost = 5
+		cost = 1
 		prerequisite = {
 			focus = ORD_guidance_high_king
 			focus = ORD_steadfast_friends
@@ -1136,10 +1109,6 @@ focus_tree = {
 		ai_will_do = {
 			factor = 17
 		}
-		available = {
-			
-		}
-		
 		relative_position_id = ORD_steadfast_friends
 		x = 0
 		y = 1
@@ -1154,7 +1123,7 @@ focus_tree = {
 	focus = { #The Court's Sway
 		id = ORD_courts_sway
 		icon = GFX_focus_ord_holynthor
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_moderates
 		}
@@ -1172,17 +1141,13 @@ focus_tree = {
 	focus = { #Keep Our Promises...
 		id = ORD_keep_promises
 		icon = GFX_BLD_Open_To_The_World
-		cost = 5
+		cost = 2
 		prerequisite = {
 			focus = ORD_courts_sway
 		}
 		ai_will_do = {
 			factor = 9
 		}
-		available = {
-			
-		}
-		
 		relative_position_id = ORD_courts_sway
 		x = -1
 		y = 1
@@ -1194,15 +1159,12 @@ focus_tree = {
 	focus = { #...and Codify Their Rights
 		id = ORD_codify_rights
 		icon = GFX_BLD_Burdvin_Development
-		cost = 5
+		cost = 3
 		prerequisite = {
 			focus = ORD_courts_sway
 		}
 		ai_will_do = {
 			factor = 9
-		}
-		available = {
-			
 		}
 		relative_position_id = ORD_courts_sway
 		x = 1
@@ -1218,7 +1180,7 @@ focus_tree = {
 	focus = { #With Our Friends Close...
 		id = ORD_friends_close
 		icon = GFX_IRI_Honorous_Citizen_Regiments
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_keep_promises
 		}
@@ -1227,9 +1189,6 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 19
-		}
-		available = {
-			
 		}
 		relative_position_id = ORD_keep_promises
 		x = 1
@@ -1245,15 +1204,12 @@ focus_tree = {
 	focus = { #...We Can Tackle the Sophistium
 		id = ORD_tackle_sophistium
 		icon = GFX_focus_hlz_bauernherren
-		cost = 4
+		cost = 2
 		prerequisite = {
 			focus = ORD_friends_close
 		}
 		ai_will_do = {
 			factor = 21
-		}
-		available = {
-			
 		}
 		mutually_exclusive = {
 			focus = ORD_tackle_league
@@ -1269,15 +1225,12 @@ focus_tree = {
 	focus = { #...We Can Tackle the League
 		id = ORD_tackle_league
 		icon = GFX_focus_ung_war_ordoria
-		cost = 4
+		cost = 2
 		prerequisite = {
 			focus = ORD_friends_close
 		}
 		ai_will_do = {
 			factor = 21
-		}
-		available = {
-			
 		}
 		mutually_exclusive = {
 			focus = ORD_tackle_sophistium
@@ -1293,7 +1246,7 @@ focus_tree = {
 	focus = { #Denounce Their Hate
 		id = ORD_denounce_hate
 		icon = GFX_focus_generic_temple
-		cost = 6
+		cost = 1
 		prerequisite = {
 			focus = ORD_tackle_sophistium
 			focus = ORD_tackle_league
@@ -1301,10 +1254,6 @@ focus_tree = {
 		ai_will_do = {
 			factor = 23
 		}
-		available = {
-			
-		}
-		
 		relative_position_id = ORD_tackle_sophistium
 		x = 0
 		y = 1
@@ -1335,7 +1284,7 @@ focus_tree = {
 	focus = { #The First Law
 		id = ORD_first_law
 		icon = GFX_focus_generic_secret_treaty
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = ORD_overly_cautious
 			focus = ORD_ought_heed
@@ -1348,9 +1297,6 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 25
-		}
-		available = {
-			
 		}
 		relative_position_id = ORD_dare_to_dream
 		x = 0
@@ -1365,16 +1311,20 @@ focus_tree = {
 	
 	focus = { #Decree Passes
 		id = ORD_decree_passes
-		icon = GFX_
-		cost = 3
+		icon = GFX_focus_ord_cheering_royalists
+		cost = 1
 		allow_branch = {
 			OR = {
 				has_country_flag = ORD_first_decree_failed
 				has_country_flag = ORD_first_decree_success
 			}
-		}
-		available = {
-			has_country_flag = ORD_first_decree_success
+			NOT = {
+				OR = {
+					has_country_flag = ORD_royalists_reunited_ordoria
+					has_completed_focus = ORD_struggle_ends
+					has_country_flag = ORD_ended_struggle
+				}
+			}
 		}
 		mutually_exclusive = {
 			focus = ORD_decree_fails
@@ -1383,7 +1333,7 @@ focus_tree = {
 			focus = ORD_first_law
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 27
 		}
 		relative_position_id = ORD_first_law
 		x = -2
@@ -1392,16 +1342,20 @@ focus_tree = {
 	
 	focus = { #Decree Fails
 		id = ORD_decree_fails
-		icon = GFX_
-		cost = 3
+		icon = GFX_focus_generic_law_failed
+		cost = 1
 		allow_branch = {
 			OR = {
 				has_country_flag = ORD_first_decree_failed
 				has_country_flag = ORD_first_decree_success
 			}
-		}
-		available = {
-			has_country_flag = ORD_first_decree_failed
+			NOT = {
+				OR = {
+					has_country_flag = ORD_royalists_reunited_ordoria
+					has_completed_focus = ORD_struggle_ends
+					has_country_flag = ORD_ended_struggle
+				}
+			}
 		}
 		mutually_exclusive = {
 			focus = ORD_decree_passes
@@ -1410,7 +1364,7 @@ focus_tree = {
 			focus = ORD_first_law
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 27
 		}
 		relative_position_id = ORD_first_law
 		x = 2
@@ -1419,8 +1373,8 @@ focus_tree = {
 	
 	focus = { #Passed - Moderation
 		id = ORD_strengthening_goodwill
-		icon = GFX_
-		cost = 5
+		icon = GFX_BLD_Pact_Of_Hospitality
+		cost = 3
 		mutually_exclusive = {
 			focus = ORD_keeping_momentum
 		}
@@ -1428,7 +1382,7 @@ focus_tree = {
 			focus = ORD_decree_passes
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 29
 		}
 		relative_position_id = ORD_decree_passes
 		x = -2
@@ -1440,13 +1394,13 @@ focus_tree = {
 	
 	focus = { #Agreeing on Red Lines
 		id = ORD_agree_red_lines
-		icon = GFX_
-		cost = 4
+		icon = GFX_goal_generic_major_alliance
+		cost = 2
 		prerequisite = {
 			focus = ORD_strengthening_goodwill
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 31
 		}
 		relative_position_id = ORD_strengthening_goodwill
 		x = 1
@@ -1466,8 +1420,8 @@ focus_tree = {
 	
 	focus = { #Passed - Double Down
 		id = ORD_keeping_momentum
-		icon = GFX_
-		cost = 5
+		icon = GFX_goal_generic_demand_territory
+		cost = 3
 		mutually_exclusive = {
 			focus = ORD_strengthening_goodwill
 		}
@@ -1475,7 +1429,7 @@ focus_tree = {
 			focus = ORD_decree_passes
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 29
 		}
 		relative_position_id = ORD_decree_passes
 		x = 0
@@ -1486,14 +1440,14 @@ focus_tree = {
 	}
 	
 	focus = { #Highlighting Successes
-		id = ORD_higlight_successes
-		icon = GFX_
+		id = ORD_highlight_successes
+		icon = GFX_goal_generic_propaganda
 		cost = 4
 		prerequisite = {
 			focus = ORD_keeping_momentum
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 31
 		}
 		relative_position_id = ORD_keeping_momentum
 		x = 1
@@ -1509,8 +1463,8 @@ focus_tree = {
 	
 	focus = { #Failed - Moderation
 		id = ORD_damage_control
-		icon = GFX_
-		cost = 5
+		icon = GFX_focus_SWI_dissolve_the_federal_council
+		cost = 3
 		mutually_exclusive = {
 			focus = ORD_doubling_down
 		}
@@ -1518,7 +1472,7 @@ focus_tree = {
 			focus = ORD_decree_fails
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 29
 		}
 		relative_position_id = ORD_decree_fails
 		x = 0
@@ -1530,38 +1484,38 @@ focus_tree = {
 	
 	focus = { #Shoring up Support
 		id = ORD_shore_up_support
-		icon = GFX_
+		icon = GFX_goal_generic_dangerous_deal
 		cost = 4
 		prerequisite = {
 			focus = ORD_damage_control
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 31
 		}
 		relative_position_id = ORD_damage_control
 		x = -1
 		y = 1
 		completion_reward = {
-			add_political_power = -35
+			add_political_power = -125
 			custom_effect_tooltip = ORD_please_mods_4
 			add_to_variable = {
 				ORD_moderates_loyalty = 4
 			}
 			custom_effect_tooltip = ORD_disempower_trads_2
 			subtract_from_variable = {
-				ORD_moderates_loyalty = 2
+				ORD_traditionalists_influence = 2
 			}
 			custom_effect_tooltip = ORD_disempower_faiths_2
 			subtract_from_variable = {
-				ORD_moderates_loyalty = 2
+				ORD_faithful_influence = 2
 			}
 		}
 	}
 	
 	focus = { #Failed - Double Down
 		id = ORD_doubling_down
-		icon = GFX_
-		cost = 5
+		icon = GFX_goal_generic_political_pressure
+		cost = 3
 		prerequisite = {
 			focus = ORD_decree_fails
 		}
@@ -1569,25 +1523,26 @@ focus_tree = {
 			focus = ORD_damage_control
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 29
 		}
 		relative_position_id = ORD_decree_fails
 		x = 2
 		y = 1
 		completion_reward = {
 			larennis_cynicism_big = yes
+			add_stability = -0.08
 		}
 	}
 	
 	focus = { #Expanding the Smuggle-Schemes
 		id = ORD_expand_smuggle_schemes
-		icon = GFX_
-		cost = 4
+		icon = GFX_goal_generic_occupy_states_coastal
+		cost = 2
 		prerequisite = {
 			focus = ORD_doubling_down
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 31
 		}
 		relative_position_id = ORD_doubling_down
 		x = -1
@@ -1599,27 +1554,38 @@ focus_tree = {
 	
 	focus = { #Disproving the Doubters
 		id = ORD_disprove_doubters
-		icon = GFX_
-		cost = 7
+		icon = GFX_IRI_Emperors_Party
+		cost = 4
 		prerequisite = {
 			focus = ORD_agree_red_lines
-			focus = ORD_higlight_successes
+			focus = ORD_highlight_successes
 			focus = ORD_shore_up_support
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 33
 		}
-		relative_position_id = ORD_higlight_successes
-		x = 1
+		relative_position_id = ORD_highlight_successes
+		x = -1
 		y = 1
 		completion_reward = {
-			
+			larennis_idealism_big = yes
+			add_political_power = 75
+			add_stability = 0.04
+			custom_effect_tooltip = ORD_disempower_trads_2
+			subtract_from_variable = {
+				ORD_traditionalists_influence = 2
+			}
+			custom_effect_tooltip = ORD_disempower_faiths_2
+			subtract_from_variable = {
+				ORD_faithful_influence = 2
+			}
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 	
 	focus = { #Never Give Up
 		id = ORD_never_give_up
-		icon = GFX_
+		icon = GFX_BLD_Crown_For_The_King_Of_Bilodyans
 		cost = 7
 		prerequisite = {
 			focus = ORD_expand_smuggle_schemes
@@ -1632,7 +1598,7 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 33 #lol
 		}
 		relative_position_id = ORD_expand_smuggle_schemes
 		x = -1
@@ -1657,11 +1623,22 @@ focus_tree = {
 	
 	focus = { #The Matter of the Revolution
 		id = ORD_matter_revolution
-		icon = GFX_
-		cost = 10
+		icon = GFX_focus_ord_destroy_revolution
+		cost = 5
 		prerequisite = {
 			focus = ORD_disprove_doubters
 			focus = ORD_never_give_up
+		}
+		allow_branch = {
+			has_government = monarchy_absolute
+			has_completed_focus = ORD_disprove_doubters
+			NOT = {
+				OR = {
+					has_country_flag = ORD_royalists_reunited_ordoria
+					has_completed_focus = ORD_struggle_ends
+					has_country_flag = ORD_ended_struggle
+				}
+			}
 		}
 		available = {
 			hidden_trigger = {
@@ -1680,13 +1657,1945 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 35
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ORD_crisis_averted
+				}
+			}
 		}
 		relative_position_id = ORD_disprove_doubters
+		x = 2
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					check_variable = {
+						larennis_idealism > 50
+					}
+				}
+				country_event = ord.105
+			}
+			else = {
+				country_event = ord.107
+			}
+		}
+	}
+	
+	focus = { #They Are Still Kin
+		id = ORD_still_kin
+		icon = GFX_ung_focus_radicalism_both_sides
+		cost = 1
+		prerequisite = {
+			focus = ORD_matter_revolution
+		}
+		mutually_exclusive = {
+			focus = ORD_safeguard_nation
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		relative_position_id = ORD_matter_revolution
+		x = -3
+		y = 1 
+		completion_reward = {
+			larennis_idealism_medium = yes
+			custom_effect_tooltip = ORD_please_trads_3
+			subtract_from_variable = {
+				ORD_traditionalists_loyalty = 3
+			}
+			add_stability = 0.07
+		}
+	}
+	
+	focus = { #Military Oversight
+		id = ORD_military_oversight
+		icon = GFX_focus_generic_home_defense
+		cost = 6
+		prerequisite = {
+			focus = ORD_still_kin
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_still_kin
+		x = -2
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_military_oversight_idea
+		}
+	}
+	
+	focus = { #PoW Protocols
+		id = ORD_pow_protocols
+		icon = GFX_focus_CZE_german_puppet
+		cost = 4
+		prerequisite = {
+			focus = ORD_military_oversight
+		}
+		prerequisite = {
+			focus = ORD_general_amnesty
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		relative_position_id = ORD_military_oversight
 		x = 1
 		y = 1
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = ORD_military_oversight_idea
+				add_idea = ORD_military_oversight_idea_2
+			}
+		}
+	}
+	
+	focus = { #Prince Stands with You
+		id = ORD_prince_with_you
+		icon = GFX_goal_generic_demand_territory
+		cost = 2
+		prerequisite = {
+			focus = ORD_still_kin
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_still_kin
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = ord.108
+		}
+	}
+	
+	focus = { #Proclamation of General Amnesty
+		id = ORD_general_amnesty
+		icon = GFX_focus_generic_concessions
+		cost = 8
+		prerequisite = {
+			focus = ORD_still_kin
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_still_kin
+		x = 2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_empower_mods_2
+			add_to_variable = {
+				ORD_moderates_influence = 2
+			}
+			custom_effect_tooltip = ORD_displease_faiths_3
+			subtract_from_variable = {
+				ORD_faithful_loyalty = 3
+			}
+			add_manpower = 1832
+			random_owned_controlled_state = {
+				add_manpower = 927
+			}
+			random_owned_controlled_state = {
+				add_manpower = 539
+			}
+			random_owned_controlled_state = {
+				add_manpower = 366
+			}
+			RTH = {
+				add_popularity = {
+					ideology = republic_peasant
+					popularity = -0.06
+				}
+				add_manpower = -1832
+				random_owned_controlled_state = {
+					add_manpower = -298
+				}
+				random_owned_controlled_state = {
+					add_manpower = -137
+				}
+				random_owned_controlled_state = {
+					add_manpower = -553
+				}
+				random_owned_controlled_state = {
+					add_manpower = -72
+				}
+				random_owned_controlled_state = {
+					add_manpower = -158
+				}
+				random_owned_controlled_state = {
+					add_manpower = -229
+				}
+				random_owned_controlled_state = {
+					add_manpower = -385
+				}
+			}
+		}
+	}
+	
+	focus = { #Wardens of Venthys
+		id = ORD_wardens_venthys
+		icon = GFX_focus_SWE_refuge_from_war
+		cost = 7
+		prerequisite = {
+			focus = ORD_military_oversight
+		}
+		prerequisite = {
+			focus = ORD_general_amnesty
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		relative_position_id = ORD_general_amnesty
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_wardens_venthys_idea
+		}
+	}
+	
+	focus = { #Conduct Unbecoming
+		id = ORD_conduct_unbecoming
+		icon = GFX_focus_generic_manpower
+		cost = 5
+		prerequisite = {
+			focus = ORD_pow_protocols
+		}
+		prerequisite = {
+			focus = ORD_wardens_venthys
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		relative_position_id = ORD_pow_protocols
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_displease_trads_5
+			subtract_from_variable = {
+				ORD_traditionalist_loyalty = 5
+			}
+			custom_effect_tooltip = ORD_disempower_trads_3
+			subtract_from_variable = {
+				ORD_traditionalist_influence = 3
+			}
+			custom_effect_tooltip = ORD_displease_faiths_5
+			subtract_from_variable = {
+				ORD_faithful_loyalty = 5
+			}
+			custom_effect_tooltip = ORD_disempower_faiths_3
+			subtract_from_variable = {
+				ORD_faithful_influence = 3
+			}
+			random_character = {
+				limit = {
+					is_army_leader = yes
+					OR = {
+						has_trait = ord_league
+						has_trait = ord_sophist
+					}
+				}
+				retire = yes
+			}
+			random_character = {
+				limit = {
+					is_army_leader = yes
+					OR = {
+						has_trait = ord_league
+						has_trait = ord_sophist
+					}
+				}
+				retire = yes
+			}
+			random_character = {
+				limit = {
+					is_army_leader = yes
+					OR = {
+						has_trait = ord_league
+						has_trait = ord_sophist
+					}
+				}
+				retire = yes
+			}
+		}
+	}
+	
+	focus = { #funny total warhammer reference
+		id = ORD_empire_endures
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+		cost = 3
+		prerequisite = {
+			focus = ORD_pow_protocols
+		}
+		prerequisite = {
+			focus = ORD_wardens_venthys
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		relative_position_id = ORD_pow_protocols
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_empire_endures_idea
+		}
+	}
+	
+	focus = { #Prince and People
+		id = ORD_prince_people
+		icon = GFX_focus_ETH_peacekeeping_forces
+		cost = 2
+		prerequisite = {
+			focus = ORD_pow_protocols
+		}
+		prerequisite = {
+			focus = ORD_wardens_venthys
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		relative_position_id = ORD_wardens_venthys
+		x = 1
+		y = 1
+		completion_reward = {
+			add_stability = 0.08
+			add_war_support = 0.13
+			add_popularity = {
+				popularity = 0.07
+				ideology = monarchy_absolute
+			}
+		}
+	}
+	
+	focus = { #To Safeguard the Nation
+		id = ORD_safeguard_nation
+		icon = GFX_focus_ord_slay_heresiarch
+		cost = 1
+		prerequisite = {
+			focus = ORD_matter_revolution
+		}
+		mutually_exclusive = {
+			focus = ORD_still_kin
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		relative_position_id = ORD_matter_revolution
+		x = 3
+		y = 1 
+		completion_reward = {
+			larennis_cynicism_medium = yes
+			custom_effect_tooltip = ORD_please_faiths_3
+			add_to_variable = {
+				ORD_faithful_loyalty = 3
+			}
+			add_war_support = 0.07
+		}
+	}
+	
+	focus = { #Support from the Eastern Aristocracy
+		id = ORD_support_eastern_aristocracy
+		icon = GFX_focus_ETH_keep_the_chitet
+		cost = 2
+		prerequisite = {
+			focus = ORD_safeguard_nation
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_safeguard_nation
+		x = -2
+		y = 1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1250
+			}
+			add_equipment_to_stockpile = {
+				type = ranged_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = light_cavalry_equipment
+				amount = 350
+			}
+		}
+	}
+	
+	focus = { #Homeward Corps
+		id = ORD_homeward_corps
+		icon = GFX_focus_SOV_rebuild_the_savior_cathedral
+		cost = 4
+		prerequisite = {
+			focus = ORD_support_eastern_aristocracy
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		relative_position_id = ORD_support_eastern_aristocracy
+		x = 0
+		y = 1
+		completion_reward = {
+			add_manpower = 5000
+			ORD_khyriad_systhen = {
+				add_corps_commander_role = {
+					traits={
+						ord_royalist
+						jungle_rat
+						politically_connected
+					}
+					skill = 4
+					attack_skill = 5
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 5
+				}
+			}
+			ORD_dasyn_maryd = {
+				add_corps_commander_role = {
+					traits={
+						ord_royalist
+						jungle_rat
+						politically_connected
+					}
+					skill = 4
+					attack_skill = 5
+					defense_skill = 5
+					planning_skill = 3
+					logistics_skill = 2
+				}
+			}
+			ORD_vysiara_kylas = {
+				add_corps_commander_role = {
+					traits={
+						ord_royalist
+						jungle_rat
+						politically_connected
+					}
+					skill = 4
+					attack_skill = 2
+					defense_skill = 5
+					planning_skill = 5
+					logistics_skill = 3
+				}
+			}
+		}
+	}
+	
+	focus = { #Our Own Backyard
+		id = ORD_own_backyard
+		icon = GFX_focus_SWE_beneath_sticks_and_stone
+		cost = 2
+		prerequisite = {
+			focus = ORD_homeward_corps
+		}
+		prerequisite = {
+			focus = ORD_king_country
+		}
+		bypass = {
 			
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		relative_position_id = ORD_homeward_corps
+		x = 1
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = ORD_own_backyard_idea
+				days = 125
+			}
+		}
+	}
+	
+	focus = { #By Crown's Command
+		id = ORD_crowns_command
+		icon = GFX_focus_ETH_the-italo_ethiopian_empire
+		cost = 3
+		prerequisite = {
+			focus = ORD_safeguard_nation
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_safeguard_nation
+		x = 0
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = ORD_crowns_command_idea
+				days = 135
+			}
+		}
+	}
+	
+	focus = { #King and Country
+		id = ORD_king_country
+		icon = GFX_focus_ORD_purple_pennant
+		cost = 3
+		prerequisite = {
+			focus = ORD_crowns_command
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		relative_position_id = ORD_crowns_command
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_king_country_idea
+			add_popularity = {
+				popularity = 0.03
+				ideology = monarchy_absolute
+			}
+			custom_effect_tooltip = ORD_empower_mods_1
+			add_to_variable = {
+				ORD_moderates_influence = 1
+			}
+		}
+	}
+	
+	focus = { #Never Another Divide
+		id = ORD_never_another_divide
+		icon = GFX_focus_SOV_the_road_of_life
+		cost = 5
+		prerequisite = {
+			focus = ORD_safeguard_nation
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ORD_safeguard_nation
+		x = 2
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					116 = {
+						infrastructure < 4
+					}
+				}
+				116 = {
+					set_building_level = {
+						type = infrastructure
+						level = 4
+					}
+				}
+			}
+			if = {
+				limit = {
+					108 = {
+						infrastructure < 4
+					}
+				}
+				108 = {
+					set_building_level = {
+						type = infrastructure
+						level = 4
+					}
+				}
+			}
+			if = {
+				limit = {
+					109 = {
+						infrastructure < 4
+					}
+				}
+				109 = {
+					set_building_level = {
+						type = infrastructure
+						level = 4
+					}
+				}
+			}
+			if = {
+				limit = {
+					115 = {
+						infrastructure < 4
+					}
+				}
+				115 = {
+					set_building_level = {
+						type = infrastructure
+						level = 4
+					}
+				}
+			}
+			if = {
+				limit = {
+					95 = {
+						infrastructure < 4
+					}
+				}
+				95 = {
+					set_building_level = {
+						type = infrastructure
+						level = 4
+					}
+				}
+			}
+			if = {
+				limit = {
+					94 = {
+						infrastructure < 4
+					}
+				}
+				94 = {
+					set_building_level = {
+						type = infrastructure
+						level = 4
+					}
+				}
+			}
+			add_timed_idea = {
+				idea = ORD_close_divide_idea
+				days = 200
+			}
+		}
+	}
+	
+	focus = { #Legacy of Inskyllithe
+		id = ORD_legacy_inskyllithe
+		icon = GFX_focus_generic_fancy_crown
+		cost = 5
+		prerequisite = {
+			focus = ORD_never_another_divide
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		relative_position_id = ORD_never_another_divide
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_legacy_inskyllithe_idea
+		}
+	}
+	
+	focus = { #Exploiting the Weak Links
+		id = ORD_exploit_weak_links
+		icon = GFX_focus_ITA_peasants_rise
+		cost = 6
+		prerequisite = {
+			focus = ORD_king_country
+		}
+		prerequisite = {
+			focus = ORD_legacy_inskyllithe
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		relative_position_id = ORD_legacy_inskyllithe
+		x = -1
+		y = 1
+		completion_reward = {
+			RTH = {
+				add_timed_idea = {
+					idea = RTH_weak_links
+					days = 175
+				}
+			}
+		}
+	}
+	
+	focus = { #The Struggle Ends
+		id = ORD_struggle_ends
+		icon = GFX_focus_SWE_organize_a_putsch
+		cost = 3
+		prerequisite = {
+			focus = ORD_conduct_unbecoming
+			focus = ORD_empire_endures
+			focus = ORD_prince_people
+			focus = ORD_own_backyard
+			focus = ORD_exploit_weak_links
+		}
+		available = {
+			if = {
+				limit = {
+					has_completed_focus = ORD_still_kin
+				}
+				has_completed_focus = ORD_conduct_unbecoming
+				has_completed_focus = ORD_empire_endures
+				has_completed_focus = ORD_prince_people
+			}
+			if = {
+				limit = {
+					has_completed_focus = ORD_safeguard_nation
+				}
+				has_completed_focus = ORD_own_backyard
+				has_completed_focus = ORD_exploit_weak_links
+			}
+			OR = {
+				NOT = {
+					country_exists = RTH
+				}
+				RTH = {
+					has_capitulated = yes
+					is_subject_of = ORD
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		relative_position_id = ORD_prince_people
+		x = 1
+		y = 1
+		completion_reward = {
+			ORD_improve_royal_power_4 = yes
+			set_country_flag = ORD_ended_struggle
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
+	focus = { #The Aftermath
+		id = ORD_aftermath
+		icon = GFX_focus_ord_faithful_society
+		cost = 1
+		allow_branch = {
+			OR = {
+				NOT = {
+					country_exists = RTH
+				}
+				RTH = {
+					has_capitulated = yes
+					is_subject_of = ORD
+				}
+				has_country_flag = ORD_ended_struggle
+			}
+			has_government = monarchy_absolute
+			NOT = {
+				has_country_flag = ORD_royalists_reunited_ordoria
+			}
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		x = 20
+		y = 0 
+		completion_reward = {
+			set_country_flag = ORD_ended_struggle
+			if = {
+				limit = { #Cynic Larennis puppets EOR under Alstora
+					check_variable = {
+						larennis_idealism < 51
+					}
+				}
+				hidden_effect = {
+					every_state = {
+						limit = {
+							is_core_of = RTH
+						}
+						ORD = {
+							remove_state_claim = PREV
+						}
+						EOR = {
+							add_state_core = PREV
+						}
+					}
+					every_state = {
+						RTH = {
+							remove_state_claim = PREV
+							remove_state_core = PREV
+						}
+					}
+				}
+				release_puppet = EOR
+				hidden_effect = {
+					every_state = {
+						limit = {
+							is_core_of = EOR
+						}
+						force_enable_resistance = EOR
+					}
+					ORD_alstora_holynthor = {
+						remove_trait = {
+							slot = political_advisor
+							trait = governess_in_exile
+						}
+					}
+					set_nationality = {
+						target_country = EOR
+						character = ORD_alstora_holynthor
+					}
+					EOR = {
+						set_capital = {
+							state = 118
+						}
+						set_party_name = {
+							ideology = monarchy_absolute
+							name = "Alstora's Clique"
+						}
+						add_country_leader_role  = {
+							character = ORD_alstora_holynthor
+							promote_leader = yes
+							country_leader = {
+								ideology = monarchy_absolute_ideology
+								traits = {  }
+							}
+						}
+						
+						set_popularities = {
+							monarchy_absolute = 47
+
+							monarchy_constitutional = 0
+
+							republic_peasant = 42
+
+							republic_aristocrat = 0
+
+							republic_merchant = 9
+
+							theocrat = 2
+
+							puritan = 0
+						}
+					}
+					#Event that imprisons various rebel leaders
+				}
+			}
+			else = { #Idealist Larennis just annexes the lot
+				hidden_effect = {
+					annex_country = {
+						target = EOR
+					}
+					annex_country = {
+						target = RTH
+					}
+					every_state = {
+						limit = {
+							is_core_of = RTH
+						}
+						add_core_of = ORD
+					}
+					every_state = {
+						limit = {
+							is_core_of = RTH
+						}
+						force_enable_resistance = ORD
+					}
+					every_state = {
+						RTH = {
+							remove_state_claim = PREV
+							remove_state_core = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { #A Land Without the League
+		id = ORD_land_without_league
+		icon = GFX_focus_ORD_league_fucked
+		cost = 1
+		prerequisite = {
+			focus = ORD_aftermath
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		relative_position_id = ORD_aftermath
+		x = -6
+		y = 1
+		completion_reward = {
+			ORD_worsen_trad_power_3 = yes
+		}
+	}
+	
+	focus = { #With Beliefs of Old
+		id = ORD_beliefs_old
+		icon = GFX_focus_jap_manchurian_project
+		cost = 1
+		prerequisite = {
+			focus = ORD_aftermath
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		relative_position_id = ORD_aftermath
+		x = -4
+		y = 1
+		completion_reward = {
+			ORD_worsen_faith_power_3 = yes
+		}
+	}
+	
+	focus = { #Acknowledging their Reforms
+		id = ORD_acknowledge_reforms
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = ORD_land_without_league
+			focus = ORD_beliefs_old
+		}
+		mutually_exclusive = {
+			focus = ORD_entrench_royalists
+			focus = ORD_respect_old_claims
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_very_hopeful
+				check_variable = {
+					larennis_idealism > 89
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_land_without_league
+		x = -1
+		y = 1
+		completion_reward = {
+			larennis_idealism_big = yes
+			ORD_worsen_royal_loyalty_3 = yes
+			ORD_worsen_trad_loyalty_3 = yes
+			ORD_worsen_faith_loyalty_3 = yes
+			add_ideas = ORD_acknowledged_reforms
+		}
+	}
+	
+	focus = { #New Ordorian Model
+		id = ORD_new_ordorian_model
+		icon = GFX_focus_SWE_the_lion_of_the_north
+		cost = 7
+		prerequisite = {
+			focus = ORD_acknowledge_reforms
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		relative_position_id = ORD_acknowledge_reforms
+		x = 1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ORD_acknowledged_reforms
+				add_idea = ORD_new_ordorian_model_idea
+			}
+		}
+	}
+	
+	focus = { #Entrenching the Royalists
+		id = ORD_entrench_royalists
+		icon = GFX_BLD_Crown_For_The_King_Of_Bilodyans
+		cost = 7
+		prerequisite = {
+			focus = ORD_land_without_league
+			focus = ORD_beliefs_old
+		}
+		mutually_exclusive = {
+			focus = ORD_acknowledge_reforms
+			focus = ORD_respect_old_claims
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning_max
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_somewhat_hopeful
+				check_variable = {
+					larennis_idealism < 65
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_land_without_league
+		x = 1
+		y = 1
+		completion_reward = {
+			larennis_cynicism_medium = yes
+			ORD_improve_royal_power_3 = yes
+			ORD_improve_royal_loyalty_3 = yes
+			add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.12
+			}
+		}
+	}
+	
+	focus = { #Respecting Old Claims
+		id = ORD_respect_old_claims
+		icon = GFX_goal_generic_position_armies
+		cost = 2
+		prerequisite = {
+			focus = ORD_land_without_league
+			focus = ORD_beliefs_old
+		}
+		mutually_exclusive = {
+			focus = ORD_acknowledge_reforms
+			focus = ORD_entrench_royalists
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_neutral
+				check_variable = {
+					larennis_idealism > 44
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_beliefs_old
+		x = 1
+		y = 1
+		completion_reward = {
+			larennis_idealism_small = yes
+			ORD_improve_royal_loyalty_3 = yes
+			ORD_improve_royal_power_3 = yes
+			ORD_improve_trad_loyalty_3 = yes
+			ORD_improve_trad_power_3 = yes
+			ORD_improve_faith_loyalty_3 = yes
+			ORD_improve_faith_power_3 = yes
+			add_political_power = 65
+		}
+	}
+	
+	focus = { #Feudalism Restord
+		id = ORD_feudalism_restored
+		icon = GFX_focus_SOV_the_true_tsars
+		cost = 5
+		prerequisite = {
+			focus = ORD_entrench_royalists
+			focus = ORD_respect_old_claims
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		relative_position_id = ORD_entrench_royalists
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_restored_feudalism
+		}
+	}
+	
+	focus = { #Autonomy for the Cities
+		id = ORD_autonomy_cities
+		icon = GFX_focus_DEN_no_regulations
+		cost = 8
+		prerequisite = {
+			focus = ORD_new_ordorian_model
+			focus = ORD_feudalism_restored
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		relative_position_id = ORD_new_ordorian_model
+		x = 1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = EOR
+				}
+				EOR = {
+					118 = {
+						cancel_resistance = yes
+						force_disable_resistance = {
+							clear = yes
+							occupier = EOR
+						}
+						add_dynamic_modifier = {
+							modifier = autonomous_region
+						}
+					}
+					122 = {
+						cancel_resistance = yes
+						force_disable_resistance = {
+							clear = yes
+							occupier = EOR
+						}
+						add_dynamic_modifier = {
+							modifier = autonomous_region
+						}
+					}
+					remove_ideas = EOR_bardic_resistance
+				}
+			}
+			else = {
+				118 = {
+					add_core_of = ORD
+					add_dynamic_modifier = {
+						modifier = autonomous_region
+					}
+				}
+				122 = {
+					add_core_of = ORD
+					add_dynamic_modifier = {
+						modifier = autonomous_region
+					}
+				}
+			}
+			remove_ideas = ORD_rthaur_propaganda
+			hidden_effect = {#Unlock the final focus of the tree if this is the last one that needed doing
+				if = {
+					limit = {
+						OR = {
+							has_completed_focus = ORD_ground_up
+							has_completed_focus = ORD_salvaging_institutions
+							has_completed_focus = ORD_reinstating_tithe
+							has_completed_focus = ORD_professional_core
+						}
+						has_completed_focus = ORD_vigilance_eternal
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Ordoria, Whole Again - Idealist Path
+		id = ORD_whole_again
+		icon = GFX_focus_eng_imperial_federation
+		cost = 1
+		prerequisite = {
+			focus = ORD_aftermath
+		}
+		allow_branch = {
+			has_country_flag = ORD_ended_struggle
+			has_government = monarchy_absolute
+			NOT = {
+				has_country_flag = ORD_royalists_reunited_ordoria
+			}
+			check_variable = {
+				larennis_idealism > 50
+			}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		relative_position_id = ORD_aftermath
+		x = 0
+		y = 1
+		completion_reward = {
+			add_political_power = 35
+		}
+	}
+	
+	focus = { #Healing the Nation
+		id = ORD_healing_nation
+		icon = GFX_focus_POL_end_the_regency
+		cost = 8
+		prerequisite = {
+			focus = ORD_whole_again
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_whole_again
+		x = -1
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = ORD_heal_nation_idea
+				days = 150
+			}
+		}
+	}
+	
+	focus = { #Protecting the Middle Class
+		id = ORD_protect_middle_class
+		icon = GFX_focus_SWI_issue_war_bonds
+		cost = 2
+		prerequisite = {
+			focus = ORD_healing_nation
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning_max
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_hopeful
+				check_variable = {
+					larennis_idealism < 90
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		mutually_exclusive = {
+			focus = ORD_reign_in_nobility
+		}
+		relative_position_id = ORD_healing_nation
+		x = 0
+		y = 1
+		completion_reward = {
+			larennis_cynicism_small = yes
+			add_popularity = {
+				ideology = republic_merchant
+				popularity = 0.08
+			}
+			add_stability = -0.065
+			add_ideas = ORD_fledgling_bourgeoisie
+		}
+	}
+	
+	focus = { #Salvaging their Institutions
+		id = ORD_salvaging_institutions
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 3
+		prerequisite = {
+			focus = ORD_protect_middle_class
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		relative_position_id = ORD_protect_middle_class
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.03
+			129 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+			131 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+			135 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+			126 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = farm
+					level = 1
+					instant_build = yes
+				}
+			}
+			138 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = farm
+					level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = {#Unlock the final focus of the tree if this is the last one that needed doing
+				if = {
+					limit = {
+						has_completed_focus = ORD_autonomy_cities
+						has_completed_focus = ORD_vigilance_eternal
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Emissaries of Reconciliation
+		id = ORD_emissaries_reconciliation
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		cost = 5
+		prerequisite = {
+			focus = ORD_whole_again
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_whole_again
+		x = 1
+		y = 1
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = RTH
+				}
+				add_resistance_target = {
+					id = THIS
+					amount = -30
+					occupier = ORD
+					days = 365
+					tooltip = ORD_emissaries_reconciliation_tt
+				}
+			}
+		}
+	}
+	
+	focus = { #Reign in the Nobility
+		id = ORD_reign_in_nobility
+		icon = GFX_focus_NORDIC_mon_institution_1
+		cost = 1
+		prerequisite = {
+			focus = ORD_emissaries_reconciliation
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_somewhat_cynical
+				check_variable = {
+					larennis_idealism > 34
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ORD_protect_middle_class
+		}
+		relative_position_id = ORD_emissaries_reconciliation
+		x = 0
+		y = 1
+		available = {
+			has_political_power > 134
+		}
+		completion_reward = {
+			larennis_idealism_small = yes
+			ORD_worsen_royal_loyalty_3 = yes
+			add_stability = 0.07
+			add_political_power = -135
+		}
+	}
+	
+	focus = { #From the Ground Up
+		id = ORD_ground_up
+		icon = GFX_focus_DEN_civilian_preparations
+		cost = 15
+		prerequisite = {
+			focus = ORD_reign_in_nobility
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		relative_position_id = ORD_reign_in_nobility
+		x = 0
+		y = 1
+		completion_reward = {
+			ORD_improve_royal_power_3 = yes
+			add_ideas = ORD_new_eastern_institutions
+			hidden_effect = {#Unlock the final focus of the tree if this is the last one that needed doing
+				if = {
+					limit = {
+						has_completed_focus = ORD_autonomy_cities
+						has_completed_focus = ORD_vigilance_eternal
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Homecoming - Low idealism path
+		id = ORD_homecoming
+		icon = GFX_IRI_Replace_Discontent_Generals
+		cost = 1
+		prerequisite = {
+			focus = ORD_aftermath
+		}
+		allow_branch = {
+			has_country_flag = ORD_ended_struggle
+			has_government = monarchy_absolute
+			NOT = {
+				has_country_flag = ORD_royalists_reunited_ordoria
+			}
+			check_variable = {
+				larennis_idealism < 51
+			}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		relative_position_id = ORD_aftermath
+		x = 0
+		y = 1
+		completion_reward = {
+			ORD_improve_royal_loyalty_2 = yes
+		}
+	}
+	
+	focus = { #Right to Rule
+		id = ORD_right_rule
+		icon = GFX_focus_CHL_invite_french_aristocracy
+		cost = 4
+		prerequisite = {
+			focus = ORD_homecoming
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_homecoming
+		x = -1
+		y = 1
+		completion_reward = {
+			add_stability = 0.03
+			add_ideas = ORD_right_rule_idea
+			EOR = {
+				add_stability = 0.04
+				add_ideas = ORD_right_rule_idea
+			}
+		}
+	}
+	
+	focus = { #The Adored Governess
+		id = ORD_adored_governess
+		icon = GFX_focus_ord_holynthor
+		cost = 5
+		prerequisite = {
+			focus = ORD_right_rule
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		mutually_exclusive = {
+			focus = ORD_earn_redemption
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_cynical
+				check_variable = {
+					larennis_idealism > 9
+				}
+			}
+		}
+		relative_position_id = ORD_right_rule
+		x = 0
+		y = 1
+		completion_reward = {
+			ORD_alstora_holynthor = {
+				add_country_leader_trait = governess_of_the_east
+			}
+			
+			larennis_idealism_small = yes
+		}
+	}
+	
+	focus = { #Reinstating the Tithe
+		id = ORD_reinstating_tithe
+		icon = GFX_focus_CHL_revise_the_social_classes
+		cost = 7
+		prerequisite = {
+			focus = ORD_adored_governess
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		relative_position_id = ORD_adored_governess
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_eastern_tithe
+			EOR = {
+				add_ideas = EOR_eastern_tithe
+			}
+			hidden_effect = {#Unlock the final focus of the tree if this is the last one that needed doing
+				if = {
+					limit = {
+						has_completed_focus = ORD_autonomy_cities
+						has_completed_focus = ORD_vigilance_eternal
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #The Natural Order
+		id = ORD_natural_order
+		icon = GFX_BLD_Swear_Loyalty_To_Irinthios
+		cost = 4
+		prerequisite = {
+			focus = ORD_homecoming
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_homecoming
+		x = 1
+		y = 1
+		completion_reward = {
+			add_stability = 0.08
+			add_war_support = 0.06
+			EOR = {
+				add_stability = 0.08
+				add_war_support = 0.06
+			}	
+		}
+	}
+	
+	focus = { #Earn Your Redemption
+		id = ORD_earn_redemption
+		icon = GFX_focus_STA_every_village_soldier
+		cost = 6
+		prerequisite = {
+			focus = ORD_natural_order
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning_max
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_somewhat_cynical
+				check_variable = {
+					larennis_idealism < 45
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ORD_adored_governess
+		}
+		relative_position_id = ORD_natural_order
+		x = 0
+		y = 1
+		completion_reward = {
+			EOR = {
+				add_manpower = 13175
+			}
+			ORD_alstora_holynthor = {
+				add_country_leader_trait = governess_of_the_east_warlike
+			}
+			
+			larennis_cynicism_small = yes
+		}
+	}
+	
+	focus = { #A Professional Core
+		id = ORD_professional_core
+		icon = GFX_focus_ARG_march_to_la_casa_rosada
+		cost = 4
+		prerequisite = {
+			focus = ORD_earn_redemption
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		relative_position_id = ORD_earn_redemption
+		x = 0
+		y = 1
+		completion_reward = {
+			EOR = {
+				add_ideas = EOR_professional_core
+			}
+			hidden_effect = {#Unlock the final focus of the tree if this is the last one that needed doing
+				if = {
+					limit = {
+						has_completed_focus = ORD_autonomy_cities
+						has_completed_focus = ORD_vigilance_eternal
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Our Oldest Foe
+		id = ORD_oldest_foe
+		icon = GFX_focus_GRE_a_land_of_mountains
+		cost = 1
+		prerequisite = {
+			focus = ORD_aftermath
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		relative_position_id = ORD_aftermath
+		x = 5
+		y = 1
+		completion_reward = {
+			add_war_support = 0.04
+		}
+	}
+	
+	focus = { #A Concession
+		id = ORD_concession
+		icon = GFX_focus_generic_concessions
+		cost = 2
+		prerequisite = {
+			focus = ORD_oldest_foe
+		}
+		ai_will_do = {
+			factor = 17
+			modifier = { #Steward no likey
+				check_variable = {
+					ORD_traditionalist_influence > 10
+				}
+				factor = 0.5
+			}
+			modifier = { #Oh god oh fuck
+				strength_ratio = {
+					tag = SKA
+					ratio < 0.5
+				}
+				factor = 2
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_somewhat_hopeful
+				check_variable = {
+					larennis_idealism > 54
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ORD_offer
+		}
+		mutually_exclusive = {
+			focus = ORD_demand
+		}
+		relative_position_id = ORD_oldest_foe
+		x = -2
+		y = 1
+		completion_reward = {
+			SKA = {
+				country_event = {
+					id = skaelinger.113
+					days = 7
+				}
+			}
+			custom_effect_tooltip = ORD_SKA_mountain_concessions_deal_tt
+			ORD_worsen_trad_loyalty_5 = yes
+		}
+	}
+	
+	focus = { #An Offer
+		id = ORD_offer
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 2
+		prerequisite = {
+			focus = ORD_oldest_foe
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_somewhat_cynical
+				check_variable = {
+					larennis_idealism > 34
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ORD_concession
+		}
+		mutually_exclusive = {
+			focus = ORD_demand
+		}
+		relative_position_id = ORD_oldest_foe
+		x = 0
+		y = 1
+		completion_reward = {
+			SKA = {
+				country_event = {
+					id = ska.2
+					days = 7
+				}
+			}
+			custom_effect_tooltip = ORD_SKA_white_peace_tt
+		}
+	}
+	
+	focus = { #A Demand
+		id = ORD_demand
+		icon = GFX_goal_generic_demand_territory
+		cost = 2
+		prerequisite = {
+			focus = ORD_oldest_foe
+		}
+		ai_will_do = {
+			factor = 17
+			modifier = { #Hahaha fuck yeah!!! yes!!
+				strength_ratio = {
+					tag = SKA
+					ratio > 2
+				}
+				factor = 2
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning_max
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_somewhat_hopeful
+				check_variable = {
+					larennis_idealism < 65
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ORD_concession
+		}
+		mutually_exclusive = {
+			focus = ORD_offer
+		}
+		relative_position_id = ORD_oldest_foe
+		x = 2
+		y = 1
+		completion_reward = {
+			SKA = {
+				country_event = {
+					id = ska.5
+					days = 7
+				}
+			}
+			custom_effect_tooltip = ORD_SKA_demand_concessions_tt
+		}
+	}
+	
+	focus = { #The Bloodshed Ends
+		id = ORD_bloodshed_ends
+		icon = GFX_IRI_Found_Coallition_Of_Irinth
+		cost = 1
+		prerequisite = {
+			focus = ORD_concession
+			focus = ORD_offer
+			focus = ORD_demand
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		available = {
+			has_country_flag = ORD_moderate_skaelinger_peace_succeeded
+		}
+		mutually_exclusive = {
+			focus = ORD_once_for_all
+		}
+		relative_position_id = ORD_offer
+		x = -1
+		y = 1
+		completion_reward = {
+			add_political_power = 125
+			larennis_idealism_big = yes
+		}
+	}
+	
+	focus = { #Once and for All
+		id = ORD_once_for_all
+		icon = GFX_focus_generic_strike_at_democracy1
+		cost = 1
+		prerequisite = {
+			focus = ORD_concession
+			focus = ORD_offer
+			focus = ORD_demand
+		}
+		mutually_exclusive = {
+			focus = ORD_bloodshed_ends
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		available = {
+			has_country_flag = ORD_moderate_skaelinger_peace_failed
+		}
+		relative_position_id = ORD_offer
+		x = 1
+		y = 1
+		completion_reward = {
+			larennis_cynicism_big = yes
+			add_timed_idea = {
+				idea = ORD_death_to_dwarves_idea
+				days = 150
+			}
+		}
+	}
+	
+	focus = { #Vigilance Eternal
+		id = ORD_vigilance_eternal
+		icon = GFX_focus_SWE_hedgehog_defense
+		cost = 5
+		prerequisite = {
+			focus = ORD_bloodshed_ends
+			focus = ORD_once_for_all
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		available = {
+			NOT = {
+				has_war_with = SKA
+			}
+		}
+		relative_position_id = ORD_bloodshed_ends
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_vigilance_eternal_idea
+			hidden_effect = {#Unlock the final focus of the tree if this is the last one that needed doing
+				if = {
+					limit = {
+						OR = {
+							has_completed_focus = ORD_ground_up
+							has_completed_focus = ORD_salvaging_institutions
+							has_completed_focus = ORD_reinstating_tithe
+							has_completed_focus = ORD_professional_core
+						}
+						has_completed_focus = ORD_autonomy_cities
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #The Wheels Begin to Turn
+		id = ORD_wheels_turn
+		icon = GFX_focus_ORD_purple_pennant
+		cost = 10
+		allow_branch = {
+			has_completed_focus = ORD_autonomy_cities
+			OR = {
+				has_completed_focus = ORD_salvaging_institutions
+				has_completed_focus = ORD_ground_up
+				has_completed_focus = ORD_reinstating_tithe
+				has_completed_focus = ORD_professional_core
+			}
+			has_completed_focus = ORD_vigilance_eternal
+			check_variable = {
+				larennis_idealism > 49
+			}
+		}
+		prerequisite = {
+			focus = ORD_autonomy_cities
+		}
+		prerequisite = {
+			focus = ORD_salvaging_institutions
+			focus = ORD_ground_up
+			focus = ORD_reinstating_tithe
+			focus = ORD_professional_core
+		}
+		prerequisite = {
+			focus = ORD_vigilance_eternal
+		}
+		ai_will_do = {
+			factor = 23
+		}
+		relative_position_id = ORD_aftermath
+		x = 0
+		y = 5
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = EOR
+				}
+				EOR = {
+					every_owned_state = {
+						limit = {
+							is_core_of = ORD
+							has_active_resistance = yes
+						}
+						cancel_resistance = yes
+					}
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = ORD
+					has_active_resistance = yes
+				}
+				cancel_resistance = yes
+			}
+			swap_ideas = {
+				remove_idea = ORD_rthaur_rebellion
+				add_idea = ORD_ordoria_healed
+			}
+			remove_ideas = ORD_disrupted_industry
+		}
+	}
+	
+	focus = { #A Fragile Normalcy
+		id = ORD_fragile_normalcy
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		allow_branch = {
+			has_completed_focus = ORD_autonomy_cities
+			OR = {
+				has_completed_focus = ORD_salvaging_institutions
+				has_completed_focus = ORD_ground_up
+				has_completed_focus = ORD_reinstating_tithe
+				has_completed_focus = ORD_professional_core
+			}
+			has_completed_focus = ORD_vigilance_eternal
+			check_variable = {
+				larennis_idealism < 50
+			}
+		}
+		prerequisite = {
+			focus = ORD_autonomy_cities
+		}
+		prerequisite = {
+			focus = ORD_salvaging_institutions
+			focus = ORD_ground_up
+			focus = ORD_reinstating_tithe
+			focus = ORD_professional_core
+		}
+		prerequisite = {
+			focus = ORD_vigilance_eternal
+		}
+		ai_will_do = {
+			factor = 23
+		}
+		relative_position_id = ORD_aftermath
+		x = 0
+		y = 5
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = EOR
+				}
+				EOR = {
+					every_owned_state = {
+						limit = {
+							is_core_of = ORD
+							has_active_resistance = yes
+						}
+						cancel_resistance = yes
+					}
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = ORD
+					has_active_resistance = yes
+				}
+				cancel_resistance = yes
+			}
+			swap_ideas = {
+				remove_idea = ORD_rthaur_rebellion
+				add_idea = ORD_ordoria_restored
+			}
+			remove_ideas = ORD_disrupted_industry
 		}
 	}
 	
@@ -1703,6 +3612,12 @@ focus_tree = {
 		}
 		allow_branch = {
 			has_country_flag = ORD_stewards_countercoup_flag
+			NOT = {
+				OR = {
+					has_country_flag = ORD_crushed_revolution
+					has_country_flag = ORD_traditionalists_reunited_ordoria
+				}
+			}
 		}
 		x = 20
 		y = 0
@@ -1733,7 +3648,7 @@ focus_tree = {
 	focus = { #Sideline the Son...
 		id = ORD_sideline_son
 		icon = GFX_focus_rom_handle_king
-		cost = 3
+		cost = 1
 		prerequisite = {
 			focus = ORD_restoring_sanity
 		}
@@ -1772,7 +3687,7 @@ focus_tree = {
 	focus = { #Rescind the Decree
 		id = ORD_rescind_decree
 		icon = GFX_focus_generic_monarchy_1
-		cost = 2
+		cost = 1
 		prerequisite = {
 			focus = ORD_restoring_sanity
 		}
@@ -1790,7 +3705,7 @@ focus_tree = {
 	focus = { #Preventing a second 819
 		id = ORD_prevent_second_819
 		icon = GFX_goal_generic_defence
-		cost = 4
+		cost = 2
 		prerequisite = {
 			focus = ORD_rescind_decree
 		}
@@ -1843,7 +3758,7 @@ focus_tree = {
 	focus = { #..and Offing the Rest
 		id = ORD_disposing_rest
 		icon = GFX_goal_generic_major_war
-		cost = 4
+		cost = 2
 		prerequisite = {
 			focus = ORD_wooing_pragmatic
 		}
@@ -1873,6 +3788,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ORD_crisis_averted
+				}
+			}
 		}
 		relative_position_id = ORD_prevent_second_819
 		x = 0
@@ -1880,7 +3801,7 @@ focus_tree = {
 		completion_reward = {
 			declare_war_on = {
 				target = RTH
-				type = annex_everything
+				type = civil_war
 			}
 			mark_focus_tree_layout_dirty = yes
 		}
@@ -1894,15 +3815,16 @@ focus_tree = {
 		id = ORD_army_might
 		icon = GFX_IRI_Mandatory_Army_Service
 		cost = 3
-		#Temporarily disabled to make programming the tree easier
-		#TODO re-enable
-		#allow_branch = {
-		#	OR = {
-		#		has_country_flag = ORD_stewards_countercoup_flag
-		#		has_completed_focus = ORD_eyes_turned_east
-		#		has_completed_focus = ORD_left_off
-		#	}
-		#}
+		allow_branch = {
+			OR = {
+				has_country_flag = ORD_stewards_countercoup_flag
+				has_completed_focus = ORD_eyes_turned_east
+				has_completed_focus = ORD_left_off
+			}
+			NOT = {
+				has_country_flag = ORD_traditionalists_reunited_ordoria
+			}
+		}
 		prerequisite = {
 			focus = ORD_left_off
 			focus = ORD_eyes_turned_east
@@ -2138,15 +4060,16 @@ focus_tree = {
 		id = ORD_league_propaganda
 		icon = GFX_focus_ord_league
 		cost = 3
-		#Temporarily disabled to make programming the tree easier
-		#TODO re-enable
-		#allow_branch = {
-		#	OR = {
-		#		has_country_flag = ORD_stewards_countercoup_flag
-		#		has_completed_focus = ORD_eyes_turned_east
-		#		has_completed_focus = ORD_left_off
-		#	}
-		#}
+		allow_branch = {
+			OR = {
+				has_country_flag = ORD_stewards_countercoup_flag
+				has_completed_focus = ORD_eyes_turned_east
+				has_completed_focus = ORD_left_off
+			}
+			NOT = {
+				has_country_flag = ORD_traditionalists_reunited_ordoria
+			}
+		}
 		prerequisite = {
 			focus = ORD_left_off
 			focus = ORD_eyes_turned_east
@@ -2363,15 +4286,16 @@ focus_tree = {
 		id = ORD_oath_operations
 		icon = GFX_goal_anti_comintern_pact
 		cost = 3
-		#Temporarily disabled to make programming the tree easier
-		#TODO re-enable
-		#allow_branch = {
-		#	OR = {
-		#		has_country_flag = ORD_stewards_countercoup_flag
-		#		has_completed_focus = ORD_eyes_turned_east
-		#		has_completed_focus = ORD_left_off
-		#	}
-		#}
+		allow_branch = {
+			OR = {
+				has_country_flag = ORD_stewards_countercoup_flag
+				has_completed_focus = ORD_eyes_turned_east
+				has_completed_focus = ORD_left_off
+			}
+			NOT = {
+				has_country_flag = ORD_traditionalists_reunited_ordoria
+			}
+		}
 		prerequisite = {
 			focus = ORD_left_off
 			focus = ORD_eyes_turned_east
@@ -2432,8 +4356,7 @@ focus_tree = {
 				limit = {
 					has_dlc = "La Resistance"
 				}
-				#custom_effect_tooltip = ORD_enable_granary_op_tt
-				#TODO - The intel op is a broken mess. Fix.
+				custom_effect_tooltip = ORD_enable_granary_op_tt
 			}
 		}
 	}
@@ -2470,8 +4393,7 @@ focus_tree = {
 				limit = {
 					has_dlc = "La Resistance"
 				}
-				#custom_effect_tooltip = ORD_enable_well_op_tt
-				#TODO - The intel op is a broken mess. Fix.
+				custom_effect_tooltip = ORD_enable_well_op_tt
 			}
 		}
 	}
@@ -2546,8 +4468,7 @@ focus_tree = {
 				limit = {
 					has_dlc = "La Resistance"
 				}
-				#custom_effect_tooltip = ORD_enable_terror_campaign_op_tt
-				#TODO - The intel op is a broken mess. Fix.
+				custom_effect_tooltip = ORD_enable_terror_campaign_op_tt
 			}
 		}
 	}
@@ -2668,22 +4589,29 @@ focus_tree = {
 		icon = GFX_focus_ord_destroy_revolution
 		cost = 5
 		prerequisite = {
-			#focus = ORD_great_march_eastwards
-			#focus = ORD_decapacitate_snake
+			focus = ORD_great_march_eastwards
+			focus = ORD_decapacitate_snake
 		}
 		ai_will_do = {
 			factor = 23
 		}
 		allow_branch = {
-			always = yes #TODO remove - only for dev purposes
-			#OR = {
-			#	NOT = {
-			#		country_exists = RTH
-			#	}
-			#	RTH = {
-			#		has_capitulated = yes
-			#	}
-			#}
+			OR = {
+				NOT = {
+					country_exists = RTH
+				}
+				RTH = {
+					has_capitulated = yes
+				}
+				RTH = {
+					is_subject_of = ORD
+				}
+				has_country_flag = ORD_crushed_revolution
+			}
+			has_government = puritan
+			NOT = {
+				has_country_flag = ORD_traditionalists_reunited_ordoria
+			}
 		}
 		available = {
 			OR = {
@@ -2693,17 +4621,23 @@ focus_tree = {
 				RTH = {
 					has_capitulated = yes
 				}
+				RTH = {
+					is_subject_of = ORD
+				}
 			}
 		}
 		relative_position_id = ORD_great_march_eastwards
 		x = 5
 		y = 1
 		completion_reward = {
+			set_country_flag = ORD_crushed_revolution #Making sure the branch doesn't disappear if Skaelinger liberates Rthauiaur or something
 			add_stability = 0.1
 			add_war_support = 0.05
 			add_political_power = 125
 			
 			hidden_effect = {
+				add_state_core = 140
+				transfer_state = 140
 				RTH = {
 					set_nationality = {
 						target_country = ADV
@@ -2768,6 +4702,7 @@ focus_tree = {
 						puritan = 47
 					}
 				}
+				#Event that imprisons various rebel leaders
 			}
 		}
 	}
@@ -2858,53 +4793,11 @@ focus_tree = {
 					target_country = EOR
 					character = PREV
 				}
-				add_advisor_role = {
-					advisor = {
-						cost = 150
-						removal_cost = 150
-						slot = political_advisor
-						idea_token = yntha
-						desc = ORD_yntha_desc
-						allowed = {
-							tag = EOR
-						}
-						available = {
-							always = yes
-						}
-						ai_will_do = {
-							factor = 10
-						}
-						traits = {
-							moral_firebrand
-						}
-					}
-				}
 			}
 			ORD_alwyen = {
 				set_nationality = {
 					target_country = EOR
 					character = PREV
-				}
-				add_advisor_role = {
-					advisor = {
-						cost = 150
-						removal_cost = 150
-						slot = political_advisor
-						idea_token = alwyen
-						desc = ORD_alwyen_desc
-						allowed = {
-							tag = EOR
-						}
-						available = {
-							always = yes
-						}
-						ai_will_do = {
-							factor = 10
-						}
-						traits = {
-							cheerful_optimist
-						}
-					}
 				}
 			}
 			ORD_gylar = {
@@ -2912,56 +4805,18 @@ focus_tree = {
 					target_country = EOR
 					character = PREV
 				}
-				add_advisor_role = {
-					advisor = {
-						cost = 150
-						removal_cost = 150
-						slot = political_advisor
-						idea_token = gylar
-						desc = ORD_gylar_desc
-						allowed = {
-							tag = EOR
-						}
-						available = {
-							always = yes
-						}
-						ai_will_do = {
-							factor = 10
-						}
-						traits = {
-							grounded_dealmaker
-						}
-					}
-				}
 			}
 			ORD_thrysmere = {
 				set_nationality = {
 					target_country = EOR
 					character = PREV
 				}
-				add_advisor_role = {
-					advisor = {
-						cost = 150
-						removal_cost = 150
-						slot = political_advisor
-						idea_token = thrysmere
-						desc = ORD_thrysmere_desc
-						allowed = {
-							tag = EOR
-						}
-						available = {
-							always = yes
-						}
-						ai_will_do = {
-							factor = 10
-						}
-						traits = {
-							awkward_administrator
-						}
-					}
-				}
 			}
 			EOR = {
+				show_ideas_tooltip = yntha
+				show_ideas_tooltip = alwyen
+				show_ideas_tooltip = gylar
+				show_ideas_tooltip = thrysmere
 				add_war_support = 0.11
 				hidden_effect = {
 					add_popularity = {
@@ -3008,27 +4863,6 @@ focus_tree = {
 					target_country = EOR
 					character = PREV
 				}
-				add_advisor_role = {
-					advisor = {
-						cost = 150
-						removal_cost = 150
-						slot = political_advisor
-						idea_token = alstora_holynthor
-						desc = ORD_alstora_holynthor_desc
-						allowed = {
-							tag = EOR
-						}
-						available = {
-							always = yes
-						}
-						ai_will_do = {
-							factor = 10
-						}
-						traits = {
-							awkward_administrator
-						}
-					}
-				}
 			}
 			every_unit_leader = {
 				limit = {
@@ -3040,6 +4874,7 @@ focus_tree = {
 				}
 			}
 			EOR = {
+				show_ideas_tooltip = alstora_holynthor
 				add_stability = 0.13
 				hidden_effect = {
 					add_popularity = {
@@ -3085,8 +4920,13 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			send_equipment = {
+				equipment = infantry_equipment_0
+				amount = 10000
+				target = EOR
+			}
+			send_equipment = {
 				equipment = ranged_equipment_0
-				amount = 750
+				amount = 7500
 				target = EOR
 			}
 		}
@@ -3245,8 +5085,13 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			send_equipment = {
+				equipment = infantry_equipment_0
+				amount = 25000
+				target = EOR
+			}
+			send_equipment = {
 				equipment = ranged_equipment_1
-				amount = 1500
+				amount = 15000
 				target = EOR
 			}
 		}
@@ -3309,9 +5154,9 @@ focus_tree = {
 						promote_leader = yes
 						country_leader = {
 							ideology = monarchy_absolute_ideology
-							traits = { }
 						}
 					}
+					add_country_leader_trait = viceroy_of_the_east_larennis
 				}
 			}
 			hidden_effect = {
@@ -3344,17 +5189,15 @@ focus_tree = {
 			focus = ORD_revolution_crushed
 		}
 		ai_will_do = {
-			factor = 25
+			factor = 30
 		}
 		relative_position_id = ORD_revolution_crushed
 		x = 0
 		y = 1
 		completion_reward = {
-			EOR = {
-				add_popularity = {
-					ideology = republic_peasant
-					popularity = -0.06
-				}
+			country_event = {
+				id = ord_lore.26
+				days = 1
 			}
 		}
 	}
@@ -3367,13 +5210,97 @@ focus_tree = {
 			focus = ORD_erase_legacy
 		}
 		ai_will_do = {
-			factor = 27
+			factor = 33
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_captured_rebels_tt		
+				RTH_islwyn_crynan = {
+					has_trait = captured_rebel_trait
+				}
+				RTH_thwysyld_mynirad = {
+					has_trait = captured_rebel_trait
+				}
+				RTH_tyndwyl_thysara = {
+					has_trait = captured_rebel_trait
+				}
+			}
 		}
 		relative_position_id = ORD_erase_legacy
 		x = -2
 		y = 1
 		completion_reward = {
+			if = {
+				limit = {
+					RTH_islwyn_crynan = {
+						has_trait = captured_rebel_trait
+					}
+				}
+				RTH_islwyn_crynan = {
+					custom_effect_tooltip = bites_the_dust_tt
+					hidden_effect = {
+						ROOT = {
+							retire_character = PREV
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					RTH_thwysyld_mynirad = {
+						has_trait = captured_rebel_trait
+					}
+				}
+				RTH_thwysyld_mynirad = {
+					custom_effect_tooltip = bites_the_dust_tt
+					hidden_effect = {
+						ROOT = {
+							retire_character = PREV
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					RTH_tyndwyl_thysara = {
+						has_trait = captured_rebel_trait
+					}
+				}
+				RTH_tyndwyl_thysara = {
+					custom_effect_tooltip = bites_the_dust_tt
+					hidden_effect = {
+						ROOT = {
+							retire_character = PREV
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					country_exists = EOR
+				}
+				EOR = {
+					add_popularity = {
+						ideology = republic_peasant
+						popularity = -0.03
+					}
+				}
+			}
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.03
+			}
+			add_war_support = 0.02
 			
+			custom_effect_tooltip = ORD_please_trads_2
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 2
+			}
+			
+			custom_effect_tooltip = ORD_please_faiths_1
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 1
+			}
 		}
 	}
 	
@@ -3385,7 +5312,7 @@ focus_tree = {
 			focus = ORD_erase_legacy
 		}
 		ai_will_do = {
-			factor = 27
+			factor = 33
 		}
 		relative_position_id = ORD_erase_legacy
 		x = 0
@@ -3405,6 +5332,10 @@ focus_tree = {
 					days = 365
 				}
 			}
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.03
+			}
 		}
 	}
 	
@@ -3416,13 +5347,77 @@ focus_tree = {
 			focus = ORD_erase_legacy
 		}
 		ai_will_do = {
-			factor = 27
+			factor = 33
 		}
 		relative_position_id = ORD_erase_legacy
 		x = 2
 		y = 1
 		completion_reward = {
-			
+			country_event = ord_lore.28
+			custom_effect_tooltip = ORD_empower_mods_4
+			add_to_variable = {
+				ORD_moderates_influence = 4
+			}
+			add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.03
+			}
+			EOR = {
+				set_capital = {
+					state = 122
+					remember_old_capital = no
+				}
+				add_stability = -0.14
+				add_popularity = {
+					ideology = monarchy_absolute
+					popularity = 0.07
+				}
+			}
+			118 = {
+				add_manpower = -324981
+				set_state_category = city
+			}
+			add_victory_points = {
+				province = 6894
+				value = -12
+			}
+			122 = {
+				add_manpower = 310644
+				set_state_category = large_city
+			}
+			add_victory_points = {
+				province = 1353
+				value = 8
+			}
+			126 = {
+				add_manpower = 14337
+				set_state_category = town
+			}
+			add_victory_points = {
+				province = 6815
+				value = 4
+			}
+			136 = {
+				add_manpower = -1767
+			}
+			119 = {
+				add_manpower = -1371
+			}
+			129 = {
+				add_manpower = 3138
+			}
+			131 = {
+				add_manpower = -8792
+			}
+			125 = {
+				add_manpower = 2389
+			}
+			127 = {
+				add_manpower = 3613
+			}
+			145 = {
+				add_manpower = 2790
+			}
 		}
 	}
 	
@@ -3437,7 +5432,7 @@ focus_tree = {
 			focus = ORD_setting_examples
 		}
 		ai_will_do = {
-			factor = 29
+			factor = 35
 		}
 		relative_position_id = ORD_night_flame_torch
 		x = -1
@@ -3449,6 +5444,10 @@ focus_tree = {
 			}
 			EOR = {
 				remove_ideas = EOR_bardic_resistance
+			}
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.05
 			}
 		}
 	}
@@ -3464,13 +5463,23 @@ focus_tree = {
 			focus = ORD_shatter_communes
 		}
 		ai_will_do = {
-			factor = 29
+			factor = 35
 		}
 		relative_position_id = ORD_night_flame_torch
 		x = 1
 		y = 1
 		completion_reward = {
-			
+			EOR = {
+				add_research_slot = -1
+				add_timed_idea = {
+					idea = EOR_restratification_of_education
+					days = 365
+				}
+			}
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.03
+			}
 		}
 	}
 	
@@ -3483,13 +5492,21 @@ focus_tree = {
 			focus = ORD_end_indoctrination
 		}
 		ai_will_do = {
-			factor = 31
+			factor = 37
 		}
 		relative_position_id = ORD_break_bardic_resistance
 		x = 1
 		y = 1
 		completion_reward = {
-			
+			country_event = ord_lore.29
+			add_stability = 0.07
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.03
+			}
+			EOR = {
+				add_stability = -0.12
+			}
 		}
 	}
 	
@@ -3501,13 +5518,37 @@ focus_tree = {
 			focus = ORD_ruin_rose
 		}
 		ai_will_do = {
-			factor = 33
+			factor = 39
 		}
 		relative_position_id = ORD_ruin_rose
 		x = 0
 		y = 1
 		completion_reward = {
-			
+			add_political_power = 125
+			custom_effect_tooltip = ORD_please_trads_5
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 5
+			}
+			custom_effect_tooltip = ORD_empower_trads_2
+			add_to_variable = {
+				ORD_traditionalists_influence = 2
+			}
+			custom_effect_tooltip = ORD_please_faiths_1
+			add_to_variable = {
+				ORD_faithful_loyalty = 1
+			}
+			custom_effect_tooltip = ORD_please_mods_3
+			add_to_variable = {
+				ORD_loyalists_loyalty = 3
+			}
+			custom_effect_tooltip = ORD_empower_mods_2
+			add_to_variable = {
+				ORD_loyalists_influence = 2
+			}
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.01
+			}
 		}
 	}
 	
@@ -3519,13 +5560,19 @@ focus_tree = {
 			focus = ORD_never_a_rthauiaur
 		}
 		ai_will_do = {
-			factor = 35
+			factor = 45
 		}
 		relative_position_id = ORD_never_a_rthauiaur
 		x = 0
 		y = 1
 		completion_reward = {
-			
+			remove_ideas = ORD_rthaur_propaganda
+			remove_ideas = ORD_disrupted_industry
+			add_stability = 0.04
+			EOR = {
+				add_political_power = 75
+				add_stability = -0.06
+			}
 		}
 	}	
 	
@@ -3568,8 +5615,13 @@ focus_tree = {
 			has_country_flag = ORD_kill_skaelinger
 		}
 		bypass = {
-			NOT = {
-				country_exists = SKA
+			OR = {
+				NOT = {
+					country_exists = SKA
+				}
+				SKA = {
+					is_subject_of = ORD
+				}
 			}
 		}
 		ai_will_do = {
@@ -3592,6 +5644,16 @@ focus_tree = {
 		cost = 4
 		prerequisite = {
 			focus = ORD_liquidate_remnant
+		}
+		bypass = {
+			OR = {
+				NOT = {
+					country_exists = SKA
+				}
+				SKA = {
+					is_subject_of = ORD
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 31
@@ -3621,13 +5683,23 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
+			custom_effect_tooltip = ORD_scare_BER_RMT_no_invading_tt
 			add_political_power = 50
-			SKA = {
-				add_opinion_modifier = {
-					target = ORD
-					modifier = ORD_outraged
+			if = {
+				limit = {
+					NOT = {
+						SKA = {
+							is_subject_of = ORD
+						}
+					}
 				}
-				add_stability = -0.12
+				SKA = {
+					add_opinion_modifier = {
+						target = ORD
+						modifier = ORD_outraged
+					}
+					add_stability = -0.12
+				}
 			}
 			BER = {
 				add_opinion_modifier = {
@@ -3674,11 +5746,19 @@ focus_tree = {
 		}
 		available = {
 			has_country_flag = ORD_dwarves_conceded
+			NOT = {
+				SKA = {
+					is_subject_of = ORD
+				}
+			}
 		}
 		bypass = {
 			country_exists = SKA
 			NOT = {
 				has_war_with = SKA
+				SKA = {
+					is_subject_of = ORD
+				}
 			}
 		}
 		ai_will_do = {
@@ -3853,6 +5933,11 @@ focus_tree = {
 		id = ORD_ordoria_reunited
 		icon = GFX_focus_ORD_hegemony
 		cost = 10
+		available = {
+			NOT = {
+				has_war_with = RTH
+			}
+		}
 		prerequisite = {
 			focus = ORD_new_viceroy
 		}
@@ -3864,16 +5949,680 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 37
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ORD_break_bardic_resistance
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ORD_end_indoctrination
+				}
+			}
 		}
 		relative_position_id = ORD_reality_rectified
 		x = 0
 		y = 1
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = ORD_rthaur_rebellion
+				add_idea = ORD_ordoria_reunited
+			}
+			custom_effect_tooltip = ORD_please_trads_7
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 7
+			}
+			custom_effect_tooltip = ORD_empower_trads_5
+			add_to_variable = {
+				ORD_traditionalists_influence = 5
+			}
+			custom_effect_tooltip = ORD_please_mods_5
+			add_to_variable = {
+				ORD_loyalists_loyalty = 5
+			}
+			custom_effect_tooltip = ORD_please_faiths_3
+			add_to_variable = {
+				ORD_faithful_loyalty = 3
+			}
 			
+			set_country_flag = ORD_traditionalists_reunited_ordoria
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
+	#Restore the Greater Ordorian Empire
+	focus = { #Restoring Imperial Grandeur
+		id = ORD_restoring_grandeur
+		icon = GFX_focus_SOV_my_brothers_keeper
+		cost = 3
+		allow_branch = {
+			has_country_flag = ORD_traditionalists_reunited_ordoria
+		}
+		ai_will_do = {
+			factor = 39
+		}
+		x = 20
+		y = 0
+		completion_reward = {
+			GMR = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = threatened_opinion
+				}
+			}
+			UNG = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = threatened_opinion
+				}
+			}
+			add_war_support = 0.07
+		}
+	}
+	
+	focus = { #Trek North
+		id = ORD_war_with_realm
+		icon = GFX_focus_ord_shatter_realm
+		cost = 1
+		prerequisite = {
+			focus = ORD_restoring_grandeur
+		}
+		ai_will_do = {
+			factor = 41
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		relative_position_id = ORD_restoring_grandeur
+		x = -3
+		y = 1
+		completion_reward = {
+			GMR = {
+				country_event = {
+					id = gmr.10
+					days = 1
+				}
+			}
+		}
+	}
+	
+	focus = { #Support the Separatists
+		id = ORD_support_separatists
+		icon = GFX_focus_gmr_separatists
+		cost = 10
+		prerequisite = {
+			focus = ORD_war_with_realm
+		}
+		mutually_exclusive = {
+			focus = ORD_support_rebels
+		}
+		ai_will_do = {
+			factor = 44
+		}
+		relative_position_id = ORD_war_with_realm
+		x = -2
+		y = 1
+		completion_reward = {
+			GMR = {
+				country_event = {
+				id = gmr.11
+				days = 1
+				}
+			}
+		}
+	}
+	
+	focus = { #Direct Intervention
+		id = ORD_direct_intervention
+		icon = GFX_focus_gmr_direct_intervention
+		cost = 3
+		prerequisite = {
+			focus = ORD_support_separatists
+		}
+		ai_will_do = {
+			factor = 47
+		}
+		relative_position_id = ORD_support_separatists
+		x = 0
+		y = 1
+		completion_reward = {
+			declare_war_on = {
+				target = GMR
+				type = annex_everything
+			}
+			set_country_flag = ORD_gmr_intervention
+		}
+	}
+	
+	focus = { #Support the Rebels
+		id = ORD_support_rebels
+		icon = GFX_focus_gmr_rebels
+		cost = 15
+		prerequisite = {
+			focus = ORD_war_with_realm
+		}
+		mutually_exclusive = {
+			focus = ORD_support_separatists
+		}
+		ai_will_do = {
+			factor = 44
+		}
+		relative_position_id = ORD_war_with_realm
+		x = 0
+		y = 1
+		completion_reward = {
+			GMR = {
+				country_event = {
+					id = gmr.43
+				}
+			}
+		}
+	}
+	
+	focus = { #Support Stoutfellow's Coup
+		id = ORD_support_stoufellow
+		icon = GFX_focus_gmr_stoutfellow
+		cost = 8
+		prerequisite = {
+			focus = ORD_support_rebels
+		}
+		bypass = {
+			GMR = {
+				has_country_flag = GMR_dominance_restored
+			}
+		}
+		ai_will_do = {
+			factor = 47
+		}
+		relative_position_id = ORD_support_rebels
+		x = 0
+		y = 1
+		completion_reward = {
+			NPC = {
+				country_event = {
+					id = npc.2
+					days = 1
+				}
+			}
+		}
+	}
+	
+	focus = { #Sweep up the Remains
+		id = ORD_sweep_remains
+		icon = GFX_focus_RAJ_indian_gurkhas
+		cost = 5
+		prerequisite = {
+			focus = ORD_direct_intervention
+			focus = ORD_support_stoufellow
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		relative_position_id = ORD_direct_intervention
+		x = 1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = GMR
+					NOT = {
+						has_war_with = GMR
+					}
+				}
+				declare_war_on = {
+					type = annex_everything
+					target = GMR
+				}
+			}
+			
+			if = {
+				limit = {
+					country_exists = NPC
+					NOT = {
+						has_war_with = NPC
+					}
+				}
+				declare_war_on = {
+					type = annex_everything
+					target = NPC
+				}
+			}
+			
+			if = {
+				limit = {
+					country_exists = IRT
+					NOT = {
+						has_war_with = IRT
+					}
+				}
+				declare_war_on = {
+					type = annex_everything
+					target = IRT
+				}
+			}
+			
+			if = {
+				limit = {
+					country_exists = FEL
+					NOT = {
+						has_war_with = FEL
+					}
+				}
+				declare_war_on = {
+					type = annex_everything
+					target = FEL
+				}
+			}
+			
+			if = {
+				limit = {
+					country_exists = TRI
+					NOT = {
+						has_war_with = TRI
+					}
+				}
+				declare_war_on = {
+					type = annex_everything
+					target = TRI
+				}
+			}
+			
+			if = {
+				limit = {
+					country_exists = KRT
+					NOT = {
+						has_war_with = KRT
+					}
+				}
+				declare_war_on = {
+					type = annex_everything
+					target = KRT
+				}
+			}
+			
+			if = {
+				limit = {
+					country_exists = NAS
+					NOT = {
+						has_war_with = NAS
+					}
+				}
+				declare_war_on = {
+					type = annex_everything
+					target = NAS
+				}
+			}
+			
+			if = {
+				limit = {
+					country_exists = NAV
+					NOT = {
+						has_war_with = NAV
+					}
+				}
+				declare_war_on = {
+					type = annex_everything
+					target = NAV
+				}
+			}
+			
+			if = {
+				limit = {
+					country_exists = KAL
+					NOT = {
+						has_war_with = KAL
+					}
+				}
+				declare_war_on = {
+					type = annex_everything
+					target = KAL
+				}
+			}
+		}
+	}
+	
+	focus = { #Avenging Inskyllithe
+		id = ORD_war_with_union
+		icon = GFX_focus_ord_shatter_union
+		cost = 1
+		prerequisite = {
+			focus = ORD_restoring_grandeur
+		}
+		bypass = {
+			has_war_with = UNG
+		}
+		ai_will_do = {
+			factor = 41
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		relative_position_id = ORD_restoring_grandeur
+		x = 3
+		y = 1
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					OR = { #Edge cases where someone else has picked off a FPT
+						is_subject = no
+						is_subject_of = UNG
+						is_subject_of = STA
+					}
+				}
+				ROOT = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { #This is Personal
+		id = ORD_this_personal
+		icon = GFX_focus_SWE_neither_death_nor_dishonor
+		cost = 2
+		prerequisite = {
+			focus = ORD_war_with_union
+		}
+		ai_will_do = {
+			factor = 43
+		}
+		relative_position_id = ORD_war_with_union
+		x = 0
+		y = 1
+		completion_reward = {
+			add_trait = {
+				character = ORD_isvenith_lothinnys
+				slot = political_advisor
+				trait = vicious_avenger
+			}
+		}
+	}
+	
+	focus = { #No Mercy, No Remorse
+		id = ORD_no_mercy
+		icon = GFX_focus_ord_evil
+		cost = 2
+		prerequisite = {
+			focus = ORD_war_with_union
+		}
+		ai_will_do = {
+			factor = 43
+		}
+		relative_position_id = ORD_war_with_union
+		x = 2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_enable_union_terror_decisions_tt
+		}
+	}
+	
+	focus = { #Extinguish the Southern Holds
+		id = ORD_extinguish_southern_holds
+		icon = GFX_focus_ung_sack_schneefilde
+		cost = 2
+		prerequisite = {
+			focus = ORD_this_personal
+			focus = ORD_no_mercy
+		}
+		ai_will_do = {
+			factor = 45
+			modifier = {
+				factor = 0
+				NOT = {
+					STA = {
+						has_capitulated = yes
+					}
+				}
+				NOT = {
+					NRK = {
+						has_capitulated = yes
+					}
+				}
+			}
+		}
+		relative_position_id = ORD_this_personal
+		x = 0
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = ORD_fuck_the_deep_south_idea
+				days = 125
+			}
+		}
+	}
+	
+	focus = { #Second Front (navally invade St. Vichtlas)
+		id = ORD_second_front
+		icon = GFX_focus_SWE_coastal_support
+		cost = 2
+		prerequisite = {
+			focus = ORD_extinguish_southern_holds
+		}
+		ai_will_do = {
+			factor = 48
+		}
+		relative_position_id = ORD_extinguish_southern_holds
+		x = 0
+		y = 1
+		
+		completion_reward = {
+			unlock_decision_tooltip = ORD_open_second_front
+		}
+	}
+	
+	focus = { #Slaughter the Sons of Sigismund
+		id = ORD_fuck_stahlhof
+		icon = GFX_IRI_Safeguard_Stahlhof
+		cost = 2
+		prerequisite = {
+			focus = ORD_this_personal
+			focus = ORD_no_mercy
+		}
+		ai_will_do = {
+			factor = 45
+		}
+		relative_position_id = ORD_this_personal
+		x = 2
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = ORD_fuck_stahlhof_idea
+				days = 125
+			}
+		}
+	}
+	
+	focus = { #Reconstruct the Southern Highways
+		id = ORD_rebuild_southern_highways
+		icon = GFX_goal_generic_paths
+		cost = 12
+		prerequisite = {
+			focus = ORD_fuck_stahlhof
+		}
+		ai_will_do = {
+			factor = 48
+		}
+		available = {
+			controls_state = 193
+			controls_state = 194
+			controls_state = 195
+			controls_state = 196
+			controls_state = 198
+			controls_state = 214
+		}
+		relative_position_id = ORD_fuck_stahlhof
+		x = 0
+		y = 1
+		completion_reward = {
+			transfer_state = 193
+			add_state_core = 193
+			transfer_state = 194
+			add_state_core = 194
+			transfer_state = 195
+			add_state_core = 195
+			transfer_state = 198
+			add_state_core = 198
+			
+			build_railway = {
+				level = 2
+				build_only_on_allied = yes
+				path = {
+					3474 616 1913 7996 1741
+				}
+				start_province = 3474
+				target_province = 1741
+			}
+			
+			build_railway = {
+				level = 3
+				build_only_on_allied = yes
+				start_province = 1429
+				target_province = 4340
+			}
+			
+			build_railway = {
+				level = 2
+				build_only_on_allied = yes
+				start_province = 3232
+				target_province = 8169
+			}
+		}
+	}
+	
+	focus = { #Raze the Eastern Coast
+		id = ORD_raze_coast
+		icon = GFX_IRI_Put_An_End_To_Ungerdalers
+		cost = 2
+		prerequisite = {
+			focus = ORD_this_personal
+			focus = ORD_no_mercy
+		}
+		ai_will_do = {
+			factor = 45
+			modifier = {
+				factor = 0
+				NOT = {
+					STA = {
+						has_capitulated = yes
+					}
+				}
+				NOT = {
+					NRK = {
+						has_capitulated = yes
+					}
+				}
+			}
+		}
+		relative_position_id = ORD_no_mercy
+		x = 2
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = ORD_fuck_east_coast_idea
+				days = 125
+			}
+		}
+	}
+	
+	focus = { #Strike at Their Economic Heart
+		id = ORD_strike_economic_heart
+		icon = GFX_IRI_Debase_Currency
+		cost = 2
+		prerequisite = {
+			focus = ORD_raze_coast
+		}
+		ai_will_do = {
+			factor = 48
+		}
+		relative_position_id = ORD_raze_coast
+		x = 0
+		y = 1
+		completion_reward = {
+			unlock_decision_tooltip = ORD_seize_fritzhafen
+		}
+	}
+	
+	focus = { #Ordorian Hegemony
+		id = ORD_hegemony
+		icon = GFX_focus_ORD_hegemony
+		cost = 15
+		prerequisite = {
+			focus = ORD_sweep_remains
+		}
+		prerequisite = {
+			focus = ORD_second_front
+		}
+		prerequisite = {
+			focus = ORD_rebuild_southern_highways
+		}
+		prerequisite = {
+			focus = ORD_strike_economic_heart
+		}
+		available = {
+			AND = {
+				OR = {
+					owns_state = 1
+					any_country = {
+						is_puppet_of = ORD
+						owns_state = 1
+					}
+				}
+				OR = {
+					owns_state = 233
+					any_country = {
+						is_puppet_of = ORD
+						owns_state = 233
+					}
+				}
+				OR = {
+					owns_state = 118
+					any_country = {
+						is_puppet_of = ORD
+						owns_state = 118
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		relative_position_id = ORD_restoring_grandeur
+		x = 0
+		y = 5
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ORD_ordoria_reunited
+				}
+				swap_ideas = {
+					remove_idea = ORD_ordoria_reunited
+					add_idea = ORD_hegemony_idea
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = ORD_ordoria_reunited
+					}
+				}
+				add_ideas = ORD_hegemony_idea
+			}
+			add_stability = 0.15
+			add_war_support = 0.1
+			add_political_power = 150
 		}
 	}
 
-	## SOPHISTS ##
+### SOPHIST BRANCH ###
+
 	focus = { #Salvation of the Righteous
 		id = ORD_salvation_of_the_righteous
 		icon = GFX_focus_ord_faithful_society
@@ -3897,9 +6646,9 @@ focus_tree = {
 	focus = { #eliminating the puritans branch
 		id = ORD_embrace_children_harquiss
 		icon = GFX_focus_generic_national_security
-		cost = 5
+		cost = 2
 		ai_will_do = {
-			factor = 5
+			factor = 7
 		}
 		relative_position_id = ORD_salvation_of_the_righteous
 		prerequisite = {
@@ -3915,9 +6664,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_prosyletize_agents_oath
 		icon = GFX_IRI_Meritocratic_Promotions
-		cost = 5
+		cost = 2
 		ai_will_do = {
-			factor = 5
+			factor = 9
 		}
 		relative_position_id = ORD_embrace_children_harquiss
 		prerequisite = {
@@ -3937,9 +6686,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_redemption_to_those_heed
 		icon = GFX_focus_spa_eliminate_the_carlists
-		cost = 5
+		cost = 2
 		ai_will_do = {
-			factor = 5
+			factor = 11
 		}
 		relative_position_id = ORD_prosyletize_agents_oath
 		prerequisite = {
@@ -3986,9 +6735,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_simony_for_others
 		icon = GFX_focus_hlz_compensate_nobles
-		cost = 5
+		cost = 2
 		ai_will_do = {
-			factor = 5
+			factor = 11
 		}
 		relative_position_id = ORD_prosyletize_agents_oath
 		prerequisite = {
@@ -4020,9 +6769,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_righteous_deeds_wicked_elves
 		icon = GFX_focus_ord_slay_heresiarch
-		cost = 5
+		cost = 2
 		ai_will_do = {
-			factor = 5
+			factor = 13
 		}
 		relative_position_id = ORD_simony_for_others
 		prerequisite = {
@@ -4077,9 +6826,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_establish_sophist_branch_oath
 		icon = GFX_focus_ITA_topple_amhara_rulers
-		cost = 5
+		cost = 3
 		ai_will_do = {
-			factor = 5
+			factor = 13
 		}
 		relative_position_id = ORD_redemption_to_those_heed
 		prerequisite = {
@@ -4098,9 +6847,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_correct_wayward_doctrines
 		icon = GFX_IRI_Quantity_Over_Quality
-		cost = 5
+		cost = 2
 		ai_will_do = {
-			factor = 5
+			factor = 15
 		}
 		relative_position_id = ORD_prosyletize_agents_oath
 		prerequisite = {
@@ -4125,9 +6874,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_oath_within_oath
 		icon = GFX_focus_generic_secret_treaty
-		cost = 5
+		cost = 2
 		ai_will_do = {
-			factor = 5
+			factor = 17
 		}
 		relative_position_id = ORD_correct_wayward_doctrines
 		prerequisite = {
@@ -4160,9 +6909,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_harquiss_right_hand
 		icon = GFX_focus_generic_annex_country_2
-		cost = 5
+		cost = 3
 		ai_will_do = {
-			factor = 5
+			factor = 19
 		}
 		relative_position_id = ORD_oath_within_oath
 		prerequisite = {
@@ -4185,9 +6934,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_dedicate_all_to_harquiss
 		icon = GFX_focus_ord_evil
-		cost = 5
+		cost = 1
 		ai_will_do = {
-			factor = 5
+			factor = 21
 		}
 		relative_position_id = ORD_oath_within_oath
 		prerequisite = {
@@ -4207,9 +6956,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_defang_glory_league
 		icon = GFX_IRI_New_Warfare_Experiences
-		cost = 5
+		cost = 3
 		ai_will_do = {
-			factor = 5
+			factor = 23
 		}
 		relative_position_id = ORD_oath_within_oath
 		prerequisite = {
@@ -4231,9 +6980,9 @@ focus_tree = {
 	focus = { #eliminating the moderates
 		id = ORD_establish_inquisition
 		icon = GFX_focus_generic_self_management
-		cost = 5
+		cost = 2
 		ai_will_do = {
-			factor = 5
+			factor = 7
 		}
 		relative_position_id = ORD_salvation_of_the_righteous
 		prerequisite = {
@@ -4256,9 +7005,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_weapons_forged_in_hate
 		icon = GFX_BLD_Kugur_Warriors_Cooperation
-		cost = 5
+		cost = 2
 		ai_will_do = {
-			factor = 5
+			factor = 9
 		}
 		relative_position_id = ORD_establish_inquisition
 		prerequisite = {
@@ -4303,9 +7052,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_end_era_of_blind
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
-		cost = 5
+		cost = 1
 		ai_will_do = {
-			factor = 5
+			factor = 9
 		}
 		relative_position_id = ORD_establish_inquisition
 		prerequisite = {
@@ -4321,9 +7070,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_intercept_escapees
 		icon = GFX_focus_ung_elven_internment_act
-		cost = 5
+		cost = 2
 		ai_will_do = {
-			factor = 5
+			factor = 11
 		}
 		relative_position_id = ORD_end_era_of_blind
 		prerequisite = {
@@ -4342,9 +7091,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_noble_oversight_campaign
 		icon = GFX_IRI_Reign_Of_Strategos
-		cost = 5
+		cost = 3
 		ai_will_do = {
-			factor = 5
+			factor = 13
 		}
 		relative_position_id = ORD_intercept_escapees
 		prerequisite = {
@@ -4361,9 +7110,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_utilize_great_nobles
 		icon = GFX_focus_generic_monarchy_2
-		cost = 5
+		cost = 3
 		ai_will_do = {
-			factor = 5
+			factor = 15
 		}
 		relative_position_id = ORD_noble_oversight_campaign
 		prerequisite = {
@@ -4379,6 +7128,9 @@ focus_tree = {
 		x = -2
 		y = 1
 		completion_reward = {
+			show_ideas_tooltip = ORD_taenaran_sylquinal
+			show_ideas_tooltip = ORD_arun_fenmys
+			show_ideas_tooltip = ORD_namys_yesydark
 			add_advisor_role = {
 				character = ORD_taenaran_sylquinal
 				advisor = {
@@ -4389,19 +7141,6 @@ focus_tree = {
 					}
 					traits = {
 						noble_militarized_fiefdom
-					}
-				}
-			}
-			add_advisor_role = {
-				character = ORD_namys_yesydark
-				advisor = {
-					slot = political_advisor
-					cost = 50
-					available = {
-						has_government = theocrat
-					}
-					traits = {
-						nobility_plantation_representative
 					}
 				}
 			}
@@ -4417,9 +7156,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_encourage_noble_infighting
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 5
+		cost = 3
 		ai_will_do = {
-			factor = 5
+			factor = 15
 		}
 		relative_position_id = ORD_noble_oversight_campaign
 		prerequisite = {
@@ -4442,9 +7181,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_investigate_all_nobles
 		icon = GFX_goal_generic_neutrality_focus
-		cost = 5
+		cost = 4
 		ai_will_do = {
-			factor = 5
+			factor = 15
 		}
 		relative_position_id = ORD_noble_oversight_campaign
 		prerequisite = {
@@ -4464,41 +7203,15 @@ focus_tree = {
 				idea = ORD_noble_chaos_lesser
 				days = 35
 			}
-			add_advisor_role = {
-				character = ORD_tasar_beijyre
-				advisor = {
-					slot = prisoners_guests
-					cost = 25
-					available = {
-						has_government = theocrat
-					}
-					traits = {
-						state_seized_assets
-					}
-				}
-			}
-			add_advisor_role = {
-				character = ORD_arun_fenmys
-				advisor = {
-					slot = prisoners_guests
-					cost = 25
-					available = {
-						has_government = theocrat
-					}
-					traits = {
-						arrested_pacifist
-					}
-				}
-			}
 		}
 	}
 
 	focus = { #
 		id = ORD_undermine_the_nobility
 		icon = GFX_focus_eng_move_to_secure_the_dominions
-		cost = 5
+		cost = 3
 		ai_will_do = {
-			factor = 5
+			factor = 17
 		}
 		relative_position_id = ORD_investigate_all_nobles
 		prerequisite = {
@@ -4523,9 +7236,9 @@ focus_tree = {
 	focus = { #TIME TO SWAT SOME NOBLES BAY-BEEE
 		id = ORD_raid_sus_manors
 		icon = GFX_IRI_Supreme_Arsenal
-		cost = 5
+		cost = 1
 		ai_will_do = {
-			factor = 5
+			factor = 17
 		}
 		relative_position_id = ORD_noble_oversight_campaign
 		prerequisite = {
@@ -4546,9 +7259,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_isolate_princeling
 		icon = GFX_focus_ord_larennis
-		cost = 5
+		cost = 4
 		ai_will_do = {
-			factor = 5
+			factor = 19
 		}
 		relative_position_id = ORD_undermine_the_nobility
 		prerequisite = {
@@ -4565,9 +7278,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_starve_moderates
 		icon = GFX_BLD_Promote_Farming
-		cost = 5
+		cost = 4
 		ai_will_do = {
-			factor = 5
+			factor = 19
 		}
 		relative_position_id = ORD_raid_sus_manors
 		prerequisite = {
@@ -4587,9 +7300,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_supplant_oath
 		icon = GFX_focus_generic_military_dictatorship
-		cost = 5
+		cost = 3
 		ai_will_do = {
-			factor = 5
+			factor = 21
 		}
 		relative_position_id = ORD_isolate_princeling
 		prerequisite = {
@@ -4612,9 +7325,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_mobilize_vuid
 		icon = GFX_focus_ord_vuid
-		cost = 5
+		cost = 3
 		ai_will_do = {
-			factor = 5
+			factor = 23
 		}
 		relative_position_id = ORD_defang_glory_league
 		prerequisite = {
@@ -4644,9 +7357,15 @@ focus_tree = {
 	focus = { #
 		id = ORD_last_minute_wargames
 		icon = GFX_goal_generic_small_arms
-		cost = 5
+		cost = 2
 		ai_will_do = {
-			factor = 5
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ORD_crisis_averted
+				}
+			}
 		}
 		relative_position_id = ORD_mobilize_vuid
 		prerequisite = {
@@ -4674,9 +7393,15 @@ focus_tree = {
 	focus = { #
 		id = ORD_sow_terror_among_revolutionaries
 		icon = GFX_focus_ord_cleanse_traitors
-		cost = 5
+		cost = 3
 		ai_will_do = {
-			factor = 5
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ORD_crisis_averted
+				}
+			}
 		}
 		relative_position_id = ORD_mobilize_vuid
 		prerequisite = {
@@ -4703,9 +7428,9 @@ focus_tree = {
 	focus = { #
 		id = ORD_demand_private_armories
 		icon = GFX_IRI_Supreme_Arsenal
-		cost = 5
+		cost = 1
 		ai_will_do = {
-			factor = 5
+			factor = 25
 		}
 		relative_position_id = ORD_mobilize_vuid
 		prerequisite = {
@@ -4739,7 +7464,7 @@ focus_tree = {
 		icon = GFX_focus_ord_destroy_revolution
 		cost = 5
 		ai_will_do = {
-			factor = 5
+			factor = 27
 		}
 		relative_position_id = ORD_mobilize_vuid
 		prerequisite = {
@@ -4761,20 +7486,18 @@ focus_tree = {
 		completion_reward = {
 			declare_war_on = {
 				target = RTH
-				type = annex_everything
+				type = civil_war
 			}
 		}
 	}
-
 	
 ### INDUSTRIAL BRANCH ###
-
 	focus = { #Rebuilding Ordorian Glory
 		id = ORD_rebuilding_glory
 		icon = GFX_goal_generic_construct_civilian
-		cost = 5
+		cost = 3
 		ai_will_do = {
-			factor = 5
+			factor = 15 #important!
 		}
 		available = {
 			has_country_flag = ORD_autumn_debate_done
@@ -4787,17 +7510,297 @@ focus_tree = {
 				idea = ORD_rebuilding_glory_idea
 				days = 70
 			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 	}
 
 ## SHARED ##
+	
+	## STEEL CRISIS ##
+	
+	focus = { #Adressing it
+		id = ORD_steel_crisis
+		icon = GFX_focus_generic_steel
+		cost = 2
+		prerequisite = {
+			focus = ORD_rebuilding_glory
+		}
+		ai_will_do = {
+			factor = 18 #important!
+		}
+		relative_position_id = ORD_rebuilding_glory
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_steel_crisis_add_5_tt
+			add_to_variable = {
+				ORD_steel_crisis_division_limit = 5
+			}
+		}
+	}
+	
+	focus = { #Fortify Southmountains
+		id = ORD_fortify_southmountains
+		icon = GFX_focus_ICE_thungur_hnifur
+		cost = 5
+		prerequisite = {
+			focus = ORD_steel_crisis
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		relative_position_id = ORD_steel_crisis
+		x = 0
+		y = 1
+		completion_reward = {
+			107 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 4180
+				}
+			}
+			105 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 2987
+				}
+			}
+			1291 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 7886
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3232
+				}
+			}
+			106 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 4703
+				}
+			}
+		}
+	}
+	
+	focus = { #Emergency Rerouting
+		id = ORD_emergency_rerouting
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8
+		prerequisite = {
+			focus = ORD_fortify_southmountains
+		}
+		ai_will_do = {
+			factor = 24
+		}
+		mutually_exclusive = {
+			focus = ORD_secure_ryselin
+		}
+		relative_position_id = ORD_fortify_southmountains
+		x = -1
+		y = 1
+		completion_reward = {
+			build_railway = {
+				level = 1
+				path = { 4182 1592 7930 3067 536 2987 7886 3232 }
+			}
+		}
+	}
+	
+	focus = { #Secure the River Ryselin
+		id = ORD_secure_ryselin
+		icon = GFX_focus_ETH_northern_thrust
+		cost = 1
+		prerequisite = {
+			focus = ORD_fortify_southmountains
+		}
+		ai_will_do = {
+			factor = 12 #harder
+		}
+		mutually_exclusive = {
+			focus = ORD_emergency_rerouting
+		}
+		relative_position_id = ORD_fortify_southmountains
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_enable_gythus_conflict_tt
+		}
+	}
+	
+	focus = { #Rely on the Bow
+		id = ORD_rely_bow
+		icon = GFX_focus_generic_air_defense
+		cost = 4
+		prerequisite = {
+			focus = ORD_emergency_rerouting
+			focus = ORD_secure_ryselin
+		}
+		ai_will_do = {
+			factor = 27
+		}
+		relative_position_id = ORD_emergency_rerouting
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_rely_bow_idea
+			custom_effect_tooltip = ORD_steel_crisis_add_2_tt
+			add_to_variable = {
+				ORD_steel_crisis_division_limit = 2
+			}
+		}
+	}
+	
+	focus = { #Reuse, Reduce, Reforge
+		id = ORD_reuse_reduce_reforge
+		icon = GFX_focus_generic_modernize_industry
+		cost = 3
+		prerequisite = {
+			focus = ORD_emergency_rerouting
+			focus = ORD_secure_ryselin
+		}
+		ai_will_do = {
+			factor = 27
+		}
+		relative_position_id = ORD_emergency_rerouting
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_reuse_reduce_reforge_idea
+			custom_effect_tooltip = ORD_steel_crisis_add_1_tt
+			add_to_variable = {
+				ORD_steel_crisis_division_limit = 1
+			}
+		}
+	}
+	
+	focus = { #Explore Untapped Deposits
+		id = ORD_untapped_deposits
+		icon = GFX_focus_generic_mining_industry
+		cost = 6
+		prerequisite = {
+			focus = ORD_emergency_rerouting
+			focus = ORD_secure_ryselin
+		}
+		ai_will_do = {
+			factor = 27
+		}
+		relative_position_id = ORD_secure_ryselin
+		x = 1
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = steel
+					amount = 1
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = steel
+					amount = 3
+				}
+			}
+			custom_effect_tooltip = ORD_steel_crisis_add_3_tt
+			add_to_variable = {
+				ORD_steel_crisis_division_limit = 3
+			}
+		}
+	}
+	
+	focus = { #Crisis Averted
+		id = ORD_crisis_averted
+		icon = GFX_focus_FIN_weapon_caches
+		cost = 1
+		prerequisite = {
+			focus = ORD_rely_bow
+		}
+		prerequisite = {
+			focus = ORD_reuse_reduce_reforge
+		}
+		prerequisite = {
+			focus = ORD_untapped_deposits
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			OR = {
+				has_completed_focus = ORD_emergency_rerouting
+				controls_state = 140
+			}
+		}
+		relative_position_id = ORD_reuse_reduce_reforge
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_no_more_crisis_tt
+			hidden_effect = {
+				remove_ideas = ORD_looming_steel_crisis_idea
+				remove_dynamic_modifier = {
+					modifier = ORD_steel_crisis_hit
+				}
+			}
+			clear_variable = ORD_steel_crisis_division_limit
+			
+			clear_variable = ORD_steel_crisis_multiplier_war_support
+			
+			clear_variable = ORD_steel_crisis_multiplier_attack
+			
+			clear_variable = ORD_steel_crisis_multiplier_defence
+			
+			clear_variable = ORD_steel_crisis_multiplier_breakthrough
+			
+			clear_variable = ORD_steel_crisis_multiplier_resource_penalty
+		}
+	}
 	
 	## VARINTHIA ##
 	
 	focus = { #Varinthia
 		id = ORD_improve_varinthia
 		icon = GFX_focus_ord_varinthia
-		cost = 8
+		cost = 3
 		prerequisite = {
 			focus = ORD_rebuilding_glory
 		}
@@ -4808,7 +7811,7 @@ focus_tree = {
 			controls_state = 111
 		}
 		relative_position_id = ORD_rebuilding_glory
-		x = -11
+		x = -13
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = ORD_please_trads_1
@@ -4830,6 +7833,12 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = city_of_erudition
 				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
 			}
 			hidden_effect = {
 				add_ideas = CITY_varinthia
@@ -4842,7 +7851,7 @@ focus_tree = {
 	focus = { #Istaroth
 		id = ORD_improve_istaroth
 		icon = GFX_focus_ord_istaroth
-		cost = 8
+		cost = 3
 		prerequisite = {
 			focus = ORD_rebuilding_glory
 		}
@@ -4853,7 +7862,7 @@ focus_tree = {
 			controls_state = 85
 		}
 		relative_position_id = ORD_rebuilding_glory
-		x = -8
+		x = -9
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = ORD_please_trads_1
@@ -4867,6 +7876,17 @@ focus_tree = {
 			85 = {
 				add_dynamic_modifier = {
 					modifier = city_of_foundries
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
 				}
 			}
 			add_resource = {
@@ -5070,6 +8090,9 @@ focus_tree = {
 				check_variable = {
 					ORD_moderates_influence < 15
 				}
+			}
+			NOT = {
+				has_government = monarchy_absolute
 			}
 		}
 		mutually_exclusive = {
@@ -5756,20 +8779,17 @@ focus_tree = {
 					ORD_moderates_influence < 2
 				}
 			}
+			NOT = {
+				has_government = monarchy_absolute
+			}
 		}
 		relative_position_id = ORD_skaelinger_control
 		x = 2
 		y = 2
 		completion_reward = {
 			custom_effect_tooltip = ORD_disable_mods
-			set_variable = {
-				var = ORD_moderates_influence
-				value = 0
-			}
-			set_variable = {
-				var = ORD_moderates_loyalty
-				value = 0
-			}
+			clear_variable = ORD_moderates_influence
+			clear_variable = ORD_moderates_loyalty
 			ORD_strengthen_slavery = yes
 			if = {
 				limit = {
@@ -5781,6 +8801,12 @@ focus_tree = {
 					}
 					add_dynamic_modifier = {
 						modifier = city_of_slavers
+					}
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
 					}
 				}
 				hidden_effect = {
@@ -5813,7 +8839,7 @@ focus_tree = {
 	focus = { #Utilise the Skilled
 		id = ORD_utilise_skilled
 		icon = GFX_BLD_Exchange_Of_Builders
-		cost = 10
+		cost = 7
 		prerequisite = {
 			focus = ORD_end_exceptions
 		}
@@ -5881,7 +8907,7 @@ focus_tree = {
 	focus = { #Dedication to Lombrin
 		id = ORD_dedication_lombrin
 		icon = GFX_focus_ord_dedication_lombrin
-		cost = 12
+		cost = 9
 		prerequisite = {
 			focus = ORD_end_exceptions
 		}
@@ -6268,18 +9294,7 @@ focus_tree = {
 			factor = 20
 		}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = ORD_empowered_trads_30
-				check_variable = {
-					ORD_traditionalists_influence > 29
-				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = ORD_pleased_trads_20
-				check_variable = {
-					ORD_traditionalists_loyalty > 19
-				}
-			}
+			has_government = puritan
 		}
 		relative_position_id = ORD_study_skaelinger_tech
 		x = -2
@@ -6322,6 +9337,20 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 25
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_trads_30
+				check_variable = {
+					ORD_traditionalists_influence > 29
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_trads_20
+				check_variable = {
+					ORD_traditionalists_loyalty > 19
+				}
+			}
 		}
 		relative_position_id = ORD_fetter_factories
 		x = 0
@@ -6771,7 +9800,7 @@ focus_tree = {
 	focus = { #Ythelmare
 		id = ORD_improve_ythelmare
 		icon = GFX_focus_ord_ythelmare
-		cost = 8
+		cost = 3
 		prerequisite = {
 			focus = ORD_rebuilding_glory
 		}
@@ -6782,7 +9811,7 @@ focus_tree = {
 			controls_state = 112
 		}
 		relative_position_id = ORD_rebuilding_glory
-		x = 8
+		x = 9
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = ORD_please_mods_1
@@ -6797,10 +9826,1539 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = city_of_harbours
 				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
 			}
 			hidden_effect = {
 				add_ideas = CITY_ythelmare
 			}
+		}
+	}
+	
+	focus = { #Refurbish the Dockyards
+		id = ORD_refurbish_dockyards
+		icon = GFX_focus_generic_refit_civilian_ships
+		cost = 12
+		prerequisite = {
+			focus = ORD_improve_ythelmare
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			controls_state = 112
+			controls_state = 114
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_10
+				check_variable = {
+					ORD_moderates_influence > 9
+				}
+			}
+		}
+		relative_position_id = ORD_improve_ythelmare
+		x = 0
+		y = 2
+		completion_reward = {
+			112 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			114 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Contacts in the admiralty
+		id = ORD_contacts_admiralty
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 5
+		prerequisite = {
+			focus = ORD_improve_ythelmare
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		available = {
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_leaning_max
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_somewhat_cynical
+					check_variable = {
+						larennis_idealism < 45
+					}					
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = ORD_empowered_mods_5
+					check_variable = {
+						ORD_moderates_influence > 4
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = ORD_pleased_mods_10
+					check_variable = {
+						ORD_moderates_loyalty > 9
+					}
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ORD_negotiations_guild
+		}
+		relative_position_id = ORD_improve_ythelmare
+		x = -2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_mods_2
+			add_to_variable = {
+				ORD_moderates_loyalty = 2
+			}
+			custom_effect_tooltip = ORD_empower_mods_1
+			add_to_variable = {
+				ORD_moderates_influence = 1
+			}
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				larennis_cynicism_small = yes
+			}
+			navy_experience = 15
+			add_naval_commander_role = {
+				character = ORD_thrystyr_gadayn
+				traits={ ord_royalist old_guard naval_lineage }
+				skill=3
+				attack_skill=2
+				defense_skill=1
+				maneuvering_skill=3
+				coordination_skill=4
+			}
+			add_naval_commander_role = {
+				character = ORD_galadywe_tolhyn
+				traits={ ord_royalist naval_lineage career_officer}
+				skill=2
+				attack_skill=3
+				defense_skill=2
+				maneuvering_skill=2
+				coordination_skill=1
+			}
+		}
+	}
+	
+	focus = { #Patronage for the Seafaring College
+		id = ORD_patronage_seafaring_college
+		icon = GFX_goal_generic_navy_battleship
+		cost = 6
+		prerequisite = {
+			focus = ORD_contacts_admiralty
+		}
+		prerequisite = {
+			focus = ORD_refurbish_dockyards
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		available = {
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_leaning
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_neutral
+					check_variable = {
+						larennis_idealism > 44
+					}					
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = ORD_empowered_mods_15
+					check_variable = {
+						ORD_moderates_influence > 14
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = ORD_pleased_mods_5
+					check_variable = {
+						ORD_moderates_loyalty > 4
+					}
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ORD_restore_naval_lineages
+		}
+		relative_position_id = ORD_refurbish_dockyards
+		x = -4
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_mods_3
+			add_to_variable = {
+				ORD_moderates_loyalty = 3
+			}
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				larennis_idealism_small = yes
+			}
+			
+			navy_experience = 20
+			add_ideas = ORD_seafaring_college
+		}
+	}
+	
+	focus = { #Restore the Naval Lineages
+		id = ORD_restore_naval_lineages
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 4
+		prerequisite = {
+			focus = ORD_contacts_admiralty
+		}
+		prerequisite = {
+			focus = ORD_refurbish_dockyards
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		available = {
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_leaning_max
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_cynical
+					check_variable = {
+						larennis_idealism < 35
+					}					
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = ORD_empowered_mods_5
+					check_variable = {
+						ORD_moderates_influence > 4
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = ORD_pleased_mods_15
+					check_variable = {
+						ORD_moderates_loyalty > 14
+					}
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ORD_patronage_seafaring_college
+		}
+		relative_position_id = ORD_refurbish_dockyards
+		x = -2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_empower_mods_3
+			add_to_variable = {
+				ORD_moderates_influence = 3
+			}
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				larennis_cynicism_small = yes
+			}
+			add_political_power = 65
+			navy_experience = 35
+		}
+	}
+	
+	focus = { #Negotiate with the Guild of Commerce
+		id = ORD_negotiations_guild
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 4
+		prerequisite = {
+			focus = ORD_improve_ythelmare
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		available = {
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_leaning
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_somewhat_hopeful
+					check_variable = {
+						larennis_idealism > 54
+					}					
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = ORD_empowered_mods_10
+					check_variable = {
+						ORD_moderates_influence > 9
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = ORD_pleased_mods_5
+					check_variable = {
+						ORD_moderates_loyalty > 4
+					}
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ORD_contacts_admiralty
+		}
+		relative_position_id = ORD_improve_ythelmare
+		x = 2
+		y = 1
+		completion_reward = {
+			
+			custom_effect_tooltip = ORD_please_mods_1
+			add_to_variable = {
+				ORD_moderates_loyalty = 1
+			}
+			custom_effect_tooltip = ORD_empower_mods_2
+			add_to_variable = {
+				ORD_moderates_influence = 2
+			}
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				larennis_idealism_small = yes
+			}
+			
+			navy_experience = 5
+			
+			add_popularity = {
+				ideology = republic_merchant
+				popularity = 0.03
+			}
+			
+			add_timed_idea = {
+				idea = ORD_guild_cooperation
+				days = 150
+			}
+		}
+	}
+	
+	focus = { #Rights most Enduring
+		id = ORD_rights_enduring
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 5
+		prerequisite = {
+			focus = ORD_refurbish_dockyards
+		}
+		prerequisite = {
+			focus = ORD_negotiations_guild
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		available = {
+			controls_state = 112
+			controls_state = 90
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_leaning_max
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_neutral
+					check_variable = {
+						larennis_idealism < 55
+					}
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = ORD_empowered_mods_5
+					check_variable = {
+						ORD_moderates_influence > 4
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = ORD_pleased_mods_15
+					check_variable = {
+						ORD_moderates_loyalty > 14
+					}
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ORD_tides_change
+		}
+		relative_position_id = ORD_refurbish_dockyards
+		x = 2
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				larennis_cynicism_small = yes
+			}
+			custom_effect_tooltip = ORD_please_mods_4
+			add_to_variable = {
+				ORD_moderates_loyalty = 4
+			}
+			custom_effect_tooltip = ORD_empower_mods_3
+			add_to_variable = {
+				ORD_moderates_influence = 3
+			}
+			add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.03
+			}
+			add_stability = 0.04
+			add_political_power = 125
+			112 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+			90 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = farm
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Tides of Change
+		id = ORD_tides_change
+		icon = GFX_goal_generic_demand_territory
+		cost = 9
+		prerequisite = {
+			focus = ORD_refurbish_dockyards
+		}
+		prerequisite = {
+			focus = ORD_negotiations_guild
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			controls_state = 112
+			controls_state = 91
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_leaning
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_hopeful
+					check_variable = {
+						larennis_idealism > 64
+					}					
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = ORD_empowered_mods_15
+					check_variable = {
+						ORD_moderates_influence > 14
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = ORD_pleased_mods_5
+					check_variable = {
+						ORD_moderates_loyalty > 4
+					}
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ORD_rights_enduring
+		}
+		relative_position_id = ORD_refurbish_dockyards
+		x = 4
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				larennis_idealism_small = yes
+			}
+			custom_effect_tooltip = ORD_displease_mods_2
+			subtract_from_variable = {
+				ORD_moderates_loyalty = 2
+			}
+			custom_effect_tooltip = ORD_empower_mods_5
+			add_to_variable = {
+				ORD_moderates_influence = 5
+			}
+			add_popularity = {
+				ideology = republic_merchant
+				popularity = 0.05
+			}
+			112 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+			}
+			91 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Letter of the Law
+		id = ORD_letter_law
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 2
+		prerequisite = {
+			focus = ORD_patronage_seafaring_college
+			focus = ORD_restore_naval_lineages
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_20
+				check_variable = {
+					ORD_traditionalists_influence < 20
+				}
+			}
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_leaning
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_somewhat_hopeful
+					check_variable = {
+						larennis_idealism > 54
+					}					
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = ORD_empowered_mods_15
+					check_variable = {
+						ORD_moderates_influence > 14
+					}
+				}
+			}
+		}
+		relative_position_id = ORD_patronage_seafaring_college
+		x = -1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				larennis_idealism_medium = yes
+			}
+			custom_effect_tooltip = ORD_please_mods_3
+			add_to_variable = {
+				ORD_moderates_loyalty = 3
+			}
+			custom_effect_tooltip = ORD_displease_trads_4
+			subtract_from_variable = {
+				ORD_traditionalists_loyalty = 4
+			}
+			add_ideas = ORD_demi_elven_navy
+			add_stability = -0.02
+			navy_experience = 12
+		}
+	}
+	
+	focus = { #Re-Opening the Guild to Demi-Elves
+		id = ORD_reopen_membership
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 4
+		prerequisite = {
+			focus = ORD_tides_change
+			focus = ORD_rights_enduring
+		}
+		ai_will_do = {
+			factor = 11
+		}
+		available = {
+			controls_state = 112
+			controls_state = 114
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_leaning
+				}
+				custom_trigger_tooltip = {
+					tooltip = GUI_ORD_larennis_hopeful
+					check_variable = {
+						larennis_idealism > 64
+					}					
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = ORD_empowered_mods_25
+					check_variable = {
+						ORD_moderates_influence > 24
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_15
+				check_variable = {
+					ORD_traditionalists_influence < 15
+				}
+			}
+		}
+		relative_position_id = ORD_tides_change
+		x = 1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = monarchy_absolute
+				}
+				larennis_idealism_big = yes
+			}
+			custom_effect_tooltip = ORD_please_mods_5
+			add_to_variable = {
+				ORD_moderates_loyalty = 5
+			}
+			custom_effect_tooltip = ORD_displease_trads_7
+			subtract_from_variable = {
+				ORD_traditionalists_loyalty = 7
+			}
+			custom_effect_tooltip = ORD_displease_faiths_3
+			subtract_from_variable = {
+				ORD_faithful_loyalty = 3
+			}
+			add_political_power = -75
+			112 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+			}
+			114 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Sailing the Seas...
+		id = ORD_sailing_seas
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 1
+		prerequisite = {
+			focus = ORD_patronage_seafaring_college
+			focus = ORD_restore_naval_lineages
+			focus = ORD_rights_enduring
+			focus = ORD_tides_change
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_10
+				check_variable = {
+					ORD_moderates_influence > 9
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_mods_10
+				check_variable = {
+					ORD_moderates_loyalty > 9
+				}
+			}
+		}
+		relative_position_id = ORD_patronage_seafaring_college
+		x = 1
+		y = 2
+		completion_reward = {
+			add_ideas = ORD_modernized_ordorian_navy
+		}
+	}
+	
+	focus = { #...And the Rivers As Well
+		id = ORD_rivers_too
+		icon = GFX_focus_generic_the_suez
+		cost = 1
+		prerequisite = {
+			focus = ORD_patronage_seafaring_college
+			focus = ORD_restore_naval_lineages
+			focus = ORD_rights_enduring
+			focus = ORD_tides_change
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_10
+				check_variable = {
+					ORD_moderates_influence > 9
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_mods_10
+				check_variable = {
+					ORD_moderates_loyalty > 9
+				}
+			}
+		}
+		relative_position_id = ORD_restore_naval_lineages
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = ORD_river_focused_logistics
+		}
+	}
+	
+	focus = { #Bolster Auxiliary Industries
+		id = ORD_bolster_auxiliary_industries
+		icon = GFX_IRI_Rebuilding
+		cost = 8
+		prerequisite = {
+			focus = ORD_patronage_seafaring_college
+			focus = ORD_restore_naval_lineages
+			focus = ORD_rights_enduring
+			focus = ORD_tides_change
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		available = {
+			controls_state = 91
+			controls_state = 90
+			controls_state = 82
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_10
+				check_variable = {
+					ORD_moderates_influence > 9
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_mods_10
+				check_variable = {
+					ORD_moderates_loyalty > 9
+				}
+			}
+		}
+		relative_position_id = ORD_rights_enduring
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_trads_2
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 2
+			}
+			custom_effect_tooltip = ORD_empower_mods_1
+			add_to_variable = {
+				ORD_moderates_influence = 1
+			}
+			91 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			90 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+			82 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+		
+	focus = { #Dilute the Sophistry of Ythelmare
+		id = ORD_dilute_sophistry
+		icon = GFX_BLD_Protect_Status_Quo
+		cost = 8
+		prerequisite = {
+			focus = ORD_rivers_too
+		}
+		prerequisite = {
+			focus = ORD_bolster_auxiliary_industries
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_30
+				check_variable = {
+					ORD_moderates_influence > 29
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_faiths_15
+				check_variable = {
+					ORD_faithful_influence < 15
+				}
+			}
+		}
+		relative_position_id = ORD_rivers_too
+		x = 1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = theocrat
+				popularity = -0.02
+			}
+			custom_effect_tooltip = ORD_displease_faiths_7
+			subtract_from_variable = {
+				ORD_faithful_loyalty = 7
+			}
+			custom_effect_tooltip = ORD_disempower_faiths_5
+			subtract_from_variable = {
+				ORD_faithful_influence = 5
+			}
+		}
+	}
+	
+	focus = { #The Royal Pioneers
+		id = ORD_royal_pioneers
+		icon = GFX_focus_ORD_league_fucked
+		cost = 8
+		prerequisite = {
+			focus = ORD_rivers_too
+		}
+		prerequisite = {
+			focus = ORD_bolster_auxiliary_industries
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_30
+				check_variable = {
+					ORD_moderates_influence > 29
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_15
+				check_variable = {
+					ORD_traditionalist_influence < 15
+				}
+			}
+		}
+		relative_position_id = ORD_bolster_auxiliary_industries
+		x = -1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = puritan
+				popularity = -0.02
+			}
+			custom_effect_tooltip = ORD_displease_trads_7
+			subtract_from_variable = {
+				ORD_traditionalist_loyalty = 7
+			}
+			custom_effect_tooltip = ORD_disempower_trads_5
+			subtract_from_variable = {
+				ORD_traditionalist_influence = 5
+			}
+		}
+	}
+	
+	focus = { #The Glory of the First City
+		id = ORD_glory_first_city
+		icon = GFX_IRI_No_More_Dishonour
+		cost = 5
+		prerequisite = {
+			focus = ORD_patronage_seafaring_college
+			focus = ORD_restore_naval_lineages
+			focus = ORD_rights_enduring
+			focus = ORD_tides_change
+		}
+		ai_will_do = {
+			factor = 13
+		}
+		available = {
+			has_political_power > 149
+		}
+		select_effect = {
+			add_political_power = -150
+		}
+		relative_position_id = ORD_tides_change
+		x = -1
+		y = 2
+		completion_reward = {
+			effect_tooltip = {
+				custom_effect_tooltip = on_select_tt
+				add_political_power = -150
+			}
+			add_stability = 0.03
+			custom_effect_tooltip = ORD_empower_mods_5
+			add_to_variable = {
+				ORD_moderates_influence = 5
+			}
+			custom_effect_tooltip = ORD_please_trads_7
+			add_to_variable = {
+				ORD_traditionalists_loyalty = 7
+			}
+			custom_effect_tooltip = ORD_please_faiths_7
+			add_to_variable = {
+				ORD_faithful_loyalty = 7
+			}
+		}
+	}
+	
+	
+	focus = { #Contact our Long-Lost Kin
+		id = ORD_long_lost_kin
+		icon = GFX_focus_generic_lirothlind_agreement
+		cost = 6
+		prerequisite = {
+			focus = ORD_sailing_seas
+		}
+		prerequisite = {
+			focus = ORD_glory_first_city
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_25
+				check_variable = {
+					ORD_moderates_influence > 24
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_mods_15
+				check_variable = {
+					ORD_moderates_loyalty > 14
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_faiths_15
+				check_variable = {
+					ORD_faithful_influence < 15
+				}
+			}
+		}
+		relative_position_id = ORD_refurbish_dockyards
+		x = 0
+		y = 4
+		completion_reward = {
+			custom_effect_tooltip = ORD_please_mods_7
+			add_to_variable = {
+				ORD_moderates_loyalty = 7
+			}
+			custom_effect_tooltip = ORD_empower_mods_5
+			add_to_variable = {
+				ORD_moderates_influence = 5
+			}
+			custom_effect_tooltip = ORD_displease_faiths_10
+			subtract_from_variable = {
+				ORD_faithful_loyalty = 10
+			}
+			LIR = {
+				country_event = lir.10
+			}
+		}
+	}
+	
+	focus = { #Hoist High the Purple Pennant
+		id = ORD_purple_pennant
+		icon = GFX_focus_ORD_purple_pennant
+		cost = 3
+		prerequisite = {
+			focus = ORD_long_lost_kin
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_25
+				check_variable = {
+					ORD_moderates_influence > 24
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_mods_25
+				check_variable = {
+					ORD_moderates_loyalty > 24
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 17
+		}
+		relative_position_id = ORD_long_lost_kin
+		x = 0
+		y = 1
+		completion_reward = {
+			navy_experience = 15
+			add_political_power = 35
+			custom_effect_tooltip = ORD_create_flagship
+			hidden_effect = {
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					create_equipment_variant = {
+						name = "Royal-Class"
+						type = ship_hull_heavy_1
+						parent_version = 0
+						modules = {
+							fixed_ship_battery_slot = heavy_ship_ballista_0
+							fixed_ship_engine_slot = heavy_ship_rowers_0
+						}
+					}
+					load_oob = "ORD_royalist_flagship_mtg"
+				}
+				else = {
+					create_equipment_variant = {
+						name = "Royal-Class"
+						type = heavy_cruiser_1 #Should be heavy cruiser
+						parent_version = 1
+						upgrades = {
+							ship_engine_upgrade = 2
+							ship_armor_upgrade = 2
+							ship_gun_upgrade = 2
+						}
+					}
+					load_oob = "ORD_royalist_flagship"
+				}
+			}
+		}
+	}
+	
+	focus = { #Beyond the City
+		id = ORD_beyond_city
+		icon = GFX_focus_hlz_day_plow_rule
+		cost = 5
+		prerequisite = {
+			focus = ORD_purple_pennant
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		mutually_exclusive = {
+			focus = ORD_restoration_ythelmare
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning_max
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_somewhat_cynical
+				check_variable = {
+					larennis_idealism < 45
+				}
+			}
+		}
+		relative_position_id = ORD_purple_pennant
+		x = -2
+		y = 1
+		completion_reward = {
+			larennis_cynicism_big = yes
+			ORD_improve_royal_power_5 = yes
+			ORD_improve_royal_loyalty_4 = yes
+			91 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = farm
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+			114 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = farm
+					level = 2
+					instant_build = yes
+				}
+			}
+			90 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = farm
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = { #Reassert the Status Quo
+		id = ORD_reassert_status_quo
+		icon = GFX_focus_BRA_end_the_state_of_emergency
+		cost = 5
+		prerequisite = {
+			focus = ORD_beyond_city
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		mutually_exclusive = {
+			focus = ORD_champion_commons
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning_max
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_cynical
+				check_variable = {
+					larennis_idealism < 35
+				}
+			}
+		}
+		relative_position_id = ORD_beyond_city
+		x = -2
+		y = 1
+		completion_reward = {
+			larennis_cynicism_big = yes
+			ORD_improve_royal_power_2 = yes
+			ORD_improve_royal_loyalty_3 = yes
+			add_stability = -0.07
+			add_political_power = 135
+		}
+	}
+	
+	focus = { #Champion the Commons
+		id = ORD_champion_commons
+		icon = GFX_focus_hlz_communalization
+		cost = 5
+		prerequisite = {
+			focus = ORD_beyond_city
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		mutually_exclusive = {
+			focus = ORD_reassert_status_quo
+		}
+		relative_position_id = ORD_beyond_city
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Slaves to Serfs
+		id = ORD_slaves_to_serfs
+		icon = GFX_BLD_Promote_Farming
+		cost = 5
+		prerequisite = {
+			focus = ORD_reassert_status_quo
+			focus = ORD_champion_commons
+		}
+		ai_will_do = {
+			factor = 23
+		}
+		relative_position_id = ORD_reassert_status_quo
+		x = 1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Shut Down the Factories...
+		id = ORD_shut_down_factories
+		icon = GFX_BLD_Protect_Status_Quo
+		cost = 5
+		prerequisite = {
+			focus = ORD_slaves_to_serfs
+		}
+		ai_will_do = {
+			factor = 25
+		}
+		relative_position_id = ORD_slaves_to_serfs
+		x = -1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #...And Pick up a Plow
+		id = ORD_pick_up_plow
+		icon = GFX_BLD_Counting_Losses
+		cost = 5
+		prerequisite = {
+			focus = ORD_slaves_to_serfs
+		}
+		ai_will_do = {
+			factor = 25
+		}
+		relative_position_id = ORD_slaves_to_serfs
+		x = 1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Reaction, and the Steward be Damned
+		id = ORD_reaction_damn_steward
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 5
+		prerequisite = {
+			focus = ORD_shut_down_factories
+		}
+		prerequisite = {
+			focus = ORD_pick_up_plow
+		}
+		ai_will_do = {
+			factor = 27
+		}
+		relative_position_id = ORD_shut_down_factories
+		x = 1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #The Restoration of Ythelmare
+		id = ORD_restoration_ythelmare
+		icon = GFX_focus_BRA_air_force
+		cost = 5
+		prerequisite = {
+			focus = ORD_purple_pennant
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		mutually_exclusive = {
+			focus = ORD_beyond_city
+		}
+		relative_position_id = ORD_purple_pennant
+		x = 2
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Sanctuary in the First City
+		id = ORD_declare_sanctuary
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		cost = 5
+		prerequisite = {
+			focus = ORD_restoration_ythelmare
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		mutually_exclusive = {
+			focus = ORD_formalize_caste_economy
+		}
+		relative_position_id = ORD_restoration_ythelmare
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Formalize the Caste Economy
+		id = ORD_formalize_caste_economy
+		icon = GFX_focus_generic_secret_service_agency
+		cost = 5
+		prerequisite = {
+			focus = ORD_restoration_ythelmare
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		mutually_exclusive = {
+			focus = ORD_declare_sanctuary
+		}
+		relative_position_id = ORD_restoration_ythelmare
+		x = 2
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Open the Nightports
+		id = ORD_open_nightports
+		icon = GFX_BLD_Modernize_Fishing_Sector
+		cost = 5
+		prerequisite = {
+			focus = ORD_declare_sanctuary
+			focus = ORD_formalize_caste_economy
+		}
+		ai_will_do = {
+			factor = 23
+		}
+		relative_position_id = ORD_declare_sanctuary
+		x = 1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Expanding Sanctuary
+		id = ORD_expanding_sanctuary
+		icon = GFX_focus_ARG_defense_and_democracy
+		cost = 5
+		prerequisite = {
+			focus = ORD_open_nightports
+		}
+		ai_will_do = {
+			factor = 25
+		}
+		relative_position_id = ORD_open_nightports
+		x = -1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Fraternize with Demi-Elves
+		id = ORD_fraternize_with_demielves
+		icon = GFX_focus_BRA_reach_out_to_military_dem
+		cost = 5
+		prerequisite = {
+			focus = ORD_open_nightports
+		}
+		ai_will_do = {
+			factor = 25
+		}
+		relative_position_id = ORD_open_nightports
+		x = 1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Reform, and the League be Damned
+		id = ORD_reform_damn_league
+		icon = GFX_focus_CHL_invite_french_aristocracy
+		cost = 5
+		prerequisite = {
+			focus = ORD_expanding_sanctuary
+		}
+		prerequisite = {
+			focus = ORD_fraternize_with_demielves
+		}
+		ai_will_do = {
+			factor = 27
+		}
+		relative_position_id = ORD_expanding_sanctuary
+		x = 1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #The First Expedition
+		id = ORD_first_expedition
+		icon = GFX_focus_generic_naval_discipline
+		cost = 5
+		prerequisite = {
+			focus = ORD_purple_pennant
+		}
+		ai_will_do = {
+			factor = 19
+		}
+		relative_position_id = ORD_purple_pennant
+		x = 0
+		y = 2
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Money Talks...
+		id = ORD_money_talks
+		icon = GFX_focus_hlz_compensate_nobles
+		cost = 5
+		prerequisite = {
+			focus = ORD_first_expedition
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		relative_position_id = ORD_first_expedition
+		x = -1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #...and the Princeling Does Too
+		id = ORD_princeling_too
+		icon = GFX_BLD_New_Diplomacy_Protocols
+		cost = 5
+		prerequisite = {
+			focus = ORD_first_expedition
+		}
+		ai_will_do = {
+			factor = 21
+		}
+		relative_position_id = ORD_first_expedition
+		x = 1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #Trade, and the Autarks be Damned
+		id = ORD_trade_damn_autarks
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 5
+		prerequisite = {
+			focus = ORD_money_talks
+		}
+		prerequisite = {
+			focus = ORD_princeling_too
+		}
+		ai_will_do = {
+			factor = 23
+		}
+		relative_position_id = ORD_money_talks
+		x = 1
+		y = 1
+		completion_reward = {
+			
 		}
 	}
 
@@ -6809,7 +11367,7 @@ focus_tree = {
 	focus = { #Vuid
 		id = ORD_improve_vuid
 		icon = GFX_focus_ord_vuid
-		cost = 8
+		cost = 3
 		prerequisite = {
 			focus = ORD_rebuilding_glory
 		}
@@ -6820,7 +11378,7 @@ focus_tree = {
 			controls_state = 84
 		}
 		relative_position_id = ORD_rebuilding_glory
-		x = 11
+		x = 13
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = ORD_please_faiths_1
@@ -6834,6 +11392,12 @@ focus_tree = {
 			84 = {
 				add_dynamic_modifier = {
 					modifier = city_of_generals
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = forge
+					level = 2
+					instant_build = yes
 				}
 			}
 			hidden_effect = {

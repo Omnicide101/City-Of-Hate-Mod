@@ -1,4 +1,4 @@
-# Written by Mira Gale "Omni" Fraters
+# Written by Mira Gale Omni Fraters
 
 # befriend
 # conquer
@@ -32,6 +32,7 @@ build_intelligence_agency = {
 	enable = {
 		num_of_civilian_factories > 10
 	}
+	
 	abort = {
 		num_of_civilian_factories < 7
 	}
@@ -47,6 +48,7 @@ upgrade_intelligence_agency = {
 	enable = {
 		num_of_civilian_factories > 20
 	}
+	
 	abort = {
 		num_of_civilian_factories < 17
 	}
@@ -60,6 +62,10 @@ upgrade_intelligence_agency = {
 addintelligence_agency_normal_upgrade_prio = {
 	enable = {
 		always = yes
+	}
+	
+	abort = {
+		always = no
 	}
 
 	ai_strategy = {
@@ -95,6 +101,7 @@ do_not_starve = {
 		OR = {
 			has_fuel < 100
 			fuel_ratio < 0.1
+			has_idea = FOOD_starvation
 		}
 	}
 	
@@ -109,6 +116,12 @@ do_not_starve = {
 		type = building_target
 		id = farm
 		value = 1000 #No documentation or usecase on this so this is a test to see if it's an absolute value or a percentage of total capacity
+	}
+	
+	ai_strategy = {
+		type = pp_spend_amount
+		id = idea
+		value = 150 #Save up to switch to manorialism or agrarianism in a pinch
 	}
 }
 
@@ -133,32 +146,62 @@ avoid_famine_by_disbanding_army = {
 	abort_when_not_enabled = yes
 	
 	ai_strategy = {
-        type = force_build_armies
-        value = -100
-    }
-	
-	ai_strategy = {
 		type = build_army
 		id = cavalry
-		value = -99999
+		value = -1000
 	}
 
 	ai_strategy = {
 		type = build_army
 		id = infantry
-		value = -99999
+		value = -1000
 	}
 	
 	ai_strategy = {
-        type = force_build_armies
-        value = -99999
-    }
+		type = build_army
+		id = warband
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = garrison
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = frontline
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = archer
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = light_cavalry
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = heavy_cavalry
+		value = -1000
+	}
 }
 
 #Make sure to have wagons and light cav equipment for supply
 build_logistics_stuff = {
 	enable = {
 		always = yes
+	}
+	
+	abort = {
+		always = no
 	}
 	
 	ai_strategy = {
@@ -189,10 +232,21 @@ build_ships = {
 	enable = {
 		always = yes
 	}
+	
+	abort = {
+		always = no
+	}
+	
 	ai_strategy = {
 		type = unit_ratio
 		id = screen_ship
 		value = 40
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = capital_ship
+		value = 5
 	}
 
 	ai_strategy = {
@@ -527,6 +581,36 @@ puritans_are_not_nice_elves = {
 	ai_strategy = {
 		type = befriend
 		id = GOW
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HIH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = AGE
 		value = -100
 	}
 }
@@ -868,6 +952,42 @@ puritans_are_not_nice_dwarves = {
 		id = GOW
 		value = -100
 	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SAL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ATH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = AGE
+		value = -100
+	}
 }
 
 puritans_are_not_nice_humans = {
@@ -1001,6 +1121,30 @@ puritans_are_not_nice_humans = {
 	ai_strategy = {
 		type = befriend
 		id = GOW
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HIH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ATH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = AGE
 		value = -100
 	}
 }
@@ -1360,6 +1504,447 @@ puritans_are_not_nice_orcs = {
 		id = GOW
 		value = -100
 	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HIH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ATH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SAL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = AGE
+		value = -100
+	}
+}
+
+puritans_are_not_nice_ogres = {
+	enable = {
+		has_government = puritan
+		has_idea = ogre_country
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = VRG
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RMT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SKA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = BER
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = GMR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NPC
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NAV
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TRI
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KAL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NAS
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = IRT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LIR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LEX
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ORD
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ORB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = EOR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RTH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = BLD
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = IRI
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TLA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = MER
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HLZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NOC
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SPW
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ARK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ARB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NRK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FTH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WIS
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WSZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = UNG
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FAU
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SVT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TEI
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SNF
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = PRK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SUL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SVC
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NVT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RLV
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LNK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WLT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = VLN
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = VTZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RKS
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = GET
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DIA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ITH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = QUE
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TAR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TES
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = GOW
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HIH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ATH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SAL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = AGE
+		value = -100
+	}
 }
 
 puritans_are_not_nice_lizards = {
@@ -1487,12 +2072,6 @@ puritans_are_not_nice_lizards = {
 	ai_strategy = {
 		type = befriend
 		id = KUR
-		value = -100
-	}
-	
-	ai_strategy = {
-		type = befriend
-		id = BLD
 		value = -100
 	}
 	
@@ -1715,6 +2294,48 @@ puritans_are_not_nice_lizards = {
 	ai_strategy = {
 		type = befriend
 		id = GOW
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HIH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ATH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SAL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = AGE
 		value = -100
 	}
 }
@@ -2068,6 +2689,447 @@ puritans_are_not_nice_gnomes = {
 		id = GOW
 		value = -100
 	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HIH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ATH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SAL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = AGE
+		value = -100
+	}
+}
+
+puritans_are_not_nice_goblins = {
+	enable = {
+		has_government = puritan
+		has_idea = goblin_country
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = VRG
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RMT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SKA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = BER
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = GMR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NPC
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NAV
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TRI
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KAL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NAS
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = IRT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LIR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LEX
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ORD
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ORB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = EOR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RTH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = BLD
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = IRI
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TLA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = MER
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HLZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NOC
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SPW
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ARK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ARB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NRK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FTH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WIS
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WSZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = UNG
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FAU
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SVT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TEI
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SNF
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = PRK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SUL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SVC
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NVT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RLV
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LNK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WLT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = VLN
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = VTZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RKS
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = GET
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DIA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ITH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = QUE
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TAR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TES
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = GOW
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HIH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ATH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SAL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KUR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = AGE
+		value = -100
+	}
 }
 
 puritans_are_not_nice_halflings = {
@@ -2407,6 +3469,447 @@ puritans_are_not_nice_halflings = {
 		id = TES
 		value = -100
 	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HIH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ATH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SAL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = AGE
+		value = -100
+	}
+}
+
+puritans_are_not_nice_undad = {
+	enable = {
+		has_government = puritan
+		has_idea = undead_country
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = VRG
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RMT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SKA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = BER
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = GMR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NPC
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NAV
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TRI
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KAL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NAS
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = IRT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LIR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LEX
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ORD
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ORB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = EOR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RTH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = BLD
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = IRI
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TLA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = MER
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HLZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NOC
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SPW
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ARK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ARB
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NRK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FTH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WIS
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WSZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = UNG
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FAU
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SVT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TEI
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SNF
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = PRK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SUL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SVC
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NVT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RLV
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LNK
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WLT
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = VLN
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = VTZ
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RKS
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = GET
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DIA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ITH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = QUE
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TAR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TES
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = GOW
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HIH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ATH
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = DEL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = THA
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SAL
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KUR
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STB
+		value = -100
+	}
 }
 
 oh_shit_we_need_money = { #Make the AI build workshops
@@ -2460,78 +3963,8 @@ cavalry_too_expensive = { #Don't build heavy cav if you can't support them
 	ai_strategy = {
 		type = build_army
 		id = heavy_cavalry
-		value = -99999
+		value = -1000
 	}
-}
-
-division_limiter = { #Don't spam an ungodly amount of divisions please
-	enable = {
-		OR = {
-			AND = {
-				is_major = yes
-				NOT = {
-					tag = STA #Needs a leg up against the Union
-					tag = ORD #Fighting everyone means they need more dudes
-					tag = BLD #Not enough infrastructure for a large army
-					tag = PRK #Not enough infrastructure for a large army
-					tag = NPC #Need a leg up against the GMR
-					tag = NBI #Not bound by the laws of mortals
-				}
-				num_divisions > 119
-			}
-			AND = {
-				is_major = no
-				NOT = {
-					tag = STA
-					tag = ORD
-					tag = BLD
-					tag = PRK
-					tag = NPC
-					tag = NBI
-				}
-				num_divisions > 23
-			}
-			AND = {
-				tag = STA
-				num_divisions > 71
-			}
-			AND = {
-				tag = ORD
-				num_divisions > 239
-			}
-			AND = {
-				tag = BLD
-				num_divisions > 23
-			}
-			AND = {
-				tag = PRK
-				num_divisions > 71
-			}
-			AND = {
-				tag = NPC
-				num_divisions > 129
-			}
-		}
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = build_army
-		id = cavalry
-		value = -99999
-	}
-
-	ai_strategy = {
-		type = build_army
-		id = infantry
-		value = -99999
-	}
-	
-	ai_strategy = {
-        type = force_build_armies
-        value = -99999
-    }
 }
 
 invade_ordoria_priorities = {
@@ -2789,7 +4222,7 @@ build_army = {
 
 	ai_strategy = {
         type = force_build_armies
-        value = 100
+        value = 30
     }
 	
 	abort = {
@@ -2809,7 +4242,7 @@ build_army = {
 
 	ai_strategy = {
         type = force_build_armies
-        value = 100
+        value = 60
     }
 	
 	abort = {
@@ -3148,6 +4581,7 @@ do_not_waste_pp_if_saving_for_manpower_laws = {
 }
 
 default_unit_production = {
+# If adding country-unique ones, bear in mind that they STACK unless excluding countries in the enable
 	enable = {
 		NOT = {
 			OR ={
@@ -3160,8 +4594,12 @@ default_unit_production = {
 		}
 	}
 	
+	abort = {
+		always = no
+	}
+	
 	ai_strategy = {
-		type = role_ratio
+		type = role_ratio # The AI strategy 'role_ratio' determines how many divisions the AI wants for each role.
 		id = paratroopers
 		value = 0
 	}
@@ -3181,31 +4619,37 @@ default_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = archer
-		value = 15
+		value = 25
 	}
 	
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 5
+		value = 4
 	}
 	
 	ai_strategy = {
 		type = role_ratio
 		id = light_cavalry
-		value = 15
+		value = 12
 	}
 	
 	ai_strategy = {
 		type = role_ratio
 		id = heavy_cavalry
-		value = 10
+		value = 8
 	}
 	
 	ai_strategy = {
 		type = equipment_production_factor
 		id = infantry
 		value = 60
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = train
+		value = 10
 	}
 }
 
@@ -3215,11 +4659,21 @@ default_role_ratios = {
 			has_dlc = "Man the Guns"
 		}
 	}
-
+	
+	abort = {
+		always = no
+	}
+	
 	ai_strategy = {
 		type = role_ratio
 		id = naval_screen
-		value = 100
+		value = 30
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = capital_ship
+		value = 1
 	}
 }
 
@@ -3227,11 +4681,21 @@ default_role_ratios_mtg = {
 	enable = {
 		has_dlc = "Man the Guns"
 	}
+	
+	abort = {
+		always = no
+	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = naval_screen
-		value = 100
+		value = 30
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = capital_ship
+		value = 1
 	}
 }
 
@@ -3240,16 +4704,20 @@ default_pp_spend_amount = {
 		always = yes
 	}
 	
+	abort = {
+		always = no
+	}
+	
 	ai_strategy = {
 		type = pp_spend_amount
 		id = idea
-		value = 100
+		value = 200
 	}
 	
 	ai_strategy = {
 		type = pp_spend_amount
 		id = decision
-		value = 100
+		value = 200
 	}
 }
 
@@ -3273,6 +4741,10 @@ ask_foreign_manpower_as_major = {
 put_garrisons_on_high_prio = {
 	enable = {
 		always = yes
+	}
+	
+	abort = {
+		always = no
 	}
 	
 	ai_strategy = {

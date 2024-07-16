@@ -14,6 +14,7 @@ give_union_access = {#Let the Union fuck up Irinthios
 	enable = {
 		tag = BER
 		NOT = {
+			has_government = puritan
 			has_war_with = UNG
 			is_subject_of = IRI
 		}
@@ -30,8 +31,156 @@ give_union_access = {#Let the Union fuck up Irinthios
 	
 	ai_strategy = {
 		type = befriend
-		id = "UNG"
-		value = 50
+		id = UNG
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = HLZ
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = STA
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = ARK
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = FTH
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = NOC
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = NRK
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = SPW
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = SVT
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = TEI
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = SNF
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = WIS
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = WSZ
+		value = 200
+	}
+}
+
+move_through_the_northern_union = {#Go fuck up Ordoria
+	enable = {
+		tag = BER
+		NOT = {
+			has_government = puritan
+		}
+		has_war_with = ORD
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = HLZ
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = STA
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = ARK
+		value = 200
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = HLZ
+		value = 200
+		target = military_access
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = STA
+		value = 200
+		target = military_access
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = ARK
+		value = 200
+		target = military_access
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = HLZ
+		value = 200
+		target = docking_rights
+	}
+}
+
+FPT_let_BER_move_through_the_northern_union = {#Let them fuck up Ordoria
+	enable = {
+		OR = {
+			tag = HLZ
+			tag = STA
+			tag = ARK
+		}
+		NOT = {
+			has_government = puritan
+		}
+		BER = {
+			has_war_with = ORD
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = BER
+		value = 200
+	}
+	ai_strategy = {
+		type = diplo_action_acceptance
+		id = BER
+		value = 200
+		target = military_access
+	}
+	ai_strategy = {
+		type = diplo_action_acceptance
+		id = BER
+		value = 200
+		target = docking_rights
 	}
 }
 
@@ -45,19 +194,22 @@ ungerdaler_buddies = {
 			has_completed_focus = UNG_assist_terugkeer
 		}
 	}
+	
+	abort_when_not_enabled = yes
+	
 	ai_strategy = {
 		type = befriend
-		id = "UNG"
+		id = UNG
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 	ai_strategy = {
 		type = protect
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 }
@@ -97,62 +249,106 @@ restore_vergallheim = {#Go after SKA and/or RMT if Absolutist or Puritan
 
 	ai_strategy = {
 		type = invade
-		id = "SKA"		
+		id = SKA		
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = antagonize
-		id = "SKA"		
+		id = SKA		
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = declare_war
-		id = "SKA"		
+		id = SKA		
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = conquer
-		id = "SKA"		
+		id = SKA		
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = diplo_action_desire
-		id = "SKA"
+		id = SKA
 		target = generate_wargoal
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = invade
-		id = "RMT"		
+		id = RMT		
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = antagonize
-		id = "RMT"		
+		id = RMT		
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = declare_war
-		id = "RMT"		
+		id = RMT		
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = conquer
-		id = "RMT"		
+		id = RMT		
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = diplo_action_desire
-		id = "RMT"
+		id = RMT
+		target = generate_wargoal
+		value = 200
+	}
+}
+
+fuck_the_kurgur = { #Stab the Kurgur if Absolutist or Puritan
+	enable = {
+		original_tag = BER
+		OR = {
+			has_government = monarchy_absolute
+			has_government = puritan
+		}
+		country_exists = KUR
+		date > 890.1.1
+		has_war = no
+		KUR = {
+			is_not_sphered = yes
+		}
+		is_subject = no
+		NOT = {
+			is_justifying_wargoal_against = KUR
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = conquer
+		id = KUR			
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = KUR			
+		value = 200
+	}
+	ai_strategy = {
+		type = declare_war
+		id = KUR
+		value = 200
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = KUR
 		target = generate_wargoal
 		value = 200
 	}
@@ -162,6 +358,8 @@ default_unit_production = {
 	enable = {
 		original_tag = BER
 	}
+	
+	abort_when_not_enabled = yes
 	
 	ai_strategy = {
 		type = role_ratio
@@ -190,7 +388,7 @@ default_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = archer
-		value = 15
+		value = 25
 	}
 	
 	ai_strategy = {
@@ -209,5 +407,17 @@ default_unit_production = {
 		type = role_ratio
 		id = heavy_cavalry
 		value = 0
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 60
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = train
+		value = 10
 	}
 }

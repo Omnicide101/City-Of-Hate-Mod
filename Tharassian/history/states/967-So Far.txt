@@ -1,22 +1,22 @@
-state={
-	id=967
-	name="STATE_967"
-	provinces={
+state = {
+	id = 967
+	name = "STATE_967"
+	provinces = {
 		4286 4985 6961 7022 7049 7052 7084 7103 
 	}
 	manpower=814
-	buildings_max_level_factor=1.000
-	local_supplies=5
-	state_category = pastoral
+	buildings_max_level_factor = 1.000
+	local_supplies = 5
+	state_category = rural
 	
 	resources = {
-        lumber = 4
+    lumber = 4
 	}
-    history = {
-        owner = XXX
-        add_core_of = XXX
-        buildings = {
-            infrastructure = 2
+  history = {
+    owner = AKK
+    add_core_of = AKK
+    buildings = {
+      infrastructure = 2
 			dockyard = 1
 		}
 		victory_points = { 7052 2 }

@@ -2,6 +2,8 @@
 
 set_oob = "STA_1936"
 
+set_research_slots = 3
+
 set_technology ={
 	tech_tribal_pride = 1
 	tech_wheel = 1
@@ -35,7 +37,8 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 country_lock_all_division_template = yes
@@ -71,12 +74,6 @@ set_popularities = {
 	theocrat = 7
 
 	puritan = 8
-}
-
-diplomatic_relation = {
-	country = NRK
-	relation = non_aggression_pact
-	active = yes
 }
 
 recruit_character = STA_ferdinand_schwarzenbach

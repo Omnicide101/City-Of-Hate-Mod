@@ -1,0 +1,424 @@
+###Ordoria scripted triggers
+#Checks if you need additional Glory League loyalty or influence for a focus
+ORD_needs_stronger_or_more_loyal_league = {
+	OR = {
+		AND = {
+			has_completed_focus = ORD_improve_istaroth
+			NOT = {
+				has_completed_focus = ORD_end_exceptions
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 10
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_end_exceptions
+			NOT = {
+				has_completed_focus = ORD_opposition_gentry
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 5
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_end_exceptions
+			NOT = {
+				OR = {
+					has_completed_focus = ORD_utilise_skilled
+					has_completed_focus = ORD_dedication_lombrin
+				}
+			}
+			OR = {
+				check_variable = {
+					ORD_traditionalists_influence < 7
+				}
+				check_variable = {
+					ORD_traditionalists_loyalty < 3
+				}
+				check_variable = {
+					ORD_moderates_influence < 3
+				}
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_end_exceptions
+			NOT = {
+				has_completed_focus = ORD_slave_hunter_corps
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 15
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_slave_hunter_corps
+			NOT = {
+				OR = {
+					has_completed_focus = ORD_rthaur_exploit
+					has_completed_focus = ORD_rthaur_control
+				}
+			}
+			OR = {
+				check_variable = {
+					ORD_traditionalists_influence < 20
+				}
+				check_variable = {
+					ORD_traditionalists_loyalty < 10
+				}
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_opposition_gentry
+			NOT = {
+				OR = {
+					has_completed_focus = ORD_for_all_elves
+					has_completed_focus = ORD_gloves_off
+				}
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 10
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 15
+			}
+		}
+		AND = {
+			OR = {
+				has_completed_focus = ORD_utilise_skilled
+				has_completed_focus = ORD_dedication_lombrin
+			}
+			NOT = {
+				has_completed_focus = ORD_expand_waterwheels
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 10
+			}
+		}
+		AND = {
+			OR = {
+				has_completed_focus = ORD_rthaur_exploit
+				has_completed_focus = ORD_rthaur_control
+			}
+			NOT = {
+				OR = {
+					has_completed_focus = ORD_skaelinger_exploit
+					has_completed_focus = ORD_skaelinger_control
+				}
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 20
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 30
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_for_all_elves
+			NOT = {
+				has_completed_focus = ORD_genteel_manufacturers
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 15
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_gloves_off
+			NOT = {
+				OR = {
+					has_completed_focus = ORD_wartime_expropriation
+					has_completed_focus = ORD_price_wars
+				}
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 25
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_expand_waterwheels
+			NOT = {
+				has_completed_focus = ORD_technologize_arcanotech
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 15
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 10
+			}
+		}
+		AND = {
+			OR = {
+				has_completed_focus = ORD_skaelinger_exploit
+				has_completed_focus = ORD_skaelinger_control
+			}
+			NOT = {
+				OR = {
+					has_completed_focus = ORD_vermin_free_cities
+					has_completed_focus = ORD_serve_betters
+				}
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 30
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 30
+			}
+		}
+		AND = {
+			OR = {
+				has_completed_focus = ORD_genteel_manufacturers
+				has_completed_focus = ORD_wartime_expropriation
+				has_completed_focus = ORD_price_wars
+			}
+			NOT = {
+				has_completed_focus = ORD_nobility_in_line
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 25
+			}
+			check_variable = {
+				ORD_moderates_influence < 10
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_technologize_arcanotech
+			NOT = {
+				OR = {
+					has_completed_focus = ORD_study_skaelinger_tech
+					has_completed_focus = ORD_dedication_shalyn
+				}
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 20
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 20
+			}
+		}
+		AND = {
+			OR = {
+				has_completed_focus = ORD_vermin_free_cities
+				has_completed_focus = ORD_serve_betters
+				has_completed_focus = ORD_nobility_in_line
+			}
+			NOT = {
+				has_government = monarchy_absolute #HARD no
+			}
+			NOT = {
+				has_completed_focus = ORD_ythelmare_slave_market
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 30
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 30
+			}
+			check_variable = {
+				ORD_moderates_influence < 1
+			}
+		}
+		AND = {
+			OR = {
+				has_completed_focus = ORD_study_skaelinger_tech
+				has_completed_focus = ORD_dedication_shalyn
+			}
+			NOT = {
+				has_completed_focus = ORD_experimental_automation
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 25
+			}
+			check_variable = {
+				ORD_moderates_influence < 25
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_ythelmare_slave_market
+			has_completed_focus = ORD_experimental_automation
+			NOT = {
+				has_completed_focus = ORD_fetter_factories
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 20
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 30
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_fetter_factories
+			NOT = {
+				has_completed_focus = ORD_slave_shantytowns
+				has_completed_focus = ORD_engine_flame
+				has_completed_focus = ORD_open_coal_pits
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 50
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 50
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_slave_shantytowns
+			NOT = {
+				has_completed_focus = ORD_work_until_death
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 75
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 75
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_engine_flame
+			NOT = {
+				has_completed_focus = ORD_smog_choked_skies
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 75
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 75
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_open_coal_pits
+			NOT = {
+				has_completed_focus = ORD_corpse_furnaces
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 75
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 75
+			}
+		}
+		AND = {
+			OR = {
+				has_completed_focus = ORD_work_until_death
+				has_completed_focus = ORD_work_until_death
+				has_completed_focus = ORD_smog_choked_skies
+			}
+			NOT = {
+				has_completed_focus = ORD_industrialization
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 100
+			}
+			check_variable = {
+				ORD_traditionalists_influence < 100
+			}
+		}
+	}
+}
+
+#Checks if you need additional Royalist loyalty or influence for a focus
+ORD_needs_stronger_or_more_loyal_royalists = {
+	OR = {
+		AND = {
+			has_completed_focus = ORD_improve_ythelmare
+			NOT = {
+				OR = {
+					has_completed_focus = ORD_contacts_admiralty
+					has_completed_focus = ORD_negotiations_guild
+				}
+			}
+			check_variable = {
+				ORD_moderates_influence < 10
+			}
+			check_variable = {
+				ORD_moderates_loyalty < 10
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_improve_ythelmare
+			NOT = {
+				has_completed_focus = ORD_refurbish_dockyards
+			}
+			check_variable = {
+				ORD_moderates_influence < 10
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_contacts_admiralty
+			NOT = {
+				OR = {
+					has_completed_focus = ORD_patronage_seafaring_college
+					has_completed_focus = ORD_restore_naval_lineages
+				}
+			}
+			check_variable = {
+				ORD_moderates_influence < 15
+			}
+			check_variable = {
+				ORD_moderates_loyalty < 15
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_negotiations_guild
+			NOT = {
+				OR = {
+					has_completed_focus = ORD_rights_enduring
+					has_completed_focus = ORD_tides_change
+				}
+			}
+			check_variable = {
+				ORD_moderates_influence < 15
+			}
+			check_variable = {
+				ORD_moderates_loyalty < 15
+			}
+		}
+		AND = {
+			OR = {
+				has_completed_focus = ORD_patronage_seafaring_college
+				has_completed_focus = ORD_restore_naval_lineages
+				has_completed_focus = ORD_rights_enduring
+				has_completed_focus = ORD_tides_change
+			}
+			NOT = {#Letter of the Law and Glory of the First City don't require loyalty/influence
+				has_completed_focus = ORD_sailing_seas
+				has_completed_focus = ORD_rivers_too
+				has_completed_focus = ORD_bolster_auxiliary_industries
+			}
+			check_variable = {
+				ORD_moderates_influence < 25
+			}
+			check_variable = {
+				ORD_moderates_loyalty < 10
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_rivers_too
+			has_completed_focus = ORD_bolster_auxiliary_industries
+			NOT = {
+				has_completed_focus = ORD_dilute_sophistry
+				has_completed_focus = ORD_royal_pioneers
+			}
+			check_variable = {
+				ORD_moderates_influence < 30
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_sailing_seas
+			has_completed_focus = ORD_glory_first_city
+			NOT = {
+				has_completed_focus = ORD_long_lost_kin
+			}
+			check_variable = {
+				ORD_moderates_influence < 25
+			}
+			check_variable = {
+				ORD_moderates_loyalty < 25
+			}
+		}
+	}
+	
+	#More foci TBA!
+}
+
+#Checks if you need additional Sophist loyalty or influence for a focus
+ORD_needs_stronger_or_more_loyal_sophists = {
+	#No foci coded yet!
+	always = no
+}

@@ -92,7 +92,14 @@ country_event = { #Ordoria Offers Peace
 				}
 			}
 		}
-		white_peace = ORD
+		ORD = {
+			country_event = {
+				id = ord.114
+			}
+		}
+		effect_tooltip = {
+			white_peace = ORD
+		}
 	}
 	
 	option = {#Piss Off
@@ -103,6 +110,10 @@ country_event = { #Ordoria Offers Peace
 		add_stability = 0.05
 		add_war_support = 0.1
 		add_political_power = 20
+		country_event = {
+			id = ord.115
+			days = 7
+		}
 	}
 }
 
@@ -444,6 +455,10 @@ country_event = { #Second Rthaur Revolution
 				modifier = staunch_allies_opinion_modifier
 			}
 		}
+		
+		set_technology = {
+			dwarven_warriors = 1 #Dwarf units for you
+		}
 
 		RTH = {
 			country_event = {
@@ -744,7 +759,7 @@ country_event = { #Union Assists Seventh Campaign
 				modifier = staunch_allies
 			}
 			add_relation_modifier = {
-				target = SLA
+				target = SKA
 				modifier = staunch_allies_opinion_modifier
 			}
 			reverse_add_opinion_modifier = {
@@ -1505,6 +1520,43 @@ country_event = { #The King Dies F
 			ruling_party = republic_aristocrat
 			elections_allowed = no
 		}
+		
+		if = {
+			limit = {
+				is_ai = yes
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = DEFAULT
+				}
+			}
+			random_list = { # Ordered most to least likely
+				
+				27 = { #Reev
+					set_country_flag = SKA_ai_hellirfast_path_flag
+				}
+				21 = { #Council
+					set_country_flag = SKA_ai_council_path_flag
+				}
+				14 = { #Palmkevist
+					set_country_flag = SKA_ai_palmkevist_path_flag
+				}
+				11 = { #Charter
+					set_country_flag = SKA_ai_charter_path_flag
+				}
+				10 = { #Soltruists
+					set_country_flag = SKA_ai_soltruist_path_flag
+				}
+				7 = { #Ironbloods
+					set_country_flag = SKA_ai_ironbloods_path_flag
+				}
+				5 = { #Grimvald
+					set_country_flag = SKA_ai_grimvald_path_flag
+				}
+				5 = { #Brotherhood
+					set_country_flag = SKA_ai_brotherhood_path_flag
+				}
+			}
+		}
 	}
 }
 
@@ -1590,6 +1642,7 @@ country_event = { #Ironblood conspiracy
 
 	immediate = {
 		hidden_effect = {
+			clr_country_flag = SKA_legalized_boe_debates #Ironbloods do not tolerate the BoE lmao
 			set_politics = {
 				ruling_party = monarchy_absolute
 				elections_allowed = no
@@ -1603,23 +1656,77 @@ country_event = { #Ironblood conspiracy
 	
 	option = { #Uh oh civil war!
 		name = skaelinger.11.a
-		trigger = { OR = { AND = { monarchy_absolute < 0.25 check_variable = { SKA_ironblood_conspiracy_strength < 10 } } AND = { monarchy_absolute < 0.1 check_variable = { SKA_ironblood_conspiracy_strength < 25 } } AND = { monarchy_absolute < 0.15 check_variable = { SKA_ironblood_conspiracy_strength < 15 } } } }
+		trigger = {
+			OR = {
+				AND = {
+					monarchy_absolute < 0.25
+					check_variable = {
+						SKA_ironblood_conspiracy_strength < 10
+					}
+				}
+				AND = {
+					monarchy_absolute < 0.1
+					check_variable = {
+						SKA_ironblood_conspiracy_strength < 25
+					}
+				}
+				AND = {
+					monarchy_absolute < 0.15
+					check_variable = {
+						SKA_ironblood_conspiracy_strength < 15
+					}
+				}
+				has_country_flag = SKA_forced_iron_blood_conspiracy #Forces civil war
+			}
+		}
 		start_civil_war = {
 			ideology = republic_aristocrat
-			size = 0.2
+			size = 0.5
+			states = all
+			states_filter = {
+				has_state_flag = SKA_ironblood_conspirator_state
+			}	
 		}
 		every_other_country = {
 			limit = {
 				original_tag = SKA
+				has_government = republic_aristocrat
 			}
 			clr_country_flag = SKA_has_started_ironblood_conspiracy
 			unlock_national_focus = SKA_the_dwarfen_republic
 			unlock_national_focus = SKA_the_grandlore_council
+			uncomplete_national_focus = {
+				focus = SKA_iron_blood_conspiracy
+				uncomplete_children = yes
+				refund_political_power = no
+			}
+			if = {
+				limit = {
+					ROOT = {
+						has_country_flag = SKA_forced_iron_blood_conspiracy
+					}
+				}
+				change_tag_from = ROOT
+			}
 		}
 	}
 	option = { #some GLC members escaped the purge and fled to RTH. Because I think it'd be neat. 
 		name = skaelinger.11.b
-		trigger = { check_variable = { SKA_ironblood_conspiracy_strength > 15 } monarchy_absolute > 0.15 OR = { check_variable = { SKA_ironblood_conspiracy_strength < 18 } monarchy_absolute < 0.2 } }
+		trigger = {
+			check_variable = {
+				SKA_ironblood_conspiracy_strength > 15
+			}
+			monarchy_absolute > 0.15
+			OR = {
+				check_variable = {
+					SKA_ironblood_conspiracy_strength < 18
+				}
+				monarchy_absolute < 0.2
+			}
+			NOT = {
+				has_country_flag = SKA_forced_iron_blood_conspiracy
+			}
+		}
 		add_popularity = {
 			ideology = republic_aristocrat
 			popularity = -0.05
@@ -1630,7 +1737,19 @@ country_event = { #Ironblood conspiracy
 	}
 	option = { #unstable because power struggle
 		name = skaelinger.11.e
-		trigger = { NOT = { has_completed_focus = SKA_popular_general has_completed_focus = SKA_popular_figurehead } check_variable = { SKA_ironblood_conspiracy_strength > 15 } monarchy_absolute > 0.15 }
+		trigger = {
+			NOT = {
+				has_completed_focus = SKA_popular_general
+				has_completed_focus = SKA_popular_figurehead
+			}
+			check_variable = {
+				SKA_ironblood_conspiracy_strength > 15
+			}
+			monarchy_absolute > 0.15
+			NOT = {
+				has_country_flag = SKA_forced_iron_blood_conspiracy
+			}
+		}
 		add_popularity = {
 			ideology = republic_aristocrat
 			popularity = -0.05
@@ -1644,6 +1763,9 @@ country_event = { #Ironblood conspiracy
 			OR = { has_completed_focus = SKA_popular_general has_completed_focus = SKA_popular_figurehead }
 			check_variable = { SKA_ironblood_conspiracy_strength > 17 }
 			monarchy_absolute > 0.17
+			NOT = {
+				has_country_flag = SKA_forced_iron_blood_conspiracy
+			}
 		}
 	}
 }
@@ -2206,7 +2328,7 @@ country_event = { #Heljarchen Froki debates for the legalization of the brotherh
 
 	immediate = {
 		hidden_effect = {
-			country_event = { id = skaelinger.33 days = 30 }
+			country_event = { id = skaelinger.33 days = 15 }
 		}
 	}
 	
@@ -2249,7 +2371,7 @@ country_event = { #Using guild funds to help sponsor debates
 
 	immediate = {
 		hidden_effect = {
-			country_event = { id = skaelinger.34 days = 30 }
+			country_event = { id = skaelinger.34 days = 15 }
 			if = {
 				limit = {
 					NOT = { has_country_flag = SKA_legalized_boe_debates }
@@ -2913,7 +3035,7 @@ country_event = { #Iron Bloods Abandon Army after war
 	}
 }
 
-country_event = { #Social War Ends, Tie
+country_event = { #Social War Ends, Bad Tie
 	id = skaelinger.52
 	title = skaelinger.52.t
 	desc = skaelinger.52.d
@@ -2924,16 +3046,23 @@ country_event = { #Social War Ends, Tie
 		tag = SKA
 		check_variable = { SKA_social_war_boe_inf = SKA_social_war_soltruist_inf }
 		check_variable = { SKA_social_war_boe_inf > 4 }
-		has_country_flag = social_war_beginning
+		has_country_flag = SKA_social_war_STOP
 		NOT = {
 			has_war_with = ORD
 		}
 	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
 
 	immediate = {
-		add_ideas = GENERIC_civil_war_isolation
-		set_country_flag = SKA_social_war_tie_occurred
-		hidden_effect = {
+		hidden_effect = {			
+			add_ideas = GENERIC_civil_war_isolation
+			set_country_flag = SKA_social_war_tie_occurred
+			delete_unit_template_and_units = {
+				division_template = "Paramilitarists"
+			}
 			SKR = {
 				add_ideas = GENERIC_civil_war_isolation
 				add_popularity = {
@@ -2945,32 +3074,155 @@ country_event = { #Social War Ends, Tie
 					elections_allowed = no
 				}
 				if = {
-					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 1 } } }
-					transfer_state = 186
-					transfer_state = 190
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 5 } } }
+					transfer_state = 152
+					transfer_state = 1278 #impassable
+					transfer_state = 190 #impassable
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 250
+						producer = SKA
+					}
+					add_manpower = 1000
+					152 = {
+						create_unit = {
+							division = "name = \"Equalist Militia\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.3" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
+					186 = { #Capital
+						create_unit = {
+							division = "name = \"Equalist Militia\" division_template = \"Cave Cleaners\" start_experience_factor = 0.3" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
 				}
 				if = {
-					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 2 } } }
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 6 } } }
 					transfer_state = 154
 					transfer_state = 162
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1000
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 500
+						producer = SKA
+					}
+					add_manpower = 1500
+					154 = {
+						create_unit = {
+							division = "name = \"Equalist Band\" division_template = \"Cave Cleaners\" start_experience_factor = 0.4" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
+					162 = {
+						create_unit = {
+							division = "name = \"Equalist Band\" division_template = \"Cave Cleaners\" start_experience_factor = 0.4" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
 				}
 				if = {
-					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 3 } } }
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 7 } } }
 					transfer_state = 155
-					transfer_state = 187
+					transfer_state = 1277 #impassable
+					transfer_state = 153
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 1000
+						producer = SKA
+					}
+					add_manpower = 3500
+					155 = {
+						create_unit = {
+							division = "name = \"Equalist Host\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.5" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
+					153 = {
+						create_unit = {
+							division = "name = \"Equalist Host\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.5" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
 				}
 				if = {
-					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 5 } } }
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 8 } } }
 					transfer_state = 150
-					transfer_state = 156
+					transfer_state = 156 #impassable
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 2500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 1500
+						producer = SKA
+					}
+					add_manpower = 5000
+					186 = {
+						create_unit = {
+							division = "name = \"Equalist Brotherhood\" division_template = \"Mountainbreakers\" start_experience_factor = 0.6" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 3
+						}
+					}
+					156 = {
+						create_unit = {
+							division = "name = \"Equalist Brotherhood\" division_template = \"Mountainbreakers\" start_experience_factor = 0.6" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 3
+						}
+					}
 				}
 				every_state = {
 					limit = { is_core_of = SKA }
 					add_core_of = PREV
 				}
+				transfer_state = 186 #Always
+				transfer_state = 187 #Always
+				set_capital = {
+					state = 186 #Votrosr
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Equalist Rebels\" division_template = \"Hearthguards\" start_experience_factor = 0.2" 
+						owner = SKR
+						allow_spawning_on_enemy_provs = yes
+						count = 5
+					}
+				}
 			}
 			if = {
-				limit = { check_variable = { SKA_social_war_boe_inf > 3 } }
+				limit = { check_variable = { SKA_social_war_boe_inf > 5 } }
 				transfer_units_fraction = {
 					target = SKR
 					size = 0.3
@@ -2997,32 +3249,157 @@ country_event = { #Social War Ends, Tie
 					elections_allowed = no
 				}
 				if = {
-					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 1 } } } 
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 5 } } } 
 					transfer_state = 149
-					transfer_state = 168
-				}
-				if = {
-					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 2 } } }
+					transfer_state = 168 #Impassable
 					transfer_state = 160
-					transfer_state = 163
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 250
+						producer = SKA
+					}
+					add_manpower = 1000
+					149 = {
+						create_unit = {
+							division = "name = \"Soltruist Militia\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.3" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
+					160 = {
+						create_unit = {
+							division = "name = \"Soltruist Militia\" division_template = \"Cave Cleaners\" start_experience_factor = 0.3" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
 				}
 				if = {
-					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 3 } } }
-					transfer_state = 159
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 6 } } }
 					transfer_state = 184
+					transfer_state = 1280 #Impassable
+					transfer_state = 161
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1000
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 500
+						producer = SKA
+					}
+					add_manpower = 1500
+					184 = {
+						create_unit = {
+							division = "name = \"Soltruist Band\" division_template = \"Cave Cleaners\" start_experience_factor = 0.4" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
+					161 = {
+						create_unit = {
+							division = "name = \"Soltruist Band\" division_template = \"Cave Cleaners\" start_experience_factor = 0.4" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
 				}
 				if = {
-					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 5 } } }
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 7 } } }
+					transfer_state = 175
+					transfer_state = 159 #Impassable
 					transfer_state = 158
-					transfer_state = 169
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 1000
+						producer = SKA
+					}
+					add_manpower = 3500
+					175 = {
+						create_unit = {
+							division = "name = \"Soltruist Host\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.5" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
+					158 = {
+						create_unit = {
+							division = "name = \"Soltruist Host\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.5" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 8 } } }
+					transfer_state = 166
+					transfer_state = 169 #Impassable
+					transfer_state = 167
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 2500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 1500
+						producer = SKA
+					}
+					add_manpower = 5000
+					166 = {
+						create_unit = {
+							division = "name = \"Soltruist Brotherhood\" division_template = \"Mountainbreakers\" start_experience_factor = 0.6" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 3
+						}
+					}
+					167 = {
+						create_unit = {
+							division = "name = \"Soltruist Brotherhood\" division_template = \"Mountainbreakers\" start_experience_factor = 0.6" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 3
+						}
+					}
 				}
 				every_state = {
 					limit = { is_core_of = SKA }
 					add_core_of = PREV
 				}
+				transfer_state = 149 #Always
+				transfer_state = 163 #Always
+				set_capital = {
+					state = 149 #Hostringr
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Soltruist Rebels\" division_template = \"Hearthguards\" start_experience_factor = 0.2" 
+						owner = SKP
+						allow_spawning_on_enemy_provs = yes
+						count = 5
+					}
+				}
 			}
 			if = {
-				limit = { check_variable = { SKA_social_war_soltruist_inf > 3 } }
+				limit = { check_variable = { SKA_social_war_soltruist_inf > 5 } }
 				transfer_units_fraction = {
 					target = SKP
 					size = 0.3
@@ -3054,23 +3431,23 @@ country_event = { #Social War Ends, Tie
 		SKP = {
 			declare_war_on = {
 				target = SKR
-				type = annex_everything
+				type = civil_war
 			}
 			declare_war_on = {
 				target = SKA
-				type = annex_everything
+				type = civil_war
 			}
 		}
 		SKR = {
 			declare_war_on = {
 				target = SKA
-				type = annex_everything
+				type = civil_war
 			}
 		}
 	}
 }
 
-country_event = { #Social War Ends, Soltruist Victory
+country_event = { #Social War - Soltruist Revolt
 	id = skaelinger.53
 	title = skaelinger.53.t
 	desc = skaelinger.53.d
@@ -3080,15 +3457,24 @@ country_event = { #Social War Ends, Soltruist Victory
 	trigger = {
 		tag = SKA
 		check_variable = { SKA_social_war_boe_inf < SKA_social_war_soltruist_inf }
-		has_country_flag = social_war_beginning
+		check_variable = { SKA_social_war_soltruist_inf > 2 }
+		has_country_flag = SKA_social_war_STOP
+		has_completed_focus = SKA_shore_up_the_caste_system
 		NOT = {
 			has_war_with = ORD
 		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
 	}
 
 	immediate = {
 		set_country_flag = SKA_social_war_puritan_victory
 		hidden_effect = {
+			delete_unit_template_and_units = {
+				division_template = "Paramilitarists"
+			}
 			add_ideas = GENERIC_civil_war_isolation
 			SKP = {
 				add_ideas = GENERIC_civil_war_isolation
@@ -3124,6 +3510,14 @@ country_event = { #Social War Ends, Soltruist Victory
 					limit = { is_core_of = SKA }
 					add_core_of = PREV
 				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Soltruist Militia\" division_template = \"Hearthguards\" start_experience_factor = 0.2" 
+						owner = SKP
+						allow_spawning_on_enemy_provs = yes
+						count = 5
+					}
+				}
 			}
 			if = {
 				limit = { check_variable = { SKA_social_war_soltruist_inf > 3 } }
@@ -3154,23 +3548,29 @@ country_event = { #Social War Ends, Soltruist Victory
 		SKP = {
 			declare_war_on = {
 				target = SKA
-				type = annex_everything
+				type = civil_war
 			}
 		}
 	}
 }
 
-country_event = { #Social War Ends, Brotherhood victory
+country_event = { #Social War - Brotherhood Revolt
 	id = skaelinger.54
 	title = skaelinger.54.t
 	desc = skaelinger.54.d
 
 	fire_only_once = yes
 	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
 	trigger = {
 		tag = SKA
 		check_variable = { SKA_social_war_boe_inf > SKA_social_war_soltruist_inf }
-		has_country_flag = social_war_beginning
+		check_variable = { SKA_social_war_soltruist_inf > 2 }
+		has_country_flag = SKA_social_war_STOP
+		has_completed_focus = SKA_shore_up_the_caste_system
 		NOT = {
 			has_war_with = ORD
 			has_country_flag = SKA_legalized_boe_debates
@@ -3178,8 +3578,12 @@ country_event = { #Social War Ends, Brotherhood victory
 	}
 
 	immediate = {
+		set_country_flag = SKA_fought_second_scheme_war_already
 		set_country_flag = SKA_social_war_radical_republican_victory
 		hidden_effect = {
+			delete_unit_template_and_units = {
+				division_template = "Paramilitarists"
+			}
 			add_ideas = GENERIC_civil_war_isolation
 			SKR = {
 				add_ideas = GENERIC_civil_war_isolation
@@ -3215,6 +3619,14 @@ country_event = { #Social War Ends, Brotherhood victory
 					limit = { is_core_of = SKA }
 					add_core_of = PREV
 				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Equalist Militia\" division_template = \"Hearthguards\" start_experience_factor = 0.2" 
+						owner = SKR
+						allow_spawning_on_enemy_provs = yes
+						count = 5
+					}
+				}
 			}
 			if = {
 				limit = { check_variable = { SKA_social_war_boe_inf > 3 } }
@@ -3245,7 +3657,7 @@ country_event = { #Social War Ends, Brotherhood victory
 		SKR = {
 			declare_war_on = {
 				target = SKA
-				type = annex_everything
+				type = civil_war
 			}
 		}
 	}
@@ -3300,7 +3712,7 @@ country_event = { #Social War - Soltruist Mobilization
 		}
 	}
 	
-	option = { #WAAAAAAAAGH but socialist
+	option = { #WAAAAAAAAGH but fascist
 		name = skaelinger.56.a
 		random_owned_controlled_state = {
 			create_unit = {
@@ -4430,7 +4842,7 @@ country_event = { #Choosing which noble or glc member to lead the Vergall Riks P
 			retire_ideology_leader = republic_aristocrat
 		}
 		create_country_leader = {
-			name = "Moderate Dude"
+			name = "Krael Skellige"
 			desc = "POLITICS_REEV_HELLIRFAST_DESC"
 			picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds"
 			expire = "990.1.1"
@@ -4989,6 +5401,10 @@ country_event = { #Flip to SKA and unlock relevant foci after war
 				unlock_national_focus = SKA_iron_blood_conspiracy
 				unlock_national_focus = SKA_popular_figurehead
 				unlock_national_focus = SKA_dissolve_the_lore_council
+				uncomplete_national_focus = {
+					focus = SKA_shore_up_the_caste_system
+					uncomplete_children = yes
+				}
 				unlock_national_focus = SKA_second_scheme
 			}
 		}
@@ -5319,8 +5735,14 @@ country_event = { # SKA wants the Khorinor mountains back now
 		SKA = {
 			transfer_state = 133
 			add_state_core = 133
+			133 = {
+				set_state_name = "Khoringr"
+			}
 			transfer_state = 135
 			add_state_core = 135
+			135 = {
+				set_state_name = "Svinnersút"
+			}
 			country_event = { id = rth.25 hours = 3 }
 		}
 		remove_state_core = 133
@@ -5366,7 +5788,7 @@ country_event = { #Social War Ends, Good Tie
 		tag = SKA
 		check_variable = { SKA_social_war_boe_inf = SKA_social_war_soltruist_inf }
 		check_variable = { SKA_social_war_boe_inf < 5 }
-		has_country_flag = social_war_beginning
+		has_country_flag = SKA_social_war_STOP
 		NOT = {
 			has_war_with = ORD
 		}
@@ -5381,6 +5803,193 @@ country_event = { #Social War Ends, Good Tie
 		add_popularity = {
 			ideology = republic_peasant
 			popularity = -0.1
+		}
+	}
+}
+
+country_event = { #Force Trigger Iron-Blood Conspiracy if their influence got too high in the Social War
+	id = skaelinger.112
+	title = skaelinger.112.t
+	desc = skaelinger.112.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SKA
+		is_subject = no
+		check_variable = { SKA_social_war_iron_blood_inf > 4 }
+		has_country_flag = SKA_social_war_STOP
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+	
+	option = { #Oh god oh fuck
+		name = skaelinger.112.a
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.07
+		}
+		set_country_flag = SKA_forced_iron_blood_conspiracy #Forces civil war and switches tag to anti-Ironblood forces
+		#randomly select which states are going to go ironblood or not
+		every_owned_state = {
+			random = {
+				chance = 50
+				set_state_flag = SKA_ironblood_conspirator_state
+			}
+		}
+		complete_national_focus = SKA_iron_blood_conspiracy
+		random_list = {
+			50 = {
+				complete_national_focus = SKA_popular_figurehead
+			}
+			50 = {
+				complete_national_focus = SKA_popular_general
+			}
+		}
+		custom_effect_tooltip = SKA_oppose_ironbloods_tt
+	}
+	
+	option = { #Commit to the bit (starts Ironblood path as normal)
+		name = skaelinger.112.b
+		ai_chance = {
+			factor = 0 #Trying to see if this helps stop Skaelinger from always becoming Ironblood
+		}
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.07
+		}
+		complete_national_focus = SKA_iron_blood_conspiracy
+	}
+}
+
+### REWORKED ORDORIA PEACE DEALS ###
+	country_event = { #Royalists Offer Concessions
+	id = skaelinger.113
+	title = skaelinger.113.t
+	desc = skaelinger.113.d
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { #Deal
+		name = skaelinger.113.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				ORD = {
+					is_ai = no #Pro-player bias (shhhh)
+				}
+				factor = 2
+			}
+			modifier = { #no
+				SKA = {
+					OR = {
+						has_government = puritan
+						has_government = monarchy_absolute
+						has_government = republic_peasant
+					}
+				}
+				factor = 0.1
+			}
+		}
+		effect_tooltip = {
+			white_peace = ORD
+		}
+		custom_effect_tooltip = SKA_ORD_mountain_concessions_deal_tt
+		ORD = {
+			country_event = {
+				id = ord.112
+				days = 7
+			}
+		}
+	}
+	
+	option = { #No deal
+		name = skaelinger.113.b
+		ai_chance = {
+			factor = 5
+			modifier = { #eh
+				SKA = {
+					OR = {
+						has_government = republic_aristocrat
+						has_government = republic_merchant
+					}
+				}
+				factor = 0.8
+			}
+		}
+		add_war_support = 0.06
+		ORD = {
+			country_event = {
+				id = ord.113
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Social War Ends - Brotherhood Victory
+	id = skaelinger.114
+	title = skaelinger.114.t
+	desc = skaelinger.114.d
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	trigger = {
+		tag = SKA
+		check_variable = { SKA_social_war_boe_inf > SKA_social_war_soltruist_inf }
+		check_variable = { SKA_social_war_soltruist_inf > 2 }
+		has_country_flag = SKA_social_war_STOP
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+	
+	option = { #Gotcha
+		name = skaelinger.114.a
+		custom_effect_tooltip = SKA_boe_revolt_warning_tt
+		set_country_flag = SKA_warned_for_second_scheme_revolt
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.06
+		}
+	}
+}
+
+country_event = { #Social War Ends - Soltruist Victory
+	id = skaelinger.115
+	title = skaelinger.115.t
+	desc = skaelinger.115.d
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	trigger = {
+		tag = SKA
+		check_variable = { SKA_social_war_boe_inf < SKA_social_war_soltruist_inf }
+		check_variable = { SKA_social_war_soltruist_inf > 2 }
+		has_country_flag = SKA_social_war_STOP
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+	
+	option = { #Gotcha
+		name = skaelinger.115.a
+		custom_effect_tooltip = SKA_soltruist_revolt_warning_tt
+		set_country_flag = SKA_warned_for_second_scheme_revolt
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.06
 		}
 	}
 }

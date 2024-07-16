@@ -1038,7 +1038,7 @@ country_event = {#Attacker Wins
 				save_event_target_as = DORF_border_conflict_state
 				set_state_name = "Neðar Perkafell"
 			}
-			1362 = { #Impassable
+			1275 = { #Impassable
 				set_state_name = "Perkafell Peaks"
 			}
 		}
@@ -1048,7 +1048,7 @@ country_event = {#Attacker Wins
 		name = dorf_invade_invader_win.a
 		add_political_power = 25
 		transfer_state = 203
-		transfer_state = 1362
+		transfer_state = 1275
 	}
 }
 

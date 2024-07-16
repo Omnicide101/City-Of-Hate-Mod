@@ -3,20 +3,21 @@ guiTypes = {
 	containerWindowType = {
 		name = "lore_tab_container"
 		position = {
-			x = 1065
-			y = 4
+			x = -65
+			y = -300
 		}
+		orientation = lower_right
 		
 		buttonType = {
 			name = "lore_tab_button"
 			quadTextureSprite = "GFX_lore_tab_button"
 			position = {
-				x = 787
-				y = 780
+				x = 1
+				y = 1
 			}
 			pdx_tooltip = "GUI_lore_tab_button_tt"
 			pdx_tooltip_delayed = "GUI_lore_tab_button_tt_delayed"
-			Orientation = "UPPER_RIGHT"
+			orientation = lower_right
 			clicksound = ui_menu_over
 			shortcut = "a"
 		}

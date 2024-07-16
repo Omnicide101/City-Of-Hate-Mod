@@ -237,6 +237,9 @@ is_not_threat = {
 		THIS = {
 			is_sphered = yes
 		}
+		THIS = {
+			has_capitulated = yes
+		}
 	}
 }
 

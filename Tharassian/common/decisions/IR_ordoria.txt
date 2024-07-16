@@ -1,3 +1,3627 @@
+ORD_autumn_debate_values = {
+	
+	ORD_mission_impending_league_revolt = {
+		icon = GFX_decision_revolt
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_league_loyalty_over_zero_or_influence_under_three_tt
+				
+				OR = {
+					check_variable = {
+						ORD_traditionalists_loyalty > 0
+					}
+					
+					check_variable = {
+						ORD_traditionalists_influence < 3
+					}
+				}
+			}
+		}
+		
+		activation = {
+				has_war = no
+		
+			NOT = {
+				has_government = puritan
+				has_country_flag = ORD_league_revolt_attempted
+			}
+			
+			check_variable = {
+				ORD_traditionalists_loyalty < 1
+				ORD_traditionalists_influence > 2
+			}
+			
+			always = no
+		}
+		
+		days_mission_timeout = 100
+		
+		fire_only_once = no
+		
+		is_good = no
+		
+		timeout_effect = {
+			
+			custom_effect_tooltip = ORD_league_revolt_tt
+			
+			hidden_effect = {
+			
+				set_faction_power_ratios = yes
+				
+				set_country_flag = ORD_league_revolt_attempted
+				
+				#Change the capital depending on leading faction
+				if = {
+					limit = {
+						has_government = monarchy_absolute
+					}
+					
+					set_capital = {
+						state = 112
+					}
+				}
+				
+				else_if = {
+					limit = {
+						has_government = theocrat
+					}
+					
+					set_capital = {
+						state = 84
+					}
+				}
+			
+				ORD_isvenith_lothinnys = {
+					set_nationality = ORB
+					add_country_leader_role = {
+						character = ORD_isvenith_lothinnys
+						promote_leader = yes
+						country_leader = {
+							ideology = puritan_ideology
+							traits = { power_behind_throne }
+						}
+					}
+				}
+				
+				ORD_dalyn_rohyis = {
+					set_nationality = ORB
+				}
+				
+				ORB = {
+					transfer_state = 85
+					transfer_state = 86
+					transfer_state = 101
+					transfer_state = 102
+					transfer_state = 110
+					transfer_state = 113
+					transfer_state = 99
+					
+					if = {
+						limit = {
+							ORD = {
+								owns_state = 98
+							}
+						}
+						transfer_state = 98
+					}
+					
+					if = {
+						limit = {
+							ORD = {
+								owns_state = 97
+							}
+						}
+						transfer_state = 97
+					}
+					
+					set_capital = {
+						state = 85
+					}
+					
+					activate_advisor = ORD_dalyn_rohys
+					
+					set_politics = {
+						ruling_party = puritan
+						elections_allowed = no
+						long_name = ORD_puritan_party
+						name = ORD_puritan_party_long
+					}
+					
+					set_political_party = {
+						ideology = puritan
+						popularity = 78
+					}
+					
+					every_character = {
+						limit = {
+							has_trait = ord_league
+						}
+						set_nationality = PREV
+					}
+					
+					declare_war_on = {
+						target = ORD
+						type = civil_war
+					}
+				}
+				
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = monarchy_absolute
+								check_variable = {
+									trad_royal_power_ratio > 1.9
+								}
+							}
+							AND = {
+								has_government = theocrat
+								check_variable = {
+									trad_faith_power_ratio > 1.9
+								}
+							}
+						}
+					}
+					
+					ORB = {
+						transfer_state = 116
+						transfer_state = 109
+						transfer_state = 108
+						transfer_state = 89
+						transfer_state = 115
+						transfer_state = 87
+						transfer_state = 111
+						transfer_state = 103
+						if = {
+							limit = {
+								ORD = {
+									owns_state = 100
+								}
+							}
+							transfer_state = 100
+						}
+						if = {
+							limit = {
+								ORD = {
+									owns_state = 107
+								}
+							}
+							transfer_state = 107
+						}
+						if = {
+							limit = {
+								ORD = {
+									owns_state = 104
+								}
+							}
+							transfer_state = 104
+						}
+						if = {
+							limit = {
+								ORD = {
+									owns_state = 96
+								}
+							}
+							transfer_state = 96
+						}
+						if = {
+							limit = {
+								ORD = {
+									owns_state = 833
+								}
+							}
+							transfer_state = 833
+						}
+						if = {
+							limit = {
+								ORD = {
+									owns_state = 105
+								}
+							}
+							transfer_state = 105
+						}
+						if = {
+							limit = {
+								ORD = {
+									owns_state = 1291
+								}
+							}
+							transfer_state = 1291
+						}
+						if = {
+							limit = {
+								ORD = {
+									owns_state = 106
+								}
+							}
+							transfer_state = 106
+						}
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.66
+						stockpile_ratio = 0.66
+						army_ratio = 0.66
+						navy_ratio = 0.66
+						air_ratio = 0.66
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_league
+							}
+						}
+					}
+				}
+				
+				else_if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = monarchy_absolute
+								check_variable = {
+									trad_royal_power_ratio > 1.4
+								}
+							}
+							AND = {
+								has_government = theocrat
+								check_variable = {
+									trad_faith_power_ratio > 1.4
+								}
+							}
+						}
+					}
+					
+					ORB = {
+						transfer_state = 116
+						transfer_state = 109
+						transfer_state = 108
+						transfer_state = 87
+						transfer_state = 89
+						if = {
+							limit = {
+								ORD = {
+									owns_state = 100
+								}
+							}
+							transfer_state = 100
+						}
+						if = {
+							limit = {
+								ORD = {
+									owns_state = 104
+								}
+							}
+							transfer_state = 104
+						}
+						if = {
+							limit = {
+								ORD = {
+									owns_state = 833
+								}
+							}
+							transfer_state = 833
+						}
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.66
+						stockpile_ratio = 0.55
+						army_ratio = 0.55
+						navy_ratio = 0.55
+						air_ratio = 0.55
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_league
+							}
+						}
+					}
+				}
+				
+				else_if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = monarchy_absolute
+								check_variable = {
+									trad_royal_power_ratio > 0.9
+								}
+							}
+							AND = {
+								has_government = theocrat
+								check_variable = {
+									trad_faith_power_ratio > 0.9
+								}
+							}
+						}
+					}
+					
+					ORB = {
+						transfer_state = 109
+						transfer_state = 87
+						transfer_state = 89
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.66
+						stockpile_ratio = 0.5
+						army_ratio = 0.5
+						navy_ratio = 0.5
+						air_ratio = 0.5
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_league
+							}
+						}
+					}
+				}
+				
+				else_if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = monarchy_absolute
+								check_variable = {
+									trad_royal_power_ratio > 0.4
+								}
+							}
+							AND = {
+								has_government = theocrat
+								check_variable = {
+									trad_faith_power_ratio > 0.4
+								}
+							}
+						}
+					}
+					
+					ORB = {
+						transfer_state = 86
+						transfer_state = 89
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.45
+						stockpile_ratio = 0.45
+						army_ratio = 0.45
+						navy_ratio = 0.45
+						air_ratio = 0.45
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_league
+							}
+						}
+					}
+				}
+				
+				else = {
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.33
+						stockpile_ratio = 0.33
+						army_ratio = 0.33
+						navy_ratio = 0.33
+						air_ratio = 0.33
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_league
+							}
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						OR = {
+							is_owned_by = ORB
+							is_core_of = ORD
+						}
+					}
+					add_core_of = ORB
+				}
+			}
+		}
+	}
+
+	ORD_mission_impending_royalist_revolt = {
+		icon = GFX_decision_revolt
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_loyalist_loyalty_over_zero_or_influence_under_three_tt
+				
+				OR = {
+					check_variable = {
+						ORD_moderates_loyalty > 0
+					}
+					
+					check_variable = {
+						ORD_moderates_influence < 3
+					}
+				}
+			}
+		}
+		
+		activation = {
+			
+			always = no
+			
+			has_war = no
+			
+			NOT = {
+				has_government = monarchy_absolute
+				has_country_flag = ORD_royalist_revolt_attempted
+			}
+		
+			check_variable = {
+				ORD_moderates_loyalty < 1
+				ORD_moderates_influence > 2
+			}
+		}
+		
+		days_mission_timeout = 100
+		
+		fire_only_once = no
+		
+		is_good = no
+		
+		timeout_effect = {
+			
+			custom_effect_tooltip = ORD_royalist_revolt_tt
+			
+			hidden_effect = {
+			
+				set_faction_power_ratios = yes
+				
+				set_country_flag = ORD_royalist_revolt_attempted
+				
+				ORD_larennis_valinthir = {
+					set_nationality = ORB
+					add_country_leader_role = {
+						character = ORD_larennis_valinthir
+						promote_leader = yes
+						country_leader = {
+							ideology = monarchy_absolute_ideology
+							traits = { youthful_princeling }
+						}
+					}
+				}
+				ORD_yntha = {
+					set_nationality = ORB
+				}
+				ORD_alwyen = {
+					set_nationality = ORB
+				}
+				ORD_gylar = {
+					set_nationality = ORB
+				}
+				ORD_thrysmere = {
+					set_nationality = ORB
+				}
+				
+				ORB = {
+					transfer_state = 82
+					transfer_state = 87
+					transfer_state = 88
+					transfer_state = 90
+					transfer_state = 91
+					transfer_state = 103
+					transfer_state = 112
+					transfer_state = 114
+					
+					set_capital = {
+						state = 112
+					}
+					
+					activate_advisor = ORD_yntha
+					activate_advisor = ORD_alwyen
+					activate_advisor = ORD_gylar
+					activate_advisor = ORD_thrysmere
+					
+					set_politics = {
+						ruling_party = monarchy_absolute
+						elections_allowed = no
+						long_name = ORD_monarchy_absolute_party
+						name = ORD_monarchy_absolute_party_long
+					}
+					
+					set_political_party = {
+						ideology = monarchy_absolute
+						popularity = 78
+					}
+					
+					every_character = {
+						limit = {
+							has_trait = ord_royalist
+						}
+						set_nationality = PREV
+					}
+					
+					declare_war_on = {
+						target = ORD
+						type = civil_war
+					}
+				}
+				
+					transfer_state = 85
+					transfer_state = 101
+					transfer_state = 102
+					transfer_state = 110
+					transfer_state = 113
+				
+				
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = puritan
+								check_variable = {
+									royal_trad_power_ratio > 1.9
+								}
+							}
+							AND = {
+								has_government = theocrat
+								check_variable = {
+									royal_faith_power_ratio > 1.9
+								}
+							}
+						}
+					}
+					
+					ORD_alstora_holynthor = {
+						set_nationality = ORB
+					}
+					
+					ORB = {
+					
+						activate_advisor = ORD_alstora_holynthor
+						
+						transfer_state = 86
+						transfer_state = 92
+						transfer_state = 83
+						transfer_state = 78
+						transfer_state = 111
+						transfer_state = 89
+						transfer_state = 115
+						transfer_state = 117
+						transfer_state = 95
+						transfer_state = 94
+						transfer_state = 93
+						transfer_state = 81
+						transfer_state = 102
+						transfer_state = 113
+						transfer_state = 110
+						transfer_state = 109
+						
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.66
+						stockpile_ratio = 0.66
+						army_ratio = 0.66
+						navy_ratio = 0.66
+						air_ratio = 0.66
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_royalist
+							}
+						}
+					}
+				}
+				
+				else_if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = puritan
+								check_variable = {
+									royal_trad_power_ratio > 1.4
+								}
+							}
+							AND = {
+								has_government = theocrat
+								check_variable = {
+									royal_faith_power_ratio > 1.4
+								}
+							}
+						}
+					}
+					
+					ORD_alstora_holynthor = {
+						set_nationality = ORB
+					}
+					
+					ORB = {
+					
+						activate_advisor = ORD_alstora_holynthor
+						
+						transfer_state = 86
+						transfer_state = 92
+						transfer_state = 83
+						transfer_state = 78
+						transfer_state = 111
+						transfer_state = 89
+						transfer_state = 115
+						transfer_state = 117
+						transfer_state = 95
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.66
+						stockpile_ratio = 0.55
+						army_ratio = 0.55
+						navy_ratio = 0.55
+						air_ratio = 0.55
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_royalist
+							}
+						}
+					}
+				}
+				
+				else_if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = puritan
+								check_variable = {
+									royal_trad_power_ratio > 0.9
+								}
+							}
+							AND = {
+								has_government = theocrat
+								check_variable = {
+									royal_faith_power_ratio > 0.9
+								}
+							}
+						}
+					}
+					
+					ORB = {
+						transfer_state = 86
+						transfer_state = 92
+						transfer_state = 111
+						transfer_state = 95
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.66
+						stockpile_ratio = 0.5
+						army_ratio = 0.5
+						navy_ratio = 0.5
+						air_ratio = 0.5
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_royalist
+							}
+						}
+					}
+				}
+				
+				else_if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = puritan
+								check_variable = {
+									royal_trad_power_ratio > 0.4
+								}
+							}
+							AND = {
+								has_government = theocrat
+								check_variable = {
+									royal_faith_power_ratio > 0.4
+								}
+							}
+						}
+					}
+					
+					ORB = {
+						transfer_state = 86
+						transfer_state = 92
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.45
+						stockpile_ratio = 0.45
+						army_ratio = 0.45
+						navy_ratio = 0.45
+						air_ratio = 0.45
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_royalist
+							}
+						}
+					}
+				}
+				
+				else = {
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.33
+						stockpile_ratio = 0.33
+						army_ratio = 0.33
+						navy_ratio = 0.33
+						air_ratio = 0.33
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_royalist
+							}
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						OR = {
+							is_owned_by = ORB
+							is_core_of = ORD
+						}
+					}
+					add_core_of = ORB
+				}
+			}
+		}
+	}
+	
+	ORD_mission_impending_sophist_revolt = {
+		icon = GFX_decision_revolt
+		
+		available = {
+		
+			always = no
+		
+			custom_trigger_tooltip = {
+				tooltip = ORD_sophist_loyalty_over_zero_or_influence_under_three_tt
+				
+				OR = {
+					check_variable = {
+						ORD_faithful_loyalty > 0
+					}
+					
+					check_variable = {
+						ORD_faithful_influence < 3
+					}
+				}
+			}
+		}
+		
+		activation = {
+			
+			always = no
+			
+			has_war = no
+			
+			NOT = {
+				has_government = theocrat
+				has_country_flag = ORD_sophist_revolt_attempted
+			}
+			
+			check_variable = {
+				ORD_faithful_loyalty < 1
+				ORD_faithful_influence > 2
+			}
+		}
+		
+		days_mission_timeout = 100
+		
+		fire_only_once = no
+		
+		is_good = no
+		
+		timeout_effect = {
+			
+			custom_effect_tooltip = ORD_sophist_revolt_tt
+			
+			hidden_effect = {
+			
+				set_faction_power_ratios = yes
+				
+				set_country_flag = ORD_sophist_revolt_attempted
+				
+				ORD_histarine_vernythe = {
+					set_nationality = ORB
+					add_country_leader_role = {
+						character = ORD_histarine_vernythe
+						promote_leader = yes
+						country_leader = {
+							ideology = theocrat_ideology
+							traits = { autocratic_ideologue }
+						}
+					}
+				}
+				
+				ORD_thulyen_gyume = {
+					set_nationality = ORB
+				}
+				
+				ORB = {
+					transfer_state = 84
+					transfer_state = 80
+					transfer_state = 81
+					transfer_state = 79
+					transfer_state = 77
+					transfer_state = 76
+					transfer_state = 93
+					
+					set_capital = {
+						state = 84
+					}
+					
+					activate_advisor = ORD_thulyen_gyume
+					
+					set_politics = {
+						ruling_party = theocrat
+						elections_allowed = no
+						long_name = ORD_theocrat_party_long
+						name = ORD_theocrat_party
+					}
+					
+					set_political_party = {
+						ideology = theocrat
+						popularity = 78
+					}
+					
+					every_character = {
+						limit = {
+							has_trait = ord_sophist
+						}
+						set_nationality = PREV
+					}
+					
+					declare_war_on = {
+						target = ORD
+						type = civil_war
+					}
+				}
+				
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = monarchy_absolute
+								check_variable = {
+									faith_royal_power_ratio > 1.9
+								}
+							}
+							AND = {
+								has_government = puritan
+								check_variable = {
+									faith_trad_power_ratio > 1.9
+								}
+							}
+						}
+					}
+					
+					ORB = {
+						transfer_state = 94
+						transfer_state = 78
+						transfer_state = 83
+						transfer_state = 92
+						transfer_state = 117
+						transfer_state = 95
+						transfer_state = 103
+						transfer_state = 111
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.66
+						stockpile_ratio = 0.66
+						army_ratio = 0.66
+						navy_ratio = 0.66
+						air_ratio = 0.66
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_sophist
+							}
+						}
+					}
+				}
+				
+				else_if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = monarchy_absolute
+								check_variable = {
+									faith_royal_power_ratio > 1.4
+								}
+							}
+							AND = {
+								has_government = puritan
+								check_variable = {
+									faith_trad_power_ratio > 1.4
+								}
+							}
+						}
+					}
+					
+					ORB = {
+						transfer_state = 94
+						transfer_state = 78
+						transfer_state = 83
+						transfer_state = 92
+						transfer_state = 117
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.66
+						stockpile_ratio = 0.55
+						army_ratio = 0.55
+						navy_ratio = 0.55
+						air_ratio = 0.55
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_sophist
+							}
+						}
+					}
+				}
+				
+				else_if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = monarchy_absolute
+								check_variable = {
+									faith_royal_power_ratio > 0.9
+								}
+							}
+							AND = {
+								has_government = puritan
+								check_variable = {
+									faith_trad_power_ratio > 0.9
+								}
+							}
+						}
+					}
+					
+					ORB = {
+						transfer_state = 94
+						transfer_state = 78
+						transfer_state = 83
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.66
+						stockpile_ratio = 0.5
+						army_ratio = 0.5
+						navy_ratio = 0.5
+						air_ratio = 0.5
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_sophist
+							}
+						}
+					}
+				}
+				
+				else_if = {
+					limit = {
+						OR = {
+							AND = {
+								has_government = monarchy_absolute
+								check_variable = {
+									faith_royal_power_ratio > 0.4
+								}
+							}
+							AND = {
+								has_government = theocrat
+								check_variable = {
+									faith_trad_power_ratio > 0.4
+								}
+							}
+						}
+					}
+					
+					ORB = {
+						transfer_state = 94
+						transfer_state = 78
+					}
+					
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.45
+						stockpile_ratio = 0.45
+						army_ratio = 0.45
+						navy_ratio = 0.45
+						air_ratio = 0.45
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_sophist
+							}
+						}
+					}
+				}
+				
+				else = {
+					transfer_units_fraction= {
+						target = ORB
+						size = 0.33
+						stockpile_ratio = 0.33
+						army_ratio = 0.33
+						navy_ratio = 0.33
+						air_ratio = 0.33
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_trait = ORD_sophist
+							}
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						OR = {
+							is_owned_by = ORB
+							is_core_of = ORD
+						}
+					}
+					add_core_of = ORB
+				}
+			}
+		}
+	}
+	
+	ORD_league_call_vengeance_vermin = {
+		
+		icon = generic_speech
+		
+		visible = {
+			has_variable = ORD_traditionalists_influence
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_traditionalists_influence > 0
+			}
+		}
+		
+		cost = 50
+		
+		days_remove = 15
+		
+		days_re_enable = 10
+		
+		ai_will_do = {
+			factor = 0 #Only under specific circumstances
+			modifier = {#Need influence/loyalty for a specific focus
+				add = 5
+				ORD_needs_stronger_or_more_loyal_league = yes
+			}
+			modifier = {#Steward advances his interests
+				factor = 2
+				has_government = puritan
+			}
+			modifier = { #Don't waste PP if we've already got a bunch
+				factor = 0
+				check_variable = {
+					ORD_traditionalists_influence > 100
+				}
+				check_variable = {
+					ORD_traditionalists_loyalty > 100
+				}
+			}
+			modifier = { #Don't piss off the Royalists
+				factor = 0
+				check_variable = {
+					ORD_moderates_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				add = 10
+				has_active_mission = ORD_mission_impending_league_revolt
+			}
+		}
+		
+		modifier = {
+			puritan_drift = 0.03
+			war_support_weekly = 0.001
+		}
+		
+		remove_effect = {
+			ORD_improve_trad_loyalty_1 = yes
+			ORD_improve_trad_power_2 = yes
+			if = {
+				limit = {
+					has_variable = ORD_moderates_loyalty
+				}
+				ORD_worsen_royal_loyalty_3 = yes
+			}
+		}
+	}
+	
+	ORD_league_strengthen_paramilitaries = {
+		
+		icon = generic_reorganize_irregulars
+		
+		visible = {
+			has_variable = ORD_traditionalists_influence
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_traditionalists_influence > 0
+			}
+		}
+		
+		cost = 75
+		
+		days_remove = 35
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 0 #Only under specific circumstances
+			modifier = {#Need influence/loyalty for a specific focus
+				add = 5
+				ORD_needs_stronger_or_more_loyal_league = yes
+			}
+			modifier = {#Steward advances his interests
+				factor = 2
+				has_government = puritan
+			}
+			modifier = { #Don't waste PP if we've already got a bunch
+				factor = 0
+				check_variable = {
+					ORD_traditionalists_influence > 100
+				}
+				check_variable = {
+					ORD_traditionalists_loyalty > 100
+				}
+			}
+			modifier = { #Don't piss off the Sophists
+				factor = 0
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 10
+				has_active_mission = ORD_mission_impending_league_revolt
+			}
+		}
+		
+		modifier = {
+			puritan_drift = 0.07
+			weekly_manpower = 250
+		}
+		
+		remove_effect = {
+			ORD_improve_trad_loyalty_2 = yes
+			ORD_improve_trad_power_4 = yes
+			if = {
+				limit = {
+					has_variable = ORD_faithful_loyalty
+				}
+				ORD_worsen_faith_loyalty_3 = yes
+			}
+		}
+	}
+	
+	ORD_league_legal_powers_to_league = {
+		
+		icon = eng_trade_unions_support
+		
+		visible = {
+			has_variable = ORD_traditionalists_influence
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_traditionalists_influence > 0
+			}
+		}
+		
+		cost = 135
+		
+		days_remove = 65
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 0 #Only under specific circumstances
+			modifier = {#Need influence/loyalty for a specific focus
+				add = 5
+				ORD_needs_stronger_or_more_loyal_league = yes
+			}
+			modifier = {#Steward advances his interests
+				factor = 2
+				has_government = puritan
+			}
+			modifier = { #Don't waste PP if we've already got a bunch
+				factor = 0
+				check_variable = {
+					ORD_traditionalists_influence > 100
+				}
+				check_variable = {
+					ORD_traditionalists_loyalty > 100
+				}
+			}
+			modifier = { #Don't piss off the Sophists or the Royalists
+				factor = 0
+				OR = {
+					check_variable = {
+						ORD_faithful_loyalty < 7
+					}
+					check_variable = {
+						ORD_moderates_loyalty < 7
+					}
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 10
+				has_active_mission = ORD_mission_impending_league_revolt
+			}
+		}
+		
+		modifier = {
+			puritan_drift = 0.15
+			command_power_gain = 0.5
+		}
+		
+		remove_effect = {
+			ORD_improve_trad_loyalty_4 = yes
+			ORD_improve_trad_power_7 = yes
+			if = {
+				limit = {
+					has_variable = ORD_faithful_loyalty
+				}
+				ORD_worsen_faith_loyalty_5 = yes
+			}
+			if = {
+				limit = {
+					has_variable = ORD_moderates_loyalty
+				}
+				ORD_worsen_royal_loyalty_5 = yes
+			}
+		}
+	}
+	
+	ORD_royalists_larennis_public_appearance = {
+		
+		icon = generic_monarchy
+		
+		visible = {
+			has_variable = ORD_moderates_influence
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_moderates_influence > 0
+			}
+		}
+		
+		cost = 50
+		
+		days_remove = 15
+		
+		days_re_enable = 10
+		
+		ai_will_do = {
+			factor = 0 #Only under specific circumstances
+			modifier = {#Need influence/loyalty for a specific focus
+				add = 5
+				ORD_needs_stronger_or_more_loyal_royalists = yes
+			}
+			modifier = {#Princeling advances his interests
+				factor = 2
+				has_government = monarchy_absolute
+			}
+			modifier = { #Don't waste PP if we've already got a bunch
+				factor = 0
+				check_variable = {
+					ORD_moderates_influence > 100
+				}
+				check_variable = {
+					ORD_moderates_loyalty > 100
+				}
+			}
+			modifier = { #Don't piss off the Sophists
+				factor = 0
+				check_variable = {
+					ORD_faithful_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 10
+				has_active_mission = ORD_mission_impending_royalist_revolt
+			}
+		}
+		
+		modifier = {
+			monarchy_absolute_drift = 0.03
+			stability_weekly = 0.001
+		}
+		
+		remove_effect = {
+			ORD_improve_royal_loyalty_1 = yes
+			ORD_improve_royal_power_2 = yes
+			if = {
+				limit = {
+					has_variable = ORD_faithful_loyalty
+				}
+				ORD_worsen_faith_loyalty_3 = yes
+			}
+		}
+	}
+	
+	ORD_royalists_facilitate_commerce = {
+		
+		icon = hol_attract_foreign_investors
+		
+		visible = {
+			has_variable = ORD_moderates_influence
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_moderates_influence > 0
+			}
+		}
+		
+		cost = 75
+		
+		days_remove = 35
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 0 #Only under specific circumstances
+			modifier = {#Need influence/loyalty for a specific focus
+				add = 5
+				ORD_needs_stronger_or_more_loyal_royalists = yes
+			}
+			modifier = {#Princeling advances his interests
+				factor = 2
+				has_government = monarchy_absolute
+			}
+			modifier = { #Don't waste PP if we've already got a bunch
+				factor = 0
+				check_variable = {
+					ORD_moderates_influence > 100
+				}
+				check_variable = {
+					ORD_moderates_loyalty > 100
+				}
+			}
+			modifier = { #Don't piss off the League
+				factor = 0
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 10
+				has_active_mission = ORD_mission_impending_royalist_revolt
+			}
+		}
+		
+		modifier = {
+			monarchy_absolute_drift = 0.07
+			consumer_goods_factor = -0.03
+		}
+		
+		remove_effect = {
+			ORD_improve_royal_loyalty_2 = yes
+			ORD_improve_royal_power_4 = yes
+			if = {
+				limit = {
+					has_variable = ORD_traditionalists_loyalty
+				}
+				ORD_worsen_trad_loyalty_5 = yes
+			}
+		}
+	}
+	
+	ORD_royalists_strengthen_judicial_independence = {
+		
+		icon = SWI_no_elected_president
+		
+		visible = {
+			has_variable = ORD_moderates_influence
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_moderates_influence > 0
+			}
+		}
+		
+		cost = 135
+		
+		days_remove = 65
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 0 #Only under specific circumstances
+			modifier = {#Need influence/loyalty for a specific focus
+				add = 5
+				ORD_needs_stronger_or_more_loyal_royalists = yes
+			}
+			modifier = {#Princeling advances his interests
+				factor = 2
+				has_government = monarchy_absolute
+			}
+			modifier = { #Don't waste PP if we've already got a bunch
+				factor = 0
+				check_variable = {
+					ORD_moderates_influence > 100
+				}
+				check_variable = {
+					ORD_moderates_loyalty > 100
+				}
+			}
+			modifier = { #Don't piss off the Sophists or the League
+				factor = 0
+				OR = {
+					check_variable = {
+						ORD_faithful_loyalty < 7
+					}
+					check_variable = {
+						ORD_traditionalists_loyalty < 7
+					}
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 10
+				has_active_mission = ORD_mission_impending_royalist_revolt
+			}
+		}
+		
+		modifier = {
+			monarchy_absolute_drift = 0.15
+			political_power_gain = 0.5
+		}
+		
+		remove_effect = {
+			ORD_improve_royal_loyalty_4 = yes
+			ORD_improve_royal_power_7 = yes
+			if = {
+				limit = {
+					has_variable = ORD_faithful_loyalty
+				}
+				ORD_worsen_faith_loyalty_5 = yes
+			}
+			if = {
+				limit = {
+					has_variable = ORD_traditionalists_loyalty
+				}
+				ORD_worsen_trad_loyalty_5 = yes
+			}
+		}
+	}
+	
+	ORD_sophists_scrutinize_wayward = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_faithful_influence
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_faithful_influence > 0
+			}
+		}
+		
+		cost = 50
+		
+		days_remove = 15
+		
+		days_re_enable = 10
+		
+		ai_will_do = {
+			factor = 0 #Only under specific circumstances
+			modifier = {#Need influence/loyalty for a specific focus
+				add = 5
+				ORD_needs_stronger_or_more_loyal_sophists = yes
+			}
+			modifier = {#Vernythe advances his interests
+				factor = 2
+				has_government = theocrat
+			}
+			modifier = { #Don't waste PP if we've already got a bunch
+				factor = 0
+				check_variable = {
+					ORD_faithful_influence > 100
+				}
+				check_variable = {
+					ORD_faithful_loyalty > 100
+				}
+			}
+			modifier = { #Don't piss off the League
+				factor = 0
+				check_variable = {
+					ORD_faithful_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 10
+				has_active_mission = ORD_mission_impending_sophist_revolt
+			}
+		}
+		
+		modifier = {
+			theocrat_drift = 0.03
+			resistance_growth = -0.05
+		}
+		
+		remove_effect = {
+			ORD_improve_faith_loyalty_1 = yes
+			ORD_improve_faith_power_2 = yes
+			if = {
+				limit = {
+					has_variable = ORD_traditionalists_loyalty
+				}
+				ORD_worsen_trad_loyalty_3 = yes
+			}
+		}
+	}
+	
+	ORD_sophists_correct_false_doctrines = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_faithful_influence
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_faithful_influence > 0
+			}
+		}
+		
+		cost = 75
+		
+		days_remove = 35
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 0 #Only under specific circumstances
+			modifier = {#Need influence/loyalty for a specific focus
+				add = 5
+				ORD_needs_stronger_or_more_loyal_sophists = yes
+			}
+			modifier = {#Vernythe advances his interests
+				factor = 2
+				has_government = theocrat
+			}
+			modifier = { #Don't waste PP if we've already got a bunch
+				factor = 0
+				check_variable = {
+					ORD_faithful_influence > 100
+				}
+				check_variable = {
+					ORD_faithful_loyalty > 100
+				}
+			}
+			modifier = { #Don't piss off the Royalists
+				factor = 0
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 10
+				has_active_mission = ORD_mission_impending_sophist_revolt
+			}
+		}
+		
+		modifier = {
+			theocrat_drift = 0.07
+			army_morale_factor = 0.05
+		}
+		
+		remove_effect = {
+			ORD_improve_faith_loyalty_2 = yes
+			ORD_improve_faith_power_4 = yes
+			if = {
+				limit = {
+					has_variable = ORD_moderates_loyalty
+				}
+				ORD_worsen_royal_loyalty_3 = yes
+			}
+		}
+	}
+	
+	ORD_sophists_denounce_astray = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_faithful_influence
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_faithful_influence > 0
+			}
+		}
+		
+		cost = 135
+		
+		days_remove = 65
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 0 #Only under specific circumstances
+			modifier = {#Need influence/loyalty for a specific focus
+				add = 5
+				ORD_needs_stronger_or_more_loyal_sophists = yes
+			}
+			modifier = {#Vernythe advances his interests
+				factor = 2
+				has_government = theocrat
+			}
+			modifier = { #Don't waste PP if we've already got a bunch
+				factor = 0
+				check_variable = {
+					ORD_faithful_influence > 100
+				}
+				check_variable = {
+					ORD_faithful_loyalty > 100
+				}
+			}
+			modifier = { #Don't piss off the Royalists or the League
+				factor = 0
+				OR = {
+					check_variable = {
+						ORD_moderates_loyalty < 7
+					}
+					check_variable = {
+						ORD_traditionalists_loyalty < 7
+					}
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 10
+				has_active_mission = ORD_mission_impending_sophist_revolt
+			}
+		}
+		
+		modifier = {
+			theocrat_drift = 0.15
+			fuel_gain_factor = 0.12
+		}
+		
+		remove_effect = {
+			ORD_improve_faith_loyalty_4 = yes
+			ORD_improve_faith_power_7 = yes
+			if = {
+				limit = {
+					has_variable = ORD_moderates_loyalty
+				}
+				ORD_worsen_royal_loyalty_5 = yes
+			}
+			if = {
+				limit = {
+					has_variable = ORD_traditionalists_loyalty
+				}
+				ORD_worsen_trad_loyalty_5 = yes
+			}
+		}
+	}
+	
+	ORD_league_require_stewards_services = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_traditionalists_loyalty
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_traditionalists_loyalty > 0
+			}
+		}
+		
+		cost = 50
+		
+		days_remove = 15
+		
+		days_re_enable = 10
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {#Why would the Steward do this? Is he stupid?
+				factor = 0.1
+				has_government = puritan
+			}
+			modifier = { #Don't waste PP if we've already bodied the League
+				factor = 0
+				OR = {
+					NOT = {
+						check_variable = {
+							ORD_traditionalists_influence < 1
+						}
+						has_variable = ORD_traditionalists_influence
+						has_variable = ORD_traditionalists_loyalty
+					}
+				}
+			}
+			modifier = { #Don't piss off the League
+				factor = 0
+				check_variable = {
+					ORD_traditionalists_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 0
+				has_active_mission = ORD_mission_impending_league_revolt
+			}
+		}
+		
+		modifier = {
+			puritan_drift = -0.03
+			local_resources_factor = 0.05
+		}
+		
+		remove_effect = {
+			ORD_worsen_trad_power_1 = yes
+			ORD_worsen_trad_loyalty_2 = yes
+			if = {
+				limit = {
+					has_variable = ORD_moderates_influence
+				}
+				ORD_improve_royal_power_1 = yes
+			}
+		}
+	}
+	
+	ORD_league_critique_industrialization = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_traditionalists_loyalty
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_traditionalists_loyalty > 0
+			}
+		}
+		
+		cost = 75
+		
+		days_remove = 35
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {#Why would the Steward do this? Is he stupid?
+				factor = 0.1
+				has_government = puritan
+			}
+			modifier = { #Don't waste PP if we've already bodied the League
+				factor = 0
+				OR = {
+					NOT = {
+						check_variable = {
+							ORD_traditionalists_influence < 1
+						}
+						has_variable = ORD_traditionalists_influence
+						has_variable = ORD_traditionalists_loyalty
+					}
+				}
+			}
+			modifier = { #Don't piss off the League
+				factor = 0
+				check_variable = {
+					ORD_traditionalists_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 0
+				has_active_mission = ORD_mission_impending_league_revolt
+			}
+		}
+		
+		modifier = {
+			puritan_drift = -0.07
+			land_equipment_upgrade_xp_cost = -0.1
+		}
+		
+		remove_effect = {
+			ORD_worsen_trad_power_2 = yes
+			ORD_worsen_trad_loyalty_4 = yes
+			if = {
+				limit = {
+					has_variable = ORD_faithful_influence
+				}
+				ORD_improve_faith_power_3 = yes
+			}
+		}
+	}
+	
+	ORD_league_curtail_paramilitary_activities = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_traditionalists_loyalty
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_traditionalists_loyalty > 0
+			}
+		}
+		
+		cost = 135
+		
+		days_remove = 65
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {#Why would the Steward do this? Is he stupid?
+				factor = 0.1
+				has_government = puritan
+			}
+			modifier = { #Don't waste PP if we've already bodied the League
+				factor = 0
+				OR = {
+					NOT = {
+						check_variable = {
+							ORD_traditionalists_influence < 1
+						}
+						has_variable = ORD_traditionalists_influence
+						has_variable = ORD_traditionalists_loyalty
+					}
+				}
+			}
+			modifier = { #Don't piss off the League
+				factor = 0
+				check_variable = {
+					ORD_traditionalists_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 0
+				has_active_mission = ORD_mission_impending_league_revolt
+			}
+		}
+		
+		modifier = {
+			puritan_drift = -0.15
+			experience_gain_army_factor = 0.12
+		}
+		
+		remove_effect = {
+			ORD_worsen_trad_power_4 = yes
+			ORD_worsen_trad_loyalty_7 = yes
+			if = {
+				limit = {
+					has_variable = ORD_faithful_influence
+				}
+				ORD_improve_faith_power_5 = yes
+			}
+			if = {
+				limit = {
+					has_variable = ORD_moderates_influence
+				}
+				ORD_improve_royal_power_5 = yes
+			}
+		}
+	}
+	
+	ORD_royalists_question_carelessness = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_moderates_loyalty
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_moderates_loyalty > 0
+			}
+		}
+		
+		cost = 50
+		
+		days_remove = 15
+		
+		days_re_enable = 10
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {#Why would the Princeling do this? Is he stupid?
+				factor = 0.1
+				has_government = monarchy_absolute
+			}
+			modifier = { #Don't waste PP if we've already bodied the Royalists
+				factor = 0
+				OR = {
+					NOT = {
+						check_variable = {
+							ORD_moderates_influence < 1
+						}
+						has_variable = ORD_moderates_influence
+						has_variable = ORD_moderates_loyalty
+					}
+				}
+			}
+			modifier = { #Don't piss off the Royalists
+				factor = 0
+				check_variable = {
+					ORD_moderates_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 0
+				has_active_mission = ORD_mission_impending_royalist_revolt
+			}
+		}
+		
+		modifier = {
+			monarchy_absolute_drift = -0.03
+			encryption_factor = 0.05
+		}
+		
+		remove_effect = {
+			ORD_worsen_royal_power_1 = yes
+			ORD_worsen_royal_loyalty_2 = yes
+			if = {
+				limit = {
+					has_variable = ORD_faithful_influence
+				}
+				ORD_improve_faith_power_1 = yes
+			}
+		}
+	}
+	
+	ORD_royalists_undercut_aristocratic_goods = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_moderates_loyalty
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_moderates_loyalty > 0
+			}
+		}
+		
+		cost = 75
+		
+		days_remove = 35
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {#Why would the Princeling do this? Is he stupid?
+				factor = 0.1
+				has_government = monarchy_absolute
+			}
+			modifier = { #Don't waste PP if we've already bodied the Royalists
+				factor = 0
+				OR = {
+					NOT = {
+						check_variable = {
+							ORD_moderates_influence < 1
+						}
+						has_variable = ORD_moderates_influence
+						has_variable = ORD_moderates_loyalty
+					}
+				}
+			}
+			modifier = { #Don't piss off the Royalists
+				factor = 0
+				check_variable = {
+					ORD_moderates_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 0
+				has_active_mission = ORD_mission_impending_royalist_revolt
+			}
+		}
+		
+		modifier = {
+			monarchy_absolute_drift = -0.07
+			industrial_capacity_factory = 0.1
+		}
+		
+		remove_effect = {
+			ORD_worsen_royal_power_2 = yes
+			ORD_worsen_royal_loyalty_4 = yes
+			if = {
+				limit = {
+					has_variable = ORD_traditionalists_influence
+				}
+				ORD_improve_trad_power_3 = yes
+			}
+		}
+	}
+	
+	ORD_royalists_strip_aristocratic_privileges = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_moderates_loyalty
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_moderates_loyalty > 0
+			}
+		}
+		
+		cost = 135
+		
+		days_remove = 65
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {#Why would the Princeling do this? Is he stupid?
+				factor = 0.1
+				has_government = monarchy_absolute
+			}
+			modifier = { #Don't waste PP if we've already bodied the Royalists
+				factor = 0
+				OR = {
+					NOT = {
+						check_variable = {
+							ORD_moderates_influence < 1
+						}
+						has_variable = ORD_moderates_influence
+						has_variable = ORD_moderates_loyalty
+					}
+				}
+			}
+			modifier = { #Don't piss off the Royalists
+				factor = 0
+				check_variable = {
+					ORD_moderates_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 0
+				has_active_mission = ORD_mission_impending_royalist_revolt
+			}
+		}
+		
+		modifier = {
+			monarchy_absolute_drift = -0.15
+			compliance_growth = 0.12
+		}
+		
+		remove_effect = {
+			ORD_worsen_royal_power_4 = yes
+			ORD_worsen_royal_loyalty_7 = yes
+			if = {
+				limit = {
+					has_variable = ORD_faithful_influence
+				}
+				ORD_improve_faith_power_5 = yes
+			}
+			if = {
+				limit = {
+					has_variable = ORD_traditionalists_influence
+				}
+				ORD_improve_trad_power_5 = yes
+			}
+		}
+	}
+	
+	ORD_sophists_claim_mantle_harquiss = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_sophists_loyalty
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_sophists_loyalty > 0
+			}
+		}
+		
+		cost = 50
+		
+		days_remove = 15
+		
+		days_re_enable = 10
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {#Why would Vernythe do this? Is he stupid?
+				factor = 0.1
+				has_government = theocrat
+			}
+			modifier = { #Don't waste PP if we've already bodied the Sophists
+				factor = 0
+				OR = {
+					NOT = {
+						check_variable = {
+							ORD_moderates_influence < 1
+						}
+						has_variable = ORD_sophists_influence
+						has_variable = ORD_sophists_loyalty
+					}
+				}
+			}
+			modifier = { #Don't piss off the Sophists
+				factor = 0
+				check_variable = {
+					ORD_sophists_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 0
+				has_active_mission = ORD_mission_impending_sophist_revolt
+			}
+		}
+		
+		modifier = {
+			theocrat_drift = -0.03
+			breakthrough_factor = 0.05
+		}
+		
+		remove_effect = {
+			ORD_worsen_faith_power_1 = yes
+			ORD_worsen_faith_loyalty_2 = yes
+			if = {
+				limit = {
+					has_variable = ORD_traditionalists_influence
+				}
+				ORD_improve_trad_power_1 = yes
+			}
+		}
+	}
+	
+	ORD_sophists_appeal_reactionaries_nobility = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_sophists_loyalty
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_sophists_loyalty > 0
+			}
+		}
+		
+		cost = 75
+		
+		days_remove = 35
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {#Why would Vernythe do this? Is he stupid?
+				factor = 0.1
+				has_government = theocrat
+			}
+			modifier = { #Don't waste PP if we've already bodied the Sophists
+				factor = 0
+				OR = {
+					NOT = {
+						check_variable = {
+							ORD_sophists_influence < 1
+						}
+						has_variable = ORD_sophists_influence
+						has_variable = ORD_sophists_loyalty
+					}
+				}
+			}
+			modifier = { #Don't piss off the Sophists
+				factor = 0
+				check_variable = {
+					ORD_sophists_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 0
+				has_active_mission = ORD_mission_impending_sophist_revolt
+			}
+		}
+		
+		modifier = {
+			theocrat_drift = -0.07
+			research_speed_factor = 0.05
+		}
+		
+		remove_effect = {
+			ORD_worsen_faith_power_2 = yes
+			ORD_worsen_faith_loyalty_4 = yes
+			if = {
+				limit = {
+					has_variable = ORD_moderates_influence
+				}
+				ORD_improve_royal_power_3 = yes
+			}
+		}
+	}
+	
+	ORD_sophists_move_secularization = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_variable = ORD_sophists_loyalty
+			is_subject = no
+		}
+		
+		available = {
+			check_variable = {
+				ORD_sophists_loyalty > 0
+			}
+		}
+		
+		cost = 135
+		
+		days_remove = 65
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {#Why would Vernythe do this? Is he stupid?
+				factor = 0.1
+				has_government = theocrat
+			}
+			modifier = { #Don't waste PP if we've already bodied the Sophists
+				factor = 0
+				OR = {
+					NOT = {
+						check_variable = {
+							ORD_sophists_influence < 1
+						}
+						has_variable = ORD_sophists_influence
+						has_variable = ORD_sophists_loyalty
+					}
+				}
+			}
+			modifier = { #Don't piss off the Sophists
+				factor = 0
+				check_variable = {
+					ORD_sophists_loyalty < 3
+				}
+			}
+			modifier = { #Oh god oh fuck
+				factor = 0
+				has_active_mission = ORD_mission_impending_sophist_revolt
+			}
+		}
+		
+		modifier = {
+			theocrat_drift = -0.15
+			max_planning_factor = 0.12
+		}
+		
+		remove_effect = {
+			ORD_worsen_faith_power_4 = yes
+			ORD_worsen_faith_loyalty_7 = yes
+			if = {
+				limit = {
+					has_variable = ORD_faithful_influence
+				}
+				ORD_improve_royal_power_5 = yes
+			}
+			if = {
+				limit = {
+					has_variable = ORD_traditionalists_influence
+				}
+				ORD_improve_trad_power_5 = yes
+			}
+		}
+	}
+}
+
+ORD_second_front = {
+	ORD_open_second_front = {
+		
+		icon = hol_engelandvaarders
+		
+		visible = {
+			has_completed_focus = ORD_second_front
+		}
+		
+		available = {
+			NOT = {
+				controls_state = 227
+			}
+		}
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 35
+			modifier = {
+				factor = 0.1
+				surrender_progress > 0.1
+			}
+			modifier = { #Don't bother if we have no navy
+				factor = 0
+				has_navy_size = {
+					size < 10
+				}
+			}
+			modifier = {
+				factor = 0
+				has_active_mission = ORD_seize_fritzhafen_mission
+			}
+		}
+		
+		complete_effect = {
+			activate_mission = ORD_open_second_front_mission
+		}
+	}
+	
+	ORD_open_second_front_mission = {
+		
+		icon = hol_engelandvaarders
+		
+		available = {
+			has_war_with = SVT
+			controls_state = 227
+		}
+		
+		activation = {
+			always = no #by decision
+		}
+		
+		cancel_trigger = {
+			has_war = no
+		}
+		
+		days_mission_timeout = 100
+		
+		is_good = no
+		
+		complete_effect = {
+			add_war_support = 0.06
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+				}
+				add_timed_idea = {
+					idea = ORD_st_vichtlas_fallen_idea
+					days = 100
+				}
+			}
+		}
+		
+		timeout_effect = {
+			add_war_support = -0.07
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+				}
+				add_war_support = 0.06
+			}
+		}
+	}
+	
+	ORD_seize_fritzhafen = {
+		
+		icon = generic_fundraising
+		
+		visible = {
+			has_completed_focus = ORD_strike_economic_heart
+		}
+		
+		available = {
+			NOT = {
+				controls_state = 227
+			}
+		}
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 35
+			modifier = {
+				factor = 0.1
+				surrender_progress > 0.1
+			}
+			modifier = {
+				factor = 0
+				has_active_mission = ORD_open_second_front_mission
+			}
+		}
+		
+		complete_effect = {
+			activate_mission = ORD_seize_fritzhafen_mission
+		}
+	}
+	
+	ORD_seize_fritzhafen_mission = {
+		
+		icon = generic_fundraising
+		
+		available = {
+			has_war_with = FTH
+			controls_state = 236
+		}
+		
+		activation = {
+			always = no #by decision
+		}
+		
+		cancel_trigger = {
+			has_war = no
+		}
+		
+		days_mission_timeout = 100
+		
+		is_good = no
+		
+		complete_effect = {
+			add_war_support = 0.06
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+				}
+				add_timed_idea = {
+					idea = ORD_fritzhafen_fallen_idea
+					days = 100
+				}
+			}
+		}
+		
+		timeout_effect = {
+			add_war_support = -0.07
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+				}
+				add_war_support = 0.06
+			}
+		}
+	}
+}
+
+ORD_retribution_anthygynaur = {
+	ORD_terrorize_stauhyte = {
+
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 192
+			divisions_in_state = {
+				size > 0
+				state = 192
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 192
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			STA = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = STA
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_hysbryn = {
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 296
+			divisions_in_state = {
+				size > 0
+				state = 296
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 296
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			HLZ = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = HLZ
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_norothe = {
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 284
+			divisions_in_state = {
+				size > 0
+				state = 284
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 284
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			NOC = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = NOC
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_nocthorin = {
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 228
+			divisions_in_state = {
+				size > 0
+				state = 228
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 228
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			NOC = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = NOC
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_ofynhaur = {
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 206
+			divisions_in_state = {
+				size > 0
+				state = 206
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 206
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			ARK = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = ARK
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_marysione = {
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 236
+			divisions_in_state = {
+				size > 0
+				state = 236
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 236
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			FTH = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = FTH
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_wystine = {
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 234
+			divisions_in_state = {
+				size > 0
+				state = 234
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 234
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			WIS = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = WIS
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_lilyasorynthe = {
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 233
+			divisions_in_state = {
+				size > 0
+				state = 233
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 233
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			if = {
+				limit = {
+					country_exists = UNG
+				}
+				UNG = {
+					add_opinion_modifier = {
+						target = ORD
+						modifier = ORD_outraged
+					}
+					add_stability = -0.2
+					add_war_support = -0.15
+					add_timed_idea = {
+						idea = ORD_broken_spirit_idea
+						days = 150
+					}
+				}
+				every_country = {
+					limit = {
+						is_og_freiprinz = yes
+						NOT = {
+							tag = UNG
+						}
+					}
+					add_opinion_modifier = {
+						target = ORD
+						modifier = ORD_horrified
+					}
+					add_stability = -0.04
+					add_war_support = -0.04
+					if = {
+						limit = {
+							NOT = {
+								has_idea = ORD_horrified_nation_idea
+							}
+						}
+						add_timed_idea = {
+							idea = ORD_horrified_nation_idea
+							days = 50
+						}
+					}
+				}
+			}
+			else = {
+				FAU = {
+					add_opinion_modifier = {
+						target = ORD
+						modifier = ORD_outraged
+					}
+					add_stability = -0.2
+					add_war_support = -0.15
+					add_timed_idea = {
+						idea = ORD_broken_spirit_idea
+						days = 150
+					}
+				}
+				every_country = {
+					limit = {
+						is_og_freiprinz = yes
+						NOT = {
+							tag = FAU
+						}
+					}
+					add_opinion_modifier = {
+						target = ORD
+						modifier = ORD_horrified
+					}
+					add_stability = -0.04
+					add_war_support = -0.04
+					if = {
+						limit = {
+							NOT = {
+								has_idea = ORD_horrified_nation_idea
+							}
+						}
+						add_timed_idea = {
+							idea = ORD_horrified_nation_idea
+							days = 50
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_anthysione = {
+	
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 235
+			divisions_in_state = {
+				size > 0
+				state = 235
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 235
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			WSZ = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = WSZ
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_spauhyte = {
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 226
+			divisions_in_state = {
+				size > 0
+				state = 226
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 226
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			SPW = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = SPW
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_thyssorthor = {
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 225
+			divisions_in_state = {
+				size > 0
+				state = 225
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 225
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			TEI = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = TEI
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_vystlissyn = {
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 227
+			divisions_in_state = {
+				size > 0
+				state = 227
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 227
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			SVT = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = SVT
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+	
+	ORD_terrorize_yghalissa = {
+		icon = oppression
+		
+		available = {
+			has_completed_focus = ORD_no_mercy
+			any_other_country = {
+				is_og_freiprinz = yes
+				has_war_with = ROOT
+			}
+			controls_state = 224
+			divisions_in_state = {
+				size > 0
+				state = 224
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		state_target = yes
+		
+		targets = {
+			state = 224
+		}
+		
+		on_map_mode = map_only
+
+		complete_effect = {
+			SNF = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_outraged
+				}
+				add_stability = -0.2
+				add_war_support = -0.15
+				add_timed_idea = {
+					idea = ORD_broken_spirit_idea
+					days = 150
+				}
+			}
+			every_country = {
+				limit = {
+					is_og_freiprinz = yes
+					NOT = {
+						tag = SNF
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_horrified
+				}
+				add_stability = -0.04
+				add_war_support = -0.04
+				if = {
+					limit = {
+						NOT = {
+							has_idea = ORD_horrified_nation_idea
+						}
+					}
+					add_timed_idea = {
+						idea = ORD_horrified_nation_idea
+						days = 50
+					}
+				}
+			}
+		}
+	}
+}
+
+ORD_skirmishes_rebels = {
+	ORD_secure_ryselin_decision = {
+		icon = border_war
+		
+		visible = {
+			
+			has_completed_focus = ORD_secure_ryselin
+		
+			original_tag = ORD
+			NOT = {
+				owns_state = 140
+			}
+		}
+		
+		available = {
+		
+			has_completed_focus = ORD_secure_ryselin
+		
+			140 = {
+				custom_trigger_tooltip = {
+					tooltip = DORF_not_border_war_tt
+					hidden_trigger = {
+						has_border_war = no
+					}
+				}
+			}
+			
+			custom_trigger_tooltip = {
+				tooltip = DORF_controls_border_state_tt
+				140 = {
+					any_neighbor_state = {
+						is_controlled_by = ROOT
+						ROOT = {
+							divisions_in_border_state = {
+								size > 2
+								state = PREV
+								border_state = 140
+							}
+						}
+					}
+				}
+            }
+		}
+
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = 140
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		
+		cost = 15
+		days_remove = 35
+		
+		ai_will_do = {
+			factor = 500
+		}
+		
+		complete_effect = {
+			
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					any_neighbor_state = {
+						state = 140
+					}
+					ROOT = {
+						divisions_in_border_state = {
+							size > 2
+							state = PREV
+							border_state = 140
+						}
+					}
+				}
+				set_temp_variable = {
+					border_conflict_state = THIS
+				}
+			}
+			var:border_conflict_state = {
+				set_state_flag = ongoing_border_war_state_flag
+				add_dynamic_modifier = {
+					modifier = ongoing_border_conflict
+				}
+			}
+			140 = {
+				add_dynamic_modifier = {
+					modifier = ongoing_border_conflict
+				}
+			}
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = var:border_conflict_state
+					num_provinces = 1
+					on_win = ord.109
+					on_lose = ord.110
+					on_cancel = ord.111
+				}
+				defender = {
+					state = 140
+					num_provinces = 1
+					on_win = rth.80
+					on_lose = rth.81
+					on_cancel = rth.82
+				}
+			}
+		}
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					any_neighbor_state = {
+						state = 140
+					}
+					ROOT = {
+						divisions_in_border_state = {
+							size > 2
+							state = PREV
+							border_state = 140
+						}
+					}
+				}
+				set_temp_variable = {
+					border_conflict_state = THIS
+				}
+			}
+			every_owned_state = {
+				limit = {
+					has_state_flag = ongoing_border_war_state_flag
+				}
+				clr_state_flag = ongoing_border_war_state_flag
+				remove_dynamic_modifier = {
+					modifier = ongoing_border_conflict
+				}
+			}
+			140 = {
+				remove_dynamic_modifier = {
+					modifier = ongoing_border_conflict
+				}
+			}
+			if = {
+				limit = {
+					has_border_war_between = {
+						attacker = var:border_conflict_state
+						defender = 140
+					}
+				}
+				finalize_border_war = {
+					defender_win = yes
+					attacker = var:border_conflict_state
+					defender = 140
+				}
+			}
+		}
+	}
+}
+
+ORD_looming_steel_crisis = {
+	
+}
+
 ORD_searching_inskyllithe = {
 
 	ORD_search_state = {
@@ -8,9 +3632,14 @@ ORD_searching_inskyllithe = {
 			NOT = {
 				has_country_flag = ORD_recovered_inskyllithe
 			}
-			any_owned_state = {
-				is_core_of = SKA
-				is_controlled_by = ROOT
+			OR = {
+				any_owned_state = {
+					is_core_of = SKA
+					is_controlled_by = ROOT
+				}
+				SKA = {
+					is_subject_of = ORD
+				}
 			}
 		}
 		
@@ -30,7 +3659,7 @@ ORD_searching_inskyllithe = {
 		
 		days_remove = 34
 		
-		complete_effect = {
+		remove_effect = {
 			hidden_effect = {
 				random_list = {
 					97 = {#Nada

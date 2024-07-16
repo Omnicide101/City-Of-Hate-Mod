@@ -9,40 +9,48 @@ spriteTypes = {
 		textureFile = "gfx/interface/modifiers/modifier_tomb_of_inskyllithe.dds"
 	}
 	spriteType = {
+		name = "GFX_modifier_river_patrol"
+		textureFile = "gfx/interface/modifiers/modifier_river_patrol.dds"
+	}
+	spriteType = {
 		name = "GFX_modifier_bandit_haven"
 		textureFile = "gfx/interface/modifiers/modifier_bandit_haven.dds"
 	}
 	spriteType = {
-		name = "GFX_modifier_modifier_darkweald_bandits"
+		name = "GFX_modifier_darkweald_bandits"
 		textureFile = "gfx/interface/modifiers/modifier_darkweald_bandits.dds"
 	}
 	spriteType = {
-		name = "GFX_modifier_modifier_darkweald_bandits_empowered"
+		name = "GFX_modifier_darkweald_bandits_empowered"
 		textureFile = "gfx/interface/modifiers/modifier_darkweald_bandits_empowered.dds"
 	}
 	spriteType = {
-		name = "GFX_modifier_modifier_darkweald_bandits_aligned"
+		name = "GFX_modifier_darkweald_bandits_aligned"
 		textureFile = "gfx/interface/modifiers/modifier_darkweald_bandits_aligned.dds"
 	}
 	spriteType = {
-		name = "GFX_modifier_modifier_newheart_bandits"
+		name = "GFX_modifier_newheart_bandits"
 		textureFile = "gfx/interface/modifiers/modifier_newheart_bandits.dds"
 	}
 	spriteType = {
-		name = "GFX_modifier_modifier_newheart_bandits_empowered"
+		name = "GFX_modifier_newheart_bandits_empowered"
 		textureFile = "gfx/interface/modifiers/modifier_newheart_bandits_empowered.dds"
 	}
 	spriteType = {
-		name = "GFX_modifier_modifier_newheart_bandits_aligned"
+		name = "GFX_modifier_newheart_bandits_aligned"
 		textureFile = "gfx/interface/modifiers/modifier_newheart_bandits_aligned.dds"
 	}
 	spriteType = {
-		name = "GFX_modifier_modifier_ominous_presences"
+		name = "GFX_modifier_ominous_presences"
 		textureFile = "gfx/interface/modifiers/modifier_ominous_presences.dds"
 	}
 	spriteType = {
 		name = "GFX_modifier_drakeskin_guarded_lands"
 		textureFile = "gfx/interface/modifiers/modifier_drakeskin_guarded_lands.dds"
+	}
+	spriteType = {
+		name = "GFX_IRI_Forges_Mobilisation"
+		textureFile = "gfx/interface/ideas/IRI_Forges_Mobilisation.dds"
 	}
 	spriteType = {
 		name = "GFX_modifier_city_erudition"

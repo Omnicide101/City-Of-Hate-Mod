@@ -36,7 +36,8 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 1939.1.1 = {
@@ -48,6 +49,27 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 }
+
+add_opinion_modifier = {
+	target = GOW
+	modifier = threatened_opinion
+}
+
+add_relation_modifier = {
+	target = GOW
+	modifier = threatened_opinion_modifier
+}
+
+add_opinion_modifier = {
+	target = ATH
+	modifier = liked_opinion
+}
+
+add_relation_modifier = {
+	target = ATH
+	modifier = liked_opinion_modifier
+}
+
 
 set_popularities = {
 	monarchy_absolute = 2

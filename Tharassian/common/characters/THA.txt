@@ -1,0 +1,92 @@
+characters={
+	THA_trankhamen={
+		name="Prince Trankhamen"
+		portraits={
+			civilian={
+				large="gfx/leaders/THA/Portrait_THA_Trankhamen.dds"
+			}
+		}
+		country_leader={
+			desc="politics_THA_trankhamen_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_THA_trankhamen_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	THA_amersis={
+		name="Princess Amersis"
+		portraits={
+			civilian={
+				large="gfx/leaders/THA/Portrait_THA_Amersis.dds"
+			}
+		}
+		country_leader={
+			desc="politics_THA_amersis_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	THA_omorose_sant={
+		name="Omorose Sant"
+		portraits={
+			civilian={
+				large="gfx/leaders/THA/Portrait_THA_Omorose.dds"
+			}
+		}
+		country_leader={
+			desc="politics_THA_omorose_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	THA_meire_nubmet={
+		name="Meire Nubmet"
+		portraits={
+			civilian={
+				large="gfx/leaders/THA/Portrait_THA_Meire.dds"
+			}
+		}
+		country_leader={
+			desc="politics_THA_meire_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	THA_arsaphes_mehut={
+		name="Arsaphes Mehut"
+		portraits={
+			civilian={
+				large="gfx/leaders/THA/Portrait_THA_Mehut.dds"
+			}
+		}
+		country_leader={
+			desc="politics_THA_mehut_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	THA_usirtasen_merahat={
+		name="Usirtasen Merahat"
+		portraits={
+			civilian={
+				large="gfx/leaders/THA/Portrait_THA_Merahat.dds"
+			}
+		}
+		country_leader={
+			desc="politics_THA_merahat_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

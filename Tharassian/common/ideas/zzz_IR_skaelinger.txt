@@ -9,6 +9,10 @@ ideas = {
 			allowed = {
 				always = no
 			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
 
 			removal_cost = -1
 
@@ -27,7 +31,11 @@ ideas = {
 			allowed = {
 				always = no
 			}
-
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
 			removal_cost = -1
 
 			modifier = {
@@ -46,6 +54,10 @@ ideas = {
 				always = no
 			}
 
+			allowed_civil_war = {
+				always = yes
+			}
+			
 			removal_cost = -1
 
 			modifier = {
@@ -64,6 +76,10 @@ ideas = {
 				always = no
 			}
 
+			allowed_civil_war = {
+				always = yes
+			}
+			
 			removal_cost = -1
 
 			modifier = {
@@ -82,6 +98,10 @@ ideas = {
 				always = no
 			}
 
+			allowed_civil_war = {
+				always = yes
+			}
+			
 			removal_cost = -1
 
 			modifier = {
@@ -98,6 +118,10 @@ ideas = {
 				always = no
 			}
 
+			allowed_civil_war = {
+				always = yes
+			}
+			
 			removal_cost = -1
 
 			modifier = {
@@ -119,6 +143,10 @@ ideas = {
 				always = no
 			}
 
+			allowed_civil_war = {
+				always = yes
+			}
+			
 			removal_cost = -1
 
 			modifier = {
@@ -139,6 +167,15 @@ ideas = {
 				always = no
 			}
 
+			allowed_civil_war = {
+				NOT = {
+					OR = {
+						has_government = republic_peasant
+						has_government = republic_merchant
+					}
+				}
+			}
+			
 			removal_cost = -1
 
 			modifier = {
@@ -158,6 +195,15 @@ ideas = {
 				always = no
 			}
 
+			allowed_civil_war = {
+				NOT = {
+					OR = {
+						has_government = republic_peasant
+						has_government = republic_merchant
+					}
+				}
+			}
+			
 			removal_cost = -1
 
 			modifier = {
@@ -175,6 +221,15 @@ ideas = {
 
 			allowed = {
 				always = no
+			}
+			
+			allowed_civil_war = {
+				NOT = {
+					OR = {
+						has_government = republic_peasant
+						has_government = republic_merchant
+					}
+				}
 			}
 
 			removal_cost = -1
@@ -194,6 +249,15 @@ ideas = {
 			allowed = {
 				always = no
 			}
+			
+			allowed_civil_war = {
+				NOT = {
+					OR = {
+						has_government = republic_peasant
+						has_government = republic_merchant
+					}
+				}
+			}
 
 			removal_cost = -1
 
@@ -211,7 +275,11 @@ ideas = {
 			allowed = {
 				always = no
 			}
-
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
 			removal_cost = -1
 
 			modifier = {
@@ -229,6 +297,10 @@ ideas = {
 
 			allowed = {
 				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
 			}
 
 			removal_cost = -1
@@ -248,6 +320,10 @@ ideas = {
 			allowed = {
 				always = no
 			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
 
 			removal_cost = -1
 
@@ -264,6 +340,10 @@ ideas = {
 
 			allowed = {
 				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
 			}
 
 			removal_cost = -1
@@ -345,6 +425,12 @@ ideas = {
 
 			allowed = {
 				always = no
+			}
+			
+			allowed_civil_war = {
+				NOT = {
+					has_government = puritan
+				}
 			}
 
 			removal_cost = -1
@@ -1595,6 +1681,76 @@ ideas = {
 				attack_bonus_against = 0.1
 				defense_bonus_against = 0.05
 			}
+		}
+
+	}
+
+	mercenary_company = {
+
+		SKA_paramilitary_support = {
+
+			picture = rth_peasant_army
+
+			allowed = {
+				tag = SKA
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			available = {
+				if = {
+					limit = {
+						OR = {
+							has_government = monarchy_constitutional
+							has_government = republic_merchant
+						}
+					}
+					has_war_with = ORD
+					NOT = {
+						OR = {
+							has_completed_focus = SKA_teach_of_extremisms_horrors
+							has_completed_focus = SKA_the_emergency_decree
+							has_completed_focus = SKA_traditionalism
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_government = republic_aristocrat
+					}
+					always = no
+				}
+			}
+
+			on_add = {
+				add_to_variable = { SKA_social_war_soltruist_inf = 1 }
+				add_to_variable = { SKA_social_war_boe_inf = 1 }
+				add_to_variable = { SKA_social_war_iron_blood_inf = 1 }
+			}
+
+			on_remove = {
+				delete_unit_template_and_units = {
+					division_template = "Paramilitarists"
+				}
+			}
+
+			cost = 75
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				weekly_manpower = 10
+				training_time_factor = -0.1
+				stability_factor = -0.1
+			}
+
 		}
 
 	}

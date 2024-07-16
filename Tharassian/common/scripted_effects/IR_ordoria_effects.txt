@@ -1,7 +1,1178 @@
+#Set the ratios of power between the various factions
+set_faction_power_ratios = {
+	set_traditionalist_to_royalist_power_ratio = yes
+	set_traditionalist_to_sophist_power_ratio = yes
+	set_sophist_to_royalist_power_ratio = yes
+	set_sophist_to_traditionalist_power_ratio = yes
+	set_royalist_to_traditionalist_power_ratio = yes
+	set_royalist_to_sophist_power_ratio = yes
+}
+
+set_traditionalist_to_royalist_power_ratio = {
+
+	set_variable = {
+		trad_royal_power_ratio = ORD_traditionalists_influence
+	}
+	
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_influence < 1
+			}
+		}
+		set_variable = {
+			trad_royal_power_ratio = 100 #Can't divide by zero and we don't wanna flip it negative
+		}
+	}
+	
+	else = {
+		divide_variable = {
+			trad_royal_power_ratio = ORD_moderates_influence
+		}
+	}
+}
+
+set_traditionalist_to_sophist_power_ratio = {
+
+	set_variable = {
+		trad_faith_power_ratio = ORD_traditionalists_influence
+	}
+	
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_influence < 1
+			}
+		}
+		set_variable = {
+			trad_faith_power_ratio = 100 #Can't divide by zero and we don't wanna flip it negative
+		}
+	}
+	
+	else = {
+		divide_variable = {
+			trad_faith_power_ratio = ORD_faithful_influence
+		}
+	}
+	
+}
+
+set_sophist_to_royalist_power_ratio = {
+
+	set_variable = {
+		faith_royal_power_ratio = ORD_faithful_influence
+	}
+	
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_influence < 1
+			}
+		}
+		set_variable = {
+			faith_royal_power_ratio = 100 #Can't divide by zero and we don't wanna flip it negative
+		}
+	}
+	
+	else = {
+		divide_variable = {
+			faith_royal_power_ratio = ORD_moderates_influence
+		}
+	}
+}
+
+set_sophist_to_traditionalist_power_ratio = {
+
+	set_variable = {
+		faith_trad_power_ratio = ORD_faithful_influence
+	}
+	
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_influence < 1
+			}
+		}
+		set_variable = {
+			faith_trad_power_ratio = 100 #Can't divide by zero and we don't wanna flip it negative
+		}
+	}
+	
+	else = {
+		divide_variable = {
+			faith_trad_power_ratio = ORD_traditionalists_influence
+		}
+	}
+}
+
+set_royalist_to_traditionalist_power_ratio = {
+
+	set_variable = {
+		royal_trad_power_ratio = ORD_moderates_influence
+	}
+	
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_influence < 1
+			}
+		}
+		set_variable = {
+			royal_trad_power_ratio = 100 #Can't divide by zero and we don't wanna flip it negative
+		}
+	}
+	
+	else = {
+		divide_variable = {
+			royal_trad_power_ratio = ORD_traditionalists_influence
+		}
+	}
+}
+
+set_royalist_to_sophist_power_ratio = {
+
+	set_variable = {
+		royal_faith_power_ratio = ORD_moderates_influence
+	}
+	
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_influence < 1
+			}
+		}
+		set_variable = {
+			royal_faith_power_ratio = 100 #Can't divide by zero and we don't wanna flip it negative
+		}
+	}
+	
+	else = {
+		divide_variable = {
+			royal_faith_power_ratio = ORD_faithful_influence
+		}
+	}
+}
+
+#Influences of the Loyalty and Power mechanics
+set_ordoria_loyalty_power_mechanics = {
+	
+	#Traditionalists
+	set_variable = { #Traditionalist Loyalty gives PP
+		var = ORD_trad_loyalty_effect
+		value = ORD_traditionalists_loyalty
+	}
+	
+	multiply_variable = {
+		var = ORD_trad_loyalty_effect
+		value = 0.01
+	}
+	
+	set_variable = { #Traditionalist Power gives factory output
+		var = ORD_trad_power_effect
+		value = ORD_traditionalists_influence
+	}
+	
+	multiply_variable = {
+		var = ORD_trad_power_effect
+		value = 0.01
+	}
+	
+	#Faithful
+	set_variable = { #Sophist Loyalty gives War Support
+		var = ORD_faith_loyalty_effect
+		value = ORD_faithful_loyalty
+	}
+	
+	multiply_variable = {
+		var = ORD_faith_loyalty_effect
+		value = 0.01
+	}
+	
+	set_variable = { #Sophist Power gives surrender limit
+		var = ORD_trad_power_effect
+		value = ORD_faithful_influence
+	}
+	
+	multiply_variable = {
+		var = ORD_faith_power_effect
+		value = 0.01
+	}
+	
+	#Moderates
+	set_variable = { #Royalist Loyalty gives War Support
+		var = ORD_mod_loyalty_effect
+		value = ORD_moderates_loyalty
+	}
+	
+	multiply_variable = {
+		var = ORD_mod_loyalty_effect
+		value = 0.01
+	}
+	
+	set_variable = { #Royalist Power gives surrender limit
+		var = ORD_mod_power_effect
+		value = ORD_moderates_influence
+	}
+	
+	multiply_variable = {
+		var = ORD_mod_power_effect
+		value = 0.01
+	}
+}	
+
+#Shorthands for increasing and decreasing loyalty and influence of the big three factions
+ORD_improve_trad_loyalty_1 = {
+	custom_effect_tooltip = ORD_please_trads_1
+	add_to_variable = {
+		ORD_traditionalists_loyalty = 1
+	}
+}
+ORD_improve_trad_loyalty_2 = {
+	custom_effect_tooltip = ORD_please_trads_2
+	add_to_variable = {
+		ORD_traditionalists_loyalty = 2
+	}
+}
+ORD_improve_trad_loyalty_3 = {
+	custom_effect_tooltip = ORD_please_trads_3
+	add_to_variable = {
+		ORD_traditionalists_loyalty = 3
+	}
+}
+ORD_improve_trad_loyalty_4 = {
+	custom_effect_tooltip = ORD_please_trads_4
+	add_to_variable = {
+		ORD_traditionalists_loyalty = 4
+	}
+}
+ORD_improve_trad_loyalty_5 = {
+	custom_effect_tooltip = ORD_please_trads_5
+	add_to_variable = {
+		ORD_traditionalists_loyalty = 5
+	}
+}
+ORD_improve_trad_loyalty_7 = {
+	custom_effect_tooltip = ORD_please_trads_7
+	add_to_variable = {
+		ORD_traditionalists_loyalty = 7
+	}
+}
+ORD_improve_trad_loyalty_10 = {
+	custom_effect_tooltip = ORD_please_trads_10
+	add_to_variable = {
+		ORD_traditionalists_loyalty = 10
+	}
+}
+
+ORD_worsen_trad_loyalty_1 = {
+	custom_effect_tooltip = ORD_displease_trads_1
+	subtract_from_variable = {
+		ORD_traditionalists_loyalty = 1
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_loyalty = 0
+		}
+	}
+}
+ORD_worsen_trad_loyalty_2 = {
+	custom_effect_tooltip = ORD_displease_trads_2
+	subtract_from_variable = {
+		ORD_traditionalists_loyalty = 2
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_loyalty = 0
+		}
+	}
+}
+ORD_worsen_trad_loyalty_3 = {
+	custom_effect_tooltip = ORD_displease_trads_3
+	subtract_from_variable = {
+		ORD_traditionalists_loyalty = 3
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_loyalty = 0
+		}
+	}
+}
+ORD_worsen_trad_loyalty_4 = {
+	custom_effect_tooltip = ORD_displease_trads_4
+	subtract_from_variable = {
+		ORD_traditionalists_loyalty = 4
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_loyalty = 0
+		}
+	}
+}
+ORD_worsen_trad_loyalty_5 = {
+	custom_effect_tooltip = ORD_displease_trads_5
+	subtract_from_variable = {
+		ORD_traditionalists_loyalty = 5
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_loyalty = 0
+		}
+	}
+}
+ORD_worsen_trad_loyalty_7 = {
+	custom_effect_tooltip = ORD_displease_trads_7
+	subtract_from_variable = {
+		ORD_traditionalists_loyalty = 7
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_loyalty = 0
+		}
+	}
+}
+ORD_worsen_trad_loyalty_10 = {
+	custom_effect_tooltip = ORD_displease_trads_10
+	subtract_from_variable = {
+		ORD_traditionalists_loyalty = 10
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_loyalty = 0
+		}
+	}
+}
+
+ORD_improve_trad_power_1 = {
+	custom_effect_tooltip = ORD_empower_trads_1
+	add_to_variable = {
+		ORD_traditionalists_influence = 1
+	}
+}
+ORD_improve_trad_power_2 = {
+	custom_effect_tooltip = ORD_empower_trads_2
+	add_to_variable = {
+		ORD_traditionalists_influence = 2
+	}
+}
+ORD_improve_trad_power_3 = {
+	custom_effect_tooltip = ORD_empower_trads_3
+	add_to_variable = {
+		ORD_traditionalists_influence = 3
+	}
+}
+ORD_improve_trad_power_4 = {
+	custom_effect_tooltip = ORD_empower_trads_4
+	add_to_variable = {
+		ORD_traditionalists_influence = 4
+	}
+}
+ORD_improve_trad_power_5 = {
+	custom_effect_tooltip = ORD_empower_trads_5
+	add_to_variable = {
+		ORD_traditionalists_influence = 5
+	}
+}
+ORD_improve_trad_power_7 = {
+	custom_effect_tooltip = ORD_empower_trads_7
+	add_to_variable = {
+		ORD_traditionalists_influence = 7
+	}
+}
+ORD_improve_trad_power_10 = {
+	custom_effect_tooltip = ORD_empower_trads_10
+	add_to_variable = {
+		ORD_traditionalists_influence = 10
+	}
+}
+
+ORD_worsen_trad_power_1 = {
+	custom_effect_tooltip = ORD_disempower_trads_1
+	subtract_from_variable = {
+		ORD_traditionalists_influence = 1
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_influence = 0
+		}
+	}
+}
+ORD_worsen_trad_power_2 = {
+	custom_effect_tooltip = ORD_disempower_trads_2
+	subtract_from_variable = {
+		ORD_traditionalists_influence = 2
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_influence = 0
+		}
+	}
+}
+ORD_worsen_trad_power_3 = {
+	custom_effect_tooltip = ORD_disempower_trads_3
+	subtract_from_variable = {
+		ORD_traditionalists_influence = 3
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_influence = 0
+		}
+	}
+}
+ORD_worsen_trad_power_4 = {
+	custom_effect_tooltip = ORD_disempower_trads_4
+	subtract_from_variable = {
+		ORD_traditionalists_influence = 4
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_influence = 0
+		}
+	}
+}
+ORD_worsen_trad_power_5 = {
+	custom_effect_tooltip = ORD_disempower_trads_5
+	subtract_from_variable = {
+		ORD_traditionalists_influence = 5
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_influence = 0
+		}
+	}
+}
+ORD_worsen_trad_power_7 = {
+	custom_effect_tooltip = ORD_disempower_trads_7
+	subtract_from_variable = {
+		ORD_traditionalists_influence = 7
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_influence = 0
+		}
+	}
+}
+ORD_worsen_trad_power_10 = {
+	custom_effect_tooltip = ORD_disempower_trads_10
+	subtract_from_variable = {
+		ORD_traditionalists_influence = 10
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_traditionalists_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_traditionalists_influence = 0
+		}
+	}
+}
+
+ORD_improve_royal_loyalty_1 = {
+	custom_effect_tooltip = ORD_please_mods_1
+	add_to_variable = {
+		ORD_moderates_loyalty = 1
+	}
+}
+ORD_improve_royal_loyalty_2 = {
+	custom_effect_tooltip = ORD_please_mods_2
+	add_to_variable = {
+		ORD_moderates_loyalty = 2
+	}
+}
+ORD_improve_royal_loyalty_3 = {
+	custom_effect_tooltip = ORD_please_mods_3
+	add_to_variable = {
+		ORD_moderates_loyalty = 3
+	}
+}
+ORD_improve_royal_loyalty_4 = {
+	custom_effect_tooltip = ORD_please_mods_4
+	add_to_variable = {
+		ORD_moderates_loyalty = 4
+	}
+}
+ORD_improve_royal_loyalty_5 = {
+	custom_effect_tooltip = ORD_please_mods_5
+	add_to_variable = {
+		ORD_moderates_loyalty = 5
+	}
+}
+ORD_improve_royal_loyalty_7 = {
+	custom_effect_tooltip = ORD_please_mods_7
+	add_to_variable = {
+		ORD_moderates_loyalty = 7
+	}
+}
+ORD_improve_royal_loyalty_10 = {
+	custom_effect_tooltip = ORD_please_mods_10
+	add_to_variable = {
+		ORD_moderates_loyalty = 10
+	}
+}
+
+ORD_worsen_royal_loyalty_1 = {
+	custom_effect_tooltip = ORD_displease_mods_1
+	subtract_from_variable = {
+		ORD_moderates_loyalty = 1
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_loyalty = 0
+		}
+	}
+}
+ORD_worsen_royal_loyalty_2 = {
+	custom_effect_tooltip = ORD_displease_mods_2
+	subtract_from_variable = {
+		ORD_moderates_loyalty = 2
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_loyalty = 0
+		}
+	}
+}
+ORD_worsen_royal_loyalty_3 = {
+	custom_effect_tooltip = ORD_displease_mods_3
+	subtract_from_variable = {
+		ORD_moderates_loyalty = 3
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_loyalty = 0
+		}
+	}
+}
+ORD_worsen_royal_loyalty_4 = {
+	custom_effect_tooltip = ORD_displease_mods_4
+	subtract_from_variable = {
+		ORD_moderates_loyalty = 4
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_loyalty = 0
+		}
+	}
+}
+ORD_worsen_royal_loyalty_5 = {
+	custom_effect_tooltip = ORD_displease_mods_5
+	subtract_from_variable = {
+		ORD_moderates_loyalty = 5
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_loyalty = 0
+		}
+	}
+}
+ORD_worsen_royal_loyalty_7 = {
+	custom_effect_tooltip = ORD_displease_mods_7
+	subtract_from_variable = {
+		ORD_moderates_loyalty = 7
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_loyalty = 0
+		}
+	}
+}
+ORD_worsen_royal_loyalty_10 = {
+	custom_effect_tooltip = ORD_displease_mods_10
+	subtract_from_variable = {
+		ORD_moderates_loyalty = 10
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_loyalty = 0
+		}
+	}
+}
+
+ORD_improve_royal_power_1 = {
+	custom_effect_tooltip = ORD_empower_mods_1
+	add_to_variable = {
+		ORD_moderates_influence = 1
+	}
+}
+ORD_improve_royal_power_2 = {
+	custom_effect_tooltip = ORD_empower_mods_2
+	add_to_variable = {
+		ORD_moderates_influence = 2
+	}
+}
+ORD_improve_royal_power_3 = {
+	custom_effect_tooltip = ORD_empower_mods_3
+	add_to_variable = {
+		ORD_moderates_influence = 3
+	}
+}
+ORD_improve_royal_power_4 = {
+	custom_effect_tooltip = ORD_empower_mods_4
+	add_to_variable = {
+		ORD_moderates_influence = 4
+	}
+}
+ORD_improve_royal_power_5 = {
+	custom_effect_tooltip = ORD_empower_mods_5
+	add_to_variable = {
+		ORD_moderates_influence = 5
+	}
+}
+ORD_improve_royal_power_7 = {
+	custom_effect_tooltip = ORD_empower_mods_7
+	add_to_variable = {
+		ORD_moderates_influence = 7
+	}
+}
+ORD_improve_royal_power_10 = {
+	custom_effect_tooltip = ORD_empower_mods_10
+	add_to_variable = {
+		ORD_moderates_influence = 10
+	}
+}
+
+ORD_worsen_royal_power_1 = {
+	custom_effect_tooltip = ORD_disempower_mods_1
+	subtract_from_variable = {
+		ORD_moderates_influence = 1
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_influence = 0
+		}
+	}
+}
+ORD_worsen_royal_power_2 = {
+	custom_effect_tooltip = ORD_disempower_mods_2
+	subtract_from_variable = {
+		ORD_moderates_influence = 2
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_influence = 0
+		}
+	}
+}
+ORD_worsen_royal_power_3 = {
+	custom_effect_tooltip = ORD_disempower_mods_3
+	subtract_from_variable = {
+		ORD_moderates_influence = 3
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_influence = 0
+		}
+	}
+}
+ORD_worsen_royal_power_4 = {
+	custom_effect_tooltip = ORD_disempower_mods_4
+	subtract_from_variable = {
+		ORD_moderates_influence = 4
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_influence = 0
+		}
+	}
+}
+ORD_worsen_royal_power_5 = {
+	custom_effect_tooltip = ORD_disempower_mods_5
+	subtract_from_variable = {
+		ORD_moderates_influence = 5
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_influence = 0
+		}
+	}
+}
+ORD_worsen_royal_power_7 = {
+	custom_effect_tooltip = ORD_disempower_mods_7
+	subtract_from_variable = {
+		ORD_moderates_influence = 7
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_influence = 0
+		}
+	}
+}
+ORD_worsen_royal_power_10 = {
+	custom_effect_tooltip = ORD_disempower_mods_10
+	subtract_from_variable = {
+		ORD_moderates_influence = 10
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_moderates_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_moderates_influence = 0
+		}
+	}
+}
+
+ORD_improve_faith_loyalty_1 = {
+	custom_effect_tooltip = ORD_please_faiths_1
+	add_to_variable = {
+		ORD_faithful_loyalty = 1
+	}
+}
+ORD_improve_faith_loyalty_2 = {
+	custom_effect_tooltip = ORD_please_faiths_2
+	add_to_variable = {
+		ORD_faithful_loyalty = 2
+	}
+}
+ORD_improve_faith_loyalty_3 = {
+	custom_effect_tooltip = ORD_please_faiths_3
+	add_to_variable = {
+		ORD_faithful_loyalty = 3
+	}
+}
+ORD_improve_faith_loyalty_4 = {
+	custom_effect_tooltip = ORD_please_faiths_4
+	add_to_variable = {
+		ORD_faithful_loyalty = 4
+	}
+}
+ORD_improve_faith_loyalty_5 = {
+	custom_effect_tooltip = ORD_please_faiths_5
+	add_to_variable = {
+		ORD_faithful_loyalty = 5
+	}
+}
+ORD_improve_faith_loyalty_7 = {
+	custom_effect_tooltip = ORD_please_faiths_7
+	add_to_variable = {
+		ORD_faithful_loyalty = 7
+	}
+}
+ORD_improve_faith_loyalty_10 = {
+	custom_effect_tooltip = ORD_please_faiths_10
+	add_to_variable = {
+		ORD_faithful_loyalty = 10
+	}
+}
+
+ORD_worsen_faith_loyalty_1 = {
+	custom_effect_tooltip = ORD_displease_faiths_1
+	subtract_from_variable = {
+		ORD_faithful_loyalty = 1
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_loyalty = 0
+		}
+	}
+}
+ORD_worsen_faith_loyalty_2 = {
+	custom_effect_tooltip = ORD_displease_faiths_2
+	subtract_from_variable = {
+		ORD_faithful_loyalty = 2
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_loyalty = 0
+		}
+	}
+}
+ORD_worsen_faith_loyalty_3 = {
+	custom_effect_tooltip = ORD_displease_faiths_3
+	subtract_from_variable = {
+		ORD_faithful_loyalty = 3
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_loyalty = 0
+		}
+	}
+}
+ORD_worsen_faith_loyalty_4 = {
+	custom_effect_tooltip = ORD_displease_faiths_4
+	subtract_from_variable = {
+		ORD_faithful_loyalty = 4
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_loyalty = 0
+		}
+	}
+}
+ORD_worsen_faith_loyalty_5 = {
+	custom_effect_tooltip = ORD_displease_faiths_5
+	subtract_from_variable = {
+		ORD_faithful_loyalty = 5
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_loyalty = 0
+		}
+	}
+}
+ORD_worsen_faith_loyalty_7 = {
+	custom_effect_tooltip = ORD_displease_faiths_7
+	subtract_from_variable = {
+		ORD_faithful_loyalty = 7
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_loyalty = 0
+		}
+	}
+}
+ORD_worsen_faith_loyalty_10 = {
+	custom_effect_tooltip = ORD_displease_faiths_10
+	subtract_from_variable = {
+		ORD_faithful_loyalty = 10
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_loyalty < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_loyalty = 0
+		}
+	}
+}
+
+ORD_improve_faith_power_1 = {
+	custom_effect_tooltip = ORD_empower_faiths_1
+	add_to_variable = {
+		ORD_faithful_influence = 1
+	}
+}
+ORD_improve_faith_power_2 = {
+	custom_effect_tooltip = ORD_empower_faiths_2
+	add_to_variable = {
+		ORD_faithful_influence = 2
+	}
+}
+ORD_improve_faith_power_3 = {
+	custom_effect_tooltip = ORD_empower_faiths_3
+	add_to_variable = {
+		ORD_faithful_influence = 3
+	}
+}
+ORD_improve_faith_power_4 = {
+	custom_effect_tooltip = ORD_empower_faiths_4
+	add_to_variable = {
+		ORD_faithful_influence = 4
+	}
+}
+ORD_improve_faith_power_5 = {
+	custom_effect_tooltip = ORD_empower_faiths_5
+	add_to_variable = {
+		ORD_faithful_influence = 5
+	}
+}
+ORD_improve_faith_power_7 = {
+	custom_effect_tooltip = ORD_empower_faiths_7
+	add_to_variable = {
+		ORD_faithful_influence = 7
+	}
+}
+ORD_improve_faith_power_10 = {
+	custom_effect_tooltip = ORD_empower_faiths_10
+	add_to_variable = {
+		ORD_faithful_influence = 10
+	}
+}
+
+ORD_worsen_faith_power_1 = {
+	custom_effect_tooltip = ORD_disempower_faiths_1
+	subtract_from_variable = {
+		ORD_faithful_influence = 1
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_influence = 0
+		}
+	}
+}
+ORD_worsen_faith_power_2 = {
+	custom_effect_tooltip = ORD_disempower_faiths_2
+	subtract_from_variable = {
+		ORD_faithful_influence = 2
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_influence = 0
+		}
+	}
+}
+ORD_worsen_faith_power_3 = {
+	custom_effect_tooltip = ORD_disempower_faiths_3
+	subtract_from_variable = {
+		ORD_faithful_influence = 3
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_influence = 0
+		}
+	}
+}
+ORD_worsen_faith_power_4 = {
+	custom_effect_tooltip = ORD_disempower_faiths_4
+	subtract_from_variable = {
+		ORD_faithful_influence = 4
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_influence = 0
+		}
+	}	
+}
+ORD_worsen_faith_power_5 = {
+	custom_effect_tooltip = ORD_disempower_faiths_5
+	subtract_from_variable = {
+		ORD_faithful_influence = 5
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_influence = 0
+		}
+	}
+}
+ORD_worsen_faith_power_7 = {
+	custom_effect_tooltip = ORD_disempower_faiths_7
+	subtract_from_variable = {
+		ORD_faithful_influence = 7
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_influence = 0
+		}
+	}
+}
+ORD_worsen_faith_power_10 = {
+	custom_effect_tooltip = ORD_disempower_faiths_10
+	subtract_from_variable = {
+		ORD_faithful_influence = 10
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ORD_faithful_influence < 0
+			}
+		}
+		set_variable = {
+			ORD_faithful_influence = 0
+		}
+	}
+}
+
+
+#Larennis' Idealism mechanic
 larennis_cynicism_big = {
 	custom_effect_tooltip = ORD_larennis_cynicism_big
 	subtract_from_variable = {
 		larennis_idealism = 10
+	}
+	if = {
+		limit = {
+			check_variable = {
+				larennis_idealism < 0
+			}
+		}
+		set_variable = {
+			larennis_idealism = 0
+		}
 	}
 }
 
@@ -10,12 +1181,32 @@ larennis_cynicism_medium = {
 	subtract_from_variable = {
 		larennis_idealism = 5
 	}
+	if = {
+		limit = {
+			check_variable = {
+				larennis_idealism < 0
+			}
+		}
+		set_variable = {
+			larennis_idealism = 0
+		}
+	}
 }
 
 larennis_cynicism_small = {
 	custom_effect_tooltip = ORD_larennis_cynicism_small
 	subtract_from_variable = {
 		larennis_idealism = 3
+	}
+	if = {
+		limit = {
+			check_variable = {
+				larennis_idealism < 0
+			}
+		}
+		set_variable = {
+			larennis_idealism = 0
+		}
 	}
 }
 
@@ -31,6 +1222,16 @@ larennis_idealism_medium = {
 	add_to_variable = {
 		larennis_idealism = 5
 	}
+	if = {
+		limit = {
+			check_variable = {
+				larennis_idealism > 100
+			}
+		}
+		set_variable = {
+			larennis_idealism = 100
+		}
+	}
 }
 
 larennis_idealism_small = {
@@ -38,8 +1239,19 @@ larennis_idealism_small = {
 	add_to_variable = {
 		larennis_idealism = 3
 	}
+	if = {
+		limit = {
+			check_variable = {
+				larennis_idealism > 100
+			}
+		}
+		set_variable = {
+			larennis_idealism = 100
+		}
+	}
 }
 
+#Tweaking prominence of slavery
 ORD_strengthen_slavery = {
 	if = {
 		limit = {
@@ -138,6 +1350,7 @@ ORD_weaken_slavery = {
 	}
 }
 
+#Lothinnys' Industrialization mechanic
 ORD_industrialize = {
 	if = {
 		limit = {

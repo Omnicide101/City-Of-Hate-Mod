@@ -38,6 +38,11 @@ spriteTypes = {
 	}
 	
 	SpriteType = {
+		name = "GFX_ship_hull_heavy_medium"
+		texturefile = "gfx/interface/technologies/heavy_ship.dds"
+	}
+	
+	SpriteType = {
 		name = "GFX_carts_equipment_1"
 		texturefile = "gfx/interface/technologies/carts_equipment_1.dds"
 	}

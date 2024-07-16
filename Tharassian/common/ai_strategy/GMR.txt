@@ -30,7 +30,7 @@ dont_hog_ordorian_supplies = {
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "ORD"			
+		id = ORD			
 		value = 500
 	}
 }
@@ -51,12 +51,12 @@ ordorian_buddies = {
 	
 	ai_strategy = {
 		type = befriend
-		id = "ORD"			
+		id = ORD			
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "ORD"			
+		id = ORD			
 		value = 200
 	}	
 }
@@ -75,12 +75,12 @@ union_buddies = {
 	
 	ai_strategy = {
 		type = befriend
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 }
@@ -109,36 +109,36 @@ target_fireforge_steel = {#Go after Rimatü or Vergallheim, depending on who own
 	
 	ai_strategy = {
 		type = antagonize
-		id = "RMT"			
+		id = RMT			
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "RMT"			
+		id = RMT			
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = diplo_action_desire
-		id = "RMT"
+		id = RMT
 		target = generate_wargoal
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = antagonize
-		id = "VRG"			
+		id = VRG			
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "VRG"			
+		id = VRG			
 		value = 200
 	}
 	
 	ai_strategy = {
 		type = diplo_action_desire
-		id = "VRG"
+		id = VRG
 		target = generate_wargoal
 		value = 200
 	}
@@ -169,17 +169,17 @@ end_northern_menace = {#Put down Lirothlind
 	
 	ai_strategy = {
 		type = antagonize
-		id = "LIR"			
+		id = LIR			
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "LIR"			
+		id = LIR			
 		value = 200
 	}
 	ai_strategy = {
 		type = diplo_action_desire
-		id = "LIR"
+		id = LIR
 		target = generate_wargoal
 		value = 200
 	}

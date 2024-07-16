@@ -1,0 +1,23 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Cabhlach Ceannaí"
+		naval_base = 4249 # Taitneach
+		task_force = {
+			name = "Flít Bonn"
+			location = 4249 # Taitneach
+			ship = { name = "Brabús" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = GOW version_name = "Taidhleoir-Class" } } }
+			ship = { name = "Airgead" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = GOW version_name = "Taidhleoir-Class" } } }
+			ship = { name = "Cáin" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = GOW version_name = "Taidhleoir-Class" } } }
+			ship = { name = "Brú" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GOW version_name = "Trádálaí-Class" } } }
+			ship = { name = "Stoic" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GOW version_name = "Trádálaí-Class" } } }
+			ship = { name = "Corrlach" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GOW version_name = "Trádálaí-Class" } } }
+			ship = { name = "Dreasacht" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GOW version_name = "Trádálaí-Class" } } }
+			ship = { name = "Caimiléir" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GOW version_name = "Trádálaí-Class" } } }
+			ship = { name = "Margadh" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GOW version_name = "Trádálaí-Class" } } }
+			ship = { name = "Pinginí" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GOW version_name = "Trádálaí-Class" } } }
+			ship = { name = "Ceannaitheoir" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GOW version_name = "Trádálaí-Class" } } }
+		}
+	}
+}

@@ -534,6 +534,12 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	
 	containerWindowType = {
@@ -571,6 +577,12 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	
 	containerWindowType = {
@@ -607,6 +619,12 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 
@@ -697,8 +715,13 @@ guiTypes = {
 				spriteType = "GFX_subtech_td"
 				alwaystransparent = yes
 			}
-		}	
+		}
 		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	
 	containerWindowType = {
@@ -787,8 +810,13 @@ guiTypes = {
 				spriteType = "GFX_subtech_td"
 				alwaystransparent = yes
 			}
-		}	
+		}
 		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	
 	containerWindowType = {
@@ -879,6 +907,12 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 
 	containerWindowType = {
@@ -947,8 +981,13 @@ guiTypes = {
 				spriteType = "GFX_subtech_rocket"
 				alwaystransparent = yes
 			}
-		}		
+		}
 		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	
 	containerWindowType = {
@@ -985,6 +1024,12 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}	
 	
@@ -1093,8 +1138,13 @@ guiTypes = {
 				spriteType = "GFX_subtech_aa"
 				alwaystransparent = yes
 			}
-		}		
+		}
 		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 
 	containerWindowType = {
@@ -1129,6 +1179,12 @@ guiTypes = {
 			maxWidth = 50
 			maxHeight = 20
 			format = right
+		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 
@@ -1180,6 +1236,12 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 
@@ -1250,8 +1312,13 @@ guiTypes = {
 				spriteType = "GFX_airwing_carrier_icon"
 				alwaystransparent = yes
 			}
-		}		
+		}
 		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 
 	containerWindowType = {
@@ -1287,6 +1354,12 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}	
 	
@@ -1339,7 +1412,14 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
+
 	containerWindowType = {
 		name = "techtree_mtgnavalfolder_small_item" 
 		position = { x=0 y=5 }
@@ -1374,7 +1454,13 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
-	}	
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
 	
 	containerWindowType = {
 		name = "techtree_mtgnavalfolder_item"
@@ -1443,6 +1529,12 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	containerWindowType = {
 		name = "techtree_land_doctrine_folder_item"
@@ -1477,6 +1569,12 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 
@@ -1514,6 +1612,12 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 
 	containerWindowType = {
@@ -1549,6 +1653,12 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 
@@ -1587,6 +1697,12 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 
 	containerWindowType = {
@@ -1606,6 +1722,12 @@ guiTypes = {
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 	
@@ -1644,6 +1766,12 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 
 	containerWindowType = {
@@ -1661,6 +1789,12 @@ guiTypes = {
 			name = "Second"
 			position = { x=0 y=0 }
 			spriteType = "GFX_techtree_xor_right"
+		}
+		
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 

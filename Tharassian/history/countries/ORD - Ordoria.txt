@@ -3,6 +3,17 @@
 set_major = yes
 
 set_oob = "ORD_1936"
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "ORD_1936_naval_mtg"
+	else = {
+		set_naval_oob = "ORD_1936_naval"
+	}
+}
+
+set_research_slots = 4
 
 set_technology ={
 	tech_tribal_pride = 1
@@ -22,6 +33,8 @@ set_technology ={
 	improved_woodworking = 1
 	recurve_bow = 1
 	broadhead_arrows = 1
+	bodkin_arrows = 1
+	longbow = 1
 	horseback_riding = 1
 	mounted_warriors = 1
 	saddles = 1
@@ -37,12 +50,43 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
+}
+
+set_variable = {
+	var = ORD_steel_crisis_division_limit
+	value = 47
+}
+
+set_variable = {
+	var = ORD_steel_crisis_multiplier_war_support
+	value = 0
+}
+
+set_variable = {
+	var = ORD_steel_crisis_multiplier_attack
+	value = 0
+}
+
+set_variable = {
+	var = ORD_steel_crisis_multiplier_defence
+	value = 0
+}
+
+set_variable = {
+	var = ORD_steel_crisis_multiplier_breakthrough
+	value = 0
+}
+
+set_variable = {
+	var = ORD_steel_crisis_multiplier_resource_penalty
+	value = 0
 }
 
 set_variable = {
 	var = ORD_moderates_influence
-	value = 0
+	value = 1
 }
 
 set_variable = {
@@ -116,6 +160,11 @@ set_popularities = {
 	recruit_character = ORD_arun_fenmys
 	recruit_character = ORD_taenaran_sylquinal
 	recruit_character = ORD_namys_yesydark
+	recruit_character = ORD_thrystyr_gadayn
+	recruit_character = ORD_galadywe_tolhyn
+	recruit_character = ORD_khyriad_systhen
+	recruit_character = ORD_dasyn_maryd
+	recruit_character = ORD_vysiara_kylas
 
 	activate_advisor = isvenith_lothinnys
 
@@ -134,7 +183,7 @@ set_popularities = {
 		ORD_firstborn_state
 		ORD_fragmented_government
 		ORD_rthaur_rebellion
-		ORD_looming_steel_crisis
+		ORD_looming_steel_crisis_idea
 		ORD_disrupted_industry
 		ORD_slavery_3
 		elf_country
@@ -158,4 +207,84 @@ set_popularities = {
 	create_intelligence_agency = {
 		name = "Oath of Harquiss"
 		icon = GFX_intelligence_agency_logo_ord
+	}
+
+	if = {
+		limit = {
+			NOT = {
+				has_dlc = "Man the Guns"
+			}
+		}
+		### Variants ###
+		# Destroyers #
+		create_equipment_variant = {
+			name = "Orthor-Class"
+			type = destroyer_1
+			parent_version = 0
+			upgrades = {
+				
+			}
+		}
+		# Light Cruisers #
+		create_equipment_variant = {
+			name = "Issa-Class"
+			type = destroyer_1 #Should be light cruiser
+			parent_version = 0
+			upgrades = {
+				
+			}
+		}
+		# Heavy Cruisers #
+		create_equipment_variant = {
+			name = "Quwyl-Class"
+			type = heavy_cruiser_1
+			parent_version = 0
+			upgrades = {
+				
+			}
+		}
+	}
+
+	if = {
+		limit = { 
+			has_dlc = "Man the Guns"
+		}
+		### Variants ###
+		# Destroyers #
+		create_equipment_variant = {
+			name = "Orthor-Class"
+			type = ship_hull_light_1
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = light_ship_ballista_0
+				fixed_ship_engine_slot = light_ship_rowers_0
+			}
+		}
+		# Light Cruisers #
+		#create_equipment_variant = {
+		#		name = "Issa-Class"
+		#		type = ship_hull_cruiser_0
+		#		parent_version = 0
+		#		modules = {
+		#			fixed_ship_battery_slot = ship_medium_battery_1
+		#			fixed_ship_anti_air_slot = empty
+		#			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+		#			fixed_ship_radar_slot = empty
+		#			fixed_ship_engine_slot = cruiser_ship_engine_2
+		#			fixed_ship_armor_slot = ship_armor_cruiser_2
+		#			mid_1_custom_slot = ship_torpedo_1
+		#			mid_2_custom_slot = ship_secondaries_2
+		#			rear_1_custom_slot = ship_light_medium_battery_2
+		#		}
+		#}
+		# Heavy Cruisers #
+		create_equipment_variant = {
+			name = "Quwyl-Class"
+			type = ship_hull_heavy_1
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = heavy_ship_ballista_0
+				fixed_ship_engine_slot = heavy_ship_rowers_0
+			}
+		}
 	}

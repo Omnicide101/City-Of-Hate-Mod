@@ -1,0 +1,97 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+secure_princes_passage = {
+	enable = {
+		original_tag = THA
+		country_exists = DEL
+		503 = {
+			is_owned_by = DEL
+		}
+		date > 888.1.1
+		has_war = no
+		DEL = {
+			is_not_sphered = yes
+		}
+		is_subject = no
+		NOT = {
+			is_justifying_wargoal_against = DEL
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = conquer
+		id = DEL
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = DEL
+		value = 200
+	}
+	ai_strategy = {
+		type = declare_war
+		id = DEL
+		value = 200
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = DEL
+		target = generate_wargoal
+		value = 200
+	}
+}
+
+strike_against_undeath = {
+	enable = {
+		original_tag = THA
+		country_exists = AGE
+		907 = {
+			is_owned_by = THA
+		}
+		date > 890.1.1
+		has_war = no
+		AGE = {
+			is_not_sphered = yes
+		}
+		is_subject = no
+		NOT = {
+			is_justifying_wargoal_against = AGE
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = conquer
+		id = AGE
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = AGE
+		value = 200
+	}
+	ai_strategy = {
+		type = declare_war
+		id = AGE
+		value = 200
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = AGE
+		target = generate_wargoal
+		value = 200
+	}
+}

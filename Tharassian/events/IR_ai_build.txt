@@ -679,3 +679,215 @@ country_event = { #Force ORD-STA line if at war
 		}
 	}
 }
+
+
+
+country_event = { #Invasion of Perkavland - War Logistics #1
+	id = ai_build.15
+	
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		has_war_with = PRK
+		controls_province = 751
+		332 = {
+			supply_node < 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		332 = {
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = no
+				province = 751
+			}
+		}
+	}
+}
+
+country_event = { #Invasion of Perkavland - War Logistics #2
+	id = ai_build.16
+	
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		has_war_with = PRK
+		controls_province = 2529
+		337 = {
+			naval_base < 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		337 = {
+			add_building_construction = {
+				type = naval_base
+				level = 3
+				instant_build = no
+				province = 2529
+			}
+		}
+	}
+}
+
+country_event = { #Invasion of Perkavland - War Logistics #3
+	id = ai_build.17
+	
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		has_war_with = PRK
+		controls_province = 2674
+		654 = {
+			supply_node < 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		654 = {
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = no
+				province = 2674
+			}
+		}
+	}
+}
+
+country_event = { #Invasion of Perkavland - War Logistics #4
+	id = ai_build.18
+	
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		has_war_with = PRK
+		controls_province = 2827
+		632 = {
+			supply_node < 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		632 = {
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = no
+				province = 2827
+			}
+		}
+	}
+}
+
+country_event = { #Invasion of Perkavland - War Logistics #5
+	id = ai_build.19
+	
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		has_war_with = PRK
+		controls_province = 9695
+		635 = {
+			naval_base < 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		635 = {
+			add_building_construction = {
+				type = naval_base
+				level = 3
+				instant_build = no
+				province = 9695
+			}
+		}
+	}
+}
+
+country_event = { #Invasion of Perkavland - War Logistics #6
+	id = ai_build.20
+	
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		has_war_with = PRK
+		controls_province = 3657
+		638 = {
+			supply_node < 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		638 = {
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = no
+				province = 3657
+			}
+		}
+	}
+}
+
+country_event = { #Invasion of Perkavland - War Logistics #7
+	id = ai_build.21
+	
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		has_war_with = PRK
+		controls_province = 686
+		640 = {
+			naval_base < 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		640 = {
+			add_building_construction = {
+				type = naval_base
+				level = 3
+				instant_build = no
+				province = 686
+			}
+		}
+	}
+}

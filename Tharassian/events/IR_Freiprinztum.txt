@@ -129,6 +129,13 @@ country_event = {#Picking a Side
 	
 	option = {#Adalina Gang
 		name = fpt.2.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				has_country_flag = FPT_loyalist_strats
+			}
+		}
 		custom_effect_tooltip = FPT_increase_union_loyalty_small_tt
 		add_to_variable = {
 			var = FPT_union_loyalty
@@ -139,11 +146,25 @@ country_event = {#Picking a Side
 	
 	option = {#I just wanna grill for God's sake
 		name = fpt.2.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				has_country_flag = FPT_neutralist_strats
+			}
+		}
 		add_political_power = 25
 	}
 	
 	option = {#Schwarzenbach Gang
 		name = fpt.2.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				has_country_flag = FPT_ferdinist_strats
+			}
+		}
 		custom_effect_tooltip = FPT_increase_stahlhof_loyalty_small_tt
 		add_to_variable = {
 			var = FPT_stahlhof_loyalty
@@ -183,6 +204,14 @@ country_event = {#FPT Returns home
 				exists = yes
 				is_subject = no
 			}
+			OR = {
+				NOT = {
+					country_exists = STA
+				}
+				STA = {
+					is_subject = yes
+				}
+			}
 		}
 		
 		UNG = {
@@ -190,6 +219,18 @@ country_event = {#FPT Returns home
 				target = ROOT
 				autonomy_state = autonomy_IR_freiprinztum
 				freedom_level = 0.4
+			}
+		}
+		if = {
+			limit = {
+				UNG = {#Doesn't always seem to auto-rejoin factions, so making it explicit
+					is_in_faction = yes
+				}
+			}
+			UNG = {
+				faction_leader = {
+					add_to_faction = ROOT
+				}
 			}
 		}
 	}
@@ -203,13 +244,28 @@ country_event = {#FPT Returns home
 				exists = yes
 				is_subject = no
 			}
+			NOT = {
+				country_exists = UNG
+			}
 		}
 		
 		STA = {
 			set_autonomy = {
 				target = ROOT
-				autonomy_state = autonomy_IR_freiprinztum
+				autonomy_state = autonomy_puppet
 				freedom_level = 0.4
+			}
+		}
+		if = {
+			limit = {
+				UNG = {#Doesn't always seem to auto-rejoin factions, so making it explicit
+					is_in_faction = yes
+				}
+			}
+			UNG = {
+				faction_leader = {
+					add_to_faction = ROOT
+				}
 			}
 		}
 	}
@@ -954,5 +1010,64 @@ country_event = {#Border Conflict Warning
 
 	option = {#oh no
 		name = fpt.22.a
+	}
+}
+
+### UNGERDALER CIVIL WAR EVENT ###
+
+country_event = {#Conflicted Loyalties
+	id = fpt.23
+	title = fpt.23.t
+	desc = fpt.23.d
+
+	picture = GFX_report_event_fascist_militia
+
+	is_triggered_only = yes
+
+	option = {#adalina i guess
+		name = fpt.23.a
+		
+		add_stability = -0.07
+		
+		set_country_flag = FPT_loyalist_freiprinztum
+		
+		ai_chance = {
+			factor = 8 #Status quo inertia
+			modifier = {
+				factor = 2
+				check_variable = {
+					var = FPT_union_loyalty
+					value = var:FPT_stahlhof_loyalty
+					compare = greater_than
+				}
+			}
+		}
+	}
+	
+	option = {#ferdinand i guess
+		name = fpt.23.b
+		
+		add_stability = -0.07
+		
+		set_country_flag = FPT_stahlhoffer_freiprinztum
+		
+		end_puppet = UNG
+		leave_faction = yes
+		STA = {
+			add_to_faction = PREV
+		}
+		STA_steal_UNG_ally = yes
+		
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				check_variable = {
+					var = FPT_stahlhof_loyalty 
+					value = var:FPT_union_loyalty
+					compare = greater_than
+				}
+			}
+		}
 	}
 }

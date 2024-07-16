@@ -14,7 +14,7 @@ focus_tree = {
 	focus = {
 		id = SKA_aftermath_of_miners_blight
 		icon = GFX_goal_generic_secret_weapon
-		cost = 10
+		cost = 5
 		x = 9
 		y = 0
 		ai_will_do = {
@@ -67,7 +67,7 @@ focus_tree = {
 	focus = {
 		id = SKA_emergency_conclave
 		icon = GFX_goal_generic_national_unity
-		cost = 10
+		cost = 5
 		available = {
 			has_country_flag = SKA_king_died
 		}
@@ -105,7 +105,7 @@ focus_tree = {
 	focus = {
 		id = SKA_financial_recovery_endeavors
 		icon = GFX_goal_generic_production2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_aftermath_of_miners_blight
 		}
@@ -134,7 +134,7 @@ focus_tree = {
 	focus = {
 		id = SKA_appease_the_guild
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 10
+		cost = 5
 		mutually_exclusive = { focus = SKA_oppose_the_guild }
 		prerequisite = {
 			focus = SKA_financial_recovery_endeavors
@@ -168,7 +168,7 @@ focus_tree = {
 	focus = {
 		id = SKA_abandon_prison_labor
 		icon = GFX_focus_generic_slavery
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_appease_the_guild
 		}
@@ -190,7 +190,7 @@ focus_tree = {
 	focus = {
 		id = SKA_decrease_basic_goods_taxes
 		icon = GFX_goal_generic_consumer_goods
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_abandon_prison_labor
 		}
@@ -203,7 +203,7 @@ focus_tree = {
 	focus = {
 		id = SKA_foreign_workers
 		icon = GFX_goal_generic_production
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_abandon_prison_labor
 		}
@@ -216,7 +216,7 @@ focus_tree = {
 	focus = {
 		id = SKA_lift_the_debts
 		icon = GFX_focus_generic_self_management
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_abandon_prison_labor
 		}
@@ -234,7 +234,7 @@ focus_tree = {
 	focus = {
 		id = SKA_restore_the_guilds_influence
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_foreign_workers
 		}
@@ -251,12 +251,21 @@ focus_tree = {
 				ideology = republic_merchant
 				popularity = 0.05
 			}
+			if = {
+				limit = {
+					has_country_flag = social_war_beginning
+				}
+				custom_effect_tooltip = SKA_weaken_ironbloods_tt
+				subtract_from_variable = {
+					SKA_social_war_iron_blood_inf = 2
+				}
+			}
 		}
 	}
 	focus = {
 		id = SKA_stop_prison_conscription
 		icon = GFX_goal_continuous_boost_freedom
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_appease_the_guild
 		}
@@ -278,7 +287,7 @@ focus_tree = {
 	focus = {
 		id = SKA_oppose_the_guild
 		icon = GFX_goal_generic_political_pressure
-		cost = 10
+		cost = 5
 		mutually_exclusive = { focus = SKA_appease_the_guild }
 		prerequisite = {
 			focus = SKA_financial_recovery_endeavors
@@ -310,7 +319,7 @@ focus_tree = {
 	focus = {
 		id = SKA_enforce_prison_conscription
 		icon = GFX_focus_generic_manpower
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_oppose_the_guild
 		}
@@ -336,7 +345,7 @@ focus_tree = {
 	focus = {
 		id = SKA_the_army_of_skaelinger
 		icon = GFX_focus_generic_military_mission
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_stop_prison_conscription
 			focus = SKA_enforce_prison_conscription
@@ -351,7 +360,7 @@ focus_tree = {
 	focus = {
 		id = SKA_enforce_prison_labor
 		icon = GFX_IRI_New_Cohorts_Training_Program
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_oppose_the_guild
 		}
@@ -377,7 +386,7 @@ focus_tree = {
 	focus = {
 		id = SKA_expel_the_refugees
 		icon = GFX_focus_generic_strike_at_democracy2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_enforce_prison_conscription
 		}
@@ -399,7 +408,7 @@ focus_tree = {
 	focus = {
 		id = SKA_war_prisoners
 		icon = GFX_focus_CZE_german_puppet
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_expel_the_refugees
 		}
@@ -412,7 +421,7 @@ focus_tree = {
 	focus = {
 		id = SKA_avert_the_famine
 		icon = GFX_BLD_Promote_Farming
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_financial_recovery_endeavors
 		}
@@ -426,7 +435,7 @@ focus_tree = {
 	focus = {
 		id = SKA_secure_ung_trade
 		icon = GFX_focus_ung_union_forever
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_avert_the_famine
 		}
@@ -446,7 +455,7 @@ focus_tree = {
 	focus = {
 		id = SKA_cultivate_mushroom_plantages
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_avert_the_famine
 		}
@@ -487,7 +496,7 @@ focus_tree = {
 	focus = {
 		id = SKA_secure_ber_trade
 		icon = GFX_focus_generic_bergial_agreement
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_avert_the_famine
 		}
@@ -507,7 +516,7 @@ focus_tree = {
 	focus = {
 		id = SKA_lower_ratios
 		icon = GFX_focus_generic_slavery
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_avert_the_famine
 		}
@@ -548,7 +557,7 @@ focus_tree = {
 	focus = {
 		id = SKA_invest_in_foreign_farms
 		icon = GFX_focus_hlz_compensate_nobles
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_avert_the_famine
 		}
@@ -589,7 +598,7 @@ focus_tree = {
 	focus = {
 		id = SKA_the_dwarfen_republic
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 20
+		cost = 10
 		prerequisite = {
 			focus = SKA_emergency_conclave
 		}
@@ -619,7 +628,7 @@ focus_tree = {
 	focus = {
 		id = SKA_charter_protection_league
 		icon = GFX_focus_generic_treaty
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_the_dwarfen_republic
 		}
@@ -664,7 +673,7 @@ focus_tree = {
 	focus = {
 		id = SKA_ending_tariffs
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_charter_protection_league
 		}
@@ -710,7 +719,7 @@ focus_tree = {
 	focus = {
 		id = SKA_price_control
 		icon = GFX_focus_usa_reestablish_the_gold_standard
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_ending_tariffs
 		}
@@ -730,7 +739,7 @@ focus_tree = {
 	focus = {
 		id = SKA_proportional_riksdag_representation
 		icon = GFX_goal_generic_national_unity
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_charter_protection_league
 		}
@@ -749,7 +758,7 @@ focus_tree = {
 	focus = {
 		id = SKA_dividing_underused_noble_lands
 		icon = GFX_goal_generic_construction2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_ending_tariffs
 		}
@@ -780,7 +789,7 @@ focus_tree = {
 	focus = {
 		id = SKA_universal_suffrage
 		icon = GFX_goal_support_democracy
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_proportional_riksdag_representation
 		}
@@ -799,7 +808,7 @@ focus_tree = {
 	focus = {
 		id = SKA_found_public_schools
 		icon = GFX_focus_research
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_universal_suffrage
 		}
@@ -819,7 +828,7 @@ focus_tree = {
 	focus = {
 		id = SKA_guild_medicine
 		icon = GFX_focus_research2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_found_public_schools
 		}
@@ -838,7 +847,7 @@ focus_tree = {
 	focus = {
 		id = SKA_abolish_grand_lore_council
 		icon = GFX_goal_generic_political_pressure
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_universal_suffrage
 		}
@@ -862,7 +871,7 @@ focus_tree = {
 	focus = {
 		id = SKA_teach_of_extremisms_horrors
 		icon = GFX_focus_generic_manpower
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_abolish_grand_lore_council
 		}
@@ -880,6 +889,15 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			add_ideas = SKA_militaristic_anti_extremism
+			if = {
+				limit = {
+					has_country_flag = social_war_beginning
+				}
+				custom_effect_tooltip = SKA_weaken_ironbloods_tt
+				subtract_from_variable = {
+					SKA_social_war_iron_blood_inf = 3
+				}
+			}
 		}
 	}
 	focus = {
@@ -966,7 +984,7 @@ focus_tree = {
 	focus = {
 		id = SKA_major_land_reforms
 		icon = GFX_focus_prc_agrarian_socialism
-		cost = 10
+		cost = 5
 		prerequisite = { focus = SKA_dividing_underused_noble_lands }
 		relative_position_id = SKA_dividing_underused_noble_lands
 		x = 1
@@ -984,7 +1002,7 @@ focus_tree = {
 	focus = {
 		id = SKA_public_housing
 		icon = GFX_focus_generic_self_management
-		cost = 10
+		cost = 5
 		prerequisite = { focus = SKA_major_land_reforms }
 		relative_position_id = SKA_major_land_reforms
 		x = 1
@@ -1005,7 +1023,7 @@ focus_tree = {
 	focus = {
 		id = SKA_defensive_army
 		icon = GFX_goal_generic_military_sphere
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_enforce_isolationism
 		}
@@ -1022,7 +1040,7 @@ focus_tree = {
 	focus = {
 		id = SKA_impenetrable_wall
 		icon = GFX_goal_generic_fortify_city
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_defensive_army
 		}
@@ -1057,7 +1075,7 @@ focus_tree = {
 	focus = {
 		id = SKA_cut_ties_with_rthauriaur
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_enforce_isolationism
 		}
@@ -1119,7 +1137,7 @@ focus_tree = {
 	focus = {
 		id = SKA_expand_mining_operations
 		icon = GFX_goal_generic_construction2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_cut_ties_with_rthauriaur
 		}
@@ -1133,7 +1151,7 @@ focus_tree = {
 	focus = {
 		id = SKA_peacetime_construction
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_cut_ties_with_rthauriaur
 		}
@@ -1160,7 +1178,7 @@ focus_tree = {
 	focus = {
 		id = SKA_no_elven_trade
 		icon = GFX_ung_focus_radicalism_both_sides
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_expand_mining_operations
 		}
@@ -1181,7 +1199,7 @@ focus_tree = {
 	focus = {
 		id = SKA_mend_ordorian_trade
 		icon = GFX_focus_hlz_compensate_nobles
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_expand_mining_operations
 		}
@@ -1212,7 +1230,7 @@ focus_tree = {
 	focus = {
 		id = SKA_tentative_rthaur_trade
 		icon = GFX_focus_ung_lesser_evil
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_expand_mining_operations
 		}
@@ -1279,7 +1297,7 @@ focus_tree = {
 	focus = {
 		id = SKA_splendid_isolation
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_root_out_puritans_iron_bloods
 			focus = SKA_root_out_brotherhood
@@ -1297,7 +1315,7 @@ focus_tree = {
 	focus = {
 		id = SKA_the_grandlore_council
 		icon = GFX_focus_generic_self_management
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_the_dwarfen_republic
 		}
@@ -1332,7 +1350,7 @@ focus_tree = {
 	focus = {
 		id = SKA_funding_moderate_rthaur
 		icon = GFX_goal_anti_comintern_pact
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_the_grandlore_council
 		}
@@ -1351,7 +1369,7 @@ focus_tree = {
 	focus = {
 		id = SKA_befriending_ungerdaler
 		icon = GFX_goal_generic_improve_relations
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_the_grandlore_council
 		}
@@ -1372,7 +1390,7 @@ focus_tree = {
 	focus = {
 		id = SKA_promoting_free_trade
 		icon = GFX_goal_generic_trade
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_charter_protection_league
 			focus = SKA_the_grandlore_council
@@ -1398,7 +1416,7 @@ focus_tree = {
 	focus = {
 		id = SKA_our_own_steel_trade_hub
 		icon = GFX_IRI_Reach_Southern_Mineral_Deposits
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_promoting_free_trade
 		}
@@ -1427,7 +1445,7 @@ focus_tree = {
 	focus = {
 		id = SKA_subverting_steel_road
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_our_own_steel_trade_hub
 		}
@@ -1446,7 +1464,7 @@ focus_tree = {
 	focus = {
 		id = SKA_equal_representation_riksdag
 		icon = GFX_goal_tripartite_pact
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_funding_moderate_rthaur
 		}
@@ -1465,7 +1483,7 @@ focus_tree = {
 	focus = {
 		id = SKA_lift_casteless_prohibitions
 		icon = GFX_focus_CZE_german_puppet
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_equal_representation_riksdag
 		}
@@ -1484,7 +1502,7 @@ focus_tree = {
 	focus = {
 		id = SKA_distribute_bannerlordships
 		icon = GFX_goal_generic_demand_territory
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_equal_representation_riksdag
 		}
@@ -1503,7 +1521,7 @@ focus_tree = {
 	focus = {
 		id = SKA_enlightened_council_rule
 		icon = GFX_focus_generic_self_management
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_lift_casteless_prohibitions
 			focus = SKA_distribute_bannerlordships
@@ -1528,7 +1546,7 @@ focus_tree = {
 	focus = {
 		id = SKA_revive_vergall_riks_party
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_lift_casteless_prohibitions
 			focus = SKA_distribute_bannerlordships
@@ -1560,7 +1578,7 @@ focus_tree = {
 	focus = {
 		id = SKA_purge_extremists_army
 		icon = GFX_focus_generic_military_academy
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_enlightened_council_rule
 			focus = SKA_revive_vergall_riks_party
@@ -1590,7 +1608,7 @@ focus_tree = {
 	focus = {
 		id = SKA_militaristic_anti_extremism
 		icon = GFX_goal_generic_political_pressure
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_purge_extremists_army
 		}
@@ -1604,12 +1622,21 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			add_ideas = SKA_militaristic_anti_extremism
+			if = {
+				limit = {
+					has_country_flag = social_war_beginning
+				}
+				custom_effect_tooltip = SKA_weaken_ironbloods_tt
+				subtract_from_variable = {
+					SKA_social_war_iron_blood_inf = 3
+				}
+			}
 		}
 	}
 	focus = {
 		id = SKA_intellectual_commissars
 		icon = GFX_goal_generic_major_war
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_enlightened_council_rule
 		}
@@ -1628,7 +1655,7 @@ focus_tree = {
 	focus = {
 		id = SKA_central_planning
 		icon = GFX_goal_generic_production2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_intellectual_commissars
 		}
@@ -1647,7 +1674,7 @@ focus_tree = {
 	focus = {
 		id = SKA_reform_markets
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_revive_vergall_riks_party
 		}
@@ -1679,7 +1706,7 @@ focus_tree = {
 	focus = {
 		id = SKA_renounce_claims_dwarven_nations
 		icon = GFX_goal_generic_national_unity
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_funding_moderate_rthaur
 		}
@@ -1748,6 +1775,54 @@ focus_tree = {
 		available = {
 			has_guaranteed = RTH
 		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				has_country_leader = {
+					name = "Kytos Palmekvist"
+					ruling_only = yes
+				}
+			}
+			modifier = {
+				factor = 5
+				has_government = puritan
+			}
+			modifier = {
+				factor = 0.8
+				has_country_leader = {
+					name = "Petar Grimvald"
+					ruling_only = yes
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_country_leader = {
+					name = "Reev Hellirfast"
+					ruling_only = yes
+				}
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
+		}
 		x = 33
 		y = 11
 		completion_reward = {
@@ -1761,12 +1836,32 @@ focus_tree = {
 	focus = {
 		id = SKA_anti_ordorian_stance
 		icon = GFX_focus_ord_evil
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_puritan_opposition
 		}
 		available = {
 			has_guaranteed = RTH
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
 		}
 		x = 1
 		y = 1
@@ -1786,6 +1881,29 @@ focus_tree = {
 			has_guaranteed = RTH
 			NOT = {
 				has_war_with = ORD
+			}
+		}
+		bypass = {
+			OR = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
+			RTH = { exists = no }
 			}
 		}
 		continue_if_invalid = yes
@@ -1857,7 +1975,7 @@ focus_tree = {
 	focus = {
 		id = SKA_house_hellirfast
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_the_great_houses
 		}
@@ -1879,7 +1997,7 @@ focus_tree = {
 	focus = {
 		id = SKA_close_republican_ties
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_house_hellirfast
 		}
@@ -1901,7 +2019,7 @@ focus_tree = {
 	focus = {
 		id = SKA_elven_support_announcement
 		icon = GFX_focus_ung_lesser_evil
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_house_hellirfast
 		}
@@ -1921,7 +2039,7 @@ focus_tree = {
 	focus = {
 		id = SKA_charter_modernization_attempts
 		icon = GFX_focus_generic_treaty
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_close_republican_ties
 		}
@@ -1942,7 +2060,7 @@ focus_tree = {
 	focus = {
 		id = SKA_lower_caste_education
 		icon = GFX_focus_research
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_charter_modernization_attempts
 		}
@@ -1960,7 +2078,7 @@ focus_tree = {
 	focus = {
 		id = SKA_bicameral_legislature
 		icon = GFX_goal_support_democracy
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_charter_modernization_attempts
 		}
@@ -1981,7 +2099,7 @@ focus_tree = {
 	focus = {
 		id = SKA_price_ceilings
 		icon = GFX_focus_usa_reestablish_the_gold_standard
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_lower_caste_education
 		}
@@ -2013,6 +2131,40 @@ focus_tree = {
 		available = {
 			has_guaranteed = RTH
 		}
+		ai_will_do = {
+			factor = 7
+			modifier = {
+				factor = 0.8
+				has_country_leader = {
+					name = "Kytos Palmekvist"
+					ruling_only = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				has_government = puritan
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
+		}
 		x = 36
 		y = 11
 		completion_reward = {
@@ -2025,12 +2177,32 @@ focus_tree = {
 	focus = {
 		id = SKA_careful_preperations
 		icon = GFX_IRI_Reign_Of_Strategos
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_guarantee_for_support
 		}
 		available = {
 			has_guaranteed = RTH
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
 		}
 		x = 36
 		y = 12
@@ -2042,7 +2214,7 @@ focus_tree = {
 	focus = {
 		id = SKA_peace_for_the_dwarfes
 		icon = GFX_goal_generic_major_alliance
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_price_ceilings
 		}
@@ -2055,6 +2227,15 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			remove_ideas = SKA_destabilization_caste_system
+			if = {
+				limit = {
+					has_country_flag = social_war_beginning
+				}
+				custom_effect_tooltip = SKA_weaken_ironbloods_tt
+				subtract_from_variable = {
+					SKA_social_war_iron_blood_inf = 4
+				}
+			}
 		}
 	}
 	focus = {
@@ -2071,6 +2252,54 @@ focus_tree = {
 		available = {
 			has_guaranteed = RTH
 		}
+		ai_will_do = {
+			factor = 9
+			modifier = {
+				factor = 0.5
+				has_country_leader = {
+					name = "Kytos Palmekvist"
+					ruling_only = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				has_government = puritan
+			}
+			modifier = {
+				factor = 0.8
+				has_country_leader = {
+					name = "Petar Grimvald"
+					ruling_only = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				has_country_leader = {
+					name = "Reev Hellirfast"
+					ruling_only = yes
+				}
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
+		}
 		x = 38
 		y = 11
 		completion_reward = {
@@ -2083,7 +2312,7 @@ focus_tree = {
 	focus = {
 		id = SKA_technological_military_agreement
 		icon = GFX_focus_research2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_mutual_defense_allegiance
 		}
@@ -2091,6 +2320,26 @@ focus_tree = {
 			OR = {
 				has_guaranteed = RTH
 				is_in_faction_with = RTH
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
 			}
 		}
 		x = 38
@@ -2105,7 +2354,7 @@ focus_tree = {
 	focus = {
 		id = SKA_house_grimvald
 		icon = GFX_goal_generic_construct_military
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_the_great_houses
 		}
@@ -2127,7 +2376,7 @@ focus_tree = {
 	focus = {
 		id = SKA_status_quo
 		icon = GFX_goal_generic_neutrality_focus
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_house_grimvald
 		}
@@ -2145,7 +2394,7 @@ focus_tree = {
 	focus = {
 		id = SKA_acquisation_of_resources
 		icon = GFX_goal_generic_construction2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_status_quo
 		}
@@ -2177,7 +2426,7 @@ focus_tree = {
 	focus = {
 		id = SKA_increased_industrial_efforts
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_status_quo
 		}
@@ -2210,7 +2459,7 @@ focus_tree = {
 	focus = {
 		id = SKA_improve_trade_relations
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_acquisation_of_resources
 		}
@@ -2237,7 +2486,7 @@ focus_tree = {
 	focus = {
 		id = SKA_border_fortifications
 		icon = GFX_goal_generic_fortify_city
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_improve_trade_relations
 		}
@@ -2267,7 +2516,7 @@ focus_tree = {
 	focus = {
 		id = SKA_buy_out_steel_road_competition
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_improve_trade_relations
 		}
@@ -2286,7 +2535,7 @@ focus_tree = {
 	focus = {
 		id = SKA_traditionalism
 		icon = GFX_IRI_Emperors_Party
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_border_fortifications
 		}
@@ -2303,12 +2552,21 @@ focus_tree = {
 				popularity = 0.05
 			}
 			remove_ideas = SKA_destabilization_caste_system
+			if = {
+				limit = {
+					has_country_flag = social_war_beginning
+				}
+				custom_effect_tooltip = SKA_weaken_ironbloods_tt
+				subtract_from_variable = {
+					SKA_social_war_iron_blood_inf = 2
+				}
+			}
 		}
 	}
 	focus = {
 		id = SKA_restoration_of_vergallheim
 		icon = GFX_goal_generic_demand_territory
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_abandon_isolationism
 		}
@@ -2342,7 +2600,7 @@ focus_tree = {
 	focus = {
 		id = SKA_in_all_but_name
 		icon = GFX_focus_generic_support_the_left_right
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_restoration_of_vergallheim
 		}
@@ -2355,6 +2613,33 @@ focus_tree = {
 			is_subject = no
 			NOT = {
 				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0.5
+				OR = {
+					has_country_leader = {
+						name = "Reev Hellirfast"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Halstigg Urkbani"
+						ruling_only = yes
+					}
+					has_government = republic_merchant
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_leader = {
+						name = "Sigurdar Hakonson"
+						ruling_only = yes
+					}
+					has_government = republic_peasant
+				}
 			}
 		}
 		relative_position_id = SKA_restoration_of_vergallheim
@@ -2370,7 +2655,7 @@ focus_tree = {
 	focus = {
 		id = SKA_the_ultimatum
 		icon = GFX_focus_ung_seventh_campaign
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_in_all_but_name
 		}
@@ -2382,6 +2667,16 @@ focus_tree = {
 			country_exists = RMT
 			NOT = {
 				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0.1
+				has_country_leader = {
+					name = "Reev Hellirfast"
+					ruling_only = yes
+				}
 			}
 		}
 		relative_position_id = SKA_in_all_but_name
@@ -2396,7 +2691,7 @@ focus_tree = {
 	focus = {
 		id = SKA_vergallheim_alliance
 		icon = GFX_focus_generic_rimatu_agreement
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_in_all_but_name
 		}
@@ -2410,6 +2705,9 @@ focus_tree = {
 				has_country_flag = SKA_cannot_do_restoration_stuff
 			}
 		}
+		ai_will_do = {
+			factor = 10
+		}
 		relative_position_id = SKA_in_all_but_name
 		x = 1
 		y = 1
@@ -2422,7 +2720,7 @@ focus_tree = {
 	focus = {
 		id = SKA_house_palmekvist
 		icon = GFX_focus_rom_royal_dictatorship
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_the_great_houses
 		}
@@ -2444,7 +2742,7 @@ focus_tree = {
 	focus = {
 		id = SKA_war_councils
 		icon = GFX_focus_generic_self_management
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_house_palmekvist
 		}
@@ -2504,7 +2802,7 @@ focus_tree = {
 	focus = {
 		id = SKA_rthaurian_monarchy_support
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_war_councils
 		}
@@ -2536,7 +2834,7 @@ focus_tree = {
 	focus = {
 		id = SKA_no_need_for_casteless
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_rthaurian_monarchy_support
 		}
@@ -2563,7 +2861,7 @@ focus_tree = {
 	focus = {
 		id = SKA_militarized_economy
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_rthaurian_monarchy_support
 		}
@@ -2604,7 +2902,7 @@ focus_tree = {
 	focus = {
 		id = SKA_the_emergency_decree
 		icon = GFX_focus_generic_strike_at_democracy1
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_no_need_for_casteless
 		}
@@ -2637,7 +2935,7 @@ focus_tree = {
 	focus = {
 		id = SKA_enemies_of_the_army
 		icon = GFX_BLD_Combined_Arsenal_Projects
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_the_emergency_decree
 		}
@@ -2658,12 +2956,21 @@ focus_tree = {
 		relative_position_id = SKA_the_emergency_decree
 		completion_reward = {
 			unlock_decision_category_tooltip = SKA_enemies_of_the_army
+			if = {
+				limit = {
+					has_country_flag = social_war_beginning
+				}
+				custom_effect_tooltip = SKA_weaken_ironbloods_tt
+				subtract_from_variable = {
+					SKA_social_war_iron_blood_inf = 1
+				}
+			}
 		}
 	}
 	focus = {
 		id = SKA_glory_of_the_past
 		icon = GFX_goal_generic_political_pressure
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_restoration_of_vergallheim
 		}
@@ -2676,6 +2983,38 @@ focus_tree = {
 			is_subject = no
 			NOT = {
 				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0.1
+				OR = {
+					has_country_leader = {
+						name = "Reev Hellirfast"
+						ruling_only = yes
+					}
+					has_government = republic_merchant
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_country_leader = {
+					name = "Halstigg Urkbani"
+					ruling_only = yes
+				}
+			}
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_leader = {
+						name = "Sigurdar Hakonson"
+						ruling_only = yes
+					}
+					has_government = republic_aristocrat
+					has_government = republic_peasant
+					has_government = monarchy_absolute
+				}
 			}
 		}
 		relative_position_id = SKA_restoration_of_vergallheim
@@ -2691,12 +3030,21 @@ focus_tree = {
 	focus = {
 		id = SKA_defining_new_borders
 		icon = GFX_focus_hol_the_foundations_of_defense
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_glory_of_the_past
 		}
 		mutually_exclusive = {
 			focus = SKA_all_or_nothing
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					owns_state = 139 #Can't access Zarathum without Unspykaur
+				}
+			}
 		}
 		available = {
 			is_subject = no
@@ -2723,7 +3071,7 @@ focus_tree = {
 	focus = {
 		id = SKA_former_imperial_glory
 		icon = GFX_focus_ung_seventh_campaign
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_the_emergency_decree
 		}
@@ -2744,7 +3092,7 @@ focus_tree = {
 	focus = {
 		id = SKA_all_or_nothing
 		icon = GFX_goal_generic_major_war
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_glory_of_the_past
 		}
@@ -2778,7 +3126,7 @@ focus_tree = {
 	focus = {
 		id = SKA_diplomatic_ties
 		icon = GFX_focus_generic_diplomatic_treaty
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_restoration_of_vergallheim
 		}
@@ -2791,6 +3139,23 @@ focus_tree = {
 			is_subject = no
 			NOT = {
 				has_country_flag = SKA_cannot_do_restoration_stuff
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_leader = {
+						name = "Reev Hellirfast"
+						ruling_only = yes
+					}
+					has_government = republic_merchant
+					has_country_leader = {
+						name = "Halstigg Urkbani"
+						ruling_only = yes
+					}
+				}
 			}
 		}
 		relative_position_id = SKA_restoration_of_vergallheim
@@ -2806,7 +3171,7 @@ focus_tree = {
 	focus = {
 		id = SKA_protective_father_nation
 		icon = GFX_goal_generic_defence
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_diplomatic_ties
 		}
@@ -2829,7 +3194,7 @@ focus_tree = {
 	focus = {
 		id = SKA_support_all_dwarves
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_diplomatic_ties
 		}
@@ -2857,7 +3222,7 @@ focus_tree = {
 	focus = {
 		id = SKA_dwarven_protection_pact
 		icon = GFX_goal_generic_national_unity
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_support_all_dwarves
 			focus = SKA_protective_father_nation
@@ -2884,7 +3249,7 @@ focus_tree = {
 	focus = {
 		id = SKA_iron_blood_conspiracy
 		icon = GFX_goal_generic_major_war
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_emergency_conclave
 		}
@@ -2965,23 +3330,76 @@ focus_tree = {
 			}
 			modifier = {
 				has_completed_focus = SKA_enemies_of_the_army
+				NOT = {
+					OR = {
+						has_country_flag = SKA_ai_ironbloods_path_flag
+						has_country_flag = SKA_ai_soltruist_path_flag
+						has_country_flag = SKA_ai_brotherhood_path_flag
+					}
+				}
 				factor = 0
 			}
 			modifier = {
 				has_completed_focus = SKA_traditionalism
+				NOT = {
+					OR = {
+						has_country_flag = SKA_ai_ironbloods_path_flag
+						has_country_flag = SKA_ai_soltruist_path_flag
+						has_country_flag = SKA_ai_brotherhood_path_flag
+					}
+				}
 				factor = 0
 			}
 			modifier = {
 				has_completed_focus = SKA_peace_for_the_dwarfes
+				NOT = {
+					OR = {
+						has_country_flag = SKA_ai_ironbloods_path_flag
+						has_country_flag = SKA_ai_soltruist_path_flag
+						has_country_flag = SKA_ai_brotherhood_path_flag
+					}
+				}
 				factor = 0
 			}
 			modifier = {
 				has_completed_focus = SKA_purge_extremists_army
+				NOT = {
+					OR = {
+						has_country_flag = SKA_ai_ironbloods_path_flag
+						has_country_flag = SKA_ai_soltruist_path_flag
+						has_country_flag = SKA_ai_brotherhood_path_flag
+					}
+				}
 				factor = 0
 			}
 			modifier = {
 				has_completed_focus = SKA_teach_of_extremisms_horrors
+				NOT = {
+					OR = {
+						has_country_flag = SKA_ai_ironbloods_path_flag
+						has_country_flag = SKA_ai_soltruist_path_flag
+						has_country_flag = SKA_ai_brotherhood_path_flag
+					}
+				}
 				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_government = monarchy_absolute
+					has_government = puritan
+					has_government = republic_peasant
+					has_country_flag = SKA_ai_ironbloods_path_flag
+					has_country_flag = SKA_ai_soltruist_path_flag
+					has_country_flag = SKA_ai_brotherhood_path_flag
+				}
+				add = 500
+			}
+		}
+		bypass = {
+			OR = {
+				has_government = monarchy_absolute
+				has_government = puritan
+				has_government = republic_peasant
 			}
 		}
 		x = 50
@@ -3024,12 +3442,18 @@ focus_tree = {
 	focus = {
 		id = SKA_popular_figurehead
 		icon = GFX_goal_generic_major_alliance
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_iron_blood_conspiracy
 		}
 		mutually_exclusive = {
 			focus = SKA_popular_general
+		}
+		bypass = {
+			OR = {
+				has_government = puritan
+				has_government = republic_peasant
+			}
 		}
 		relative_position_id = SKA_iron_blood_conspiracy
 		x = -1
@@ -3053,12 +3477,18 @@ focus_tree = {
 	focus = {
 		id = SKA_popular_general
 		icon = GFX_focus_generic_little_entente
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_iron_blood_conspiracy
 		}
 		mutually_exclusive = {
 			focus = SKA_popular_figurehead
+		}
+		bypass = {
+			OR = {
+				has_government = puritan
+				has_government = republic_peasant
+			}
 		}
 		relative_position_id = SKA_iron_blood_conspiracy
 		x = 1
@@ -3079,10 +3509,17 @@ focus_tree = {
 	focus = {
 		id = SKA_dissolve_the_lore_council
 		icon = GFX_focus_generic_strike_at_democracy1
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_popular_figurehead
 			focus = SKA_popular_general
+		}
+		bypass = {
+			OR = {
+				has_government = monarchy_absolute
+				has_government = puritan
+				has_government = republic_peasant
+			}
 		}
 		relative_position_id = SKA_iron_blood_conspiracy
 		x = 0
@@ -3096,7 +3533,7 @@ focus_tree = {
 	focus = {
 		id = SKA_shore_up_the_caste_system
 		icon = GFX_focus_CZE_german_puppet
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_dissolve_the_lore_council
 		}
@@ -3136,6 +3573,12 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			if = {
+				limit = {
+					has_country_flag = SKA_warned_for_second_scheme_revolt
+				}
+				custom_effect_tooltip = SKA_revolt_warning_tt
+			}
+			if = {
 				limit = { has_idea = SKA_destabilization_caste_system }
 				remove_ideas = SKA_destabilization_caste_system
 				add_popularity = {
@@ -3155,7 +3598,7 @@ focus_tree = {
 	focus = {
 		id = SKA_establish_soldier_caste
 		icon = GFX_focus_generic_manpower
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_shore_up_the_caste_system
 		}
@@ -3175,7 +3618,7 @@ focus_tree = {
 	focus = {
 		id = SKA_slave_acquisition_program
 		icon = GFX_focus_ung_elven_internment_act
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_establish_soldier_caste
 		}
@@ -3236,7 +3679,7 @@ focus_tree = {
 	focus = {
 		id = SKA_lowborn_workers
 		icon = GFX_goal_generic_production
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_establish_soldier_caste
 		}
@@ -3255,7 +3698,7 @@ focus_tree = {
 	focus = {
 		id = SKA_absolute_order
 		icon = GFX_goal_generic_demand_territory
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_slave_division_program
 		}
@@ -3281,7 +3724,7 @@ focus_tree = {
 	focus = {
 		id = SKA_forced_labor_army
 		icon = GFX_goal_tfv_saf_support_ossebrandwag
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_basic_advances
 		}
@@ -3303,7 +3746,7 @@ focus_tree = {
 	focus = {
 		id = SKA_increased_military_spendings
 		icon = GFX_goal_generic_cavalry
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_basic_advances
 		}
@@ -3329,7 +3772,7 @@ focus_tree = {
 	focus = {
 		id = SKA_basic_advances
 		icon = GFX_IRI_International_Academy_Of_Philosophy
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_the_army_of_skaelinger
 		}
@@ -3342,7 +3785,7 @@ focus_tree = {
 	focus = {
 		id = SKA_skaelinger_infantry
 		icon = GFX_goal_generic_military_sphere
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_increased_military_spendings
 			focus = SKA_forced_labor_army
@@ -3356,7 +3799,7 @@ focus_tree = {
 	focus = {
 		id = SKA_superior_mountain_warfare
 		icon = GFX_focus_RAJ_indian_gentlemen_offcers
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_skaelinger_infantry
 		}
@@ -3372,7 +3815,7 @@ focus_tree = {
 	focus = {
 		id = SKA_professional_army_training
 		icon = GFX_focus_generic_military_academy
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_increased_military_spendings
 		}
@@ -3385,7 +3828,7 @@ focus_tree = {
 	focus = {
 		id = SKA_glory_of_skaelinger_craftsmanship
 		icon = GFX_goal_generic_production2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_professional_army_training
 		}
@@ -3398,7 +3841,7 @@ focus_tree = {
 	focus = {
 		id = SKA_forges_of_skaelinger
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_glory_of_skaelinger_craftsmanship
 			focus = SKA_dwarfen_engineering
@@ -3420,7 +3863,7 @@ focus_tree = {
 	focus = {
 		id = SKA_foreign_lands_siege_practises
 		icon = GFX_goal_generic_army_artillery
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_increased_military_spendings
 			focus = SKA_forced_labor_army
@@ -3434,7 +3877,7 @@ focus_tree = {
 	focus = {
 		id = SKA_dwarfen_engineering
 		icon = GFX_goal_generic_production
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_foreign_lands_siege_practises
 		}
@@ -3447,12 +3890,32 @@ focus_tree = {
 	focus = {
 		id = SKA_preemptive_strike
 		icon = GFX_focus_ung_war_ordoria
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_anti_ordorian_stance
 		}
 		bypass = {
+			OR = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
+			}
 			has_war_with = ORD
+			}
 		}
 		relative_position_id = SKA_anti_ordorian_stance
 		x = 0
@@ -3473,7 +3936,7 @@ focus_tree = {
 	focus = {
 		id = SKA_border_fortification_programs
 		icon = GFX_goal_generic_construct_military
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_careful_preperations
 			focus = SKA_technological_military_agreement
@@ -3482,6 +3945,26 @@ focus_tree = {
 			OR = {
 				has_guaranteed = RTH
 				is_in_faction_with = RTH
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_dealt_with
+				OR = {
+					ORD = {
+						OR = {
+							exists = no
+							is_subject_of = SKA
+							is_subject_of = RTH
+						}
+					}
+					AND = {
+						NOT = {
+							has_war_with = ORD
+							country_exists = RTH
+						}
+					}
+				}
 			}
 		}
 		x = 37
@@ -3496,7 +3979,7 @@ focus_tree = {
 	focus = {
 		id = SKA_continue_alliance
 		icon = GFX_goal_generic_major_alliance
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_border_fortification_programs
 			focus = SKA_preemptive_strike
@@ -3529,17 +4012,38 @@ focus_tree = {
 			}
 			country_exists = RTH
 		}
+		
+		bypass = {
+			NOT = {
+				is_in_faction_with = RTH
+			}
+			RTH = {
+				is_in_faction = yes
+			}
+		}
+		
 		relative_position_id = SKA_border_fortification_programs
 		x = 0
 		y = 1
 		completion_reward = {
-			
+			if = {
+				limit = {
+					is_in_faction = yes
+				}
+				faction_leader = {
+					add_to_faction = RTH
+				}
+			}
+			else = {
+				create_faction = "brotherhood_alliance"
+				add_to_faction = RTH
+			}
 		}
 	}
 	focus = {
 		id = SKA_end_alliance_convenience
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_border_fortification_programs
 			focus = SKA_preemptive_strike
@@ -3605,7 +4109,7 @@ focus_tree = {
 	focus = {
 		id = SKA_blessings_of_the_past
 		icon = GFX_focus_rom_royal_dictatorship
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_defining_new_borders
 			focus = SKA_all_or_nothing
@@ -3648,7 +4152,7 @@ focus_tree = {
 	focus = {
 		id = SKA_northern_dominion
 		icon = GFX_focus_ung_rimatu
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_vergallheim_alliance
 			focus = SKA_the_ultimatum
@@ -3705,7 +4209,7 @@ focus_tree = {
 	focus = {
 		id = SKA_subordination_war_plans
 		icon = GFX_goal_generic_territory_or_war
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_slave_acquisition_program
 		}
@@ -3722,7 +4226,7 @@ focus_tree = {
 	focus = {
 		id = SKA_population_support
 		icon = GFX_BLD_Promote_Farming
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_buy_out_steel_road_competition
 		}
@@ -3767,7 +4271,7 @@ focus_tree = {
 	focus = {
 		id = SKA_decriminalize_the_brotherhood
 		icon = GFX_focus_generic_rosite_housing
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_price_ceilings
 		}
@@ -3790,7 +4294,7 @@ focus_tree = {
 	focus = {
 		id = SKA_hellirfasts_final_decree
 		icon = GFX_focus_hol_the_foundations_of_defense
-		cost = 10
+		cost = 5
 		available = {
 			NOT = {
 				has_country_flag = SKA_king_died
@@ -3805,7 +4309,7 @@ focus_tree = {
 	focus = {
 		id = SKA_fortify_loris_path
 		icon = GFX_goal_generic_fortify_city
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_hellirfasts_final_decree
 		}
@@ -3838,7 +4342,7 @@ focus_tree = {
 	focus = {
 		id = SKA_attempting_stabilize_nation
 		icon = GFX_goal_generic_national_unity
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_hellirfasts_final_decree
 		}
@@ -3861,7 +4365,7 @@ focus_tree = {
 	focus = {
 		id = SKA_second_scheme
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_dissolve_the_lore_council
 		}
@@ -3871,10 +4375,26 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = SKA_someone_won_social_war
-				OR = {
-					has_country_flag = SKA_social_war_radical_republican_victory
-					has_country_flag = SKA_social_war_puritan_victory
+				NOT = {
+					check_variable = {
+						SKA_social_war_boe_inf = SKA_social_war_soltruist_inf
+					}
 				}
+			}
+			if = {
+				limit = {
+					has_country_flag = SKA_fought_second_scheme_war_already
+				}
+				OR = {
+					has_government = puritan
+					has_government = republic_peasant
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				has_government = puritan
+				has_government = republic_peasant
 			}
 		}
 		ai_will_do = {
@@ -3907,7 +4427,7 @@ focus_tree = {
 	focus = {
 		id = SKA_follow_rthaur_brothers
 		icon = GFX_focus_ger_bulwark_against_bolshevism
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_second_scheme
 		}
@@ -3916,6 +4436,15 @@ focus_tree = {
 		}
 		available = {
 			has_country_flag = SKA_social_war_radical_republican_victory
+			if = {
+				limit = {
+					has_country_flag = SKA_fought_second_scheme_war_already
+				}
+				has_government = republic_peasant
+			}
+		}
+		bypass = {
+			has_government = republic_peasant
 		}
 		ai_will_do = {
 			factor = 3
@@ -3949,15 +4478,24 @@ focus_tree = {
 	focus = {
 		id = SKA_sun_beneath_stone
 		icon = GFX_goal_generic_dangerous_deal
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_second_scheme
 		}
 		mutually_exclusive = {
 			focus = SKA_follow_rthaur_brothers
 		}
+		bypass = {
+			has_government = puritan
+		}
 		available = {
 			has_country_flag = SKA_social_war_puritan_victory
+			if = {
+				limit = {
+					has_country_flag = SKA_fought_second_scheme_war_already
+				}
+				has_government = puritan
+			}
 		}
 		ai_will_do = {
 			factor = 5
@@ -4025,7 +4563,7 @@ focus_tree = {
 	focus = {
 		id = SKA_making_republican_constitution
 		icon = GFX_focus_hol_the_foundations_of_defense
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_follow_rthaur_brothers
 		}
@@ -4042,7 +4580,7 @@ focus_tree = {
 	focus = {
 		id = SKA_centralized_guild_republics
 		icon = GFX_goal_generic_national_unity
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_making_republican_constitution
 		}
@@ -4056,7 +4594,7 @@ focus_tree = {
 	focus = {
 		id = SKA_establish_universal_suffrage
 		icon = GFX_goal_support_democracy
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_making_republican_constitution
 		}
@@ -4070,7 +4608,7 @@ focus_tree = {
 	focus = {
 		id = SKA_control_the_prices
 		icon = GFX_focus_usa_reestablish_the_gold_standard
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_centralized_guild_republics
 		}
@@ -4084,7 +4622,7 @@ focus_tree = {
 	focus = {
 		id = SKA_provide_housing
 		icon = GFX_goal_generic_construction2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_establish_universal_suffrage
 		}
@@ -4101,7 +4639,7 @@ focus_tree = {
 	focus = {
 		id = SKA_national_guard
 		icon = GFX_focus_generic_manpower
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_establish_universal_suffrage
 		}
@@ -4115,7 +4653,7 @@ focus_tree = {
 	focus = {
 		id = SKA_hold_lathweyne_republican_conference
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_provide_housing
 		}
@@ -4144,7 +4682,7 @@ focus_tree = {
 	focus = {
 		id = SKA_supporting_republicans_abroad
 		icon = GFX_goal_generic_improve_relations
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_hold_lathweyne_republican_conference
 		}
@@ -4165,11 +4703,14 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SKA_destroy_temple
 		}
+		ai_will_do = {
+			factor = 5
+		}
 		relative_position_id = SKA_sun_beneath_stone
 		x = 0
 		y = 1
 		completion_reward = {
-			add_to_variable = { SKA_radical_soltruist_anger = 1 }
+			add_to_variable = { SKA_radical_soltruist_anger = 2 }
 			remove_ideas = dwarven_ancestor_worship_religion
 			custom_effect_tooltip = SKA_soltruism_tt
 			hidden_effect = {
@@ -4187,6 +4728,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = SKA_convert_temple_to_soltruism
+		}
+		ai_will_do = {
+			factor = 3
 		}
 		relative_position_id = SKA_sun_beneath_stone
 		x = 2
@@ -4211,6 +4755,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = SKA_merge_all_guilds
+		}
+		ai_will_do = {
+			factor = 3
 		}
 		relative_position_id = SKA_destroy_temple
 		x = -2
@@ -4254,6 +4801,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SKA_state_controlled_guild
 		}
+		ai_will_do = {
+			factor = 3
+		}
 		relative_position_id = SKA_destroy_temple
 		x = 0
 		y = 1
@@ -4272,11 +4822,14 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SKA_rediscover_runesmithing
 		}
+		ai_will_do = {
+			factor = 1
+		}
 		relative_position_id = SKA_merge_all_guilds
 		x = -2
 		y = 1
 		completion_reward = {
-			add_to_variable = { SKA_radical_soltruist_anger = 1 }
+			add_to_variable = { SKA_radical_soltruist_anger = 3 }
 			add_ideas = SKA_conventional_studies
 		}
 	}
@@ -4291,6 +4844,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SKA_conventional_studies
 		}
+		ai_will_do = {
+			factor = 15
+		}
 		relative_position_id = SKA_merge_all_guilds
 		x = 0
 		y = 1
@@ -4304,9 +4860,12 @@ focus_tree = {
 	focus = {
 		id = SKA_pragmatist_warlordship
 		icon = GFX_focus_generic_little_entente
-		cost = 10
+		cost = 5
 		available = {
 			NOT = { has_idea = SKA_destabilization_caste_system }
+		}
+		ai_will_do = {
+			factor = 3
 		}
 		prerequisite = {
 			focus = SKA_conventional_studies
@@ -4332,13 +4891,16 @@ focus_tree = {
 	focus = {
 		id = SKA_esoteric_council
 		icon = GFX_goal_generic_CAS
-		cost = 10
+		cost = 5
 		available = {
 			NOT = { has_idea = SKA_destabilization_caste_system }
 			custom_trigger_tooltip = {
 				check_variable = { SKA_radical_soltruist_anger < 3 }
 				tooltip = SKA_mostly_populist_reforms
 			}
+		}
+		ai_will_do = {
+			factor = 5
 		}
 		prerequisite = {
 			focus = SKA_conventional_studies
@@ -4367,7 +4929,7 @@ focus_tree = {
 	focus = {
 		id = SKA_crush_kurgur
 		icon = GFX_goal_generic_territory_or_war
-		cost = 10
+		cost = 5
 		bypass = {
 			KUR = {
 				exists = no
@@ -4394,7 +4956,7 @@ focus_tree = {
 	focus = {
 		id = SKA_war_focused_economy
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_pragmatist_warlordship
 		}
@@ -4429,7 +4991,7 @@ focus_tree = {
 	focus = {
 		id = SKA_utilize_kurgur_plans
 		icon = GFX_focus_generic_support_the_left_right
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_esoteric_council
 		}
@@ -4443,7 +5005,7 @@ focus_tree = {
 	focus = {
 		id = SKA_begin_mohrok_indoctrination
 		icon = GFX_focus_generic_self_management
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_crush_kurgur
 		}
@@ -4461,7 +5023,7 @@ focus_tree = {
 	focus = {
 		id = SKA_demand_reunification_with_all_dwarves
 		icon = GFX_goal_generic_political_pressure
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SKA_begin_mohrok_indoctrination
 		}
@@ -4539,7 +5101,7 @@ focus_tree = {
 		id = SKA_fortifying_orallheim_claims
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = { focus = SKA_the_return_to_zarathum }
-		cost = 10
+		cost = 5
 		relative_position_id = SKA_the_return_to_zarathum
 		x = 1
 		y = 1
@@ -4562,7 +5124,7 @@ focus_tree = {
 		id = SKA_army_zarathum_defense
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = SKA_the_return_to_zarathum }
-		cost = 10
+		cost = 5
 		relative_position_id = SKA_the_return_to_zarathum
 		x = -1
 		y = 1
@@ -4578,7 +5140,7 @@ focus_tree = {
 		icon = GFX_focus_spa_save_the_alcazar
 		prerequisite = { focus = SKA_fortifying_orallheim_claims }
 		prerequisite = { focus = SKA_army_zarathum_defense }
-		cost = 10
+		cost = 5
 		relative_position_id = SKA_the_return_to_zarathum
 		available = {
 			owns_state = 174
@@ -4596,7 +5158,7 @@ focus_tree = {
 		id = SKA_connecting_new_capital
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = SKA_secured_zarathum }
-		cost = 10
+		cost = 5
 		relative_position_id = SKA_secured_zarathum
 		available = {
 			owns_state = 174
@@ -4618,7 +5180,7 @@ focus_tree = {
 		id = SKA_repopulating_zarathum
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = SKA_secured_zarathum }
-		cost = 10
+		cost = 5
 		relative_position_id = SKA_secured_zarathum
 		available = {
 			owns_state = 174
@@ -4636,7 +5198,7 @@ focus_tree = {
 		id = SKA_enhancing_zarathums_industry
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = SKA_secured_zarathum }
-		cost = 10
+		cost = 5
 		relative_position_id = SKA_secured_zarathum
 		available = {
 			owns_state = 174
@@ -4665,7 +5227,7 @@ focus_tree = {
 		prerequisite = { focus = SKA_connecting_new_capital }
 		prerequisite = { focus = SKA_repopulating_zarathum }
 		prerequisite = { focus = SKA_enhancing_zarathums_industry }
-		cost = 10
+		cost = 5
 		relative_position_id = SKA_repopulating_zarathum
 		available = {
 			owns_state = 174

@@ -1,6 +1,15 @@
 capital = 511
 
 set_oob = "TRX_1936"
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "TRX_1936_naval_mtg"
+	else = {
+		set_naval_oob = "TRX_1936_naval"
+	}
+}
 
 set_technology ={
 	tech_tribal_pride = 1
@@ -35,7 +44,8 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 set_research_slots = 4
@@ -47,6 +57,36 @@ set_politics = {
 	last_election = "1936.1.1"
 	election_frequency = 72
 	elections_allowed = no
+}
+
+add_opinion_modifier = {
+	target = SAL
+	modifier = bitter_rivals
+}
+
+add_relation_modifier = {
+	target = SAL
+	modifier = bitter_rivals_opinion_modifier
+}
+
+add_opinion_modifier = {
+	target = TES
+	modifier = bitter_rivals
+}
+
+add_relation_modifier = {
+	target = TES
+	modifier = bitter_rivals_opinion_modifier
+}
+
+add_opinion_modifier = {
+	target = GOW
+	modifier = dislike_opinion
+}
+
+add_relation_modifier = {
+	target = GOW
+	modifier = dislike_opinion_modifier
 }
 
 set_popularities = {
@@ -70,4 +110,39 @@ recruit_character = TRX_ghalian_ghylax
 add_ideas = {
 	human_country
 	idealism_religion
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Seafarer-Class"
+		type = destroyer_1
+		parent_version = 0
+		upgrades = {
+			
+		}
+	}
+}
+
+if = {
+	limit = { 
+		has_dlc = "Man the Guns"
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Seafarer-Class"
+		type = ship_hull_light_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = light_ship_ballista_0
+			fixed_ship_engine_slot = light_ship_rowers_0
+		}
+	}
 }

@@ -15,7 +15,7 @@ divide_spoils_ferdinism = {
 					is_core_of = THIS
 				}
 				add_core_of = PREV
-				transfer_state = PREV
+				transfer_state_to = PREV
 			}
 		}
 	}
@@ -882,6 +882,7 @@ partition_ordoria = {
 			add_state_core = 99
 			add_state_core = 101
 			add_state_core = 108
+			add_state_core = 1291
 			
 			transfer_state = 85
 			transfer_state = 116
@@ -890,6 +891,7 @@ partition_ordoria = {
 			transfer_state = 99
 			transfer_state = 101
 			transfer_state = 108
+			transfer_state = 1291
 			
 			load_oob = "ORD_empty"
 		}

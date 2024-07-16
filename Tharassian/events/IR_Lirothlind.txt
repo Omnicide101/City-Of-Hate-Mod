@@ -775,3 +775,106 @@ country_event = {#Beaten to Islands
 		add_war_support = 0.15
 	}
 }
+
+country_event = {#Ordoria wants trade!
+	id = lir.10
+	title = lir.10.t
+	desc = lir.10.d
+	picture = GFX_report_event_carol_meeting
+
+	is_triggered_only = yes
+	
+	option = {#Yes
+		name = lir.10
+		ai_chance = {
+			factor = 5
+		}
+		ORD = {
+			country_event = {
+				id = ord.101
+				days = 3
+			}
+		}
+	}
+	
+	option = {#No
+		name = lir.10.b
+		ai_chance = {
+			factor = 0
+		}
+		ORD = {
+			country_event = {
+				id = ord.102
+				days = 3
+			}
+		}
+	}
+	
+	option = {#If they support the Heir Apparent
+		name = lir.10.c
+		ai_chance = {
+			factor = 3
+			modifier = {
+				theocrat > 0.5
+				factor = 2
+			}
+			modifier = {
+				theocrat > 0.6
+				factor = 2
+			}
+			modifier = {
+				theocrat > 0.7
+				factor = 2
+			}
+			modifier = {
+				has_game_rule = {
+					rule = LIR_game_plan
+					option = LIR_MOREL
+				}
+				factor = 0
+			}
+		}
+		ORD = {
+			country_event = {
+				id = ord.103
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = {#Support for trade
+	id = lir.11
+	title = lir.11.t
+	desc = lir.11.d
+	picture = GFX_report_event_carol_meeting
+
+	is_triggered_only = yes
+	
+	option = {#W
+		name = lir.11
+		FROM_improve_THIS_relations = yes
+		add_popularity = {
+			ideology = monarchy_constitutional
+			popularity = 0.12
+		}
+		add_ideas = LIR_trade_ORD
+		ORD = {
+			add_ideas = ORD_trade_LIR
+		}
+	}
+}
+
+country_event = {#No support for trade
+	id = lir.12
+	title = lir.12.t
+	desc = lir.12.d
+	picture = GFX_report_event_carol_meeting
+
+	is_triggered_only = yes
+	
+	option = {#Boo
+		name = lir.12
+		FROM_worsen_THIS_relations = yes
+	}
+}

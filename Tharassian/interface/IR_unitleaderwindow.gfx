@@ -2,6 +2,11 @@ spriteTypes = {
 
 	#### Mod stuff####
 	spriteType = {
+		name = "GFX_trait_captured_unit_leader"
+		texturefile = "gfx/interface/traits/trait_captured_unit_leader.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_trait_hardy"
 		texturefile = "gfx/interface/traits/trait_hardy.dds"
 	}
@@ -98,6 +103,21 @@ spriteTypes = {
 	
 	spriteType = {
 		name = "GFX_trait_has_magic_armour_commander"
+		texturefile = "gfx/interface/traits/trait_has_magic_armour.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_has_magic_sword_navy"
+		texturefile = "gfx/interface/traits/trait_has_magic_sword.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_has_magic_ring_navy"
+		texturefile = "gfx/interface/traits/trait_has_magic_ring.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_has_magic_armour_navy"
 		texturefile = "gfx/interface/traits/trait_has_magic_armour.dds"
 	}
 	

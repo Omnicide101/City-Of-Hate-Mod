@@ -1,0 +1,146 @@
+spriteTypes = {
+
+	# leaders we need to override in DLC go in this file
+
+	spriteType = {
+		name = "GFX_portrait_operative_unknown"
+		texturefile = "gfx/leaders/operative_unknown.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_unknown"
+		texturefile = "gfx/leaders/leader_unknown.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_unknown_female"
+		texturefile = "gfx/leaders/leader_unknown_female.dds"
+	}
+
+
+	### ORD ###
+
+	#Commanders
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Alsyon"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Alsyon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Alsyon_small"
+		texturefile = "gfx/interface/ideas/characters/ORD/ord_alsyon.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ORD_Alwyen"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Alwyen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Alwyen_small"
+		texturefile = "gfx/interface/ideas/characters/ORD/ord_alwyen.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ORD_Dhysmarin"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Dhysmarin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Dhysmarin_small"
+		texturefile = "gfx/interface/ideas/characters/ORD/ord_dhysmarin.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ORD_Gadayn"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Gadayn.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Gadayn_small"
+		texturefile = "gfx/interface/ideas/characters/ORD/ord_gadayn.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ORD_Ghirian"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Ghirian.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Ghirian_small"
+		texturefile = "gfx/interface/ideas/characters/ORD/ord_ghirian.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ORD_Ghylauden"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Ghylauden.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Ghylauden_small"
+		texturefile = "gfx/interface/ideas/characters/ORD/ord_ghylauden.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ORD_Gylar"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Gylar.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Gylar_small"
+		texturefile = "gfx/interface/ideas/characters/ORD/ord_gylar.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ORD_Isthere"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Isthere.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Isthere_small"
+		texturefile = "gfx/interface/ideas/characters/ORD/ord_isthere.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ORD_Wacthyne"
+		texturefile = "gfx/leaders/ORD/Portrait_Ordoria_Wacthyne.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Wacthyne_small"
+		texturefile = "gfx/interface/ideas/characters/ORD/ord_wacthyne.dds"
+	}
+	
+	#Politicians and advisors
+	
+	spriteType = {
+		name = "GFX_Portrait_ORD_Feryd"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Feryd.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ORD_Gyume"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Gyume.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Gyume_small"
+		texturefile = "gfx/interface/ideas/characters/ORD/ord_gyume.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ORD_Holynthor"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Holynthor.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ORD_Holynthor_small"
+		texturefile = "gfx/interface/ideas/characters/ORD/ord_holynthor.dds"
+	}
+
+	#Operatives
+	spriteType = {
+		name = "GFX_Portrait_ORD_Jhylere"
+		texturefile = "gfx/leaders/ORD/Portrait_ORD_Jhylere.dds"
+	}
+}

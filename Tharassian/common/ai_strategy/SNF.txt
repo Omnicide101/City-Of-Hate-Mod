@@ -1,0 +1,277 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+#Fight with Perkavland
+SNF_protect_gorhafen_staging_post = {
+	enable = {
+		original_tag = SNF
+		has_completed_focus = SNF_southern_reclamation
+		NOT = {
+			controls_state = 622
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.15
+		states = {
+			255
+		}
+		subtract_fronts_from_need = yes
+	}
+}
+
+SNF_perkav_skirmishes_general = {
+
+	enable = {
+		original_tag = SNF
+		has_completed_focus = SNF_southern_reclamation
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = prepare_for_war
+		id = PRK
+		
+		value = 150
+	}
+}
+
+SNF_perkav_skirmishes_kalaster = {
+
+	enable = {
+		original_tag = SNF
+		has_country_flag = SNF_kalaster_flag
+		NOT = {
+			owns_state = 329
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 329
+		
+		value = 150
+	}
+}
+
+SNF_perkav_skirmishes_lienihafen = {
+
+	enable = {
+		original_tag = SNF
+		has_completed_focus = SNF_retake_lienihafen
+		NOT = {
+			owns_state = 418
+			owns_state = 253
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 418
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 253
+		
+		value = 150
+	}
+}
+
+SNF_perkav_skirmishes_lienihafen_consolidation = {
+
+	enable = {
+		original_tag = SNF
+		has_completed_focus = SNF_nearby_conquests
+		NOT = {
+			owns_state = 622
+			owns_state = 642
+			owns_state = 629
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 622
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 642
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 629
+		
+		value = 150
+	}
+}
+
+SNF_perkav_skirmishes_karistadt = {
+
+	enable = {
+		original_tag = SNF
+		has_completed_focus = SNF_thrust_into_karistadt
+		NOT = {
+			owns_state = 621
+			owns_state = 630
+			owns_state = 650
+			owns_state = 416
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 621
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 630
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 650
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 416
+		
+		value = 150
+	}
+}
+
+SNF_perkav_skirmishes_eastern_push = {
+
+	enable = {
+		original_tag = SNF
+		has_completed_focus = SNF_thrust_into_karistadt
+		NOT = {
+			owns_state = 645
+			owns_state = 620
+			owns_state = 623
+			owns_state = 631
+			owns_state = 649
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 645
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 620
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 623
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 631
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 649
+		
+		value = 150
+	}
+}
+
+SNF_perkav_skirmishes_nevendenn = {
+
+	enable = {
+		original_tag = SNF
+		OR = {
+			has_completed_focus = SNF_assist_wertzworde
+			has_completed_focus = SNF_retake_nevedenn
+		}
+		NOT = {
+			owns_state = 420
+			owns_state = 354
+			owns_state = 355
+			owns_state = 334
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 420
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 354
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 355
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 334
+		
+		value = 150
+	}
+}

@@ -38,11 +38,13 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				army_attack_factor = -0.6
-				army_defence_factor = -0.4
-				army_org_factor = -0.35
-				planning_speed  = -0.35
-				max_planning = -0.25
+				army_attack_factor = -0.15
+				breakthrough_factor = -0.25
+				army_defence_factor = -0.1
+				army_org_factor = -0.1
+				planning_speed  = -0.25
+				training_time_factor = 0.6
+				max_planning = -0.1
 			}
 		}
 		
@@ -61,9 +63,12 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				army_defence_factor = -0.05
+				army_attack_factor = -0.05
+				breakthrough_factor = -0.1
 				army_org_factor = -0.05
-				planning_speed  = -0.05
+				planning_speed  = -0.1
+				training_time_factor = 0.3
+				max_planning = -0.05
 			}
 		}
 		
@@ -112,15 +117,31 @@ ideas = {
 				puritan_drift = 0.05
 			}
 		}
-
-		ORD_rthaur_resistance_idea = {
+		
+		RTH_weak_links = {
 			
 			allowed = {
 				always = no
 			}
 			
-			cancel = {
-				has_completed_focus = ORD_dominance
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = POL_the_peasants_strike
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = -0.23
+				army_defence_factor = -0.17
+			}
+		}
+
+		ORD_rthaur_resistance_idea = {
+			
+			allowed = {
+				always = no
 			}
 			
 			picture = officers_purged
@@ -178,7 +199,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				army_org_Factor = -0.25
+				army_org_factor = -0.25
 				army_defence_factor = -0.35
 				army_attack_factor = -0.35
 			}

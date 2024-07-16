@@ -28,6 +28,25 @@ characters={
 			expire="1.1.1.1"
 			id=-1
 		}
+		advisor = {
+			slot = prisoners_guests
+			cost = 25
+			visible = {
+				tag = ORD
+				has_government = theocrat
+				RTH_alucien_derathur = {
+					has_nationality = ORD
+				}
+			}
+			available = {
+				NOT = {
+					is_subject_of = RTH
+				}
+			}
+			traits = {
+				heresiarch
+			}
+		}
 	}
 	RTH_farnaur_ithinis={
 		name="Farnaur Ithinis"
@@ -109,7 +128,7 @@ characters={
 		name="Alyssyna Lavynthis"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/rth_lavynthis.dds"
+				small=GFX_idea_rth_lavynthis
 			}
 		}
 		advisor = {

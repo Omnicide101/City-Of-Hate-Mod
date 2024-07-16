@@ -9,14 +9,16 @@ state={
 	local_supplies=5
 	state_category = rural
     resources = {
-        food = 32
+        lumber = 11
     }
 	history = {
-        owner  = XXX
-        add_core_of  = XXX
+        owner = SAL
+        add_core_of = SAL
+		add_core_of = TRX
         buildings = {
-            infrastructure = 4
+            infrastructure = 3
+			farm = 2
 		}
-		victory_points = { 8307 1 }
+		victory_points = { 426 4 }
 	}
 }

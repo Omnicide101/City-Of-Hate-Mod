@@ -6,9 +6,19 @@ state={
 	}
 	buildings_max_level_factor=1.000
 	manpower=1
-	state_category=pastoral
+	state_category=large_town
 	history={
-		owner = XXX
-		add_core_of = XXX
+		owner = THA
+		add_core_of = THA
+		victory_points = { 2229 14 }
+		buildings = {
+			infrastructure = 3
+			farm = 2
+			forge = 1
+			dockyard = 2
+			2229 = {
+				naval_base = 3
+			}
+		}
 	}
 }

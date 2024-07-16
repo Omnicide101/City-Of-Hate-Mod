@@ -1,6 +1,36 @@
-spriteTypes = {	
+spriteTypes = {
 
 	#### Mod-specific goal icons
+	SpriteType = {
+	name = "GFX_focus_SPW_heavy_head"
+	texturefile = "gfx/interface/goals/focus_SPW_heavy_head.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_generic_fancy_crown"
+	texturefile = "gfx/interface/goals/focus_generic_fancy_crown.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ORD_league_fucked"
+	texturefile = "gfx/interface/goals/focus_ORD_league_fucked.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ORD_purple_pennant"
+	texturefile = "gfx/interface/goals/focus_ORD_purple_pennant.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_generic_law_failed"
+	texturefile = "gfx/interface/goals/focus_generic_law_failed.dds"
+	}
+	
+	SpriteType = {
+	name = "GFX_focus_ord_cheering_royalists"
+	texturefile = "gfx/interface/goals/focus_ord_cheering_royalists.dds"
+	}
+	
 	SpriteType = {
 	name = "GFX_focus_ORD_erase_derathur"
 	texturefile = "gfx/interface/goals/focus_ORD_erase_derathur.dds"

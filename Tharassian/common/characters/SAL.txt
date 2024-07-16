@@ -1,0 +1,16 @@
+characters={
+	SAL_maskard={
+		name="Melira Maskard"
+		portraits={
+			civilian={
+				large="gfx/leaders/RTH/Portrait_Rthauiaur_Generic_land_3.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SAL_maskard_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

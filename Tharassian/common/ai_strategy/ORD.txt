@@ -1,4 +1,4 @@
-	# befriend
+# befriend
 # conquer
 # antagonize
 # build_ship
@@ -10,10 +10,234 @@
 # protect
 # influence
 
+spy_on_rthaur = { #Gotta make sure you can do the Oath foci
+	enable = {
+		tag = ORD
+		country_exists = RTH
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = operative_mission
+		value = 150
+		mission = build_intel_network
+		state = 118
+		state = 122
+		mission_target = RTH
+	}
+}
+
+ord_commit_to_the_james_bond_bit_SKA = { #Spy on your biggest enemies if you've taken the Oath foci
+	enable = {
+		tag = ORD
+		has_idea = ORD_the_oath_idea_3
+		country_exists = SKA
+		SKA = {
+			is_subject = no
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = operative_mission
+		value = 150
+		mission = build_intel_network
+		state = 146
+		mission_target = SKA
+	}
+}
+
+ord_commit_to_the_james_bond_bit_UNG = { #Spy on your biggest enemies if you've taken the Oath foci
+	enable = {
+		tag = ORD
+		has_idea = ORD_the_oath_idea_3
+		country_exists = UNG
+		UNG = {
+			is_subject = no
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = operative_mission
+		value = 150
+		mission = build_intel_network
+		state = 233
+		mission_target = UNG
+	}
+}
+
+ord_commit_to_the_james_bond_bit_GMR = { #Spy on your biggest enemies if you've taken the Oath foci
+	enable = {
+		tag = ORD
+		has_idea = ORD_the_oath_idea_3
+		country_exists = GMR
+		GMR = {
+			is_subject = no
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = operative_mission
+		value = 150
+		mission = build_intel_network
+		state = 1
+		mission_target = GMR
+	}
+}
+
+ord_commit_to_the_james_bond_bit_STA = { #Spy on your biggest enemies if you've taken the Oath foci
+	enable = {
+		tag = ORD
+		has_idea = ORD_the_oath_idea_3
+		country_exists = STA
+		STA = {
+			is_subject = no
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = operative_mission
+		value = 150
+		mission = build_intel_network
+		state = 192
+		mission_target = STA
+	}
+}
+
+
+ordoria_likes_bows = {
+# Stacks with default unit production, i.e. Ordoria wants more archers than other countries
+	enable = {
+		original_tag = ORD
+	}
+	
+	abort = {
+		always = no
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = archer
+		value = 5
+	}
+}
+
+dont_overstep_steel_limits = {
+	enable = {
+		tag = ORD
+		OR = {
+			has_idea = ORD_looming_steel_crisis_idea
+			has_dynamic_modifier = {
+				modifier = ORD_steel_crisis_hit
+			}
+		}
+		check_variable = {
+			var = num_divisions
+			value = ORD_steel_crisis_division_limit
+			compare = greater_than_or_equals
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = build_army
+		id = cavalry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = warband
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = garrison
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = frontline
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = archer
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = light_cavalry
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = heavy_cavalry
+		value = -1000
+	}
+}
+
+seize_gythus = {
+	enable = {
+		has_completed_focus = ORD_secure_ryselin
+		NOT = {
+			owns_state = 140
+		}
+	}
+	
+	abort = {
+		owns_state = 140
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 140
+		value = 3000
+	}
+	
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 1
+		states = {
+			105
+			107
+			108
+			116
+			1291
+		}
+		subtract_fronts_from_need = yes
+	}
+}
+
 defend_heartlands = {
 	enable = {
 		original_tag = ORD
 	}
+	
+	abort = {
+		always = no
+	}
+	
 	ai_strategy = {
 		type = area_priority
 		id = west_ordoria
@@ -36,13 +260,89 @@ not_ready_for_rthaur_war = {
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = ignore
-		id = "RTH"			
+		id = RTH			
 		value = 200
 	}
 	ai_strategy = {
 		type = ignore_claim
-		id = "RTH"
+		id = RTH
 		value = 200
+	}
+}
+
+kneecap_rebels = {
+	enable = {
+		original_tag = ORD
+		has_war_with = RTH
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+
+		state = 131
+		
+		value = 35 # seizing the Loris Pass devastates the Rthaur
+	}
+	
+	ai_strategy = {
+		type = front_control
+
+		state = 131
+
+		ratio = 0.25
+
+		priority = 300
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = loris_pass
+		value = 200
+	}
+}
+
+rapid_strike_against_rthaur = {
+	enable = {
+		original_tag = ORD
+		has_war_with = RTH
+		war_length_with = {
+			tag = RTH
+			months < 3
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_control
+
+		tag = RTH
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+seize_skaelinger = {
+	enable = {
+		original_tag = ORD
+		has_war_with = SKA
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+
+		state = 146
+		
+		value = 35 # allows us to force peace
 	}
 }
 
@@ -64,42 +364,42 @@ not_ready_for_wars = {
 	}
 	ai_strategy = {
 		type = ignore
-		id = "STA"			
+		id = STA			
 		value = 999
 	}
 	ai_strategy = {
 		type = ignore_claim
-		id = "STA"
+		id = STA
 		value = 999
 	}
 	ai_strategy = {
 		type = ignore
-		id = "HLZ"			
+		id = HLZ			
 		value = 999
 	}
 	ai_strategy = {
 		type = ignore_claim
-		id = "HLZ"
+		id = HLZ
 		value = 999
 	}
 	ai_strategy = {
 		type = ignore
-		id = "UNG"			
+		id = UNG			
 		value = 999
 	}
 	ai_strategy = {
 		type = ignore_claim
-		id = "UNG"
+		id = UNG
 		value = 999
 	}
 	ai_strategy = {
 		type = ignore
-		id = "GMR"			
+		id = GMR			
 		value = 999
 	}
 	ai_strategy = {
 		type = ignore_claim
-		id = "GMR"
+		id = GMR
 		value = 999
 	}
 }
@@ -109,49 +409,52 @@ invade_north = {
 		original_tag = ORD
 		has_country_flag = ORD_northern_strategy
 	}
+	
+	abort_when_not_enabled = yes
+	
 	ai_strategy = {
 		type = invade
-		id = "GMR"
+		id = GMR
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "NPC"
+		id = NPC
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "IRT"
+		id = IRT
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "KRT"
+		id = KRT
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "FEL"
+		id = FEL
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "TRI"
+		id = TRI
 		value = 200
 		}
 	ai_strategy = {
 		type = invade
-		id = "NAS"
+		id = NAS
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "NAV"
+		id = NAV
 			value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "KAL"
+		id = KAL
 		value = 200
 	}
 }
@@ -161,69 +464,104 @@ invade_south = {
 		original_tag = ORD
 		has_country_flag = ORD_southern_strategy
 	}
+	
+	abort_when_not_enabled = yes
+	
 	ai_strategy = {
 		type = invade
-		id = "SVT"
+		id = SVT
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "NOC"
+		id = NOC
 			value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "HLZ"
+		id = HLZ
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "SPW"
+		id = SPW
 		value = 200
 	}
 	ai_strategy = {
 			type = invade
-		id = "STA"
+		id = STA
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "NRK"
+		id = NRK
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-			id = "TEI"
+			id = TEI
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "ARK"
+		id = ARK
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-			id = "UNG"
+			id = UNG
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "SNF"
+		id = SNF
 		value = 200
 	}
 	ai_strategy = {
 			type = invade
-		id = "FTH"
+		id = FTH
 		value = 200
 	}
 		ai_strategy = {
 		type = invade
-		id = "WIS"
+		id = WIS
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-			id = "WSZ"
+			id = WSZ
 		value = 200
+	}
+}
+
+seize_SVT = { #Focus on opening up the second front
+	enable = {
+		has_active_mission = ORD_open_second_front_mission
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade
+		id = SVT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = st_vichtlas
+		value = 300
+	}
+}
+
+seize_FTH = { #Focus on seizing Fritzhafen
+	enable = {
+		has_active_mission = ORD_seize_fritzhafen_mission
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = area_priority
+		id = fritzhafen
+		value = 300
 	}
 }

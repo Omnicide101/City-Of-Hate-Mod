@@ -93,3 +93,15 @@ country_event = {#Clears Civil War NS
 		remove_ideas = GENERIC_civil_war_isolation
 	}
 }
+
+country_event = {#Hack workaround to remove embargoes on formerly-Puritan states
+	id = ir.political.6
+		
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		break_embargo = FROM
+	}
+}

@@ -1,19 +1,35 @@
-
-state={
-	id=523
-	name="STATE_523"
-
-	history={
-		owner = XXX
-		add_core_of = XXX
-
+state = {
+	id = 523
+	name = "STATE_523"
+	history = {
+		owner = AKK
+		add_core_of = AKK
 	}
-
-	provinces={
+	provinces = {
 		1487 3055 4205 5178 7306 7325 7358 7393 7406 
 	}
-	manpower=1
-	buildings_max_level_factor=1.000
-	state_category=rural
-	local_supplies=0.000
+	manpower = 358212
+	buildings_max_level_factor = 1.000
+	state_category = city
+	local_supplies = 0.000
+	buildings_max_level_factor = 1.000
+	local_supplies = 5
+	
+	resources = {
+		lumber = 2
+		food = 5
+	}
+	
+	history = {
+		owner = AKK
+		add_core_of = AKK
+		victory_points = { 7306 23 }
+		victory_points = { 3055 5 }
+		victory_points = { 1487 2 }
+		buildings = {
+			infrastructure = 3
+			farm = 3
+			forge = 3
+		}
+	}
 }

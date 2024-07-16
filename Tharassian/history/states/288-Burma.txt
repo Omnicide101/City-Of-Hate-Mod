@@ -7,9 +7,6 @@ state={
 	}
 
 	history={
-		victory_points = {
-			3635 1 
-		}
 		owner = SPW
 		buildings = {
 			infrastructure = 2
@@ -21,9 +18,9 @@ state={
 	}
 
 	provinces={
-		808 3635 4513 9060 9123
+		808 4513 9060
 	}
-	manpower=2204
+	manpower=1104
 	buildings_max_level_factor=1.000
 	state_category=pastoral
 	local_supplies=0.000

@@ -1,13 +1,27 @@
-state={
-	id=524
-	name="STATE_524"
-	provinces={
+state = {
+	id = 524
+	name = "STATE_524"
+	provinces = {
 		2052 6972 3552 6998 4424
 	}
-	state_category = rural manpower = 1
-	buildings_max_level_factor=1.000
-	history={
-		owner = XXX
-		add_core_of = XXX
+	state_category = city
+	manpower = 334192
+	buildings_max_level_factor = 1.000
+	
+	resources = {
+		food = 4
+	}
+	
+	history = {
+		owner = AKK
+		add_core_of = AKK
+		victory_points = { 3552 24 }
+		victory_points = { 6998 8 }
+		buildings = {
+			infrastructure = 4
+			workshop = 3
+			forge = 2
+			dockyard = 1
+		}
 	}
 }

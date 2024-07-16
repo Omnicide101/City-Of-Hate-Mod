@@ -252,6 +252,23 @@ ideas = {
 			removal_cost = -1
 		}
 		
+		goblin_country = {
+			allowed = {
+				always = no #assigned in country files
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_goblin
+			
+			traits = {
+				goblin_racial_bonuses
+			}
+			
+			removal_cost = -1
+		}
+		
 		ogre_country = {
 			allowed = {
 				always = no #assigned in country files
@@ -264,6 +281,23 @@ ideas = {
 			
 			traits = {
 				ogre_racial_bonuses
+			}
+			
+			removal_cost = -1
+		}
+		
+		undead_country = {
+			allowed = {
+				always = no #assigned in country files
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_undead
+			
+			traits = {
+				undead_racial_bonuses
 			}
 			
 			removal_cost = -1
@@ -744,7 +778,7 @@ ideas = {
 			
 			modifier = {
 				surrender_limit = 0.15
-				land_reinforce_rate = 0.1
+				land_reinforce_rate = 0.03
 			}
 		}
 		
@@ -977,7 +1011,7 @@ ideas = {
 			
 			modifier = {
 				attrition = -0.25
-				land_reinforce_rate = 0.1
+				land_reinforce_rate = 0.03
 			}
 		}
 		

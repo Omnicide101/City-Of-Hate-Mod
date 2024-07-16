@@ -792,7 +792,7 @@ focus = {#Rule of Nobility
 
 focus = {#Freiprinzliche Richter
 	id = HLZ_freiprinzliche_richter
-	icon = GFX_focus_eng_motion_of_no_confidence
+	icon = GFX_focus_generic_court
 	cost = 7
 	prerequisite = {
 		focus = HLZ_judicial_institutions

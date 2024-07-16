@@ -35,7 +35,23 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
+}
+
+set_variable = {
+	var = SPW_weisz_willpower
+	value = 37
+}
+
+set_variable = {
+	var = SPW_rooks_tension
+	value = 3
+}
+
+set_variable = {
+	var = SPW_rooks_loyalty
+	value = 1
 }
 
 set_variable = {

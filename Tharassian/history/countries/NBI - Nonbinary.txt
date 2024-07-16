@@ -36,7 +36,8 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 set_politics = {
@@ -62,67 +63,13 @@ set_popularities = {
 	puritan = 0
 }
 
+recruit_character = NBI_committee_enby
+recruit_character = NBI_committee_trans
+recruit_character = NBI_none
+recruit_character = NBI_gnarly_carly
+
 add_ideas = {
 	diverse_country
 	trans_rights_religion
 	NBI_be_trans_throw_hands
-}
-
-recruit_character = NBI_committee_enby
-recruit_character = NBI_committee_trans
-recruit_character = NBI_none
-
-create_field_marshal = {
-	name = "'Gnarly' Carly"
-	picture = "Portrait_NBI_Carly.dds"
-	traits = {
-	has_magic_sword_commander
-	has_magic_ring_commander
-	has_magic_armour_commander
-	brilliant_strategist
-	inflexible_strategist
-	infantry_officer
-	infantry_leader
-	infantry_expert
-	cavalry_officer
-	cavalry_leader
-	cavalry_expert
-	organizer
-	skilled_staffer
-	expert_delegator
-	trait_engineer
-	winter_specialist
-	jungle_rat
-	desert_fox
-	swamp_fox
-	trait_mountaineer
-	hill_fighter
-	ranger
-	urban_assault_specialist
-	logistics_wizard
-	fast_planner
-	thorough_planner
-	unyielding_defender
-	aggressive_assaulter
-	offensive_doctrine
-	defensive_doctrine
-	organisational_leader
-	inspirational_leader
-	expert_delegator
-	fortress_buster
-	scavenger
-	ambusher
-	skirmisher
-	expert_improviser
-	guerilla_fighter
-	adaptable
-	winter_expert
-	commando
-	trickster
-	}
-	skill = 9
-	attack_skill = 10
-	defense_skill = 10
-	planning_skill = 10
-	logistics_skill = 10
 }

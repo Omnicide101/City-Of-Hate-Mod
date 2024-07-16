@@ -1049,7 +1049,10 @@ focus_tree = {
 		}
 
 		available = {
-
+			divisions_in_state  = {
+				size > 2
+				state = 830
+			}
 		}
 
 		bypass = {
@@ -1066,6 +1069,7 @@ focus_tree = {
 				id = bld.4
 				days = 4
 			}
+			custom_effect_tooltip = BLD_ogregeld_refusal_means_conflict_tt
 		}
 		}
 	}

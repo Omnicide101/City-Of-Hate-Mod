@@ -32,6 +32,7 @@ set_technology ={
 	astrolabe = 1
 	compass = 1
 	cartography = 1
+	dwarven_warriors = 1
 }
 
 1939.1.1 = {
@@ -94,12 +95,6 @@ add_ideas = {
 	diplomatic_relation = {
 		country = RTH
 		relation = military_access
-		active = yes
-	}
-	
-	diplomatic_relation = {
-		country = RTH
-		relation = non_aggression_pact
 		active = yes
 	}
 	

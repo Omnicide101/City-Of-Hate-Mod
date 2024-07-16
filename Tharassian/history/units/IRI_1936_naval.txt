@@ -1,0 +1,44 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Irinthiakó Naftikó"
+		naval_base = 6505 # West Tion
+		task_force = {
+			name = "Prótos Stólos"
+			location = 6505 # West Tion
+			ship = { name = "Chairophon" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Sfyrí tis Thálassas" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Dóxa" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Trakthosa" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Selin" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Spathí" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Thymós" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Rópalo" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Stiléto" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Exapátisi" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Agóna" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+		}
+		
+		task_force = {
+			name = "Défteros Stólos"
+			location = 6470 # Cai
+			ship = { name = "Ekdíkisi" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Anéndotos" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Atrómitos" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Diígima Dimiourgós" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+		}
+		
+		task_force = {
+			name = "Trítos Stólos"
+			location = 6733 # Tikynthaois
+			
+			ship = { name = "Onesiphorós" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Polémarchos" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = Quystus } } }
+			ship = { name = "Thiriodía" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Amyntikós" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Sfagéas" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+			ship = { name = "Enáretos" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = IRI } } }
+		}
+	}
+}

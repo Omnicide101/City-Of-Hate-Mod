@@ -102,8 +102,8 @@ characters = {
 		name = "Kephalos Sosibios"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
-				small = GFX_idea_IRI_Diamantis
+				large = "gfx/interface/ideas/characters/IRI/IRI_Sosibios.dds"
+				small = GFX_idea_IRI_Sosibios
 			}
 		}
 		country_leader = {
@@ -180,7 +180,7 @@ characters = {
 				has_government = republic_aristocrat
 			}
 			traits = {
-				first_lady_of_tykinthos_2
+				first_lady_of_tykhintos_2
 			}
 			cost = 100
 			ai_will_do = {

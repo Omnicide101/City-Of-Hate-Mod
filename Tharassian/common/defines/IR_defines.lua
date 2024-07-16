@@ -34,9 +34,8 @@ NDefines.NResistance.RESISTANCE_TARGET_MODIFIER_HAS_CLAIM = -50.0			-- resistanc
 NDefines.NResistance.RESISTANCE_TARGET_MODIFIER_PER_STABILITY_LOSS = 0.3	-- resistance target modifier per stability below 100%
 NDefines.NResistance.RESISTANCE_TARGET_MODIFIER_IS_AT_PEACE = -15.0			-- resistance target modifier when we are at peace	
 NDefines.NResistance.COMPLIANCE_GROWTH_BASE = 0.07							-- base compliance grow
-NDefines.NResistance.COMPLIANCE_GROWTH_MIN = -100.0							-- min compliance grow
 NDefines.NResistance.COMPLIANCE_DECAY_AT_MAX_COMPLIANCE = -0.1				-- as compliance increases, it gets a decay rate depending on its value. compliance should stabilize at some value until its growth changes
-NDefines.NResistance.GARRISON_MANPOWER_LOST_BY_ATTACK = 0.3					-- Ratio of manpower lost by garrison at each attack on garrison (this number will be reduced by the hardness of garrison template)
+NDefines.NResistance.GARRISON_MANPOWER_LOST_BY_ATTACK = 0.03					-- Ratio of manpower lost by garrison at each attack on garrison (this number will be reduced by the hardness of garrison template)
 
 NDefines.NMilitary.DISBAND_MANPOWER_LOSS = 0.7
 NDefines.NMilitary.ARMY_FUEL_COST_MULT = 1.0								-- fuel cost multiplier for all army related stuff
@@ -63,14 +62,14 @@ NDefines.NAI.MAX_FACTORY_TO_TRADE_FOR_FUEL = 0.9
 NDefines.NAI.MAX_FACTORY_TO_TRADE_FOR_FUEL_IN_PEACE = 0.9
 NDefines.NAI.DIPLOMACY_FACTION_CIVILWAR_WANTS_HELP = -50
 NDefines.NAI.INVASION_COASTAL_PROVS_PER_ORDER = 6							-- AI will consider one extra invasion per number of provinces stated here (num orders = total coast / this)
-NDefines.NAI.MAX_DISTANCE_NALAV_INVASION = 1500.0							-- AI is extremely unwilling to plan naval invasions above this naval distance limit.
-NDefines.NAI.ENEMY_NAVY_STRENGTH_DONT_BOTHER = 25.0							-- If the enemy has a navy at least these many times stronger that the own, don't bother invading
-NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE = 0.01								-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend
-NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE = 0.01								-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend, but while being a defensive country
+NDefines.NAI.MAX_DISTANCE_NAVAL_INVASION = 1500.0							-- AI is extremely unwilling to plan naval invasions above this naval distance limit.
+NDefines.NAI.ENEMY_NAVY_STRENGTH_DONT_BOTHER = 2.5							-- If the enemy has a navy at least these many times stronger that the own, don't bother invading
+NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE = 0.08								-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend
+NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE_DEFENSIVE = 0.04					-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend, but while being a defensive country
 NDefines.NAI.MAX_MICRO_ATTACKS_PER_ORDER = 20								-- AI goes through its orders and checks if there are situations to take advantage of
 NDefines.NAI.ENEMY_HOME_AREA_RATIO_TO_DISABLE_INVASIONS	= 999				-- If we are fighting against an enemy home area from our home area and if the enemy area is larger than this ratio, non strategy invasions are disabled
-NDefines.NAI.MAX_UNITS_FACTOR_INVASION_ORDER = 1.5							-- Factor for max number of units to assign to naval invasion orders
-NDefines.NAI.MIN_UNITS_FACTOR_INVASION_ORDER = 0.5							-- Factor for min number of units to assign to naval invasion orders
+NDefines.NAI.MAX_UNITS_FACTOR_INVASION_ORDER = 1.0							-- Factor for max number of units to assign to naval invasion orders
+NDefines.NAI.MIN_UNITS_FACTOR_INVASION_ORDER = 1.0							-- Factor for min number of units to assign to naval invasion orders
 NDefines.NAI.MAX_DIST_PORT_RUSH = 35.0										-- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
 NDefines.NAI.INVASION_DISTANCE_RANDOMNESS = 350								-- This higher the value, the more unpredictable the invasions. Compares to actual map distance in pixels.
 

@@ -1,0 +1,14 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Tarnlander Navy"
+		naval_base = 3653 # Cor Eale
+		task_force = {
+			name = "Tarnlander Fleet"
+			location = 9469 # Gorhafen
+			ship = { name = "Merchanter" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TAR version_name = "Tradeful-Class" } } }
+			ship = { name = "Riverlander" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TAR version_name = "Tradeful-Class" } } }
+		}
+	}
+}
