@@ -12,13 +12,8 @@ division_template = {
 	regiments = {
 		men_at_arms = { x = 0 y = 0 }
 		men_at_arms = { x = 0 y = 1 }
-        		men_at_arms = { x = 0 y = 2 }
 		men_at_arms = { x = 1 y = 0 }
 		men_at_arms = { x = 1 y = 1 }
-		men_at_arms = { x = 1 y = 2 }
-		men_at_arms = { x = 2 y = 0 }
-		men_at_arms = { x = 2 y = 1 }
-		men_at_arms = { x = 2 y = 2 }
 	}
 }
 
@@ -56,7 +51,9 @@ units = {
 		name = "Quellion Peasant's Self-Defense Guild"
 		location = 1353
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.15
+		start_equipment_factor = 0.27
+		start_manpower_factor = 0.32
 
 	}
 
@@ -64,7 +61,9 @@ units = {
 		name = "Thurgithon Peasant's Militia"
 		location = 473
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.07
+		start_equipment_factor = 0.41
+		start_manpower_factor = 0.54
 
 	}
 	
@@ -72,7 +71,9 @@ units = {
 		name = "Vrinnis People's Watch"
 		location = 6954
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.05
+		start_equipment_factor = 0.32
+		start_manpower_factor = 0.19
 
 	}
 
@@ -80,7 +81,9 @@ units = {
 		name = "Ytholine City Watch"
 		location = 4959
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.05
+		start_equipment_factor = 0.21
+		start_manpower_factor = 0.11
 
 	}
 	
@@ -88,7 +91,9 @@ units = {
 		name = "Astrenar Hunter's Union"
 		location = 4347
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.44
+		start_manpower_factor = 0.1
 
 	}
 
@@ -96,7 +101,9 @@ units = {
 		name = "Yctharon Forester's Lodge"
 		location = 6894
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.21
+		start_manpower_factor = 0.42
 
 	}
 	
@@ -104,7 +111,9 @@ units = {
 		name = "Peakwatcher Sentries"
 		location = 7128
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.09
+		start_manpower_factor = 0.85
 
 	}
 
@@ -112,7 +121,9 @@ units = {
 		name = "Gythus Southguard"
 		location = 1897
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.11
+		start_manpower_factor = 0.21
 
 	}
 
@@ -120,7 +131,9 @@ units = {
 		name = "Unspykaur Miner's Self-Defense League"
 		location = 7777
 		division_template = "Rose Wardens"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.14
+		start_equipment_factor = 0.2
+		start_manpower_factor = 0.95
 
 	}
 
@@ -129,14 +142,218 @@ units = {
 		location = 7276
 		division_template = "Peasant's Guard"
 		start_experience_factor = 0.5
+		start_equipment_factor = 0.31
+		start_manpower_factor = 0.11
 
 	}
 
 	division = {
-		name = "Postal Woker's Self-Defense Guild"
+		name = "Postal Worker's Self-Defense Guild"
 		location = 7095
 		division_template = "Outrider Watchers"
 		start_experience_factor = 0.4
+		start_equipment_factor = 0.25
+		start_manpower_factor = 0.82
+	}
+
+	division = {
+		name = "1st Rthaur Militia"
+		location = 7365
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "2nd Rthaur Militia"
+		location = 4723
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "3rd Rthaur Militia"
+		location = 758
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "4th Rthaur Militia"
+		location = 617
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "5th Rthaur Militia"
+		location = 7590
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "6th Rthaur Militia"
+		location = 3675
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "7th Rthaur Militia"
+		location = 111
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "8th Rthaur Militia"
+		location = 1189
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "9th Rthaur Militia"
+		location = 983
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "10th Rthaur Militia"
+		location = 306
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "11th Rthaur Militia"
+		location = 3079
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "12th Rthaur Militia"
+		location = 2579
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "13th Rthaur Militia"
+		location = 7833
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "14th Rthaur Militia"
+		location = 1667
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "15th Rthaur Militia"
+		location = 4862
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "16th Rthaur Militia"
+		location = 7216
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "17th Rthaur Militia"
+		location = 1600
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "18th Rthaur Militia"
+		location = 6904
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "19th Rthaur Militia"
+		location = 2094
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
+	}
+
+	division = {
+		name = "20th Rthaur Militia"
+		location = 3875
+		division_template = "Peasant's Guard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.14
+		start_manpower_factor = 0.19
+
 	}
 }
 
@@ -152,7 +369,7 @@ instant_effect = {
 		}
 		requested_factories = 4
 		progress = 0.48
-		efficiency = 37
+		efficiency = 12
 	}
 
 	add_equipment_production = {
@@ -161,7 +378,7 @@ instant_effect = {
 			creator = "RTH" 
 		}
 		requested_factories = 2
-		progress = 0.3
-		efficiency = 12
+		progress = 0.1
+		efficiency = 4
 	}
 }

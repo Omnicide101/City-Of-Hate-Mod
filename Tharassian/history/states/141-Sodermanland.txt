@@ -11,11 +11,17 @@ state={
 		mount = 2
 	}
 		history={
-		owner = RTH	
-		buildings = {
-		infrastructure = 1
-		}		
-		add_core_of = RTH 
+			owner = RTH	
+			buildings = {
+			infrastructure = 1
+				617 = {
+					bunker = 2
+				}
+				370 = {
+					bunker = 2
+				}
+			}		
+			add_core_of = RTH 
 
 		}		
 }

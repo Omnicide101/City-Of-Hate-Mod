@@ -54,3 +54,14 @@ MOT = {
 	variable = generic_operation_target
 }
 
+#Skaelinger Ironbloods - for handling GLC revolters
+SKI = {
+	original_tag = SKA
+	has_country_flag = SKA_ironbloods_fighting_revolters
+}
+
+#Skaelinger GLC revolters against the Ironbloods
+SKC = {
+	original_tag = SKA
+	has_country_flag = SKA_anti_ironblood_revolters
+}

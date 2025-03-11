@@ -1,49 +1,49 @@
 defined_text = { #Sets which text header is supposed to show
 	name = GetAutumnDebateRulingParty
 	text = {
-		localization_key = "Current Leading Faction: §YThe [Root.GetRulingParty]§!"
+		localization_key = loc_key_autumn_debate_ruling_party
 	}
 }
 
 defined_text = {
 	name = GetTradLoyalty
 	text = {
-		localization_key = "[?ORD_traditionalists_loyalty|Y0]"
+		localization_key = loc_key_trad_loyalty
 	}
 }
 
 defined_text = {
 	name = GetTradInfluence
 	text = {
-		localization_key = "[?ORD_traditionalists_influence|Y0]"
+		localization_key = loc_key_trad_influence
 	}
 }
 
 defined_text = {
 	name = GetModLoyalty
 	text = {
-		localization_key = "[?ORD_moderates_loyalty|Y0]"
+		localization_key = loc_key_mod_loyalty
 	}
 }
 
 defined_text = {
 	name = GetModInfluence
 	text = {
-		localization_key = "[?ORD_moderates_influence|Y0]"
+		localization_key = loc_key_mod_influence
 	}
 }
 
 defined_text = {
 	name = GetFaithLoyalty
 	text = {
-		localization_key = "[?ORD_faithful_loyalty|Y0]"
+		localization_key = loc_key_faith_loyalty
 	}
 }
 
 defined_text = {
 	name = GetFaithInfluence
 	text = {
-		localization_key = "[?ORD_faithful_influence|Y0]"
+		localization_key = loc_key_faith_influence
 	}
 }
 

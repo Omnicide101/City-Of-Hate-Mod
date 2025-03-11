@@ -26,14 +26,14 @@ division_template = {
 	name = "Arrowslingers"
 	regiments = {
 		men_at_arms = { x = 0 y = 0 }
-		archer_shortbow = { x = 0 y = 1 }
-       	archer_shortbow = { x = 0 y = 2 }
+		archer_longbow = { x = 0 y = 1 }
+       	archer_longbow = { x = 0 y = 2 }
 		men_at_arms = { x = 1 y = 0 }
-		archer_shortbow = { x = 1 y = 1 }
-		archer_shortbow = { x = 1 y = 2 }
+		archer_longbow = { x = 1 y = 1 }
+		archer_longbow = { x = 1 y = 2 }
 		men_at_arms = { x = 2 y = 0 }
-		archer_shortbow = { x = 2 y = 1 }
-		archer_shortbow = { x = 2 y = 2 }
+		archer_longbow = { x = 2 y = 1 }
+		archer_longbow = { x = 2 y = 2 }
 	}
 }
 
@@ -54,7 +54,7 @@ units = {
 
 	division = {
 		name = "Istaroth Guards"
-		location = 3654
+		location = 4644
 		division_template = "Grove Guards"
 		start_experience_factor = 0.3
 
@@ -62,7 +62,7 @@ units = {
 
 	division = {
 		name = "Varinthia Guards"
-		location = 7152
+		location = 3881
 		division_template = "Grove Guards"
 		start_experience_factor = 0.3
 
@@ -70,7 +70,7 @@ units = {
 
 	division = {
 		name = "Ythelmare Guards"
-		location = 4463
+		location = 2441
 		division_template = "Grove Guards"
 		start_experience_factor = 0.3
 
@@ -86,7 +86,7 @@ units = {
 
 	division = {
 		name = "Serthis Guards"
-		location = 7930
+		location = 974
 		division_template = "Grove Guards"
 		start_experience_factor = 0.3
 
@@ -164,6 +164,69 @@ units = {
 	}
 
 	division = {
+		name = "10th Bladesingers"
+		location = 2787
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "11th Bladesingers"
+		location = 4180
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "12th Bladesingers"
+		location = 3504
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "13th Bladesingers"
+		location = 7344
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "14th Bladesingers"
+		location = 7147
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "15th Bladesingers"
+		location = 2905
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "16th Bladesingers"
+		location = 7152
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "17th Bladesingers"
+		location = 4853
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "18th Bladesingers"
+		location = 2473
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
 		name = "1st Rangers"
 		location = 1925
 		division_template = "Rangers"
@@ -182,35 +245,119 @@ units = {
 		location = 616
 		division_template = "Rangers"
 		start_experience_factor = 0.4
-	}	
+	}
+
+	division = {
+		name = "4th Rangers"
+		location = 5144
+		division_template = "Rangers"
+		start_experience_factor = 0.4
+	}
+
+	division = {
+		name = "5th Rangers"
+		location = 797
+		division_template = "Rangers"
+		start_experience_factor = 0.4
+	}
+
+	division = {
+		name = "6th Rangers"
+		location = 7738
+		division_template = "Rangers"
+		start_experience_factor = 0.4
+	}
 	
 	division = {
 		name = "1st Arrowslingers"
 		location = 1184
 		division_template = "Arrowslingers"
 		start_experience_factor = 0.4
-	}	
+	}
 	
 	division = {
 		name = "2nd Arrowslingers"
 		location = 4182
 		division_template = "Arrowslingers"
 		start_experience_factor = 0.4
-	}	
+	}
 	
 	division = {
 		name = "3rd Arrowslingers"
 		location = 877
 		division_template = "Arrowslingers"
 		start_experience_factor = 0.4
-	}	
+	}
 	
 	division = {
 		name = "4th Arrowslingers"
 		location = 1007
 		division_template = "Arrowslingers"
 		start_experience_factor = 0.4
-	}	
+	}
+	
+	division = {
+		name = "5th Arrowslingers"
+		location = 2502
+		division_template = "Arrowslingers"
+		start_experience_factor = 0.4
+	}
+	
+	division = {
+		name = "6th Arrowslingers"
+		location = 4092
+		division_template = "Arrowslingers"
+		start_experience_factor = 0.4
+	}
+	
+	division = {
+		name = "7th Arrowslingers"
+		location = 878
+		division_template = "Arrowslingers"
+		start_experience_factor = 0.4
+	}
+	
+	division = {
+		name = "8th Arrowslingers"
+		location = 7403
+		division_template = "Arrowslingers"
+		start_experience_factor = 0.4
+	}
+	
+	division = {
+		name = "9th Arrowslingers"
+		location = 7275
+		division_template = "Arrowslingers"
+		start_experience_factor = 0.4
+	}
+	
+	division = {
+		name = "10th Arrowslingers"
+		location = 5119
+		division_template = "Arrowslingers"
+		start_experience_factor = 0.4
+	}
+	
+	division = {
+		name = "11th Arrowslingers"
+		location = 7020
+		division_template = "Arrowslingers"
+		start_experience_factor = 0.4
+	}
+	
+	division = {
+		name = "12th Arrowslingers"
+		location = 6847
+		division_template = "Arrowslingers"
+		start_experience_factor = 0.4
+	}
+	
+	division = {
+		name = "13th Arrowslingers"
+		location = 7289
+		division_template = "Arrowslingers"
+		start_experience_factor = 0.4
+	}
 	
 }
 
@@ -224,17 +371,17 @@ instant_effect = {
 			type = infantry_equipment_0
 			creator = "ORD"
 		}
-		requested_factories = 4
+		requested_factories = 11
 		progress = 0.48
 		efficiency = 37
 	}
 	
 	add_equipment_production = {
 		equipment = {
-			type = ranged_equipment_0
+			type = ranged_equipment_1
 			creator = "ORD"
 		}
-		requested_factories = 2
+		requested_factories = 8
 		progress = 0.32
 		efficiency = 26
 	}
@@ -244,8 +391,18 @@ instant_effect = {
 			type = light_cavalry_equipment_0
 			creator = "ORD" 
 		}
-		requested_factories = 2
+		requested_factories = 4
 		progress = 0.3
 		efficiency = 12
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = cart_equipment_1
+			creator = "ORD" 
+		}
+		requested_factories = 3
+		progress = 0.54
+		efficiency = 36
 	}
 }

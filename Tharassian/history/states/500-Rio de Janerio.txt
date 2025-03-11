@@ -1,15 +1,27 @@
-
 state={
 	id=500
 	name="STATE_500"
 	provinces={
 		4239 7785 7823 
 	}
-	manpower=1
 	buildings_max_level_factor=1.000
-	state_category=rural
+	manpower=159231
+	state_category=large_city
+	
+	resources = {
+		food = 14
+		mount = 8
+		lumber = 11
+	}
+	
 	history={
-		owner = XXX
-		add_core_of = XXX
+		victory_points = { 7823 31 }
+		owner = THA
+		buildings = {
+			infrastructure = 4
+			workshop = 3
+			forge = 4
+		}
+		add_core_of = THA
 	}
 }

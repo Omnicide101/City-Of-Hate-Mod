@@ -84,8 +84,8 @@ has_same_race_as_ROOT = {
 			ROOT = { has_idea = gnome_country }
 		}
 		AND = {
-			has_idea = human_country
-			ROOT = { has_idea = human_country }
+			has_idea = ogre_country
+			ROOT = { has_idea = ogre_country }
 		}
 		AND = {
 			has_idea = lizardmen_country
@@ -94,6 +94,14 @@ has_same_race_as_ROOT = {
 		AND = {
 			has_idea = orc_country
 			ROOT = { has_idea = orc_country }
+		}
+		AND = {
+			has_idea = goblin_country
+			ROOT = { has_idea = goblin_country }
+		}
+		AND = {
+			has_idea = undead_country
+			ROOT = { has_idea = undead_country }
 		}
 	}
 }

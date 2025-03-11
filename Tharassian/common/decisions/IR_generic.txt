@@ -121,6 +121,18 @@ GENERIC_institutions_governance = {
 				has_war_support < 0.2
 				factor = 5
 			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
+			}
 		}
 	}
 	
@@ -186,6 +198,18 @@ GENERIC_institutions_governance = {
 				has_war_support < 0.2
 				factor = 6
 			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
+			}
 		}
 	}
 	
@@ -250,6 +274,18 @@ GENERIC_institutions_governance = {
 				has_war_support < 0.2
 				factor = 6
 			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
+			}
 		}
 	}
 	
@@ -293,6 +329,18 @@ GENERIC_institutions_governance = {
 			modifier = {
 				has_stability < 0.2
 				factor = 5
+			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
 			}
 		}
 	}
@@ -376,6 +424,18 @@ GENERIC_institutions_governance = {
 				republic_peasant < 0.5
 				factor = 6
 			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
+			}
 		}
 	}
 	
@@ -442,6 +502,18 @@ GENERIC_institutions_governance = {
 				republic_aristocrat < 0.5
 				factor = 1.5
 			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
+			}
 		}
 	}
 	
@@ -494,7 +566,7 @@ GENERIC_institutions_governance = {
 			}
 			modifier = {
 				has_war_support < 0.2
-				factor = 0.5
+				factor = 0
 			}
 			modifier = {
 				has_government = republic_merchant
@@ -505,6 +577,18 @@ GENERIC_institutions_governance = {
 				has_government = republic_merchant
 				republic_merchant > 0.7
 				factor = 1.5
+			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
 			}
 		}
 	}
@@ -575,6 +659,18 @@ GENERIC_institutions_governance = {
 				republic_peasant < 0.5
 				factor = 1.5
 			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
+			}
 		}
 	}
 	
@@ -642,6 +738,18 @@ GENERIC_institutions_governance = {
 			modifier = {
 				has_war_support < 0.2
 				factor = 6
+			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
 			}
 		}
 	}
@@ -713,6 +821,18 @@ GENERIC_institutions_governance = {
 				has_war_support < 0.2
 				factor = 1.5
 			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
+			}
 		}
 	}
 	
@@ -777,6 +897,22 @@ GENERIC_institutions_governance = {
 				has_war_support < 0.2
 				factor = 3
 			}
+			modifier = {
+				has_war_support > 0.99
+				factor = 0
+			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
+			}
 		}
 	}
 	
@@ -798,7 +934,7 @@ GENERIC_institutions_governance = {
 		
 		cost = 125
 		
-		days_remove = 7
+		days_remove = 70
 		
 		days_re_enable = 100
 		
@@ -841,6 +977,18 @@ GENERIC_institutions_governance = {
 			modifier = {
 				has_war_support < 0.2
 				factor = 2
+			}
+			modifier = {#Don't bother if we're Vergall Dwarves and can rebuild Zarathum
+				OR = {
+					original_tag = SKA
+					original_tag = RMT
+					original_tag = BER
+				}
+				controls_state = 174
+				NOT = {
+					has_global_flag = DORF_zarathum_restored
+				}
+				factor = 0.1
 			}
 		}
 	}
@@ -1133,6 +1281,44 @@ GENERIC_prisoner_management = {
 				country_event = random.17
 			}
 		}
+	}
+}
+
+GENERIC_create_factions = {
+	GENERIC_create_northern_plains_separatist_faction = {
+		
+		icon = GFX_decision_POL_organize_strike_two
+		
+		available = {
+			is_og_northern_plains_state = yes
+			NOT = {
+				has_global_flag = GENERIC_northern_plains_alliance_created
+			}
+		}
+		
+		visible = {
+			is_og_northern_plains_state = yes
+			NOT = {
+				has_global_flag = GENERIC_northern_plains_alliance_created
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		complete_effect = {
+			set_global_flag = GENERIC_northern_plains_alliance_created
+			create_faction = northern_plains_alliance
+			
+			every_other_country = {
+				limit = {
+					is_og_northern_plains_state = yes
+				}
+				add_to_faction = THIS
+			}
+		}
+		
 	}
 }
 

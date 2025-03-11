@@ -10,6 +10,79 @@
 # protect
 # influence
 
+krell_smash_rahhhh = {
+	enable = {
+		original_tag = PRK
+		has_war_with = UNG
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_control
+
+		tag = UNG
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+	
+	ai_strategy = {
+		type = front_control
+
+		tag = SNF
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+	
+	ai_strategy = {
+		type = front_control
+
+		tag = WSZ
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+	
+	ai_strategy = {
+		type = front_control
+
+		tag = WIS
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+	
+	ai_strategy = {
+		type = front_control
+
+		tag = TEI
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
 ungerdaler_buddies = {
 	enable = {
 		tag = PRK
@@ -19,19 +92,21 @@ ungerdaler_buddies = {
 		is_in_faction_with = UNG
 	}
 	
+	abort_when_not_enabled = yes
+	
 	ai_strategy = {
 		type = befriend
-		id = "UNG"
+		id = UNG
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 	ai_strategy = {
 		type = protect
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 }
@@ -40,6 +115,8 @@ default_unit_production = {
 	enable = {
 		is_og_perkav_chiefdom = yes
 	}
+	
+	abort_when_not_enabled = yes
 	
 	ai_strategy = {
 		type = role_ratio
@@ -61,7 +138,7 @@ default_unit_production = {
 	
 	ai_strategy = {
 		type = role_ratio
-		id = warband
+		id = frontline
 		value = 45
 	}
 	
@@ -80,12 +157,24 @@ default_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = light_cavalry
-		value = 0
+		value = 5
 	}
 	
 	ai_strategy = {
 		type = role_ratio
 		id = heavy_cavalry
-		value = 5
+		value = 3
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 60
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = train
+		value = 10
 	}
 }

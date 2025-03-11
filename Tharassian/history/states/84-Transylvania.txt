@@ -11,10 +11,13 @@ state={
 		owner = ORD
 		victory_points = {2441 42}
 		buildings = {
-			workshop = 3
+			workshop = 1
 			forge = 2
 			farm = 2
 			infrastructure = 2
+			2441 = {
+				bunker = 4
+			}
 		}	
 		add_core_of = ORD
 		}

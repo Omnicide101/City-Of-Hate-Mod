@@ -1,23 +1,30 @@
+
 state={
 	id=931
 	name="STATE_931"
-	provinces={
-		507 1936 3047 3712 5103 7815 
+	resources={
+		lumber=7.000
 	}
-	manpower=623 
-	buildings_max_level_factor=1.000
-	local_supplies=5
-	state_category = pastoral
-	
-	resources = {
-        lumber = 7
-    }
-    history = {
-        owner = XXX
-        add_core_of = XXX
-        buildings = {
-            infrastructure = 3
+
+	history={
+		owner = AGE
+		add_core_of = AGE
+		buildings = {
+			infrastructure = 3
+			forge = 1
+
 		}
-		victory_points = { 7815 1 }
+		victory_points = {
+			7815 1 
+		}
+
 	}
+
+	provinces={
+		1936 3469 5286 5403 7815 
+	}
+	manpower=623
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=5.000
 }

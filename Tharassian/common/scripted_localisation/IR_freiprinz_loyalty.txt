@@ -9,7 +9,7 @@ defined_text = { # Country
 				}
 			}
 		}
-		localization_key = "[?FPT_union_loyalty|Y0]"
+		localization_key = loc_key_freiprinz_union_loyalty
 	}
 }
 
@@ -24,7 +24,7 @@ defined_text = { # Country
 				}
 			}
 		}
-		localization_key = "[?FPT_stahlhof_loyalty|Y0]"
+		localization_key = loc_key_freiprinz_stahlhof_loyalty
 	}
 }
 

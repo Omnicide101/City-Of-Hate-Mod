@@ -1,6 +1,35 @@
 ﻿capital = 488
 
 set_oob = "SUL_1936"
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+
+
 set_research_slots = 5
 
 set_technology ={
@@ -36,7 +65,8 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 1939.1.1 = {
@@ -48,6 +78,27 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 }
+
+add_opinion_modifier = {
+	target = GOW
+	modifier = threatened_opinion
+}
+
+add_relation_modifier = {
+	target = GOW
+	modifier = threatened_opinion_modifier
+}
+
+add_opinion_modifier = {
+	target = ATH
+	modifier = liked_opinion
+}
+
+add_relation_modifier = {
+	target = ATH
+	modifier = liked_opinion_modifier
+}
+
 
 set_popularities = {
 	monarchy_absolute = 2
@@ -69,6 +120,7 @@ add_ideas = {
 	gnome_country
 	molten_god_religion
 	fiscalism_economy
+	MASLEAGUE_member_committed
 }
 
 create_country_leader = {

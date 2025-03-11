@@ -5,7 +5,7 @@ state={
 		694 151 4159 8301
 	}
 	state_category = town
-	manpower=18729
+	manpower=15319
 	buildings_max_level_factor=1.000
 	history={
 		victory_points = { 694 17 }

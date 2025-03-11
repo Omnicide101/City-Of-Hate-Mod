@@ -8,6 +8,10 @@ SKA_ironblood_conspiracy = {
 		has_completed_focus = SKA_iron_blood_conspiracy
 		NOT = {
 			has_cosmetic_tag = SKA_OSG
+			OR = {
+				has_completed_focus = SKA_shore_up_the_caste_system
+				has_completed_focus = SKA_second_scheme
+			}
 		}
 	}
 	
@@ -175,12 +179,9 @@ SKA_social_war_decisions = {
 	allowed = {
 		original_tag = SKA
 	}
+	visible_when_empty = yes
 	visible = {
-		has_war_with = ORD
-		RTH = {
-			exists = yes
-			has_war_with = ORD
-		}
+		has_country_flag = social_war_beginning
 		NOT = {
 			has_country_flag = SKA_social_war_STOP
 			has_cosmetic_tag = SKA_OSG

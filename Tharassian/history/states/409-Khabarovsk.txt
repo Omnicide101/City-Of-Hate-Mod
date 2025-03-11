@@ -1,12 +1,13 @@
-state={
-	id=409
-	name="STATE_409"
-	provinces={
+state = {
+	id = 409
+	name = "STATE_409"
+	provinces = {
 		645 884 5753 5754
 	}
-	state_category = rural manpower = 1
-	buildings_max_level_factor=1.000
-	history={
+	state_category = rural
+	manpower = 1
+	buildings_max_level_factor = 1.000
+	history = {
 		owner = XXX
 		add_core_of = XXX
 	}

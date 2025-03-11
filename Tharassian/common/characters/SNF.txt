@@ -53,7 +53,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/SNF/Portrait_SNF_Drecht.dds"
-				small="gfx/interface/ideas/IRI_Diamantis.dds"
+				small="gfx/interface/ideas/characters/SNF/snf_drecht.dds"
 			}
 		}
 		country_leader={
@@ -89,7 +89,7 @@ characters={
 		name= "Till Lehmkuhl"
 		portraits={
 			civilian={
-			small="gfx/interface/ideas/IRI_Diamantis.dds"
+			small="gfx/interface/ideas/characters/UnionSouth/Union_South_land_3.dds"
 			}
 		}
 		advisor={

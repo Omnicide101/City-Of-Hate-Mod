@@ -73,29 +73,26 @@ country_event = {#Threatening Rimatu
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = {
+	option = {#Pay up
 		name = bld.4.a
+		remove_ideas = BLD_The_Ogregeld_RMT
 		BLD = {
 			country_event = {
 				id = bld.5
 				days = 4
 			}
-		create_wargoal = {
-		type = puppet_wargoal_focus
-		target = RMT
-			}
 		}
 	}
-	option = {
+	option = {#Fuck off
 		name = bld.4.b
 		swap_ideas = { 
-		remove_idea = BLD_The_Ogregeld_RMT
-		add_idea = BLD_The_Ogregeld_RMT2
+			remove_idea = BLD_The_Ogregeld_RMT
+			add_idea = BLD_The_Ogregeld_RMT2
 		}
 		BLD = {
 		swap_ideas = { 
-		remove_idea = BLD_The_Ogregeld
-		add_idea = BLD_The_Ogregeld2
+			remove_idea = BLD_The_Ogregeld
+			add_idea = BLD_The_Ogregeld2
 		}
 			country_event = {
 				id = bld.6
@@ -116,6 +113,26 @@ country_event = {#Rimatu response - bad
 	
 	option = {
 		name = bld.5.a
+		
+		remove_ideas = BLD_The_Ogregeld
+		
+		start_border_war = {#Bilodya
+			change_state_after_war = no
+			attacker = {
+				state = 830
+				num_provinces = 3
+				on_win = bld.13
+				on_lose = bld.14
+				on_cancel = bld.15
+			}	
+			defender = {#Rimatu
+				state = 710
+				num_provinces = 3
+				on_win = bld.16
+				on_lose = bld.17
+				on_cancel = bld.15
+			}
+		}
 	}
 }
 country_event = {#Rimatu response - good
@@ -238,5 +255,109 @@ country_event = {#Threatening the MER - bad
 	
 	option = {
 		name = bld.12.a
+	}
+}
+
+country_event = {#Raiding Töst - Bilodya Wins!
+	id = bld.13
+	title = bld.13.t
+	desc = bld.13.d
+	
+	is_triggered_only = yes
+	
+	option = {#Yey
+		name = bld.13.a
+		effect_tooltip = {#Actual effects handled in Rimatan event
+			swap_ideas = { 
+				remove_idea = BLD_The_Ogregeld
+				add_idea = BLD_The_Ogregeld2
+			}
+			RMT = {
+				swap_ideas = { 
+					remove_idea = BLD_The_Ogregeld_RMT
+					add_idea = BLD_The_Ogregeld_RMT2
+				}
+			}
+			382 = {
+				damage_building = {
+					type = infrastructure
+					damage = 2
+				}
+				damage_building = {
+					type = workshop
+					damage = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {#Raiding Töst - Bilodya Loses!
+	id = bld.14
+	title = bld.14.t
+	desc = bld.14.d
+	
+	is_triggered_only = yes
+	
+	option = {#Aww
+		name = bld.14.a
+		add_war_support = -0.07
+	}
+}
+
+country_event = {#Raiding Töst - Tie!
+	id = bld.15
+	title = bld.15.t
+	desc = bld.15.d
+	
+	is_triggered_only = yes
+	
+	option = {#Centrism wins again
+		name = bld.15.a
+	}
+}
+
+country_event = {#Raiding Töst - Rimatu Wins!
+	id = bld.16
+	title = bld.16.t
+	desc = bld.16.d
+	
+	is_triggered_only = yes
+	
+	option = {#Yey
+		name = bld.16.a
+		add_war_support = 0.06
+	}
+}
+
+country_event = {#Raiding Töst - Rimatu Loses!
+	id = bld.17
+	title = bld.17.t
+	desc = bld.17.d
+	
+	is_triggered_only = yes
+	
+	option = {#Aww
+		name = bld.17.a
+		BLD = {
+			swap_ideas = { 
+				remove_idea = BLD_The_Ogregeld
+				add_idea = BLD_The_Ogregeld2
+			}
+		}
+		swap_ideas = { 
+			remove_idea = BLD_The_Ogregeld_RMT
+			add_idea = BLD_The_Ogregeld_RMT2
+		}
+		382 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = workshop
+				damage = 1
+			}
+		}
 	}
 }

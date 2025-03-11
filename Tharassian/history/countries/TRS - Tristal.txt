@@ -1,0 +1,146 @@
+capital = 526
+
+set_oob = "TRS_1936"
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "TRS_1936_naval_mtg"
+	else = {
+		set_naval_oob = "TRS_1936_naval"
+	}
+}
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
+}
+
+set_stability = 0.14
+set_war_support = 0.07
+
+recruit_character = TRS_calidacius
+
+set_politics = {
+	ruling_party = republic_aristocrat
+	last_election = "1936.1.1"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 16
+
+	monarchy_constitutional = 14
+	
+	republic_peasant = 14
+
+	republic_aristocrat = 8
+
+	republic_merchant = 16
+	
+	theocrat = 14
+
+	puritan = 18
+}
+
+add_ideas = {
+	
+	human_country
+	generic_religion
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Per Fluctus-Class"
+		type = destroyer_1
+		parent_version = 0
+		upgrades = {
+			
+		}
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Per Fluctus-Class"
+		type = ship_hull_light_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = light_ship_ballista_0
+			fixed_ship_engine_slot = light_ship_rowers_0
+		}
+	}
+}

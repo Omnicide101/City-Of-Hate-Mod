@@ -20,5 +20,6 @@ state={
 				dockyard = 1
 			}
 		add_core_of = GOW
+		add_claim_by = ATH
 	}
 }

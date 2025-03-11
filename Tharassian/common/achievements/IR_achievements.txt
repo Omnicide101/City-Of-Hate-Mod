@@ -13,9 +13,6 @@ unique_id = cityofhate
 #############################
 
 sic_semper_tyrannis = {
-	name = "sic_semper_tyrannis_NAME"
-	description = "sic_semper_tyrannis_DESCRIPTION"
-	
 	possible = {
 		is_ironman = yes
 		difficulty > 1
@@ -29,9 +26,6 @@ sic_semper_tyrannis = {
 }
 
 you_bastard = {
-	name = "you_bastard_NAME"
-	description = "you_bastard_DESCRIPTION"
-	
 	possible = {
 		is_ironman = yes
 		difficulty > 1
@@ -40,7 +34,9 @@ you_bastard = {
 		tag = HLZ
 	}
 	happened = {
-		has_country_leader = HLZ_marius_pressler
+		has_country_leader = {
+			character = HLZ_marius_pressler
+		}
 	}
 }
 
@@ -49,9 +45,6 @@ you_bastard = {
 #############################
 
 just_a_warmup = {
-	name = "just_a_warmup_NAME"
-	description = "just_a_warmup_DESC"
-	
 	possible = {
 		is_ironman = yes
 		difficulty > 1
@@ -69,9 +62,6 @@ just_a_warmup = {
 ## 4 HARD ACHIEVEMENTS
 #############################
 something_done_right = {
-	name = "something_done_right_NAME"
-	description = "something_done_right_DESCRIPTION"
-	
 	possible = {
 		is_ironman = yes
 		difficulty > 1

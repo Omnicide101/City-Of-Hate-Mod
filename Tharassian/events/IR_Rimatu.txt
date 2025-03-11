@@ -80,13 +80,19 @@ country_event = {#Attend Nordtorf Summit?
 				}
 				factor = 3
 			}
+			modifier = {
+				has_war_with = SKA
+				factor = 2
+			}
 		}
+		
 		UNG = {
 			country_event = {
 				id = ung.65
 				days = 3
 			}
 		}
+		
 		if = {
 			limit = {
 				UNG = {
@@ -112,6 +118,21 @@ country_event = { #Union Backs Hellirfast
 		
 		ai_chance = {
 			factor = 3
+		}
+		
+		if = {
+			limit = {
+				has_war_with = SKA
+			}
+			effect_tooltip = {
+				white_peace = SKA
+			}
+			hidden_effect = {
+				white_peace = {
+					tag = SKA
+					message = UNG_negotiated_SKA_RMT_peace_tt
+				}
+			}
 		}
 		
 		add_political_power = -35
@@ -158,6 +179,10 @@ country_event = { #Union Backs Hellirfast
 				}
 				factor = 0.8
 			}
+			modifier = {
+				has_war_with = SKA
+				factor = 2
+			}
 		}
 		
 		add_political_power = -75
@@ -168,7 +193,7 @@ country_event = { #Union Backs Hellirfast
 			limit = {
 				has_relation_modifier = {
 					target = UNG
-					modifier = staunch_allies
+					modifier = staunch_allies_opinion_modifier
 				}
 			}
 		
@@ -196,7 +221,10 @@ country_event = { #Union Backs Hellirfast
 		
 		if = {
 			limit = {
-				has_opinion_modifier = trusted_opinion
+				has_relation_modifier = {
+					target = UNG
+					modifier = trusted_opinion_modifier
+				}
 			}
 		
 			remove_opinion_modifier = {
@@ -204,17 +232,30 @@ country_event = { #Union Backs Hellirfast
 				modifier = trusted_opinion
 			}
 			
+			remove_relation_modifier = {
+				target = UNG
+				modifier = trusted_opinion_modifier
+			}
+			
 			UNG = {
 				remove_opinion_modifier = {
 					target = RMT
 					modifier = trusted_opinion
+				}
+				
+				remove_relation_modifier = {
+					target = RMT
+					modifier = trusted_opinion_modifier
 				}
 			}
 		}
 		
 		if = {
 			limit = {
-				has_opinion_modifier = liked_opinion
+				has_relation_modifier = {
+					target = UNG
+					modifier = liked_opinion_modifier
+				}
 			}
 		
 			remove_opinion_modifier = {
@@ -222,10 +263,20 @@ country_event = { #Union Backs Hellirfast
 				modifier = liked_opinion
 			}
 			
+			remove_relation_modifier = {
+				target = UNG
+				modifier = liked_opinion_modifier
+			}
+			
 			UNG = {
 				remove_opinion_modifier = {
 					target = RMT
 					modifier = liked_opinion
+				}
+				
+				remove_relation_modifier = {
+					target = RMT
+					modifier = liked_opinion_modifier
 				}
 			}
 		}

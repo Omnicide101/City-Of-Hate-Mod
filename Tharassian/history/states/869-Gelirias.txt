@@ -18,5 +18,7 @@ state={
 			forge = 1
 		}
 		add_core_of = TES
+		add_claim_by = GOW
+		add_claim_by = THX
 	}
 }

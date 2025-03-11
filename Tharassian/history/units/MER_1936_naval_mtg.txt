@@ -1,0 +1,23 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Merchant's Navy"
+		naval_base = 6861 # Goldport
+		task_force = {
+			name = "The Hand"
+			location = 6861 # Goldport
+			ship = { name = "Profiteer" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = MER version_name = "Fist-Class" } } }
+			ship = { name = "Goldgather" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = MER version_name = "Fist-Class" } } }
+			ship = { name = "Taxman" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = MER version_name = "Fist-Class" } } }
+			ship = { name = "Bottom Line" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = MER version_name = "Finger-Class" } } }
+			ship = { name = "Honest Dealings" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = MER version_name = "Finger-Class" } } }
+			ship = { name = "Incentivemaker" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = MER version_name = "Finger-Class" } } }
+			ship = { name = "Revenue" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = MER version_name = "Finger-Class" } } }
+			ship = { name = "Monetizer" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = MER version_name = "Finger-Class" } } }
+			ship = { name = "Pouch" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = MER version_name = "Finger-Class" } } }
+			ship = { name = "Deductible" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = MER version_name = "Finger-Class" } } }
+			ship = { name = "Exemptor" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = MER version_name = "Finger-Class" } } }
+		}
+	}
+}

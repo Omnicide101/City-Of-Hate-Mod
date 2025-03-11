@@ -1,0 +1,23 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Republican Navy"
+		naval_base = 8282 # Corse
+		task_force = {
+			name = "First Liberty Fleet"
+			location = 8282 # Corse
+			ship = { name = "Brightspirit" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = SAL version_name = "Liberty-Class" } } }
+			ship = { name = "Freedom's Light" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = SAL version_name = "Liberty-Class" } } }
+			ship = { name = "Liberation" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = SAL version_name = "Liberty-Class" } } }
+			ship = { name = "Votecaster" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SAL version_name = "Republic-Class" } } }
+			ship = { name = "Merit" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SAL version_name = "Republic-Class" } } }
+			ship = { name = "Vanguard of Liberty" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SAL version_name = "Republic-Class" } } }
+			ship = { name = "Warden of Franchise" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SAL version_name = "Republic-Class" } } }
+			ship = { name = "Beacon of Democracy" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SAL version_name = "Republic-Class" } } }
+			ship = { name = "Protector" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SAL version_name = "Republic-Class" } } }
+			ship = { name = "Incarnate of the Republic" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SAL version_name = "Republic-Class" } } }
+			ship = { name = "Chainbreaker" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SAL version_name = "Republic-Class" } } }
+		}
+	}
+}

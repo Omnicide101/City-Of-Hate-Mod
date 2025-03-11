@@ -15,6 +15,12 @@ state={
 		buildings = {
 			farm = 2
 			infrastructure = 1
+			4178 = {
+				bunker = 2
+			}
+			7551 = {
+				bunker = 2
+			}
 		}
 		add_core_of = ORD
 	}

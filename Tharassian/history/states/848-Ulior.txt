@@ -10,6 +10,8 @@ state={
 	history={
 		owner = TRX
 		add_core_of = TRX
+		add_claim_by = GOW
+		add_claim_by = TES
 		
 		victory_points = {
 			3290 1

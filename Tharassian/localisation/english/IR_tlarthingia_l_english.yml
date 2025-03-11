@@ -14,7 +14,7 @@
  tla.6.t:0 "Lizardmen, Far from Home"
  tla.6.d:0 "A group of lizardmen from Tlarthingia, claiming to be pilgrims, have requested passage through [GMR.GetNameDef] in order to do a ritual, claiming it is important to keep the world safe by doing it."
  tla.6.a:0 "Keep an eye on them, but let them pass through"
- tla.6.d:0 "Send them back home"
+ tla.6.b:0 "Send them back home"
  tla.7.t:0 "Tlarthingian Pilgrims Arrive in Irenthar"
  tla.7.d:0 "The lizardmen pilgrims have arrived in Irenthar, and reports have come of them asking about any news from Ordoria, seemingly disturbed by the answers they have received.\nA fisherman looked up from the nets he was mending, to be faced with a towering scaly figure that reminded him of a dragon.''Greetings, sir,'' the lizardman spoke. ''Would I be able to borrow your boat?''\n''What for?''\n''Well, we are a pilgrimage, and need to get to Ordoria in order to-''\nHe was interrupted by the fisherman. ''You're insane, no one in their right mind would want to go to Ordoria!''\n''I know, but there is something that needs to be done there. Could I please borrow your boat? I'll return it once we come back.''"
  tla.7.a:0 "''...You better come back with that boat''"

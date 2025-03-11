@@ -29,7 +29,7 @@ defined_text = { #Sets which text header is supposed to show
 		trigger = {
 			has_country_flag = country_context_text_flag
 		}
-		localization_key = "Historical Summary"
+		localization_key = loc_key_lore_tab_hist_summary_header
 	}
 	text = {
 		trigger = {
@@ -38,13 +38,13 @@ defined_text = { #Sets which text header is supposed to show
 				has_country_flag = country_history_text_2_flag
 			}
 		}
-		localization_key = "The History of [Root.GetName]"
+		localization_key = loc_key_lore_tab_hist_summary_header_name
 	}
 	text = {
 		trigger = {
 			has_country_flag = world_history_text_flag
 		}
-		localization_key = "The History of the World"
+		localization_key = loc_key_lore_tab_hist_world_header
 	}
 }
 
@@ -54,14 +54,14 @@ defined_text = { #Sets which text title is supposed to show
 		trigger = {
 			has_country_flag = world_history_text_flag
 		}
-		localization_key = "Tharassian, the Plane Fluctuant"
+		localization_key = loc_key_lore_tab_hist_world_title
 	}
 	text = {
 		trigger = {
 			original_tag = ORD
 			has_country_flag = country_context_text_flag
 		}
-		localization_key = "The Betrayed Land"
+		localization_key = loc_key_lore_tab_hist_summary_ORD_title
 	}
 	text = {
 		trigger = {
@@ -71,7 +71,7 @@ defined_text = { #Sets which text title is supposed to show
 				has_country_flag = country_history_text_2_flag
 			}
 		}
-		localization_key = "The New Elven Homeland"
+		localization_key = loc_key_lore_tab_hist_ORD_title
 	}
 }
 

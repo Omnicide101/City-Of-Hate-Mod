@@ -23,6 +23,7 @@ ideas = {
 			modifier = {
 				conscription_factor = -0.95
 				MONTHLY_POPULATION = 0.35
+				weekly_manpower = 50
 				production_speed_buildings_factor = 0.05
 				local_resources_factor = 0.05
 				custom_modifier_tooltip = ordoria_commissiary_always_resistance

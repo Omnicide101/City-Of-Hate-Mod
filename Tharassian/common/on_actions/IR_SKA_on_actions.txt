@@ -7,43 +7,7 @@ on_actions = {
 				country_event = {
 					id = skaelinger.6
 					days = 240
-					random = 4500
-				}
-				if = {
-					limit = {	
-						is_ai =yes
-						has_game_rule = {
-							rule = SKA_game_plan
-							option = DEFAULT
-						}
-					}
-					random_list = { # Ordered most to least likely
-						
-						27 = { #Reev
-							set_country_flag = SKA_ai_hellirfast_path_flag
-						}
-						21 = { #Council
-							set_country_flag = SKA_ai_council_path_flag
-						}
-						14 = { #Palmkevist
-							set_country_flag = SKA_ai_palmkevist_path_flag
-						}
-						11 = { #Charter
-							set_country_flag = SKA_ai_charter_path_flag
-						}
-						10 = { #Soltruists
-							set_country_flag = SKA_ai_soltruist_path_flag
-						}
-						7 = { #Ironbloods
-							set_country_flag = SKA_ai_ironbloods_path_flag
-						}
-						5 = { #Grimvald
-							set_country_flag = SKA_ai_grimvald_path_flag
-						}
-						5 = { #Brotherhood
-							set_country_flag = SKA_ai_brotherhood_path_flag
-						}
-					}
+					random = 150
 				}
 			}
 		}

@@ -649,13 +649,17 @@ IRI_strategos_civil_war_effect = { #if this doesn't work first try I'm going to 
 	IRI_strategos_marakai_control = yes
 	IRI_strategos_tikynthaios_control = yes
 	IRI = {
-		transfer_units_fraction = {
+		transfer_units_fraction= {
 			target = IRR
 			size = 0.5
+			stockpile_ratio = 0.5
+			army_ratio = 0.5
+			navy_ratio = 0.5
+			air_ratio = 0.5
 		}
 		declare_war_on = {
 			target = IRR
-			type = civil_war
+			type = annex_everything
 		}
 	}
 	hidden_effect = {

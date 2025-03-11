@@ -1,0 +1,13 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Floti Ith"
+		naval_base = 2112 # Authigr
+		task_force = {
+			name = "Floti Authigr"
+			location = 2112 # Authigr
+			ship = { name = "Varth-Veita" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ITH version_name = "Vatna-Class" } } }
+		}
+	}
+}

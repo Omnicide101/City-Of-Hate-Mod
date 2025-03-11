@@ -75,7 +75,7 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 6916;5001;impassable;-1;-1;-1;-1;-1;;Oramfell
 6916;6895;impassable;-1;-1;-1;-1;-1;;Oramfell
 6916;6911;impassable;-1;-1;-1;-1;-1;;Oramfell
-6916;6937impassable;-1;-1;-1;-1;-1;;Oramfell
+6916;6937;impassable;-1;-1;-1;-1;-1;;Oramfell
 6967;1767;impassable;-1;-1;-1;-1;-1;;Oramfell
 983;811;impassable;-1;-1;-1;-1;-1;;Oramfell
 7121;3096;impassable;-1;-1;-1;-1;-1;;Khorinor
@@ -83,3 +83,24 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 7128;3096;impassable;-1;-1;-1;-1;-1;;Khorinor
 7128;7095;impassable;-1;-1;-1;-1;-1;;Khorinor
 7128;7153;impassable;-1;-1;-1;-1;-1;;Khorinor
+5974;6007;sea;4997;-1;-1;-1;-1;VERGALL_TUNNEL_KALTUMOR;Kaltumör-Opromin
+5924;4646;sea;3602;-1;-1;-1;-1;VERGALL_TUNNEL_STARKENNUR;Starkennur-Shargudin
+6087;4737;sea;6063;-1;-1;-1;-1;VERGALL_TUNNEL_NIKURON;Nikuron-Vikturin
+6036;1710;sea;3362;-1;-1;-1;-1;VERGALL_TUNNEL_KULKROG;Vikturin-Kulkrog
+6215;2866;sea;6226;-1;-1;-1;-1;VERGALL_TUNNEL_LAGTU;Lägtu-Yskrond
+4659;4820;sea;2926;-1;-1;-1;-1;VERGALL_TUNNEL_TOST;Töst-Ghistus
+7100;4889;sea;3481;-1;-1;-1;-1;VERGALL_TUNNEL_SKAELINGER;Skaelinger-Wasginr
+5368;1909;sea;7068;-1;-1;-1;-1;VERGALL_TUNNEL_VAETHER;Salskadr-Vaether
+6996;4829;sea;4015;-1;-1;-1;-1;VERGALL_TUNNEL_ROTHAGR;Rothagr-Khorinor
+4137;5506;sea;3794;-1;-1;-1;-1;VERGALL_TUNNEL_OLSMERGE;Olsmerge-Ilkandr
+1699;6694;sea;769;-1;-1;-1;-1;VERGALL_TUNNEL_STRINGAN;Stringan-Likjurinthos
+4176;6437;sea;6793;-1;-1;-1;-1;VERGALL_TUNNEL_ASDRINGR;Asdringr-Töst
+6816;6744;sea;6798;-1;-1;-1;-1;VERGALL_TUNNEL_KRINSR;Krinsr-Poryth
+2260;3444;sea;7267;-1;-1;-1;-1;VERGALL_TUNNEL_SALSKADR;Salskadr-Wasginr
+4799;2503;sea;1597;-1;-1;-1;-1;VERGALL_TUNNEL_JIKPORUN;Jikporun-Skaelinger
+2898;2626;sea;6966;-1;-1;-1;-1;VERGALL_TUNNEL_ALSTIR;Alstir Tunnel
+1053;3563;sea;2771;-1;-1;-1;-1;VERGALL_TUNNEL_WITRIGR;Witrigr-Wasginr
+2563;7760;sea;7552;-1;-1;-1;-1;VERGALL_TUNNEL_JOLSKANE;Jolskane-Zarathum
+4881;1898;sea;1362;-1;-1;-1;-1;VERGALL_TUNNEL_LISTINGEN;Listingen-Zarathum
+3771;4217;sea;2833;-1;-1;-1;-1;VERGALL_TUNNEL_OFANHALLR;Nordtorf/Ofanhallr-Votrosr
+-1;-1;-1;-1;-1;-1;-1;-1;-1

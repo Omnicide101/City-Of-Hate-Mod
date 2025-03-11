@@ -1,6 +1,6 @@
 characters={
-	PRK_miroslav_zlatko_={
-		name="Miroslav Zlatko "
+	PRK_miroslav_zlatko={
+		name="Miroslav Zlatko"
 		portraits={
 			civilian={
 				large="gfx/leaders/PRK/Portrait_PRK_Zlatko.dds"
@@ -9,6 +9,7 @@ characters={
 		country_leader={
 			desc="politics_PRK_zlatko_desc"
 			ideology=monarchy_absolute_ideology
+			traits = { fervent_reactionary }
 			expire="1.1.1.1"
 			id=-1
 		}
@@ -17,7 +18,7 @@ characters={
 		name="Justýna Létalová"
 		portraits={
 			civilian={
-				large="gfx/leaders/PRK/Portrait_Perkavland_Generic_land_1.dds"
+				large="gfx/leaders/PRK/Portrait_PRK_Letalova.dds"
 			}
 		}
 		country_leader={

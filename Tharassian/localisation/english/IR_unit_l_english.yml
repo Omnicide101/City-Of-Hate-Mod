@@ -2,7 +2,6 @@
  category_heavy_infantry:0 "Heavy Infantry"
  category_ranged_infantry:0 "All Ranged Infantry"
  category_archers:0 "Archers"
- category_cavalry:0 "Cavalry"
  category_light_cavalry:0 "Light Cavalry"
  category_heavy_cavalry:0 "Heavy Cavalry"
  warband:0 "Tribal Warband"

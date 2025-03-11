@@ -1,0 +1,16 @@
+characters={
+	AGE_queen={
+		name="The Ageless Queen"
+		portraits={
+			civilian={
+				large="gfx/leaders/AGE/Portrait_AGE_Queen.dds"
+			}
+		}
+		country_leader={
+			desc="politics_AGE_queen_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}	

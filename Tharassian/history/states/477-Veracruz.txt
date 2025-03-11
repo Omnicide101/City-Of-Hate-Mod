@@ -1,19 +1,28 @@
-
-state={
-	id=477
-	name="STATE_477"
-
-	history={
-		owner = XXX
-		add_core_of = XXX
-
+state = {
+	id = 477
+	name = "STATE_477"
+	history = {
+		owner = TRS
+		add_core_of = TRS
 	}
-
-	provinces={
+	provinces = {
 		122 780 855 2356 4904 
 	}
-	manpower=1
-	buildings_max_level_factor=1.000
-	state_category=rural
-	local_supplies=0.000
+	state_category = city
+	manpower = 443902
+	buildings_max_level_factor = 1.000
+	history = {
+		owner = TRS
+		add_core_of = TRS
+		victory_points = { 780 37 }
+		buildings = {
+			infrastructure = 3
+			workshop = 2
+			forge = 2
+			dockyard = 2
+			780 = {
+				naval_base = 4
+			}
+		}
+	}
 }

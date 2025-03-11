@@ -240,10 +240,7 @@ every_possible_country = {
 		has_idea = elf_country
 		is_dynamic_country = no
 		NOT = {
-			OR = {
-				has_allowed_idea_with_traits = { idea = nobility_plantation_representative characters = yes }
-				tag = ORD #gets their own in one path
-			}
+			has_allowed_idea_with_traits = { idea = nobility_plantation_representative characters = yes }
 		}
 	}
 	generate_character = {

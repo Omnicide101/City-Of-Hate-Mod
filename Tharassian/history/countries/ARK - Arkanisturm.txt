@@ -2,6 +2,36 @@
 
 set_oob = "ARK_1936"
 
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+
+
+
+set_research_slots = 3
 
 set_technology ={
 	tech_tribal_pride = 1

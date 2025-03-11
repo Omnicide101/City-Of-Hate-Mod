@@ -11,19 +11,97 @@ on_actions = {
 	#		}
 	#	}
 	#}
+
+	on_weekly = {
+		effect = {
+			if = {
+				limit = { 
+					has_intelligence_agency = yes
+					is_ai = yes
+				}
+				update_operation_ai = yes
+			}
+		}
+	}
+	
+	on_operation_completed = {
+		effect = {
+			# same scope setup as in operation outcome:
+			# THIS: the operation
+			# ROOT: the initiating country
+			# FROM: the target country
+			#log = "This: [This.GetName] From: [From.GetName] Root: [Root.GetName]"
+		}
+		
+		#Dummy on_action to prevent errors from being thrown
+	}
+	
+	#Re-enable species-specific units for liberated commissiaries
+	on_subject_autonomy_level_change = {
+		effect = { 
+			if = {
+				limit = {
+					ROOT = {
+						tag = SKA
+					}
+					FROM = {
+						tag = ORD
+					}
+				}
+				
+				set_technology = {
+					dwarven_warriors = 1 #Dwarf units for you
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = PRK
+					}
+					FROM = {
+						tag = ORD
+					}
+				}
+				
+				set_technology = {
+					perkav_raiders = 1 #Perkav units for you
+					perkav_raiders_naval = 1
+				}
+			}
+		}
+	}
 	
 	#Add a small chance for a general to be captured on defeat
 	on_army_leader_lost_combat = {
-		random = {
-			chance = 3
-			FROM = {
-				unit_leader_event = random.15
+		effect = {
+			random = {
+				chance = 3
+				FROM = {
+					country_event = random.15
+				}
+				ROOT = {
+					add_trait = {
+						character = THIS
+						trait = captured_unit_leader
+					}
+					#Set nationality so we know who to send relevant events back to
+					set_variable = {
+						original_nationality = FROM.id
+					}
+				}
 			}
-			ROOT = {
-				add_unit_leader_trait = captured_unit_leader
-				#Set nationality so we know who to send relevant events back to
-				set_variable = {
-					char_nationality = @FROM
+		}
+	}
+	
+	#Hack solution for some countries (mainly SKA and sometimes ORD) randomly getting 'Ongoing Border Conflict' as a national spirit instead of a modifier in their states
+	#Probably a scoping issue somewhere but I can't be fucked to go through every FROM.FROM.FROM rn
+	#TODO clean this up properly
+	#RMT got it too at some point - seems to be a mountain skirmish issue?
+	on_border_war_lost = {
+		effect = {
+			every_country = {
+				remove_dynamic_modifier = {
+					modifier = ongoing_border_conflict
 				}
 			}
 		}
@@ -33,8 +111,15 @@ on_actions = {
 	#Should only fire once
 	on_operative_recruited = {
 		effect = {
-			FROM = {
-				country_event = ai.2
+			if = {
+				limit = {
+					FROM = {
+						is_ai = no
+					}
+				}
+				FROM = {
+					country_event = ai.2
+				}
 			}
 		}
 	}
@@ -45,32 +130,48 @@ on_actions = {
 		effect = {
 			THIS = {
 				random_list = {
-					
 					45 = {
-						add_trait = {
-							trait = warrior_class
-						}
+						add_unit_leader_trait = warrior_class
 					}
 					15 = {
-						add_trait = {
-							trait = barbarian_class
-						}
+						add_unit_leader_trait = barbarian_class
 					}
 					10 = {
-						add_trait = {
-							trait = priest_class
-						}
+						add_unit_leader_trait = priest_class
 					}
 					25 = {
-						add_trait = {
-							trait = thief_class
-						}
+						add_unit_leader_trait = thief_class
 					}
 					5 = {
-						add_trait = {
-							trait = wizard_class
+						add_unit_leader_trait = wizard_class
+					}
+				}
+			}
+		}
+	}
+	
+	#Set a baseline minimum of compliance for (Eastern) Ordoria taking Rthaur states
+	#ROOT is new controller, FROM is old controller, FROM.FROM is state ID. 
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							tag = ORD
+							tag = EOR
 						}
 					}
+					FROM.FROM = {
+						OR = {
+							is_core_of = RTH
+							is_core_of = EOR
+						}
+						compliance < 15
+					}
+				}
+				FROM.FROM = {
+					set_compliance = 15
 				}
 			}
 		}
@@ -203,130 +304,16 @@ on_actions = {
 		}
 	}
 	
-	#Tells AI to STOP BUILDING FUCKING DIVISIONS
-	#PLEASE WHY DOESN'T AI_STRATEGY WORK
-	#MAYBE THIS DOES
-	#WHAT THE FUCK AI YOU DON'T HAVE TO DECLARE WAR ON MY CPU
-	
-	on_weekly = {
+	#Sets AI strats that need to be scoped to every country
+	on_startup = {
 		effect = {
 			every_country = {
 				limit = {
-					is_ai = yes
 					NOT = {
-						has_dynamic_modifier = {
-							modifier = ai_division_limiter
-						}
-					}
-					OR = {
-						AND = {
-							is_major = yes
-							NOT = {
-								tag = STA #Needs a leg up against the Union
-								tag = ORD #Fighting everyone means they need more dudes
-								tag = BLD #Not enough infrastructure for a large army
-								tag = PRK #Not enough infrastructure for a large army
-								tag = NPC #Need a leg up against the GMR
-								tag = NBI #Not bound by the laws of mortals
-							}
-							num_divisions > 119
-						}
-						AND = {
-							is_major = no
-							NOT = {
-								tag = STA
-								tag = ORD
-								tag = BLD
-								tag = PRK
-								tag = NPC
-								tag = NBI
-							}
-							num_divisions > 23
-						}
-						AND = {
-							tag = STA
-							num_divisions > 71
-						}
-						AND = {
-							tag = ORD
-							num_divisions > 239
-						}
-						AND = {
-							tag = BLD
-							num_divisions > 23
-						}
-						AND = {
-							tag = PRK
-							num_divisions > 71
-						}
-						AND = {
-							tag = NPC
-							num_divisions > 129
-						}
+						tag = GOW
 					}
 				}
-				add_dynamic_modifier = {
-					modifier = ai_division_limiter
-				}
-				country_lock_all_division_template = yes
-			}
-			every_country = {
-				limit = {
-					is_ai = yes
-					has_dynamic_modifier = {
-						modifier = ai_division_limiter
-					}
-					OR = {
-						AND = {
-							is_major = yes
-							NOT = {
-								tag = STA #Needs a leg up against the Union
-								tag = ORD #Fighting everyone means they need more dudes
-								tag = BLD #Not enough infrastructure for a large army
-								tag = PRK #Not enough infrastructure for a large army
-								tag = NPC #Need a leg up against the GMR
-								tag = NBI #Not bound by the laws of mortals
-							}
-							num_divisions < 120
-						}
-						AND = {
-							is_major = no
-							NOT = {
-								tag = STA
-								tag = ORD
-								tag = BLD
-								tag = PRK
-								tag = NPC
-								tag = NBI
-							}
-							num_divisions < 24
-						}
-						AND = {
-							tag = STA
-							num_divisions < 72
-						}
-						AND = {
-							tag = ORD
-							num_divisions < 240
-						}
-						AND = {
-							tag = BLD
-							num_divisions < 24
-						}
-						AND = {
-							tag = PRK
-							num_divisions < 72
-						}
-						AND = {
-							tag = NPC
-							num_divisions < 130
-						}
-					}
-				}
-				remove_dynamic_modifier = {
-					modifier = ai_division_limiter
-				}
-				country_lock_all_division_template = no
+				country_event = ai_strats.1
 			}
 		}
 	}
@@ -345,6 +332,82 @@ on_actions = {
 				country_event = { id = rth.18 days = 90 random = 720 } 
 				country_event = { id = rth.24 days = 71 random = 120 }
 				country_event = { id = rth.27 days = 100 random = 1200 } 
+			}
+		}
+	}
+	
+	#Set spooky Spochwald Bandits
+	on_startup = {
+		effect = {
+			1284 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			226 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			277 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			1292 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			301 = {
+				add_dynamic_modifier = {
+					modifier = SPW_darkweald_bandits
+				}
+			}
+			1285 = {
+				add_dynamic_modifier = {
+					modifier = SPW_ominous_presences
+				}
+			}
+			1286 = {
+				add_dynamic_modifier = {
+					modifier = SPW_ominous_presences
+				}
+			}
+			1289 = {
+				add_dynamic_modifier = {
+					modifier = SPW_bandit_haven
+				}
+			}
+			310 = {
+				add_dynamic_modifier = {
+					modifier = SPW_bandit_haven
+				}
+			}
+			311 = {
+				add_dynamic_modifier = {
+					modifier = SPW_bandit_haven
+				}
+			}
+			1288 = {
+				add_dynamic_modifier = {
+					modifier = SPW_bandit_haven
+				}
+			}
+			289 = {
+				add_dynamic_modifier = {
+					modifier = SPW_newheart_bandits
+				}
+			}
+			288 = {
+				add_dynamic_modifier = {
+					modifier = SPW_bandit_haven
+				}
+			}
+			1290 = {
+				add_dynamic_modifier = {
+					modifier = SPW_ominous_presences
+				}
 			}
 		}
 	}
@@ -582,7 +645,7 @@ on_actions = {
 								has_idea = STLRD_dominated
 								check_variable = {
 									variable = STLRD_state_control_var
-									value < global.NEW_CONTROLLER.STLRD_state_control_var
+									value < global:NEW_CONTROLLER:STLRD_state_control_var
 								}
 							}
 						}
@@ -898,33 +961,18 @@ on_actions = {
 	on_declare_war = {
 		effect = {
 			ROOT = {
-				country_event = {
-					id = ir.political.6
-					days = 1000
-					random = 1000
+				hidden_effect = {
+					country_event = {
+						id = ir.political.2
+						days = 1
+					}
+					country_event = {
+						id = ir.political.1
+						days = 3
+					}
 				}
-				country_event = {
-					id = ir.political.2
-					days = 1
-				}
-				country_event = {
-					id = ir.political.1
-					days = 3
-				}
-			}
-			FROM = {
-				country_event = { id = ir.political.6 days = 1000 random = 1000 }
 			}
 		}
-	}
-	
-	on_war = {
-		effect = {
-			ROOT = {
-				country_event = { id = ir.political.6 days = 1000 random = 1000 }
-			}
-		}
-
 	}
 	
 	#Force economy laws for Puritans and Rosites

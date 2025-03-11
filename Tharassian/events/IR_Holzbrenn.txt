@@ -763,7 +763,7 @@ country_event = {#Land Reform
 		ai_chance = {
 			factor = 5
 		}
-		set_country_flag = HLZ_mandate_smallholds
+		set_country_flag = HLZ_mandate_smallholds_flag
 	}
 }
 

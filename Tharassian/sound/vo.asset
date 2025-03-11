@@ -3,15 +3,20 @@ category =
 {
  name = "Voices"
  soundeffects = {
-	BER_infantry_idle
-	BER_infantry_neutral_combat
-	BER_infantry_positive_combat
-	BER_infantry_retreat
+	#BER_infantry_idle
+	#BER_infantry_neutral_combat
+	#BER_infantry_positive_combat
+	#BER_infantry_retreat
 	
 	TAR_infantry_idle
 	TAR_infantry_neutral_combat
 	TAR_infantry_positive_combat
 	TAR_infantry_retreat
+	
+	ORD_infantry_idle
+	ORD_infantry_neutral_combat
+	ORD_infantry_positive_combat
+	ORD_infantry_retreat
  }
   compressor = 
  {
@@ -27,25 +32,25 @@ category =
 
 ########## BER
 
-soundeffect = 
-{
-    name = "BER_infantry_idle"
-    sounds = {
-		sound = br_Idle_001
-        sound = br_Idle_002
-        sound = br_Idle_003
-        sound = br_Idle_004
-        sound = br_Idle_005
-		sound = br_Idle_006
-        sound = br_Idle_010
-		sound = br_Idle_011
-    }
-	max_audible = 1
-	max_audible_behaviour = fail
-	volume = 0.45
-	volume_random_offset = { 0.0 -0.15 }
-	playbackrate_random_offset = { 0.0 -0.15 }
-}
+#soundeffect = 
+#{
+    # name = "BER_infantry_idle"
+    # sounds = {
+		# sound = br_Idle_001
+        # sound = br_Idle_002
+        # sound = br_Idle_003
+        # sound = br_Idle_004
+        # sound = br_Idle_005
+		# sound = br_Idle_006
+        # sound = br_Idle_010
+		# sound = br_Idle_011
+    # }
+	# max_audible = 1
+	# max_audible_behaviour = fail
+	# volume = 0.45
+	# volume_random_offset = { 0.0 -0.15 }
+	# playbackrate_random_offset = { 0.0 -0.15 }
+# }
 
 ########## TAR
 
@@ -107,53 +112,118 @@ soundeffect =
 }
 ########## 
 
+########## ORD
+
+soundeffect = 
+{
+    name = "ORD_infantry_idle"
+    sounds = {
+		sound = or_Idle_001
+        sound = or_Idle_002
+        sound = or_Idle_003
+        sound = or_Idle_004
+        sound = or_Idle_005
+		sound = or_Idle_006
+	}
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15 }
+}
+
+soundeffect = 
+{
+    name = "ORD_infantry_neutral_combat"
+    sounds = {
+        sound = or_Neutral_001
+        sound = or_Neutral_002
+        sound = or_Neutral_003
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+
+soundeffect = 
+{
+    name = "ORD_infantry_positive_combat"
+    sounds = {
+        sound = or_Positive_001
+        sound = or_Positive_002
+        sound = or_Positive_003
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+
+soundeffect = 
+{
+    name = "ORD_infantry_retreat"
+    sounds = {
+        sound = or_Retreat_001
+        sound = or_Retreat_002
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+########## 
+
 ############## AUDIO ASSETS
 
 ################# BER
-sound = 
-{
-	name = "br_Idle_001"
-	file = "ber/br_Idle_001.wav"
-}
-sound = 
-{
-	name = "br_Idle_002"
-	file = "ber/br_Idle_002.wav"
-}
-sound = 
-{
-	name = "br_Idle_003"
-	file = "ber/br_Idle_003.wav"
-}
+# sound = 
+# {
+	# name = "br_Idle_001"
+	# file = "ber/br_Idle_001.wav"
+# }
+# sound = 
+# {
+	# name = "br_Idle_002"
+	# file = "ber/br_Idle_002.wav"
+# }
+# sound = 
+# {
+	# name = "br_Idle_003"
+	# file = "ber/br_Idle_003.wav"
+# }
 
-sound = 
-{
-	name = "br_Idle_004"
-	file = "ber/br_Idle_004.wav"
-}
+# sound = 
+# {
+	# name = "br_Idle_004"
+	# file = "ber/br_Idle_004.wav"
+# }
 
-sound = 
-{
-	name = "br_Idle_005"
-	file = "ber/br_Idle_005.wav"
-}
+# sound = 
+# {
+	# name = "br_Idle_005"
+	# file = "ber/br_Idle_005.wav"
+# }
 
-sound = 
-{
-	name = "br_Idle_006"
-	file = "ber/br_Idle_006.wav"
-}
+# sound = 
+# {
+	# name = "br_Idle_006"
+	# file = "ber/br_Idle_006.wav"
+# }
 
-sound = 
-{
-	name = "br_Idle_010"
-	file = "ber/br_Idle_010.wav"
-}
-sound = 
-{
-	name = "br_Idle_011"
-	file = "ber/br_Idle_011.wav"
-}
+# sound = 
+# {
+	# name = "br_Idle_010"
+	# file = "ber/br_Idle_010.wav"
+# }
+# sound = 
+# {
+	# name = "br_Idle_011"
+	# file = "ber/br_Idle_011.wav"
+# }
 
 ################# TAR
 sound = 
@@ -204,4 +274,81 @@ sound =
 {
 	name = "tr_Retreat_001"
 	file = "tar/tr_Retreat_001.wav"
+}
+
+
+################# ORD
+sound = 
+{
+	name = "or_Idle_001"
+	file = "ord/or_Idle_001.wav"
+}
+sound = 
+{
+	name = "or_Idle_002"
+	file = "ord/or_Idle_002.wav"
+}
+sound = 
+{
+	name = "or_Idle_003"
+	file = "ord/or_Idle_003.wav"
+}
+
+sound = 
+{
+	name = "or_Idle_004"
+	file = "ord/or_Idle_004.wav"
+}
+
+sound = 
+{
+	name = "or_Idle_005"
+	file = "ord/or_Idle_005.wav"
+}
+
+sound = 
+{
+	name = "or_Idle_006"
+	file = "ord/or_Idle_006.wav"
+}
+
+sound = 
+{
+	name = "or_Neutral_001"
+	file = "ord/or_Neutral_001.wav"
+}
+sound = 
+{
+	name = "or_Neutral_002"
+	file = "ord/or_Neutral_002.wav"
+}
+sound = 
+{
+	name = "or_Neutral_003"
+	file = "ord/or_Neutral_003.wav"
+}
+sound = 
+{
+	name = "or_Positive_001"
+	file = "ord/or_Positive_001.wav"
+}
+sound = 
+{
+	name = "or_Positive_002"
+	file = "ord/or_Positive_002.wav"
+}
+sound = 
+{
+	name = "or_Positive_003"
+	file = "ord/or_Positive_003.wav"
+}
+sound = 
+{
+	name = "or_Retreat_001"
+	file = "ord/or_Retreat_001.wav"
+}
+sound = 
+{
+	name = "or_Retreat_002"
+	file = "ord/or_Retreat_002.wav"
 }

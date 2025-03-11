@@ -8,15 +8,25 @@ state={
 	manpower=4327
 	buildings_max_level_factor=1.000
 		history={
-		victory_points = {
-			758 1
-		}
-		owner = RTH
-		buildings = {	
-		infrastructure = 1
-		workshop = 2
-		}	
-		add_core_of = RTH
+			victory_points = {
+				758 1
+			}
+			owner = RTH
+			buildings = {	
+				infrastructure = 1
+				workshop = 2
+				758 = {
+					bunker = 2
+				}
+				7610 = {
+					bunker = 2
+				}
+				7663 = {
+					bunker = 2
+				}
+			
+			}
+			add_core_of = RTH
 
 		}
 }

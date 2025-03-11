@@ -5,33 +5,7 @@ claim_vergallheim_territory = {
 			NOT = {
 				is_core_of = ROOT
 			}
-			OR = {
-				is_core_of = SKA
-				is_core_of = RMT
-				state = 133
-				state = 659
-				state = 179
-				state = 176
-				state = 139
-				state = 174
-				state = 173
-				state = 172
-				state = 106
-				state = 203
-				state = 207
-				state = 365
-				state = 815
-				state = 723
-				state = 22
-				state = 125
-				state = 135
-				state = 1271
-				state = 1272
-				state = 1273
-				state = 1274
-				state = 1275
-				state = 1276
-			}
+			is_oramfell_state = yes
 		}
 		add_claim_by = ROOT
 	}
@@ -449,6 +423,39 @@ reform_vergallheim = {
    		enemy = PREV
    		}
    		}
+	}
+	if = {
+		limit = {
+			SKA = {
+				is_subject_of = ROOT
+			}
+		}
+		annex_country = {
+			target = SKA
+			transfer_troops = yes
+		}
+	}
+	if = {
+		limit = {
+			BER = {
+				is_subject_of = ROOT
+			}
+		}
+		annex_country = {
+			target = BER
+			transfer_troops = yes
+		}
+	}
+	if = {
+		limit = {
+			RMT = {
+				is_subject_of = ROOT
+			}
+		}
+		annex_country = {
+			target = RMT
+			transfer_troops = yes
+		}
 	}
 	VRG = {
 		annex_country = {

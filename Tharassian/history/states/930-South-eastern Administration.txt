@@ -2,23 +2,24 @@
 state={
 	id=930
 	name="STATE_930"
+	resources={
+		food=5.000
+	}
+
+	history={
+		owner = AGE
+		add_core_of = AGE
+		buildings = {
+			infrastructure = 3
+			farm = 1
+		}
+	}
+
 	provinces={
-		401 2621 2901 3469 5286 5403 7754 7779 7911 
+		278 401 2901 7820 7876 7914 
 	}
 	manpower=595
 	buildings_max_level_factor=1.000
-	local_supplies=5
-	state_category = pastoral
-	
-	resources = {
-        food = 5
-    }
-    history = {
-        owner = XXX
-        add_core_of = XXX
-        buildings = {
-            infrastructure = 3
-		}
-		victory_points = { 7779 16 }
-	}
+	state_category=pastoral
+	local_supplies=5.000
 }

@@ -1,0 +1,33 @@
+ideas = {
+	
+	country = {
+
+		GOW_merchants_death = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_deal_with_the_devil
+			
+			removal_cost = -1
+			
+			rule = {
+				can_send_volunteers = yes
+			}
+			
+			modifier = {
+				embargo_threshold_factor = 0.75
+				send_volunteers_tension = -1
+				send_volunteer_divisions_required = -0.75
+				license_purchase_cost = 0.15
+				license_production_speed = 0.35
+				license_tech_difference_speed = 0.35
+			}
+		}
+	}
+}

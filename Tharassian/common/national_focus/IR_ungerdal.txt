@@ -1452,8 +1452,8 @@ focus_tree = {
 			add_popularity = {
 				ideology = monarchy_absolute
 				popularity = 0.16
-				add_ideas = UNG_nobility_controlled
 			}
+			add_ideas = UNG_nobility_controlled
 		}
 	}
 	
@@ -3174,7 +3174,6 @@ focus_tree = {
 			factor = 15
 		}
 		available = {
-			has_country_flag = UNG_give_steel_to_stahlhof
 			NOT = {
 			has_country_flag = ythelmare_pact_member
 			}
@@ -3332,7 +3331,6 @@ focus_tree = {
 			NOT = {
 			has_country_flag = ythelmare_pact_member
 			}
-			has_country_flag = UNG_fuck_stahlhof
 			STA = {
 					is_not_independent = yes
 			}
@@ -3891,11 +3889,11 @@ focus_tree = {
 			add_stability = 0.05
 			add_opinion_modifier = {
 				target = GMR
-				modifier = UNG_cold_war
+				modifier = UNG_cold_war_opinion
 			}
 			reverse_add_opinion_modifier = {
 				target = GMR
-				modifier = UNG_cold_war
+				modifier = UNG_cold_war_opinion
 			}
 		}
 	}
@@ -4634,8 +4632,8 @@ focus_tree = {
 					has_government = monarchy_absolute
 					has_government = puritan
 				}
-				OR = {
-					NOT = {
+				NOT = {
+					AND = {
 						owns_state = 172
 						owns_state = 173
 						owns_state = 174
@@ -4891,14 +4889,16 @@ focus_tree = {
 				has_completed_focus = UNG_assist_terugkeer
 			}
 			SKA = {
-				is_independent = yes 
-			}
-			KUR = {
-				owns_state = 172
-				owns_state = 173
-				owns_state = 174
-				owns_state = 176
-				owns_state = 179
+				is_independent = yes
+				NOT = {
+					AND = {
+						owns_state = 172
+						owns_state = 173
+						owns_state = 174
+						owns_state = 176
+						owns_state = 179
+					}
+				}
 			}
 		}
 		
@@ -4955,7 +4955,15 @@ focus_tree = {
 			focus = UNG_assist_terugkeer
 			focus = UNG_recognize_rimatan_independence
 		}
-
+		bypass = {
+			OR = {
+				RMT = {
+					is_in_faction_with = SKA
+					is_subject_of = SKA
+					has_non_aggression_pact_with = SKA
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 27
 		}
@@ -5229,8 +5237,8 @@ focus_tree = {
 			focus = UNG_coordinate_renovations
 			focus = UNG_formalize_waterways
 		}
-		available = {
-			
+		bypass = {
+
 		}
 		mutually_exclusive = {
 			focus = UNG_recognize_high_king
@@ -5286,6 +5294,11 @@ focus_tree = {
 				RMT = {
 					owns_state = 146
 				}
+				RMT = {
+					is_in_faction_with = SKA
+					is_subject_of = SKA
+					has_non_aggression_pact_with = SKA
+				}
 			}
 		}
 		ai_will_do = {
@@ -5326,6 +5339,27 @@ focus_tree = {
 				has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
 			}
 		}
+		bypass = {
+			OR = {
+				SKA = {
+					is_subject_of = RMT
+				}
+				RMT = {
+					is_subject_of = SKA
+				}
+				SKA = {
+					owns_state = 383
+				}
+				RMT = {
+					owns_state = 146
+				}
+				RMT = {
+					is_in_faction_with = SKA
+					is_subject_of = SKA
+					has_non_aggression_pact_with = SKA
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 33
 		}
@@ -5356,6 +5390,21 @@ focus_tree = {
 			OR = {
 				has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
 				has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
+			}
+			country_exists = SKA
+			country_exists = RMT
+		}
+		bypass = {
+			OR = {
+				SKA = {
+					is_subject_of = RMT
+				}
+				RMT = {
+					is_subject_of = SKA
+				}
+				RMT = {
+					is_in_faction_with = SKA
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -5482,35 +5531,71 @@ focus_tree = {
 			focus = UNG_continue_politics
 		}
 		available = {
-			OR = {
-				AND = {
-					OR = {
-						has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
-						has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
+			if = {
+				limit = {
+					NOT = {
+						SKA = {
+							is_in_faction_with = RMT
+							is_in_faction_with = BER
+						}
 					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
+							has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
+						}
+						OR = {
+							SKA = {
+								owns_state = 383
+							}
+							RMT = {
+								is_puppet_of = SKA
+							}
+						}
+					}
+					AND = {
+						OR = {
+							has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
+							has_country_flag = UNG_nordtorf_summit_success_RMT_favoured
+						}
+						OR = {
+							RMT = {
+								owns_state = 146
+							}
+							RMT = {
+								has_non_aggression_pact_with = SKA
+							}
+							SKA = {
+								is_puppet_of = RMT
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
 					OR = {
 						SKA = {
-							owns_state = 383
+							is_in_faction_with = BER
 						}
-						RMT = {
-							is_puppet_of = SKA
+						SKA = {
+							is_in_faction_with = RMT
 						}
 					}
 				}
 				AND = {
-					OR = {
+					NOT = {
+						has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
+						has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
 						has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
 						has_country_flag = UNG_nordtorf_summit_success_RMT_favoured
 					}
-					OR = {
-						RMT = {
-							owns_state = 146
-						}
-						RMT = {
-							has_non_aggression_pact_with = SKA
-						}
-						SKA = {
-							is_puppet_of = RMT
+					SKA = {
+						OR = {
+							is_in_faction_with = BER
+							is_in_faction_with = RMT
 						}
 					}
 				}
@@ -5597,6 +5682,63 @@ focus_tree = {
 				}
 				create_faction = new_alliance
 				add_to_faction = RMT
+			}
+			#Edge case where Skaelinger creates the Dwarven Protection Pact
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
+						has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
+						has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
+						has_country_flag = UNG_nordtorf_summit_success_RMT_favoured
+					}
+					OR = {
+						RMT = {
+							is_in_faction_with = SKA
+						}
+						BER = {
+							is_in_faction_with = SKA
+						}
+					}
+				}
+				give_guarantee = SKA
+				SKA = {
+					give_guarantee = UNG
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
+						has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
+						has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
+						has_country_flag = UNG_nordtorf_summit_success_RMT_favoured
+					}
+					RMT = {
+						is_in_faction_with = SKA
+					}
+				}
+				give_guarantee = RMT
+				RMT = {
+					give_guarantee = UNG
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
+						has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
+						has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
+						has_country_flag = UNG_nordtorf_summit_success_RMT_favoured
+					}
+					BER = {
+						is_in_faction_with = SKA
+					}
+				}
+				give_guarantee = BER
+				BER = {
+					give_guarantee = UNG
+				}
 			}
 		}
 	}

@@ -25,6 +25,7 @@ state={
 			}
 		}
 		add_core_of = ATH
+		add_claim_by = TRS
 
 	}
 }

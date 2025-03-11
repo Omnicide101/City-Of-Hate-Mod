@@ -2,6 +2,42 @@ capital = 433
 
 set_oob = "DIA_1936"
 
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "DIA_1936_naval_mtg"
+	else = {
+		set_naval_oob = "DIA_1936_naval"
+	}
+}
+
 set_technology ={
 	tech_tribal_pride = 1
 	tech_wheel = 1
@@ -35,8 +71,11 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
+
+
 
 set_research_slots = 3
 set_stability = 0.43
@@ -65,13 +104,12 @@ set_popularities = {
 	puritan = 37
 }
 
-
-recruit_character = DIA_aoibhroid_tuamáistir
-recruit_character = DIA_harry_ashe
-recruit_character = DIA_martha_mcguinness
-recruit_character = DIA_séan_kelly
-recruit_character = DIA_peter_kelly
-recruit_character = DIA_lucia_larkin
+recruit_character = DIA_aoibhroid_tuamaistir
+recruit_character = DIA_lucia_oleary
+recruit_character = DIA_edward_omara
+recruit_character = DIA_matilda_mcgarry
+recruit_character = DIA_john_griffith
+recruit_character = DIA_martha_kelly
 
 add_ideas = {
 	halfling_country
@@ -114,4 +152,84 @@ add_opinion_modifier = {
 add_relation_modifier = {
 	target = GET
 	modifier = bitter_rivals_opinion_modifier
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Treascair-Class"
+		type = destroyer_1
+		parent_version = 0
+		upgrades = {
+			
+		}
+	}
+	# Light Cruisers #
+	create_equipment_variant = {
+		name = "Fiúnach-Class"
+		type = destroyer_1 #Should be light cruiser
+		parent_version = 0
+		upgrades = {
+			
+		}
+	}
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "Ceartaiseach-Class"
+		type = heavy_cruiser_1
+		parent_version = 0
+		upgrades = {
+			
+		}
+	}
+}
+
+if = {
+	limit = { 
+		has_dlc = "Man the Guns"
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Treascair-Class"
+		type = ship_hull_light_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = light_ship_ballista_0
+			fixed_ship_engine_slot = light_ship_rowers_0
+		}
+	}
+	# Light Cruisers #
+	#create_equipment_variant = {
+	#		name = "Fiúnach-Class"
+	#		type = ship_hull_cruiser_0
+	#		parent_version = 0
+	#		modules = {
+	#			fixed_ship_battery_slot = ship_medium_battery_1
+	#			fixed_ship_anti_air_slot = empty
+	#			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+	#			fixed_ship_radar_slot = empty
+	#			fixed_ship_engine_slot = cruiser_ship_engine_2
+	#			fixed_ship_armor_slot = ship_armor_cruiser_2
+	#			mid_1_custom_slot = ship_torpedo_1
+	#			mid_2_custom_slot = ship_secondaries_2
+	#			rear_1_custom_slot = ship_light_medium_battery_2
+	#		}
+	#}
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "Ceartaiseach-Class"
+		type = ship_hull_heavy_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = heavy_ship_ballista_0
+			fixed_ship_engine_slot = heavy_ship_rowers_0
+		}
+	}
 }

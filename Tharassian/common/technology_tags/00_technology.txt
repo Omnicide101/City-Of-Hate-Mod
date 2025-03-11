@@ -31,6 +31,16 @@ technology_categories = {
 	navy_tech
 	engineering_tech
 	
+	#Aerial War
+	air_equipment
+	light_air
+	light_fighter
+	mio_cat_all_light_fighter_and_modules
+	mio_cat_all_light_aircraft_and_modules
+	
+	#Creatures
+	creature_taming
+	
 	##Supply and logistics
 	logistics_tech
 	

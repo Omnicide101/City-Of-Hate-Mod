@@ -304,10 +304,13 @@ unit_medals = {
 	
 	neutral_bravery = {
 		
-		available = { 
-			is_monarchy = yes
-			
+		available = {
+			OR = {
+				has_aristocracy = yes
+				has_government = theocrat
+			}
 		}
+		
 		frame = 1
 		icon = "GFX_medal_icon_default"
 		
@@ -326,10 +329,13 @@ unit_medals = {
 	
 	neutral_military_order = {
 		
-		available = { 
-			is_monarchy = yes
-			
+		available = {
+			OR = {
+				has_aristocracy = yes
+				has_government = theocrat
+			}
 		}
+		
 		frame = 2
 		icon = "GFX_medal_icon_default"
 		
@@ -348,10 +354,13 @@ unit_medals = {
 	
 	neutral_sword = {
 		
-		available = { 
-			is_monarchy = yes
-			
+		available = {
+			OR = {
+				has_aristocracy = yes
+				has_government = theocrat
+			}
 		}
+		
 		frame = 3
 		icon = "GFX_medal_icon_default"
 		
@@ -369,9 +378,11 @@ unit_medals = {
 	
 	neutral_virtue = {
 		
-		available = { 
-			is_monarchy = yes
-			
+		available = {
+			OR = {
+				has_aristocracy = yes
+				has_government = theocrat
+			}
 		}
 		frame = 4
 		icon = "GFX_medal_icon_default"

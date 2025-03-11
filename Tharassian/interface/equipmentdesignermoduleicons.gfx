@@ -30,12 +30,32 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_EMI_heavy_ship_ballista_0"
+		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/ballista_icn.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_EMI_heavy_ship_rowers_0"
+		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/rowers_icn.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_EMI_light_ship_perkav_raider_rowers_0"
 		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/perkav_oarsmen_icn.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_EMI_light_ship_harpoon_thrower_0"
+		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/harpoon_thrower_icn.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_EMI_heavy_ship_perkav_raider_rowers_0"
+		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/perkav_oarsmen_icn.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_EMI_heavy_ship_harpoon_thrower_0"
 		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/harpoon_thrower_icn.dds"
 	}
 

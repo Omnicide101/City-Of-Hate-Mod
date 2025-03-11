@@ -127,7 +127,7 @@ units = {
 	}
 	
 	division = {
-		name = "1st scouts_cavalry 'Jungblut'"
+		name = "1st Outriders 'Jungblut'"
 		location = 5503
 		division_template = "Späher"
 		start_experience_factor = 0.7

@@ -4,7 +4,7 @@ defined_text = { # Get a specific state name for the 'City Requests Privileges' 
         trigger = {
             has_variable = RND_city_privileges_state_id
         }
-        localization_key = [?THIS.RND_city_privileges_state_id.GetName]
+        localization_key = loc_key_RND_city_privileges
     }
 }
 
@@ -14,6 +14,6 @@ defined_text = { # Get a specific state name for the 'Roaming Monster' random ev
         trigger = {
             has_variable = RND_roaming_monster_state_id
         }
-        localization_key = [?THIS.RND_roaming_monster_state_id.GetName]
+        localization_key = loc_key_RND_roaming_monster
     }
 }

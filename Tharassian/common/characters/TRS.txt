@@ -1,0 +1,16 @@
+characters={
+	TRS_calidacius={
+		name="Calidacius XIV"
+		portraits={
+			civilian={
+				large="gfx/leaders/UnionSouth/Portrait_Union_South_Generic_land_3.dds"
+			}
+		}
+		country_leader={
+			desc="politics_TRS_calidacius_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

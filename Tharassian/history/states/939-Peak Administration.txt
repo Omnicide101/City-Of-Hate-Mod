@@ -13,10 +13,12 @@ state={
         lumber = 6
     }
     history = {
-        owner = XXX
-        add_core_of = XXX
+        owner = AGE
+        add_core_of = AGE
+		add_claim_by = SAL
         buildings = {
             infrastructure = 1
+			dockyard = 1
 		}
 		victory_points = { 4039 1 }
 	}

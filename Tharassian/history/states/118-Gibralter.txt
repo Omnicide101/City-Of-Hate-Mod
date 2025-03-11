@@ -5,7 +5,7 @@ state={
 		1941 1353 7404 5592
 	}
 	state_category = large_city
-	manpower=1024390
+	manpower=704390
 	buildings_max_level_factor=1.000
 		history={
 		victory_points = { 1353 50 }

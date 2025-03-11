@@ -792,7 +792,7 @@ focus = {#Rule of Nobility
 
 focus = {#Freiprinzliche Richter
 	id = HLZ_freiprinzliche_richter
-	icon = GFX_focus_eng_motion_of_no_confidence
+	icon = GFX_focus_generic_court
 	cost = 7
 	prerequisite = {
 		focus = HLZ_judicial_institutions
@@ -3643,7 +3643,7 @@ focus = {#Mandate Smallholds
 	}
 	available = {
 		has_government = republic_peasant
-		has_country_flag = HLZ_mandate_smallholds
+		has_country_flag = HLZ_mandate_smallholds_flag
 	}
 	relative_position_id = HLZ_begin_land_reform
 	x = 2

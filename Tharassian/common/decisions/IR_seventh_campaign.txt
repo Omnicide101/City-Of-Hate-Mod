@@ -34,9 +34,30 @@ DORF_seventh_campaign = {
 		cost = 75
 		
 		complete_effect = {
-			declare_war_on = {
-				target = KUR
-				type = annex_everything
+			every_other_country = {
+				limit = {
+					OR = {
+						owns_state = 172
+						owns_state = 173
+						owns_state = 174
+						owns_state = 176
+						owns_state = 179
+					}
+					NOT = {
+						OR = {
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+							has_non_aggression_pact_with = ROOT
+						}
+					}
+				}
+				set_country_flag = DORF_seventh_campaign_target_flag
+				ROOT = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
+				}
 			}
 			set_country_flag = SKA_seventh_campaign_with_UNG
 			UNG = {
@@ -206,6 +227,12 @@ DORF_seventh_campaign = {
 				}
 			}
 		}
+		
+		cancel_trigger = {
+			NOT = {
+				controls_state = 174
+			}
+		}
 	}
 
 
@@ -259,17 +286,10 @@ DORF_seventh_campaign = {
 				owns_state = 723
 				owns_state = 815
 			}
-			AND = {
-				OR = {
-					original_tag = SKA
-					original_tag = RMT
-					original_tag = BER
-					OR = {
-						has_government = monarchy_absolute
-						has_government = monarchy_constitutional
-						has_government = puritan
-					}
-				}
+			OR = {
+				original_tag = SKA
+				original_tag = RMT
+				original_tag = BER
 			}
 			is_subject = no
 		}
@@ -284,14 +304,7 @@ DORF_seventh_campaign = {
 			OR = {
 				original_tag = SKA
 				original_tag = RMT
-				AND = {
-					original_tag = BER
-					OR = {
-						has_government = monarchy_absolute
-						has_government = monarchy_constitutional
-						has_government = puritan
-					}
-				}
+				original_tag = BER
 			}
 		}
 		

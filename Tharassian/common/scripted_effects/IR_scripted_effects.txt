@@ -275,6 +275,7 @@ set_stahlreich_states = {
 				state = 242
 				state = 206
 				state = 239
+				state = 1284
 			}
 		}
 		set_state_flag = stahlreich_state

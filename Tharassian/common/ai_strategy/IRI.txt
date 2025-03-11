@@ -19,20 +19,40 @@ ungerdaler_buddies = {
 		is_in_faction_with = UNG
 	}
 	
+	abort_when_not_enabled = yes
+	
 	ai_strategy = {
 		type = befriend
-		id = "UNG"
+		id = UNG
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 	ai_strategy = {
 		type = protect
-		id = "UNG"			
+		id = UNG			
 		value = 200
+	}
+}
+
+aggelos_prio_decisions = {#Make sure we can do the Aggelos decisions for maximum scheming
+	enable = {
+		original_tag = IRI
+		has_completed_focus = IRI_aggelos_ambition
+		NOT = {
+			has_government = republic_aristocrat
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = pp_spend_amount
+		id = decision
+		value = 150
 	}
 }
 

@@ -125,4 +125,24 @@ every_possible_country = {
 			}
 		}
 	}
+	
+	generate_character = {
+		token_base = military_scholar # token will be TAG_token_base
+		gender = female
+		advisor = {
+			slot = theorist
+			traits = { student_of_warfare }
+			available = {
+				always = yes
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		portraits = { 
+			army = {
+				small = GFX_idea_Union_North_navy_3
+			}
+		}
+	}
 }

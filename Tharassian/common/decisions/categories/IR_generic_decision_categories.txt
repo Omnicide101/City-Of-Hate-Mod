@@ -1,3 +1,20 @@
+GENERIC_subject_interactions = {
+	
+	icon = GFX_decision_category_generic_foreign_policy
+	
+	allowed = {
+		always = yes
+	}
+	
+	visible = {
+		any_other_country = {
+			is_subject_of = ROOT
+		}
+	}
+	
+	visible_when_empty = yes
+}
+
 GENERIC_institutions_governance = {
 	
 	icon = GFX_decision_category_generic_political_actions
@@ -18,6 +35,15 @@ GENERIC_institutions_governance = {
 
 GENERIC_prisoner_management = {
 	icon = GFX_decision_category_generic_independence
+	
+	allowed = {
+		always = yes
+	}
+}
+
+GENERIC_create_factions = {
+	
+	icon = GFX_decision_category_generic_foreign_policy
 	
 	allowed = {
 		always = yes

@@ -1,0 +1,8 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_creaturetaming_techtree_bg"
+		textureFile = "gfx//interface//techtree//creaturetaming_techtree_bg.dds"
+		alwaystransparent = yes		
+	}
+}

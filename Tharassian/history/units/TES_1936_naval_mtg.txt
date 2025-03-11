@@ -1,0 +1,17 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Teslirane Navy"
+		naval_base = 8518 # Irrin
+		task_force = {
+			name = "First Fleet"
+			location = 8518 # Irrin
+			ship = { name = "River-Father" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TES version_name = "Waterwalker-Class" } } }
+			ship = { name = "Sea-Child" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TES version_name = "Waterwalker-Class" } } }
+			ship = { name = "Water-Ward" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TES version_name = "Waterwalker-Class" } } }
+			ship = { name = "Lake-Guard" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TES version_name = "Waterwalker-Class" } } }
+			ship = { name = "Rain-Caster" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TES version_name = "Waterwalker-Class" } } }
+		}
+	}
+}

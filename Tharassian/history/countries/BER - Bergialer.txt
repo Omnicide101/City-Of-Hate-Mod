@@ -2,6 +2,45 @@
 
 set_oob = "BER_1936"
 
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "BER_1936_naval_mtg"
+	else = {
+		set_naval_oob = "BER_1936_naval"
+	}
+}
+
+
+
+set_research_slots = 3
 
 set_technology ={
 	tech_tribal_pride = 1
@@ -34,6 +73,7 @@ set_technology ={
 	cartography = 1
 	dwarven_warriors = 1
 	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 set_politics = {
@@ -93,4 +133,88 @@ add_relation_modifier = {
 add_opinion_modifier = {
 	target = TAR
 	modifier = dislike_opinion
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Vluchteling-Class"
+		type = destroyer_1
+		parent_version = 0
+		upgrades = {
+			destroyer_engine_upgrade = 3
+		}
+	}
+	# Light Cruisers #
+	create_equipment_variant = {
+		name = "Vroedschap-Class"
+		type = destroyer_1 #Should be light cruiser
+		parent_version = 0
+		upgrades = {
+			ship_reliability_upgrade = 1
+			ship_engine_upgrade = 3
+			ship_gun_upgrade = 1
+		}
+	}
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "Mekelua-Class"
+		type = heavy_cruiser_1
+		parent_version = 0
+		upgrades = {
+			ship_engine_upgrade = 3
+			ship_armor_upgrade = 1
+			ship_gun_upgrade = 1
+		}
+	}
+}
+
+if = {
+	limit = { 
+		has_dlc = "Man the Guns"
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Vluchteling-Class"
+		type = ship_hull_light_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = light_ship_ballista_0
+			fixed_ship_engine_slot = light_ship_rowers_0
+		}
+	}
+	# Light Cruisers #
+	#create_equipment_variant = {
+	#		name = "Vroedschap-Class"
+	#		type = ship_hull_cruiser_0
+	#		parent_version = 0
+	#		modules = {
+	#			fixed_ship_battery_slot = ship_medium_battery_1
+	#			fixed_ship_anti_air_slot = empty
+	#			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+	#			fixed_ship_radar_slot = empty
+	#			fixed_ship_engine_slot = cruiser_ship_engine_2
+	#			fixed_ship_armor_slot = ship_armor_cruiser_2
+	#			mid_1_custom_slot = ship_torpedo_1
+	#			mid_2_custom_slot = ship_secondaries_2
+	#			rear_1_custom_slot = ship_light_medium_battery_2
+	#		}
+	#	}
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "Mekelua-Class"
+		type = ship_hull_heavy_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = heavy_ship_ballista_0
+			fixed_ship_engine_slot = heavy_ship_rowers_0
+		}
+	}
 }

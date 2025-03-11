@@ -11,14 +11,13 @@ state={
 		lumber = 1
 		food = 2
 	}
-		history={
-			victory_points = {1819 8}
-			owner = ORD
-			buildings = {	
-			workshop = 2
+	history={
+		victory_points = {1819 8}
+		owner = ORD
+		buildings = {
 			farm = 1
 			infrastructure = 1
 		}
 		add_core_of = ORD
-		}
+	}
 }

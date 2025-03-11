@@ -4,30 +4,30 @@ defined_text = { # Country
 		trigger = {
 			check_variable = { SKA_radical_soltruist_anger = 0 }
 		}
-		localization_key = "Decent"
+		localization_key = loc_key_SKA_rad_sol_anger_1
 	}
 	text = { 
 		trigger = {
 			check_variable = { SKA_radical_soltruist_anger = 1 }
 		}
-		localization_key = "Rough"
+		localization_key = loc_key_SKA_rad_sol_anger_2
 	}
 	text = { 
 		trigger = {
 			check_variable = { SKA_radical_soltruist_anger = 2 }
 		}
-		localization_key = "Bad"
+		localization_key = loc_key_SKA_rad_sol_anger_3
 	}
 	text = { 
 		trigger = {
 			check_variable = { SKA_radical_soltruist_anger = 3 }
 		}
-		localization_key = "Horrible"
+		localization_key = loc_key_SKA_rad_sol_anger_4
 	}
 	text = { 
 		trigger = {
 			check_variable = { SKA_radical_soltruist_anger = 4 }
 		}
-		localization_key = "Unmendable"
+		localization_key = loc_key_SKA_rad_sol_anger_5
 	}
 }

@@ -8,6 +8,7 @@ sub_units = {
 		active = no
 
 		type = {
+			infantry
 			support
 		}
 		
@@ -53,6 +54,7 @@ sub_units = {
 		cavalry = yes
 
 		type = {
+			infantry
 			support
 		}
 		
@@ -87,7 +89,7 @@ sub_units = {
 		maximum_speed = 0.3 # move at horsie speeds
 		
 		need = {
-			infantry_equipment = 75
+			infantry_equipment = 15
 			light_cavalry_equipment = 35
 		}
 	}

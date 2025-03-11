@@ -63,7 +63,7 @@ Other map loading screens made with thanks to Artbreeder
 #Flag Icons
 
 Ordorian Tree - Icon available at www.thenounproject.com (made by Jhonatan)
-Arkanisturm Spellbook - Icon available at techFlourish from www.techflourish.com
+Arkanisturm Spellbook - Icon made by Amethyst prime from www.freepik.com
 Rosite Rose - Icon made by Freepik from www.flaticon.com (https://www.flaticon.com/authors/freepik)
 Rosite Bread - Icon available at www.icons8.com
 Wistinger/Holzbrenner Tree - Icon available at www.thenounproject.com (made by Shane Herzog)
@@ -158,8 +158,7 @@ Arming Sword - Photo taken by Søren Niedziella
 Pauldron - Photo taken by Anonymous (District Museum in Tarnów)
 Estioc - Photo taken by Auge=mit
 Cart - Photo taken by Gausanchennai
- - Photo taken by
- - Photo taken by
+Dragonfly - Photo taken by Laitche
  - Photo taken by
  - Photo taken by
  - Photo taken by
@@ -168,3 +167,4 @@ Cart - Photo taken by Gausanchennai
  
 # Equipment Module Icons
 Perkav Oarsman - Photo taken by Kromeus
+Dragonfly Mandibles/Autonomous Swarm - Photo taken by Charles J. Sharp

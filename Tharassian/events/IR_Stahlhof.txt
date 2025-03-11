@@ -1584,6 +1584,33 @@ id = sta.70
 			}
 		}
 		
+		#Let those on the fence choose
+		every_country = {
+			limit = {
+				is_subject_of = UNG
+				set_temp_variable = {
+					FPT_loyalty_difference = FPT_union_loyalty
+				}
+				subtract_from_temp_variable = {
+					FPT_loyalty_difference = FPT_stahlhof_loyalty
+				}
+				NOT = {
+					check_variable = {
+						FPT_loyalty_difference > 10
+					}
+					check_variable = {
+						FPT_loyalty_difference < -10
+					}
+				}
+				NOT = {
+					has_completed_focus = FPT_exploit_chaos
+				}
+			}
+			country_event = fpt.23
+			
+			set_country_flag = FPT_choosing_sides_in_civil_war
+		}
+		
 		#Get allies to join
 		every_country = {
 			limit = {
@@ -1595,6 +1622,7 @@ id = sta.70
 				}
 				NOT = {
 					has_completed_focus = FPT_exploit_chaos
+					has_country_flag = FPT_choosing_sides_in_civil_war
 				}
 			}
 			end_puppet = UNG
@@ -1617,6 +1645,7 @@ id = sta.70
 				}
 				NOT = {
 					has_completed_focus = FPT_exploit_chaos
+					has_country_flag = FPT_choosing_sides_in_civil_war
 				}
 			}
 			set_country_flag = FPT_loyalist_freiprinztum
@@ -1633,6 +1662,15 @@ id = sta.70
 					target = PREV
 					autonomy_state = autonomy_free #remaining neutral
 				}
+			}
+			if = {
+				limit = {
+					OR = {
+						is_in_faction_with = UNG
+						is_in_faction_with = STA
+					}
+				}
+				leave_faction = yes
 			}
 			UNG_lose_ally = yes
 		}
@@ -1803,7 +1841,10 @@ id = sta.78
 	trigger = {
 		tag = STA
 		has_global_flag = UNG_STA_started_civil_war
-		OR = {	
+		NOT = {
+			has_country_flag = STA_beaten_in_civil_war #Just to double-check
+		}	
+		OR = {
 			UNG = {
 				is_subject_of = STA
 			}
@@ -1812,15 +1853,22 @@ id = sta.78
 			}
 			owns_state = 233
 			
-			any_country = {
-				is_in_faction_with = STA
-				UNG = {
-					is_subject_of = PREV
+			any_other_country = {
+				NOT = {
+					OR = {
+						tag = UNG
+						tag = FAU
+					}
 				}
-				FAU = {
-					is_subject_of = PREV
+				OR = {
+					is_in_faction_with = STA
+					is_subject_of = STA
 				}
-				owns_state = 233
+				OR = {
+					has_subject = UNG
+					has_subject = FAU
+					owns_state = 233
+				}
 			}
 		}
 	}
@@ -1829,9 +1877,9 @@ id = sta.78
 		days = 1
 	}
 	
-	immediate = {
-		set_global_flag = UNG_STA_started_civil_war
-	}
+	#immediate = { #Dunno why this is here so I commented it out
+	#	clr_global_flag = UNG_STA_started_civil_war
+	#}
 	
 	fire_only_once = yes
 	
@@ -1841,5 +1889,89 @@ id = sta.78
 		hidden_effect = {
 			restore_sigismunds_stahlhof = yes
 		}
+	}
+}
+
+
+
+### BORDER WAR NR 7 ###
+country_event = {#Attacker Win
+	id = sta.79
+	title = sta.79.t
+	desc = sta.79.d
+	picture = GFX_report_event_pierre_laval
+	
+	is_triggered_only = yes
+
+	option = { #
+		name = sta.79.a
+		transfer_state = 1291
+		add_state_core = 1291
+	}
+}
+country_event = {#Attacker Lose
+	id = sta.80
+	title = sta.80.t
+	desc = sta.80.d
+	picture = GFX_report_event_pierre_laval
+	
+	is_triggered_only = yes
+
+	option = { #
+		name = sta.80.a
+
+	}
+}
+country_event = {#Attacker Cancel
+	id = sta.81
+	title = sta.81.t
+	desc = sta.81.d
+	picture = GFX_report_event_pierre_laval
+	
+	is_triggered_only = yes
+
+	option = { #
+		name = sta.81.a
+
+	}
+}
+
+country_event = {#Defender Win
+	id = sta.82
+	title = sta.82.t
+	desc = sta.82.d
+	picture = GFX_report_event_pierre_laval
+	
+	is_triggered_only = yes
+
+	option = { #
+		name = sta.82.a
+
+	}
+}
+country_event = {#Defender Lose
+	id = sta.83
+	title = sta.83.t
+	desc = sta.83.d
+	picture = GFX_report_event_pierre_laval
+	
+	is_triggered_only = yes
+
+	option = { #
+		name = sta.83.a
+
+	}
+}
+country_event = {#Defender Cancel
+	id = sta.84
+	title = sta.84.t
+	desc = sta.84.d
+	picture = GFX_report_event_pierre_laval
+	
+	is_triggered_only = yes
+
+	option = { #
+		name = sta.84.a
+
 	}
 }

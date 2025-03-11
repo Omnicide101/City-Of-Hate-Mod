@@ -1,3 +1,64 @@
+UNG_requisition_coast_tithe = {
+	UNG_coastal_tithe = {
+		icon = GFX_decision_generic_naval
+		
+		allowed = {
+			tag = UNG
+		}
+		
+		visible = {
+			any_subject_country = {
+				is_og_freiprinz = yes
+			}
+		}
+		
+		available = {
+			any_subject_country = {
+				custom_trigger_tooltip = {
+					tooltip = FPT_is_og_freiprinz_tt
+					is_og_freiprinz = yes
+				}
+				has_equipment = {
+					convoy > 49
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_equipment = {
+					convoy > 49
+				}
+			}
+		}
+		
+		complete_effect = {
+			random_subject_country = {
+				limit = {
+					is_og_freiprinz = yes
+					has_equipment = {
+						convoy > 49
+					}
+				}
+				send_equipment = {
+					equipment = convoy
+					amount = 50
+					target = UNG
+				}
+				FROM = {
+					custom_effect_tooltip = FPT_decrease_union_loyalty_small_tt
+				}
+				subtract_from_variable = {
+					var = FROM.owner:FPT_union_loyalty
+					value = 1
+				}
+			}
+		}
+	}
+}
+
 UNG_convince_freiprinzen = {
 	UNG_convince_FPT = {
 		icon = GFX_decision_restore_ungerdaler_union
@@ -144,7 +205,7 @@ UNG_convince_freiprinzen = {
 		remove_effect = {
 			clr_country_flag = UNG_already_convincing_someone
 			add_to_variable = {
-				var = FROM.owner.FPT_union_loyalty
+				var = FROM.owner:FPT_union_loyalty
 				value = 1
 			}
 			FROM = {
@@ -310,7 +371,7 @@ UNG_convince_freiprinzen = {
 		remove_effect = {
 			clr_country_flag = UNG_already_convincing_someone
 			add_to_variable = {
-				var = FROM.owner.FPT_union_loyalty
+				var = FROM.owner:FPT_union_loyalty
 				value = 3
 			}
 			FROM = {
@@ -475,7 +536,7 @@ UNG_convince_freiprinzen = {
 		remove_effect = {
 			clr_country_flag = UNG_already_convincing_someone
 			add_to_variable = {
-				var = FROM.owner.FPT_union_loyalty
+				var = FROM.owner:FPT_union_loyalty
 				value = 5
 			}
 			FROM = {

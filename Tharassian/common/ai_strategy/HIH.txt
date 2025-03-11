@@ -1,0 +1,59 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+retake_the_north = {
+	enable = {
+		original_tag = HIH
+		country_exists = THA
+		510 = {
+			is_owned_by = THA
+		}
+		OR = {
+			date > 890.1.1
+			THA = {
+				has_war = yes
+			}
+		}
+		has_war = no
+		THA = {
+			is_not_sphered = yes
+		}
+		is_subject = no
+		NOT = {
+			is_justifying_wargoal_against = THA
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = conquer
+		id = THA
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = THA
+		value = 200
+	}
+	ai_strategy = {
+		type = declare_war
+		id = THA
+		value = 200
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = THA
+		target = generate_wargoal
+		value = 200
+	}
+}

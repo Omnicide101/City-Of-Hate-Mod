@@ -95,7 +95,7 @@ characters={
 		name="Heinrich Brengst"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/ung_brengst.dds"
+				small=GFX_idea_ung_brengst
 			}
 		}
 		advisor = {
@@ -125,7 +125,7 @@ characters={
 		name="Stella Galde"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/ung_galde.dds"
+				small=GFX_idea_ung_galde
 			}
 		}
 		advisor = {
@@ -155,7 +155,7 @@ characters={
 		name="Alko Blau"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/ung_blau.dds"
+				small=GFX_idea_ung_blau
 			}
 		}
 		advisor = {
@@ -185,7 +185,7 @@ characters={
 		name="Cecilia Freisler"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/ung_freisler.dds"
+				small=GFX_idea_ung_freisler
 			}
 		}
 		advisor = {

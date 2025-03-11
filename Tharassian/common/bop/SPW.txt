@@ -1,0 +1,175 @@
+
+SPW_power_balance = {
+	initial_value = 0.5
+	left_side = SPW_magdalena_side
+	right_side = SPW_bekazaal_side
+	decision_category = SPW_balance_of_power_category
+
+	### Neutral status
+	range = {
+		id = SPW_balance_range
+		min = -0.10
+		max = 0.10
+		modifier = {
+		}
+		on_activate = {
+
+		}
+		on_deactivate = {
+			
+		}
+	}
+
+	### Magdalena
+	side = {
+		id = SPW_magdalena_side
+		icon = GFX_bop_SPW_magdalena_side
+
+		range = {
+			id = SPW_magdalena_leaning_range
+			min = -0.3
+			max = -0.1
+			modifier = {
+				political_advisor_cost_factor = -0.1
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SPW_magdalena_influential_range
+			min = -0.6
+			max = -0.3
+			modifier = {
+				political_advisor_cost_factor = -0.15
+				offensive_war_stability_factor = -0.1
+				war_support_factor = -0.05
+			}
+			on_activate = {
+				custom_effect_tooltip = ITA_bop_cap_for_colonies_impact_tt
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SPW_magdalena_dominant_range
+			min = -0.9
+			max = -0.6
+			modifier = {
+				political_advisor_cost_factor = -0.2
+				offensive_war_stability_factor = -0.15
+				war_support_factor = -0.1
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SPW_magdalena_ascendant_range
+			min = -1
+			max = -0.9
+			modifier = {
+				political_advisor_cost_factor = -0.25
+				offensive_war_stability_factor = -0.2
+				war_support_factor = -0.15
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+	}
+
+	### Be'Kazaal
+	side = {
+		id = SPW_bekazaal_side
+		icon = GFX_bop_SPW_bekazaal_side
+
+		range = {
+			id = SPW_bekazaal_leaning_range
+			min = 0.1
+			max = 0.3
+			modifier = {
+				political_power_factor = 0.05
+				war_support_factor = 0.01
+				stability_factor = 0.01
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SPW_bekazaal_influential_range
+			min = 0.3
+			max = 0.6
+			modifier = {
+				political_power_factor = 0.07
+				war_support_factor = 0.02
+				stability_factor = 0.02
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SPW_bekazaal_dominant_range
+			min = 0.6
+			max = 0.9
+			modifier = {
+				political_power_factor = 0.1
+				war_support_factor = 0.03
+				stability_factor = 0.03
+				experience_gain_army = -0.05
+				experience_gain_air = -0.05
+				experience_gain_navy = -0.05
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SPW_bekazaal_ascendant_range
+			min = 0.9
+			max = 1
+			modifier = {
+				political_power_factor = 0.15
+				war_support_factor = 0.05
+				stability_factor = 0.05
+				experience_gain_army = -0.05
+				experience_gain_air = -0.05
+				experience_gain_navy = -0.05
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+	}
+}
+

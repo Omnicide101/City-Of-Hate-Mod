@@ -1,3 +1,114 @@
+ORD_autumn_debate_values = {
+
+	icon = GFX_decision_category_SOV_soviet_academy_of_sciences
+	
+	allowed = {
+		tag = ORD
+	}
+	
+	visible = {
+		has_country_flag = ORD_autumn_debate_done
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 500
+}
+
+EOR_pacify_land = {
+
+	icon = GFX_decision_category_eng_move_to_secure_the_dominions
+	
+	allowed = {
+		tag = EOR
+	}
+	
+	visible = {
+		any_owned_state = {
+			is_core_of = ROOT
+			OR = {
+				has_active_resistance = yes
+				compliance > 0
+			}
+		}
+	}
+	
+	visible_when_empty = yes
+}
+
+ORD_second_front = {
+	
+	icon = GFX_decision_category_ICE_the_viking_spirit
+	
+	allowed = {
+		tag = ORD
+	}
+	
+	visible = {
+		has_government = puritan
+		OR = {
+			has_completed_focus = ORD_second_front
+			has_completed_focus = ORD_strike_economic_heart
+		}
+		OR = {
+			has_war_with = SVT
+			has_war_with = FTH
+		}
+	}
+}
+
+ORD_retribution_anthygynaur = {
+	
+	icon = GFX_decision_category_eng_move_to_secure_the_dominions
+	
+	allowed = {
+		tag = ORD
+	}
+	
+	visible = {
+		has_government = puritan
+		has_completed_focus = ORD_no_mercy
+		any_other_country = {
+			is_og_freiprinz = yes
+			has_war_with = ROOT
+		}
+	}
+}
+
+ORD_skirmishes_rebels = {
+	
+	icon = GFX_decision_category_border_war
+	
+	allowed = {
+		tag = ORD
+	}
+	
+	visible = {
+		country_exists = RTH
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+}
+
+ORD_looming_steel_crisis = {
+	
+	icon = GFX_decision_category_generic_industry
+	
+	allowed = {
+		tag = ORD
+	}
+	
+	visible = {
+		NOT = {
+			has_completed_focus = ORD_crisis_averted
+		}
+	}
+	
+	visible_when_empty = yes
+	
+}
+
 ruins_anthyriss = {
 	
 	icon = GFX_decision_category_power_struggle
@@ -297,6 +408,8 @@ FPT_kriegsspiele_preparations = {
 		}
 		has_active_mission = FPT_kriegsspiele_countdown
 	}
+	
+	priority = 97
 }
 
 FPT_border_skirmishes = {
@@ -311,6 +424,9 @@ FPT_border_skirmishes = {
 		is_subject_of = UNG
 		has_country_flag = FPT_border_conflicts_enabled
 	}
+	
+	
+	priority = 95
 }
 
 FPT_loyalties = {
@@ -341,6 +457,8 @@ FPT_loyalties = {
 	
 	visible_when_empty = yes
 
+	priority = 100
+
 }
 
 rally_princes = {
@@ -360,6 +478,8 @@ rally_princes = {
 			}
 		}
 	}
+	
+	priority = 120
 }
 
 hire_mercenaries = {
@@ -368,6 +488,10 @@ hire_mercenaries = {
 	
 	allowed = {
 		always = yes
+	}
+	
+	visible = {
+		has_war = yes
 	}
 }
 

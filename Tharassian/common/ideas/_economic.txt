@@ -48,24 +48,22 @@ ideas = {
 		unorganized_economy = {
 			
 			available = {
-				always = no
+				has_idea = tribal_society
 			}
 			
-			allowed = {
-				always = no
-			}
-			
-			removal_cost = -1
+			removal_cost = 300
 			
 			modifier = {
-			consumer_goods_factor = 0.3
+			consumer_goods_expected_value = 0.3
 			production_factory_max_efficiency_factor = -0.2
 			supply_consumption_factor = -0.2
 			out_of_supply_factor = -0.5
 			min_export = 0
 			}
 			allowed_to_remove = {
-				always =  no
+				NOT = {
+					has_idea = tribal_society
+				}
 			}
 			
 			cancel_if_invalid = no
@@ -79,10 +77,6 @@ ideas = {
 		autarkic_isolationism = {
 			
 			available = {
-				has_government = puritan
-			}
-			
-			allowed = {
 				OR = {
 					has_government = puritan
 					AND = {
@@ -98,8 +92,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				trade_opinion_factor = -5
-				consumer_goods_factor = 0.3
+				consumer_goods_expected_value = 0.3
 				production_factory_max_efficiency_factor = -0.05
 				min_export = 0
 			}
@@ -140,15 +133,28 @@ ideas = {
 		
 		agrarianism_economy = {
 			
-			allowed = {
-				always = yes
+			available = {
+				NOT = {
+					OR = {
+						has_idea = autarkic_isolationism
+						has_idea = communalism_economy
+						AND = {
+							has_idea = tribal_society
+							has_idea = unorganized_economy
+						}
+						AND = {
+							has_idea = industrial_society
+							has_idea = steam_and_steel
+						}
+					}
+				}
 			}
 		
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_expected_value = 0.15
 				supply_consumption_factor = -0.1
 				MONTHLY_POPULATION = 0.25
 				min_export = 0.25
@@ -160,20 +166,76 @@ ideas = {
 			
 			ai_will_do = {
    				factor = 0
+				modifier = {
+					add = 500
+					NOT = {
+						OR = {
+							has_government = puritan
+							AND = {
+								tag = ORD
+								has_government = theocrat
+							}
+						}
+						has_idea = manorialism_economy
+					}
+					fuel_ratio  < 0.1
+				}
+				modifier = {
+					add = 500
+					NOT = {
+						OR = {
+							has_government = puritan
+							AND = {
+								tag = ORD
+								has_government = theocrat
+							}
+						}
+						has_idea = manorialism_economy
+					}
+					has_fuel < 100
+				}
+				
+				modifier = {
+					add = 500
+					NOT = {
+						OR = {
+							has_government = puritan
+							AND = {
+								tag = ORD
+								has_government = theocrat
+							}
+						}
+						has_idea = manorialism_economy
+					}
+					has_idea = FOOD_starvation
+				}
    			}
 		}
 		
 		manorialism_economy = {
 			
 			available = {
-				always = yes
+				NOT = {
+					OR = {
+						has_idea = autarkic_isolationism
+						has_idea = communalism_economy
+						AND = {
+							has_idea = tribal_society
+							has_idea = unorganized_economy
+						}
+						AND = {
+							has_idea = industrial_society
+							has_idea = steam_and_steel
+						}
+					}
+				}
 			}
 			
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.2
+				consumer_goods_expected_value = 0.2
 				global_building_slots_factor = 0.25
 				political_power_gain = 0.05
 				min_export = 0.1
@@ -183,20 +245,61 @@ ideas = {
 
 			ai_will_do = {
    				factor = 0
+				modifier = {
+					add = 500
+					NOT = {
+						OR = {
+							has_government = puritan
+							AND = {
+								tag = ORD
+								has_government = theocrat
+							}
+						}
+						has_idea = agrarianism_economy
+					}
+					fuel_ratio  < 0.1
+				}
+				modifier = {
+					add = 500
+					NOT = {
+						OR = {
+							has_government = puritan
+							AND = {
+								tag = ORD
+								has_government = theocrat
+							}
+						}
+						has_idea = agrarianism_economy
+					}
+					has_fuel < 100
+				}
    			}
 		}
 		
 		fiscalism_economy = {
 			
 			available = {
-				always = yes
+				NOT = {
+					OR = {
+						has_idea = autarkic_isolationism
+						has_idea = communalism_economy
+						AND = {
+							has_idea = tribal_society
+							has_idea = unorganized_economy
+						}
+						AND = {
+							has_idea = industrial_society
+							has_idea = steam_and_steel
+						}
+					}
+				}
 			}
 
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_expected_value = 0.15
 				political_power_gain = 0.15
 				industrial_capacity_factory = 0.1
 				min_export = 0.7
@@ -211,16 +314,28 @@ ideas = {
 		
 		mercantilism_economy = {
 			
-			
 			available = {
-				always = yes
+				NOT = {
+					OR = {
+						has_idea = autarkic_isolationism
+						has_idea = communalism_economy
+						AND = {
+							has_idea = tribal_society
+							has_idea = unorganized_economy
+						}
+						AND = {
+							has_idea = industrial_society
+							has_idea = steam_and_steel
+						}
+					}
+				}
 			}
 		
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.1
+				consumer_goods_expected_value = 0.1
 				production_speed_buildings_factor = 0.2
 				industrial_capacity_factory = 0.15
 				trade_opinion_factor = -0.35
@@ -236,9 +351,21 @@ ideas = {
 		
 		corporatism_economy = {
 			
-			
 			available = {
-				always = yes
+				NOT = {
+					OR = {
+						has_idea = autarkic_isolationism
+						has_idea = communalism_economy
+						AND = {
+							has_idea = tribal_society
+							has_idea = unorganized_economy
+						}
+						AND = {
+							has_idea = industrial_society
+							has_idea = steam_and_steel
+						}
+					}
+				}
 			}
 
 			ai_will_do = {
@@ -249,7 +376,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_expected_value = 0.15
 				production_factory_efficiency_gain_factor = 0.1
 				industrial_capacity_factory = 0.15
 				min_export = 0.4
@@ -260,19 +387,15 @@ ideas = {
 		
 		communalism_economy = {
 			
-			allowed = {
-				has_government = republic_peasant
-			}
-			
 			available = {
-				always = no
+				has_government = republic_peasant
 			}
 			
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.2
+				consumer_goods_expected_value = 0.2
 				supply_consumption_factor = -0.2
 				out_of_supply_factor = -0.5
 				min_export = 0
@@ -288,14 +411,14 @@ ideas = {
 		steam_and_steel = {
 			
 			available = {
-				always = no
+				has_idea = industrial_society
 			}
 			
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.1
+				consumer_goods_expected_value = 0.1
 				production_speed_buildings_factor = 0.3
 				industrial_capacity_factory = 0.2
 				conscription = -0.02

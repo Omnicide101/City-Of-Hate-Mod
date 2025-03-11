@@ -1,0 +1,14 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Teigermarine"
+		naval_base = 9469 # Gorhafen
+		task_force = {
+			name = "Gorhafener Flotte"
+			location = 9469 # Gorhafen
+			ship = { name = "Clara" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TEI version_name = "Gor-Class"} } }
+			ship = { name = "Gotthard" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TEI version_name = "Gor-Class"} } }
+		}
+	}
+}

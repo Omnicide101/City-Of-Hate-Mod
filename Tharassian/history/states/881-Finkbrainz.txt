@@ -5,10 +5,21 @@ state={
 		1980 3209 7981 8026 
 	}
 	buildings_max_level_factor=1.000
-	manpower=1
-	state_category=pastoral
+	manpower=48912
+	state_category=rural
+	
+	resources = {
+		mount = 8
+		lumber = 19
+		food = 11
+	}
+	
 	history={
-		owner = XXX
-		add_core_of = XXX
+		victory_points = { 8026 4 }
+		owner = STB
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = STB
 	}
 }

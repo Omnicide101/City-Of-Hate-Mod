@@ -11,15 +11,18 @@ state={
 		lumber = 14
 	}
 		history={
-		victory_points = {
-			306 3
-		}
-		owner = RTH
-		buildings = {	
-		infrastructure = 1
-		workshop = 2
-		}
-		add_core_of = RTH
+			victory_points = {
+				306 3
+			}
+			owner = RTH
+			buildings = {	
+				infrastructure = 1
+				workshop = 2
+				2579 = {
+					bunker = 2
+				}
+			}
+			add_core_of = RTH
 
 		}
 }
