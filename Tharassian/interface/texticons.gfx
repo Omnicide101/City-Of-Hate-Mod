@@ -274,6 +274,24 @@ spriteTypes = {
 		texturefile = "gfx/texticons/civ_factory_output.dds"
 		legacy_lazy_load = no
 	}
+
+	spriteType = {
+		name = "GFX_change_government"
+		texturefile = "gfx/texticons/change_government.dds"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_state"
+		texturefile = "gfx/texticons/state.dds"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_war_score"
+		texturefile = "gfx/texticons/war_score.dds"
+		legacy_lazy_load = no
+	}
 	
 	spriteType = {
 		name = "GFX_civ_factory"
@@ -811,13 +829,6 @@ spriteTypes = {
 		legacy_lazy_load = no
 		noOfFrames = 2		
 	}
-	
-	spriteType = {
-		name = "GFX_unit_super_heavy_armor_icon_small"
-		texturefile = "gfx/texticons/unit_super_heavy_armor_icon_small.dds"
-		legacy_lazy_load = no
-		noOfFrames = 2		
-	}	
 
 	spriteType = {
 		name = "GFX_unit_heavy_sp_anti_air_brigade_icon_small"
@@ -1236,8 +1247,38 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_puppet_texticon"
+		texturefile = "gfx/texticons/puppet_texticon.dds"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_demilitarize_zone_texticon"
+		texturefile = "gfx/texticons/demilitarize_zone_texticon.dds"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_dismantle_industry_texticon"
+		texturefile = "gfx/texticons/dismantle_industry_texticon.dds"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_dismantle_military_industry_text_icon"
+		texturefile = "gfx/texticons/dismantle_military_industry_text_icon.dds"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
 		name = "GFX_counter_intelligence"
 		texturefile = "gfx/texticons/counter_intelligence.dds"
 		legacy_lazy_load = no
-	}	
+	}
+
+	spriteType = {
+		name = "GFX_infantry_equipment_text_icon"
+		texturefile = "gfx/texticons/infantry_equipment_text_icon.dds"
+		legacy_lazy_load = no
+	}
 }

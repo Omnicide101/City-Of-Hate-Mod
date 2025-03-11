@@ -4,7 +4,7 @@ defined_text = { # Country
 		trigger = {
 			has_variable = FPT_piety
 		}
-		localization_key = "[?FPT_piety|+0]"
+		localization_key = loc_key_freiprinz_piety
 	}
 }
 
@@ -14,7 +14,7 @@ defined_text = { # Modifiers
 		trigger = {
 			has_variable = FPT_piety
 		}
-		localization_key = "[?FPT_pious_mobilization|+%]"
+		localization_key = loc_key_freiprinz_piety_mobilization
 	}
 }
 
@@ -24,6 +24,6 @@ defined_text = { # Modifiers
 		trigger = {
 			has_variable = FPT_piety
 		}
-		localization_key = "[?FPT_pious_science|+%]"
+		localization_key = loc_key_freiprinz_piety_science
 	}
 }

@@ -1,19 +1,46 @@
-
-state={
-	id=526
-	name="STATE_526"
-
-	history={
-		owner = XXX
-		add_core_of = XXX
-
-	}
-
-	provinces={
+state = {
+	id = 526
+	name = "STATE_526"
+	provinces = {
 		256 3309 7122 7149 7240 
 	}
-	manpower=1
+	state_category = megalopolis
+	manpower=4359328
 	buildings_max_level_factor=1.000
-	state_category=rural
-	local_supplies=0.000
+	resources = {
+		steel = 34
+		mount = 41
+		lumber = 23
+		food = 44
+	}
+	history={
+		victory_points = { 7240 31 }
+		victory_points = { 7122 51 }
+		victory_points = { 7149 34 }
+		victory_points = { 256 55 }
+		owner = TRS
+		buildings = {
+			infrastructure = 5
+			workshop = 4
+			forge = 4
+			dockyard = 4
+			256 = {
+				bunker = 5
+				naval_base = 10
+			}
+			7122 = {
+				bunker = 5
+				naval_base = 10
+			}
+			7149 = {
+				bunker = 4
+				naval_base = 7
+			}
+			7240 = {
+				bunker = 3
+				naval_base = 6
+			}
+		}
+		add_core_of = TRS
+	}
 }

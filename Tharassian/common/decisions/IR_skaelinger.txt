@@ -44,6 +44,9 @@ SKA_ironblood_conspiracy = {
 
 		available = {
 			num_of_available_civilian_factories > 1
+			NOT = {
+				has_country_flag = SKA_forced_iron_blood_conspiracy
+			}
 		}
 
 		modifier = {
@@ -69,6 +72,12 @@ SKA_ironblood_conspiracy = {
 
 		cost = 25
 
+		available = {
+			NOT = {
+				has_country_flag = SKA_forced_iron_blood_conspiracy
+			}
+		}
+
 		days_re_enable = 120
 
 		complete_effect = {
@@ -86,6 +95,12 @@ SKA_ironblood_conspiracy = {
 		icon = generic_civil_support
 
 		cost = 25
+
+		available = {
+			NOT = {
+				has_country_flag = SKA_forced_iron_blood_conspiracy
+			}
+		}
 
 		fire_only_once = yes
 
@@ -122,6 +137,9 @@ SKA_ironblood_conspiracy = {
 
 		available = {
 			monarchy_absolute > 0.15
+			NOT = {
+				has_country_flag = SKA_forced_iron_blood_conspiracy
+			}
 		}
 
 		ai_will_do = {
@@ -147,6 +165,12 @@ SKA_ironblood_conspiracy = {
 					has_completed_focus = SKA_popular_figurehead
 				}
 				has_completed_focus = SKA_house_palmekvist
+			}
+		}
+		
+		available = {
+			NOT = {
+				has_country_flag = SKA_forced_iron_blood_conspiracy
 			}
 		}
 
@@ -206,6 +230,7 @@ SKA_ironblood_conspiracy = {
 		available = {
 			NOT = {
 				has_country_flag = SKA_already_swaying_clan_leader
+				has_country_flag = SKA_forced_iron_blood_conspiracy
 			}
 		}
 
@@ -2131,6 +2156,7 @@ SKA_social_war_decisions = {
 
 		visible = {
 			has_government = monarchy_constitutional
+			has_war_with = ORD
 		}
 
 		cost = 100
@@ -2153,6 +2179,67 @@ SKA_social_war_decisions = {
 				ideology = republic_peasant
 				popularity = -0.01
 			}
+		}
+
+	}
+
+	SKA_utilize_paramilitaries = {
+
+		icon = generic_political_discourse
+
+		ai_will_do = {
+			factor = 5	
+			modifier = {
+				NOT = {
+					OR = {
+						has_game_rule = {
+							rule = SKA_game_plan
+							option = SKA_SOLTRUIST
+						}
+						has_country_flag = SKA_ai_soltruist_path_flag
+						has_game_rule = {
+							rule = SKA_game_plan
+							option = SKA_BROTHERHOOD
+						}
+						has_country_flag = SKA_ai_brotherhood_path_flag
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					RTH = {
+						OR = {
+							surrender_progress > 0.5
+							exists = no
+							has_capitulated = yes
+						}
+					}
+					surrender_progress > 0.1
+				}
+			}
+		}
+
+		visible = {
+			has_war_with = ORD
+			OR = {
+				has_government = monarchy_constitutional
+				has_government = republic_merchant
+			}
+			NOT = {
+				has_idea = SKA_paramilitary_support
+			}
+		}
+
+		cost = 50
+
+		fire_only_once = yes
+
+		complete_effect = {
+			add_ideas = SKA_paramilitary_support
+			unlock_decision_tooltip = SKA_hire_soltruists
+			unlock_decision_tooltip = SKA_hire_equalists
+			unlock_decision_tooltip = SKA_hire_iron_bloods
 		}
 
 	}
@@ -2189,6 +2276,10 @@ SKA_social_war_decisions = {
 				}
 				factor = 0
 			}
+		}
+
+		visible = {
+			has_war_with = ORD
 		}
 
 		modifier = {
@@ -2249,6 +2340,11 @@ SKA_social_war_decisions = {
 			}
 		}
 
+		visible = {
+			country_exists = RTH
+			has_war_with = ORD
+		}
+
 		days_re_enable = 240
 
 		modifier = {
@@ -2276,6 +2372,10 @@ SKA_social_war_decisions = {
 		cost = 75
 
 		days_remove = 75
+
+		visible = {
+			has_war_with = ORD
+		}
 
 		ai_will_do = {
 			factor = 1
@@ -2494,6 +2594,10 @@ SKA_social_war_decisions = {
 			}
 		}
 
+		visible = {
+			has_war_with = ORD
+		}
+
 		days_re_enable = 180
 
 		modifier = {
@@ -2550,6 +2654,10 @@ SKA_social_war_decisions = {
 				}
 				factor = 0
 			}
+		}
+
+		visible = {
+			has_war_with = ORD
 		}
 
 		days_remove = 100
@@ -2620,6 +2728,10 @@ SKA_social_war_decisions = {
 
 		available = {
 			republic_peasant > 0.1
+		}
+
+		visible = {
+			has_war_with = ORD
 		}
 
 		days_re_enable = 295
@@ -2856,6 +2968,7 @@ SKA_building_walls = {
 			FROM = {
 				is_owned_by = SKA
 				is_controlled_by = SKA
+				is_core_of = SKA
 				any_neighbor_state = {
 					NOT = {
 						is_owned_by = SKA
@@ -3971,6 +4084,11 @@ SKA_mohrok_satellites = {
 				hidden_effect = {
 					add_ideas = mohrokism_religion
 				}
+				set_party_name = {
+					ideology = puritan
+					long_name = soltruist_puritan_party
+					name = soltruist_puritan_party
+				}
 			}
 			release_puppet = MER
 			every_state = {
@@ -4165,13 +4283,13 @@ SKA_mohrok_satellites = {
 		available = {
 			OR = {
 				NOC = {
-					is_puppet_of = ORD
+					is_puppet_of = SKA
 				}
 				owns_state = 228
 			}
 			OR = {
 				SVT = {
-					is_puppet_of = ORD
+					is_puppet_of = SKA
 				}
 				owns_state = 227
 			}
@@ -4183,7 +4301,7 @@ SKA_mohrok_satellites = {
 			}
 			OR = {
 				TEI = {
-					is_puppet_of = ORD
+					is_puppet_of = SKA
 				}
 				owns_state = 225
 			}
@@ -4290,13 +4408,13 @@ SKA_mohrok_satellites = {
 		available = {
 			OR = {
 				WIS = {
-					is_puppet_of = ORD
+					is_puppet_of = SKA
 				}
 				owns_state = 234
 			}
 			OR = {
 				WSZ = {
-					is_puppet_of = ORD
+					is_puppet_of = SKA
 				}
 				owns_state = 235
 			}
@@ -4308,16 +4426,16 @@ SKA_mohrok_satellites = {
 			}
 			OR = {
 				SNF = {
-					is_puppet_of = ORD
+					is_puppet_of = SKA
 				}
 				owns_state = 224
 			}
 			OR = {
 				UNG = {
-					is_puppet_of = ORD
+					is_puppet_of = SKA
 				}
 				FAU = {
-					is_puppet_of = ORD
+					is_puppet_of = SKA
 				}
 				owns_state = 233
 			}
@@ -4857,10 +4975,20 @@ SKA_mohrok_satellites = {
 			puppet = NAV
 			puppet = IRT
 			puppet = TRI
+			puppet = KAL
 			every_country = {
-				limit = { OR = { tag = NAS tag = FEL tag = KRT
-				 tag = NAV tag = IRT tag = TRI } }
-				 custom_effect_tooltip = SKA_soltruism_tt
+				limit = {
+					OR = {
+						tag = NAS
+						tag = FEL
+						tag = KRT
+						tag = NAV
+						tag = KAL
+						tag = IRT
+						tag = TRI
+					}
+				}
+				custom_effect_tooltip = SKA_soltruism_tt
 				hidden_effect = {
 					add_ideas = mohrokism_religion
 				}
@@ -4884,7 +5012,7 @@ SKA_mohrok_satellites = {
 		available = {
 			OR = {
 				PRK = {
-					is_puppet_of = ORD
+					is_puppet_of = SKA
 				}
 				owns_state = 413
 			}

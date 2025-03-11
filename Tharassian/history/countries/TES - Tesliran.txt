@@ -2,6 +2,42 @@
 
 set_oob = "TES_1936"
 
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "TES_1936_naval_mtg"
+	else = {
+		set_naval_oob = "TES_1936_naval"
+	}
+}
+
 
 set_technology ={
 	tech_tribal_pride = 1
@@ -36,7 +72,8 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 1939.1.1 = {
@@ -47,6 +84,36 @@ set_politics = {
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
+}
+
+add_opinion_modifier = {
+	target = DEL
+	modifier = supportive_opinion
+}
+
+add_relation_modifier = {
+	target = DEL
+	modifier = supportive_opinion_modifier
+}
+
+add_opinion_modifier = {
+	target = STB
+	modifier = bitter_rivals
+}
+
+add_relation_modifier = {
+	target = STB
+	modifier = bitter_rivals_opinion_modifier
+}
+
+add_opinion_modifier = {
+	target = TRX
+	modifier = bitter_rivals
+}
+
+add_relation_modifier = {
+	target = TRX
+	modifier = bitter_rivals_opinion_modifier
 }
 
 set_popularities = {
@@ -68,6 +135,7 @@ set_popularities = {
 add_ideas = {
 	human_country
 	rivism_religion
+	MASLEAGUE_member_wavering
 }
 
 create_country_leader = {
@@ -76,5 +144,40 @@ create_country_leader = {
 	picture = "gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds"
 	ideology = monarchy_constitutional_ideology
 	traits = {
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Waterwalker-Class"
+		type = destroyer_1
+		parent_version = 0
+		upgrades = {
+			
+		}
+	}
+}
+
+if = {
+	limit = { 
+		has_dlc = "Man the Guns"
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Waterwalker-Class"
+		type = ship_hull_light_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = light_ship_ballista_0
+			fixed_ship_engine_slot = light_ship_rowers_0
+		}
 	}
 }

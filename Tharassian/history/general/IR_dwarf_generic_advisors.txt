@@ -29,7 +29,7 @@ every_possible_country = {
 			}
 		}
 		portraits = { 
-			army = { small = GFX_idea_generic_dwarf }
+			army = { small = GFX_dorf_navy_2 }
 		}
 	}
 }
@@ -55,7 +55,7 @@ every_possible_country = {
 			}
 		}
 		portraits = { 
-			army = { small = GFX_idea_generic_dwarf }
+			army = { small = GFX_dorf_land_6 }
 		}
 	}
 }
@@ -81,7 +81,7 @@ every_possible_country = {
 			}
 		}
 		portraits = { 
-			army = { small = GFX_idea_generic_dwarf }
+			army = { small = GFX_dorf_navy_3 }
 		}
 	}
 }
@@ -112,7 +112,7 @@ every_possible_country = {
 			}
 		}
 		portraits = { 
-			army = { small = GFX_idea_generic_dwarf }
+			army = { small = GFX_dorf_land_4 }
 		}
 	}
 }
@@ -138,7 +138,7 @@ every_possible_country = {
 			}
 		}
 		portraits = { 
-			army = { small = GFX_idea_generic_dwarf }
+			army = { small = GFX_dorf_land_7 }
 		}
 	}
 }
@@ -167,7 +167,7 @@ every_possible_country = {
 			}
 		}
 		portraits = { 
-			army = { small = GFX_idea_generic_dwarf }
+			army = { small = GFX_dorf_land_2 }
 		}
 	}
 }
@@ -196,7 +196,7 @@ every_possible_country = {
 			}
 		}
 		portraits = { 
-			army = { small = GFX_idea_generic_dwarf }
+			army = { small = GFX_dorf_navy_1 }
 		}
 	}
 }
@@ -230,7 +230,7 @@ every_possible_country = {
 			}
 		}
 		portraits = { 
-			army = { small = GFX_idea_generic_dwarf }
+			army = { small = GFX_dorf_land_8 }
 		}
 	}
 }
@@ -265,7 +265,7 @@ every_possible_country = {
 			}
 		}
 		portraits = { 
-			army = { small = GFX_idea_generic_dwarf }
+			army = { small = GFX_dorf_land_3 }
 		}
 	}
 }

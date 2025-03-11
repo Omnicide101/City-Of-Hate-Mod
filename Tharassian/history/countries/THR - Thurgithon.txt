@@ -2,6 +2,33 @@
 
 set_oob = "RTH_1936"
 
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+
 set_technology ={
 	tech_tribal_pride = 1
 	tech_wheel = 1
@@ -20,6 +47,8 @@ set_technology ={
 	improved_woodworking = 1
 	recurve_bow = 1
 	broadhead_arrows = 1
+	bodkin_arrows = 1
+	longbow = 1
 	horseback_riding = 1
 	mounted_warriors = 1
 	saddles = 1
@@ -35,7 +64,8 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 1939.1.1 = {

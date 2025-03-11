@@ -53,16 +53,6 @@ compliance_80 = {
 	
 	visible = {
 		has_dlc = "La Resistance"
-		OR = {
-			is_ai = no
-			AND = {
-				is_ai = yes
-				OR = {
-					is_major = no
-					date > 1948.1.1
-				}
-			}
-		}
 	}
 	enabled = {
 		has_rule = can_create_collaboration_government

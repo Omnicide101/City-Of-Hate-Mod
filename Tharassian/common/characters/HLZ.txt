@@ -94,7 +94,7 @@ characters={
 		name="Laurenz Reinmann"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_reinmann.dds"
+				small=GFX_idea_hlz_reinmann
 			}
 		}
 		advisor = {
@@ -127,7 +127,7 @@ characters={
 		name="Sabina Heuberger"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_heuberger.dds"
+				small=GFX_idea_hlz_heuberger
 			}
 		}
 		advisor = {
@@ -156,11 +156,49 @@ characters={
 			}
 		}
 	}
+	HLZ_helmut_goeth = {
+		name="Helmut Goeth"
+		portraits = {
+			army={
+				small=GFX_idea_hlz_goeth
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = political_advisor
+			idea_token = helmut_goeth
+			allowed = {
+				original_tag = HLZ
+			}
+			visible = {
+				always = yes
+			}
+			available = {
+				OR = {
+					AND = {
+						has_government = republic_merchant
+						has_completed_focus = HLZ_support_smallholders
+					}
+					AND = {
+						has_government = republic_peasant
+						has_completed_focus = HLZ_mandate_smallholds
+					}
+				}
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				smallholder_advocate
+			}
+		}
+	}
 	HLZ_erwin_bloch = {
 		name="Erwin Bloch"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_bloch.dds"
+				small=GFX_idea_hlz_bloch
 			}
 		}
 		advisor = {
@@ -193,7 +231,7 @@ characters={
 		name="Alexandra von Neureim"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_von_neureim.dds"
+				small=GFX_idea_hlz_von_neureim
 			}
 		}
 		advisor = {
@@ -224,7 +262,7 @@ characters={
 		name="Joachim Fugler"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_fugler.dds"
+				small=GFX_idea_hlz_fugler
 			}
 		}
 		advisor = {
@@ -239,22 +277,16 @@ characters={
 				always = yes
 			}
 			available = {
-				OR = {
-					AND = {
-						has_government = republic_merchant
-						has_completed_focus = HLZ_support_smallholders
-					}
-					AND = {
-						has_government = republic_peasant
-						has_completed_focus = HLZ_mandate_smallholds
-					}
+				AND = {
+					has_government = republic_merchant
+					has_completed_focus = HLZ_machen_lassen
 				}
 			}
 			ai_will_do = {
 				factor = 10
 			}
 			traits = {
-				smallholder_advocate
+				father_of_machen_lassen
 			}
 		}
 	}
@@ -262,7 +294,7 @@ characters={
 		name="Karl Stelzner"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_stelzner.dds"
+				small=GFX_idea_hlz_stelzner
 			}
 		}
 		advisor = {
@@ -292,7 +324,7 @@ characters={
 		name="Ylcatra Isthyne"
 		portraits = {
 			army={
-				small="gfx/interface/ideas/hlz_isthyne.dds"
+				small=GFX_idea_hlz_isthyne
 			}
 		}
 		advisor = {

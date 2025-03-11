@@ -1,6 +1,6 @@
 ideas = {
 
-	mobilization_laws = { 
+	mobilization_laws = {
 		law = yes
 		use_list_view = yes
 
@@ -54,6 +54,7 @@ ideas = {
 
 			modifier = {
 				conscription = 0.015
+				army_morale_factor = 0.15
 			}
 			
 			default = yes
@@ -80,6 +81,7 @@ ideas = {
 
 			modifier = {
 				conscription = 0.025
+				army_morale_factor = 0.05
 			}
 
 			ai_will_do = {
@@ -88,6 +90,25 @@ ideas = {
 					#Prio if low on manpower
 					factor = 20
 					manpower_per_military_factory <  1000
+				}
+				modifier = {
+					#Go back to this if at peace
+					factor = 50
+					has_war = no
+					NOT = {
+						any_other_country = {
+							OR = {
+								has_wargoal_against = ROOT
+								is_justifying_wargoal_against = ROOT
+							}
+						}
+					}
+					OR = {
+						has_idea = extensive_conscription
+						has_idea = service_by_requirement
+						has_idea = all_adults_serve
+						has_idea = scraping_the_barrel
+					}
 				}
 			}
 			
@@ -128,6 +149,21 @@ ideas = {
 					#Prio if low on manpower
 					factor = 20
 					manpower_per_military_factory <  800
+				}
+				modifier = {
+					#Don't if not at war or at risk of war
+					#Doesn't take into account whether or not ROOT is readying for war
+					#Couldn't get the scope to work for that, but whatever
+					add = -99999
+					has_war = no
+					NOT = {
+						any_other_country = {
+							OR = {
+								has_wargoal_against = ROOT
+								is_justifying_wargoal_against = ROOT
+							}
+						}
+					}
 				}
 			}
 			
@@ -194,6 +230,21 @@ ideas = {
 					factor = 0
 					manpower_per_military_factory >  3000
 				}
+				modifier = {
+					#Don't if not at war or at risk of war
+					#Doesn't take into account whether or not ROOT is readying for war
+					#Couldn't get the scope to work for that, but whatever
+					add = -99999
+					has_war = no
+					NOT = {
+						any_other_country = {
+							OR = {
+								has_wargoal_against = ROOT
+								is_justifying_wargoal_against = ROOT
+							}
+						}
+					}
+				}
 			}
 			
 			cost = 150
@@ -206,6 +257,7 @@ ideas = {
 				industrial_capacity_dockyard = -0.1
 				production_speed_buildings_factor = -0.1
 				training_time_factor = 0.2
+				army_morale_factor = -0.05
 			}
 			
 			cancel_if_invalid = no
@@ -251,8 +303,22 @@ ideas = {
 				modifier = {
 					#Block has plenty manpower
 					factor = 0
-					NOT = { tag = CHI }
 					manpower_per_military_factory >  5000
+				}
+				modifier = {
+					#Don't if not at war or at risk of war
+					#Doesn't take into account whether or not ROOT is readying for war
+					#Couldn't get the scope to work for that, but whatever
+					add = -99999
+					has_war = no
+					NOT = {
+						any_other_country = {
+							OR = {
+								has_wargoal_against = ROOT
+								is_justifying_wargoal_against = ROOT
+							}
+						}
+					}
 				}
 			}
 		
@@ -267,6 +333,8 @@ ideas = {
 				production_speed_buildings_factor = -0.3
 				#XP from reinforcement penalty (small)
 				training_time_factor = 0.3
+				army_morale_factor = -0.1
+				war_support_weekly = -0.01
 			}
 			
 			cancel_if_invalid = no
@@ -298,21 +366,29 @@ ideas = {
 			}
 
 			ai_will_do = {
-   				factor = 1
+   				factor = 0 # NO. THIS IS BAD. KILLS OUR STABILITY AND WAR SUPPORT.
 				modifier = {
-					#Prio if low on manpower
-					factor = 20
-					manpower_per_military_factory <  500
-				}				
-				modifier = {
-					#Lower chance if has decent amount
-					factor = 0.5
-					manpower_per_military_factory >  1000
+					#Ok fine if the alternative is death
+					add = 20
+					OR = {
+						manpower_per_military_factory <  500
+						has_manpower < 5000	
+					}
 				}
 				modifier = {
-					#Block has plenty manpower
-					factor = 0
-					manpower_per_military_factory >  5000
+					#Don't if not at war or at risk of war
+					#Doesn't take into account whether or not ROOT is readying for war
+					#Couldn't get the scope to work for that, but whatever
+					add = -99999
+					has_war = no
+					NOT = {
+						any_other_country = {
+							OR = {
+								has_wargoal_against = ROOT
+								is_justifying_wargoal_against = ROOT
+							}
+						}
+					}
 				}
 			}
 
@@ -326,6 +402,9 @@ ideas = {
 				industrial_capacity_dockyard = -0.4
 				production_speed_buildings_factor = -0.4
 				training_time_factor = 0.5
+				army_morale_factor = -0.2
+				stability_weekly = -0.01
+				war_support_weekly = -0.02
 			}
 			
 			cancel_if_invalid = no

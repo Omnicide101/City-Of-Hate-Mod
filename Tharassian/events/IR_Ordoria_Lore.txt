@@ -15,7 +15,7 @@ country_event = { #Steward of Ordoria
 	trigger = {
 		tag = ORD
 		has_government = puritan
-		has_completed_focus = ORD_pure_empire
+		has_completed_focus = ORD_glory_league
 	}
 	
 	mean_time_to_happen = {
@@ -123,7 +123,23 @@ country_event = { #An Eye for an Eye
 		custom_effect_tooltip = ORD_lore_was_it_worth_it_tt
 		add_war_support = -0.05
 		hidden_effect = {
-			add_country_leader_trait = hollow_avenger
+			if = {
+				limit = {
+					ORD_isvenith_lothinnys = {
+						has_trait = vicious_avenger
+					}
+				}
+				remove_trait = {
+					character = ORD_isvenith_lothinnys
+					slot = political_advisor
+					trait = vicious_avenger
+				}
+			}
+			add_trait = {
+				character = ORD_isvenith_lothinnys
+				slot = political_advisor
+				trait = hollow_avenger
+			}
 		}
 	}
 }
@@ -282,6 +298,8 @@ country_event = { #Prepping for the Autumn Debate - Vernythe
 		}
 		
 		add_stability = -0.01
+		ORD_improve_faith_power_1 = yes
+		ORD_improve_faith_loyalty_1 = yes
 	}
 }
 
@@ -303,6 +321,8 @@ country_event = { #Prepping for the Autumn Debate - Lothinnys
 		}
 		
 		add_manpower = -3
+		ORD_improve_trad_power_1 = yes
+		ORD_improve_trad_loyalty_1 = yes
 	}
 }
 
@@ -324,6 +344,8 @@ country_event = { #Prepping for the Autumn Debate - Larennis
 		}
 		
 		add_political_power = -5
+		ORD_improve_royal_power_1 = yes
+		ORD_improve_royal_loyalty_1 = yes
 	}
 }
 
@@ -571,3 +593,153 @@ country_event = { #Job Security
 		name = ord_lore.25.a
 	}
 }
+
+country_event = { #Derathur's head on a pike
+	id = ord_lore.26
+	title = ord_lore.26.t
+	desc = ord_lore.26.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Spoilers bro
+		name = ord_lore.26.a
+		
+		EOR = {
+			add_stability = -0.01
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.06
+			}
+		}
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = -0.06
+		}
+	}
+}
+
+country_event = { #Executing RTH advisors
+	id = ord_lore.27
+	title = ord_lore.27.t
+	desc = ord_lore.27.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#F
+		name = ord_lore.27.a
+		RTH_islwyn_crynan = {
+			custom_effect_tooltip = bites_the_dust_tt
+			hidden_effect = {
+				ROOT = {
+					retire_character = PREV
+				}
+			}
+		}
+		RTH_thwysyld_mynirad = {
+			custom_effect_tooltip = bites_the_dust_tt
+			hidden_effect = {
+				ROOT = {
+					retire_character = PREV
+				}
+			}
+		}
+		RTH_tyndwyl_thysara = {
+			custom_effect_tooltip = bites_the_dust_tt
+			hidden_effect = {
+				ROOT = {
+					retire_character = PREV
+				}
+			}
+		}
+		add_war_support = 0.07
+		EOR = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.07
+			}
+		}
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = -0.07
+		}
+	}
+}
+
+country_event = { #Forced migrations
+	id = ord_lore.28
+	title = ord_lore.28.t
+	desc = ord_lore.28.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Rip community
+		name = ord_lore.28.a
+	}
+}
+
+country_event = { #Flowern't
+	id = ord_lore.29
+	title = ord_lore.29.t
+	desc = ord_lore.29.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Rip roses
+		name = ord_lore.29.a
+	}
+}
+
+#ROYALIST EVENTS
+
+#Trade mission to Lirothlind
+country_event = {#Off we go
+	id = ord_lore.30
+	title = ord_lore.30.t
+	desc = ord_lore.30.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#A trader's life for me
+		name = ord_lore.30.a
+		
+		larennis_idealism_small = yes
+		
+		ORD_improve_royal_power_2 = yes
+		ORD_worsen_trad_power_1 = yes
+		ORD_worsen_faith_power_1 = yes
+		
+		add_ideas = ORD_trade_LIR
+		
+		LIR = {
+			add_ideas = LIR_trade_ORD
+		}
+	}
+}
+
+country_event = {#Vernythe gets cooked
+	id = ord_lore.31
+	title = ord_lore.31.t
+	desc = ord_lore.31.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#Turns out people don't like you telling them you should let your mom die
+		name = ord_lore.31.a
+		
+		ORD_worsen_faith_power_10 = yes
+		
+	}
+}
+	

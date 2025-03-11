@@ -5,9 +5,54 @@ XXX = { #Wastelands placeholder
 	color_ui = rgb { 14 14 14 }
 }
 
+TRS = {
+	color = rgb { 182 255 0 }
+	color_ui = rgb { 200 255 0 }
+}
+
 ADV = {
 	color = rgb { 242  255  0 }
 	color_ui = rgb { 250  255  20 }
+}
+
+AGE = {
+	color = rgb { 33 96 68 }
+	color_ui = rgb { 40 104 79 }
+}
+
+AKK = {
+	color = rgb { 236 249 49 }
+	color_ui = rgb { 244 255 56 }
+}
+
+SAL = {
+	color = rgb { 255 178 127 }
+	color_ui = rgb { 255 185 135 }
+}
+
+THA = {
+	color = rgb { 94 0 48 }
+	color_ui = rgb { 110 7 53 }
+}
+
+HIH = {
+	color = rgb { 0 0 0 }
+	color_ui = rgb { 7  7  7 }
+}
+
+DEL = {
+	color = rgb { 0 174 183 }
+	color_ui = rgb { 4 181 190 }
+}
+
+STB = {
+	color = rgb { 113 0 183 }
+	color_ui = rgb { 120 6 190 }
+}
+
+ATH = {
+	color = rgb { 112  74  34 }
+	color_ui = rgb { 120 81 44 }
 }
 
 TES = {

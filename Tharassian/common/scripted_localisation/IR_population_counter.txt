@@ -4,19 +4,19 @@ defined_text = { # Country
 		trigger = {
 			has_variable = total_population
 		}
-		localization_key = "[?total_population|0]k"
+		localization_key = loc_key_pop_k
 	}
 	text = { 
 		trigger = {
 			has_variable = total_population_k
 		}
-		localization_key = "[?total_population_k|2]M"
+		localization_key = loc_key_pop_m
 	}
 	text = { 
 		trigger = {
 			check_variable = { total_population_k > 10000 }
 		}
-		localization_key = "[?total_population_k|1]M"
+		localization_key = loc_key_pop_m2
 	}
 }
 defined_text = { # Country
@@ -25,18 +25,18 @@ defined_text = { # Country
 		trigger = {
 			has_variable = core_population
 		}
-		localization_key = "[?core_population|0]k"
+		localization_key = loc_key_core_pop_k
 	}
 	text = { 
 		trigger = {
 			has_variable = core_population_k
 		}
-		localization_key = "[?core_population_k|2]M"
+		localization_key = loc_key_core_pop_m
 	}
 	text = { 
 		trigger = {
 			check_variable = { core_population_k > 10000 }
 		}
-		localization_key = "[?core_population_k|1]M"
+		localization_key = loc_key_core_pop_m2
 	}
 }

@@ -24,6 +24,7 @@ state={
 			dockyard = 2
 		}
 		add_core_of = ATH
+		add_claim_by = TRS
 
 	}
 }

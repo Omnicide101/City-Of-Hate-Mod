@@ -1,0 +1,33 @@
+spriteTypes = {
+
+###################################################
+# Contains GFX for the equipment modules and slots shown on top of the blue print
+#
+# Names of the modules are normalized and *must* obey the following naming
+# convention.
+#
+# "GFX_EMI_" MODULE_KEY
+# "GFX_EMSI_" MODULE_SLOT_KEY
+#
+# MODULE_KEY is either the specific key used to define the module in script, or
+#   the module's gfx attribute, if a matching graphics entry cannot be found
+#   with the module's specific key.
+# MODULE_SLOT_KEY is either the specific key used to define the module slot in
+#   the equipment type script, or the module slot's gfx attribute, if a matching
+#   graphics entry cannot be found with the slot's specific key.
+###################################################
+
+
+		#### MODULES ####
+
+	spriteType = {
+		name = "GFX_EMI_dragonfly_mandibles_1"
+		textureFile = "gfx/interface/equipmentdesigner/planes/modules/dragonfly_mandibles_icn.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EMI_autonomous_swarm_1"
+		textureFile = "gfx/interface/equipmentdesigner/planes/modules/autonomous_swarm_icn.dds"
+		legacy_lazy_load = no
+	}
+}

@@ -1,0 +1,104 @@
+
+add_namespace = hih
+
+country_event = { #End war with Tharothep?
+	id = hih.1
+	title = hih.1.t
+	desc = hih.1.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = HIH
+		has_war_with = THA
+		controls_state = 510
+		controls_state = 906
+	}
+	
+	option = { #Yes
+		name = hih.1.a
+		THA = {
+			country_event = {
+				id = tha.1
+				days = 1
+			}
+		}
+	}
+	
+	option = { #No
+		name = hih.1.b
+		ai_chance = {
+			factor = 0
+		}
+		add_war_support = -0.03
+		set_country_flag = HIH_refused_to_sue_for_peace_with_THA
+	}
+}
+
+country_event = { #Tharothep agrees
+	id = hih.2
+	title = hih.2.t
+	desc = hih.2.d
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { #Pog
+		name = hih.2.a
+		transfer_state = 902
+		902 = {
+			set_state_name = "The Honourmount"
+		}
+		transfer_state = 905
+		905 = {
+			set_state_name = "Basalt Peak"
+		}
+		transfer_state = 510
+		510 = {
+			set_state_name = "Dunesgate"
+		}
+		transfer_state = 906
+		906 = {
+			set_state_name = "Deepdig"
+		}
+		transfer_state = 907
+		907 = {
+			set_state_name = "Northpost"
+		}
+		if = {
+			limit = {
+				controls_state = 903
+			}
+			HIH = {
+				transfer_state = 903
+				add_state_core = 903
+			}
+			903 = {
+				set_state_name = "Trankhamen's Folly"
+			}
+		}
+		THA = {
+			set_capital = {
+			  state = 500
+			  remember_old_capital = no
+			}
+			set_country_flag = THA_lost_mountain_capital_flag
+		}
+		white_peace = THA
+	}
+}
+
+country_event = { #War Goes On
+	id = hih.3
+	title = hih.3.t
+	desc = hih.3.d
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { #Crud
+		name = hih.3.a
+	}
+}

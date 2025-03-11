@@ -93,3 +93,41 @@ country_event = {#Clears Civil War NS
 		remove_ideas = GENERIC_civil_war_isolation
 	}
 }
+
+country_event = {#Hack workaround to remove embargoes on formerly-Puritan states
+	id = ir.political.6
+		
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		break_embargo = FROM
+	}
+}
+
+country_event = {#Add Northern Plains separatist tags to the Northern Plains Alliance
+	id = ir.political.7
+	
+	hidden = yes
+	
+	trigger = {
+		is_og_northern_plains_state = yes
+		is_in_faction = no
+		has_global_flag = GENERIC_northern_plains_alliance_created
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		random_other_country = {
+			limit = {
+				is_og_northern_plains_state = yes
+				is_faction_leader = yes
+			}
+			add_to_faction = ROOT
+		}
+	}
+}

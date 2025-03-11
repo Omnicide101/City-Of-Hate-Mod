@@ -3,7 +3,7 @@
 NDefines.NGame.START_DATE = "887.1.1.12"
 NDefines.NGame.END_DATE = "2000.1.1.1"
 NDefines.NGame.FUEL_RESOURCE = "food"										-- resource that will give country fuel, changed to food for the mod
-NDefines.NGame.HANDS_OFF_START_TAG = "SUL"									-- tag for player country for -hands_off runs. use an existing tag that is less likely to affect the game
+NDefines.NGame.HANDS_OFF_START_TAG = "ADV"									-- tag for player country for -hands_off runs. use an existing tag that is less likely to affect the game
 
 NDefines.NDiplomacy.TENSION_TIME_SCALE_START_DATE = "887.1.1.12"			-- Starting at this date, the tension values will be scaled down (will be equal to 1 before that)
 NDefines.NDiplomacy.ASSUME_FACTION_LEADERSHIP_COOLDOWN_DAYS = 99999			-- Number of days after formation of faction or change in leadership before another country is allowed to assume leadership.
@@ -29,14 +29,13 @@ NDefines.NCountry.BASE_FUEL_GAIN = 10.0										-- base amount of fuel gained h
 
 NDefines.NResistance.INITIAL_STATE_RESISTANCE = 5.0							-- initial resistance percentage of a state once it is captured
 NDefines.NResistance.COMPLIANCE_FACTOR_ON_STATE_CONTROLLER_CHANGE = -0.1	-- compliance factor that applies when the state controller changes (in between allies, compliance is zeroed if it is taken by original country)
-NDefines.NResistance.RESISTANCE_TARGET_BASE = 55.0							-- base resistance target percentage
+NDefines.NResistance.RESISTANCE_TARGET_BASE = 40.0							-- base resistance target percentage
 NDefines.NResistance.RESISTANCE_TARGET_MODIFIER_HAS_CLAIM = -50.0			-- resistance target modifier in % for states we have claim
-NDefines.NResistance.RESISTANCE_TARGET_MODIFIER_PER_STABILITY_LOSS = 0.3	-- resistance target modifier per stability below 100%
+NDefines.NResistance.RESISTANCE_TARGET_MODIFIER_PER_STABILITY_LOSS = 0.2	-- resistance target modifier per stability below 100%
 NDefines.NResistance.RESISTANCE_TARGET_MODIFIER_IS_AT_PEACE = -15.0			-- resistance target modifier when we are at peace	
 NDefines.NResistance.COMPLIANCE_GROWTH_BASE = 0.07							-- base compliance grow
-NDefines.NResistance.COMPLIANCE_GROWTH_MIN = -100.0							-- min compliance grow
 NDefines.NResistance.COMPLIANCE_DECAY_AT_MAX_COMPLIANCE = -0.1				-- as compliance increases, it gets a decay rate depending on its value. compliance should stabilize at some value until its growth changes
-NDefines.NResistance.GARRISON_MANPOWER_LOST_BY_ATTACK = 0.3					-- Ratio of manpower lost by garrison at each attack on garrison (this number will be reduced by the hardness of garrison template)
+NDefines.NResistance.GARRISON_MANPOWER_LOST_BY_ATTACK = 0.03					-- Ratio of manpower lost by garrison at each attack on garrison (this number will be reduced by the hardness of garrison template)
 
 NDefines.NMilitary.DISBAND_MANPOWER_LOSS = 0.7
 NDefines.NMilitary.ARMY_FUEL_COST_MULT = 1.0								-- fuel cost multiplier for all army related stuff
@@ -63,16 +62,15 @@ NDefines.NAI.MAX_FACTORY_TO_TRADE_FOR_FUEL = 0.9
 NDefines.NAI.MAX_FACTORY_TO_TRADE_FOR_FUEL_IN_PEACE = 0.9
 NDefines.NAI.DIPLOMACY_FACTION_CIVILWAR_WANTS_HELP = -50
 NDefines.NAI.INVASION_COASTAL_PROVS_PER_ORDER = 6							-- AI will consider one extra invasion per number of provinces stated here (num orders = total coast / this)
-NDefines.NAI.MAX_DISTANCE_NALAV_INVASION = 1500.0							-- AI is extremely unwilling to plan naval invasions above this naval distance limit.
-NDefines.NAI.ENEMY_NAVY_STRENGTH_DONT_BOTHER = 25.0							-- If the enemy has a navy at least these many times stronger that the own, don't bother invading
-NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE = 0.01								-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend
-NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE = 0.01								-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend, but while being a defensive country
+NDefines.NAI.MAX_DISTANCE_NAVAL_INVASION = 1500.0							-- AI is extremely unwilling to plan naval invasions above this naval distance limit.
+NDefines.NAI.ENEMY_NAVY_STRENGTH_DONT_BOTHER = 2.5							-- If the enemy has a navy at least these many times stronger that the own, don't bother invading
+NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE = 0.08								-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend
+NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE_DEFENSIVE = 0.04					-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend, but while being a defensive country
 NDefines.NAI.MAX_MICRO_ATTACKS_PER_ORDER = 20								-- AI goes through its orders and checks if there are situations to take advantage of
-NDefines.NAI.ENEMY_HOME_AREA_RATIO_TO_DISABLE_INVASIONS	= 999				-- If we are fighting against an enemy home area from our home area and if the enemy area is larger than this ratio, non strategy invasions are disabled
-NDefines.NAI.MAX_UNITS_FACTOR_INVASION_ORDER = 1.5							-- Factor for max number of units to assign to naval invasion orders
-NDefines.NAI.MIN_UNITS_FACTOR_INVASION_ORDER = 0.5							-- Factor for min number of units to assign to naval invasion orders
+NDefines.NAI.ENEMY_HOME_AREA_RATIO_TO_DISABLE_INVASIONS	= 2.0				-- If we are fighting against an enemy home area from our home area and if the enemy area is larger than this ratio, non strategy invasions are disabled
+NDefines.NAI.MAX_UNITS_FACTOR_INVASION_ORDER = 1.0							-- Factor for max number of units to assign to naval invasion orders
+NDefines.NAI.MIN_UNITS_FACTOR_INVASION_ORDER = 1.0							-- Factor for min number of units to assign to naval invasion orders
 NDefines.NAI.MAX_DIST_PORT_RUSH = 35.0										-- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
-NDefines.NAI.INVASION_DISTANCE_RANDOMNESS = 350								-- This higher the value, the more unpredictable the invasions. Compares to actual map distance in pixels.
 
 	-- rivers will transfer in between nodes as if they were this level
 NDefines.NSupply.RIVER_RAILWAY_LEVEL = 3									-- Significantly buffed

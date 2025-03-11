@@ -23,7 +23,7 @@ give_union_access = {#Let the Union fuck up Irinthios
 	
 	ai_strategy = {
 		type = befriend
-		id = "UNG"
+		id = UNG
 		value = 50
 	}
 }
@@ -54,17 +54,17 @@ ungerdaler_buddies = {
 	
 	ai_strategy = {
 		type = befriend
-		id = "UNG"
+		id = UNG
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 	ai_strategy = {
 		type = protect
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 }

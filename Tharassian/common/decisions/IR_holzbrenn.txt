@@ -145,7 +145,7 @@ HLZ_presslers_ambitions = {
 
 HLZ_defensive_planning = {
 	
-	HLZ_defensive_stratagems = {
+	HLZ_enact_defensive_stratagems = {
 
 		icon = generic_army_support
 

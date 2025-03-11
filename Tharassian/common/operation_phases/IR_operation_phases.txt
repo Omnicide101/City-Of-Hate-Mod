@@ -27,6 +27,12 @@ journey_teleport = {
 	outcome = "With a teleportation circle and the snap of a finger, the Adventurer reached their destination."
 	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
 	picture = "GFX_report_event_usa_pearl_harbor_airphoto"
+	
+	#requirements = {
+	#	any_operative_leader = {
+	#		has_trait = wizard_class
+	#	}
+	#}
 }
 
 scouting_ask_around = {
@@ -88,15 +94,15 @@ fighting_magical_barrage = {
 #Burning Granaries
 infiltration_mole = {
 	name = "Infiltration"
-	desc = "The Adventurer will pretend to be a loyal citizen of the enemy, taking menial jobs in the neighbourhood of their granaries. Once established, they will map out the area and find the best places to strike."
-	outcome = "Taking a job hauling goods to and fro the granaries, our Adventurer has found excellent opportunities to map out potential entry and exit points, as well as spots where fires would not be noticed until it is too late to put it out."
+	desc = "The Adventurer will pretend to be a loyal citizen of the enemy, taking menial jobs in the neighbourhood of their target. Once established, they will map out the area and find the best places to strike."
+	outcome = "Taking a job hauling goods to and fro a warehouse close to the target, our Adventurer has found excellent opportunities to map out potential entry and exit points, as well as times when the target is generally poorly guarded or even entirely unobserved."
 	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
 	picture = "GFX_report_event_panay_incident"
 }
 
 infiltration_identity_theft = {
 	name = "Identity Theft"
-	desc = "The Adventurer will identify an incoming individual with access to the granary and neutralize them, assuming their identity and position."
+	desc = "The Adventurer will identify an incoming individual with access to the target area and neutralize them, assuming their identity and position."
 	outcome = "Taking advantage of the assignment of a new functionary to the local quartermaster, the Adventurer intercepted the erstwhile assistant, disposed of them, and took their place."
 	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
 	picture = "GFX_report_event_panay_incident"
@@ -104,18 +110,42 @@ infiltration_identity_theft = {
 
 infiltration_glamour = {
 	name = "Glamour"
-	desc = "The Adventurer will work their way into the granaries through charms and enchantments, beguiling those in their way."
-	outcome = "Charming those in their way with impeccable spellcraft, the Adventurer succesfully made their way into the granaries."
+	desc = "The Adventurer will work their way into the target area through charms and enchantments, beguiling those in their way."
+	outcome = "Charming those in their way with impeccable spellcraft, the Adventurer succesfully made their way into the target zone."
 	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
 	picture = "GFX_report_event_panay_incident"
 }
 
-burning_hired_thugs = {
+generic_hostile_action_hired_thugs = {
 	name = "Hire Thugs"
-	desc = "The Adventurer will toss some coin to local street toughs in exchange for a series of unfortunate fires in local granaries."
-	outcome = "Paying local muscle to torch the granaries, the Adventurer has kept their hands clean while seeing their mission through."
+	desc = "The Adventurer will toss some coin to local street toughs in exchange for a series of unfortunate accidents happening to the target."
+	outcome = "Paying local muscle to do the dirty work, the Adventurer has kept their hands clean while seeing their mission through."
 	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
 	picture = "GFX_report_event_panay_incident"
+}
+
+exfiltration_flee = {
+	name = "Flee"
+	desc = "The Adventurer will escape the area by any means available."
+	outcome = "Stealing a horse in the confusion caused by their actions, the Adventurer succesfully fled the area before the alarm could be fully raised."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_usa_pearl_harbor_airphoto"
+}
+
+exfiltration_sneak_out = {
+	name = "Sneak Out"
+	desc = "The Adventurer will utilize stealth to flee the area undetected."
+	outcome = "Passing quietly by panicked citizens and guards cordoning the area off alike, the Adventurer succesfully escaped without notice."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_usa_pearl_harbor_airphoto"
+}
+
+exfiltration_teleport = {
+	name = "Teleport to Safety"
+	desc = "The Adventurer will use their magical talents and blink to a safe distance from the area before making their getaway."
+	outcome = "With a quick spell, the Adventurer disappeared from the scene of the crime, appearing a short distance out of town before fleeing on horse."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_usa_pearl_harbor_airphoto"
 }
 
 burning_flaming_arrow = {
@@ -125,6 +155,7 @@ burning_flaming_arrow = {
 	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
 	picture = "GFX_report_event_panay_incident"
 }
+
 burning_sneaky = {
 	name = "Stealthy Arson"
 	desc = "The Adventurer will use the scouting they have done to break into the granaries and set them aflame."
@@ -132,24 +163,19 @@ burning_sneaky = {
 	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
 	picture = "GFX_report_event_panay_incident"
 }
-exfiltration_flee = {
-	name = "Flee"
-	desc = "The Adventurer will escape the area by any means available."
-	outcome = "Stealing a horse in the confusion caused by the inferno, the Adventurer succesfully fled the area before the alarm could be fully raised."
+
+poisoning_sneaky = {
+	name = "Stealthy Poisoning"
+	desc = "The Adventurer will covertly empty vials of virulent toxins into the target wells, rendering them completely unusable."
+	outcome = "Without being noticed, the Adventurer succesfully depoisted poison into the target wells. Reports of sickness in the area have already surfaced."
 	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
-	picture = "GFX_report_event_usa_pearl_harbor_airphoto"
+	picture = "GFX_report_event_panay_incident"
 }
-exfiltration_sneak_out = {
-	name = "Sneak Out"
-	desc = "The Adventurer will utilize stealth to flee the area undetected."
-	outcome = "Passing quietly by panicked citizens and guards cordoning the area off alike, the Adventurer succesfully escaped without notice."
+
+terrorism_murder = {
+	name = "High-Profile Murder"
+	desc = "The Adventurer will brutally murder a local dignitary in their own home, leaving a visceral scene as a message to the locals."
+	outcome = "Quietly, the Adventurer snuck into the office of a government official in the area, and executed the target as desired. The grisly scene has spread fear across the local populace, and riots have already started."
 	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
-	picture = "GFX_report_event_usa_pearl_harbor_airphoto"
-}
-exfiltration_teleport = {
-	name = "Teleport to Safety"
-	desc = "The Adventurer will use their magical talents and blink to a safe distance from the granary before making their getaway."
-	outcome = "With a quick spell, the Adventurer disappeared from the scene of the crime, appearing a short distance out of town before fleeing on horse."
-	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
-	picture = "GFX_report_event_usa_pearl_harbor_airphoto"
+	picture = "GFX_report_event_panay_incident"
 }

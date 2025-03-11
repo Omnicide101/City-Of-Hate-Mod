@@ -14,6 +14,9 @@ NBI_advance_trans_rights = {
 	enable = {
 		tag = NBI
 	}
+	
+	abort_when_not_enabled = yes
+	
 	ai_strategy = {
 		type = befriend
 		id = VRG

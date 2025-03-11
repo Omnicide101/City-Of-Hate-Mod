@@ -316,7 +316,6 @@ focus_tree = {
 					free_building_slots = {
 						building = infrastructure
 						size > 0
-						include_locked = yes
 					}
 					free_building_slots = {
 						building = workshop
@@ -336,7 +335,6 @@ focus_tree = {
 					free_building_slots = {
 						building = infrastructure
 						size > 0
-						include_locked = yes
 					}
 					free_building_slots = {
 						building = workshop
@@ -1136,7 +1134,7 @@ focus_tree = {
 		cost = 5
 
 		completion_reward = {
-			add_ideas = IRI_reclamation_tax
+			add_ideas = IRI_reclamation_tax_idea
 			custom_effect_tooltip = IRI_decrease_aristocrat_approval
 			add_to_variable = { IRI_aristocrat_approval_var = -0.02 }
 			IRI_recalculate_interest_group_vars = yes

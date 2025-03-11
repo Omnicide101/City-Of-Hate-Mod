@@ -909,4 +909,9 @@ spriteTypes = {
     name = "GFX_basic_ship_hull_medium"
     texturefile = "gfx/interface/technologies/light_ship.dds"
 	}
+	
+	spriteType = {
+    name = "GFX_basic_heavy_ship_hull_medium"
+    texturefile = "gfx/interface/technologies/heavy_ship.dds"
+	}
 }

@@ -1,0 +1,13 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Floti Getaland"
+		naval_base = 2580 # Hraustr
+		task_force = {
+			name = "Floti Hraustr"
+			location = 2580 # Ith
+			ship = { name = "Varth-Veita" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ITH } } }
+		}
+	}
+}

@@ -5,7 +5,7 @@ state={
 		8753 3332 5285
 	}
 	state_category = city
-	manpower=782934
+	manpower=952934
 	buildings_max_level_factor=1.000
 	resources = {
 		steel = 3

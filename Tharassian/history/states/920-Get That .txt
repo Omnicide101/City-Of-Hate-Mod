@@ -2,7 +2,7 @@ state={
 	id=920
 	name="STATE_920"
 	provinces={
-		3621 3713 4601 5341 8084 8085 
+		3621 3713 4601 5341 8084
 	}
 	manpower=3048
 	buildings_max_level_factor=1.000
@@ -10,8 +10,9 @@ state={
 	state_category = rural
 	
     history = {
-        owner  = XXX
-        add_core_of  = XXX
+        owner = SAL
+        add_core_of = SLA
+		add_claim_by = AGE
         buildings = {
             infrastructure = 2
 			workshop = 1

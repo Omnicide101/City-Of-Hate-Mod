@@ -1,0 +1,136 @@
+### Reloading the ordorian focus tree to avoid mark_focus_tree_layout_dirty problems
+
+add_namespace = ord_focus_reload
+
+
+country_event = { # Eyes turned East
+	id = ord_focus_reload.1
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		unlock_national_focus = ORD_eyes_turned_east
+	}
+}
+
+country_event = { # Disproving the Doubters
+	id = ord_focus_reload.2
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		unlock_national_focus = ORD_disprove_doubters
+	}
+}
+
+country_event = { # The Struggle Ends
+	id = ord_focus_reload.3
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		unlock_national_focus = ORD_struggle_ends
+	}
+}
+
+country_event = { # Autonomy for the Cities
+	id = ord_focus_reload.4
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		unlock_national_focus = ORD_autonomy_cities
+	}
+}
+
+country_event = { # Salvaging their Institutions
+	id = ord_focus_reload.5
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		unlock_national_focus = ORD_salvaging_institutions
+	}
+}
+
+country_event = { # From the Ground Up
+	id = ord_focus_reload.6
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		unlock_national_focus = ORD_ground_up
+	}
+}
+
+country_event = { # Reinstating the Tithe
+	id = ord_focus_reload.7
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		unlock_national_focus = ORD_reinstating_tithe
+	}
+}
+
+country_event = { # A Professional Core
+	id = ord_focus_reload.8
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		unlock_national_focus = ORD_professional_core
+	}
+}
+
+country_event = { # Vigilance Eternal
+	id = ord_focus_reload.9
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		unlock_national_focus = ORD_vigilance_eternal
+	}
+}
+
+country_event = { # Where We Left Off
+	id = ord_focus_reload.10
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		unlock_national_focus = ORD_left_off
+	}
+}
+
+country_event = { # Ordoria Reunited
+	id = ord_focus_reload.11
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		unlock_national_focus = ORD_ordoria_reunited
+	}
+}

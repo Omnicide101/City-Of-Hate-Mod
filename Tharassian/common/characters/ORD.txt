@@ -31,6 +31,28 @@ characters={
 				power_behind_throne
 			}
 		}
+		advisor = {
+			slot = prisoners_guests
+			cost = 25
+			allowed = {
+				tag = ORD
+			}
+			visible = {
+				has_completed_focus = ORD_defang_glory_league
+				NOT = {
+					ORD_isvenith_lothinnys = {
+						is_character_slot = political_advisor
+					}
+				}
+			}
+			available = {
+				has_completed_focus = ORD_defang_glory_league
+				has_government = theocrat
+			}
+			traits = {
+				steward_house_arrest
+			}
+		}
 	}
 	ORD_galerin_valinthir={
 		name="Galerin Valinthir"
@@ -133,6 +155,20 @@ characters={
 				youthful_princeling
 			}
 		}
+		advisor = {
+			slot = prisoners_guests
+			cost = 50
+			visible = {
+				has_completed_focus = ORD_isolate_princeling
+			}
+			available = {
+				has_government = theocrat
+				has_completed_focus = ORD_isolate_princeling
+			}
+			traits = {
+				princeling_house_arrest
+			}
+		}
 	}
 	ORD_histarine_vernythe={
 		name="Histarine Vernythe"
@@ -169,6 +205,7 @@ characters={
 	}
 	ORD_vernusa_jiseyne={
 		name="Vernusa Jiseyne"
+		gender = female
 		portraits={
 			civilian={
 				large="gfx/leaders/ORD/Portrait_ORD_Jiseyne.dds"
@@ -184,6 +221,7 @@ characters={
 	}
 	ORD_wenaura_feryd={
 		name="Wenaura Feryd"
+		gender = female
 		portraits={
 			civilian={
 				large="gfx/leaders/ORD/Portrait_ORD_Feryd.dds"
@@ -253,6 +291,7 @@ characters={
 	}
 	ORD_alyniss_quynara={
 		name="Alyniss Quynara"
+		gender = female
 		portraits={
 			army={
 				large="gfx/leaders/ORD/Portrait_ORD_Quynara.dds"
@@ -289,6 +328,7 @@ characters={
 	}
 	ORD_thinyria_asrenthyne={
 		name="Thinyria Asrenthyne"
+		gender = female
 		portraits={
 			army={
 				large="gfx/leaders/ORD/Portrait_Ordoria_Asrenthyne.dds"
@@ -307,6 +347,7 @@ characters={
 	}
 	ORD_loventha_isthere={
 		name="Loventha Isthere"
+		gender = female
 		portraits={
 			army={
 				large="gfx/leaders/ORD/Portrait_Ordoria_Isthere.dds"
@@ -341,6 +382,60 @@ characters={
 			legacy_id=-1
 		}
 	}
+	
+	#Made a general via focus
+	ORD_khyriad_systhen={
+		name="Khyriad Systhen"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_land_2.dds"
+			}
+		}
+	}
+
+	#Made a general via focus
+	ORD_dasyn_maryd={
+		name= "Dasyn Maryd"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_land_5.dds"
+			}
+		}
+	}
+	
+	#Made a general via focus
+	ORD_vysiara_kylas={
+		name="Vysiara Kylas"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_land_4.dds"
+			}
+		}
+	}
+
+	ORD_thrystyr_gadayn={
+		name="Thrystyr Gadayn"
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_ORD_Gadayn.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_gadayn.dds"
+			}
+		}	
+	}
+	
+	ORD_galadywe_tolhyn={
+		name="Galadywe Tolhyn"
+		gender = female
+		portraits={
+			army={
+				large="gfx/leaders/ORD/Portrait_ORD_Tolhyn.dds"
+				small="gfx/interface/ideas/characters/ORD/ord_tolhyn.dds"
+			}
+		}
+	}
 	ORD_dalyn_rohyis = {
 		name="Dalyn Rohyis"
 		portraits = {
@@ -355,24 +450,30 @@ characters={
 			slot = political_advisor
 			idea_token = dalyn_rohyis
 			allowed = {
-				tag = ORD
+				OR  = {
+					original_tag = ORD
+					tag = ORB
+				}
 			}
 			visible = {
 				has_government = puritan
 			}
 			available = {
-				has_country_flag = ORD_autumn_debate_done
 				if = {
 					limit = {
-						has_country_flag = ORD_stewards_countercoup_flag
+						tag = ORD
 					}
+					has_country_flag = ORD_autumn_debate_done
 					OR = {
+						AND = {
+							has_country_flag = ORD_stewards_countercoup_flag
+							OR = {
+								has_completed_focus = ORD_army
+								has_completed_focus = ORD_restoring_sanity
+							}
+						}
 						has_completed_focus = ORD_army
-						has_completed_focus = ORD_restoring_sanity
 					}
-				}
-				else = {
-					has_completed_focus = ORD_army
 				}
 			}
 			ai_will_do = {
@@ -402,7 +503,7 @@ characters={
 			}
 			visible = {
 				OR = {
-					tag = ORD
+					original_tag = ORD
 					tag = ORB
 					tag = EOR
 				}
@@ -437,13 +538,21 @@ characters={
 			slot = political_advisor
 			idea_token = thulyen_gyume
 			allowed = {
-				tag = ORD
+				OR = {
+					original_tag = ORD
+					tag = ORB
+				}
 			}
 			visible = {
 				has_government = theocrat
 			}
 			available = {
-				has_country_flag = ORD_autumn_debate_done
+				if = {
+					limit = {
+						tag = ORD
+					}
+					has_country_flag = ORD_autumn_debate_done
+				}
 				has_government = theocrat
 			}
 			ai_will_do = {
@@ -456,6 +565,7 @@ characters={
 	}
 	ORD_alstora_holynthor = {
 		name="Alstora Holynthor"
+		gender = female
 		portraits = {
 			army={
 				small="gfx/interface/ideas/characters/ORD/ord_holynthor.dds"
@@ -468,14 +578,28 @@ characters={
 			idea_token = alstora_holynthor
 			desc = ORD_alstora_holynthor_desc
 			allowed = {
-				tag = ORD
+				OR = {
+					original_tag = ORD
+					tag = ORB
+					tag = EOR
+				}
 			}
 			visible = {
 				has_government = monarchy_absolute
 			}
 			available = {
-				has_country_flag = ORD_autumn_debate_done
-				has_completed_focus = ORD_loyal_vassals
+				OR = {
+					AND = {
+						tag = ORD
+						has_completed_focus = ORD_loyal_vassals
+					}
+					AND = {
+						tag = EOR
+						ORD = {
+							has_completed_focus = ORD_ship_off_cronies
+						}
+					}
+				}
 			}
 			ai_will_do = {
 				factor = 10
@@ -487,6 +611,7 @@ characters={
 	}
 	ORD_yntha = {
 		name="Yntha"
+		gender = female
 		portraits = {
 			army={
 				small="gfx/interface/ideas/characters/ORD/ord_yntha.dds"
@@ -499,14 +624,28 @@ characters={
 			idea_token = yntha
 			desc = ORD_yntha_desc
 			allowed = {
-				tag = ORD
+				OR = {
+					original_tag = ORD
+					tag = ORB
+					tag = EOR
+				}
 			}
 			visible = {
 				has_government = monarchy_absolute
 			}
 			available = {
-				has_country_flag = ORD_autumn_debate_done
-				has_completed_focus = ORD_steadfast_friends
+				OR = {
+					AND = {
+						tag = ORD
+						has_completed_focus = ORD_steadfast_friends
+					}
+					AND = {
+						tag = EOR
+						ORD = {
+							has_completed_focus = ORD_ship_off_friends
+						}
+					}
+				}
 			}
 			ai_will_do = {
 				factor = 10
@@ -518,6 +657,7 @@ characters={
 	}
 	ORD_alwyen = {
 		name="Alwyen"
+		gender = female
 		portraits = {
 			army={
 				small="gfx/interface/ideas/characters/ORD/ord_alwyen.dds"
@@ -530,20 +670,57 @@ characters={
 			idea_token = alwyen
 			desc = ORD_alwyen_desc
 			allowed = {
-				tag = ORD
+				OR = {
+					original_tag = ORD
+					tag = ORB
+					tag = EOR
+				}
 			}
 			visible = {
 				has_government = monarchy_absolute
 			}
 			available = {
-				has_country_flag = ORD_autumn_debate_done
-				has_completed_focus = ORD_steadfast_friends
+				OR = {
+					AND = {
+						tag = ORD
+						has_completed_focus = ORD_steadfast_friends
+					}
+					AND = {
+						tag = EOR
+						ORD = {
+							has_completed_focus = ORD_ship_off_friends
+						}
+					}
+				}
 			}
 			ai_will_do = {
 				factor = 10
 			}
 			traits = {
 				cheerful_optimist
+			}
+		}
+		advisor = {
+			cost = 150
+			removal_cost = 150
+			slot = prisoners_guests
+			idea_token = alwyen
+			desc = ORD_alwyen_desc
+			allowed = {
+				original_tag = ORD
+			}
+			visible = {
+				has_government = theocrat
+				has_country_flag = ORD_sophists_arrested_moderates
+			}
+			available = {
+				has_completed_focus = ORD_raid_sus_manors
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				former_optimist
 			}
 		}
 	}
@@ -561,14 +738,28 @@ characters={
 			idea_token = gylar
 			desc = ORD_gylar_desc
 			allowed = {
-				tag = ORD
+				OR = {
+					original_tag = ORD
+					tag = ORB
+					tag = EOR
+				}
 			}
 			visible = {
 				has_government = monarchy_absolute
 			}
 			available = {
-				has_country_flag = ORD_autumn_debate_done
-				has_completed_focus = ORD_steadfast_friends
+				OR = {
+					AND = {
+						tag = ORD
+						has_completed_focus = ORD_steadfast_friends
+					}
+					AND = {
+						tag = EOR
+						ORD = {
+							has_completed_focus = ORD_ship_off_friends
+						}
+					}
+				}
 			}
 			ai_will_do = {
 				factor = 10
@@ -592,14 +783,28 @@ characters={
 			idea_token = thrysmere
 			desc = ORD_thrysmere_desc
 			allowed = {
-				tag = ORD
+				OR = {
+					original_tag = ORD
+					tag = ORB
+					tag = EOR
+				}
 			}
 			visible = {
 				has_government = monarchy_absolute
 			}
 			available = {
-				has_country_flag = ORD_autumn_debate_done
-				has_completed_focus = ORD_steadfast_friends
+				OR = {
+					AND = {
+						tag = ORD
+						has_completed_focus = ORD_steadfast_friends
+					}
+					AND = {
+						tag = EOR
+						ORD = {
+							has_completed_focus = ORD_ship_off_friends
+						}
+					}
+				}
 			}
 			ai_will_do = {
 				factor = 10
@@ -619,7 +824,7 @@ characters={
 			}
 		}
 	}
-	#gonna be given role later
+	
 	ORD_tasar_beijyre={
 		name="Tasar Beijyre"
 		portraits={
@@ -628,8 +833,43 @@ characters={
 				small="gfx/interface/ideas/characters/ORD/ord_wacthyne.dds"
 			}
 		}
+		advisor = {
+			slot = prisoners_guests
+			idea_token = tasar_beijyre
+			desc = ORD_tasar_beijyre_desc
+			cost = 50
+			removal_cost = 50
+			allowed = {
+				original_tag = ORD
+			}
+			visible = {
+				has_government = theocrat
+				has_country_flag = ORD_sophists_arrested_moderates
+			}
+			available = {
+				has_completed_focus = ORD_raid_sus_manors
+			}
+			traits = {
+				state_seized_assets
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 50
+			visible = {
+				has_country_flag = UNG_accepted_beijyre_exile
+			}
+			available = {
+				NOT = {
+					is_subject_of = ORD
+				}
+			}
+			traits = {
+				rich_exiled_noble
+			}
+		}
 	}
-	#gonna be given role later
+	
 	ORD_arun_fenmys = {
 		name="Arun Fenmys"
 		portraits = {
@@ -638,22 +878,88 @@ characters={
 				small="gfx/interface/ideas/characters/ORD/ord_rohyis.dds"
 			}
 		}
+		advisor = {
+			slot = prisoners_guests
+			idea_token = arun_fenmys
+			desc = ORD_arun_fenmys_desc
+			cost = 50
+			removal_cost = 50
+			allowed = {
+				original_tag = ORD
+			}
+			visible = {
+				has_government = theocrat
+			}
+			available = {
+				has_completed_focus = ORD_investigate_all_nobles
+			}
+			traits = {
+				arrested_pacifist
+			}
+		}
 	}
-	#gonna be given role later
+	
 	ORD_taenaran_sylquinal = {
 		name="Taenaran Sylquinal"
+		advisor = {
+			cost = 50
+			removal_cost = 50
+			slot = political_advisor
+			idea_token = taenaran_sylquinal
+			desc = ORD_taenaran_sylquinal_desc
+			allowed = {
+				OR  = {
+					original_tag = ORD
+					tag = ORB
+				}
+			}
+			visible = {
+				has_government = theocrat
+			}
+			available = {
+				has_completed_focus = ORD_utilize_great_nobles
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			traits = {
+				noble_militarized_fiefdom
+			}
+		}
 		portraits = {
 			army={
 				small="gfx/interface/ideas/characters/ORD/ord_gylar.dds"
 			}
 		}
 	}
-	#gonna be given role later
+	
 	ORD_namys_yesydark = {
 		name="Namys Yesydark"
 		portraits = {
 			army={
 				small="gfx/interface/ideas/characters/ORD/ord_land_6.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = namys_yesydark
+			desc = ORD_namys_yesydark_desc
+			cost = 50
+			removal_cost = 50
+			allowed = {
+				OR  = {
+					original_tag = ORD
+					tag = ORB
+				}
+			}
+			visible = {
+				has_government = theocrat
+			}
+			available = {
+				has_completed_focus = ORD_utilize_great_nobles
+			}
+			traits = {
+				nobility_plantation_representative
 			}
 		}
 	}

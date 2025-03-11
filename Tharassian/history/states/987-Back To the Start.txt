@@ -5,7 +5,19 @@ state={
 	provinces={
 		1878 8971 8993 9007 
 	}
-	manpower=1 state_category=pastoral history = {owner = XXX add_core_of = XXX}
+	state_category = rural
+	manpower=1194
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	resources = {
+		lumber = 23
+	}
+	history={
+		owner = ATH
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = ATH
+		add_claim_by = TRS
+
+	}
 }

@@ -14,6 +14,8 @@ state={
 		owner = RTH
 		buildings = {	
 			infrastructure = 1
+			workshop = 1
+			forge = 1
 		}
 		add_core_of = RTH
 	}

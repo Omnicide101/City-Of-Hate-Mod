@@ -1,0 +1,14 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Wertszer Marine"
+		naval_base = 9152 # Ostkade
+		task_force = {
+			name = "Wertszer Flotte"
+			location = 9152 # Ostkade
+			ship = { name = "Nurhelm's Hilfe" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = WSZ } } }
+			ship = { name = "Kaltmann" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = WSZ } } }
+		}
+	}
+}

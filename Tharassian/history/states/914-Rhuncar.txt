@@ -15,11 +15,12 @@ state={
 	}
 	
 	history = {
-        owner  = XXX
-        add_core_of  = XXX
+        owner = SAL
+        add_core_of = SAL
+		add_core_of = TRX
         buildings = {
             infrastructure = 1
 		}
-		victory_points = { 8386 1 }
+		victory_points = { 8345 1 }
 	}
 }

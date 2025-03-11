@@ -1,8 +1,93 @@
 areas = {
+	
+	latherin = {
+		continents = {
+			latherin
+		}
+	}
+	
+	asweyne = {
+		continents = {
+			asweyne
+		}
+	}
+	
+	lathweyne = {
+		continents = {
+			latherin
+			asweyne
+		}
+	}
+	
+	rosthirin = {
+		continents = {
+			rosthirin
+		}
+	}
+	
+	maslodan = {
+		continents = {
+			maslodan
+		}
+	}
+	
+	thosthal = {
+		continents = {
+			thosthal
+		}
+	}
+	
+	masthal = {
+		continents = {
+			maslodan
+			thosthal
+		}
+	}
+	
+	niftaris = {
+		continents = {
+			niftaris
+		}
+	}
+	
+	venmethor = {
+		continents = {
+			venmethor
+		}
+	}
+	
 	perkav_raid_area = {
 		strategic_regions = {
 			8
 			34
+		}
+	}
+	
+	west_perkavland = {
+		strategic_regions = {
+			3
+			4
+			34
+			39
+		}
+	}
+	
+	south_perkavland = {
+		strategic_regions = {
+			2
+			5
+			36
+			37
+			38
+		}
+	}
+	
+	east_perkavland = {
+		strategic_regions = {
+			6
+			7
+			9
+			35
 		}
 	}
 	
@@ -41,9 +126,36 @@ areas = {
 		}
 	}
 	
+	olthorna = { #For telling Ordoria to mass up against the Ryselyn
+		strategic_regions = {
+			42
+		}
+	}
+	
+	alfrskaut = { #For telling Ordoria to not stack units in a place with shit supply
+		strategic_regions = {
+			287
+		}
+	}
+	
 	loris_pass = {
 		strategic_regions = {
 			50
+		}
+	}
+	
+	quellion = {
+		strategic_regions = {
+			42
+			46
+			49
+		}
+	}
+	
+	thurgithon = {
+		strategic_regions = {
+			51
+			52
 		}
 	}
 	
@@ -56,24 +168,46 @@ areas = {
 	irenthar = {
 		strategic_regions = {
 			59
+			60
+			61
+			62
 		}
 	}
 	
 	trifersi = {
 		strategic_regions = {
+			63
 			68
 		}
 	}
 	
 	cortineal = {
 		strategic_regions = {
+			60
+			62
 			64
+			66
 		}
 	}
 	
 	caltireth = {
 		strategic_regions = {
+			66
 			67
+			68
+		}
+	}
+	
+	nastrodoge = {
+		strategic_regions = {
+			64
+			65
+		}
+	}
+	
+	navandonne = {
+		strategic_regions = {
+			69
 		}
 	}
 	
@@ -84,15 +218,53 @@ areas = {
 		}
 	}
 	
+	stalhof_capital = {
+		strategic_regions = {
+			23
+		}
+	}
+	
+	holzbrenn_capital = {
+		strategic_regions = {
+			14
+		}
+	}
+	
+	nochwald_capital = {
+		strategic_regions = {
+			12
+		}
+	}
+	
+	neureik_capital = {
+		strategic_regions = {
+			15
+		}
+	}
+	
+	faustburg_capital = {
+		strategic_regions = {
+			18
+		}
+	}
+	
+	spochwald_capital = {
+		strategic_regions = {
+			13
+		}
+	}
+	
 	holzbrenn = {
 		strategic_regions = {
 			14
+			26
 		}
 	}
 	
 	neureik = {
 		strategic_regions = {
 			15
+			16
 		}
 	}
 	
@@ -112,6 +284,7 @@ areas = {
 	
 	arkanisturm = {
 		strategic_regions = {
+			32
 			33
 		}
 	}
@@ -119,11 +292,13 @@ areas = {
 	wistingen = {
 		strategic_regions = {
 			21
+			22
 		}
 	}
 	
 	fritzhafen = {
 		strategic_regions = {
+			30
 			31
 		}
 	}
@@ -131,6 +306,279 @@ areas = {
 	schneefilde = {
 		strategic_regions = {
 			8
+			29
+		}
+	}
+	
+	wertszvorde = {
+		strategic_regions = {
+			40
+		}
+	}
+	
+	teigerholen = {
+		strategic_regions = {
+			10
+		}
+	}
+	
+	st_vichtlas = {
+		strategic_regions = {
+			11
+		}
+	}
+	
+	nochwald = {
+		strategic_regions = {
+			12
+			27
+		}
+	}
+	
+	north_lirothlind = {
+		strategic_regions = {
+			103
+			104
+			15
+		}
+	}
+	
+	south_lirothlind = {
+		strategic_regions = {
+			106
+			107
+		}
+	}
+	
+	lirothline_isles = {
+		strategic_regions = {
+			148
+			149
+		}
+	}
+	
+	bilodya = {
+		strategic_regions = {
+			110
+			179
+		}
+	}
+	
+	north_kurgur = {
+		strategic_regions = {
+			74
+			75
+		}
+	}
+	
+	south_kurgur = {
+		strategic_regions = {
+			71
+			72
+			73
+		}
+	}
+	
+	west_irinthios = {
+		strategic_regions = {
+			95
+			96
+		}
+	}
+	
+	east_irinthios = {
+		strategic_regions = {
+			92
+			93
+			94
+		}
+	}
+	
+	north_tlarthingia = {
+		strategic_regions = {
+			91
+		}
+	}
+	
+	south_tlarthingia = {
+		strategic_regions = {
+			87
+			88
+			89
+		}
+	}
+	
+	ticht = {
+		strategic_regions = {
+			70
+			76
+			78
+		}
+	}
+	
+	hieringen = {
+		strategic_regions = {
+			79
+			80
+			81
+		}
+	}
+	
+	vaerhoog = {
+		strategic_regions = {
+			78
+			82
+			85
+		}
+	}
+	
+	doert = {
+		strategic_regions = {
+			83
+			84
+			86
+		}
+	}
+	
+	south_skaelinger = {
+		strategic_regions = {
+			54
+			55
+		}
+	}
+	
+	north_skaelinger = {
+		strategic_regions = {
+			53
+			56
+			57
+			58
+		}
+	}
+	
+	south_rimatu = {
+		strategic_regions = {
+			97
+			98
+			99
+		}
+	}
+	
+	north_rimatu = {
+		strategic_regions = {
+			100
+			101
+			102
+		}
+	}
+	
+	vergall_mountains = {
+		strategic_regions = {
+			25
+			32
+			42
+			49
+			50
+			52
+			53
+			54
+			55
+			56
+			57
+			58
+			59
+			65
+			70
+			71
+			73
+			97
+			98
+			99
+			100
+			101
+			102
+			105
+		}
+	}
+	
+	tarnland = {
+		strategic_regions = {
+			184
+		}
+	}
+	
+	getaland = {
+		strategic_regions = {
+			242
+			243
+			244
+			245
+		}
+	}
+	
+	west_thryxvanor = {
+		strategic_regions = {
+			230
+			231
+			232
+		}
+	}
+	
+	east_thryxvanor = {
+		strategic_regions = {
+			227
+			228
+			229
+		}
+	}
+	
+	gowie = {
+		strategic_regions = {
+			224
+			225
+			226
+			236
+		}
+	}
+	
+	high_hall = {
+		strategic_regions = {
+			233
+		}
+	}
+	
+	el = {
+		strategic_regions = {
+			234
+		}
+	}
+	
+	sulfurisle = {
+		strategic_regions = {
+			235
+		}
+	}
+	
+	tesliran = {
+		strategic_regions = {
+			237
+			238
+		}
+	}
+	
+	west_aethell = {
+		strategic_regions = {
+			259
+			260
+			261
+		}
+	}
+	
+	east_aethell = {
+		strategic_regions = {
+			263
+			264
+			265
 		}
 	}
 }

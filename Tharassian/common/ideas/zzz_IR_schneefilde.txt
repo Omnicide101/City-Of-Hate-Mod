@@ -840,7 +840,7 @@ SNF_perkav_studied = {
 	
 		ulrich_drecht = {
 			
-			picture = IRI_Diamantis #PLACEHOLDER
+			picture = snf_drecht
 			
 			allowed = {
 				original_tag = SNF

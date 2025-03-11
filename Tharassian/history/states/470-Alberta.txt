@@ -1,19 +1,15 @@
-
-state={
-	id=470
-	name="STATE_470"
-
-	history={
+state = {
+	id = 470
+	name = "STATE_470"
+	history = {
 		owner = XXX
 		add_core_of = XXX
-
 	}
-
-	provinces={
+	provinces = {
 		911 3733 4499 4707 6135 6139 6149 6159 
 	}
-	manpower=1
-	buildings_max_level_factor=1.000
-	state_category=rural
-	local_supplies=0.000
+	manpower = 1
+	buildings_max_level_factor = 1.000
+	state_category = rural
+	local_supplies = 0.000
 }

@@ -539,7 +539,13 @@ technologies = {
 		
 		enable_subunits = {
 			horsemen
+		}
+		enable_subunits = {
 			scouts_cavalry
+		}
+		
+		on_research_complete = {
+			load_oob = "TECH_unlock_horsemen"
 		}
 		
 		path = {

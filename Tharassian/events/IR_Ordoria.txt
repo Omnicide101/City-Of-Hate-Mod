@@ -1,4 +1,4 @@
-﻿	### ORDORIAN EVENTS
+﻿### ORDORIAN EVENTS
 
 add_namespace = ord
 
@@ -29,7 +29,7 @@ country_event = {# Autumn Debate Begins
 			}
 			country_event = {
 				id = ord.2
-				days = 7
+				days = 3
 			}
 		}
 	}
@@ -67,6 +67,8 @@ country_event = {#Domestic-Economic Policy
 			ideology = monarchy_absolute 
 			popularity = 0.05
 		}
+		ORD_improve_royal_power_2 = yes
+		ORD_improve_royal_loyalty_2 = yes
 		set_country_flag = ORD_domestic_moderate
 		hidden_effect = {
 				modify_country_flag = {
@@ -75,14 +77,14 @@ country_event = {#Domestic-Economic Policy
 			}
 			country_event = {
 				id = ord.3
-				days = 35
+				days = 3
 			}
 		}
 	}
 	option = {#Imperialist
 		name = ord.2.b
 		ai_chance = {
-			factor = 8
+			factor = 10
 			modifier = {
 				has_game_rule = {
 					rule = ORD_game_plan
@@ -98,6 +100,8 @@ country_event = {#Domestic-Economic Policy
 				factor = 0
 			}
 		}
+		ORD_improve_trad_power_2 = yes
+		ORD_improve_trad_loyalty_2 = yes
 		set_country_flag = ORD_domestic_imperialist
 		add_popularity = {
 			ideology = puritan
@@ -110,7 +114,7 @@ country_event = {#Domestic-Economic Policy
 			}
 			country_event = {
 				id = ord.3
-				days = 35
+				days = 3
 			}
 		}
 	}
@@ -133,6 +137,8 @@ country_event = {#Domestic-Economic Policy
 				factor = 0
 			}
 		}
+		ORD_improve_faith_power_2 = yes
+		ORD_improve_faith_loyalty_2 = yes
 		set_country_flag = ORD_domestic_theocrat
 		add_stability = 0.05
 		add_popularity = {
@@ -146,7 +152,7 @@ country_event = {#Domestic-Economic Policy
 			}
 			country_event = {
 				id = ord.3 
-				days = 35
+				days = 3
 			}
 		}
 	}
@@ -180,6 +186,8 @@ country_event = {#Foreign Policy
 			}
 		}
 		add_stability = 0.05
+		ORD_improve_royal_power_2 = yes
+		ORD_improve_royal_loyalty_2 = yes
 		add_popularity = {
 			ideology = monarchy_absolute popularity = 0.05
 			}
@@ -191,14 +199,14 @@ country_event = {#Foreign Policy
 			}
 			country_event = {
 				id = ord.4
-				days = 35
+				days = 3
 			}
 		}
 	}
 	option = {#Imperialist
 		name = ord.3.b
 		ai_chance = {
-			factor = 7
+			factor = 10
 			modifier = {
 				has_game_rule = {
 					rule = ORD_game_plan
@@ -214,6 +222,8 @@ country_event = {#Foreign Policy
 				factor = 0
 			}
 		}
+		ORD_improve_trad_power_2 = yes
+		ORD_improve_trad_loyalty_2 = yes
 		set_country_flag = ORD_foreign_imperialist
 		add_popularity = {
 			ideology = puritan
@@ -226,7 +236,7 @@ country_event = {#Foreign Policy
 			}
 			country_event = {
 				id = ord.4
-				days = 35
+				days = 3
 			}
 		}
 	}
@@ -249,6 +259,8 @@ country_event = {#Foreign Policy
 				factor = 0
 			}
 		}
+		ORD_improve_faith_power_2 = yes
+		ORD_improve_faith_loyalty_2 = yes
 		set_country_flag = ORD_foreign_theocrat
 		add_stability = -0.05
 		add_popularity = {
@@ -262,7 +274,7 @@ country_event = {#Foreign Policy
 			}
 			country_event = {
 				id = ord.4 
-				days = 35
+				days = 3
 			}
 		}
 	}
@@ -294,7 +306,7 @@ country_event = {#Military Policy
 				}
 				factor = 0
 			}
-			}
+		}
 		add_popularity = {
 			ideology = monarchy_absolute popularity = 0.05
 			}
@@ -303,7 +315,9 @@ country_event = {#Military Policy
 		#		bonus = 0.15
 		#		uses = 1
 		#		category = cat_mobile_warfare
-		#	}
+		#}
+		ORD_improve_royal_power_2 = yes
+		ORD_improve_royal_loyalty_2 = yes
 		set_country_flag = ORD_military_moderate
 		hidden_effect = {
 			modify_country_flag = {
@@ -319,7 +333,7 @@ country_event = {#Military Policy
 				}
 				country_event = { 
 					id = ord.5
-					days = 25
+					days = 7
 					}
 			}
 			if = {
@@ -331,7 +345,7 @@ country_event = {#Military Policy
 				}
 				country_event = { 
 					id = ord.6
-					days = 25
+					days = 7
 					}
 			}
 			if = {
@@ -343,7 +357,7 @@ country_event = {#Military Policy
 				}
 				country_event = { 
 					id = ord.7
-					days = 25
+					days = 7
 					}
 			}
 			if = {
@@ -363,7 +377,7 @@ country_event = {#Military Policy
 				}
 				country_event = {
 					id = ord.8
-					days = 10
+					days = 14
 					}
 			}
 		}
@@ -371,7 +385,7 @@ country_event = {#Military Policy
 	option = {#Imperialist
 		name = ord.4.b
 		ai_chance = {
-			factor = 8
+			factor = 10
 			modifier = {
 				has_game_rule = {
 					rule = ORD_game_plan
@@ -386,13 +400,15 @@ country_event = {#Military Policy
 				}
 				factor = 0
 			}
-			}
+		}
+		ORD_improve_trad_power_2 = yes
+		ORD_improve_trad_loyalty_2 = yes
 		set_country_flag = ORD_military_imperialist
 		add_stability = 0.05
 		add_popularity = {
 			ideology = puritan
 			popularity = 0.05
-			}
+		}
 		#add_tech_bonus = {
 		#		name = ORD_traditionalist
 		#		bonus = 0.15
@@ -413,7 +429,7 @@ country_event = {#Military Policy
 				}
 				country_event = { 
 					id = ord.5
-					days = 25
+					days = 7
 					}
 			}
 			
@@ -426,7 +442,7 @@ country_event = {#Military Policy
 				}
 				country_event = { 
 					id = ord.6
-					days = 25
+					days = 7
 					}
 			}
 			if = {
@@ -438,7 +454,7 @@ country_event = {#Military Policy
 				}
 				country_event = { 
 					id = ord.7
-					days = 25
+					days = 7
 					}
 			}
 			if = {
@@ -458,7 +474,7 @@ country_event = {#Military Policy
 				}
 				country_event = {
 					id = ord.8
-					days = 10
+					days = 14
 					}
 			}
 		}
@@ -482,12 +498,14 @@ country_event = {#Military Policy
 				factor = 0
 			}
 		}
+		ORD_improve_faith_power_2 = yes
+		ORD_improve_faith_loyalty_2 = yes
 		set_country_flag = ORD_military_theocrat
 
 		add_popularity = {
 			ideology = theocrat
 			popularity = 0.05
-			}
+		}
 		#add_tech_bonus = {
 		#		name = ORD_faithful
 		#		bonus = 0.15
@@ -509,7 +527,7 @@ country_event = {#Military Policy
 				}
 				country_event = { 
 					id = ord.5
-					days = 25
+					days = 7
 					}
 			}
 			
@@ -522,7 +540,7 @@ country_event = {#Military Policy
 				}
 				country_event = { 
 					id = ord.6
-					days = 25
+					days = 7
 					}
 			}
 			if = {
@@ -534,7 +552,7 @@ country_event = {#Military Policy
 				}
 				country_event = { 
 					id = ord.7
-					days = 25
+					days = 7
 					}
 			}
 			if = {
@@ -554,7 +572,7 @@ country_event = {#Military Policy
 				}
 				country_event = {
 					id = ord.8
-					days = 10
+					days = 14
 				}
 			}
 		}
@@ -589,6 +607,8 @@ country_event = {# Moderate Victory
 			ideology = monarchy_absolute
 			popularity = 0.15
 		}
+		ORD_improve_royal_power_4 = yes
+		ORD_improve_royal_loyalty_4 = yes
 		remove_ideas = ORD_fragmented_government
 		deactivate_advisor = isvenith_lothinnys
 		activate_advisor = larennis_valinthir
@@ -604,7 +624,7 @@ country_event = {# Moderate Victory
 				value = 0
 			}
 			set_variable = {
-				larennis_idealism = 100
+				larennis_idealism = 50
 			}
 			set_variable = {
 				larennis_naivete = 0
@@ -636,6 +656,8 @@ country_event = {# Imperialist Victory
 			ideology = puritan
 			popularity = 0.15
 		}
+		ORD_improve_trad_power_4 = yes
+		ORD_improve_trad_loyalty_4 = yes
 		remove_ideas = ORD_fragmented_government
 		news_event = {
 			id = news.1
@@ -675,6 +697,8 @@ country_event = {# Theocrat Victory
 			id = news.2
 			days = 3
 		}
+		ORD_improve_faith_power_4 = yes
+		ORD_improve_faith_loyalty_4 = yes
 		add_popularity = {
 			ideology = theocrat
 			popularity = 0.15
@@ -708,28 +732,23 @@ country_event = {# A House Divided
 			id = news.4
 			days = 3
 		}
+		ORD_improve_trad_power_2 = yes
+		ORD_improve_faith_power_2 = yes
+		ORD_worsen_royal_loyalty_2 = yes
 		add_stability = -0.15
 		add_popularity = {
-		ideology = puritan
-		popularity = 0.10
+			ideology = puritan
+			popularity = 0.10
 		}
 		add_popularity = {
-		ideology = theocrat
-		popularity = 0.10
+			ideology = theocrat
+			popularity = 0.10
 		}
 		hidden_effect = {
 			set_global_flag = worldnews_ord_well_shit
-			random_country = {
-				limit = {
-					NOT = { 
-						TAG = ORD
-						}
-					}
-				news_event = {
-					id = news.4
-					days = 2
-				}
-			}
+			set_country_flag = ORD_puritan_government
+			mark_focus_tree_layout_dirty = yes
+			unlock_national_focus = ORD_glory_league
 		}
 	}
 }
@@ -1409,7 +1428,7 @@ country_event = { # Traditionalist Coup Succeeds
 					NOT = {
 						has_country_flag = ORD_pact_with_union
 						has_country_flag = ORD_pact_with_realm
-						has_completed_focus = ORD_break_pact
+						#has_completed_focus = ORD_break_pact #Obsolete
 					}
 				}
 			}
@@ -1852,7 +1871,13 @@ country_event = { #Concessions - Skaelinger Accepts
 	option = {#Good
 		name = ord.31.a
 		
-		set_country_flag = ORD_dwarves_conceded
+		set_country_flag = ORD_moderate_skaelinger_peace_succeeded
+		
+		larennis_idealism_small = yes
+		
+		ORD_improve_royal_power_5 = yes
+		ORD_improve_trad_loyalty_3 = yes
+		ORD_improve_faith_loyalty_3 = yes
 	}
 }
 
@@ -1869,7 +1894,7 @@ country_event = { #Concessions - Skaelinger Declines
 	option = {#Their loss
 		name = ord.32.a
 		
-		set_country_flag = ORD_kill_skaelinger
+		set_country_flag = ORD_moderate_skaelinger_peace_failed
 	}
 }
 
@@ -1889,7 +1914,7 @@ country_event = { #Vassalization - Skaelinger Accepts
 	}
 }
 
-country_event = { #Concessions - Skaelinger Declines
+country_event = { #Vassalization - Skaelinger Declines
 	id = ord.34
 	title = ord.34.t
 	desc = ord.34.d
@@ -2115,13 +2140,18 @@ country_event = { #Rthaur Resistance
 	
 	trigger = {
 		original_tag = ORD
-		NOT = {
-			country_exists = RTH
+		RTH = {
+			is_not_threat = yes
 		}
 		NOT = {
 			has_government = republic_peasant
 		}
-		owns_state = 118
+		OR = {
+			controls_state = 118
+			EOR = {
+				controls_state = 118
+			}
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -2160,6 +2190,7 @@ country_event = { #Rthaur Resistance
 					remove_state_core = PREV
 				}
 			}
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 }
@@ -2190,7 +2221,7 @@ country_event = { #Second Rthaur Rebellion!
 			}
 		}
 		has_idea = ORD_rthaur_propaganda
-		republic_peasant > 0.37
+		republic_peasant > 0.25
 	}
 	
 	mean_time_to_happen = {
@@ -2262,9 +2293,47 @@ country_event = { #Second Rthaur Rebellion!
 				}
 			}
 			
-			transfer_units_fraction= {
+			every_state = {
+				limit = {
+					OR = {
+						is_owned_by = ORD
+						is_owned_by = EOR
+					}
+					is_core_of = RTH
+				}
+				RTH = {
+					transfer_state = PREV
+				}
+			}
+			
+			if = {
+				limit = {
+					country_exists = EOR
+				}
+				EOR = {
+					transfer_units_fraction = {
+						target = RTH
+						size = 0.1
+						stockpile_ratio = 0.1
+						army_ratio = 0.1
+					}
+				}
+			}
+			
+			transfer_units_fraction = {
 				target = RTH
-				size = 0.4
+				size = 0.2
+				stockpile_ratio = 0.2
+				army_ratio = 0.2
+			}
+			
+			every_owned_state = {
+				teleport_armies = {
+					limit = {
+						tag = RTH
+					}
+					to_state_array = owned_controlled_states
+				}
 			}
 			
 			set_country_flag = ORD_second_civil_war_flag
@@ -2285,36 +2354,6 @@ country_event = { #Second Rthaur Rebellion!
 		}
 		
 		hidden_effect = {
-			RTH = {
-				annex_country = {
-					target = ORD
-					transfer_troops = no
-				}
-			}
-			
-			every_state = {
-				limit = {
-					is_owned_by = RTH
-					is_core_of = ORD
-					NOT = {
-						is_core_of = RTH
-					}
-				}
-				ORD = {
-					transfer_state = PREV
-				}
-			}
-			
-			RTH = {
-				load_oob = "RTH_ii_rev"
-			}
-
-			load_oob = "ORD_ii_rev"
-
-			delete_unit_template_and_units = {
-				division_template = "Rangers"
-			}
-			
 			declare_war_on = {
 				target = RTH
 				type = civil_war
@@ -2347,36 +2386,6 @@ country_event = { #Second Rthaur Rebellion!
 		}
 		
 		hidden_effect = {
-			RTH = {
-				annex_country = {
-					target = ORD
-					transfer_troops = no
-				}
-			}
-			
-			every_state = {
-				limit = {
-					is_owned_by = RTH
-					is_core_of = ORD
-					NOT = {
-						is_core_of = RTH
-					}
-				}
-				ORD = {
-					transfer_state = PREV
-				}
-			}
-			
-			RTH = {
-				load_oob = "RTH_ii_rev"
-			}
-
-			load_oob = "ORD_ii_rev"
-			
-			delete_unit_template_and_units = {
-				division_template = "Rangers"
-			}
-			
 			declare_war_on = {
 				target = RTH
 				type = civil_war
@@ -2740,7 +2749,8 @@ country_event = { #The Hofmeyer Question
 	picture = GFX_report_event_romania_parliament
 	
 	trigger = {
-		has_completed_focus = ORD_ensure_loyalty
+		always = no #Obsolete
+		#has_completed_focus = ORD_ensure_loyalty
 	}
 	
 	mean_time_to_happen = {
@@ -2792,7 +2802,8 @@ country_event = { #Trial of the Five
 	picture = GFX_report_event_romania_parliament
 	
 	trigger = {
-		has_completed_focus = ORD_puritan_propaganda
+		always = no #Obsolete
+		#has_completed_focus = ORD_puritan_propaganda
 	}
 	
 	mean_time_to_happen = {
@@ -2844,7 +2855,8 @@ country_event = { #Resderin Conclave
 	picture = GFX_report_event_romania_parliament
 	
 	trigger = {
-		has_completed_focus = ORD_hunt_heretics
+		always = no #obsolete
+		#has_completed_focus = ORD_hunt_heretics
 	}
 	
 	mean_time_to_happen = {
@@ -2946,6 +2958,9 @@ country_event = { #Re-Core Rthaur Rebel Lands after the 2OCW
 			every_state = {
 				limit = {
 					is_core_of = RTH
+					NOT = {
+						is_core_of = EOR
+					}
 				}
 				add_core_of = ORD
 				remove_core_of = RTH
@@ -2954,16 +2969,12 @@ country_event = { #Re-Core Rthaur Rebel Lands after the 2OCW
 				limit = {
 					country_exists = EOR
 				}
-				annex_country = {
-					target = EOR
-					transfer_troops = yes
-				}
 				every_state = {
 					limit = {
 						is_core_of = EOR
+						is_owned_by = ORD
 					}
-					add_core_of = ORD
-					remove_core_of = EOR
+					transfer_state_to = EOR
 				}
 			}
 		}
@@ -3354,14 +3365,17 @@ country_event = {#Transfer Rthaur land to Eastern Ordoria
 	trigger = {
 		tag = ORD
 		any_owned_state = {
-			is_core_of = EOR
+			OR = {
+				is_core_of = EOR
+				is_core_of = SKA
+			}
 		}
 		EOR = {
 			is_subject_of = ORD
 		}
 	}
 	
-	fire_only_once = yes
+	#fire_only_once = yes
 	
 	mean_time_to_happen = {
 		days = 3
@@ -3477,6 +3491,11 @@ country_event = {#Dealing with the Gentry
 		ai_chance = {
 			factor = 15
 		}
+		trigger = {
+			NOT = {
+				has_government = monarchy_absolute
+			}
+		}
 		set_country_flag = ORD_stop_gentry
 	}
 }
@@ -3520,7 +3539,7 @@ country_event = {#Lothinnys DESTROYS College-Educated Princeling with Facts and 
 		name = ord.65.a
 		larennis_cynicism_big = yes
 		subtract_from_variable = {
-			larennis_naivete = 10
+			larennis_naivete = 15
 		}
 	}
 }
@@ -3538,7 +3557,7 @@ country_event = {#Larennis tries to convince the nobles to think with their hear
 		name = ord.66.a
 		larennis_cynicism_big = yes
 		subtract_from_variable = {
-			larennis_naivete = 10
+			larennis_naivete = 15
 		}
 	}
 }
@@ -3632,7 +3651,7 @@ country_event = {#Hey maybe we should bludgeon the most powerful political insti
 }
 
 country_event = {#The decree is rejected (Idealist to Cynic)
-	id = ord.70 #nice
+	id = ord.70 ##fuck
 	title = ord.70.t
 	desc = ord.70.d
 	
@@ -4247,23 +4266,21 @@ country_event = {#mom! Vernythe is talking to himself again!
 			character = ORD_isvenith_lothinnys
 			slot = political_advisor
 		}
-		add_advisor_role = {
-			character = ORD_isvenith_lothinnys
-			advisor = {
-				slot = prisoners_guests
-				cost = 25
-				available = {
-					has_government = theocrat
-				}
-				traits = {
-					steward_house_arrest
-				}
-			}
-		}
 		add_political_power = -50
 		add_popularity = {
 			ideology = puritan
 			popularity = -0.1
+		}
+		effect_tooltip = {
+			add_advisor_role = {
+				character = ORD_isvenith_lothinnys
+				advisor = {
+					slot = prisoners_guests
+					traits = {
+						steward_house_arrest
+					}
+				}
+			}
 		}
 	}
 }
@@ -4349,33 +4366,34 @@ country_event = {#raiding sus moderate nobles
 		subtract_from_variable = {
 			ORD_moderates_influence = 1
 		}
+		show_ideas_tooltip = ORD_tasar_beijyre
+		show_ideas_tooltip = ORD_alwyen
 		#make 2 advisors for prisoners, yum!
-		add_advisor_role = {
-			character = ORD_tasar_beijyre
-			advisor = {
-				slot = prisoners_guests
-				cost = 25
-				available = {
-					has_government = theocrat
+		effect_tooltip = {
+			add_advisor_role = {
+				character = ORD_tasar_beijyre
+				advisor = {
+					slot = prisoners_guests
+					traits = {
+						state_seized_assets
+					}
 				}
-				traits = {
-					state_seized_assets
+			}
+			remove_advisor_role = {
+				character = ORD_alwyen
+				slot = political_advisor
+			}
+			add_advisor_role = {
+				character = ORD_alwyen
+				advisor = {
+					slot = prisoners_guests
+					traits = {
+						former_optimist
+					}
 				}
 			}
 		}
-		add_advisor_role = {
-			character = ORD_alwyen
-			advisor = {
-				slot = prisoners_guests
-				cost = 25
-				available = {
-					has_government = theocrat
-				}
-				traits = {
-					former_optimist
-				}
-			}
-		}
+		set_country_flag = ORD_sophists_arrested_moderates
 	}
 	option = {#exile them
 		name = ord.91.b
@@ -4436,28 +4454,18 @@ country_event = {#ordoria exiles rich person, wants to come to ungerdaler
 	option = {#sure
 		name = ord.92.a
 		
+		set_country_flag = UNG_accepted_beijyre_exile
+		
 		ai_chance = {
 			factor = 1
 		}
 		ORD = {
 			add_opinion_modifier = {
 				target = UNG
-				modifier = small_decrease
+				modifier = dislike_opinion
 			}
-		}
-		add_advisor_role = {
-			character = ORD_tasar_beijyre
-			advisor = {
-				slot = prisoners_guests
-				cost = 50
-				available = {
-					NOT = {
-						is_subject_of = ORD
-					}
-				}
-				traits = {
-					rich_exiled_noble
-				}
+			ORD_tasar_beijyre = {
+				set_nationality = UNG
 			}
 		}
 	}
@@ -4515,16 +4523,19 @@ country_event = {#princeling put under house arrest
 		ai_chance = {
 			factor = 1
 		}
-		add_advisor_role = {
-			character = ORD_larennis_valinthir
-			advisor = {
-				slot = prisoners_guests
-				cost = 50
-				available = {
-					has_government = theocrat
-				}
-				traits = {
-					princeling_house_arrest
+		ORD_larennis_valinthir = {
+			remove_advisor_role = {
+			  slot = political_advisor
+			}
+		}
+		effect_tooltip = {
+			add_advisor_role = {
+				character = ORD_larennis_valinthir
+				advisor = {
+					slot = prisoners_guests
+					traits = {
+						princeling_house_arrest
+					}
 				}
 			}
 		}
@@ -4544,7 +4555,7 @@ country_event = {#campaign of terror
 		ai_chance = {
 			factor = 1
 		}
-		add_idea = ORD_guerilla_campaign
+		add_ideas = ORD_guerilla_campaign
 	}
 }
 
@@ -4626,20 +4637,728 @@ country_event = {#derathur kidnapped yo
 	option = {#yooooo sick
 		name = ord.99.a
 		add_war_support = 0.1
-		add_advisor_role = {
-			character = RTH_alucien_derathur
-			advisor = {
-				slot = prisoners_guests
-				cost = 25
-				available = {
-					NOT = {
-						is_subject_of = RTH
+		effect_tooltip = {
+			add_advisor_role = {
+				character = RTH_alucien_derathur
+				advisor = {
+					slot = prisoners_guests
+					traits = {
+						heresiarch
 					}
 				}
-				traits = {
-					heresiarch
+			}
+		}
+	}
+}
+
+country_event = { #Captured Revolutionaries
+	id = ord.100
+	title = ord.100.t
+	desc = ord.100.d
+	
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				tag = ORD
+				controls_state = 118
+			}
+			AND = {
+				tag = EOR
+				controls_state = 118
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 13
+	}
+	
+	immediate = {
+		hidden_effect = {
+			RTH = {
+				RTH_islwyn_crynan = {
+					set_nationality = ORD
+					set_variable = {
+						original_nationality = RTH.id
+					}
+				}
+				RTH_thwysyld_mynirad = {
+					set_nationality = ORD
+					set_variable = {
+						original_nationality = RTH.id
+					}
+				}
+				RTH_tyndwyl_thysara = {
+					set_nationality = ORD
+					set_variable = {
+						original_nationality = RTH.id
+					}
 				}
 			}
+		}
+	}
+	
+	option = {#Yoda death sound
+		name = ord.100.a
+		
+		RTH_islwyn_crynan = {
+			custom_effect_tooltip = RND_captured_enemy_tt
+			
+			hidden_effect = {
+				remove_advisor_role = {
+				  slot = political_advisor
+				}
+				add_advisor_role = {
+					advisor = {
+						slot = prisoners_guests
+						traits = {
+							skilled_orator
+							captured_rebel_trait
+						}
+						
+						cost = 9999
+					}
+				}
+				#Give EOR some weapons if they exist, give them to ORD otherwise
+				if = {
+					limit = {
+						country_exists = EOR
+					}
+					EOR = {
+						country_event = {
+							id = ord.116
+							days = 15
+						}
+					}
+				}
+				else = {
+					ORD = {
+						country_event = {
+							id = ord.116
+							days = 15
+						}
+					}
+				}
+			}
+		}
+		
+		RTH_thwysyld_mynirad = {
+			custom_effect_tooltip = RND_captured_enemy_tt
+			
+			hidden_effect = {
+				remove_advisor_role = {
+				  slot = political_advisor
+				}
+				add_advisor_role = {
+					advisor = {
+						slot = prisoners_guests
+						traits = {
+							experienced_rosite
+							captured_rebel_trait
+						}
+						
+						cost = 9999
+					}
+				}
+			}
+		}
+		
+		RTH_tyndwyl_thysara = {
+			custom_effect_tooltip = RND_captured_enemy_tt
+			
+			hidden_effect = {
+				remove_advisor_role = {
+				  slot = political_advisor
+				}
+				add_advisor_role = {
+					advisor = {
+						slot = prisoners_guests
+						traits = {
+							champion_of_the_people
+							drunkard
+							captured_rebel_trait
+						}
+						
+						cost = 9999
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {#Lirothlind agrees to trade
+	id = ord.101
+	title = ord.101.t
+	desc = ord.101.d
+	
+	is_triggered_only = yes
+	
+	option = {#W
+		name = ord.101.a
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.02
+		}
+		
+		custom_effect_tooltip = ORD_LIR_trade_when_we_do_focus_tt
+	}
+}
+
+country_event = {#Lirothlind declines trade
+	id = ord.102
+	title = ord.102.t
+	desc = ord.102.d
+	
+	is_triggered_only = yes
+	
+	option = {#L, domestic trade it is then
+		name = ord.102.a
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = -0.02
+		}
+		add_ideas = ORD_trade_domestic
+	}
+}
+
+country_event = {#Trade in exchange for supporting the monarchy
+	id = ord.103
+	title = ord.103.t
+	desc = ord.103.d
+	
+	is_triggered_only = yes
+	
+	option = {#Yeah - pleases Royalists, pisses off Sophists
+		name = ord.103.a
+		ai_chance = {
+			factor = 3
+		}
+		custom_effect_tooltip = ORD_please_mods_2
+		add_to_variable = {
+			ORD_moderates_loyalty = 2
+		}
+		custom_effect_tooltip = ORD_displease_faiths_7
+		subtract_from_variable = {
+			ORD_faithful_loyalty = 7
+		}
+		LIR = {
+			country_event = {
+				id = lir.11
+				days = 3
+			}
+		}
+	}
+	
+	option = {#Nah - pleases Sophists, pisses off Royalists
+		name = ord.103.b
+		ai_chance = {
+			factor = 3
+			modifier = {
+				has_government = puritan
+				factor = 0.5
+			}
+			modifier = {
+				has_government = theocrat
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = -0.02
+		}
+		custom_effect_tooltip = ORD_displease_mods_1
+		subtract_from_variable = {
+			ORD_moderates_loyalty = 1
+		}
+		custom_effect_tooltip = ORD_please_faiths_3
+		add_to_variable = {
+			ORD_faithful_loyalty = 3
+		}
+		add_ideas = ORD_trade_domestic
+		LIR = {
+			country_event = {
+				id = lir.12
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = {#Steel Troubles
+	id = ord.104
+	title = ord.104.t
+	desc = ord.104.d
+	
+	trigger = {
+		tag = ORD
+		check_variable = {
+			num_divisions > ORD_steel_crisis_division_limit
+		}
+		has_idea = ORD_looming_steel_crisis_idea
+	}
+	
+	fire_only_once = yes
+	
+	option = {#Oh god oh fuck
+		name = ord.104.a
+		remove_ideas = ORD_looming_steel_crisis_idea
+		add_dynamic_modifier = {
+			modifier = ORD_steel_crisis_hit
+		}
+		custom_effect_tooltip = ORD_recruiting_more_bad_tt
+	}
+}
+
+country_event = {#Matter of the Revolution - Idealist
+	id = ord.105
+	title = ord.105.t
+	desc = ord.105.d
+	
+	is_triggered_only = yes
+	
+	option = {#Derathur, I have come to bargain
+		name = ord.105.a
+		RTH = {
+			country_event = {
+				id = rth.79
+				days = 10
+			}
+		}
+	}
+}
+
+country_event = {#Matter of the Revolution - Rthaur Response
+	id = ord.106
+	title = ord.106.t
+	desc = ord.106.d
+	
+	is_triggered_only = yes
+	
+	option = {#Seriously what did you expect
+		name = ord.106.a
+		add_political_power = -35
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = -0.04
+		}
+		set_country_flag = ORD_royalists_war_rthaur
+		mark_focus_tree_layout_dirty = yes
+		declare_war_on = {
+			target = RTH
+			type = civil_war
+		}
+	}
+}
+
+country_event = {#Matter of the Revolution - Cynic
+	id = ord.107
+	title = ord.107.t
+	desc = ord.107.d
+	
+	is_triggered_only = yes
+	
+	option = {#Time for a heated gamer moment
+		name = ord.107.a
+		add_war_support = 0.03
+		set_country_flag = ORD_royalists_war_rthaur
+		mark_focus_tree_layout_dirty = yes
+		declare_war_on = {
+			target = RTH
+			type = civil_war
+		}
+	}
+}
+
+country_event = {#Larennis visits a battlefield
+	id = ord.108
+	title = ord.108.t
+	desc = ord.108.d
+	
+	is_triggered_only = yes
+	
+	option = {#Boi's gonna need therapy
+		name = ord.108.a
+		add_war_support = -0.02
+		add_timed_idea = {
+			idea = ORD_prince_with_you_idea
+			days = 133
+		}
+	}
+}
+
+country_event = { #Ordoria attacks Gythus - Seized
+	id = ord.109
+	title = ord.109.t
+	desc = ord.109.d
+	
+	is_triggered_only = yes
+	
+	option = {#lmao get rekt
+		name = ord.109.a
+		add_war_support = 0.02
+		transfer_state = 140
+		add_state_core = 140
+	}
+}
+
+country_event = { #Ordoria attacks Gythus - Stalemate
+	id = ord.110
+	title = ord.110.t
+	desc = ord.110.d
+	
+	is_triggered_only = yes
+	
+	option = {#do these even happen?
+		name = ord.110.a
+	}
+}
+
+country_event = { #Ordoria attacks Gythus - Falling Back
+	id = ord.111
+	title = ord.111.t
+	desc = ord.111.d
+	
+	is_triggered_only = yes
+	
+	option = {#oh god oh fuck
+		name = ord.111.a
+		add_war_support = -0.02
+	}
+}
+
+country_event = { #Concessions to Skaelinger - Deal!
+	id = ord.112
+	title = ord.112.t
+	desc = ord.112.d
+	
+	is_triggered_only = yes
+	
+	option = {#yay?
+		name = ord.112.a
+		effect_tooltip = {
+			white_peace = SKA
+		}
+		hidden_effect = {
+			white_peace = {
+				tag = SKA
+				message = ORD_SKA_white_peace_ORD_concessions_tt
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					any_country = {
+						OR = {
+							tag = ORD
+							is_subject_of = ORD
+						}
+						owns_state = 106
+					}
+				}
+				106 = {
+					set_state_name = "Álfrskaut"
+				}
+				SKA = {
+					add_state_core = 106
+					transfer_state = 106
+					give_resource_rights = {
+						receiver = ORD
+						state = 106
+						resources = { steel }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						OR = {
+							tag = ORD
+							is_subject_of = ORD
+						}
+						owns_state = 125
+					}
+				}
+				125 = {
+					set_state_name = "Thurgard"
+				}
+				SKA = {
+					add_state_core = 125
+					transfer_state = 125
+					give_resource_rights = {
+						receiver = ORD
+						state = 125
+						resources = { steel }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						OR = {
+							tag = ORD
+							is_subject_of = ORD
+						}
+						owns_state = 133
+					}
+				}
+				133 = {
+					set_state_name = "Khoringr"
+				}
+				SKA = {
+					add_state_core = 133
+					transfer_state = 133
+					give_resource_rights = {
+						receiver = ORD
+						state = 133
+						resources = { steel }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						OR = {
+							tag = ORD
+							is_subject_of = ORD
+						}
+						owns_state = 135
+					}
+				}
+				135 = {
+					set_state_name = "Svinnersút"
+				}
+				SKA = {
+					add_state_core = 135
+					transfer_state = 135
+					give_resource_rights = {
+						receiver = ORD
+						state = 135
+						resources = { steel }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						OR = {
+							tag = ORD
+							is_subject_of = ORD
+						}
+						owns_state = 139
+					}
+				}
+				139 = {
+					set_state_name = "Mersingbjarg"
+				}
+				SKA = {
+					add_state_core = 139
+					transfer_state = 139
+					give_resource_rights = {
+						receiver = ORD
+						state = 139
+						resources = { steel }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						OR = {
+							tag = ORD
+							is_subject_of = ORD
+						}
+						owns_state = 1270
+					}
+				}
+				SKA = {
+					add_state_core = 1270
+					transfer_state = 1270
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						OR = {
+							tag = ORD
+							is_subject_of = ORD
+						}
+						owns_state = 1271
+					}
+				}
+				SKA = {
+					add_state_core = 1271
+					transfer_state = 1271
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						OR = {
+							tag = ORD
+							is_subject_of = ORD
+						}
+						owns_state = 1272
+					}
+				}
+				SKA = {
+					add_state_core = 1272
+					transfer_state = 1272
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						OR = {
+							tag = ORD
+							is_subject_of = ORD
+						}
+						owns_state = 1274
+					}
+				}
+				1274 = { #Impassable
+					set_state_name = "Álfrskaut Peaks"
+				}
+				SKA = {
+					add_state_core = 1274
+					transfer_state = 1274
+					give_resource_rights = {
+						receiver = ORD
+						state = 1274
+						resources = { steel }
+					}
+				}
+			}
+			remove_state_core = 106
+			remove_state_core = 125
+			remove_state_core = 133
+			remove_state_core = 135
+			remove_state_core = 139
+			remove_state_core = 1270
+			remove_state_core = 1271
+			remove_state_core = 1272
+			EOR = {
+				remove_state_core = 106
+				remove_state_core = 125
+				remove_state_core = 133
+				remove_state_core = 135
+				remove_state_core = 139
+				remove_state_core = 1270
+				remove_state_core = 1271
+				remove_state_core = 1272
+			}
+		}
+		larennis_idealism_medium = yes
+		custom_effect_tooltip = ORD_SKA_transfer_concession_states_tt
+		set_country_flag = ORD_moderate_skaelinger_peace_succeeded
+	}
+}
+
+country_event = { #Concessions to Skaelinger - No Deal
+	id = ord.113
+	title = ord.113.t
+	desc = ord.113.d
+	
+	is_triggered_only = yes
+	
+	option = {#ahw :(
+		name = ord.113.a
+		ORD_worsen_royal_power_3 = yes
+		larennis_cynicism_medium = yes
+		set_country_flag = ORD_moderate_skaelinger_peace_failed
+	}
+}
+
+country_event = { #Peace with Skaelinger - Deal
+	id = ord.114
+	title = ord.114.t
+	desc = ord.114.d
+	
+	is_triggered_only = yes
+	
+	option = {#yay
+		name = ord.114.a
+		ORD_improve_royal_power_2 = yes
+		larennis_idealism_medium = yes
+		
+		effect_tooltip = {
+			white_peace = SKA
+		}
+		hidden_effect = {
+			white_peace = {
+				tag = SKA
+				message = ORD_SKA_white_peace_tt
+			}
+		}
+		
+		set_country_flag = ORD_moderate_skaelinger_peace_succeeded
+	}
+}
+
+country_event = { #Peace with Skaelinger - No Deal
+	id = ord.115
+	title = ord.115.t
+	desc = ord.115.d
+	
+	is_triggered_only = yes
+	
+	option = {#oh god oh fuck
+		name = ord.115.a
+		ORD_worsen_royal_power_2 = yes
+		larennis_cynicism_medium = yes
+		
+		set_country_flag = ORD_moderate_skaelinger_peace_failed
+	}
+}
+
+country_event = { #Rthaur Weapons Seized (triggered in ord.100)
+	id = ord.116
+	title = ord.116.t
+	desc = ord.116.d
+	
+	is_triggered_only = yes
+	
+	option = {#pog
+		name = ord.116.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			amount = 12500
+			producer = RTH
+		}
+		add_equipment_to_stockpile = {
+			type = ranged_equipment_1
+			amount = 5000
+			producer = RTH
+		}
+	}
+}
+
+country_event = { #Moderates - Reactionary Society Stabilizes
+	id = ord.117
+	title = ord.117.t
+	desc = ord.117.d
+	
+	trigger = {
+		has_completed_focus = ORD_reassert_status_quo
+		has_government = monarchy_absolute
+		NOT = {
+			has_idea = ORD_stabilizing_social_fabric
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	fire_only_once = yes
+	
+	option = {#pog
+		name = ord.117.a
+		swap_ideas = {
+			remove_idea = ORD_stabilizing_social_fabric
+			add_idea = ORD_stable_social_fabric
 		}
 	}
 }

@@ -3,7 +3,7 @@ sub_units = {
 		sprite = destroyer
 		map_icon_category = ship
 		priority = 3
-		active = yes
+		active = no #MAKE SURE TO ENABLE IN TECH OR THE EQUIPMENT BECOMES UNDEPLOYABLE
 		type = { screen_ship }
 		need = { ship_hull_light = 1 }
 		

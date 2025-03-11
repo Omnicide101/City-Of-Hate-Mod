@@ -1590,11 +1590,43 @@ ideas = {
 			removal_cost = -1
 		}
 		
+		greska_da_great_spida_religion = {
+			
+			visible = {
+				original_tag = STB
+			}
+			
+			allowed = {
+				original_tag = STB
+			}
+			
+			available = {
+				original_tag = STB
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = religion_greska_da_great_spida
+			
+			traits = {
+				greska_da_great_spida_bonuses
+			}
+			
+			removal_cost = -1
+		}
+		
 		generic_religion = {
 			allowed = {
 				OR = {
 					tag = ATH
 					tag = DEL
+					tag = THA
+					tag = SAL
+					tag = AGE
+					tag = AKK
+					tag = TRS
 				}
 			}
 			
@@ -1602,6 +1634,11 @@ ideas = {
 				OR = {
 					tag = ATH
 					tag = DEL
+					tag = THA
+					tag = SAL
+					tag = AGE
+					tag = AKK
+					tag = TRS
 				}
 			}
 			

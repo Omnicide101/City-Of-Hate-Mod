@@ -4,6 +4,29 @@ ideas = {
 		
 		#NATIONAL SPIRITS
 		
+		UNG_perkav_intervention_idea = {
+		
+			allowed = {
+				PRK = {
+					has_civil_war = yes
+				}
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_volunteer_expedition_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				send_volunteer_divisions_required = -0.75
+				send_volunteer_size = 8
+				send_volunteers_tension = -1
+			}
+		}
+		
 		UNG_literate_society = {
 		
 			allowed = {
@@ -97,7 +120,7 @@ ideas = {
 				always = yes
 			}
 			
-			picture = spr_appropriate_church_riches
+			picture = SPR_appropriate_church_riches
 			
 			removal_cost = -1
 			
@@ -443,7 +466,7 @@ ideas = {
 						is_subject = yes
 					}
 					PRK = {
-						exists = NO
+						exists = no
 					}
 				}
 			}
@@ -474,7 +497,7 @@ ideas = {
 						is_subject = yes
 					}
 					PRK = {
-						exists = NO
+						exists = no
 					}
 				}
 			}
@@ -505,7 +528,7 @@ ideas = {
 						is_subject_of = UNG
 					}
 					BER = {
-						exists = NO
+						exists = no
 					}
 				}
 			}

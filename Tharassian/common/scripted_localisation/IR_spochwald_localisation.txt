@@ -1,0 +1,135 @@
+defined_text = { #Country
+	name = GetRooksTension
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_tension = -2
+			}
+		}
+		localization_key = GUI_SPW_RKS_peaceful
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_tension = -1
+			}
+		}
+		localization_key = GUI_SPW_RKS_calm
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_tension = 0
+			}
+		}
+		localization_key = GUI_SPW_RKS_usual
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_tension = 1
+			}
+		}
+		localization_key = GUI_SPW_RKS_uneasy
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_tension = 2
+			}
+		}
+		localization_key = GUI_SPW_RKS_restless
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_tension = 3
+			}
+		}
+		localization_key = GUI_SPW_RKS_tense
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_tension = 4
+			}
+		}
+		localization_key = GUI_SPW_RKS_knife_edge
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_tension = 5
+			}
+		}
+		localization_key = GUI_SPW_RKS_powderkeg
+	}
+}
+
+defined_text = { #Country
+	name = GetRooksLoyalty
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_loyalty = -2
+			}
+		}
+		localization_key = GUI_SPW_RKS_hate
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_loyalty = -1
+			}
+		}
+		localization_key = GUI_SPW_RKS_distaste
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_loyalty = 0
+			}
+		}
+		localization_key = GUI_SPW_RKS_ambivalent
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_loyalty = 1
+			}
+		}
+		localization_key = GUI_SPW_RKS_adequate
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_loyalty = 2
+			}
+		}
+		localization_key = GUI_SPW_RKS_favourable
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_loyalty = 3
+			}
+		}
+		localization_key = GUI_SPW_RKS_fond
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_loyalty = 4
+			}
+		}
+		localization_key = GUI_SPW_RKS_cherished
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				SPW_rooks_loyalty = 5
+			}
+		}
+		localization_key = GUI_SPW_RKS_beloved
+	}
+}

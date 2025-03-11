@@ -11,10 +11,6 @@ commissiaries = {
 		available = {
 			has_country_flag = ORD_autumn_debate_done
 			OR = {
-				has_country_flag = ORD_domestic_imperialist
-				has_country_flag = ORD_domestic_theocrat
-			}
-			OR = {
 				has_government = puritan
 				has_government = theocrat
 			}
@@ -33,9 +29,6 @@ commissiaries = {
 			}
 			NOT = {
 				has_country_flag = ORD_settler_governments_enabled
-			}
-			NOT = {
-				has_country_flag = ORD_domestic_moderate
 			}
 		}
 		
@@ -71,7 +64,9 @@ commissiaries = {
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
 			NOT = {
-				has_country_flag = ORD_settled_skaelinger
+				SKA = {
+					has_cosmetic_tag = SKA_OSG
+				}
 			}
 		}
 		
@@ -262,6 +257,10 @@ commissiaries = {
 						}
 						force_enable_resistance = SKA
 					}
+					
+					set_technology = {
+						dwarven_warriors = 0 #No Dwarf units for you
+					}
 				}
 			}
 		}
@@ -311,7 +310,9 @@ commissiaries = {
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
 			NOT = {
-				has_country_flag = ORD_settled_stahlhof
+				STA = {
+					has_cosmetic_tag = STA_OSG
+				}
 			}
 		}
 		
@@ -676,7 +677,9 @@ commissiaries = {
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
 			NOT = {
-				has_country_flag = ORD_settled_nochwald
+				NOC = {
+					has_cosmetic_tag = NOC_OSG
+				}
 			}
 		}
 		
@@ -714,7 +717,7 @@ commissiaries = {
 			}
 			
 			set_province_name = {
-				id = 8473
+				id = 9224
 				name = "Thyssorthor"
 			}
 			
@@ -1005,7 +1008,9 @@ commissiaries = {
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
 			NOT = {
-				has_country_flag = ORD_settled_wistingen
+				WIS = {
+					has_cosmetic_tag = WIS_OSG
+				}
 			}
 		}
 		
@@ -1369,7 +1374,9 @@ commissiaries = {
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
 			NOT = {
-				has_country_flag = ORD_settled_nastrogdar
+				NAS = {
+					has_cosmetic_tag = NAS_OSG
+				}
 			}
 		}
 		
@@ -1668,7 +1675,9 @@ commissiaries = {
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
 			NOT = {
-				has_country_flag = ORD_settled_trifersi
+				TRI = {
+					has_cosmetic_tag = TRI_OSG
+				}
 			}
 		}
 		
@@ -1987,7 +1996,9 @@ commissiaries = {
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
 			NOT = {
-				has_country_flag = ORD_settled_irenthar
+				IRT = {
+					has_cosmetic_tag = IRT_OSG
+				}
 			}
 		}
 		
@@ -2261,7 +2272,9 @@ commissiaries = {
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
 			NOT = {
-				has_country_flag = ORD_settled_perkavland
+				PRK = {
+					has_cosmetic_tag = PRK_OSG
+				}
 			}
 		}
 		
@@ -2277,6 +2290,38 @@ commissiaries = {
 			
 			hidden_effect = {
 				set_country_flag = ORD_settled_perkavland
+				every_state = {
+					limit = {
+						OR ={
+							is_core_of = PRK
+							is_core_of = NVT
+							is_core_of = KRL
+							is_core_of = SVC
+							is_core_of = VTZ
+							is_core_of = RLV
+							is_core_of = WLT
+							is_core_of = VLN
+							is_core_of = KRZ
+							is_core_of = LNK
+						}
+					}
+					add_core_of = PRK
+					if = {
+						limit = {
+							OR = {
+								is_owned_by = ORD
+								any_country = {
+									is_subject_of = ORD
+									owns_state = PREV
+								}
+							}
+							is_core_of = PRK
+						}
+						PRK = {
+							transfer_state = PREV
+						}
+					}
+				}
 				if = {
 					limit = {
 						NOT = {
@@ -2381,6 +2426,11 @@ commissiaries = {
 						division_template = "Vozhdi"
 					}
 					load_oob = "OSG_empty"
+					
+					set_technology = {
+						perkav_raiders = 0 #No Perkav units for you
+						perkav_raiders_naval = 0
+					}
 				}
 				
 				if = {

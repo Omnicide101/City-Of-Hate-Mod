@@ -2,29 +2,22 @@
 state={
 	id=916
 	name="STATE_916"
-
-	history={
-		owner  = XXX
-		add_core_of  = XXX
-		buildings = {
-			infrastructure = 2
-			farm = 1
-
-		}
-		victory_points = {
-			3853 3 
-		}
-		victory_points = {
-			8480 1 
-		}
-
-	}
-
 	provinces={
 		626 2673 3888 8460 
 	}
-	manpower=3796
 	buildings_max_level_factor=1.000
-	state_category=rural
 	local_supplies=5.000
+	state_category = rural
+	manpower = 5771
+		
+	history={
+		owner = SAL
+		buildings = {
+			infrastructure = 1
+			forge = 1
+			farm = 1
+		}
+		add_core_of = SAL
+		add_core_of = TRX
+	}
 }

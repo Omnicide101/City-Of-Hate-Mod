@@ -24,19 +24,22 @@ ungerdaler_buddies = {
 			is_in_faction_with = UNG #accounting for the 'Approach Rimatü' focus in the expansionist path
 		}
 	}
+	
+	abort_when_not_enabled = yes
+	
 	ai_strategy = {
 		type = befriend
-		id = "UNG"
+		id = UNG
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 	ai_strategy = {
 		type = protect
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 }
@@ -63,22 +66,22 @@ stab_the_baguette_elves = {
 	
 	ai_strategy = {
 		type = conquer
-		id = "LIR"			
+		id = LIR			
 		value = 200
 	}
 	ai_strategy = {
 		type = invade
-		id = "LIR"			
+		id = LIR			
 		value = 200
 	}
 	ai_strategy = {
 		type = declare_war
-		id = "LIR"
+		id = LIR
 		value = 200
 	}
 	ai_strategy = {
 		type = diplo_action_desire
-		id = "LIR"
+		id = LIR
 		target = generate_wargoal
 		value = 200
 	}
@@ -88,6 +91,8 @@ default_unit_production = {
 	enable = {
 		original_tag = RMT
 	}
+	
+	abort_when_not_enabled = yes
 	
 	ai_strategy = {
 		type = role_ratio
@@ -116,7 +121,7 @@ default_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = archer
-		value = 15
+		value = 25
 	}
 	
 	ai_strategy = {
@@ -135,5 +140,17 @@ default_unit_production = {
 		type = role_ratio
 		id = heavy_cavalry
 		value = 0
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 60
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = train
+		value = 10
 	}
 }

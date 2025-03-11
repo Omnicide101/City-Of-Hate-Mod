@@ -1,6 +1,33 @@
 ﻿capital = 503
 
-set_oob = "empty"
+set_oob = "DEL_1936"
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
 
 
 set_technology ={
@@ -36,7 +63,8 @@ set_technology ={
 	feints = 1
 	war_bred_steeds = 1
 	mounted_knights = 1
-	basic_ship_hull = 1 
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 1939.1.1 = {
@@ -47,6 +75,26 @@ set_politics = {
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
+}
+
+add_opinion_modifier = {
+	target = HIH
+	modifier = liked_opinion
+}
+
+add_relation_modifier = {
+	target = HIH
+	modifier = liked_opinion_modifier
+}
+
+add_opinion_modifier = {
+	target = TES
+	modifier = supportive_opinion
+}
+
+add_relation_modifier = {
+	target = TES
+	modifier = supportive_opinion_modifier
 }
 
 set_popularities = {
@@ -70,4 +118,5 @@ recruit_character = DEL_karstora_brightblade
 add_ideas = {
 	human_country
 	generic_religion
+	MASLEAGUE_member_wavering
 }

@@ -35,7 +35,7 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			add_political_power = 75
+			add_political_power = 125
 			add_timed_idea = { idea = STA_the_bear_of_stahlhof_idea days = 180 }
 			custom_effect_tooltip = STA_unlock_politics_tt
 		}
@@ -106,7 +106,7 @@ focus_tree = {
 		y = 2
 		
 		ai_will_do = {
-			factor = 25 #Priority
+			factor = 50 #Priority
 		}
 		
 
@@ -536,7 +536,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = STA_stahlplan_venoehr
+		id = STA_stahlplan_karis
 		icon = GFX_goal_generic_position_armies
 		cost = 4
 		prerequisite = {
@@ -550,7 +550,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			custom_effect_tooltip = STA_stahlplan_venoehr_ctt
+			custom_effect_tooltip = STA_stahlplan_karis_ctt
 		}
 
 	}
@@ -581,7 +581,7 @@ focus_tree = {
 			focus = STA_stahlplan_zhertis
 		}
 		prerequisite = {
-			focus = STA_stahlplan_venoehr
+			focus = STA_stahlplan_karis
 		}
 		prerequisite = {
 			focus = STA_stahlplan_anzitt
@@ -1401,6 +1401,22 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 15
+			modifier = {
+				factor = 0.1
+				OR = {
+					STA_should_buff_puritanism = yes
+					STA_should_buff_republicanism = yes
+					STA_should_buff_theocracy = yes
+					STA_should_buff_aristocracy = yes
+					
+				}
+			}
+			modifier = {
+				NOT = {	
+					has_completed_focus = STA_the_unthinkable_deal
+				}
+				factor = 0.1 #Gotta sort the political situation first
+			}
 		}
 		
 
@@ -1538,6 +1554,22 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 15
+			modifier = {
+				factor = 0.1
+				OR = {
+					STA_should_buff_puritanism = yes
+					STA_should_buff_republicanism = yes
+					STA_should_buff_theocracy = yes
+					STA_should_buff_aristocracy = yes
+					
+				}
+			}
+			modifier = {
+				NOT = {	
+					has_completed_focus = STA_the_unthinkable_deal
+				}
+				factor = 0.1 #Gotta sort the political situation first
+			}
 		}
 		
 		continue_if_invalid = yes
@@ -1692,6 +1724,12 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 5 #Save for last, probably
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = STA_the_unthinkable_deal #Prioritize!
+				}
+			}
 		}
 		completion_reward = {
 			add_popularity = { ideology = monarchy_absolute popularity = 0.05 }
@@ -1802,6 +1840,22 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 24
+			modifier = {
+				factor = 0.1
+				OR = {
+					STA_should_buff_puritanism = yes
+					STA_should_buff_republicanism = yes
+					STA_should_buff_theocracy = yes
+					STA_should_buff_aristocracy = yes
+					
+				}
+			}
+			modifier = {
+				NOT = {	
+					has_completed_focus = STA_the_unthinkable_deal
+				}
+				factor = 0.1 #Gotta sort the political situation first
+			}
 		}
 		
 		continue_if_invalid = yes
@@ -1966,6 +2020,16 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 75 #Prioritize the PP
+			modifier = {
+				factor = 0.1
+				OR = {
+					STA_should_buff_puritanism = yes
+					STA_should_buff_republicanism = yes
+					STA_should_buff_theocracy = yes
+					STA_should_buff_aristocracy = yes
+					
+				}
+			}
 		}
 		
 		continue_if_invalid = yes
@@ -2084,7 +2148,7 @@ focus_tree = {
 		y = 4
 		
 		ai_will_do = {
-			factor = 27
+			factor = 50 #Important!! Get troops back
 		}
 		
 		completion_reward = {
@@ -2128,7 +2192,7 @@ focus_tree = {
 		y = 5
 		
 		ai_will_do = {
-			factor = 30
+			factor = 50 #Important!! Get troops back
 		}
 		
 		completion_reward = {

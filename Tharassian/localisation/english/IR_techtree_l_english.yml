@@ -163,6 +163,13 @@
  standardized_gears_desc:0 "Our crossbow-makers are still very unorganized, making crossbows according to their own designs. By requiring them to produce alongside standardized schematics, we can make it much easier to wield our crossbows."
  repeating_crossbow:0 "Repeating Crossbow"
  repeating_crossbow_desc:0 "Combining the actions of spanning the bow, placing the bolt and shooting into a one-handed motion, the repeating crossbow has a far higher rate of fire in exchange for limited range and power. Dipping the bolts in poison offsets the lack of power against lightly-armoured targets."
+
+ ########################################################################
+ ## Technologies : Creature Taming
+ ########################################################################
+ basic_dragonfly_creature:0 "Griffinfly Taming"
+ basic_dragonfly_creature_vanilla:0 "Griffinfly Taming"
+
  ########################################################################
  ## Technologies : Culture                                              #
  ########################################################################

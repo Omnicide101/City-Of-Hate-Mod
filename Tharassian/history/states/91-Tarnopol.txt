@@ -16,7 +16,7 @@ state={
 		owner = ORD
 		buildings = {	
 		infrastructure = 1
-		forge = 2
+		forge = 1
 		farm = 2
 		}	
 		add_core_of = ORD

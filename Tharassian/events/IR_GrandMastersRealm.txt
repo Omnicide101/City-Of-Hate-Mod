@@ -753,13 +753,13 @@ country_event = { #Separatist Uprisings
 		}
 
 		random_list = { #Cortineal Loyalty
-			40 = { 
+			25 = { 
 				country_event = { #Loyal 
 					days = 2
 					id = gmr.16
 				}
 			}
-			60 = { 
+			75 = { 
 				country_event = { #Revolt
 					days = 2
 					id = gmr.17
@@ -768,13 +768,13 @@ country_event = { #Separatist Uprisings
 		}
 		
 		random_list = { #Nastrogdar Loyalty
-			35 = { 
+			25 = { 
 				country_event = { #Loyal 
 					days = 2
 					id = gmr.18
 				}
 			}
-			65 = { 
+			75 = { 
 				country_event = { #Revolt
 					days = 2
 					id = gmr.19
@@ -783,13 +783,13 @@ country_event = { #Separatist Uprisings
 		}
 		
 		random_list = { #Caltireth Loyalty
-			30 = { 
+			25 = { 
 				country_event = { #Loyal 
 					days = 2
 					id = gmr.20
 				}
 			}
-			70 = { 
+			75 = { 
 				country_event = { #Revolt
 					days = 2
 					id = gmr.21
@@ -934,6 +934,22 @@ country_event = { #Separatist Uprisings
 					add_state_core = 31
 					add_state_core = 14
 					load_oob = "IRT_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = IRT
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -944,13 +960,13 @@ country_event = { #Separatist Uprisings
 				factor = 9
 			}
 			random_list = { #Will it work?
-				10 = {
+				5 = {
 					country_event = { #Yes!
 						days = 2
 						id = gmr.26
 					}
 				}
-				90 = {
+				95 = {
 					country_event = { #Nope
 						days = 2
 						id = gmr.27
@@ -1034,6 +1050,22 @@ country_event = { #Separatist Uprisings
 					add_state_core = 46
 					add_state_core = 33
 					load_oob = "FEL_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = FEL
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -1044,13 +1076,13 @@ country_event = { #Separatist Uprisings
 				factor = 9
 			}
 			random_list = { #Will it work?
-				75 = {
+				95 = {
 					country_event = { #Nope
 						days = 2
 						id = gmr.29
 					}
 				}
-				25 = {
+				5 = {
 					country_event = { #Yes!
 						days = 2
 						id = gmr.28
@@ -1136,6 +1168,22 @@ country_event = { #Separatist Uprisings
 					add_state_core = 12
 					add_state_core = 30
 					load_oob = "KRT_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = KRT
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -1146,13 +1194,13 @@ country_event = { #Separatist Uprisings
 				factor = 9
 			}
 			random_list = { #Will it work?
-				80 = {
+				95 = {
 					country_event = { #Nope
 						days = 2
 						id = gmr.31
 					}
 				}
-				20 = {
+				5 = {
 					country_event = { #Yes!
 						days = 2
 						id = gmr.30
@@ -1242,6 +1290,22 @@ country_event = { #Separatist Uprisings
 					transfer_state = 21
 					transfer_state = 22
 					load_oob = "NAS_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = NAS
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -1252,13 +1316,13 @@ country_event = { #Separatist Uprisings
 				factor = 9
 			}
 			random_list = { #Will it work?
-				65 = {
+				95 = {
 					country_event = { #Nope
 						days = 2
 						id = gmr.34
 					}
 				}
-				35 = {
+				5 = {
 					country_event = { #Yes!
 						days = 2
 						id = gmr.35
@@ -1351,6 +1415,22 @@ country_event = { #Separatist Uprisings
 					transfer_state = 51
 					transfer_state = 61
 					load_oob = "KAL_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = KAL
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -1361,13 +1441,13 @@ country_event = { #Separatist Uprisings
 				factor = 9
 			}
 			random_list = { #Will it work?
-				15 = {
+				95 = {
 					country_event = { #Yes!
 						days = 2
 						id = gmr.36
 					}
 				}
-				85 = {
+				5 = {
 					country_event = { #Nope
 						days = 2
 						id = gmr.37
@@ -1463,6 +1543,22 @@ country_event = { #Separatist Uprisings
 					add_state_core = 53
 					add_state_core = 54
 					load_oob = "TRI_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = TRI
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -1558,6 +1654,22 @@ country_event = { #Separatist Uprisings
 					add_state_core = 71
 					add_state_core = 66
 					load_oob = "NAV_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = NAV
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -1568,13 +1680,13 @@ country_event = { #Separatist Uprisings
 				factor = 9
 			}
 			random_list = { #Will it work?
-				65 = {
+				95 = {
 					country_event = { #Nope
 						days = 2
 						id = gmr.39
 					}
 				}
-				35 = {
+				5 = {
 					country_event = { #Yes!
 						days = 2
 						id = gmr.40
@@ -1675,6 +1787,22 @@ country_event = { #Separatist Uprisings
 					add_state_core = 31
 					add_state_core = 14
 					load_oob = "IRT_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = IRT
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -1748,6 +1876,22 @@ country_event = { #Separatist Uprisings
 					add_state_core = 46
 					add_state_core = 33
 					load_oob = "FEL_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = FEL
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -1789,7 +1933,6 @@ country_event = { #Separatist Uprisings
 				remove_state_core = 18
 				remove_state_core = 16
 				remove_state_core = 23
-				remove_state_core = 24
 				remove_state_core = 12
 				
 				17 = {
@@ -1805,7 +1948,6 @@ country_event = { #Separatist Uprisings
 					transfer_state = 18
 					transfer_state = 16
 					transfer_state = 23
-					transfer_state = 24
 					transfer_state = 12
 					transfer_state = 19
 					
@@ -1817,13 +1959,28 @@ country_event = { #Separatist Uprisings
 					add_state_core = 16
 					add_state_core = 27
 					add_state_core = 23
-					add_state_core = 24
 					add_state_core = 12
 					add_state_core = 30
 					load_oob = "KRT_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
 				}
 				KRT = {
 					load_oob = "KRT_free"
+				}
+				transfer_units_fraction= {
+					target = KRT
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -1915,6 +2072,7 @@ country_event = {#Failed Suppression in Nastrogdar
 				remove_state_core = 22
 				remove_state_core = 723
 				remove_state_core = 49
+				remove_state_core = 24
 				
 				20 = {
 					set_state_name = "Nastrodoge"
@@ -1933,6 +2091,7 @@ country_event = {#Failed Suppression in Nastrogdar
 					add_state_core = 22
 					add_state_core = 723
 					add_state_core = 49
+					transfer_state = 24
 					
 					transfer_state = 25
 					transfer_state = 49
@@ -1942,7 +2101,24 @@ country_event = {#Failed Suppression in Nastrogdar
 					transfer_state = 20
 					transfer_state = 21
 					transfer_state = 22
+					transfer_state = 24
 					load_oob = "NAS_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = NAS
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -2043,6 +2219,22 @@ country_event = {#Succesful Suppression in Caltireth
 					transfer_state = 51
 					transfer_state = 61
 					load_oob = "KAL_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = KAL
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -2128,6 +2320,22 @@ country_event = {#Succesful Suppression in Caltireth
 					add_state_core = 53
 					add_state_core = 54
 					load_oob = "TRI_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = TRI
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 		}
@@ -2200,6 +2408,22 @@ country_event = {#Succesful Suppression in Caltireth
 					add_state_core = 71
 					add_state_core = 66
 					load_oob = "NAV_free"
+					
+					if = {
+						limit = {
+							ROOT = {
+								has_global_flag = GENERIC_northern_plains_alliance_created
+							}
+						}
+						country_event = ir.political.7
+					}
+				}
+				transfer_units_fraction= {
+					target = NAV
+					size = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
 				}
 			}
 			hidden_effect = {
@@ -2432,6 +2656,7 @@ country_event = {#Kingsmen Rebellion!
 				add_state_core = 64
 				add_state_core = 55
 				add_state_core = 56
+				transfer_state = 20
 				}
 			if = {
 				limit = {
@@ -2449,16 +2674,6 @@ country_event = {#Kingsmen Rebellion!
 				UNG = {
 					remove_ideas = UNG_trade_realm
 				}
-			}
-			
-			delete_unit_template_and_units = {
-				division_template = "Enforcers"
-			}
-			delete_unit_template_and_units = {
-				division_template = "Black Gargoyles"
-			}
-			delete_unit_template_and_units = {
-				division_template = "Sail Knights"
 			}
 			
 			set_country_flag = GMR_kingsmen_rebellion_flag
@@ -2479,7 +2694,7 @@ country_event = {#Kingsmen Rebellion!
 			
 			transfer_units_fraction = {
 				target = NPC
-				size = 0.5
+				size = 0.4
 			}
 
 			every_state = {
@@ -2539,6 +2754,65 @@ country_event = {#Kingsmen Rebellion!
 		
 			NPC = {
 				load_oob = "NPC_revolution"
+				
+				every_country_division = {
+					limit = {
+						OR = {
+							division_has_majority_template = garrison
+							division_has_majority_template = warband
+						}
+					}
+					change_division_template = {
+						division_template = "Town Watch"
+					}
+				}
+
+				every_country_division = {
+					limit = {
+						OR = {
+							division_has_majority_template = archer_shortbow
+							division_has_majority_template = archer_longbow
+							division_has_majority_template = arbalists
+						}
+					}
+					change_division_template = {
+						division_template = "Free Plainsmen"
+					}
+				}
+
+				every_country_division = {
+					limit = {
+						division_has_majority_template = heavy_cavalry
+					}
+					change_division_template = {
+						division_template = "Dawn Riders"
+					}
+				}
+
+				every_country_division = {
+					limit = {
+						division_has_majority_template = light_cavalry
+					}
+					change_division_template = {
+						division_template = "Sunset Riders"
+					}
+				}
+
+				delete_unit_template_and_units = {
+					division_template = "Enforcers"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Black Gargoyles"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Sea Bowmen"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Sail Knights"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Outrider Scouts"
+				}
 			}
 		}
 	}
@@ -2618,9 +2892,65 @@ country_event = {#Kingsmen Rebellion!
 			NPC = {
 				load_oob = "NPC_revolution"
 				
+				every_country_division = {
+					limit = {
+						OR = {
+							division_has_majority_template = garrison
+							division_has_majority_template = warband
+						}
+					}
+					change_division_template = {
+						division_template = "Town Watch"
+					}
+				}
+
+				every_country_division = {
+					limit = {
+						OR = {
+							division_has_majority_template = archer_shortbow
+							division_has_majority_template = archer_longbow
+							division_has_majority_template = arbalists
+						}
+					}
+					change_division_template = {
+						division_template = "Free Plainsmen"
+					}
+				}
+
+				every_country_division = {
+					limit = {
+						division_has_majority_template = heavy_cavalry
+					}
+					change_division_template = {
+						division_template = "Dawn Riders"
+					}
+				}
+
+				every_country_division = {
+					limit = {
+						division_has_majority_template = light_cavalry
+					}
+					change_division_template = {
+						division_template = "Sunset Riders"
+					}
+				}
+
+				delete_unit_template_and_units = {
+					division_template = "Enforcers"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Black Gargoyles"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Sea Bowmen"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Sail Knights"
+				}
 				delete_unit_template_and_units = {
 					division_template = "Outrider Scouts"
 				}
+				
 				change_tag_from = GMR
 			}
 		}

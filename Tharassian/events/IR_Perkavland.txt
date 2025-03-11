@@ -243,8 +243,8 @@ country_event = {#Wertszvorde Rejects
 			defender = {
 				state = 352
 				num_provinces = 1
-				on_win = wsz.3
-				on_lose = wsz.4
+				on_win = wsz.2
+				on_lose = wsz.3
 				on_cancel = wsz.3
 			}
 		}
@@ -298,7 +298,14 @@ country_event = {#The Union Reaches Out
 		name = prk.11.a
 		custom_effect_tooltip = PRK_union_warning_tt
 		ai_chance = {
-			factor = 7
+			factor = 1
+			modifier = {
+				NOT = {
+					has_government = puritan
+					has_government = monarchy_absolute
+				}
+				factor = 10
+			}
 		}
 		custom_effect_tooltip = KRZ_decrease_var_tooltip
 		subtract_from_variable = {
@@ -316,7 +323,7 @@ country_event = {#The Union Reaches Out
 	option = {#We're good
 		name = prk.11.b
 		ai_chance = {
-			factor = 3
+			factor = 5
 		}
 		custom_effect_tooltip = KRZ_increase_var_tooltip
 		add_to_variable = {
@@ -491,7 +498,9 @@ country_event = {#Reactionary Civil War!
 		UNG = {
 			set_country_flag = UNG_perkav_rebels
 		}
-		add_ideas = GENERIC_civil_war_isolation
+		hidden_effect = {
+			add_ideas = GENERIC_civil_war_isolation
+		}
 	}
 	
 	trigger = {
@@ -505,7 +514,7 @@ country_event = {#Reactionary Civil War!
 	}
 	
 	mean_time_to_happen = {
-		days = 150
+		days = 550 #Might seem long, but doing the Perkav Census takes a LONG time
 	}
 	
 	option = {#Support Krell
@@ -515,14 +524,10 @@ country_event = {#Reactionary Civil War!
 			factor = 1
 		}
 		
-		set_politics = {
-			ruling_party = monarchy_constitutional
-			elections_allowed = no	
-		}
-		
 		start_civil_war = {
+			ruling_party = monarchy_constitutional
 			ideology = monarchy_absolute
-			size = 0.5
+			size = 0.45
 			capital = 415
 			states = {
 				415
@@ -553,6 +558,18 @@ country_event = {#Reactionary Civil War!
 				647
 				648
 			}
+			
+			PREV = {
+				PRK_miroslav_zlatko = {
+					set_nationality = PREV.PREV
+				}
+				PRK_justýna_létalová = {
+					set_nationality = PREV.PREV
+				}
+			}
+			
+			promote_character = PRK_miroslav_zlatko
+			promote_character = PRK_justýna_létalová
 		}
 		
 		hidden_effect = {
@@ -574,8 +591,6 @@ country_event = {#Reactionary Civil War!
 				set_country_flag = PRK_reactionaries_flag
 				
 				add_ideas = GENERIC_civil_war_isolation
-				
-				retire_country_leader = yes
 				
 				if = {
 					limit = {
@@ -657,6 +672,10 @@ country_event = {#Reactionary Civil War!
 					}
 				}
 			}
+			
+			UNG = {
+				country_event = ung.83
+			}
 		}
 	}
 	
@@ -667,7 +686,7 @@ country_event = {#Reactionary Civil War!
 			factor = 0
 		}
 		
-		hidden_effect = {
+		hidden_effect = {		
 			PRK = {
 				set_capital = {
 					state = 415
@@ -676,8 +695,9 @@ country_event = {#Reactionary Civil War!
 		}
 
 		start_civil_war = {
+			ruling_party = monarchy_absolute
 			ideology = monarchy_constitutional
-			size = 0.5
+			size = 0.45
 			capital = 413
 			states = {
 				413
@@ -707,11 +727,25 @@ country_event = {#Reactionary Civil War!
 				634
 				418
 			}
+			
+			keep_political_party_members = yes
+			
+			PREV = {
+				PRK_wendelin_krell = {
+					set_nationality = PREV.PREV
+				}
+			}
+			
+			promote_character = {
+				character = PRK_wendelin_krell
+				ideology = monarchy_constitutional_ideology
+			}
 		}
 		
 		set_country_flag = PRK_reactionaries_flag
 		
 		hidden_effect = {
+			
 			set_party_name = {
 				ideology = monarchy_absolute
 				long_name = PRK_monarchy_absolute_reactionary
@@ -725,7 +759,7 @@ country_event = {#Reactionary Civil War!
 			
 			add_ideas = GENERIC_civil_war_isolation
 			
-			retire_country_leader = yes
+			promote_character = PRK_miroslav_zlatko
 			
 			if = {
 				limit = {
@@ -806,6 +840,9 @@ country_event = {#Reactionary Civil War!
 					add_idea = krostov_religion
 				}
 			}
+			UNG = {
+				country_event = ung.83
+			}
 		}
 	}
 }
@@ -833,6 +870,9 @@ country_event = {#Rename Krell's Hall on Victory
 			set_capital = {
 				state = 415
 			}
+			UNG = {
+				country_event = ung.84
+			}
 		}
 		413 = {
 			set_state_name = "Zlatko's Hall"
@@ -857,6 +897,11 @@ country_event = {#Rename Krell's Hall on Victory
 			name = "Zlatko's Hall"
 		}
 		add_political_power = 50
+		hidden_effect = {
+			UNG = {
+				country_event = ung.84
+			}
+		}
 	}
 }
 

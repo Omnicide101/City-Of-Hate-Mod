@@ -680,7 +680,7 @@ IRI_aggelos_scheming = {
 		state_target = yes
 
 		ai_will_do = {
-			factor = 8
+			factor = 1 #Don't split our fronts!
 		}
 
 		target_trigger = {
@@ -729,7 +729,7 @@ IRI_aggelos_scheming = {
 		icon = generic_nationalism
 
 		ai_will_do = {
-			factor = 8
+			factor = 34 #Close to home
 		}
 
 		state_target = yes
@@ -782,7 +782,7 @@ IRI_aggelos_scheming = {
 		state_target = yes
 
 		ai_will_do = {
-			factor = 8
+			factor = 30 #close to home
 		}
 
 		target_trigger = {
@@ -833,7 +833,7 @@ IRI_aggelos_scheming = {
 		state_target = yes
 
 		ai_will_do = {
-			factor = 8
+			factor = 28
 		}
 
 		target_trigger = {
@@ -884,7 +884,7 @@ IRI_aggelos_scheming = {
 		state_target = yes
 
 		ai_will_do = {
-			factor = 8
+			factor = 28
 		}
 
 		target_trigger = {
@@ -931,7 +931,7 @@ IRI_aggelos_scheming = {
 		icon = generic_nationalism
 
 		ai_will_do = {
-			factor = 8
+			factor = 24
 		}
 
 		state_target = yes
@@ -1760,6 +1760,17 @@ IRI_settling_tlarthingia = {
 		visible = {
 			has_completed_focus = IRI_explore_southern_frontier
 		}
+		
+		target_trigger = {
+			FROM = {
+				is_owned_by = IRI
+				is_controlled_by = IRI
+				NOT = {
+					is_core_of = IRI
+					has_state_flag = IRI_settled_state_flag
+				}
+			}
+		}
 
 		fire_only_once = yes
 
@@ -1771,6 +1782,12 @@ IRI_settling_tlarthingia = {
 			production_speed_buildings_factor = 0.05
 			production_factory_max_efficiency_factor = -0.1
 			resistance_target = -0.05
+		}
+		
+		remove_effect = {
+			FROM = {
+				set_state_flag = IRI_settled_state_flag
+			}
 		}
 
 	}
@@ -2838,7 +2855,6 @@ IRI_managing_TLA_occupation = {
 					free_building_slots = {
 						building = infrastructure
 						size > 0
-						include_locked = yes
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -3545,6 +3561,61 @@ IRI_dealing_with_terrorists = {
 
 IRI_debts_to_tlarthingia_category = {
 
+	IRI_paying_debts_mission = {
+
+		visible = {
+			NOT = {
+				has_country_flag = IRI_debts_repaid
+			}
+			has_dynamic_modifier = { modifier = IRI_debts_to_TLA }
+		}
+
+		activation = {
+			OR = {
+				has_completed_focus = IRI_slow_down_payments
+				has_completed_focus = IRI_paying_off_debt
+			}
+		}
+
+		is_good = yes
+
+		fire_only_once = no
+
+		days_mission_timeout = 60
+
+		available = {
+			check_variable = { IRI_debt_var > -0.03 }
+		}
+
+		timeout_effect = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = IRI_war_debts_TLA
+					add_idea = IRI_war_debts_TLA_example
+				}
+			}
+			activate_mission = IRI_paying_debts_mission
+			add_to_variable = { IRI_debt_var = 0.03 }
+			clamp_variable = {
+				var = IRI_debt_var
+				max = 0
+				min = -1
+			}
+			TLA = {
+				country_event = { id = tla.21 hours = 3 random = 6 }
+			}
+		}
+
+		complete_effect = {
+			TLA = {
+				news_event = { id = iri.131 hours = 2 }
+			}
+			news_event = { id = iri.131 hours = 2 }
+			set_country_flag = IRI_debts_repaid
+		}
+
+	}
+
 	IRI_speed_up_payments_decision = {
 	
 		ai_will_do = {
@@ -3614,61 +3685,6 @@ IRI_debts_to_tlarthingia_category = {
 				mission = IRI_paying_debts_mission
 				days = 25
 			}
-		}
-
-	}
-	
-	IRI_paying_debts_mission = {
-
-		visible = {
-			NOT = {
-				has_country_flag = IRI_debts_repaid
-			}
-			has_dynamic_modifier = { modifier = IRI_debts_to_TLA }
-		}
-
-		activation = {
-			OR = {
-				has_completed_focus = IRI_slow_down_payments
-				has_completed_focus = IRI_paying_off_debt
-			}
-		}
-
-		is_good = yes
-
-		fire_only_once = no
-
-		days_mission_timeout = 60
-
-		available = {
-			check_variable = { IRI_debt_var > -0.03 }
-		}
-
-		timeout_effect = {
-			effect_tooltip = {
-				swap_ideas = {
-					remove_idea = IRI_war_debts_TLA
-					add_idea = IRI_war_debts_TLA_example
-				}
-			}
-			activate_mission = IRI_paying_debts_mission
-			add_to_variable = { IRI_debt_var = 0.03 }
-			clamp_variable = {
-				var = IRI_debt_var
-				max = 0
-				min = -1
-			}
-			TLA = {
-				country_event = { id = tla.21 hours = 3 random = 6 }
-			}
-		}
-
-		complete_effect = {
-			TLA = {
-				news_event = { id = iri.131 hours = 2 }
-			}
-			news_event = { id = iri.131 hours = 2 }
-			set_country_flag = IRI_debts_repaid
 		}
 
 	}

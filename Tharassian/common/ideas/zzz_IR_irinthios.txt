@@ -1286,7 +1286,7 @@ ideas = {
 			}
 		}
 
-		IRI_reclamation_tax = {
+		IRI_reclamation_tax_idea = {
 
 			allowed = {
 				always = no

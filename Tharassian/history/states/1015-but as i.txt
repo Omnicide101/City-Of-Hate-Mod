@@ -1,11 +1,26 @@
-
-state={
-	id=1015
-	name="STATE_1015"
-	provinces={
+state = {
+	id = 1015
+	name = "STATE_1015"
+	provinces = {
 		1311 1837 2995 7336 
 	}
-	manpower=1 state_category=pastoral history = {owner = XXX add_core_of = XXX}
-	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	manpower = 7592
+	state_category = rural
+	history = {
+		victory_points = {
+			2995 3
+		}
+		victory_points = {
+			1311 1
+		}
+		buildings = {
+			infrastructure = 1
+			farm = 1
+			workshop = 1
+		}
+		owner = TRS
+		add_core_of = TRS
+	}
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
 }

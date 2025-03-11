@@ -1,0 +1,100 @@
+characters={
+	STB_traz_backshanka={
+		name="Traz Backshanka"
+		portraits={
+			civilian={
+				large="gfx/leaders/STB/Portrait_STB_Backshanka.dds"
+			}
+		}
+		country_leader={
+			desc="politics_STB_backshanka_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	STB_gruz_da_big_git={
+		name="Gruz Da Big Git"
+		portraits={
+			civilian={
+				large="gfx/leaders/STB/Portrait_STB_Da_Big_Git.dds"
+			}
+		}
+		country_leader={
+			desc="politics_STB_da_big_git_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	STB_kraz_da_shiniest={
+		name="Kraz Da Shiniest"
+		portraits={
+			civilian={
+				large="gfx/leaders/STB/Portrait_STB_Da_Shiniest.dds"
+			}
+		}
+		country_leader={
+			desc="politics_STB_da_shiniest_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	STB_muz_teef_eata={
+		name="Muz Teef-Eata"
+		portraits={
+			civilian={
+				large="gfx/leaders/STB/Portrait_STB_Teef_Eata.dds"
+			}
+		}
+		country_leader={
+			desc="politics_STB_teef_eata_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	STB_kezzik_loottaka={
+		name="Kezzik Loottaka"
+		portraits={
+			civilian={
+				large="gfx/leaders/STB/Portrait_STB_Loottaka.dds"
+			}
+		}
+		country_leader={
+			desc="politics_STB_loottaka_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	STB_vuska_spidalord={
+		name="Vuska Spidalord"
+		portraits={
+			civilian={
+				large="gfx/leaders/STB/Portrait_STB_Spidalord.dds"
+			}
+		}
+		country_leader={
+			desc="politics_STB_spidalord_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	STB_bruz_da_tallymarka={
+		name="Bruz da Tallymarka"
+		portraits={
+			civilian={
+				large="gfx/leaders/STB/Portrait_STB_Tallymarka.dds"
+			}
+		}
+		country_leader={
+			desc="politics_STB_tallymarka_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

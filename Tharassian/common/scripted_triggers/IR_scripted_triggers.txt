@@ -36,7 +36,7 @@ is_loyal_to_union = {
 	}
 }
 
-# checks if a country is one of the original freiprinzt√ºmer
+# checks if a country is one of the original freiprinztÅmer
 
 is_og_freiprinz = {
 	OR ={
@@ -58,6 +58,19 @@ is_og_freiprinz = {
 	}
 }
 
+# checks if a country is a Northern Plains separatist tag (NOT the Northern Plains Confederation!)
+is_og_northern_plains_state = {
+	OR = {
+		original_tag = IRT
+		original_tag = FEL
+		original_tag = TRI
+		original_tag = NAV
+		original_tag = KAL
+		original_tag = KLT
+		original_tag = NAS
+	}
+}
+
 # checks if a country is a Perkav tribe
 # not sure if original_tag = PRK alone is enough, so just in case
 is_og_perkav_chiefdom = {
@@ -72,6 +85,37 @@ is_og_perkav_chiefdom = {
 		original_tag = VLN
 		original_tag = KRZ
 		original_tag = LNK
+	}
+}
+
+# checks if a state is in the Oramfell/part of Vergall territory
+is_oramfell_state = {
+	OR = {
+		is_core_of = SKA
+		is_core_of = RMT
+		state = 133
+		state = 659
+		state = 179
+		state = 176
+		state = 139
+		state = 174
+		state = 173
+		state = 172
+		state = 106
+		state = 203
+		state = 207
+		state = 365
+		state = 815
+		state = 723
+		state = 22
+		state = 125
+		state = 135
+		state = 1271
+		state = 1272
+		state = 1273
+		state = 1274
+		state = 1275
+		state = 1276
 	}
 }
 
@@ -236,6 +280,9 @@ is_not_threat = {
 		}
 		THIS = {
 			is_sphered = yes
+		}
+		THIS = {
+			has_capitulated = yes
 		}
 	}
 }

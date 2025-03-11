@@ -21,5 +21,6 @@ state={
 				farm = 3
 			}
 		add_core_of = GOW
+		add_claim_by = ATH
 	}
 }

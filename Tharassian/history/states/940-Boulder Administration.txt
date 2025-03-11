@@ -1,23 +1,30 @@
+
 state={
 	id=940
 	name="STATE_940"
+	resources={
+		lumber=7.000
+	}
+
+	history={
+		owner = AGE
+		add_core_of = AGE
+		add_claim_by = SAL
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		victory_points = {
+			4318 2
+		}
+
+	}
+
 	provinces={
-		278 2131 4328 7820 7876 7914 
+		2131 3047 5103 7911 
 	}
 	manpower=4503
 	buildings_max_level_factor=1.000
-	local_supplies=5
-	state_category = rural
-	
-	resources = {
-        lumber = 7
-    }
-    history = {
-        owner = XXX
-        add_core_of = XXX
-        buildings = {
-            infrastructure = 1
-		}
-		victory_points = { 4318 2 }
-	}
+	state_category=rural
+	local_supplies=5.000
 }

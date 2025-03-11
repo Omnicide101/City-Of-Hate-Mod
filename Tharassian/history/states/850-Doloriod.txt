@@ -10,6 +10,7 @@ state={
 	history={
 		owner = TRX
 		add_core_of = TRX
+		add_claim_by = DEL
 		
 		victory_points = {
 			3225 3

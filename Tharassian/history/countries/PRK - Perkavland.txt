@@ -1,11 +1,38 @@
 ﻿capital = 413
 
 set_oob = "PRK_1936"
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
 if = {
 	limit = {
 		has_dlc = "Man the Guns"
 	}
-	set_naval_oob = "PRK_1936_naval_MTG"
+	set_naval_oob = "PRK_1936_naval_mtg"
 	set_technology = {
 		perkav_raiders_naval = 1
 	}
@@ -24,6 +51,7 @@ set_technology ={
 	war_artisans = 1
 	improved_woodworking = 1
 	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
 }
 
 set_convoys = 63
@@ -69,86 +97,14 @@ add_ideas = {
 	PRK_oral_tradition
 }
 
-create_country_leader = {
-	name = "Miroslav Zlatko"
-	desc = "politics_PRK_zlatko_desc"
-	picture = "gfx/leaders/PRK/Portrait_PRK_Zlatko.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Justýna Létalová"
-	desc = "politics_PRK_letalova_desc"
-	picture = "gfx/leaders/PRK/Portrait_PRK_Letalova.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Wendelin Krell"
-	desc = "politics_PRK_krell_desc"
-	picture = "gfx/leaders/PRK/Portrait_PRK_Krell.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Agata Kuc"
-	desc = "politics_PRK_kuc_desc"
-	picture = "gfx/leaders/PRK/Portrait_PRK_Kuc.dds"
-	ideology = republic_peasant_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Karolina Sinicka"
-	desc = "politics_PRK_sinicka_desc"
-	picture = "gfx/leaders/PRK/Portrait_PRK_Sinicka.dds"
-	ideology = puritan_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Wendelin Krell"
-	desc = "politics_PRK_krell_desc"
-	picture = "gfx/leaders/PRK/Portrait_PRK_Krell.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Remigiusz Dragan"
-	desc = "politics_PRK_dragan_desc"
-	picture = "gfx/leaders/PRK/Portrait_PRK_Dragan.dds"
-	ideology = theocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Olgierd Lidzbarszca"
-	desc = "politics_PRK_lidzbarszca_desc"
-	picture = "gfx/leaders/PRK/Portrait_PRK_Lidzbarszca.dds"
-	ideology = republic_aristocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {	
-	name = "Bogumir Malicki"
-	desc = "politics_PRK_malicki_desc"
-	picture = "gfx/leaders/PRK/Portrait_PRK_Malicki.dds"
-	ideology = republic_merchant_ideology
-	traits = {
-	}
-}
+recruit_character = PRK_wendelin_krell
+recruit_character = PRK_miroslav_zlatko
+recruit_character = PRK_justýna_létalová
+recruit_character = PRK_agata_kuc
+recruit_character = PRK_karolina_sinicka
+recruit_character = PRK_remigiusz_dragan
+recruit_character = PRK_olgierd_lidzbarszca
+recruit_character = PRK_bogumir_malicki
 
 if = {
 	limit = {
@@ -161,7 +117,7 @@ if = {
 	create_equipment_variant = {
 		name = "Bolest-Class"
 		type = destroyer_1
-		parent_version = 1
+		parent_version = 0
 		upgrades = {
 			destroyer_engine_upgrade = 3
 		}
@@ -170,7 +126,7 @@ if = {
 	create_equipment_variant = {
 		name = "Czaszka-Class"
 		type = destroyer_1 #Should be light cruiser
-		parent_version = 1
+		parent_version = 0
 		upgrades = {
 			ship_reliability_upgrade = 1
 			ship_engine_upgrade = 3
@@ -180,8 +136,8 @@ if = {
 	# Heavy Cruisers #
 	create_equipment_variant = {
 		name = "Krostov-Class"
-		type = destroyer_1 #Should be heavy cruiser
-		parent_version = 1
+		type = heavy_cruiser_1
+		parent_version = 0
 		upgrades = {
 			ship_engine_upgrade = 3
 			ship_armor_upgrade = 1
@@ -198,7 +154,7 @@ if = {
 	# Destroyers #
 	create_equipment_variant = {
 		name = "Bolest-Class"
-		type = ship_hull_light_0
+		type = ship_hull_light_1
 		parent_version = 0
 		modules = {
 			fixed_ship_battery_slot = light_ship_harpoon_thrower_0
@@ -208,7 +164,7 @@ if = {
 	# Light Cruisers #
 	#create_equipment_variant = {
 	#		name = "Czaszka-Class"
-	#		type = ship_hull_cruiser_1
+	#		type = ship_hull_cruiser_0
 	#		parent_version = 0
 	#		modules = {
 	#			fixed_ship_battery_slot = ship_medium_battery_1
@@ -223,20 +179,16 @@ if = {
 	#		}
 	#	}
 	# Heavy Cruisers #
-	#create_equipment_variant = {
-	#	name = "Krostov-Class"
-	#	type = ship_hull_cruiser_1
-	#	parent_version = 0
-	#	modules = {
-	#		fixed_ship_battery_slot = ship_heavy_battery_1
-	#		fixed_ship_anti_air_slot = empty
-	#		fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-	#		fixed_ship_radar_slot = empty
-	#		fixed_ship_engine_slot = cruiser_ship_engine_1
-	#		fixed_ship_armor_slot = ship_armor_cruiser_1
-	#		mid_1_custom_slot = empty
-	#		mid_2_custom_slot = ship_torpedo_1
-	#		rear_1_custom_slot = empty
-	#	}
-	#}
+	create_equipment_variant = {
+		name = "Krostov-Class"
+		type = ship_hull_heavy_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = heavy_ship_harpoon_thrower_0
+			fixed_ship_engine_slot = heavy_ship_perkav_raider_rowers_0
+			mid_1_custom_slot = heavy_ship_harpoon_thrower_0
+			mid_2_custom_slot = heavy_ship_harpoon_thrower_0
+			rear_1_custom_slot = heavy_ship_perkav_raider_rowers_0
+		}
+	}
 }

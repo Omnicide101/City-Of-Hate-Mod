@@ -19,19 +19,21 @@ ungerdaler_buddies = {
 		is_in_faction_with = UNG
 	}
 	
+	abort_when_not_enabled = yes
+	
 	ai_strategy = {
 		type = befriend
-		id = "UNG"
+		id = UNG
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 	ai_strategy = {
 		type = protect
-		id = "UNG"			
+		id = UNG			
 		value = 200
 	}
 }

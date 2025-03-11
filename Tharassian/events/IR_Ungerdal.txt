@@ -466,7 +466,7 @@ country_event = {#Response to Perkavland
 		ai_chance = {
 			factor = 2
 			modifier = {
-				has_government = republic_aristocrat
+				has_government = monarchy_absolute
 				factor = 3
 			}
 			modifier = {
@@ -492,7 +492,7 @@ country_event = {#Response to Perkavland
 		ai_chance = {
 			factor = 3
 			modifier = {
-				has_government = monarchy_absolute
+				has_government = republic_aristocrat
 				factor = 2
 			}
 			modifier = {
@@ -814,7 +814,7 @@ country_event = {#Looking Outwards
 		ai_chance = {
 			factor = 5
 			modifier = {
-				has_government = monarchy_absolute
+				has_government = republic_aristocrat
 				factor = 2
 			}
 			modifier = {
@@ -835,7 +835,7 @@ country_event = {#Looking Outwards
 			factor = 20
 			modifier = {
 				NOT = {
-					has_government = monarchy_absolute
+					has_government = republic_aristocrat
 				}
 				factor = 2
 			}
@@ -1575,14 +1575,7 @@ country_event = {#Rebels Arrested
 	option = {#Constitutionalist
 		name = ung.47.a
 		ai_chance = {
-			factor = 6
-			modifier = {
-				has_game_rule = {
-					rule = UNG_game_plan
-					option = UNG_WARMONGER
-				}
-				factor = 0
-			}
+			factor = 8
 		}
 		add_stability = 0.1
 		add_political_power = 50
@@ -1599,13 +1592,6 @@ country_event = {#Rebels Arrested
 		name = ung.47.b
 		ai_chance = {
 			factor = 2
-			modifier = {
-				has_game_rule = {
-					rule = UNG_game_plan
-					option = UNG_DIPLOMATIC
-				}
-				factor = 0
-			}
 		}
 		add_stability = 0.05
 		add_political_power = 75
@@ -1630,13 +1616,13 @@ country_event = {#Nobility Revolts!
 		name = ung.48.a
 		add_stability = -0.1
 		random_list = {
-			40 = {
+			45 = {
 				country_event = {
 					id = ung.49
 					days = 2
 				}
 			}
-			60 = {
+			55 = {
 				country_event = {
 					id = ung.50
 					days = 2
@@ -1862,9 +1848,23 @@ country_event = {#Bergialer Call to Arms!
 
 	option = {#Attack!
 		name = ung.56.a
-		declare_war_on = {
-			target = KUR
-			type = annex_everything
+		every_other_country = {
+			limit = {
+				has_country_flag = DORF_terugkeer_target_flag
+				NOT = {
+					OR = {
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+						has_non_aggression_pact_with = ROOT
+					}
+				}
+			}
+		}
+		ROOT = {
+			declare_war_on = {
+				target = PREV
+				type = annex_everything
+			}
 		}
 		set_country_flag = UNG_helping_terugkeer
 	}
@@ -1958,9 +1958,23 @@ country_event = {#Skaelinger Call to Arms!
 
 	option = {#Attack!
 		name = ung.61.a
-		declare_war_on = {
-			target = KUR
-			type = annex_everything
+		every_other_country = {
+			limit = {
+				has_country_flag = DORF_seventh_campaign_target_flag
+				NOT = {
+					OR = {
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+						has_non_aggression_pact_with = ROOT
+					}
+				}
+			}
+		}
+		ROOT = {
+			declare_war_on = {
+				target = PREV
+				type = annex_everything
+			}
 		}
 		set_country_flag = UNG_helping_seventh_campaign
 	}
@@ -2130,6 +2144,17 @@ country_event = {#RMT Accepts
 		
 		effect_tooltip = {
 			
+			if = {
+				limit = {
+					SKA = {
+						has_war_with = RMT
+					}
+				}
+				SKA = {
+					white_peace = RMT
+				}
+			}
+			
 			SKA = {
 			
 				puppet = RMT
@@ -2203,6 +2228,16 @@ country_event = {#SKA accepts
 		add_political_power = 150
 		
 		effect_tooltip = {
+			if = {
+				limit = {
+					SKA = {
+						has_war_with = RMT
+					}
+				}
+				SKA = {
+					white_peace = RMT
+				}
+			}
 			RMT = {
 				remove_opinion_modifier = {
 					target = SKA
@@ -2630,7 +2665,6 @@ country_event = {#Stahlhof Defeated
 	id = ung.82
 	title = ung.82.t
 	desc = ung.82.d
-	picture = GFX_report_event_report_event_ung_civil_warning
 	
 	trigger = {
 		tag = UNG
@@ -2654,6 +2688,12 @@ country_event = {#Stahlhof Defeated
 		days = 7
 	}
 	
+	immediate = {
+		STA = {
+			set_country_flag = STA_beaten_in_civil_war #Yer done kid
+		}
+	}
+	
 	option = {#Retire
 		name = ung.82.a
 		trigger = {
@@ -2663,6 +2703,29 @@ country_event = {#Stahlhof Defeated
 			target = STA
 			autonomy_state = autonomy_IR_freiprinztum
 			freedom_level = 0.5
+		}
+		custom_effect_tooltip = UNG_STA_beaten_keep_adjacent_states_tt
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					is_subject_of = UNG
+					any_owned_state = {
+						is_core_of = STA
+					}
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = STA
+						NOT = {
+							any_neighbor_state = {
+								is_core_of = PREV.PREV
+								is_owned_by = PREV.PREV
+							}
+						}
+					}
+					transfer_state_to = STA
+				}
+			}
 		}
 		STA = {
 			retire_ideology_leader = monarchy_absolute
@@ -2703,14 +2766,37 @@ country_event = {#Stahlhof Defeated
 	}
 	
 	option = {#Execute
-		name = ung.82.a
+		name = ung.82.b
 		trigger = {
-			has_government = monarchy_absolute
+			has_government = republic_aristocrat
 		}
 		release_autonomy = {
 			target = STA
 			autonomy_state = autonomy_IR_freiprinztum
 			freedom_level = 0.5
+		}
+		custom_effect_tooltip = UNG_STA_beaten_keep_adjacent_states_tt
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					is_subject_of = UNG
+					any_owned_state = {
+						is_core_of = STA
+					}
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = STA
+						NOT = {
+							any_neighbor_state = {
+								is_core_of = PREV.PREV
+								is_owned_by = PREV.PREV
+							}
+						}
+					}
+					transfer_state_to = STA
+				}
+			}
 		}
 		STA = {
 			kill_ideology_leader = monarchy_absolute
@@ -2752,9 +2838,32 @@ country_event = {#Stahlhof Defeated
 	}
 	
 	option = {#Banish
-		name = ung.82.a
+		name = ung.82.c
 		trigger = {
-			has_government = republic_aristocrat
+			has_government = monarchy_absolute
+		}
+		custom_effect_tooltip = UNG_STA_beaten_keep_adjacent_states_tt
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					is_subject_of = UNG
+					any_owned_state = {
+						is_core_of = STA
+					}
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = STA
+						NOT = {
+							any_neighbor_state = {
+								is_core_of = PREV.PREV
+								is_owned_by = PREV.PREV
+							}
+						}
+					}
+					transfer_state_to = STA
+				}
+			}
 		}
 		release_autonomy = {
 			target = STA
@@ -2797,5 +2906,44 @@ country_event = {#Stahlhof Defeated
 			add_war_support = -0.27
 			add_ideas = STA_broken_freiprinztum
 		}
+	}
+}
+
+country_event = {#Perkav Reactionaries rise up
+	id = ung.83
+	title = ung.83.t
+	desc = ung.83.d
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {#Oh god oh fuck
+		name = ung.83.a
+		set_rule = {
+			can_send_volunteers = yes
+		}
+		add_ideas = UNG_perkav_intervention_idea
+	}
+}
+
+country_event = {#Perkav Reactionaries take the W
+	id = ung.84
+	title = ung.84.t
+	desc = ung.84.d
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {#God damn it
+		name = ung.84.a
+		uncomplete_national_focus = {
+		  focus = UNG_diplomatic_efforts
+		  uncomplete_children = yes
+		  refund_political_power = no
+		}
+		set_country_flag = UNG_war_perkavland_flag
+		clr_country_flag = UNG_diplomatic_efforts_flag
 	}
 }

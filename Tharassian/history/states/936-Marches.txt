@@ -13,10 +13,11 @@ state={
         food = 6
     }
     history = {
-        owner = XXX
-        add_core_of = XXX
+        owner = AGE
+        add_core_of = AGE
         buildings = {
-            infrastructure = 1
+            infrastructure = 2
+			forge = 2
 		}
 		victory_points = { 3493 16 }
 	}

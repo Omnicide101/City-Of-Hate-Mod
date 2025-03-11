@@ -13,4 +13,7 @@ sub_unit_categories = {
 	category_army
 	category_support
 	category_recon
+	category_fighter
+	category_cas
+	category_nav_bomber
 }

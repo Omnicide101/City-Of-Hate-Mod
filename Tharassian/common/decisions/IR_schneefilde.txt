@@ -1401,6 +1401,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+
 	SNF_retake_ceina  = { #Kalaster
 		
 		icon = generic_prepare_civil_war
@@ -1497,6 +1498,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+	
 	SNF_retake_vrizim   = {
 		
 		icon = generic_prepare_civil_war
@@ -1592,6 +1594,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+	
 	SNF_retake_Pashinz   = {
 		
 		icon = generic_prepare_civil_war
@@ -1688,6 +1691,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+	
 	SNF_retake_stufen   = {
 		
 		icon = generic_prepare_civil_war
@@ -1784,6 +1788,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+	
 	SNF_retake_karistadt   = {
 		
 		icon = generic_prepare_civil_war
@@ -1880,6 +1885,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+	
 	SNF_retake_tsotoff   = {
 		
 		icon = generic_prepare_civil_war
@@ -1976,6 +1982,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+	
 	SNF_retake_tinash   = {
 		
 		icon = generic_prepare_civil_war
@@ -2073,6 +2080,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+	
 	SNF_retake_scheidin   = {
 		
 		icon = generic_prepare_civil_war
@@ -2170,6 +2178,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+	
 	SNF_retake_flankenin   = {
 		
 		icon = generic_prepare_civil_war
@@ -2266,6 +2275,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+	
 	SNF_retake_schnitt = {
 		
 		icon = generic_prepare_civil_war
@@ -2360,6 +2370,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+	
 	SNF_retake_nevedenn_snf = {
 		
 		icon = generic_prepare_civil_war
@@ -2456,6 +2467,7 @@ SNF_invade_perkav = {
 			}
 		}
 	}
+	
 	SNF_retake_nevedenn_wsz = {
 		name = SNF_retake_nevedenn_snf
 		icon = generic_prepare_civil_war
@@ -2553,7 +2565,7 @@ SNF_invade_perkav = {
 		}
 	}
 
-SNF_retake_biscle_wsz = {
+	SNF_retake_biscle_wsz = {
 		icon = generic_prepare_civil_war
 		
 		visible = {
@@ -2648,7 +2660,8 @@ SNF_retake_biscle_wsz = {
 			}
 		}
 	}
-SNF_retake_resa_wsz = {
+
+	SNF_retake_resa_wsz = {
 		icon = generic_prepare_civil_war
 		
 		visible = {
@@ -2743,7 +2756,8 @@ SNF_retake_resa_wsz = {
 			}
 		}
 	}
-SNF_retake_nilse_wsz = {
+
+	SNF_retake_nilse_wsz = {
 		icon = generic_prepare_civil_war
 		
 		visible = {

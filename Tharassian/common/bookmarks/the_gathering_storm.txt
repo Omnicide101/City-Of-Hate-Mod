@@ -29,9 +29,9 @@ bookmarks = {
 				ORD_disrupted_industry
 			}
 			focuses = {
-				ORD_manifest_destiny
-				ORD_dominance
-				ORD_destabilize_south
+				ORD_autumn
+				ORD_secure_ryselin
+				ORD_royal_pioneers
 			}
 		}
 		

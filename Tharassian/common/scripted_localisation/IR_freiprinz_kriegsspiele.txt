@@ -4,7 +4,7 @@ defined_text = { # Country
 		trigger = {
 			is_og_freiprinz = yes
 		}
-		localization_key = "[?FPT_kriegsspiele_preparedness|Y0]"
+		localization_key = loc_key_kriegsspiele_preparedness
 	}
 }
 
@@ -14,17 +14,7 @@ defined_text = { # Country
 		trigger = {
 			has_country_flag = FPT_kriegsspiele_winner
 		}
-		localization_key = "[Root.GetName]"
-	}
-}
-
-defined_text = { # Country
-	name = GetFreiprinzKriegsspielePreparedness
-	text = { 
-		trigger = {
-			is_og_freiprinz = yes
-		}
-		localization_key = "[?FPT_kriegsspiele_preparedness|Y0]"
+		localization_key = loc_key_kriegsspiele_winner
 	}
 }
 

@@ -1,6 +1,6 @@
 go_do_quests = {
 	enable = {
-		always = yes
+		any_operative_leader = { always = yes }
 	}
 	
 	abort_when_not_enabled = yes
@@ -10,6 +10,20 @@ go_do_quests = {
 		mission = build_intel_network
 		value = 1000
 		mission_target = ADV
+	}
+}
+
+fuck_rebels = {
+	enable = {
+		any_operative_leader = { always = yes }
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_mission
+		mission = root_out_resistance
+		value = 100
 	}
 }
 

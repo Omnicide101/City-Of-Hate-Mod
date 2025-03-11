@@ -696,7 +696,18 @@ technologies = {
 		research_cost = 3
 		
 		on_research_complete = {
-			add_ideas = { idea = era_medieval_idea }
+			if = {
+				limit = {
+					has_idea = tribal_society
+				}
+				add_ideas = feudal_society
+			}
+			if = {
+				limit = {
+					has_idea = unorganized_economy
+				}
+				add_ideas = agrarianism_economy
+			}
 		}
 		
 		dependencies = {
@@ -1454,7 +1465,15 @@ technologies = {
 		research_cost = 5
 		
 		on_research_complete = {
-			
+			if = {
+				limit = {
+					OR = {
+						has_idea = tribal_society
+						has_idea = feudal_society
+					}
+				}
+				add_ideas = late_feudal_society
+			}
 		}
 		
 		dependencies = {
@@ -2025,8 +2044,27 @@ technologies = {
 		
 		research_cost = 7
 		
+		
 		on_research_complete = {
-			
+			if = {
+				limit = {
+					NOT = {
+						has_idea = industrial_society
+					}
+				}
+				add_ideas = industrial_society
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_idea = autarkic_isolationism
+							has_idea = steam_and_steel
+						}
+					}
+				}
+				add_ideas = steam_and_steel
+			}
 		}
 		
 		enable_building = {

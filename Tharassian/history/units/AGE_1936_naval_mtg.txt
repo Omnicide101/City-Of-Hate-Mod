@@ -1,0 +1,17 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "The Dread Navy"
+		naval_base = 2192 # Ivorytower
+		task_force = {
+			name = "First Risen Fleet"
+			location = 2192 # Ivorytower
+			ship = { name = "Waterwight" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = AGE version_name = "Deathshroud-Class" } } }
+			ship = { name = "Markon's Onyx Tomb" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = AGE version_name = "Deathshroud-Class" } } }
+			ship = { name = "Bones Afloat" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = AGE version_name = "Mournwake-Class" } } }
+			ship = { name = "The Undrowned" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = AGE version_name = "Mournwake-Class" } } }
+			ship = { name = "Restless Sails" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = AGE version_name = "Mournwake-Class" } } }
+		}
+	}
+}

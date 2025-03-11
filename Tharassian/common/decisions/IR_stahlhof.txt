@@ -19,63 +19,22 @@ STA_politics_steel_court = {
 		}
 		
 		ai_will_do = {
-			factor = 3
+			factor = 0 #Not without good reason
 			modifier = {
-				factor = 0
-				NOT = {
-					has_completed_focus = STA_turn_to_the_caravaneers
-				}
+				add = 50
+				STA_already_taken_steel_court_decision = no
+				STA_should_buff_republicanism = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
 			}
 			modifier = {
-				factor = 0
+				add = 500 #Tiebreaker
 				OR = {
-					has_idea = STA_racist_bullshit
-					has_idea = STA_pious_north
-					has_idea = STA_hornbergers_placated
-					has_idea = STA_schwarzenbach_control
+					STA_republicanism_puritanism_or_theocracy_tiebreaker_republicanism = yes
+					STA_republicanism_puritanism_or_aristocracy_tiebreaker_republicanism = yes
+					STA_republicanism_theocracy_or_aristocracy_tiebreaker_republicanism = yes
+					STA_republicanism_or_puritanism_tiebreaker_republicanism = yes
+					STA_republicanism_or_theocracy_tiebreaker_republicanism = yes
+					STA_republicanism_or_aristocracy_tiebreaker_republicanism = yes
 				}
-			}
-			modifier = {
-				factor = 5
-				has_completed_focus = STA_turn_to_the_caravaneers
-			}
-			modifier = {
-				factor = 5
-				has_completed_focus = STA_turn_to_the_caravaneers
-				NOT = {
-					has_completed_focus = STA_contribute_to_the_war_effort
-				}
-				republic_merchant < 0.15
-				republic_merchant > 0.1
-			}
-			modifier = {
-				factor = 5
-				has_completed_focus = STA_contribute_to_the_war_effort
-				NOT = {
-					has_completed_focus = STA_demand_an_embargo
-				}
-				republic_merchant < 0.25
-				republic_merchant > 0.15
-			}
-			modifier = {
-				factor = 10
-				has_completed_focus = STA_demand_an_embargo
-				NOT = {
-					OR = {
-						has_completed_focus = STA_the_merchants_of_fritzhafen
-						has_completed_focus = STA_der_nordhandel_wuergegriff
-					}
-				}
-				republic_merchant < 0.35
-				republic_merchant > 0.25
-			}
-			modifier = {
-				factor = 0
-				has_completed_focus = STA_the_merchants_of_fritzhafen
-			}
-			modifier = {
-				factor = 0
-				has_completed_focus = STA_der_nordhandel_wuergegriff
 			}
 		}
 		
@@ -111,63 +70,22 @@ STA_politics_steel_court = {
 		}
 		
 		ai_will_do = {
-			factor = 3
+			factor = 0 #Not without good reason
 			modifier = {
-				factor = 0
+				add = 50
+				STA_already_taken_steel_court_decision = no
+				STA_should_buff_puritanism = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
+			}
+			modifier = {
+				add = 500 #Tiebreaker
 				OR = {
-					has_idea = STA_free_trade
-					has_idea = STA_pious_north
-					has_idea = STA_hornbergers_placated
-					has_idea = STA_schwarzenbach_control
+					STA_republicanism_puritanism_or_theocracy_tiebreaker_puritanism = yes
+					STA_republicanism_puritanism_or_aristocracy_tiebreaker_puritanism = yes
+					STA_puritanism_theocracy_or_aristocracy_tiebreaker_puritanism = yes
+					STA_republicanism_or_puritanism_tiebreaker_puritanism = yes
+					STA_puritanism_or_theocracy_tiebreaker_puritanism = yes
+					STA_puritanism_or_aristocracy_tiebreaker_puritanism = yes
 				}
-			}
-			modifier = {
-				factor = 0
-				NOT = {
-					has_completed_focus = STA_the_anti_ordorian_front
-				}
-			}
-			modifier = {
-				factor = 5
-				has_completed_focus = STA_the_anti_ordorian_front
-			}
-			modifier = {
-				factor = 5
-				has_completed_focus = STA_the_anti_ordorian_front
-				NOT = {
-					has_completed_focus = STA_freiwillige_heimatverteidiger
-				}
-				puritan < 0.15
-				puritan > 0.1
-			}
-			modifier = {
-				factor = 5
-				has_completed_focus = STA_freiwillige_heimatverteidiger
-				NOT = {
-					has_completed_focus = STA_spears_against_elves
-				}
-				puritan < 0.25
-				puritan > 0.15
-			}
-			modifier = {
-				factor = 10
-				has_completed_focus = STA_spears_against_elves
-				NOT = {
-					OR = {
-						has_completed_focus = STA_the_stahlheer
-						has_completed_focus = STA_the_pragmatik_allianz
-					}
-				}
-				puritan < 0.35
-				puritan > 0.25
-			}
-			modifier = {
-				factor = 0
-				has_completed_focus = STA_the_stahlheer
-			}
-			modifier = {
-				factor = 0
-				has_completed_focus = STA_the_pragmatik_allianz
 			}
 		}
 		
@@ -203,63 +121,22 @@ STA_politics_steel_court = {
 		}
 		
 		ai_will_do = {
-			factor = 9 #important!
+			factor = 0 #Not without good reason
 			modifier = {
-				factor = 0
+				add = 50
+				STA_already_taken_steel_court_decision = no
+				STA_should_buff_theocracy = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
+			}
+			modifier = {
+				add = 500 #Tiebreaker
 				OR = {
-					has_idea = STA_free_trade
-					has_idea = STA_racist_bullshit
-					has_idea = STA_hornbergers_placated
-					has_idea = STA_schwarzenbach_control
+					STA_republicanism_puritanism_or_theocracy_tiebreaker_theocracy = yes
+					STA_republicanism_theocracy_or_aristocracy_tiebreaker_theocracy = yes
+					STA_puritanism_theocracy_or_aristocracy_tiebreaker_theocracy = yes
+					STA_republicanism_or_theocracy_tiebreaker_theocracy = yes
+					STA_puritanism_or_theocracy_tiebreaker_theocracy = yes
+					STA_theocracy_or_aristocracy_tiebreaker_theocracy = yes
 				}
-			}
-			modifier = {
-				factor = 0
-				NOT = {
-					has_completed_focus = STA_the_league_of_temples
-				}
-			}
-			modifier = {
-				factor = 5
-				has_completed_focus = STA_the_league_of_temples
-			}
-			modifier = {
-				factor = 5
-				has_completed_focus = STA_the_league_of_temples
-				NOT = {
-					has_completed_focus = STA_the_favour_of_the_seven
-				}
-				theocrat < 0.15
-				theocrat > 0.1
-			}
-			modifier = {
-				factor = 5
-				has_completed_focus = STA_the_favour_of_the_seven
-				NOT = {
-					has_completed_focus = STA_divine_right_to_rule
-				}
-				theocrat < 0.25
-				theocrat > 0.15
-			}
-			modifier = {
-				factor = 10
-				has_completed_focus = STA_divine_right_to_rule
-				NOT = {
-					OR = {
-						has_completed_focus = STA_the_priests_of_st_vichtlas
-						has_completed_focus = STA_break_with_the_orthodoxy
-					}
-				}
-				theocrat < 0.35
-				theocrat > 0.25
-			}
-			modifier = {
-				factor = 0
-				has_completed_focus = STA_the_priests_of_st_vichtlas
-			}
-			modifier = {
-				factor = 0
-				has_completed_focus = STA_break_with_the_orthodoxy
 			}
 		}
 		
@@ -295,63 +172,22 @@ STA_politics_steel_court = {
 		}
 		
 		ai_will_do = {
-			factor = 15
+			factor = 0 #Not without good reason
 			modifier = {
-				factor = 0
+				add = 50
+				STA_already_taken_steel_court_decision = no
+				STA_should_buff_aristocracy = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
+			}
+			modifier = {
+				add = 500 #Tiebreaker
 				OR = {
-					has_idea = STA_free_trade
-					has_idea = STA_racist_bullshit
-					has_idea = STA_pious_north
-					has_idea = STA_schwarzenbach_control
+					STA_republicanism_puritanism_or_aristocracy_tiebreaker_aristocracy = yes
+					STA_republicanism_theocracy_or_aristocracy_tiebreaker_aristocracy = yes
+					STA_puritanism_theocracy_or_aristocracy_tiebreaker_aristocracy = yes
+					STA_republicanism_or_aristocracy_tiebreaker_aristocracy = yes
+					STA_puritanism_or_aristocracy_tiebreaker_aristocracy = yes
+					STA_theocracy_or_aristocracy_tiebreaker_aristocracy = yes
 				}
-			}
-			modifier = {
-				factor = 0
-				NOT = {
-					has_completed_focus = STA_reach_out_to_the_hornbergers
-				}
-			}
-			modifier = {
-				factor = 5
-				has_completed_focus = STA_reach_out_to_the_hornbergers
-			}
-			modifier = {
-				factor = 5
-				has_completed_focus = STA_reach_out_to_the_hornbergers
-				NOT = {
-					has_completed_focus = STA_meetings_on_neutral_ground
-				}
-				republic_aristocrat < 0.15
-				republic_aristocrat > 0.1
-			}
-			modifier = {
-				factor = 3
-				has_completed_focus = STA_meetings_on_neutral_ground
-				NOT = {
-					has_completed_focus = STA_the_unthinkable_deal
-				}
-				republic_aristocrat < 0.25
-				republic_aristocrat > 0.15
-			}
-			modifier = {
-				factor = 10
-				has_completed_focus = STA_the_unthinkable_deal
-				NOT = {
-					OR = {
-						has_completed_focus = STA_the_aristocrats_of_stahlhof
-						has_completed_focus = STA_blood_ties_to_wertszvoerde
-					}
-				}
-				republic_aristocrat < 0.35
-				republic_aristocrat > 0.25
-			}
-			modifier = {
-				factor = 0
-				has_completed_focus = STA_the_aristocrats_of_stahlhof
-			}
-			modifier = {
-				factor = 0
-				has_completed_focus = STA_blood_ties_to_wertszvoerde
 			}
 		}
 		
@@ -387,30 +223,11 @@ STA_politics_steel_court = {
 		}
 		
 		ai_will_do = {
-			factor = 3
+			factor = 0 #Not without good reason
 			modifier = {
-				factor = 0
-				OR = {
-					NOT = {
-						has_completed_focus = STA_the_crown_infallible
-						
-					}
-					monarchy_absolute > 0.99
-				}
-			}
-			
-			modifier = {
-				factor = 0.1
-				NOT = {
-					has_completed_focus = STA_the_stahlheer
-					has_completed_focus = STA_the_pragmatik_allianz
-					has_completed_focus = STA_the_merchants_of_fritzhafen
-					has_completed_focus = STA_der_nordhandel_wuergegriff
-					has_completed_focus = STA_the_priests_of_st_vichtlas
-					has_completed_focus = STA_break_with_the_orthodoxy
-					has_completed_focus = STA_the_aristocrats_of_stahlhof
-					has_completed_focus = STA_blood_ties_to_wertszvoerde
-				}
+				add = 5 #Less important than sorting out the other foci first
+				STA_already_taken_steel_court_decision = no
+				STA_should_buff_absolutism = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
 			}
 		}
 		
@@ -1054,7 +871,7 @@ STA_a_convincing_act_category = {
 		}
 	}
 	
-	STA_stahlplan_venoehr_decision = {
+	STA_stahlplan_karis_decision = {
 		
 		icon = generic_ignite_civil_war
 		
@@ -1062,13 +879,113 @@ STA_a_convincing_act_category = {
 		days_remove = 70
 		
 		available = {
-			has_completed_focus = STA_stahlplan_venoehr
-			Not = { STA = { owns_state = 106 } }
+			has_completed_focus = STA_stahlplan_karis
+			Not = { STA = { owns_state = 1291 } }
 			owns_state = 202
 			has_border_war = no
 			divisions_in_border_state = {
 				size > 2
 				state = 202
+				border_state = 1291
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 1291
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 1291
+			}
+		}
+		
+		state_target = yes
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		202 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		1291 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		 has_border_war_between = {
+ 		   attacker = 202
+  		   defender = 1291
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 202
+  		defender = 1291
+		}
+		}
+		}
+		
+		complete_effect = {
+		202 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		1291 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+			
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 202
+					num_provinces = 1
+					on_win = sta.79
+					on_lose = sta.80
+					on_cancel = sta.81
+				}
+				
+				defender = {
+					state = 1291
+					num_provinces = 1
+					on_win = sta.82
+					on_lose = sta.83
+					on_cancel = sta.84
+				}
+			}
+		}
+	}
+	
+	STA_stahlplan_venohr_decision = {
+		
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_stahlplan_karis
+			Not = { STA = { owns_state = 106 } }
+			owns_state = 203
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 203
 				border_state = 106
 			}
 		}
@@ -1094,7 +1011,7 @@ STA_a_convincing_act_category = {
 		}
 		
 		remove_effect = {
-		202 = {
+		203 = {
 		remove_dynamic_modifier = {
 			modifier = ongoing_border_conflict
 		}
@@ -1107,20 +1024,20 @@ STA_a_convincing_act_category = {
 		if = {
 		 limit = {
 		 has_border_war_between = {
- 		   attacker = 202
+ 		   attacker = 203
   		   defender = 106
 		 }
 		 }
 		finalize_border_war = {
    		defender_win = yes
-  		attacker = 202
+  		attacker = 203
   		defender = 106
 		}
 		}
 		}
 		
 		complete_effect = {
-		202 = {
+		203 = {
 		add_dynamic_modifier = {
 			modifier = ongoing_border_conflict
 		}
@@ -1136,7 +1053,7 @@ STA_a_convincing_act_category = {
 				change_state_after_war = no
 				
 				attacker = {
-					state = 202
+					state = 203
 					num_provinces = 1
 					on_win = sta.31
 					on_lose = sta.32
@@ -1753,7 +1670,7 @@ STA_convince_freiprinzen = {
 		remove_effect = {
 			clr_country_flag = STA_already_convincing_someone
 			add_to_variable = {
-				var = FROM.owner.FPT_stahlhof_loyalty
+				var = FROM.owner:FPT_stahlhof_loyalty
 				value = 1
 			}
 			FROM.owner = {
@@ -1912,7 +1829,7 @@ STA_convince_freiprinzen = {
 		remove_effect = {
 			clr_country_flag = STA_already_convincing_someone
 			add_to_variable = {
-				var = FROM.owner.FPT_stahlhof_loyalty
+				var = FROM.owner:FPT_stahlhof_loyalty
 				value = 3
 			}
 			FROM.owner = {
@@ -2071,7 +1988,7 @@ STA_convince_freiprinzen = {
 		remove_effect = {
 			clr_country_flag = STA_already_convincing_someone
 			add_to_variable = {
-				var = FROM.owner.FPT_stahlhof_loyalty
+				var = FROM.owner:FPT_stahlhof_loyalty
 				value = 5
 			}
 			FROM.owner = {

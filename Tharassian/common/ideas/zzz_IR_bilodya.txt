@@ -102,6 +102,17 @@ ideas = {
 			allowed_civil_war = {
 			}
 			
+			cancel = {
+				OR = {
+					NOT = {
+						country_exists = BLD
+					}
+					BLD = {
+						is_subject = yes
+					}
+				}
+			}
+			
 			picture =  GFX_idea_BLD_The_Ogregeld_RMT
 			
 			removal_cost = -1
@@ -117,6 +128,17 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
+			}
+			
+			cancel = {
+				OR = {
+					NOT = {
+						country_exists = BLD
+					}
+					BLD = {
+						is_subject = yes
+					}
+				}
 			}
 			
 			picture =  GFX_idea_BLD_The_Ogregeld_RMT2

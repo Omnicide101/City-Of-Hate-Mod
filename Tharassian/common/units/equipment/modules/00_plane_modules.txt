@@ -1,0 +1,47 @@
+equipment_modules = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	### Creatures/Riders
+
+	autonomous_swarm_1 = {
+		abbreviation = "as1"
+		category = plane_engine_type
+		sfx = sfx_ui_sd_module_engine
+
+		add_stats = {
+			thrust = 11
+			build_cost_ic = 12
+			fuel_consumption = 0.16
+		}
+		
+	}
+
+##      ## ########    ###    ########   #######  ##    ##  ######  
+##  ##  ## ##         ## ##   ##     ## ##     ## ###   ## ##    ## 
+##  ##  ## ##        ##   ##  ##     ## ##     ## ####  ## ##       
+##  ##  ## ######   ##     ## ########  ##     ## ## ## ##  ######  
+##  ##  ## ##       ######### ##        ##     ## ##  ####       ## 
+##  ##  ## ##       ##     ## ##        ##     ## ##   ### ##    ## 
+ ###  ###  ######## ##     ## ##         #######  ##    ##  ######  
+
+	dragonfly_mandibles_1 = {
+		abbreviation = "dm1"
+		category = fighter_weapon
+		sfx = sfx_ui_sd_module_turret
+		add_equipment_type = { fighter heavy_fighter }
+
+		add_stats = {
+			air_attack = 2
+			air_ground_attack = 1
+			build_cost_ic = 1
+			weight = 1
+		}
+		xp_cost = 1
+		allow_mission_type = {
+			air_superiority
+			interception
+			cas
+			attack_logistics
+		}
+	}

@@ -16,6 +16,60 @@ guiTypes = {
 			name = "Background"
 			quadTextureSprite = "GFX_tiled_bg_container"
 		}
+		
+		containerWindowType = {
+			name = "career_profile_medals_grid_container"
+			size = { width = 100% height = 1000 } # Height is automatically changed to fit the grid. No need to change it here.
+			position = { x = 5 y = 0 }
+
+			instantTextboxType = {
+				name = "section_title"
+				position = { x = 15 y = 35 }
+				font = "hoi_30"
+				text = "CAREER_PROFILE_MEDALS"
+				maxWidth = 1000
+				maxHeight = 50
+				format = left
+			}
+
+			# Always keep the grid last in this container, so the auto-resizing works.
+			gridboxtype = {
+				name = "career_profile_medals_grid"
+				position = { x = -564 y = 90 }
+				orientation = center_up
+				size = { width = 1110 height = 100%% } # The width is slotsize.width * max_slots_horizontal
+				slotsize = { width = 371 height = 160 } # The slot size adds margins between the items
+				format = "UPPER_LEFT"
+				max_slots_horizontal = 3
+			}
+		}
+
+		containerWindowType = {
+			name = "career_profile_ribbons_grid_container"
+			size = { width = 100% height = 1000} # Height is automatically changed to fit the grid. No need to change it here.
+			position = { x = 5 y = 1120 }
+
+			instantTextboxType = {
+				name = "section_title"
+				position = { x = 15 y = 35 }
+				font = "hoi_30"
+				text = "CAREER_PROFILE_RIBBONS"
+				maxWidth = 1000
+				maxHeight = 50
+				format = left
+			}
+
+			# Always keep the grid last in this container, so the auto-resizing works.
+			gridboxtype = {
+				name = "career_profile_ribbons_grid"
+				position = { x = -564 y = 90 } # The x position is -(width / 2 - slot margin / 2) to add some margin to the left
+				orientation = center_up
+				size = { width = 1110 height = 100%% } # The width is slotsize.width * max_slots_horizontal
+				slotsize = { width = 278 height = 387 } # The slot size adds margins between the items
+				format = "UPPER_LEFT"
+				max_slots_horizontal = 4
+			}
+		}
 	}
 
 	containerWindowType = {

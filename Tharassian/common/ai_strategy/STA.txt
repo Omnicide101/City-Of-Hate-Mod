@@ -34,12 +34,33 @@ yoink_nordtorf = {
 	
 	ai_strategy = {
 		type = conquer
-		id = "ARK"
+		id = ARK
 		value = 500
 	}
 }
 
 save_pp_for_foci = {#Let's not always take decisions if we need PP for our foci
+	enable = {
+		original_tag = STA
+		NOT = {
+			has_completed_focus = STA_the_anti_ordorian_front
+			has_completed_focus = STA_turn_to_the_caravaneers
+			has_completed_focus = STA_the_league_of_temples
+		}
+		has_political_power < 75
+		has_completed_focus = STA_the_unthinkable_deal
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = pp_spend_priority
+		id = decision
+		value = -15
+	}
+}
+
+prio_political_decisions = {#Make sure we can balance our politics well
 	enable = {
 		original_tag = STA
 		NOT = {
@@ -60,16 +81,14 @@ save_pp_for_foci = {#Let's not always take decisions if we need PP for our foci
 				has_completed_focus = STA_blood_ties_to_wertszvoerde
 			}
 		}
-		has_political_power < 85
-		has_completed_focus = STA_the_unthinkable_deal
 	}
 	
 	abort_when_not_enabled = yes
 	
 	ai_strategy = {
-		type = pp_spend_priority
+		type = pp_spend_amount
 		id = decision
-		value = -5
+		value = 70
 	}
 }
 
@@ -93,20 +112,51 @@ stop_fucking_cheating = {#Stop building troops while not being allowed to
 
 	ai_strategy = {
 		type = build_army
+		id = cavalry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
 		id = infantry
-		value = -9999
+		value = -1000
 	}
 	
 	ai_strategy = {
 		type = build_army
-		id = cavalry
-		value = -9999
+		id = warband
+		value = -1000
 	}
 	
 	ai_strategy = {
-        type = force_build_armies
-        value = -99999
-    }
+		type = build_army
+		id = garrison
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = frontline
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = archer
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = light_cavalry
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = heavy_cavalry
+		value = -1000
+	}
 }
 
 arkanisturm_civil_war = {#Let's not take Arkanisturm land if we're fighting for Resmayer
@@ -126,22 +176,22 @@ arkanisturm_civil_war = {#Let's not take Arkanisturm land if we're fighting for 
 	}
 	ai_strategy = {
 		type = befriend
-		id = "ARB"
+		id = ARB
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "ARB"			
+		id = ARB			
 		value = 200
 	}
 	ai_strategy = {
 		type = protect
-		id = "ARB"			
+		id = ARB			
 		value = 200
 	}	
 	ai_strategy = {
 		type = force_defend_ally_borders
-		id = "ARB"
+		id = ARB
 		value = 200
 	}
 }
@@ -152,9 +202,12 @@ neureik_besties = {
 		country_exists = NRK
 		has_government = monarchy_absolute
 	}
+	
+	abort_when_not_enabled = yes
+	
 	ai_strategy = {
 		type = befriend
-		id = "NRK"
+		id = NRK
 		value = 200
 	}
 }
@@ -167,9 +220,12 @@ neureik_besties_NRK = {
 			has_government = monarchy_absolute
 		}
 	}
+	
+	abort_when_not_enabled = yes
+	
 	ai_strategy = {
 		type = befriend
-		id = "STA"
+		id = STA
 		value = 200
 	}
 }
