@@ -422,6 +422,8 @@ ORD_autumn_debate_values = {
 					}
 					add_core_of = ORB
 				}
+				
+				add_civil_war_target = ORB
 			}
 		}
 	}
@@ -769,6 +771,8 @@ ORD_autumn_debate_values = {
 					}
 					add_core_of = ORB
 				}
+				
+				add_civil_war_target = ORB
 			}
 		}
 	}
@@ -1069,6 +1073,8 @@ ORD_autumn_debate_values = {
 					}
 					add_core_of = ORB
 				}
+				
+				add_civil_war_target = ORB
 			}
 		}
 	}
@@ -1131,13 +1137,13 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_improve_trad_loyalty_1 = yes
-			ORD_improve_trad_power_2 = yes
+			ORD_improve_trad_loyalty_2 = yes
+			ORD_improve_trad_power_3 = yes
 			if = {
 				limit = {
 					has_variable = ORD_moderates_loyalty
 				}
-				ORD_worsen_royal_loyalty_3 = yes
+				ORD_worsen_royal_loyalty_1 = yes
 			}
 		}
 	}
@@ -1200,13 +1206,13 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_improve_trad_loyalty_2 = yes
+			ORD_improve_trad_loyalty_3 = yes
 			ORD_improve_trad_power_4 = yes
 			if = {
 				limit = {
 					has_variable = ORD_faithful_loyalty
 				}
-				ORD_worsen_faith_loyalty_3 = yes
+				ORD_worsen_faith_loyalty_2 = yes
 			}
 		}
 	}
@@ -1274,7 +1280,7 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_improve_trad_loyalty_4 = yes
+			ORD_improve_trad_loyalty_6 = yes
 			ORD_improve_trad_power_7 = yes
 			if = {
 				limit = {
@@ -1349,13 +1355,13 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_improve_royal_loyalty_1 = yes
-			ORD_improve_royal_power_2 = yes
+			ORD_improve_royal_loyalty_2 = yes
+			ORD_improve_royal_power_3 = yes
 			if = {
 				limit = {
 					has_variable = ORD_faithful_loyalty
 				}
-				ORD_worsen_faith_loyalty_3 = yes
+				ORD_worsen_faith_loyalty_1 = yes
 			}
 		}
 	}
@@ -1418,13 +1424,13 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_improve_royal_loyalty_2 = yes
+			ORD_improve_royal_loyalty_3 = yes
 			ORD_improve_royal_power_4 = yes
 			if = {
 				limit = {
 					has_variable = ORD_traditionalists_loyalty
 				}
-				ORD_worsen_trad_loyalty_5 = yes
+				ORD_worsen_trad_loyalty_2 = yes
 			}
 		}
 	}
@@ -1492,7 +1498,7 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_improve_royal_loyalty_4 = yes
+			ORD_improve_royal_loyalty_6 = yes
 			ORD_improve_royal_power_7 = yes
 			if = {
 				limit = {
@@ -1567,13 +1573,13 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_improve_faith_loyalty_1 = yes
-			ORD_improve_faith_power_2 = yes
+			ORD_improve_faith_loyalty_2 = yes
+			ORD_improve_faith_power_3 = yes
 			if = {
 				limit = {
 					has_variable = ORD_traditionalists_loyalty
 				}
-				ORD_worsen_trad_loyalty_3 = yes
+				ORD_worsen_trad_loyalty_1 = yes
 			}
 		}
 	}
@@ -1636,13 +1642,13 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_improve_faith_loyalty_2 = yes
+			ORD_improve_faith_loyalty_3 = yes
 			ORD_improve_faith_power_4 = yes
 			if = {
 				limit = {
 					has_variable = ORD_moderates_loyalty
 				}
-				ORD_worsen_royal_loyalty_3 = yes
+				ORD_worsen_royal_loyalty_2 = yes
 			}
 		}
 	}
@@ -1710,7 +1716,7 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_improve_faith_loyalty_4 = yes
+			ORD_improve_faith_loyalty_6 = yes
 			ORD_improve_faith_power_7 = yes
 			if = {
 				limit = {
@@ -1784,7 +1790,7 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_worsen_trad_power_1 = yes
+			ORD_worsen_trad_power_2 = yes
 			ORD_worsen_trad_loyalty_2 = yes
 			if = {
 				limit = {
@@ -1852,7 +1858,7 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_worsen_trad_power_2 = yes
+			ORD_worsen_trad_power_4 = yes
 			ORD_worsen_trad_loyalty_4 = yes
 			if = {
 				limit = {
@@ -1920,8 +1926,8 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_worsen_trad_power_4 = yes
-			ORD_worsen_trad_loyalty_7 = yes
+			ORD_worsen_trad_power_6 = yes
+			ORD_worsen_trad_loyalty_6 = yes
 			if = {
 				limit = {
 					has_variable = ORD_faithful_influence
@@ -1994,7 +2000,7 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_worsen_royal_power_1 = yes
+			ORD_worsen_royal_power_2 = yes
 			ORD_worsen_royal_loyalty_2 = yes
 			if = {
 				limit = {
@@ -2062,7 +2068,7 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_worsen_royal_power_2 = yes
+			ORD_worsen_royal_power_4 = yes
 			ORD_worsen_royal_loyalty_4 = yes
 			if = {
 				limit = {
@@ -2130,7 +2136,7 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_worsen_royal_power_4 = yes
+			ORD_worsen_royal_power_7 = yes
 			ORD_worsen_royal_loyalty_7 = yes
 			if = {
 				limit = {
@@ -2204,7 +2210,7 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_worsen_faith_power_1 = yes
+			ORD_worsen_faith_power_2 = yes
 			ORD_worsen_faith_loyalty_2 = yes
 			if = {
 				limit = {
@@ -2272,7 +2278,7 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_worsen_faith_power_2 = yes
+			ORD_worsen_faith_power_4 = yes
 			ORD_worsen_faith_loyalty_4 = yes
 			if = {
 				limit = {
@@ -2340,8 +2346,8 @@ ORD_autumn_debate_values = {
 		}
 		
 		remove_effect = {
-			ORD_worsen_faith_power_4 = yes
-			ORD_worsen_faith_loyalty_7 = yes
+			ORD_worsen_faith_power_6 = yes
+			ORD_worsen_faith_loyalty_6 = yes
 			if = {
 				limit = {
 					has_variable = ORD_faithful_influence
@@ -2353,6 +2359,89 @@ ORD_autumn_debate_values = {
 					has_variable = ORD_traditionalists_influence
 				}
 				ORD_improve_trad_power_5 = yes
+			}
+		}
+	}
+}
+
+ORD_expand_sanctuary = {
+	ORD_expand_sanctuary_in_state = {
+		
+		icon = SWI_swiss_democratic_tradition_campaign
+		
+		visible = {
+			has_government = monarchy_absolute
+			has_completed_focus = ORD_expanding_sanctuary
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				is_owned_by = ROOT
+				is_controlled_by = ROOT
+				OR = {
+					has_state_category = town
+					has_state_category = large_town
+					has_state_category = city
+					has_state_category = large_city
+					has_state_category = metropolis
+					has_state_category = megalopolis
+				}
+				NOT = {
+					state = 84 # Vuid
+				}
+				NOT = {
+					state = 85 # Istaroth
+				}
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = sanctuary_city
+					}
+				}
+			}
+		}
+		
+		available = {
+			has_political_power > 49
+		}
+		
+		cost = 50
+		
+		on_map_mode = map_only
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 35
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
+		}
+		
+		days_remove = 35
+		
+		complete_effect = {
+			ORD_sanctuary_state_country_effects = yes
+		}
+		
+		modifier = {
+			monarchy_absolute_drift = 0.01
+		}
+		
+		remove_effect = {			
+			FROM = {
+				ORD_create_sanctuary_state = yes
 			}
 		}
 	}

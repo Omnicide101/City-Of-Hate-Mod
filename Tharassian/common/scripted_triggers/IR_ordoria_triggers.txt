@@ -1,7 +1,15 @@
 ###Ordoria scripted triggers
-#Checks if you need additional Glory League loyalty or influence for a focus
+#Checks if you need additional Glory League loyalty or influence for a focus or to avoid a revolt
 ORD_needs_stronger_or_more_loyal_league = {
 	OR = {
+		AND = {
+			check_variable = {
+				ORD_traditionalists_loyalty < 3
+			}
+			NOT = {
+				has_country_flag = ORD_trads_defeated
+			}
+		}
 		AND = {
 			has_completed_focus = ORD_improve_istaroth
 			NOT = {
@@ -309,12 +317,42 @@ ORD_needs_stronger_or_more_loyal_league = {
 				ORD_traditionalists_influence < 100
 			}
 		}
+		
+		# Traditionalist requirements in Faithful foci
+		AND = {
+			has_completed_focus = ORD_reservist_corps
+			has_completed_focus = ORD_fan_patriotism
+			NOT = {
+				has_completed_focus = ORD_sophist_soldiery
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 10
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_price_steep
+			has_completed_focus = ORD_burden_heavy
+			NOT = {
+				has_completed_focus = ORD_every_last_scrap
+			}
+			check_variable = {
+				ORD_traditionalists_loyalty < 10
+			}
+		}
 	}
 }
 
-#Checks if you need additional Royalist loyalty or influence for a focus
+#Checks if you need additional Royalist loyalty or influence for a focus or to avoid a revolt
 ORD_needs_stronger_or_more_loyal_royalists = {
 	OR = {
+		AND = {
+			check_variable = {
+				ORD_moderates_loyalty < 3
+			}
+			NOT = {
+				has_country_flag = ORD_mods_defeated
+			}
+		}
 		AND = {
 			has_completed_focus = ORD_improve_ythelmare
 			NOT = {
@@ -412,13 +450,111 @@ ORD_needs_stronger_or_more_loyal_royalists = {
 				ORD_moderates_loyalty < 25
 			}
 		}
+		
+		# Royalist requirements in Faithful foci
+		AND = {
+			has_completed_focus = ORD_reservist_corps
+			has_completed_focus = ORD_fan_patriotism
+			NOT = {
+				has_completed_focus = ORD_sophist_soldiery
+			}
+			check_variable = {
+				ORD_moderates_loyalty < 10
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_price_steep
+			has_completed_focus = ORD_burden_heavy
+			NOT = {
+				has_completed_focus = ORD_every_last_scrap
+			}
+			check_variable = {
+				ORD_moderates_loyalty < 10
+			}
+		}
 	}
 	
 	#More foci TBA!
 }
 
-#Checks if you need additional Sophist loyalty or influence for a focus
+#Checks if you need additional Sophist loyalty or influence for a focus or to avoid a revolt
 ORD_needs_stronger_or_more_loyal_sophists = {
-	#No foci coded yet!
-	always = no
+	OR = {
+		AND = {
+			check_variable = {
+				ORD_faithful_loyalty < 3
+			}
+			NOT = {
+				has_country_flag = ORD_faiths_defeated
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_improve_vuid
+			NOT = {
+				has_completed_focus = ORD_fast_track_cadets
+			}
+			check_variable = {
+				ORD_faithful_influence < 10
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_improve_vuid
+			NOT = {
+				has_completed_focus = ORD_enlarge_military_budget
+			}
+			check_variable = {
+				ORD_faithful_influence < 5
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_fast_track_cadets
+			NOT = {
+				has_completed_focus = ORD_reservist_corps
+			}
+			check_variable = {
+				ORD_faithful_influence < 15
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_fast_track_cadets
+			NOT = {
+				has_completed_focus = ORD_fan_patriotism
+			}
+			check_variable = {
+				ORD_faithful_influence < 5
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_reservist_corps
+			has_completed_focus = ORD_fan_patriotism
+			NOT = {
+				has_completed_focus = ORD_sophist_soldiery
+			}
+			check_variable = {
+				ORD_faithful_influence < 25
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_enlarge_military_budget
+			NOT = {
+				OR = {
+					has_completed_focus = ORD_price_steep
+					has_completed_focus = ORD_burden_heavy
+				}
+			}
+			check_variable = {
+				ORD_faithful_influence < 7
+			}
+		}
+		AND = {
+			has_completed_focus = ORD_price_steep
+			has_completed_focus = ORD_burden_heavy
+			NOT = {
+				has_completed_focus = ORD_every_last_scrap
+			}
+			check_variable = {
+				ORD_faithful_influence < 15
+			}
+		}
+	}
 }

@@ -2421,12 +2421,12 @@ focus_tree = {
 				}
 			}
 			else = { #Idealist Larennis just annexes the lot
+				annex_country = {
+					target = RTH
+				}
 				hidden_effect = {
 					annex_country = {
 						target = EOR
-					}
-					annex_country = {
-						target = RTH
 					}
 					every_state = {
 						limit = {
@@ -3247,7 +3247,7 @@ focus_tree = {
 			factor = 17
 			modifier = { #Steward no likey
 				check_variable = {
-					ORD_traditionalist_influence > 10
+					ORD_traditionalists_influence > 10
 				}
 				factor = 0.5
 			}
@@ -7607,6 +7607,12 @@ focus_tree = {
 		}
 		x = 47
 		y = 0
+		offset = {
+			trigger = {
+				has_country_flag = ORD_trads_defeated
+			}
+			x = -9
+		}
 		completion_reward = {
 			add_stability = 0.03
 			add_timed_idea = {
@@ -7941,6 +7947,12 @@ focus_tree = {
 		relative_position_id = ORD_rebuilding_glory
 		x = -13
 		y = 1
+		offset = {
+			trigger = {
+				has_country_flag = ORD_trads_defeated
+			}
+			x = 2
+		}
 		completion_reward = {
 			ORD_improve_trad_loyalty_1 = yes
 			
@@ -7979,9 +7991,20 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 35
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			controls_state = 85
+		}
+		allow_branch = {
+			NOT = {
+				has_country_flag = ORD_trads_defeated
+			}
 		}
 		relative_position_id = ORD_rebuilding_glory
 		x = -9
@@ -8027,6 +8050,21 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 7
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 10
+				}
+				NOT = {
+					has_country_flag = ORD_mods_defeated
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -8088,6 +8126,21 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 11
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 7 # 5 is minimum for focus
+				}
+				NOT = {
+					has_country_flag = ORD_mods_defeated
+				}
+				factor = 2
+			}
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
 		}
 		available = {
 			has_country_flag = ORD_align_gentry
@@ -8131,6 +8184,16 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 13
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 10
+				}
+				NOT = {
+					has_country_flag = ORD_mods_defeated
+				}
+				factor = 3
+			}
+			# Don't need to account for League loyalty drop since minium loyalty for focus is 15
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -8172,6 +8235,16 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 11
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 10
+				}
+				NOT = {
+					has_country_flag = ORD_mods_defeated
+				}
+				factor = 0.1
+			}
+			# Don't need to check for League loyalty since minimum for focus is 15
 		}
 		available = {
 			has_country_flag = ORD_stop_gentry
@@ -8217,6 +8290,21 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 13
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				NOT = {
+					has_country_flag = ORD_mods_defeated
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			has_war = yes
@@ -8274,6 +8362,15 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 13
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 10
+				}
+				NOT = {
+					has_country_flag = ORD_mods_defeated
+				}
+				factor = 0.1
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -8371,6 +8468,21 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 9
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				NOT = {
+					has_country_flag = ORD_mods_defeated
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -8829,6 +8941,15 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 15
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				NOT = {
+					has_country_flag = ORD_mods_defeated
+				}
+				factor = 10
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -8916,6 +9037,21 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 8
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				NOT = {
+					has_country_flag = ORD_mods_defeated
+				}
+				factor = 2
+			}
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -8978,6 +9114,27 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 9
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				NOT = {
+					has_country_flag = ORD_mods_defeated
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -9173,7 +9330,13 @@ focus_tree = {
 			focus = ORD_dedication_shalyn
 		}
 		ai_will_do = {
-			factor = 144
+			factor = 14
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -9277,6 +9440,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 15
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -9339,6 +9508,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 16
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 10
+			}
 		}
 		available = {
 			has_completed_focus = ORD_utilise_skilled
@@ -9372,6 +9547,12 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				has_war = yes
+			}
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 10
 			}
 		}
 		available = {
@@ -9491,6 +9672,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 16
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 10
+			}
 		}
 		available = {
 			has_completed_focus = ORD_dedication_lombrin
@@ -10032,9 +10219,20 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 35
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			controls_state = 112
+		}
+		allow_branch = {
+			NOT = {
+				has_country_flag = ORD_mods_defeated
+			}
 		}
 		relative_position_id = ORD_rebuilding_glory
 		x = 9
@@ -10133,6 +10331,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 7
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			if = {
@@ -10215,6 +10419,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 9
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			if = {
@@ -10339,6 +10549,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 7
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			if = {
@@ -10415,6 +10631,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 7
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			controls_state = 112
@@ -10502,6 +10724,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 0.1
+			}
 		}
 		available = {
 			controls_state = 112
@@ -10548,9 +10776,9 @@ focus_tree = {
 				}
 				larennis_idealism_small = yes
 			}
-			ORD_worsen_royal_loyalty_2 = yes
-			
 			ORD_improve_royal_power_5 = yes
+			
+			ORD_worsen_royal_loyalty_2 = yes
 			
 			add_popularity = {
 				ideology = republic_merchant
@@ -10590,6 +10818,18 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 11
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -10651,6 +10891,24 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 11
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			controls_state = 112
@@ -10812,6 +11070,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 17
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			controls_state = 91
@@ -10892,6 +11156,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 15
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 0.1
+			}
 		}
 		available = {
 			NOT = {
@@ -10937,6 +11207,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 15
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
 		}
 		available = {
 			NOT = {
@@ -10951,7 +11227,7 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = ORD_disempowered_trads_15
 				check_variable = {
-					ORD_traditionalist_influence < 15
+					ORD_traditionalists_influence < 15
 				}
 			}
 		}
@@ -10982,6 +11258,18 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 13
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 2
+			}
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			has_political_power > 149
@@ -11021,6 +11309,18 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 15
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			has_government = monarchy_absolute
@@ -11120,6 +11420,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 19
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		mutually_exclusive = {
 			focus = ORD_restoration_ythelmare
@@ -11143,7 +11449,7 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = ORD_disempowered_trads_30
 				check_variable = {
-					ORD_traditionalist_influence < 30
+					ORD_traditionalists_influence < 30
 				}
 			}
 		}
@@ -11152,8 +11458,8 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			larennis_cynicism_big = yes
-			ORD_improve_royal_power_5 = yes
-			ORD_improve_royal_loyalty_4 = yes
+			ORD_improve_royal_power_2 = yes
+			ORD_improve_royal_loyalty_7 = yes
 			91 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -11200,6 +11506,18 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 21
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		mutually_exclusive = {
 			focus = ORD_champion_commons
@@ -11271,6 +11589,18 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 21
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		mutually_exclusive = {
 			focus = ORD_reassert_status_quo
@@ -11329,6 +11659,18 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 23
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		relative_position_id = ORD_reassert_status_quo
 		x = 1
@@ -11365,6 +11707,9 @@ focus_tree = {
 				remove_ideas = ORD_slavery_1
 			}
 			add_ideas = ORD_positive_serfdom
+			ORD_improve_royal_power_4 = yes
+			ORD_worsen_trad_power_5 = yes
+			ORD_worsen_trad_loyalty_7 = yes
 		}
 	}
 	
@@ -11377,12 +11722,27 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 25
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		relative_position_id = ORD_slaves_to_serfs
 		x = -1
 		y = 1
 		completion_reward = {
 			add_ideas = ORD_ascent_artisan
+			ORD_improve_royal_loyalty_3 = yes
+			ORD_worsen_trad_loyalty_5 = yes
+			ORD_worsen_trad_power_3 = yes
 		}
 	}
 	
@@ -11440,6 +11800,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			ORD_improve_royal_power_4 = yes
 		}
 	}
 	
@@ -11455,6 +11816,16 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 27
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 10
+			}
 		}
 		relative_position_id = ORD_shut_down_factories
 		x = 1
@@ -11563,6 +11934,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 19
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -11581,9 +11958,9 @@ focus_tree = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = ORD_disempowered_trads_20
+				tooltip = ORD_disempowered_trads_15
 				check_variable = {
-					ORD_traditionalist_influence < 15
+					ORD_traditionalists_influence < 15
 				}
 			}
 		}
@@ -11594,7 +11971,27 @@ focus_tree = {
 		x = 2
 		y = 1
 		completion_reward = {
-			
+			larennis_idealism_small = yes
+			ORD_improve_royal_power_7 = yes
+			ORD_improve_royal_loyalty_4 = yes
+			112 = {
+				add_extra_state_shared_building_slots = 7
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -11605,8 +12002,43 @@ focus_tree = {
 		prerequisite = {
 			focus = ORD_restoration_ythelmare
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_hopeful
+				check_variable = {
+					larennis_idealism > 64
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_30
+				check_variable = {
+					ORD_moderates_influence > 29
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_20
+				check_variable = {
+					ORD_traditionalists_influence < 19
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 21
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		mutually_exclusive = {
 			focus = ORD_formalize_caste_economy
@@ -11615,7 +12047,14 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
-			
+			larennis_idealism_big = yes
+			ORD_improve_royal_power_5 = yes
+			ORD_worsen_trad_loyalty_7 = yes
+			larennis_idealism_medium = yes
+			ORD_sanctuary_state_country_effects = yes
+			112 = {
+				ORD_create_sanctuary_state = yes
+			}
 		}
 	}
 	
@@ -11626,8 +12065,49 @@ focus_tree = {
 		prerequisite = {
 			focus = ORD_restoration_ythelmare
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning_max
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_hopeful
+				check_variable = {
+					larennis_idealism < 90
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_20
+				check_variable = {
+					ORD_moderates_influence > 20
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_15
+				check_variable = {
+					ORD_traditionalists_influence < 15
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 21
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 2
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		mutually_exclusive = {
 			focus = ORD_declare_sanctuary
@@ -11636,7 +12116,13 @@ focus_tree = {
 		x = 2
 		y = 1
 		completion_reward = {
-			
+			larennis_cynicism_medium = yes
+			ORD_improve_royal_power_3 = yes
+			ORD_improve_royal_loyalty_2 = yes
+			ORD_improve_faith_loyalty_3 = yes
+			ORD_worsen_trad_loyalty_4 = yes
+			ORD_worsen_trad_power_2 = yes
+			add_ideas = ORD_economic_castes
 		}
 	}
 	
@@ -11648,14 +12134,42 @@ focus_tree = {
 			focus = ORD_declare_sanctuary
 			focus = ORD_formalize_caste_economy
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_20
+				check_variable = {
+					ORD_moderates_influence > 20
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_15
+				check_variable = {
+					ORD_traditionalists_influence < 15
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 23
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		relative_position_id = ORD_declare_sanctuary
 		x = 1
 		y = 1
 		completion_reward = {
-			
+			ORD_improve_royal_loyalty_4 = yes
+			ORD_worsen_trad_loyalty_2 = yes
+			add_ideas = ORD_limited_trade_idea
 		}
 	}
 	
@@ -11666,6 +12180,20 @@ focus_tree = {
 		prerequisite = {
 			focus = ORD_open_nightports
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_50
+				check_variable = {
+					ORD_moderates_influence > 39
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_10
+				check_variable = {
+					ORD_traditionalists_influence < 10
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 25
 		}
@@ -11673,7 +12201,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		completion_reward = {
-			
+			unlock_decision_category_tooltip = ORD_expand_sanctuary
 		}
 	}
 	
@@ -11684,14 +12212,82 @@ focus_tree = {
 		prerequisite = {
 			focus = ORD_open_nightports
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_empowered_mods_30
+				check_variable = {
+					ORD_moderates_influence > 29
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_10
+				check_variable = {
+					ORD_traditionalists_influence < 10
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 25
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 0.1
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 		relative_position_id = ORD_open_nightports
 		x = 1
 		y = 1
 		completion_reward = {
-			
+			larennis_idealism_big = yes
+			ORD_improve_royal_power_5 = yes
+			ORD_improve_royal_loyalty_4 = yes
+			ORD_worsen_faith_loyalty_2 = yes
+			ORD_worsen_trad_loyalty_7 = yes
+			ORD_worsen_trad_power_4 = yes
+			if = {
+				limit = {
+					has_idea = ORD_slavery_5
+				}
+				remove_ideas = ORD_slavery_5
+			}
+			if = {
+				limit = {
+					has_idea = ORD_slavery_4
+				}
+				remove_ideas = ORD_slavery_4
+			}
+			if = {
+				limit = {
+					has_idea = ORD_slavery_3
+				}
+				remove_ideas = ORD_slavery_3
+			}
+			if = {
+				limit = {
+					has_idea = ORD_slavery_2
+				}
+				remove_ideas = ORD_slavery_2
+			}
+			if = {
+				limit = {
+					has_idea = ORD_slavery_1
+				}
+				remove_ideas = ORD_slavery_1
+			}
+			add_ideas = ORD_loyal_minorities
 		}
 	}
 	
@@ -11707,6 +12303,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 27
+			modifier = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 5
+				}
+				factor = 10
+			}
 		}
 		relative_position_id = ORD_expanding_sanctuary
 		x = 1
@@ -11796,6 +12398,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 23
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 10
+			}
 		}
 		relative_position_id = ORD_money_talks
 		x = 1
@@ -11824,6 +12432,17 @@ focus_tree = {
 				has_war = yes
 				factor = 3
 			}
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 2
+			}
+		}
+		allow_branch = {
+			NOT = {
+				has_country_flag = ORD_faiths_defeated
+			}
 		}
 		available = {
 			controls_state = 84
@@ -11831,6 +12450,12 @@ focus_tree = {
 		relative_position_id = ORD_rebuilding_glory
 		x = 23
 		y = 1
+		offset = {
+			trigger = {
+				has_country_flag = ORD_mods_defeated
+			}
+			x = -12
+		}
 		completion_reward = {
 			ORD_improve_faith_loyalty_1 = yes
 			
@@ -11867,6 +12492,12 @@ focus_tree = {
 				has_war = yes
 				factor = 3
 			}
+			modifier = {
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 2
+			}
 		}
 
 		available = {
@@ -11899,11 +12530,26 @@ focus_tree = {
                 }
 
                 ai_will_do = {
-                        factor = 7
-						modifier = {
-							has_war = yes
-							factor = 3
+					factor = 7
+					modifier = {
+						has_war = yes
+						factor = 3
+					}
+					modifier = {
+						check_variable = {
+							ORD_moderates_loyalty < 5
 						}
+						NOT = {
+							has_country_flag = ORD_mods_defeated
+						}
+						factor = 0.1
+					}
+					modifier = {
+						check_variable = {
+							ORD_faithful_loyalty < 5
+						}
+						factor = 2
+					}
                 }
 
                 available = {
@@ -11935,11 +12581,29 @@ focus_tree = {
                 }
 
                 ai_will_do = {
-                        factor = 7
-						modifier = {
-							has_war = yes
-							factor = 3
+					factor = 7
+					modifier = {
+						has_war = yes
+						factor = 3
+					}
+					modifier = {
+						check_variable = {
+							ORD_faithful_loyalty < 5
 						}
+						factor = 2
+					}
+					modifier = {
+						check_variable = {
+							ORD_traditionalists_loyalty < 5
+						}
+						factor = 2
+					}
+					modifier = {
+						check_variable = {
+							ORD_moderates_loyalty < 5
+						}
+						factor = 2
+					}
                 }
 
                 available = {
@@ -11978,7 +12642,7 @@ focus_tree = {
 					custom_trigger_tooltip = {
 							tooltip = ORD_pleased_trads_10
 							check_variable = {
-									ORD_traditionalist_loyalty > 9
+									ORD_traditionalists_loyalty > 9
 							}
 					}
 					custom_trigger_tooltip = {
@@ -11997,11 +12661,18 @@ focus_tree = {
                 }
 				
                 ai_will_do = {
-                        factor = 9
-						modifier = {
-							has_war = yes
-							factor = 3
+					factor = 9
+					modifier = {
+						has_war = yes
+						factor = 3
+					}
+					modifier = {
+						check_variable = {
+							ORD_faithful_loyalty < 10
 						}
+						factor = 3
+					}
+					# Don't need to check for trad or royal loyalties since the foci can't be taken with <10 loyalty from them anyway
                 }
 				
                 relative_position_id = ORD_reservist_corps
@@ -12038,6 +12709,12 @@ focus_tree = {
 				modifier = {
 					has_war = yes
 					factor = 3
+				}
+				modifier = {
+					check_variable = {
+						ORD_faithful_loyalty < 5
+					}
+					factor = 2
 				}
 			}
 			relative_position_id = ORD_improve_vuid
@@ -12124,6 +12801,12 @@ focus_tree = {
 				modifier = {
 					has_war = yes
 					factor = 3
+				}
+				modifier = {
+					check_variable = {
+						ORD_faithful_loyalty < 5
+					}
+					factor = 2
 				}
 			}
 			relative_position_id = ORD_enlarge_military_budget
@@ -12255,21 +12938,21 @@ focus_tree = {
 			}
 		}
 
-		focus = { #
-			id = 
-			icon = GFX_
-			cost = 
-			prerequisite = {
-				focus = 
-			}
-			ai_will_do = {
-				factor = 5
-			}
-			relative_position_id = 
-			x = 
-			y = 
-			completion_reward = {
-
-			}
-		}
+	#	focus = { #
+	#		id = 
+	#		icon = GFX_
+	#		cost = 
+	#		prerequisite = {
+	#			focus = 
+	#		}
+	#		ai_will_do = {
+	#			factor = 5
+	#		}
+	#		relative_position_id = 
+	#		x = 
+	#		y = 
+	#		completion_reward = {
+	#
+	#		}
+	#	}
 	}

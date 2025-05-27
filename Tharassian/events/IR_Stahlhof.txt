@@ -1550,6 +1550,7 @@ id = sta.70
 				limit = {
 					OR = {
 						is_subject_of = UNG
+						is_subject_of = STA
 						tag = UNG
 					}
 					NOT = {
@@ -1587,7 +1588,10 @@ id = sta.70
 		#Let those on the fence choose
 		every_country = {
 			limit = {
-				is_subject_of = UNG
+				OR = {
+					is_subject_of = UNG
+					is_subject_of = STA
+				}
 				set_temp_variable = {
 					FPT_loyalty_difference = FPT_union_loyalty
 				}
@@ -1614,7 +1618,10 @@ id = sta.70
 		#Get allies to join
 		every_country = {
 			limit = {
-				is_subject_of = UNG
+				OR = {
+					is_subject_of = UNG
+					is_subject_of = STA
+				}
 				check_variable = {
 					var = FPT_stahlhof_loyalty 
 					value = var:FPT_union_loyalty
@@ -1637,7 +1644,10 @@ id = sta.70
 		#Set remainder as loyalists
 		every_country = {
 			limit = {
-				is_subject_of = UNG
+				OR = {
+					is_subject_of = UNG
+					is_subject_of = STA
+				}
 				check_variable = {
 					var = FPT_union_loyalty
 					value = var:FPT_stahlhof_loyalty
@@ -1654,7 +1664,10 @@ id = sta.70
 		#Set neutrals
 		every_country = {
 			limit = {
-				is_subject_of = UNG
+				OR = {
+					is_subject_of = UNG
+					is_subject_of = STA
+				}
 				has_completed_focus = FPT_exploit_chaos
 			}
 			UNG = {

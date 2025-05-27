@@ -2297,6 +2297,18 @@ country_event = { #Second Rthaur Rebellion!
 				limit = {
 					OR = {
 						is_owned_by = ORD
+					}
+					is_core_of = RTH
+				}
+				set_state_flag = second_RCW_original_ORD_state_flag
+				RTH = {
+					transfer_state = PREV
+				}
+			}
+			
+			every_state = {
+				limit = {
+					OR = {
 						is_owned_by = EOR
 					}
 					is_core_of = RTH
@@ -3383,6 +3395,14 @@ country_event = {#Transfer Rthaur land to Eastern Ordoria
 	
 	option = {#Dope
 		name = ord.61.a
+		every_owned_state = {
+			limit = {
+				has_state_flag = second_RCW_original_ORD_state_flag
+			}
+			remove_core_of = RTH
+			remove_core_of = EOR
+			add_core_of = ORD
+		}
 		every_owned_state = {
 			limit = {
 				is_core_of = EOR
@@ -4803,6 +4823,8 @@ country_event = {#Lirothlind agrees to trade
 			popularity = 0.02
 		}
 		
+		set_country_flag = ORD_LIR_full_trade_flag
+		
 		custom_effect_tooltip = ORD_LIR_trade_when_we_do_focus_tt
 	}
 }
@@ -4820,7 +4842,10 @@ country_event = {#Lirothlind declines trade
 			ideology = monarchy_absolute
 			popularity = -0.02
 		}
-		add_ideas = ORD_trade_domestic
+		
+		# Don't need a 'limited trade' flag since that's handled via an else statement
+		
+		custom_effect_tooltip = ORD_limited_LIR_trade_tt
 	}
 }
 
@@ -4835,7 +4860,22 @@ country_event = {#Trade in exchange for supporting the monarchy
 		name = ord.103.a
 		ai_chance = {
 			factor = 3
+			modifier = {
+				has_government = monarchy_absolute
+				factor = 3
+			}
+			modifier = {
+				has_government = theocrat
+				factor = 0
+			}
+			modifier = {
+				check_variable = {
+					ORD_moderates_loyalty < 5
+				}
+				factor = 2
+			}
 		}
+		custom_effect_tooltip = ORD_LIR_trade_when_we_do_focus_tt
 		custom_effect_tooltip = ORD_please_mods_2
 		add_to_variable = {
 			ORD_moderates_loyalty = 2
@@ -4844,6 +4884,7 @@ country_event = {#Trade in exchange for supporting the monarchy
 		subtract_from_variable = {
 			ORD_faithful_loyalty = 7
 		}
+		set_country_flag = ORD_LIR_full_trade_flag
 		LIR = {
 			country_event = {
 				id = lir.11
@@ -4861,10 +4902,13 @@ country_event = {#Trade in exchange for supporting the monarchy
 				factor = 0.5
 			}
 			modifier = {
-				has_government = theocrat
-				factor = 0
+				check_variable = {
+					ORD_faithful_loyalty < 5
+				}
+				factor = 2
 			}
 		}
+		custom_effect_tooltip = ORD_limited_LIR_trade_tt
 		add_popularity = {
 			ideology = monarchy_absolute
 			popularity = -0.02
@@ -4877,7 +4921,7 @@ country_event = {#Trade in exchange for supporting the monarchy
 		add_to_variable = {
 			ORD_faithful_loyalty = 3
 		}
-		add_ideas = ORD_trade_domestic
+		# Don't need a 'limited trade' flag since that's handled via an else statement
 		LIR = {
 			country_event = {
 				id = lir.12
@@ -5359,6 +5403,189 @@ country_event = { #Moderates - Reactionary Society Stabilizes
 		swap_ideas = {
 			remove_idea = ORD_stabilizing_social_fabric
 			add_idea = ORD_stable_social_fabric
+		}
+	}
+}
+
+country_event = { #ORB won civil war
+	id = ord.118
+	title = ord.118.t
+	desc = ord.118.d
+	
+	hidden = yes
+	
+	trigger = {
+		tag = ORB
+		NOT = {
+			country_exists = ORD
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {#pog
+		ORD = {
+			transfer_state = ROOT.capital
+		}
+		if = {
+			limit = {
+				has_government = monarchy_absolute
+			}
+			ORD = {
+				set_politics = {
+					ruling_party = monarchy_absolute
+				}
+				add_popularity = {
+					ideology = monarchy_absolute
+					popularity = 0.8
+				}
+				ORD_purge_non_royalist_ideas = yes
+			}
+			if = {
+				limit = {
+					ORD = {
+						OR = {
+							has_country_flag = ORD_puritan_government
+							has_country_flag = ORD_stewards_countercoup_flag
+							has_country_flag = ORD_pure_priests_flag
+						}
+					}
+				}
+				ORD = {
+					clr_country_flag = ORD_puritan_government
+					clr_country_flag = ORD_stewards_countercoup_flag
+					clr_country_flag = ORD_pure_priests_flag
+					set_country_flag = ORD_moderate_government
+					set_country_flag = ORD_first_decree_success
+					mark_focus_tree_layout_dirty = yes
+					unlock_national_focus = ORD_moderates
+					unlock_national_focus = ORD_fathers_wisdom
+					unlock_national_focus = ORD_careful_strides
+					unlock_national_focus = ORD_persuade_can
+					unlock_national_focus = ORD_high_king_wise
+					unlock_national_focus = ORD_overly_cautious
+					unlock_national_focus = ORD_princelings_passion
+					unlock_national_focus = ORD_opponents_many
+					unlock_national_focus = ORD_struggle_great
+					unlock_national_focus = ORD_cause_just
+					complete_national_focus = {
+						focus = ORD_steadfast_friends
+					}
+					unlock_national_focus = ORD_dare_to_dream
+					unlock_national_focus = ORD_courts_sway
+					unlock_national_focus = ORD_keep_promises
+					unlock_national_focus = ORD_codify_rights
+					unlock_national_focus = ORD_friends_close
+					unlock_national_focus = ORD_tackle_league
+					unlock_national_focus = ORD_first_law
+					unlock_national_focus = ORD_decree_passes
+				}
+			}
+			if = {
+				limit = {
+					ORD = {
+						OR = {
+							has_completed_focus = ORD_eyes_turned_east
+							has_completed_focus = ORD_left_off
+						}
+					}
+				}
+				ORD = {
+					uncomplete_national_focus = {
+						focus = ORD_eyes_turned_east
+						uncomplete_children = yes
+					}
+					uncomplete_national_focus = {
+						focus = ORD_left_off
+						uncomplete_children = yes
+					}
+					set_country_flag = ORD_moderate_government
+					mark_focus_tree_layout_dirty = yes
+					unlock_national_focus = ORD_moderates
+					unlock_national_focus = ORD_fathers_wisdom
+					unlock_national_focus = ORD_careful_strides
+					unlock_national_focus = ORD_persuade_can
+					unlock_national_focus = ORD_high_king_wise
+					unlock_national_focus = ORD_overly_cautious
+					unlock_national_focus = ORD_princelings_passion
+					unlock_national_focus = ORD_opponents_many
+					unlock_national_focus = ORD_struggle_great
+					unlock_national_focus = ORD_cause_just
+					complete_national_focus = {
+						focus = ORD_steadfast_friends
+					}
+					unlock_national_focus = ORD_dare_to_dream
+					unlock_national_focus = ORD_courts_sway
+					unlock_national_focus = ORD_keep_promises
+					unlock_national_focus = ORD_codify_rights
+					unlock_national_focus = ORD_friends_close
+					unlock_national_focus = ORD_tackle_league
+					unlock_national_focus = ORD_first_law
+					unlock_national_focus = ORD_decree_passes
+					unlock_national_focus = ORD_keeping_momentum
+					unlock_national_focus = ORD_highlight_successes
+					unlock_national_focus = ORD_disprove_doubters
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+			if = {
+				limit = {
+					ORD = {
+						OR = {
+							has_country_flag = ORD_crushed_revolution
+							has_country_flag = ORD_traditionalists_reunited_ordoria
+						}
+					}
+				}
+				ORD = {
+					clr_country_flag = ORD_crushed_revolution
+					clr_country_flag = ORD_traditionalists_reunited_ordoria
+					set_country_flag = ORD_ended_struggle
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = puritan
+			}
+			ORD = {
+				set_politics = {
+					ruling_party = puritan
+				}
+				add_popularity = {
+					ideology = puritan
+					popularity = 0.8
+				}
+				ORD_purge_non_trad_ideas = yes
+			}
+		}
+		if = {
+			limit = {
+				has_government = theocrat
+			}
+			ORD = {
+				set_politics = {
+					ruling_party = theocrat
+				}
+				add_popularity = {
+					ideology = theocrat
+					popularity = 0.8
+				}
+				ORD_purge_non_sophist_ideas = yes
+			}
+		}
+		ORD = {
+			change_tag_from = ORB
+		}
+		
+		ORD = {
+			annex_country = {
+				target = ORB
+				transfer_troops = yes
+			}
 		}
 	}
 }

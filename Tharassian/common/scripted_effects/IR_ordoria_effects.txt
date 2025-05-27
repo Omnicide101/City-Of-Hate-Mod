@@ -1,3 +1,48 @@
+# Creates a Sanctuary State and transfers population from non-Sanctuary states to this one
+ORD_create_sanctuary_state = {
+	add_dynamic_modifier = {
+		modifier = sanctuary_city
+	}
+	add_manpower = 600
+}
+
+
+# Country effects for creating a Sanctuary State
+ORD_sanctuary_state_country_effects = {
+	ORD_improve_royal_power_2 = yes
+	ORD_worsen_trad_loyalty_3 = yes
+	random_owned_controlled_state = {
+		limit = {
+			NOT = {
+				has_dynamic_modifier = {
+					modifier = sanctuary_city
+				}
+			}
+		}
+		add_manpower = -342
+	}
+	random_owned_controlled_state = {
+		limit = {
+			NOT = {
+				has_dynamic_modifier = {
+					modifier = sanctuary_city
+				}
+			}
+		}
+		add_manpower = -127
+	}
+	random_owned_controlled_state = {
+		limit = {
+			NOT = {
+				has_dynamic_modifier = {
+					modifier = sanctuary_city
+				}
+			}
+		}
+		add_manpower = -181
+	}
+}
+
 #Set the ratios of power between the various factions
 set_faction_power_ratios = {
 	set_traditionalist_to_royalist_power_ratio = yes
@@ -226,6 +271,7 @@ ORD_destroy_trads = {
 	set_country_flag = ORD_trads_defeated
 	clear_variable = ORD_traditionalists_influence
 	clear_variable = ORD_traditionalists_loyalty
+	mark_focus_tree_layout_dirty = yes
 }
 
 ORD_absorb_trads = {
@@ -244,6 +290,7 @@ ORD_destroy_faiths = {
 	set_country_flag = ORD_faiths_defeated
 	clear_variable = ORD_faithful_influence
 	clear_variable = ORD_faithful_loyalty
+	mark_focus_tree_layout_dirty = yes
 }
 
 ORD_absorb_faiths = {
@@ -262,6 +309,7 @@ ORD_destroy_mods = {
 	set_country_flag = ORD_mods_defeated
 	clear_variable = ORD_moderates_influence
 	clear_variable = ORD_moderates_loyalty
+	mark_focus_tree_layout_dirty = yes
 }
 
 ORD_absorb_mods = {
@@ -353,6 +401,22 @@ ORD_improve_trad_loyalty_5 = {
 		custom_effect_tooltip = ORD_please_trads_5
 		add_to_variable = {
 			ORD_traditionalists_loyalty = 5
+		}
+	}
+}
+ORD_improve_trad_loyalty_6 = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = ORD_trads_defeated
+					has_country_flag = ORD_trads_aligned
+				}
+			}
+		}
+		custom_effect_tooltip = ORD_please_trads_6
+		add_to_variable = {
+			ORD_traditionalists_loyalty = 6
 		}
 	}
 }
@@ -506,6 +570,32 @@ ORD_worsen_trad_loyalty_5 = {
 		custom_effect_tooltip = ORD_displease_trads_5
 		subtract_from_variable = {
 			ORD_traditionalists_loyalty = 5
+		}
+		if = {
+			limit = {
+				check_variable = {
+					ORD_traditionalists_loyalty < 0
+				}
+			}
+			set_variable = {
+				ORD_traditionalists_loyalty = 0
+			}
+		}
+	}
+}
+ORD_worsen_trad_loyalty_6 = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = ORD_trads_defeated
+					has_country_flag = ORD_trads_aligned
+				}
+			}
+		}
+		custom_effect_tooltip = ORD_displease_trads_6
+		subtract_from_variable = {
+			ORD_traditionalists_loyalty = 6
 		}
 		if = {
 			limit = {
@@ -815,6 +905,32 @@ ORD_worsen_trad_power_5 = {
 		}
 	}
 }
+ORD_worsen_trad_power_6 = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = ORD_trads_defeated
+					has_country_flag = ORD_trads_aligned
+				}
+			}
+		}
+		custom_effect_tooltip = ORD_disempower_trads_6
+		subtract_from_variable = {
+			ORD_traditionalists_influence = 6
+		}
+		if = {
+			limit = {
+				check_variable = {
+					ORD_traditionalists_influence < 0
+				}
+			}
+			set_variable = {
+				ORD_traditionalists_influence = 0
+			}
+		}
+	}
+}
 ORD_worsen_trad_power_7 = {
 	if = {
 		limit = {
@@ -945,6 +1061,22 @@ ORD_improve_royal_loyalty_5 = {
 		custom_effect_tooltip = ORD_please_mods_5
 		add_to_variable = {
 			ORD_moderates_loyalty = 5
+		}
+	}
+}
+ORD_improve_royal_loyalty_6 = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = ORD_mods_defeated
+					has_country_flag = ORD_mods_aligned
+				}
+			}
+		}
+		custom_effect_tooltip = ORD_please_mods_6
+		add_to_variable = {
+			ORD_moderates_loyalty = 6
 		}
 	}
 }
@@ -1098,6 +1230,32 @@ ORD_worsen_royal_loyalty_5 = {
 		custom_effect_tooltip = ORD_displease_mods_5
 		subtract_from_variable = {
 			ORD_moderates_loyalty = 5
+		}
+		if = {
+			limit = {
+				check_variable = {
+					ORD_moderates_loyalty < 0
+				}
+			}
+			set_variable = {
+				ORD_moderates_loyalty = 0
+			}
+		}
+	}
+}
+ORD_worsen_royal_loyalty_6 = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = ORD_mods_defeated
+					has_country_flag = ORD_mods_aligned
+				}
+			}
+		}
+		custom_effect_tooltip = ORD_displease_mods_6
+		subtract_from_variable = {
+			ORD_moderates_loyalty = 6
 		}
 		if = {
 			limit = {
@@ -1407,6 +1565,32 @@ ORD_worsen_royal_power_5 = {
 		}
 	}
 }
+ORD_worsen_royal_power_6 = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = ORD_mods_defeated
+					has_country_flag = ORD_mods_aligned
+				}
+			}
+		}
+		custom_effect_tooltip = ORD_disempower_mods_6
+		subtract_from_variable = {
+			ORD_moderates_influence = 6
+		}
+		if = {
+			limit = {
+				check_variable = {
+					ORD_moderates_influence < 0
+				}
+			}
+			set_variable = {
+				ORD_moderates_influence = 0
+			}
+		}
+	}
+}
 ORD_worsen_royal_power_7 = {
 	if = {
 		limit = {
@@ -1537,6 +1721,22 @@ ORD_improve_faith_loyalty_5 = {
 		custom_effect_tooltip = ORD_please_faiths_5
 		add_to_variable = {
 			ORD_faithful_loyalty = 5
+		}
+	}
+}
+ORD_improve_faith_loyalty_6 = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = ORD_faiths_defeated
+					has_country_flag = ORD_faiths_aligned
+				}
+			}
+		}
+		custom_effect_tooltip = ORD_please_faiths_6
+		add_to_variable = {
+			ORD_faithful_loyalty = 6
 		}
 	}
 }
@@ -1690,6 +1890,32 @@ ORD_worsen_faith_loyalty_5 = {
 		custom_effect_tooltip = ORD_displease_faiths_5
 		subtract_from_variable = {
 			ORD_faithful_loyalty = 5
+		}
+		if = {
+			limit = {
+				check_variable = {
+					ORD_faithful_loyalty < 0
+				}
+			}
+			set_variable = {
+				ORD_faithful_loyalty = 0
+			}
+		}
+	}
+}
+ORD_worsen_faith_loyalty_6 = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = ORD_faiths_defeated
+					has_country_flag = ORD_faiths_aligned
+				}
+			}
+		}
+		custom_effect_tooltip = ORD_displease_faiths_6
+		subtract_from_variable = {
+			ORD_faithful_loyalty = 6
 		}
 		if = {
 			limit = {
@@ -1986,6 +2212,32 @@ ORD_worsen_faith_power_5 = {
 		custom_effect_tooltip = ORD_disempower_faiths_5
 		subtract_from_variable = {
 			ORD_faithful_influence = 5
+		}
+		if = {
+			limit = {
+				check_variable = {
+					ORD_faithful_influence < 0
+				}
+			}
+			set_variable = {
+				ORD_faithful_influence = 0
+			}
+		}
+	}
+}
+ORD_worsen_faith_power_6 = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = ORD_faiths_defeated
+					has_country_flag = ORD_faiths_aligned
+				}
+			}
+		}
+		custom_effect_tooltip = ORD_disempower_faiths_6
+		subtract_from_variable = {
+			ORD_faithful_influence = 6
 		}
 		if = {
 			limit = {
@@ -2337,4 +2589,139 @@ ORD_industrialize = {
 			add_idea = ORD_manufactories_2
 		}
 	}
+}
+
+# Purge ideas of other factions post-civil war
+ORD_purge_non_royalist_ideas = {
+	remove_ideas = ORD_the_oath_idea
+	remove_ideas = ORD_the_oath_idea_2
+	remove_ideas = ORD_the_oath_idea_3
+	remove_ideas = ORD_the_oath_idea_vanilla
+	remove_ideas = ORD_the_oath_idea_vanilla_2
+	remove_ideas = ORD_the_oath_idea_vanilla_3
+	remove_ideas = ORD_bulwark_tradition_idea
+	remove_ideas = ORD_slave_concessions
+	remove_ideas = ORD_slave_revolt
+	remove_ideas = ORD_slave_leader
+	remove_ideas = ORD_race_riot_concessions
+	remove_ideas = ORD_race_riot_escalating
+	remove_ideas = ORD_race_riot_escalated
+	remove_ideas = ORD_coast_raids_idea
+	remove_ideas = ORD_port_raids_idea
+	remove_ideas = ORD_privateer_spoils
+	remove_ideas = ORD_puritanism_propagandized
+	remove_ideas = ORD_industrialized
+
+	remove_ideas = ORD_religious_zeal_idea
+	remove_ideas = ORD_holy_crusade_idea
+	remove_ideas = ORD_zeal
+	remove_ideas = ORD_elven_wits_idea
+	remove_ideas = ORD_elven_might_idea
+	remove_ideas = ORD_militarized_economy_idea
+	remove_ideas = ORD_expedited_cadet_training_idea
+	remove_ideas = ORD_reservist_corps_idea
+	remove_ideas = ORD_sophist_soldiery_idea
+	remove_ideas = ORD_expanded_procurement_idea
+	remove_ideas = ORD_expanded_procurement_idea_2a
+	remove_ideas = ORD_expanded_procurement_idea_2b
+	remove_ideas = ORD_expanded_procurement_idea_3
+	remove_ideas = ORD_sophist_oath_1
+	remove_ideas = ORD_sophist_oath_2
+	remove_ideas = ORD_sophist_oath_simony
+	remove_ideas = ORD_sophist_oath_redemption
+	remove_ideas = ORD_sophist_oath_redemption_2
+	remove_ideas = ORD_ending_blindness
+	remove_ideas = ORD_inquisition
+}
+
+ORD_purge_non_trad_ideas = {
+	remove_ideas = ORD_crowns_command_idea
+	remove_ideas = ORD_empire_endures_idea
+	remove_ideas = ORD_king_country_idea
+	remove_ideas = ORD_legacy_inskyllithe_idea
+	remove_ideas = ORD_own_backyard_idea
+	remove_ideas = ORD_acknowledged_reforms
+	remove_ideas = ORD_new_ordorian_model_idea
+	remove_ideas = ORD_restored_feudalism
+	remove_ideas = ORD_heal_nation_idea
+	remove_ideas = ORD_fledgling_bourgeoisie
+	remove_ideas = ORD_new_eastern_institutions
+	remove_ideas = ORD_right_rule_idea
+	remove_ideas = ORD_eastern_tithe
+	remove_ideas = ORD_vigilance_eternal_idea
+	remove_ideas = ORD_foreign_labour_idea
+	remove_ideas = ORD_economic_castes
+	remove_ideas = ORD_limited_trade_idea
+	remove_ideas = ORD_loyal_minorities
+	remove_ideas = ORD_guild_cooperation
+	remove_ideas = ORD_stabilizing_social_fabric
+	remove_ideas = ORD_stable_social_fabric
+	remove_ideas = ORD_positive_serfdom
+	remove_ideas = ORD_ascent_artisan
+	
+	remove_ideas = ORD_religious_zeal_idea
+	remove_ideas = ORD_holy_crusade_idea
+	remove_ideas = ORD_zeal
+	remove_ideas = ORD_elven_wits_idea
+	remove_ideas = ORD_elven_might_idea
+	remove_ideas = ORD_militarized_economy_idea
+	remove_ideas = ORD_expedited_cadet_training_idea
+	remove_ideas = ORD_reservist_corps_idea
+	remove_ideas = ORD_sophist_soldiery_idea
+	remove_ideas = ORD_expanded_procurement_idea
+	remove_ideas = ORD_expanded_procurement_idea_2a
+	remove_ideas = ORD_expanded_procurement_idea_2b
+	remove_ideas = ORD_expanded_procurement_idea_3
+	remove_ideas = ORD_sophist_oath_1
+	remove_ideas = ORD_sophist_oath_2
+	remove_ideas = ORD_sophist_oath_simony
+	remove_ideas = ORD_sophist_oath_redemption
+	remove_ideas = ORD_sophist_oath_redemption_2
+	remove_ideas = ORD_ending_blindness
+	remove_ideas = ORD_inquisition
+}
+
+ORD_purge_non_sophist_ideas = {
+	remove_ideas = ORD_crowns_command_idea
+	remove_ideas = ORD_empire_endures_idea
+	remove_ideas = ORD_king_country_idea
+	remove_ideas = ORD_legacy_inskyllithe_idea
+	remove_ideas = ORD_own_backyard_idea
+	remove_ideas = ORD_acknowledged_reforms
+	remove_ideas = ORD_new_ordorian_model_idea
+	remove_ideas = ORD_restored_feudalism
+	remove_ideas = ORD_heal_nation_idea
+	remove_ideas = ORD_fledgling_bourgeoisie
+	remove_ideas = ORD_new_eastern_institutions
+	remove_ideas = ORD_right_rule_idea
+	remove_ideas = ORD_eastern_tithe
+	remove_ideas = ORD_vigilance_eternal_idea
+	remove_ideas = ORD_foreign_labour_idea
+	remove_ideas = ORD_economic_castes
+	remove_ideas = ORD_limited_trade_idea
+	remove_ideas = ORD_loyal_minorities
+	remove_ideas = ORD_guild_cooperation
+	remove_ideas = ORD_stabilizing_social_fabric
+	remove_ideas = ORD_stable_social_fabric
+	remove_ideas = ORD_positive_serfdom
+	remove_ideas = ORD_ascent_artisan
+
+	remove_ideas = ORD_the_oath_idea
+	remove_ideas = ORD_the_oath_idea_2
+	remove_ideas = ORD_the_oath_idea_3
+	remove_ideas = ORD_the_oath_idea_vanilla
+	remove_ideas = ORD_the_oath_idea_vanilla_2
+	remove_ideas = ORD_the_oath_idea_vanilla_3
+	remove_ideas = ORD_bulwark_tradition_idea
+	remove_ideas = ORD_slave_concessions
+	remove_ideas = ORD_slave_revolt
+	remove_ideas = ORD_slave_leader
+	remove_ideas = ORD_race_riot_concessions
+	remove_ideas = ORD_race_riot_escalating
+	remove_ideas = ORD_race_riot_escalated
+	remove_ideas = ORD_coast_raids_idea
+	remove_ideas = ORD_port_raids_idea
+	remove_ideas = ORD_privateer_spoils
+	remove_ideas = ORD_puritanism_propagandized
+	remove_ideas = ORD_industrialized
 }

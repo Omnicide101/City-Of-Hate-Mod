@@ -10,6 +10,59 @@
 # protect
 # influence
 
+schlelfen_plan = { # Get it? It's the Schlieffen Plan, but with elves? Fuck you, I'm funny.
+	enable = {
+		tag = ORD
+		NOT = {
+			country_exists = RTH
+		}
+		OR = {
+			GMR = {
+				is_threat = yes
+			}
+			UNG = {
+				is_threat = yes
+			}
+			STA = {
+				is_threat = yes
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = GMR
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = prepare_for_war
+		id = UNG
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = prepare_for_war
+		id = STA
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = frontline
+		value = 75
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = archer
+		value = 50
+	}
+}
+
+
 help_eastern_ordoria_keep_rabble_in_line = {#EOR needs extra help with resistance
 	enable = {
 		tag = ORD
