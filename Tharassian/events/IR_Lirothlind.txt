@@ -785,7 +785,7 @@ country_event = {#Ordoria wants trade!
 	is_triggered_only = yes
 	
 	option = {#Yes
-		name = lir.10
+		name = lir.10.a
 		ai_chance = {
 			factor = 5
 		}
@@ -795,6 +795,8 @@ country_event = {#Ordoria wants trade!
 				days = 3
 			}
 		}
+		
+		custom_effect_tooltip = LIR_ORD_trade_when_they_do_focus_tt
 	}
 	
 	option = {#No
@@ -802,6 +804,7 @@ country_event = {#Ordoria wants trade!
 		ai_chance = {
 			factor = 0
 		}
+		custom_effect_tooltip = LIR_limited_ORD_trade_tt
 		ORD = {
 			country_event = {
 				id = ord.102
@@ -852,7 +855,7 @@ country_event = {#Support for trade
 	is_triggered_only = yes
 	
 	option = {#W
-		name = lir.11
+		name = lir.11.a
 		FROM_improve_THIS_relations = yes
 		add_popularity = {
 			ideology = monarchy_constitutional
@@ -871,7 +874,9 @@ country_event = {#No support for trade
 	is_triggered_only = yes
 	
 	option = {#Boo
-		name = lir.12
+		name = lir.12.a
 		FROM_worsen_THIS_relations = yes
+		
+		custom_effect_tooltip = LIR_limited_ORD_trade_tt
 	}
 }

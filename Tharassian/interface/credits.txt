@@ -43,7 +43,7 @@ Imperial_Warlord
 #Voicelines
 Tarnland - ZacmanTheDamned
 
-#Unit Models by Xangelo7
+#Unit Models by N7
 
 #Map Reworks by Veag
 

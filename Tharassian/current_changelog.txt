@@ -13,6 +13,7 @@
 -Reworked Thryxvanor to have a functioning economy
 -Removed tension requirements for wargoal generation. Have fun.
 -Updated console_command.2 localization
+-Fixed weather
 -Buffed Cinyras' revolt
 -Tweaked Holzbrenn and Spochwald's capital city populations
 -Renamed a few Spochwald states
@@ -65,4 +66,8 @@
 -Reworked provinces in the Tlarthingian Isthmus as one province bordering both the Merchant's Hand and the wider ocean made the naval invasion system shit itself
 -Fixed the Adventurous generic trait making Adventuring Guild upgrades take longer instead of shorter
 -Made the relevant techs change your trade/econ laws
+-UNG - Made the 'The Second Threat' focus require not being in a war on the same side as the Realm
+-Added an event for Freiprinztümer not leaning strongly towards either Union or the Stahlhof to pick a side
+-Add a faction for the Northern Plains Separatists
+-Fixed NRK not joining Stahlpakt if puppeted
 -Tons and tons of bugfixes and tweaks

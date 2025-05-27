@@ -1470,8 +1470,6 @@
  FAU_puritan_DEF:0 "The Iron Authority of Faustburg"
  FAU_puritan_ADJ:0 "Iron Faustburger"
  
- WIS:0 "Wistingen"
- WIS_DEF:0 "Wistingen"
  WIS_monarchy_absolute:0 "Wistingen"
  WIS_monarchy_absolute_DEF:0 "The Principality of Wistingen"
  WIS_monarchy_absolute_ADJ:0 "Wistinger"

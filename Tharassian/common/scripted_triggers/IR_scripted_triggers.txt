@@ -272,6 +272,12 @@ is_not_sphered = {
 }
 
 # Checks if country is a threat
+is_threat = {
+	country_exists = THIS
+	THIS = {
+		is_not_sphered = yes
+	}
+}
 
 is_not_threat = {
 	OR = {

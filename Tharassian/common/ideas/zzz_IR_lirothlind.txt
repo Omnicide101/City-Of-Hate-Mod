@@ -22,5 +22,26 @@ ideas = {
 				local_resources_factor = 0.15
 			}
 		}
+		
+		LIR_trade_ORD_limited = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_sea_focused_navy
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_speed_buildings_factor = 0.035
+				local_resources_factor = 0.07
+			}
+		}
 	}
 }
