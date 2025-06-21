@@ -166,6 +166,60 @@ PRK_upset_vln = {
 	}	
 }
 
+PRK_modernize_nation = {
+	PRK_modernize_perkavland = {
+		
+		icon = GFX_decision_SOV_place_hq
+		
+		fire_only_once = yes
+		
+		allowed = {
+			is_og_perkav_chiefdom = yes
+		}
+		
+		available = {
+			OR = {
+				has_idea = PRK_tribal_nation
+				has_idea = PRK_oral_tradition
+			}
+			has_tech = tech_medieval_development
+			if = { # Can't do it if the Union does it for you
+				limit = {
+					UNG = {
+						has_completed_focus = UNG_diplomatic_efforts
+					}
+				}
+				NOT = {
+					UNG = {
+						has_completed_focus = UNG_diplomatic_efforts
+					}
+				}
+			}
+		}
+		
+		visible = {
+			is_og_perkav_chiefdom = yes
+			OR = {
+				has_idea = PRK_tribal_nation
+				has_idea = PRK_oral_tradition
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000 # Important!!!
+		}
+		
+		cost = 200
+		
+		days_remove = 200
+		
+		remove_effect = {
+			remove_ideas = PRK_tribal_nation
+			remove_ideas = PRK_oral_tradition
+		}
+	}
+}
+
 plunder_schneefilde = {
 		
 	PRK_plunder_schneefilde = {

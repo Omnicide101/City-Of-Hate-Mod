@@ -6,6 +6,12 @@ state = {
 	}
 	state_category = city
 	manpower = 692813
+	
+	resources = {
+		lumber = 17
+		food = 28
+	}
+	
 	buildings_max_level_factor = 1.000
 	history = {
 		owner = TRS

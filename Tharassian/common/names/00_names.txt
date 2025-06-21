@@ -40,6 +40,43 @@ NBI = {
 }
 
 ###############################################################
+# Hastalians
+###############################################################
+HAS = {
+	male = {
+		names = {  
+			GAgustín Alberto Alejandro Alfonso Álvaro Antonio Arsenio Arturo Augusto Aureliano
+			Baldomero Baltasar Benancio Benigno Benito Bernardino Bernardo
+			Calixto Cándido Carlos Celestino Claudio Cristóbal Dámaso Diego Dionisio Domingo
+			Eduardo Eleazar Emilio Ernesto Estanislao Esteban Federico Felipe Félix Fernando Francisco
+			Gabino Gabriel Gaspar Genaro Gonzalo Herminio Ignacio Isidro
+			Jacobo Jaime Joaquín "Jorge Mariano" José "José Antonio" "Jose María" Juan "Juan Manuel" Julián Julio Leopoldo Lorenzo Luis
+			Manuel Marcelo Mariano Mario "Mario Eduardo" Mateo Melchor Miguel Nicolás Norberto Pablo Pascual Pedro
+			Rafael Raimundo Ramón Ricardo Salvador Sandalio Santiago Sebastián Segismundo Segundo Valeriano Vicente
+		}
+	}
+	female = {
+		names = {
+			Adelita Amalia Amaranta Ana Araceli Aurelia Auxilio Beatriz Belén Blanca
+			Camila Candelaria Cándida Carmen Chavela Cirila Consuelo Cristina Delfina Dolores
+			Eduarda Esperanza Felipa Fidelia Froilana Graciela Herminia Inés Isabel Irene Isadora Isabella
+			Jimena Justa Justina Luciana Lucrecia María "María del Carmen" "María del Mar" "María Dolores" Marisol Mercedes
+			Noemí Nohemi Primitiva Rebeca Remedios Rocío Salvadora Socorro Sofía Soledad
+			Teodora Teófila Úrsula Valentina Valeria Vicenta Ximena
+		}
+	}
+	surnames = { 
+		"de Tramastara" Postamora Camodra Vorciento Acuña Aguirre Allendesalazar Alonso Álvarez Aranda Arcadio Asensio Aznar
+		Blázquez Barradas Basaraz Bugallal Burruezo Caballero Cabrera Calvo Cano Castillo Castro Cervera Cevallos Cortés
+		"de Albornoz" "de Carvajal" "de la Fuente" "de Irujo" "de la Llave" "de Orleans" Díaz Domínguez Espartero Fernández Franco
+		Gallego García Garrido González Grande Guisado Heredia Hernández Herrera Hevia Iglesias Jiménez Lasarte Letamendía Linares López
+		Maroto Márquez Martínez-Campos Maura Martín Martínez Menéndez Mercado Miaja Millán-Astray Mina Mola Molina Moreno Muñoz
+		Narváez Núñez O'Donnell Ortega Pavía Pérez Ramírez Rodríguez Rojo Romero Ruiz Sánchez Sanjurjo Serrano Silvestre Suárez
+		Topete Torres Urkiaga Valdés Varela Vázquez Velasco Villapol Villar Weyler Yagüe Zapatero
+	}
+}
+
+###############################################################
 # Tristals
 ###############################################################
 TRS = {
@@ -64,7 +101,7 @@ TRS = {
 AKK = {
 	male = {
 		names = {  
-			"Abd Allah" "Abd al-Karim" "Abd al-Malik" "Abd al-Qadir" "Abd al-Rahman" "Abu Bakr" Ahmad Ali 
+			"Abd Almar" "Abd al-Karim" "Abd al-Malik" "Abd al-Qadir" "Abd al-Rahman" "Abu Bakr" Ahmad Ali 
 			Fawzi Fuad Halil Hasan Hisham Ibrahim Ishaq Iskandar Ja'far Jamal Kamil Khalid 
 			Mustafa "Nur al-Din" "Sa'd al-Din" Salim  Sa'ud Shukri
 			Tawfiq Umar Uthman Yahya Yusuf Zafir 		
@@ -80,7 +117,7 @@ AKK = {
 		}
 	}
 	surnames = { 
-		"ibn Abd Allah" "ibn Abd al-Qadir" "ibn Abu Bakr" "ibn Ahmad" "ibn Ali"
+		"ibn Abd Almar" "ibn Abd al-Qadir" "ibn Abu Bakr" "ibn Ahmad" "ibn Ali"
 			"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
 			"ibn Mustafa" "ibn Salim"  
 			"ibn Umar" "ibn Uthman" "ibn Yusuf"

@@ -6,12 +6,20 @@ state = {
 	}
 	manpower = 6333
 	state_category = rural
+	
+	resources = {
+		lumber = 2
+		food = 4
+		mount = 3
+	}
+	
 	history = {
 		victory_points = {
 			7800 4
 		}
 		buildings = {
 			infrastructure = 1
+			arms_factory = 2
 		}
 		owner = TRS
 		add_core_of = TRS

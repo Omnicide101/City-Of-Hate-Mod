@@ -2,7 +2,7 @@ state = {
 	id = 1084
 	name = "STATE_1084"
 	provinces = {
-		468 2847 4813 5008 6011 6029 6100 
+		468 4813 5008 6011 6029
 	}
 	manpower = 1934
 	state_category = pastoral

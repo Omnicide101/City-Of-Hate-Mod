@@ -113,6 +113,16 @@ add_ideas = {
 	sothrism_religion
 	manorialism_economy
 }
+	
+	add_opinion_modifier = {
+		target = HAS
+		modifier = bitter_rivals
+	}
+	
+	add_relation_modifier = {
+		target = HAS
+		modifier = bitter_rivals_opinion_modifier
+	}
 
 create_country_leader = {
 	name = "Althorin Senvoss"

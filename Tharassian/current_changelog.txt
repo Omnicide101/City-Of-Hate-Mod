@@ -4,7 +4,7 @@
 -Fixed various Schneefilde bugs
 -Added unique portraits to the Skaelinger leaders
 -Added more general portraits to the southern Union
--Added High Hall, El, and the Aethellian Dominion
+-Added the High Hall, El, the Tharothep Princedom, the Empire of the Ageless Queen, the Akkanid Sultanate, the Tristal Empire, Hastalia, and the Aethellian Dominion
 -Added division commander portraits
 -Made Hellpfad and Flugernacht Very Fertile states
 -Fixed Dwarf Warriors requiring about a factor of ten less equipment than they actually should. Entire regiments will no longer be sharing a single axe.
@@ -14,6 +14,7 @@
 -Removed tension requirements for wargoal generation. Have fun.
 -Updated console_command.2 localization
 -Fixed weather
+-Made the Rthaur commanders not forget the lessons they learned from beating Ordoria if they go to war for too long
 -Buffed Cinyras' revolt
 -Tweaked Holzbrenn and Spochwald's capital city populations
 -Renamed a few Spochwald states
@@ -27,6 +28,8 @@
 -Slightly improved Schneefilder food situation
 -Added generic advisors
 -Encouraged the AI to be more agressive in a few scenarios
+-FIxed Eastern Ordoria being given the lands around Ythelmare if the Second Rthaur Revolt fires before the 'Crush the Revolution' focus is taken
+-Gave Wistinger booze
 -Given Freiprinztümer that have their loyalties very closely split between the Union and Stahlhof a chance to choose which side they're on.
 -Fixed the Union immediately surrendering to Stahlhof once they beat them in the civil war. That's just silly.
 -Refactored the Ungerdaler United Front focuses to prevent silliness

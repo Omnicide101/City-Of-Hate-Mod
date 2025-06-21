@@ -46,6 +46,14 @@
  puritan_ideology:0 "Puritan"
  puritan_ideology_desc:0 "Fanatical and unaccepting of compromise, the Puritans advocate racial purity and aggressive expansionism. No matter what race they are from, Puritans will seek to expunge all others from their realms."
  
+ HAS_monarchy_absolute_party:0 "Vorciento Bloodline"
+ HAS_monarchy_constitutional_party:0 "Postamora Bloodline"
+ HAS_republic_aristocrat_party:0 "Comodra Bloodline"
+ HAS_republic_peasant_party:0 "Movimiento Republicano Segundo"
+ HAS_republic_merchant_party:0 "Movimiento Republicano Clásico"
+ HAS_theocrat_party:0 "Sothrist Temple"
+ HAS_puritan_party:0 "Tristal Bloodlines"
+ 
  TRS_monarchy_absolute_party:0 "Generals' Conclave"
  TRS_monarchy_constitutional_party:0 "House Calidacius"
  TRS_republic_aristocrat_party:0 "The Senate"
