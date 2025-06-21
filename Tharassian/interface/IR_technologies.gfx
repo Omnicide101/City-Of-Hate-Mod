@@ -63,6 +63,11 @@ spriteTypes = {
 	}
 	
 	SpriteType = {
+		name = "GFX_basic_dragonfly_creature_vanilla_medium"
+		texturefile = "gfx/interface/technologies/giant_dragonfly.dds"
+	}
+	
+	SpriteType = {
 		name = "GFX_carts_equipment_1"
 		texturefile = "gfx/interface/technologies/carts_equipment_1.dds"
 	}

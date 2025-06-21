@@ -108,6 +108,7 @@ add_ideas = {
 	human_country
 	anzella_patron
 	FPT_bauernfreistellung
+	WIS_whiskey
 }
 
 set_popularities = {

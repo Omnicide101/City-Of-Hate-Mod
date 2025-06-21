@@ -5,6 +5,13 @@ state = {
 		1519 7453 7485 4348 4373
 	}
 	state_category = city
+	
+	resources = {
+		lumber = 16
+		food = 18
+		mount = 11
+	}
+	
 	manpower = 592032
 	buildings_max_level_factor = 1.000
 	history = {

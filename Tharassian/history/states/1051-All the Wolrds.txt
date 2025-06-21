@@ -6,6 +6,13 @@ state = {
 	}
 	manpower = 8086
 	state_category = rural
+	
+	resources = {
+		lumber = 7
+		food = 4
+		steel = 13
+	}
+	
 	history = {
 		victory_points = {
 			7173 2

@@ -10,6 +10,28 @@
 # protect
 # influence
 
+hastalia_buddies = {
+	enable = {
+		original_tag = TRS
+		country_exists = HAS
+		has_opinion_modifier = staunch_allies
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = HAS
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = HAS
+		value = 200
+	}
+}
+
+
 subdue_new_breakaways = {
 	enable = {
 		original_tag = TRS

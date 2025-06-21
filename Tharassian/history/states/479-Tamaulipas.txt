@@ -5,6 +5,13 @@ state = {
 		5520 8112 8143 8150 8151 8186 8189 
 	}
 	state_category = metropolis
+	
+	resources = {
+		lumber = 25
+		food = 8
+		steel = 7
+	}
+	
 	manpower = 1053221
 	buildings_max_level_factor = 1.000
 	history = {

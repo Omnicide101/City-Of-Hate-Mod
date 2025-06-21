@@ -2232,15 +2232,7 @@ country_event = { #Second Rthaur Rebellion!
 		hidden_effect = {
 			
 			remove_ideas = ORD_rthaur_propaganda
-
-			every_state = {
-				limit = {
-					is_core_of = ORD
-				}
-				ORD = {
-					remove_state_core = PREV
-				}
-			}
+			
 			every_state = {
 				limit = {
 					is_core_of = RTH

@@ -4696,6 +4696,9 @@ focus_tree = {
 				every_state = {
 					limit = {
 						is_core_of = RTH
+						NOT = {
+							is_core_of = ORD # Accounting for 2RCW firing
+						}
 					}
 					ORD = {
 						remove_state_claim = PREV
@@ -8064,6 +8067,10 @@ focus_tree = {
 					ORD_traditionalists_loyalty < 5
 				}
 				factor = 2
+			}
+			modifier = {
+				has_government = puritan
+				factor = 5
 			}
 		}
 		available = {

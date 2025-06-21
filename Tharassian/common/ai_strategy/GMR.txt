@@ -10,6 +10,164 @@
 # protect
 # influence
 
+GMR_reunite_plains = {#Try to unify the Northern Plains
+	enable = {
+		original_tag = GMR
+		any_other_country = {
+			OR = {
+				original_tag = NPC
+				is_og_northern_plains_state = yes
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = antagonize
+		id = NPC
+		value = 500 # Prioritize the Kingsmen
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NPC
+		value = 500
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NPC
+		value = 500
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = IRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = IRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = IRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = FEL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = FEL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = FEL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = TRI
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = TRI
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = TRI
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = NAV
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NAV
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NAV
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = KAL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = KAL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = KAL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = KRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = KRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = KRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = NAS
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NAS
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NAS
+		value = 200
+	}
+}
+
 dont_hog_ordorian_supplies = {
 	enable = {
 		original_tag = GMR

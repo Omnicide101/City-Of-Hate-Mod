@@ -284,6 +284,22 @@ BER_terugkeer = {
 	}
 }
 
+PRK_modernize_nation = {
+	
+	icon = GFX_decision_category_generic_political_actions
+	
+	allowed = {
+		always = yes
+	}
+	
+	visible = {
+		OR = {
+			has_idea = PRK_tribal_nation
+			has_idea = PRK_oral_tradition
+		}
+	}
+}
+
 plunder_schneefilde = {
 	
 	icon = GFX_decision_category_border_conflicts

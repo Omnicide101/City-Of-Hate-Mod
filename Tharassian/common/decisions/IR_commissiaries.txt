@@ -2288,6 +2288,95 @@ commissiaries = {
 				name = "Ythele-Resderin"
 			}
 			
+			414 = {
+				set_state_name = "Vythcyne"
+			}			
+			set_province_name = {
+				id = 9576
+				name = "Vythcyne"
+			}
+			
+			415= {
+				set_state_name = "Rilvyne"
+			}			
+			set_province_name = {
+				id = 1453
+				name = "Rilvyne"
+			}
+			
+			416= {
+				set_state_name = "Karcyn"
+			}			
+			set_province_name = {
+				id = 5418
+				name = "Karcyn"
+			}
+			
+			417= {
+				set_state_name = "Vlincyne"
+			}			
+			set_province_name = {
+				id = 3287
+				name = "Vlincyne"
+			}
+			
+			418= {
+				set_state_name = "Lincyne"
+			}			
+			set_province_name = {
+				id = 9478
+				name = "Lincyne"
+			}
+			
+			419= {
+				set_state_name = "Wyltrivyn"
+			}			
+			set_province_name = {
+				id = 2171
+				name = "Wyltrivyn"
+			}
+			
+			420= {
+				set_state_name = "Nevythkyn"
+			}			
+			set_province_name = {
+				id = 3038
+				name = "Nevythkyn"
+			}
+			
+			421= {
+				set_state_name = "Stovyne"
+			}			
+			set_province_name = {
+				id = 4805
+				name = "Stovyne"
+			}
+			
+			329= {
+				set_state_name = "Cysrin"
+			}			
+			set_province_name = {
+				id = 1491
+				name = "Cysrin"
+			}
+			
+			421= {
+				set_state_name = "Stovyne"
+			}			
+			set_province_name = {
+				id = 4805
+				name = "Stovyne"
+			}
+			
+			
+			627= {
+				set_state_name = "Mincyn"
+			}			
+			set_province_name = {
+				id = 575
+				name = "Mincyn"
+			}
+
 			hidden_effect = {
 				set_country_flag = ORD_settled_perkavland
 				every_state = {

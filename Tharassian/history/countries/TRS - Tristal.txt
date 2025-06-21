@@ -105,9 +105,22 @@ set_popularities = {
 }
 
 add_ideas = {
-	
 	human_country
 	generic_religion
+	TRS_widespread_corruption
+}
+
+create_faction = gran_alianza #...but Hastalia carries, let's be honest
+add_to_faction = HAS
+
+add_opinion_modifier = {
+	target = HAS
+	modifier = staunch_allies
+}
+
+add_relation_modifier = {
+	target = HAS
+	modifier = staunch_allies_opinion_modifier
 }
 
 if = {
