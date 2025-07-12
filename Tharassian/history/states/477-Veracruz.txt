@@ -9,6 +9,13 @@ state = {
 		122 780 855 2356 4904 
 	}
 	state_category = city
+	
+	resources = {
+		lumber = 16
+		food = 21
+		steel = 8
+	}
+	
 	manpower = 443902
 	buildings_max_level_factor = 1.000
 	history = {

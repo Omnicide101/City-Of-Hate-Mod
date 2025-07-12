@@ -215,6 +215,15 @@ city_of_generals = {
 	army_org_regain = 0.03
 }
 
+sanctuary_city = {
+	icon = GFX_modifier_local_government
+	state_resources_factor = 0.33
+	local_supplies = 0.2
+	recruitable_population = 0.04
+	local_intel_to_enemies = -0.21
+}
+
+
 ongoing_border_conflict = {
     icon = GFX_modifier_ongoing_conflict
 	remove_trigger = {

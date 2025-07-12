@@ -5,6 +5,13 @@ state = {
 		9 953 4619 4794 5162 7494 7508 7529 
 	}
 	manpower = 24102
+	
+	resources = {
+		lumber = 26
+		food = 5
+		steel = 19
+	}
+
 	state_category = town
 	history = {
 		victory_points = {

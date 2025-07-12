@@ -58,7 +58,7 @@ is_og_freiprinz = {
 	}
 }
 
-# checks if a country is a Northern Plains separatist tag (NOT the Northern Plains Confederation!)
+# checks if a country is a Northern Plains separatist tag (NOT the Northern Plains Confederation or Grand Master's Realm!)
 is_og_northern_plains_state = {
 	OR = {
 		original_tag = IRT
@@ -66,7 +66,7 @@ is_og_northern_plains_state = {
 		original_tag = TRI
 		original_tag = NAV
 		original_tag = KAL
-		original_tag = KLT
+		original_tag = KRT
 		original_tag = NAS
 	}
 }
@@ -272,6 +272,12 @@ is_not_sphered = {
 }
 
 # Checks if country is a threat
+is_threat = {
+	country_exists = THIS
+	THIS = {
+		is_not_sphered = yes
+	}
+}
 
 is_not_threat = {
 	OR = {

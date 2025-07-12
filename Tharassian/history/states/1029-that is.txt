@@ -8,7 +8,8 @@ state = {
 	state_category = pastoral
 	history = {
 		buildings = {
-			infrastructure = 1
+			infrastructure = 1                       
+			arms_factory = 1
 		}
 		owner = TRS
 		add_core_of = TRS

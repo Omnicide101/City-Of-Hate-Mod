@@ -8,7 +8,7 @@ state = {
 	manpower = 1
 	buildings_max_level_factor = 1.000
 	history = {
-		owner = XXX
-		add_core_of = XXX
+		owner = HAS
+		add_core_of = HAS
 	}
 }

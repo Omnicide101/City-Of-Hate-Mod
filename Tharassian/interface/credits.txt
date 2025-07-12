@@ -43,7 +43,7 @@ Imperial_Warlord
 #Voicelines
 Tarnland - ZacmanTheDamned
 
-#Unit Models by Xangelo7
+#Unit Models by N7
 
 #Map Reworks by Veag
 
@@ -128,6 +128,8 @@ Gowie Key - Icon available at www.thenounproject.com (made by Ani Rofiqah)
 Stabba Web - Icon available at www.thenounproject.com (made by Made)
 Stabba Skull - Icon available at www.thenounproject.com (made by Hasanudin)
 Stabba Brain - Icon available at www.thenounproject.com (made by Juicy Fish)
+Hastalian Sea-Lion - Icon available at www.heraldicart.org (made by Gunnvôr Silfrahárr)
+Hastalian Compass - Icon available at www.heraldicart.org (made by Gunnvôr Silfrahárr)
 
 # Technology Icons
 

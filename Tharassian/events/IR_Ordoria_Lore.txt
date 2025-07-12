@@ -174,6 +174,7 @@ country_event = { #Gamerfication of Ythem
 		name = ord_lore.7.a
 		add_stability = -0.002
 		add_manpower = 1
+		set_country_flag = ORD_rthaur_defectors
 	}
 }
 
@@ -209,6 +210,7 @@ country_event = { #I am a dwarf and I'm digging a hole
 			add_resistance = 0.1
 		}
 		add_war_support = -0.002
+		set_country_flag = ORD_skaelinger_underground_resistance
 	}
 }
 
@@ -718,10 +720,22 @@ country_event = {#Off we go
 		ORD_worsen_trad_power_1 = yes
 		ORD_worsen_faith_power_1 = yes
 		
-		add_ideas = ORD_trade_LIR
+		if = {
+			limit = {
+				has_country_flag = ORD_LIR_full_trade_flag
+			}
+			add_ideas = ORD_trade_LIR
 		
-		LIR = {
-			add_ideas = LIR_trade_ORD
+			LIR = {
+				add_ideas = LIR_trade_ORD
+			}
+		}
+		
+		else = {
+			add_ideas = ORD_trade_LIR_limited
+			LIR = {
+				add_ideas = LIR_trade_ORD_limited
+			}
 		}
 	}
 }

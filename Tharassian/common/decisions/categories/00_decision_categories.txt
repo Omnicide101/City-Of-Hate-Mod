@@ -15,6 +15,22 @@ ORD_autumn_debate_values = {
 	priority = 500
 }
 
+ORD_expand_sanctuary = {
+
+	icon = GFX_decision_category_NOR_monarchist_prep
+	
+	allowed = {
+		tag = ORD
+	}
+	
+	visible = {
+		has_government = monarchy_absolute
+		has_completed_focus = ORD_expanding_sanctuary
+	}
+	
+	visible_when_empty = yes
+}
+
 EOR_pacify_land = {
 
 	icon = GFX_decision_category_eng_move_to_secure_the_dominions
@@ -265,6 +281,22 @@ BER_terugkeer = {
 	
 	allowed = {
 		always = yes
+	}
+}
+
+PRK_modernize_nation = {
+	
+	icon = GFX_decision_category_generic_political_actions
+	
+	allowed = {
+		always = yes
+	}
+	
+	visible = {
+		OR = {
+			has_idea = PRK_tribal_nation
+			has_idea = PRK_oral_tradition
+		}
 	}
 }
 

@@ -936,15 +936,24 @@ ideas = {
 		sothrism_religion = {
 
 			visible = {
-				tag = GMR
+				OR = {
+					tag = GMR
+					tag = HAS
+				}
 			}
 			
 			allowed = {
-				tag = GMR
+				OR = {
+					tag = GMR
+					tag = HAS
+				}
 			}
 			
 			available = {
-				tag = GMR
+				OR = {
+					tag = GMR
+					tag = HAS
+				}
 			}
 			
 			allowed_civil_war = {
