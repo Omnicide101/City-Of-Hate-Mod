@@ -1,0 +1,276 @@
+
+add_namespace = has
+
+country_event = { #The Tristal Catastrophe
+	id = has.1
+	title = has.1.t
+	desc = has.1.d
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	trigger = {
+		tag = HAS
+		is_in_faction_with = TRS
+		any_other_country = {
+			OR = {
+				has_idea = MASLEAGUE_member_fervent
+				has_idea = MASLEAGUE_member_committed
+				has_idea = MASLEAGUE_member_wavering
+			}
+			has_war_with = TRS
+		}
+		TRS = {
+			surrender_progress > 0.5
+		}
+	}
+	
+	option = { #Take control
+		name = has.1.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				has_government = monarchy_absolute
+				factor = 2
+			}
+		}
+		TRS = {
+			country_event = {
+				id = trs.1
+				days = 1
+			}
+		}
+		
+		custom_effect_tooltip = HAS_warning_TRS_civil_war_tt
+	}
+	
+	option = { #Demand they shape up or we ship out
+		name = has.1.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				has_government = monarchy_constitutional
+				factor = 2
+			}
+		}
+		TRS = {
+			country_event = {
+				id = trs.2
+				days = 1
+			}
+		}
+		
+		if = {
+			limit = {
+				TRS = {
+					has_stability < 0.7
+				}
+			}
+			custom_effect_tooltip = HAS_warning_TRS_decadence_civil_war_tt
+		}
+	}
+	
+	option = { #Deal w/ it
+		name = has.1.c
+		ai_chance = {
+			factor = 0
+		}
+		add_war_support = -0.13
+	}
+}
+
+country_event = { #Tristal Bends the Knee
+	id = has.2
+	title = has.2.t
+	desc = has.2.d
+
+	is_triggered_only = yes
+	
+	option = { #Good, clean up their mess
+		name = has.2.a
+
+		effect_tooltip = {
+			puppet = TRS
+			TRS = {
+				remove_ideas = TRS_widespread_corruption
+			}
+		}
+	}
+}
+
+country_event = { #Tristal Defiant!
+	id = has.3
+	title = has.3.t
+	desc = has.3.d
+
+	is_triggered_only = yes
+	
+	option = { #Aight bet
+		name = has.3.a
+		
+		hidden_effect = {
+			remove_opinion_modifier = {
+				target = TRS
+				modifier = staunch_allies
+			}
+
+			remove_relation_modifier = {
+				target = TRS
+				modifier = staunch_allies_opinion_modifier
+			}
+			
+			set_faction_leader = yes
+			remove_from_faction = TRS
+		}
+	
+	
+		TRS = {
+			hidden_effect = {
+				remove_opinion_modifier = {
+					target = HAS
+					modifier = staunch_allies
+				}
+
+				remove_relation_modifier = {
+					target = HAS
+					modifier = staunch_allies_opinion_modifier
+				}
+			}
+		
+			start_civil_war = {
+				ruling_party = republic_aristocrat #Original, independent state
+				ideology = monarchy_absolute #Breakaway state
+				size = 0.35
+				capital = 476
+				states = {
+					475
+					476
+					1050
+					1051
+					1052
+					1055
+					1057
+					1058
+					1059
+					1060
+				}
+			}
+		}
+		
+		random_other_country = {
+			limit = {
+				original_tag = TRS
+				has_war_with = TRS
+			}
+			HAS = {
+				puppet = {
+					target = PREV
+					end_civil_wars = no
+				}
+				add_to_faction = PREV
+				hidden_effect = {
+					add_opinion_modifier = {
+						target = PREV
+						modifier = staunch_allies
+					}
+
+					add_relation_modifier = {
+						target = PREV
+						modifier = staunch_allies_opinion_modifier
+					}
+				
+					add_to_war = {
+						targeted_alliance = PREV
+						enemy = TRS
+						hostility_reason = asked_to_join
+					}
+				}
+			}
+			hidden_effect = {
+				set_cosmetic_tag = TRS_HAS_government
+				remove_ideas = TRS_widespread_corruption
+				
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = TRS_HAS_government_party_name_monarchy_constitutional
+				}
+				
+				add_opinion_modifier = {
+					target = HAS
+					modifier = staunch_allies
+				}
+
+				add_relation_modifier = {
+					target = HAS
+					modifier = staunch_allies_opinion_modifier
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Tristal Reforms
+	id = has.4
+	title = has.4.t
+	desc = has.4.d
+
+	is_triggered_only = yes
+	
+	option = { #Good
+		name = has.4.a
+
+		effect_tooltip = {
+			TRS = {
+				remove_ideas = TRS_widespread_corruption
+			}
+			
+			if = {
+				limit = {
+					TRS = {
+						has_stability < 0.7
+					}
+				}
+				
+				TRS = {
+					start_civil_war = {
+						ideology = republic_aristocrat #Breakaway state
+						size = 0.4
+						capital = 478
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Tristal Refuses to Reform
+	id = has.5
+	title = has.5.t
+	desc = has.5.d
+
+	is_triggered_only = yes
+	
+	option = { #Aight, peace
+		name = has.5.a
+
+		leave_faction = yes
+		
+		every_other_country = {
+			limit = {
+				OR = {
+					has_idea = MASLEAGUE_member_fervent
+					has_idea = MASLEAGUE_member_committed
+					has_idea = MASLEAGUE_member_wavering
+				}
+				has_war_with = HAS
+			}
+			white_peace = {
+				tag = HAS
+				message = HAS_abandon_TRS_peace_tt
+			}
+		}
+	}
+}
