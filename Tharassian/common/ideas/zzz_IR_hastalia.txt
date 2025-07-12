@@ -1,0 +1,48 @@
+ideas = {
+	
+	country = {
+
+		HAS_tenuous_familial_peace = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = SWI_spirit_of_helvetia_defensive_peace
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.07
+				monarchy_constitutional_drift = 0.05
+				monarchy_absolute_drift = 0.05
+				republic_aristocrat_drift = 0.05
+			}
+		}
+		
+		HAS_gran_juego_politico = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = SWE_wargames
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.25
+				improve_relations_maintain_cost_factor = -0.25
+				political_advisor_cost_factor = -0.35
+			}
+		}
+	}
+}
