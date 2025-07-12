@@ -8,15 +8,20 @@ state = {
 	state_category = town
 	history = {
 		victory_points = {
-			1640 16
+			1153 16
 		}
 		buildings = {
 			infrastructure = 2
 			workshop = 2
 		}
-		owner = XXX
-		add_core_of = XXX
+		owner = HAS
+		add_core_of = HAS
 	}
+	
+	resources = {
+		lumber = 31
+	}
+	
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 }

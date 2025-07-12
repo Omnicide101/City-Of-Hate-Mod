@@ -8,15 +8,21 @@ state = {
 	state_category = rural
 	history = {
 		victory_points = {
-			998 3
+			2321 3
 		}
 		buildings = {
 			infrastructure = 1
 			forge = 1
 		}
-		owner = XXX
-		add_core_of = XXX
+		owner = HAS
+		add_core_of = HAS
 	}
+	
+	resources = {
+		lumber = 8
+		food = 4
+	}
+	
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 }

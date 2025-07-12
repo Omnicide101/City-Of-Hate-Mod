@@ -2208,4 +2208,29 @@ technologies = {
 			defense = 0.05
 		}
 	}
+	
+	### DUMMY TECHS TO HIDE VANILLA BUILDINGS ###
+	# But Mira, couldn't we just remove the buildings from the buildings.txt file?
+	# Yes, BUT-
+	# Then whenever I regenerate buildings in the nudger after messing with states,
+	# the nudger throws a fit.
+	# Trust me, this is easier, at least until we have all states properly defined.
+	
+	dummy_tech_hide_buildings = {
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 887
+		
+		enable_building = {
+            building = mega_gun_emplacement
+        }
+        
+		enable_building = {
+            building = rocket_site
+        }
+	}
 }

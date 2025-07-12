@@ -2753,6 +2753,9 @@ country_event = {#Kingsmen Rebellion!
 			}
 		
 			NPC = {
+				
+				set_fuel_ratio = 0.8
+			
 				load_oob = "NPC_revolution"
 				
 				every_country_division = {
@@ -2890,6 +2893,9 @@ country_event = {#Kingsmen Rebellion!
 			}
 
 			NPC = {
+				
+				set_fuel_ratio = 0.8
+				
 				load_oob = "NPC_revolution"
 				
 				every_country_division = {

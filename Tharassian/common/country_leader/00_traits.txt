@@ -14,6 +14,24 @@ leader_traits = {
 		enemy_operative_detection_chance_factor = -5
 	}
 	
+	padre_primera_familia = {
+		random = no
+		stability_factor = 0.15
+		political_power_gain = 0.5
+	}
+	
+	madre_familia_feroz = {
+		random = no
+		war_support_factor = 0.15
+		army_morale_factor = 0.1
+	}
+	
+	padre_familia_adinerada = {
+		random = no
+		consumer_goods_factor = -0.2
+		trade_opinion_factor = 0.35
+	}
+	
 	fervent_reactionary = {
 		random = no
 		stability_factor = 0.15

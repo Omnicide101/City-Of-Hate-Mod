@@ -2,7 +2,7 @@ state = {
 	id = 1087
 	name = "STATE_1087"
 	provinces = {
-		19 786 1641 4020 5482 6169 
+		19 786 1641 4020 5482 6169 2847 6100
 	}
 	manpower = 6177
 	state_category = rural
@@ -10,8 +10,8 @@ state = {
 		buildings = {
 			infrastructure = 1
 		}
-		owner = XXX
-		add_core_of = XXX
+		owner = HAS
+		add_core_of = HAS
 	}
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000

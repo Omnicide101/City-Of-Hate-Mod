@@ -6,6 +6,11 @@ state = {
 	}
 	manpower = 2147
 	state_category = pastoral
+	
+	resources = {
+		food = 2
+	}
+	
 	history = {
 		buildings = {
 			infrastructure = 1

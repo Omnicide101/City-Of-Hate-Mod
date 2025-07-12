@@ -1,4 +1,7 @@
 ﻿l_english:
+ TRS_HAS_government:0 "Hastalian Tristalia"
+ TRS_HAS_government_DEF:0 "The Hastalian Administration of Tristalia"
+ TRS_HAS_government_ADJ:0 "Hastlian Tristalian"
  STA_empire_sigismund_monarchy_absolute:0 "Das Stahlreich"
  STA_empire_sigismund_monarchy_absolute_DEF:0 "the Sigismundian Empire of Stahlhof"
  STA_empire_sigismund_monarchy_absolute_ADJ:0 "Stalhoffer"

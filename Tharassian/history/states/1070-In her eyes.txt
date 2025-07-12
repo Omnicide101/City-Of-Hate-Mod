@@ -14,9 +14,17 @@ state = {
 			infrastructure = 3
 			forge = 4
 		}
-		owner = XXX
-		add_core_of = XXX
+		owner = HAS
+		add_core_of = HAS
 	}
+	
+	
+	resources = {
+		food = 5
+		mount = 2
+		lumber = 14
+	}
+	
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 }

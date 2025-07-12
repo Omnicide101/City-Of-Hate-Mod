@@ -287,7 +287,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = generic_spy_political
@@ -308,7 +308,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = generic_spy_political
@@ -330,7 +330,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = generic_spy_political
@@ -352,7 +352,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = generic_spy_political
@@ -372,7 +372,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = generic_spy_political
@@ -393,7 +393,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = generic_spy_political
@@ -414,7 +414,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = SPA_crusade_against_democracy
@@ -455,7 +455,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = high_devastation
@@ -505,7 +505,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = air_war_plans_division_focus
@@ -542,7 +542,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = air_war_plans_division_focus
@@ -579,7 +579,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = air_war_plans_division_focus
@@ -726,7 +726,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = IRI_Slavery_Allowed
@@ -747,7 +747,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = IRI_Slavery_Allowed
@@ -768,7 +768,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = IRI_Slavery_Allowed
@@ -789,7 +789,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = IRI_Slavery_Allowed
@@ -810,7 +810,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = IRI_Slavery_Allowed
@@ -831,7 +831,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = IRI_Slavery_Allowed
@@ -852,7 +852,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = IRI_Slavery_Allowed
@@ -873,7 +873,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = IRI_Slavery_Allowed
@@ -894,7 +894,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = puritan
 			}
 			
 			picture = IRI_Slavery_Allowed
@@ -1003,7 +1003,7 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				always = yes
+				has_government = monarchy_absolute
 			}
 			
 			picture = generic_disjointed_gov
@@ -1383,6 +1383,10 @@ ideas = {
 				original_tag = ORD
 			}
 			
+			allowed_civil_war = {
+				has_government = monarchy_absolute
+			}
+			
 			picture = FRA_national_mobilization_focus
 			
 			removal_cost = -1
@@ -1588,9 +1592,9 @@ ideas = {
 			allowed = {
 				always = no
 			}
-			
+		
 			allowed_civil_war = {
-				always = no
+				has_government = theocrat
 			}
 			
 			cancel = {
@@ -2225,8 +2229,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				decryption_factor = 0.05
-				encryption_factor = 0.1
+				decryption_factor = 0.13
+				encryption_factor = 0.2
 			}
 		}
 		
@@ -2727,7 +2731,7 @@ ideas = {
 			}
 		}
 		
-		ORD_trade_domestic = {
+		ORD_trade_LIR_limited = {
 			
 			allowed = {
 				always = no
@@ -2907,7 +2911,7 @@ ideas = {
 			
 			modifier = {
 				industrial_capacity_factory = 0.07
-				production_speed_forge_factory = 0.1
+				production_speed_forge_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
 				consumer_goods_factor = 0.05
 			}
@@ -2929,7 +2933,7 @@ ideas = {
 			
 			modifier = {
 				industrial_capacity_factory = 0.13
-				production_speed_forge_factory = 0.1
+				production_speed_forge_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
 				global_building_slots = 1
 				consumer_goods_factor = 0.12

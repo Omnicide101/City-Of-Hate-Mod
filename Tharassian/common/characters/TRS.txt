@@ -12,5 +12,11 @@ characters={
 			expire="1.1.1.1"
 			id=-1
 		}
+		country_leader={
+			desc="politics_TRS_calidacius_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
 	}
 }

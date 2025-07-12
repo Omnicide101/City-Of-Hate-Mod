@@ -1018,7 +1018,7 @@
  SKA_targeted_republican_trade_decision:0 "Increase Economic Ties with [FROM.GetNameDef]"
  SKA_rejoin_RTH:0 "Rekindle our Alliance with the Rthaur"
  SKA_support_RMT_republicans:0 "Support Rimatan Republicans"
- SKA_RMT_republican_coup:0 "Insight a Radical Rimatan Revolution"
+ SKA_RMT_republican_coup:0 "Incite a Radical Rimatan Revolution"
  SKA_merge_with_RMT:0 "Propose a Merger with [RMT.GetNameDef]"
  SKA_mohrok_satellites:0 "Establishing Soltruist Puppet States"
  SKA_mohrok_satellites_desc:0 "We must expand the worship of Mohrok beyond our borders, to encapsulate the entirety of Lathweyne. After conquering territories, we should establish new countries that pledge to worship Mohrok and will enforce this among its populaces."

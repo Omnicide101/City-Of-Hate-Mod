@@ -39,6 +39,8 @@
  city_of_slavers_desc:0 "The crack of the whip is omnipresent in this place, with chain-gangs of wretches toiling and dying for their uncaring masters. Slave auctions are common, as are unceremonious mass graves for those whose bodies gave out from the squalid conditions and back-breaking labour."
  city_of_generals:0 "City of Generals"
  city_of_generals_desc:0 "It is difficult to walk for more than five steps in this city without saluting a passing officer or being saluted by greenhorn cadets of the local officer's academy. The wealth of new talent and grizzled veterancy residing here is a great boon to any army."
+ sanctuary_city:0 "Sanctuary City"
+ sanctuary_city_desc:0 "This region's cities and towns have opened their doors to demi-Elves seeking refuge from the oppressive policies found elsewhere in Ordoria."
  smog_choked_skies:0 "Smog-Choked Skies"
  smog_choked_skies_desc:0 "The air of this land is tainted with sulphur and smoke, and breath comes difficult. Those who live here do not tend to live very long."
  tomb_of_inskyllithe:0 "The Tomb of Inskyllithe"

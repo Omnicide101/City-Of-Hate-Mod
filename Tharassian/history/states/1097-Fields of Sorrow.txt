@@ -11,9 +11,16 @@ state = {
 			infrastructure = 2
 			workshop = 1
 		}
-		owner = XXX
-		add_core_of = XXX
+		owner = HAS
+		add_core_of = HAS
 	}
+	
+	
+	resources = {
+		lumber = 17
+		food = 6
+	}
+	
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 }

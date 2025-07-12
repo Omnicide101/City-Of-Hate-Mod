@@ -2,14 +2,39 @@ state = {
 	id = 459
 	name = "STATE_459"
 	history = {
-		owner = XXX
-		add_core_of = XXX
+		owner = HAS
+		add_core_of = HAS
+		victory_points = {
+			6113 45
+		}
+		victory_points = {
+			6134 8
+		}
+		buildings = {
+			infrastructure = 5
+			forge = 4
+			workshop = 4
+			dockyard = 1
+			farm = 1
+			6113 = {
+				naval_base = 5
+			}
+		}
 	}
+	
+	resources = {
+		steel = 8
+		food = 4
+		mount = 1
+		lumber = 2
+	}
+	
+	
 	provinces = {
 		1736 2274 4807 6073 6083 6105 6113 6120 6134 
 	}
-	manpower = 1
+	manpower = 802891
 	buildings_max_level_factor = 1.000
-	state_category = rural
+	state_category = metropolis
 	local_supplies = 0.000
 }

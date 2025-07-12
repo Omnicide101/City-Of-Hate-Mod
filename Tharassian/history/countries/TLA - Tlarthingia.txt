@@ -30,7 +30,7 @@ if = {
 
 
 
-set_research_slots =
+set_research_slots = 3
 set_technology ={
 	tech_tribal_pride = 1
 	tech_wheel = 1

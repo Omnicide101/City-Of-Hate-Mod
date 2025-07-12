@@ -11,7 +11,7 @@ state = {
 			6584 1
 		}
 		victory_points = {
-			6511 6
+			6592 6
 		}
 		victory_points = {
 			2149 6
@@ -21,9 +21,15 @@ state = {
 			farm = 1
 			forge = 3
 		}
-		owner = XXX
-		add_core_of = XXX
+		owner = HAS
+		add_core_of = HAS
 	}
+	
+	resources = {
+		lumber = 8
+		food = 11
+	}
+	
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 }

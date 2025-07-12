@@ -4,11 +4,31 @@ state = {
 	provinces = {
 		7246 7223 3946 3027 4063 4418
 	}
-	state_category = rural
-	manpower = 1
+	state_category = metropolis
+	manpower = 1049283
 	buildings_max_level_factor = 1.000
 	history = {
-		owner = XXX
-		add_core_of = XXX
+		owner = HAS
+		add_core_of = HAS
+		victory_points = {
+			7223 34
+		}
+		victory_points = {
+			7246 12
+		}
+		buildings = {
+			infrastructure = 2
+			forge = 3
+			workshop = 3
+			dockyard = 3
+			7223 = {
+				naval_base = 6
+			}
+		}
+	}
+	
+	resources = {
+		food = 7
+		mount = 4
 	}
 }

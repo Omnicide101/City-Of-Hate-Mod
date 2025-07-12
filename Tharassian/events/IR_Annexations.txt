@@ -8228,6 +8228,17 @@ country_event = { #Conquest of Perkavland
 			}
 			
 			reset_province_name = 4527
+			reset_province_name = 9576
+			reset_province_name = 1453
+			reset_province_name = 5418
+			reset_province_name = 3287
+			reset_province_name = 9478
+			reset_province_name = 2171
+			reset_province_name = 3038
+			reset_province_name = 4805
+			reset_province_name = 1491
+			reset_province_name = 4805
+			reset_province_name = 575
 		}
 	}
 
@@ -15140,6 +15151,161 @@ country_event = { #Conquest of the Tristal Empire
 		UNG = {
 			set_autonomy = {
 				target = TRS
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of Hastalia
+	id = annex.65
+	title = annex.65.t
+	desc = annex.65.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = HAS
+		}
+		OR = {
+			AND = {
+				HAS = {
+					has_capitulated = yes
+				}
+				controls_state = 459
+			}
+			AND = {
+				NOT = {
+					country_exists = HAS
+				}
+				controls_state = 459
+			}
+			owns_state = 459
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_hastalia
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.65.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = HAS
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HAS = {
+				transfer_state = PREV
+			}
+		}
+		
+		puppet = HAS
+		set_country_flag = conquest_of_hastalia
+	}
+	
+	option = { # Annex
+		name = annex.65.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_hastalia
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.65.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = HAS
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HAS = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = HAS
 				autonomy_state = autonomy_IR_freiprinztum
 			}
 		}
