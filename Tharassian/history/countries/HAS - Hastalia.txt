@@ -1,6 +1,10 @@
 capital = 459
 
+<<<<<<< HEAD
 set_oob = "empty"
+=======
+set_oob = "HAS_1936"
+>>>>>>> f8b92b8 (Added Hastalia)
 
 if = {
 	limit = { has_dlc = "By Blood Alone"}
@@ -33,9 +37,15 @@ if = {
 	limit = {
 		has_dlc = "Man the Guns"
 	}
+<<<<<<< HEAD
 #	set_naval_oob = "HAS_1936_naval_mtg"
 	else = {
 #		set_naval_oob = "HAS_1936_naval"
+=======
+	set_naval_oob = "HAS_1936_naval_mtg"
+	else = {
+		set_naval_oob = "HAS_1936_naval"
+>>>>>>> f8b92b8 (Added Hastalia)
 	}
 }
 
@@ -80,6 +90,11 @@ set_stability = 0.83
 set_war_support = 0.57
 
 recruit_character = HAS_mateo
+<<<<<<< HEAD
+=======
+recruit_character = HAS_emiliana
+recruit_character = HAS_resppublico
+>>>>>>> f8b92b8 (Added Hastalia)
 
 set_politics = {
 	ruling_party = monarchy_constitutional
@@ -89,6 +104,7 @@ set_politics = {
 }
 
 set_popularities = {
+<<<<<<< HEAD
 	monarchy_absolute = 0
 
 	monarchy_constitutional = 74
@@ -98,6 +114,17 @@ set_popularities = {
 	republic_aristocrat = 9
 
 	republic_merchant = 17
+=======
+	monarchy_absolute = 27
+
+	monarchy_constitutional = 46
+	
+	republic_peasant = 0
+
+	republic_aristocrat = 18
+
+	republic_merchant = 9
+>>>>>>> f8b92b8 (Added Hastalia)
 	
 	theocrat = 0
 
@@ -105,9 +132,16 @@ set_popularities = {
 }
 
 add_ideas = {
+<<<<<<< HEAD
 	
 	human_country
 	sothrism_religion
+=======
+	human_country
+	sothrism_religion
+	HAS_tenuous_familial_peace
+	HAS_gran_juego_politico
+>>>>>>> f8b92b8 (Added Hastalia)
 }
 
 add_opinion_modifier = {
@@ -120,6 +154,19 @@ add_relation_modifier = {
 	modifier = staunch_allies_opinion_modifier
 }
 
+<<<<<<< HEAD
+=======
+add_opinion_modifier = {
+	target = GMR
+	modifier = dislike_opinion
+}
+
+add_relation_modifier = {
+	target = GMR
+	modifier = dislike_opinion_modifier
+}
+
+>>>>>>> f8b92b8 (Added Hastalia)
 if = {
 	limit = {
 		NOT = {
