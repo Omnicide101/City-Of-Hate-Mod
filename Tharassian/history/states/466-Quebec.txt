@@ -4,11 +4,26 @@ state = {
 	provinces = {
 		5440 6 6306 6301 6278
 	}
-	state_category = rural
-	manpower = 1
+	state_category = large_city
+	manpower = 787928
 	buildings_max_level_factor = 1.000
 	history = {
 		owner = HAS
 		add_core_of = HAS
+		victory_points = {
+			6306 30
+		}
+		buildings = {
+			infrastructure = 4
+			workshop = 8
+			6301 = {
+				naval_base = 3
+			}
+		}
+	}
+	
+	resources = {
+		steel = 13
+		lumber = 27
 	}
 }

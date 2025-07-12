@@ -3526,46 +3526,7 @@ focus_tree = {
 		x = 0
 		y = 5
 		completion_reward = {
-			if = {
-				limit = {
-					country_exists = EOR
-				}
-				EOR = {
-					every_owned_state = {
-						limit = {
-							is_core_of = ORD
-							has_active_resistance = yes
-						}
-						cancel_resistance = yes
-					}
-				}
-			}
-			every_owned_state = {
-				limit = {
-					is_core_of = ORD
-					has_active_resistance = yes
-				}
-				cancel_resistance = yes
-			}
-			swap_ideas = {
-				remove_idea = ORD_rthaur_rebellion
-				add_idea = ORD_ordoria_healed
-			}
-			if = {
-				limit = {
-					has_idea = ORD_fragmented_government
-				}
-				remove_ideas = ORD_fragmented_government
-			}
-			if = {
-				limit = {
-					has_idea = ORD_disrupted_industry
-				}
-				remove_ideas = ORD_disrupted_industry
-			}
-			else = {
-				remove_ideas = ORD_industrial_recovery
-			}
+			country_event = ord.119
 		}
 	}
 	
@@ -3605,46 +3566,7 @@ focus_tree = {
 		x = 0
 		y = 5
 		completion_reward = {
-			if = {
-				limit = {
-					country_exists = EOR
-				}
-				EOR = {
-					every_owned_state = {
-						limit = {
-							is_core_of = ORD
-							has_active_resistance = yes
-						}
-						cancel_resistance = yes
-					}
-				}
-			}
-			every_owned_state = {
-				limit = {
-					is_core_of = ORD
-					has_active_resistance = yes
-				}
-				cancel_resistance = yes
-			}
-			swap_ideas = {
-				remove_idea = ORD_rthaur_rebellion
-				add_idea = ORD_ordoria_restored
-			}
-			if = {
-				limit = {
-					has_idea = ORD_fragmented_government
-				}
-				remove_ideas = ORD_fragmented_government
-			}
-			if = {
-				limit = {
-					has_idea = ORD_disrupted_industry
-				}
-				remove_ideas = ORD_disrupted_industry
-			}
-			else = {
-				remove_ideas = ORD_industrial_recovery
-			}
+			country_event = ord.120
 		}
 	}
 	
@@ -8116,6 +8038,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_end_exceptions
 		x = 0
 		y = 1
@@ -8164,6 +8087,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_gloves_off
 		}
@@ -8210,6 +8134,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_for_all_elves
 		x = -1
 		y = 1
@@ -8262,15 +8187,16 @@ focus_tree = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = ORD_disempowered_mods_10
+				tooltip = ORD_disempowered_mods_20
 				check_variable = {
-					ORD_moderates_influence < 15
+					ORD_moderates_influence < 21
 				}
 			}
 			NOT = {
 				has_government = monarchy_absolute
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_for_all_elves
 		}
@@ -8322,6 +8248,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_price_wars
 		}
@@ -8387,12 +8314,13 @@ focus_tree = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = ORD_disempowered_mods_5
+				tooltip = ORD_disempowered_mods_10
 				check_variable = {
-					ORD_moderates_influence < 5
+					ORD_moderates_influence < 11
 				}
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_wartime_expropriation
 		}
@@ -8449,6 +8377,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_wartime_expropriation
 		x = 0
 		y = 1
@@ -8499,6 +8428,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_end_exceptions
 		x = -3
 		y = 1
@@ -8563,6 +8493,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_slave_hunter_corps
 		x = -2
 		y = 1
@@ -8623,6 +8554,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_slave_hunter_corps
 		x = 0
 		y = 1
@@ -8688,6 +8620,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_rthaur_exploit
 		x = -1
 		y = 1
@@ -8778,6 +8711,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_rthaur_control
 		x = -1
 		y = 1
@@ -8882,6 +8816,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_skaelinger_exploit
 		x = 1
 		y = 1
@@ -8918,6 +8853,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_skaelinger_control
 		x = 1
 		y = 1
@@ -8972,15 +8908,16 @@ focus_tree = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = ORD_disempowered_mods_1
+				tooltip = ORD_disempowered_mods_10
 				check_variable = {
-					ORD_moderates_influence < 2
+					ORD_moderates_influence < 11
 				}
 			}
 			NOT = {
 				has_government = monarchy_absolute
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_skaelinger_control
 		x = 2
 		y = 2
@@ -9074,13 +9011,13 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_end_exceptions
 		x = 3
 		y = 1
 		completion_reward = {
 			
 			ORD_worsen_trad_loyalty_2 = yes
-			
 			
 			ORD_improve_royal_loyalty_1 = yes
 			
@@ -9143,6 +9080,7 @@ focus_tree = {
 				factor = 2
 			}
 		}
+		continue_if_invalid = yes
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ORD_empowered_trads_7
@@ -9151,9 +9089,9 @@ focus_tree = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = ORD_disempowered_mods_3
+				tooltip = ORD_disempowered_mods_10
 				check_variable = {
-					ORD_moderates_influence < 4
+					ORD_moderates_influence < 11
 				}
 			}
 		}
@@ -9208,6 +9146,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_utilise_skilled
 		x = 0
 		y = 1
@@ -9279,6 +9218,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_dedication_lombrin
 		x = 0
 		y = 1
@@ -9317,6 +9257,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_expand_waterwheels
 		x = 1
 		y = 1
@@ -9372,6 +9313,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_experimental_automation
 		x = -1
 		y = 1
@@ -9462,12 +9404,13 @@ focus_tree = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = ORD_disempowered_mods_5
+				tooltip = ORD_disempowered_mods_20
 				check_variable = {
-					ORD_traditionalists_influence < 6
+					ORD_traditionalists_influence < 21
 				}
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_study_skaelinger_tech
 		}
@@ -9525,7 +9468,14 @@ focus_tree = {
 		available = {
 			has_completed_focus = ORD_utilise_skilled
 			has_completed_focus = ORD_study_skaelinger_tech
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_faiths_10
+				check_variable = {
+					ORD_faithful_influence < 11
+				}
+			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_study_skaelinger_tech
 		x = -1
 		y = 1
@@ -9576,6 +9526,7 @@ focus_tree = {
 			
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_study_skaelinger_tech
 		x = 1
 		y = 1
@@ -9689,7 +9640,14 @@ focus_tree = {
 		available = {
 			has_completed_focus = ORD_dedication_lombrin
 			has_completed_focus = ORD_dedication_shalyn
+			custom_trigger_tooltip = {
+				tooltip = ORD_pleased_faiths_20
+				check_variable = {
+					ORD_faithful_loyalty > 19
+				}
+			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_dedication_shalyn
 		x = 1
 		y = 1
@@ -9772,6 +9730,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_fetter_factories
 		x = 0
 		y = 1
@@ -9834,6 +9793,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_not_enough
 		x = -2
 		y = 1
@@ -9909,6 +9869,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_slave_shantytowns
 		x = 0
 		y = 1
@@ -9962,6 +9923,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_not_enough
 		x = 0
 		y = 1
@@ -10017,6 +9979,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_engine_flame
 		x = 0
 		y = 1
@@ -10124,6 +10087,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_not_enough
 		x = 2
 		y = 1
@@ -10164,6 +10128,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_open_coal_pits
 		x = 0
 		y = 1
@@ -10204,6 +10169,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_smog_choked_skies
 		x = 0
 		y = 1
@@ -10286,6 +10252,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_improve_ythelmare
 		x = 0
 		y = 2
@@ -10375,6 +10342,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_negotiations_guild
 		}
@@ -10463,6 +10431,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_restore_naval_lineages
 		}
@@ -10527,6 +10496,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_patronage_seafaring_college
 		}
@@ -10593,6 +10563,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_contacts_admiralty
 		}
@@ -10677,6 +10648,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_tides_change
 		}
@@ -10770,6 +10742,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_rights_enduring
 		}
@@ -10842,7 +10815,7 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = ORD_disempowered_trads_20
 				check_variable = {
-					ORD_traditionalists_influence < 20
+					ORD_traditionalists_influence < 21
 				}
 			}
 			if = {
@@ -10868,6 +10841,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_patronage_seafaring_college
 		x = -1
 		y = 1
@@ -10949,6 +10923,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_tides_change
 		x = 1
 		y = 1
@@ -11022,6 +10997,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_patronage_seafaring_college
 		x = 1
 		y = 2
@@ -11057,6 +11033,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_restore_naval_lineages
 		x = 0
 		y = 1
@@ -11101,6 +11078,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_rights_enduring
 		x = 0
 		y = 1
@@ -11187,6 +11165,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_rivers_too
 		x = 1
 		y = 1
@@ -11238,6 +11217,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_bolster_auxiliary_industries
 		x = -1
 		y = 1
@@ -11331,12 +11311,6 @@ focus_tree = {
 		}
 		available = {
 			has_government = monarchy_absolute
-			custom_trigger_tooltip = {
-				tooltip = ORD_disempowered_faiths_15
-				check_variable = {
-					ORD_faithful_influence < 15
-				}
-			}
 		}
 		relative_position_id = ORD_refurbish_dockyards
 		x = 0
@@ -11375,6 +11349,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		ai_will_do = {
 			factor = 17
 		}
@@ -11434,6 +11409,7 @@ focus_tree = {
 				factor = 2
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_restoration_ythelmare
 		}
@@ -11456,7 +11432,7 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = ORD_disempowered_trads_30
 				check_variable = {
-					ORD_traditionalists_influence < 30
+					ORD_traditionalists_influence < 31
 				}
 			}
 		}
@@ -11539,7 +11515,14 @@ focus_tree = {
 					larennis_idealism < 35
 				}
 			}
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_20
+				check_variable = {
+					ORD_traditionalists_influence < 21
+				}
+			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_beyond_city
 		x = -2
 		y = 1
@@ -11609,6 +11592,15 @@ focus_tree = {
 				factor = 2
 			}
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_faiths_30
+				check_variable = {
+					ORD_faithful_influence < 31
+				}
+			}
+		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_reassert_status_quo
 		}
@@ -11679,6 +11671,15 @@ focus_tree = {
 				factor = 2
 			}
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_20
+				check_variable = {
+					ORD_traditionalists_influence < 21
+				}
+			}
+		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_reassert_status_quo
 		x = 1
 		y = 1
@@ -11742,6 +11743,15 @@ focus_tree = {
 				factor = 2
 			}
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_10
+				check_variable = {
+					ORD_traditionalists_influence < 11
+				}
+			}
+		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_slaves_to_serfs
 		x = -1
 		y = 1
@@ -11834,6 +11844,7 @@ focus_tree = {
 				factor = 10
 			}
 		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_shut_down_factories
 		x = 1
 		y = 1
@@ -11971,6 +11982,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		mutually_exclusive = {
 			focus = ORD_beyond_city
 		}
@@ -12032,6 +12044,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		ai_will_do = {
 			factor = 21
 			modifier = {
@@ -12095,6 +12108,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		ai_will_do = {
 			factor = 21
 			modifier = {
@@ -12155,6 +12169,7 @@ focus_tree = {
 				}
 			}
 		}
+		continue_if_invalid = yes
 		ai_will_do = {
 			factor = 23
 			modifier = {
@@ -12197,10 +12212,11 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = ORD_disempowered_trads_10
 				check_variable = {
-					ORD_traditionalists_influence < 10
+					ORD_traditionalists_influence < 11
 				}
 			}
 		}
+		continue_if_invalid = yes
 		ai_will_do = {
 			factor = 25
 		}
@@ -12229,10 +12245,11 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = ORD_disempowered_trads_10
 				check_variable = {
-					ORD_traditionalists_influence < 10
+					ORD_traditionalists_influence < 11
 				}
 			}
 		}
+		continue_if_invalid = yes
 		ai_will_do = {
 			factor = 25
 			modifier = {
@@ -12317,6 +12334,15 @@ focus_tree = {
 				factor = 10
 			}
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_trads_10
+				check_variable = {
+					ORD_traditionalists_influence < 11
+				}
+			}
+		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_expanding_sanctuary
 		x = 1
 		y = 1
@@ -12342,7 +12368,7 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = ORD_disempowered_faiths_20
 				check_variable = {
-					ORD_faithful_influence < 20
+					ORD_faithful_influence < 21
 				}
 			}
 		}
@@ -12367,6 +12393,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 21
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_faiths_15
+				check_variable = {
+					ORD_faithful_influence < 16
+				}
+			}
+		}
+		continue_if_invalid = yes
+		
 		relative_position_id = ORD_first_expedition
 		x = -1
 		y = 1
@@ -12385,6 +12421,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 21
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_faiths_15
+				check_variable = {
+					ORD_faithful_influence < 16
+				}
+			}
+		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_first_expedition
 		x = 1
 		y = 1
@@ -12412,6 +12457,15 @@ focus_tree = {
 				factor = 10
 			}
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ORD_disempowered_faiths_10
+				check_variable = {
+					ORD_faithful_influence < 11
+				}
+			}
+		}
+		continue_if_invalid = yes
 		relative_position_id = ORD_money_talks
 		x = 1
 		y = 1

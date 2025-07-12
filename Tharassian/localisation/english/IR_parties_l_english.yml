@@ -61,6 +61,8 @@
  TRS_republic_merchant_party:0 "Old Republicans"
  TRS_theocrat_party:0 "Imperial Cult"
  TRS_puritan_party:0 "Generals' Conclave - Hardliners"
+ TRS_HAS_government_party_name_monarchy_constitutional:0 "Hastalian-Backed Government"
+ 
  AKK_monarchy_absolute_party:0 "Rahooma Dynasty"
  AKK_monarchy_constitutional_party:0 "Rahooma Dynasty"
  AKK_republic_aristocrat_party:0 "The House of Viziers"

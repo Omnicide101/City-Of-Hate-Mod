@@ -110,7 +110,7 @@ add_ideas = {
 	TRS_widespread_corruption
 }
 
-create_faction = gran_alianza #...but Hastalia carries, let's be honest
+create_faction = acuerdo_del_dragon #...but Hastalia carries, let's be honest
 add_to_faction = HAS
 
 add_opinion_modifier = {

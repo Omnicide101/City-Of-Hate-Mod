@@ -4,7 +4,7 @@ state={
 
 	history={
 		victory_points = {
-			6654 2
+			6594 2
 		}
 		owner = GMR
 		buildings = {

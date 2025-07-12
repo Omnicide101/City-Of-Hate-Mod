@@ -5581,3 +5581,107 @@ country_event = { #ORB won civil war
 		}
 	}
 }
+
+country_event = { #The Wheels Begin to Turn
+	id = ord.119
+	title = ord.119.t
+	desc = ord.119.d
+	
+	is_triggered_only = yes
+	
+	option = {#pog
+		name = ord.119.a
+		if = {
+			limit = {
+				country_exists = EOR
+			}
+			EOR = {
+				every_owned_state = {
+					limit = {
+						is_core_of = ORD
+						has_active_resistance = yes
+					}
+					cancel_resistance = yes
+				}
+			}
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = ORD
+				has_active_resistance = yes
+			}
+			cancel_resistance = yes
+		}
+		swap_ideas = {
+			remove_idea = ORD_rthaur_rebellion
+			add_idea = ORD_ordoria_healed
+		}
+		if = {
+			limit = {
+				has_idea = ORD_fragmented_government
+			}
+			remove_ideas = ORD_fragmented_government
+		}
+		if = {
+			limit = {
+				has_idea = ORD_disrupted_industry
+			}
+			remove_ideas = ORD_disrupted_industry
+		}
+		else = {
+			remove_ideas = ORD_industrial_recovery
+		}
+	}
+}
+
+country_event = { #A Fragile Normalcy
+	id = ord.120
+	title = ord.120.t
+	desc = ord.120.d
+	
+	is_triggered_only = yes
+	
+	option = {#pog?
+		name = ord.120.a
+		if = {
+			limit = {
+				country_exists = EOR
+			}
+			EOR = {
+				every_owned_state = {
+					limit = {
+						is_core_of = ORD
+						has_active_resistance = yes
+					}
+					cancel_resistance = yes
+				}
+			}
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = ORD
+				has_active_resistance = yes
+			}
+			cancel_resistance = yes
+		}
+		swap_ideas = {
+			remove_idea = ORD_rthaur_rebellion
+			add_idea = ORD_ordoria_restored
+		}
+		if = {
+			limit = {
+				has_idea = ORD_fragmented_government
+			}
+			remove_ideas = ORD_fragmented_government
+		}
+		if = {
+			limit = {
+				has_idea = ORD_disrupted_industry
+			}
+			remove_ideas = ORD_disrupted_industry
+		}
+		else = {
+			remove_ideas = ORD_industrial_recovery
+		}
+	}
+}

@@ -13,6 +13,12 @@ state = {
 		owner = HAS
 		add_core_of = HAS
 	}
+	
+	resources = {
+		lumber = 3
+		food = 8
+	}
+	
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 }

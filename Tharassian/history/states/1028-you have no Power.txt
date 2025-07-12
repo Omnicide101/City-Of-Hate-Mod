@@ -17,6 +17,12 @@ state = {
 		owner = TRS
 		add_core_of = TRS
 	}
+	
+	resources = {
+		food = 17
+		mount = 14
+	}
+	
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 }

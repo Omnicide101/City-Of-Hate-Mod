@@ -1,14 +1,6 @@
 capital = 459
 
-<<<<<<< HEAD
 set_oob = "HAS_1936"
-=======
-<<<<<<< HEAD
-set_oob = "empty"
-=======
-set_oob = "HAS_1936"
->>>>>>> f8b92b8 (Added Hastalia)
->>>>>>> 08fbf7ae4cc3c7ec155bd074acc60025debcfafa
 
 if = {
 	limit = { has_dlc = "By Blood Alone"}
@@ -41,21 +33,9 @@ if = {
 	limit = {
 		has_dlc = "Man the Guns"
 	}
-<<<<<<< HEAD
 	set_naval_oob = "HAS_1936_naval_mtg"
 	else = {
 		set_naval_oob = "HAS_1936_naval"
-=======
-<<<<<<< HEAD
-#	set_naval_oob = "HAS_1936_naval_mtg"
-	else = {
-#		set_naval_oob = "HAS_1936_naval"
-=======
-	set_naval_oob = "HAS_1936_naval_mtg"
-	else = {
-		set_naval_oob = "HAS_1936_naval"
->>>>>>> f8b92b8 (Added Hastalia)
->>>>>>> 08fbf7ae4cc3c7ec155bd074acc60025debcfafa
 	}
 }
 
@@ -100,16 +80,8 @@ set_stability = 0.83
 set_war_support = 0.57
 
 recruit_character = HAS_mateo
-<<<<<<< HEAD
 recruit_character = HAS_emiliana
 recruit_character = HAS_resppublico
-=======
-<<<<<<< HEAD
-=======
-recruit_character = HAS_emiliana
-recruit_character = HAS_resppublico
->>>>>>> f8b92b8 (Added Hastalia)
->>>>>>> 08fbf7ae4cc3c7ec155bd074acc60025debcfafa
 
 set_politics = {
 	ruling_party = monarchy_constitutional
@@ -119,20 +91,6 @@ set_politics = {
 }
 
 set_popularities = {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-	monarchy_absolute = 0
-
-	monarchy_constitutional = 74
-	
-	republic_peasant = 0
-
-	republic_aristocrat = 9
-
-	republic_merchant = 17
-=======
->>>>>>> 08fbf7ae4cc3c7ec155bd074acc60025debcfafa
 	monarchy_absolute = 27
 
 	monarchy_constitutional = 46
@@ -142,10 +100,6 @@ set_popularities = {
 	republic_aristocrat = 18
 
 	republic_merchant = 9
-<<<<<<< HEAD
-=======
->>>>>>> f8b92b8 (Added Hastalia)
->>>>>>> 08fbf7ae4cc3c7ec155bd074acc60025debcfafa
 	
 	theocrat = 0
 
@@ -153,22 +107,10 @@ set_popularities = {
 }
 
 add_ideas = {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-	
-	human_country
-	sothrism_religion
-=======
->>>>>>> 08fbf7ae4cc3c7ec155bd074acc60025debcfafa
 	human_country
 	sothrism_religion
 	HAS_tenuous_familial_peace
 	HAS_gran_juego_politico
-<<<<<<< HEAD
-=======
->>>>>>> f8b92b8 (Added Hastalia)
->>>>>>> 08fbf7ae4cc3c7ec155bd074acc60025debcfafa
 }
 
 add_opinion_modifier = {
@@ -181,11 +123,6 @@ add_relation_modifier = {
 	modifier = staunch_allies_opinion_modifier
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 08fbf7ae4cc3c7ec155bd074acc60025debcfafa
 add_opinion_modifier = {
 	target = GMR
 	modifier = dislike_opinion
@@ -196,10 +133,6 @@ add_relation_modifier = {
 	modifier = dislike_opinion_modifier
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> f8b92b8 (Added Hastalia)
->>>>>>> 08fbf7ae4cc3c7ec155bd074acc60025debcfafa
 if = {
 	limit = {
 		NOT = {

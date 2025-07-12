@@ -17,6 +17,10 @@ ORD_autumn_debate_values = {
 						ORD_traditionalists_influence < 3
 					}
 				}
+				NOT = {
+					has_country_flag = ORD_trads_defeated
+					has_country_flag = ORD_trads_aligned
+				}
 			}
 		}
 		
@@ -144,6 +148,16 @@ ORD_autumn_debate_values = {
 					declare_war_on = {
 						target = ORD
 						type = civil_war
+					}
+					
+					every_other_country = {
+						limit = {
+							has_war_with = ORD
+						}
+						declare_war_on = {
+							target = ROOT
+							type = annex_everything
+						}
 					}
 				}
 				
@@ -445,6 +459,11 @@ ORD_autumn_debate_values = {
 						ORD_moderates_influence < 3
 					}
 				}
+				
+				NOT = {
+					has_country_flag = ORD_mods_defeated
+					has_country_flag = ORD_mods_aligned
+				}
 			}
 		}
 		
@@ -546,6 +565,16 @@ ORD_autumn_debate_values = {
 					declare_war_on = {
 						target = ORD
 						type = civil_war
+					}
+					
+					every_other_country = {
+						limit = {
+							has_war_with = ORD
+						}
+						declare_war_on = {
+							target = ROOT
+							type = annex_everything
+						}
 					}
 				}
 				
@@ -794,6 +823,11 @@ ORD_autumn_debate_values = {
 						ORD_faithful_influence < 3
 					}
 				}
+				
+				NOT = {
+					has_country_flag = ORD_faiths_defeated
+					has_country_flag = ORD_faiths_aligned
+				}
 			}
 		}
 		
@@ -883,6 +917,16 @@ ORD_autumn_debate_values = {
 					declare_war_on = {
 						target = ORD
 						type = civil_war
+					}
+					
+					every_other_country = {
+						limit = {
+							has_war_with = ORD
+						}
+						declare_war_on = {
+							target = ROOT
+							type = annex_everything
+						}
 					}
 				}
 				
@@ -1092,6 +1136,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_traditionalists_influence > 0
 			}
+			NOT = {
+				has_country_flag = ORD_trads_defeated
+				has_country_flag = ORD_trads_aligned
+			}
 		}
 		
 		cost = 50
@@ -1161,6 +1209,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_traditionalists_influence > 0
 			}
+			NOT = {
+				has_country_flag = ORD_trads_defeated
+				has_country_flag = ORD_trads_aligned
+			}
 		}
 		
 		cost = 75
@@ -1229,6 +1281,10 @@ ORD_autumn_debate_values = {
 		available = {
 			check_variable = {
 				ORD_traditionalists_influence > 0
+			}
+			NOT = {
+				has_country_flag = ORD_trads_defeated
+				has_country_flag = ORD_trads_aligned
 			}
 		}
 		
@@ -1310,6 +1366,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_moderates_influence > 0
 			}
+			NOT = {
+				has_country_flag = ORD_mods_defeated
+				has_country_flag = ORD_mods_aligned
+			}
 		}
 		
 		cost = 50
@@ -1379,6 +1439,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_moderates_influence > 0
 			}
+			NOT = {
+				has_country_flag = ORD_mods_defeated
+				has_country_flag = ORD_mods_aligned
+			}
 		}
 		
 		cost = 75
@@ -1447,6 +1511,10 @@ ORD_autumn_debate_values = {
 		available = {
 			check_variable = {
 				ORD_moderates_influence > 0
+			}
+			NOT = {
+				has_country_flag = ORD_mods_defeated
+				has_country_flag = ORD_mods_aligned
 			}
 		}
 		
@@ -1528,6 +1596,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_faithful_influence > 0
 			}
+			NOT = {
+				has_country_flag = ORD_faiths_defeated
+				has_country_flag = ORD_faiths_aligned
+			}
 		}
 		
 		cost = 50
@@ -1597,6 +1669,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_faithful_influence > 0
 			}
+			NOT = {
+				has_country_flag = ORD_faiths_defeated
+				has_country_flag = ORD_faiths_aligned
+			}
 		}
 		
 		cost = 75
@@ -1665,6 +1741,10 @@ ORD_autumn_debate_values = {
 		available = {
 			check_variable = {
 				ORD_faithful_influence > 0
+			}
+			NOT = {
+				has_country_flag = ORD_faiths_defeated
+				has_country_flag = ORD_faiths_aligned
 			}
 		}
 		
@@ -1746,6 +1826,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_traditionalists_loyalty > 0
 			}
+			NOT = {
+				has_country_flag = ORD_trads_defeated
+				has_country_flag = ORD_trads_aligned
+			}
 		}
 		
 		cost = 50
@@ -1756,6 +1840,10 @@ ORD_autumn_debate_values = {
 		
 		ai_will_do = {
 			factor = 5
+			modifier = { #Needed for foci
+				ORD_needs_weaker_league = yes
+				factor = 5
+			}
 			modifier = {#Why would the Steward do this? Is he stupid?
 				factor = 0.1
 				has_government = puritan
@@ -1814,6 +1902,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_traditionalists_loyalty > 0
 			}
+			NOT = {
+				has_country_flag = ORD_trads_defeated
+				has_country_flag = ORD_trads_aligned
+			}
 		}
 		
 		cost = 75
@@ -1824,6 +1916,10 @@ ORD_autumn_debate_values = {
 		
 		ai_will_do = {
 			factor = 5
+			modifier = { #Needed for foci
+				ORD_needs_weaker_league = yes
+				factor = 5
+			}
 			modifier = {#Why would the Steward do this? Is he stupid?
 				factor = 0.1
 				has_government = puritan
@@ -1882,6 +1978,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_traditionalists_loyalty > 0
 			}
+			NOT = {
+				has_country_flag = ORD_trads_defeated
+				has_country_flag = ORD_trads_aligned
+			}
 		}
 		
 		cost = 135
@@ -1892,6 +1992,10 @@ ORD_autumn_debate_values = {
 		
 		ai_will_do = {
 			factor = 5
+			modifier = { #Needed for foci
+				ORD_needs_weaker_league = yes
+				factor = 5
+			}
 			modifier = {#Why would the Steward do this? Is he stupid?
 				factor = 0.1
 				has_government = puritan
@@ -1956,6 +2060,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_moderates_loyalty > 0
 			}
+			NOT = {
+				has_country_flag = ORD_mods_defeated
+				has_country_flag = ORD_mods_aligned
+			}
 		}
 		
 		cost = 50
@@ -1966,6 +2074,10 @@ ORD_autumn_debate_values = {
 		
 		ai_will_do = {
 			factor = 5
+			modifier = { #Needed for foci
+				ORD_needs_weaker_royalists = yes
+				factor = 5
+			}
 			modifier = {#Why would the Princeling do this? Is he stupid?
 				factor = 0.1
 				has_government = monarchy_absolute
@@ -2024,6 +2136,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_moderates_loyalty > 0
 			}
+			NOT = {
+				has_country_flag = ORD_mods_defeated
+				has_country_flag = ORD_mods_aligned
+			}
 		}
 		
 		cost = 75
@@ -2034,6 +2150,10 @@ ORD_autumn_debate_values = {
 		
 		ai_will_do = {
 			factor = 5
+			modifier = { #Needed for foci
+				ORD_needs_weaker_royalists = yes
+				factor = 5
+			}
 			modifier = {#Why would the Princeling do this? Is he stupid?
 				factor = 0.1
 				has_government = monarchy_absolute
@@ -2092,6 +2212,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_moderates_loyalty > 0
 			}
+			NOT = {
+				has_country_flag = ORD_mods_defeated
+				has_country_flag = ORD_mods_aligned
+			}
 		}
 		
 		cost = 135
@@ -2102,6 +2226,10 @@ ORD_autumn_debate_values = {
 		
 		ai_will_do = {
 			factor = 5
+			modifier = { #Needed for foci
+				ORD_needs_weaker_royalists = yes
+				factor = 5
+			}
 			modifier = {#Why would the Princeling do this? Is he stupid?
 				factor = 0.1
 				has_government = monarchy_absolute
@@ -2165,6 +2293,10 @@ ORD_autumn_debate_values = {
 		available = {
 			check_variable = {
 				ORD_faithful_loyalty > 0
+			}
+			NOT = {
+				has_country_flag = ORD_faiths_defeated
+				has_country_flag = ORD_faiths_aligned
 			}
 		}
 		
@@ -2234,6 +2366,10 @@ ORD_autumn_debate_values = {
 			check_variable = {
 				ORD_faithful_loyalty > 0
 			}
+			NOT = {
+				has_country_flag = ORD_faiths_defeated
+				has_country_flag = ORD_faiths_aligned
+			}
 		}
 		
 		cost = 75
@@ -2301,6 +2437,10 @@ ORD_autumn_debate_values = {
 		available = {
 			check_variable = {
 				ORD_faithful_loyalty > 0
+			}
+			NOT = {
+				has_country_flag = ORD_faiths_defeated
+				has_country_flag = ORD_faiths_aligned
 			}
 		}
 		
