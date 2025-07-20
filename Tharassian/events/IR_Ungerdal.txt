@@ -2947,3 +2947,41 @@ country_event = {#Perkav Reactionaries take the W
 		clr_country_flag = UNG_diplomatic_efforts_flag
 	}
 }
+
+country_event = {#Larennis is doing diplomacy, but we haven't picked a rout yet
+	id = ung.85
+	title = ung.85.t
+	desc = ung.85.d
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {#Neat, soft power it is ig 
+		name = ung.85.a
+		set_country_flag = UNG_soft_power_flag
+				
+		add_opinion_modifier = {
+			target = ORD
+			modifier = ORD_guardian_lathweyne
+		}
+		
+		custom_effect_tooltip = UNG_soft_power_path_unlock_tt
+	}
+	
+	option = {#Fuck off, we make our own choices
+		name = ung.85.b
+		ai_chance = {
+			factor = 0 #Never
+		}
+		
+		set_country_flag = UNG_expansionist_flag
+				
+		add_opinion_modifier = {
+			target = ORD
+			modifier = ORD_ordorian_meddlers
+		}
+		
+		custom_effect_tooltip = UNG_expansionism_path_unlock_tt
+	}
+}

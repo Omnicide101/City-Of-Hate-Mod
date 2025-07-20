@@ -15311,3 +15311,158 @@ country_event = { #Conquest of Hastalia
 		}
 	}
 }
+
+country_event = { #Conquest of the Akkanids
+	id = annex.66
+	title = annex.66.t
+	desc = annex.66.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = AKK
+		}
+		OR = {
+			AND = {
+				AKK = {
+					has_capitulated = yes
+				}
+				controls_state = 522
+			}
+			AND = {
+				NOT = {
+					country_exists = AKK
+				}
+				controls_state = 522
+			}
+			owns_state = 522
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_akkanids
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.66.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = AKK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			AKK = {
+				transfer_state = PREV
+			}
+		}
+		
+		puppet = AKK
+		set_country_flag = conquest_of_akkanids
+	}
+	
+	option = { # Annex
+		name = annex.66.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_akkanids
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.66.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = AKK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			AKK = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = AKK
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}

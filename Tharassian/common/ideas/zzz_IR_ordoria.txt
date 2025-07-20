@@ -2981,5 +2981,28 @@ ideas = {
 				production_lack_of_resource_penalty_factor = -0.32
 			}
 		}
+		
+		ORD_prepared_intervention = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = monarchy_absolute
+			}
+			
+			picture = RAJ_kingmaker
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_speed_factor = 0.35
+			}
+			targeted_modifier = {
+				tag = GMR
+				attack_bonus_against = 0.25
+			}
+		}
 	}
 }

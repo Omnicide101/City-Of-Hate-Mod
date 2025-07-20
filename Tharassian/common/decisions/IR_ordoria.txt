@@ -2504,6 +2504,30 @@ ORD_autumn_debate_values = {
 	}
 }
 
+#ORD_princelings_idealism = {
+#	ORD_larennis_pursue_arts = {
+#		
+#	}
+#	
+#	ORD_confide_in_father = {
+#		
+#	}
+#	
+#	ORD_time_with_friends = {
+#		
+#	}
+#	
+#	ORD_meet_alstora = {
+#		
+#	}
+#	
+#	ORD_settle_legal_disputes = {
+#		
+#	}
+#	
+#	ORD_
+#}
+
 ORD_expand_sanctuary = {
 	ORD_expand_sanctuary_in_state = {
 		

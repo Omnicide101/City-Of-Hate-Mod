@@ -3570,6 +3570,391 @@ focus_tree = {
 		}
 	}
 	
+	focus = { #Guardians of Lathweyne - Idealist Foreign Policy Branch
+		id = ORD_guardians_lathweyne
+		icon = GFX_focus_generic_league_of_nations
+		cost = 6
+		allow_branch = {
+			has_completed_focus = ORD_wheels_turn
+		}
+		prerequisite = {
+			focus = ORD_wheels_turn
+		}
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_very_hopeful
+				check_variable = {
+					larennis_idealism > 90
+				}
+			}
+		}
+		relative_position_id = ORD_wheels_turn
+		x = 0
+		y = 1
+		completion_reward = {
+			larennis_idealism_medium = yes
+			ORD_worsen_trad_loyalty_7 = yes
+			ORD_worsen_faith_loyalty_7 = yes
+			add_political_power = 150
+			
+			if = {
+				limit = {
+					UNG = {
+						has_country_flag = UNG_soft_power_flag
+					}
+				}
+		
+				reverse_add_opinion_modifier = {
+					target = UNG
+					modifier = ORD_guardian_lathweyne
+				}
+				
+				reverse_add_opinion_modifier = {
+					target = GMR
+					modifier = ORD_ordorian_meddlers
+				}
+				
+				reverse_add_opinion_modifier = {
+					target = STA
+					modifier = ORD_ordorian_meddlers
+				}
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							UNG = {
+								has_country_flag = UNG_expansionist_flag
+								has_country_flag = UNG_soft_power_flag
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { # The Tyrant in the North
+		id = ORD_tyrant_north
+		icon = GFX_IRI_Ignite_Revolution_In_Grand_Masters_Realm
+		cost = 1
+		prerequisite = {
+			focus = ORD_guardians_lathweyne
+		}
+		ai_will_do = {
+			factor = 28
+		}
+		relative_position_id = ORD_guardians_lathweyne
+		x = -3
+		y = 1
+		completion_reward = {
+			GMR = {
+				add_opinion_modifier = {
+					target = GMR
+					modifier = threatened_opinion
+				}
+				hidden_effect = {
+					add_relation_modifier = {
+						target = ORD
+						modifier = threatened_opinion_modifier
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { # Contact Astrellion
+		id = ORD_contact_astrellion
+		icon = GFX_focus_gmr_rebels
+		cost = 5
+		prerequisite = {
+			focus = ORD_tyrant_north
+		}
+		ai_will_do = {
+			factor = 31
+		}
+		relative_position_id = ORD_tyrant_north 
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_astrellion_alliance_tt
+			set_country_flag = ORD_astrellion_alliance
+		}
+	}
+	
+	focus = { # Arming our Friends...
+		id = ORD_arm_friends
+		icon = GFX_focus_RAJ_kingmaker
+		cost = 6
+		prerequisite = {
+			focus = ORD_contact_astrellion
+		}
+		ai_will_do = {
+			factor = 34
+		}
+		relative_position_id = ORD_contact_astrellion
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_NPC_arms_shipments_tt
+			GMR = {
+				set_country_flag = NPC_ORD_arms_shipments
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -5000
+			}
+			
+			add_equipment_to_stockpile = {
+				type = ranged_equipment
+				amount = -3500
+			}
+			
+			add_equipment_to_stockpile = {
+				type = heavy_cavalry_equipment
+				amount = -300
+			}
+			
+			add_equipment_to_stockpile = {
+				type = light_cavalry_equipment
+				amount = -800
+			}
+			
+		}
+	}
+	
+	focus = { # ...and Expanding their Reach
+		id = ORD_expanding_reach
+		icon = GFX_focus_POL_riot_of_37
+		cost = 6
+		prerequisite = {
+			focus = ORD_contact_astrellion
+		}
+		ai_will_do = {
+			factor = 34
+		}
+		relative_position_id = ORD_contact_astrellion
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_NPC_expanding_reach_tt
+			GMR = {
+				set_country_flag = NPC_ORD_expanding_reach
+			}
+		}
+	}
+	
+	focus = { # Preparing our Intervention
+		id = ORD_prepare_intervention
+		icon = GFX_focus_ord_shatter_realm
+		cost = 4
+		prerequisite = {
+			focus = ORD_arm_friends
+		}
+		prerequisite = {
+			focus = ORD_expanding_reach
+		}
+		ai_will_do = {
+			factor = 37
+		}
+		relative_position_id = ORD_arm_friends
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_GMR_prepare_intervention_tt
+			set_country_flag = ORD_GMR_prepared_intervention
+		}
+	}
+	
+	focus = { # Cast Down the Warlock
+		id = ORD_cast_down_warlock
+		icon = GFX_focus_gmr_direct_intervention
+		cost = 2
+		prerequisite = {
+			focus = ORD_prepare_intervention
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		relative_position_id = ORD_prepare_intervention
+		x = 0
+		y = 1
+		completion_reward = {
+			GMR = {
+				country_event = gmr.43
+			}
+		}
+	}
+	
+	focus = { # Warmonger in the South
+		id = ORD_warmonger_south
+		icon = GFX_
+		cost = 1
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
 	##STEWARDS COUNTERCOUP
 	focus = { #Restoring Sanity
 		id = ORD_restoring_sanity

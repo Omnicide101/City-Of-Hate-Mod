@@ -1399,6 +1399,8 @@ focus_tree = {
 			add_political_power = -40
 		}
 		
+		continue_if_invalid = yes
+		
 		ai_will_do = {
 			factor = 15
 			modifier = {
@@ -1443,6 +1445,9 @@ focus_tree = {
 		available = {
 			puritan > 0.15
 		}
+		
+		continue_if_invalid = yes
+		
 		completion_reward = {
 			add_ideas = { STA_freiwillige_heimatverteidiger_idea }
 		}
@@ -1465,6 +1470,9 @@ focus_tree = {
 		available = {
 			puritan > 0.25
 		}
+		
+		continue_if_invalid = yes
+		
 		completion_reward = {
 			add_equipment_to_stockpile = { type = infantry_equipment amount = 250 producer = ROOT }
 		}
@@ -1490,6 +1498,9 @@ focus_tree = {
 		available = {
 			puritan > 0.35
 		}
+		
+		continue_if_invalid = yes
+		
 		bypass = {
 		
 		}
@@ -1527,6 +1538,9 @@ focus_tree = {
 		available = {
 			puritan > 0.35
 		}
+		
+		continue_if_invalid = yes
+		
 		bypass = {
 		
 		}
@@ -1605,6 +1619,9 @@ focus_tree = {
 		available = {
 			republic_merchant > 0.15
 		}
+		
+		continue_if_invalid = yes
+		
 		completion_reward = {
 			192 = {
 				add_extra_state_shared_building_slots = 2
@@ -1635,6 +1652,9 @@ focus_tree = {
 		available = {
 			republic_merchant > 0.25
 		}
+		
+		continue_if_invalid = yes
+		
 		bypass = {
 		
 		}
@@ -1669,6 +1689,9 @@ focus_tree = {
 		available = {
 			republic_merchant > 0.35
 		}
+		
+		continue_if_invalid = yes
+		
 		bypass = {
 		
 		}
@@ -1704,6 +1727,9 @@ focus_tree = {
 		available = {
 			republic_merchant > 0.35
 		}
+		
+		continue_if_invalid = yes
+		
 		bypass = {
 		
 		}
@@ -1756,6 +1782,9 @@ focus_tree = {
 		available = {
 			monarchy_absolute > 0.15
 		}
+		
+		continue_if_invalid = yes
+		
 		bypass = {
 		
 		}
@@ -1795,6 +1824,9 @@ focus_tree = {
 		available = {
 			monarchy_absolute > 0.25
 		}
+		
+		continue_if_invalid = yes
+		
 		bypass = {
 		
 		}
@@ -1820,6 +1852,9 @@ focus_tree = {
 		available = {
 			monarchy_absolute > 0.35
 		}
+		
+		continue_if_invalid = yes
+		
 		bypass = {
 		
 		}
@@ -1890,6 +1925,9 @@ focus_tree = {
 			factor = 27
 		}
 		
+		continue_if_invalid = yes
+		
+		
 		available = {
 			theocrat > 0.15
 		}
@@ -1914,6 +1952,9 @@ focus_tree = {
 		available = {
 			theocrat > 0.25
 		}
+		
+		continue_if_invalid = yes
+		
 		ai_will_do = {
 			factor = 30
 		}
@@ -1950,6 +1991,9 @@ focus_tree = {
 		available = {
 			theocrat > 0.35
 		}
+		
+		continue_if_invalid = yes
+		
 		bypass = {
 		
 		}
@@ -1985,6 +2029,9 @@ focus_tree = {
 		available = {
 			theocrat > 0.35
 		}
+		
+		continue_if_invalid = yes
+		
 		bypass = {
 		
 		}
@@ -2036,6 +2083,9 @@ focus_tree = {
 		available = {
 			has_political_power > 40
 		}
+		
+		continue_if_invalid = yes
+		
 		select_effect = {
 			add_political_power = -40
 		}
@@ -2068,6 +2118,9 @@ focus_tree = {
 		available = {
 			republic_aristocrat > 0.15
 		}
+		
+		continue_if_invalid = yes
+		
 		bypass = {
 		
 		}
@@ -2090,6 +2143,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 75
 		}
+		
+		continue_if_invalid = yes
+		
 		
 		available = {
 			republic_aristocrat > 0.25
@@ -2121,6 +2177,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 15 #Not priority
 		}
+		
+		continue_if_invalid = yes
+		
 		
 		available = {
 			republic_aristocrat > 0.35
