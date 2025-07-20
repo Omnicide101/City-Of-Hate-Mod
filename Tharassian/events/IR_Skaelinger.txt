@@ -3530,18 +3530,21 @@ country_event = { #Social War Ends, Bad Tie
 		SKP = {
 			declare_war_on = {
 				target = SKR
-				type = civil_war
+				type = annex_everything
 			}
 			declare_war_on = {
 				target = SKA
-				type = civil_war
+				type = annex_everything
 			}
+			add_civil_war_target = SKR
+			add_civil_war_target = SKA
 		}
 		SKR = {
 			declare_war_on = {
 				target = SKA
-				type = civil_war
+				type = annex_everything
 			}
+			add_civil_war_target = SKA
 		}
 	}
 }
@@ -3647,8 +3650,9 @@ country_event = { #Social War - Soltruist Revolt
 		SKP = {
 			declare_war_on = {
 				target = SKA
-				type = civil_war
+				type = annex_everything
 			}
+			add_civil_war_target = SKA
 		}
 	}
 }
@@ -3756,8 +3760,9 @@ country_event = { #Social War - Brotherhood Revolt
 		SKR = {
 			declare_war_on = {
 				target = SKA
-				type = civil_war
+				type = annex_country
 			}
+			add_civil_war_target = SKA
 		}
 	}
 }
@@ -4273,11 +4278,12 @@ country_event = { #The coup
 			
 			declare_war_on = {
 				target = SKR
-				type = civil_war
+				type = annex_everything
 			}
 			
 			SKR = {
 				change_tag_from = SKA
+				add_civil_war_target = SKA
 			}
 		}
 	}
@@ -4384,11 +4390,12 @@ country_event = { #The Grand Offering to Mohrok
 			
 			declare_war_on = {
 				target = SKP
-				type = civil_war
+				type = annex_everything
 			}
 			
 			SKP = {
 				change_tag_from = SKA
+				add_civil_war_target = SKA
 			}
 		}
 	}
@@ -5307,11 +5314,12 @@ country_event = { #Anti-GLC riots 4, we've lost control dawg
 			
 			declare_war_on = {
 				target = SKR
-				type = civil_war
+				type = annex_everything
 			}
 			
 			SKR = {
 				change_tag_from = SKA
+				add_civil_war_target = SKA
 			}
 		}
 		remove_ideas = SKA_anger_at_glc

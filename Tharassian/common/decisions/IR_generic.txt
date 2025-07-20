@@ -1294,6 +1294,7 @@ GENERIC_create_factions = {
 			NOT = {
 				has_global_flag = GENERIC_northern_plains_alliance_created
 			}
+			is_subject = no
 		}
 		
 		visible = {
@@ -1314,6 +1315,7 @@ GENERIC_create_factions = {
 			every_other_country = {
 				limit = {
 					is_og_northern_plains_state = yes
+					is_free_or_subject_of_root = yes
 				}
 				add_to_faction = THIS
 			}

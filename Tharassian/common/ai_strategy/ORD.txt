@@ -10,6 +10,32 @@
 # protect
 # influence
 
+ORD_astrellion_buddies = {
+	enable = {
+		original_tag = ORD
+		is_in_faction_with = NPC
+	}
+	abort = {
+		OR = {
+			ORD = {
+				has_government = puritan
+				has_government = theocrat
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NPC
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = NPC
+		value = 200
+	}	
+}
+
 schlelfen_plan = { # Get it? It's the Schlieffen Plan, but with elves? Fuck you, I'm funny.
 	enable = {
 		tag = ORD

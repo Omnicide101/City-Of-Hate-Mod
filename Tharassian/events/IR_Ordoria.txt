@@ -5631,6 +5631,8 @@ country_event = { #The Wheels Begin to Turn
 		else = {
 			remove_ideas = ORD_industrial_recovery
 		}
+		
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 
@@ -5682,6 +5684,57 @@ country_event = { #A Fragile Normalcy
 		}
 		else = {
 			remove_ideas = ORD_industrial_recovery
+		}
+		
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+country_event = { #Joining Astrellion
+	id = ord.121
+	title = ord.121.t
+	desc = ord.121.d
+	
+	is_triggered_only = yes
+	
+	option = {#Let's go
+		name = ord.121.a
+		
+		if = {
+			limit = {
+				is_faction_leader = yes
+			}
+			add_to_faction = NPC
+		}
+		if = {
+			limit = {
+				is_in_faction = yes
+				is_faction_leader = no
+			}
+			leave_faction = yes
+			create_faction = lathweynian_concord
+			add_to_faction = NPC
+		}
+		if = {
+			limit = {
+				is_in_faction = no
+			}
+			create_faction = lathweynian_concord
+			add_to_faction = NPC
+		}
+		add_to_war = {
+			targeted_alliance = NPC
+			enemy = GMR
+			hostility_reason = asked_to_join
+		}
+		if = {
+			limit = {
+				has_country_flag = ORD_GMR_prepared_intervention
+			}
+			add_timed_idea = {
+				idea = ORD_prepared_intervention
+				days = 60
+			}
 		}
 	}
 }
