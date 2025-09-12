@@ -19,7 +19,7 @@ focus_tree = {
 
 	focus = {
 		id = IRI_the_theresandrean_restoration
-		icon = GFX_IRI_Fate_Of_The_Tyrant
+		icon = GFX_focus_generic_monarchist_sentiment
 		x = 9
 		y = 0
 		mutually_exclusive = { focus = IRI_land_of_mercenaries focus = IRI_aggelos_ambition }
@@ -534,7 +534,7 @@ focus_tree = {
 
 	focus = {
 		id = IRI_the_king_and_his_many_faces
-		icon = GFX_IRI_Fate_Of_The_Tyrant
+		icon = GFX_focus_generic_monarchy_2
 		x = 0
 		y = 1
 		prerequisite = { focus = IRI_a_camerilla }
@@ -592,7 +592,7 @@ focus_tree = {
 
 	focus = {
 		id = IRI_aggelos_ambition
-		icon = GFX_IRI_Cinyras_Restoration
+		icon = GFX_focus_AFG_retire_the_uncles
 		x = 2
 		y = 0
 		mutually_exclusive = { focus = IRI_land_of_mercenaries focus = IRI_the_theresandrean_restoration }
@@ -761,7 +761,7 @@ focus_tree = {
 
 	focus = {
 		id = IRI_the_rightful_dynasty_returns
-		icon = GFX_IRI_Cinyras_Restoration
+		icon = GFX_BLD_Revive_The_Tradition_Of_Firetrial
 		x = -1
 		y = 1
 		prerequisite = { focus = IRI_gold_for_generals focus = IRI_propagate_the_common_soldiery }
@@ -805,7 +805,7 @@ focus_tree = {
 
 	focus = {
 		id = IRI_replace_chairophon_loyalists
-		icon = GFX_IRI_Fate_Of_The_Tyrant
+		icon = GFX_focus_generic_monarchy_1
 		x = 0
 		y = 1
 		prerequisite = { focus = IRI_the_rightful_dynasty_returns }
@@ -3523,7 +3523,7 @@ focus_tree = {
 
 	focus = {
 		id = IRI_cinyras_return
-		icon = GFX_IRI_Cinyras_Restoration
+		icon = GFX_BLD_Men_For_Weapons
 		x = 15
 		y = 0
 		mutually_exclusive = {
@@ -3553,7 +3553,7 @@ focus_tree = {
 
 	focus = {
 		id = IRI_chairophon_consolidation
-		icon = GFX_IRI_Fate_Of_The_Tyrant
+		icon = GFX_BLD_Crown_For_The_King_Of_Bilodyans
 		x = 4
 		y = 0
 		mutually_exclusive = {

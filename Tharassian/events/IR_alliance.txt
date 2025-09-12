@@ -99,6 +99,20 @@ country_event = {#Royal Marriage Call to Arms!
 		name = alliance.2.b
 		ai_chance = {
 			factor = 4
+			modifier = { # Larennis will never betray Adalina
+				factor = 0
+				tag = ORD
+				FROM = {
+					tag = UNG
+				}
+			}
+			modifier = { # Adalina will never betray Larennis
+				factor = 0
+				tag = UNG
+				FROM = {
+					tag = ORD
+				}
+			}
 		}
 		
 		FROM = {
@@ -220,6 +234,24 @@ country_event = {#Distress signal for attacked country with RM
 		}
 		if = {
 			limit = {
+				tag = UNG
+				has_idea = marriage_UNG_ORD
+				ORD = {
+					is_fighting_alongside_ROOT = no
+					NOT = {
+						has_country_flag = already_called_to_rm_war
+					}
+				}
+			}
+			ORD = {
+				country_event = {
+					id = alliance.2
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = {
 				tag = IRI
 				has_idea = marriage_IRI_UNG
 				UNG = {
@@ -240,6 +272,24 @@ country_event = {#Distress signal for attacked country with RM
 			limit = {
 				tag = GMR
 				has_idea = marriage_GMR_UNG
+				UNG = {
+					is_fighting_alongside_ROOT = no
+					NOT = {
+						has_country_flag = already_called_to_rm_war
+					}
+				}
+			}
+			UNG = {
+				country_event = {
+					id = alliance.2
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = ORD
+				has_idea = marriage_ORD_UNG
 				UNG = {
 					is_fighting_alongside_ROOT = no
 					NOT = {

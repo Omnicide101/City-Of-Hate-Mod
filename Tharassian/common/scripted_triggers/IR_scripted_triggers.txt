@@ -181,6 +181,16 @@ has_royal_marriage = {
 		AND = {
 			tag = UNG
 			has_defensive_war = yes
+			has_idea = marriage_UNG_ORD
+			is_independent = yes
+			ORD = {
+				is_independent = yes
+				is_fighting_alongside_ROOT = no
+			}
+		}
+		AND = {
+			tag = UNG
+			has_defensive_war = yes
 			has_idea = marriage_UNG_IRI
 			is_independent = yes
 			IRI = {
@@ -212,6 +222,16 @@ has_royal_marriage = {
 			tag = GMR
 			has_defensive_war = yes
 			has_idea = marriage_GMR_UNG
+			is_independent = yes
+			UNG = {
+				is_independent = yes
+				is_fighting_alongside_ROOT = no
+			}
+		}
+		AND = {
+			tag = ORD
+			has_defensive_war = yes
+			has_idea = marriage_ORD_UNG
 			is_independent = yes
 			UNG = {
 				is_independent = yes

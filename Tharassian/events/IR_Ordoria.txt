@@ -1225,31 +1225,11 @@ country_event = { # Medium Demands - Stahlhof Refuses
 			factor = 10
 		}
 		name = ord.21.a
-		set_autonomy = {
-			target = STA
-			autonomy_state = autonomy_free
-		}
-		declare_war_on = {
-			target = STA
-			type = annex_everything
-		}
-	}
-	option = { # Back down
-		ai_chance = {
-			factor = 2
-		}
-		name = ord.21.b
-		add_stability = -0.15
-		add_opinion_modifier = {
-			target = STA
-			modifier = ORD_demand_land_modifier
-		}
-		STA = {
-				add_opinion_modifier = {
-					target = ORD
-					modifier = ORD_demand_land_modifier
-				}
-		}
+		
+		set_country_flag = ORD_help_UNG_against_STA
+			
+		add_state_core = 193
+		add_state_core = 195
 	}
 }
 country_event = { # Exchange - Stahlhof Complies
@@ -5735,6 +5715,271 @@ country_event = { #Joining Astrellion
 				idea = ORD_prepared_intervention
 				days = 60
 			}
+		}
+	}
+}
+
+
+country_event = { #Mission to Faustburg
+	id = ord.122
+	title = ord.122.t
+	desc = ord.122.d
+	
+	is_triggered_only = yes
+	
+	option = {#Keep it platonic
+		name = ord.122.a
+		
+		custom_effect_tooltip = ORD_UNG_needs_agree_tt
+		
+		custom_effect_tooltip = ORD_unlock_enlightened_alliance_tt
+		
+		set_country_flag = ORD_no_bitches_route
+		
+		UNG = {
+			country_event = {
+				id = ung.86
+				days = 6
+			}
+		}
+	}
+	
+	option = {#Rizz o' clock
+		name = ord.122.b
+		
+		custom_effect_tooltip = ORD_UNG_needs_agree_tt
+		
+		custom_effect_tooltip = ORD_unlock_diplomacy_heart_tt
+		
+		set_country_flag = ORD_rizz_adalina
+		
+		UNG = {
+			country_event = {
+				id = ung.87
+				days = 6
+			}
+		}
+	}
+}
+
+country_event = { #Rizzing Adalina Succesful
+	id = ord.123
+	title = ord.123.t
+	desc = ord.123.d
+	
+	is_triggered_only = yes
+	
+	option = {#Pog
+		name = ord.123.a
+		
+		custom_effect_tooltip = ORD_unlock_diplomacy_heart_tt
+		
+		set_country_flag = ORD_rizz_adalina
+		
+		larennis_idealism_big = yes
+	}
+}
+
+country_event = { #Rizzing Adalina Fails, Alliance
+	id = ord.124
+	title = ord.124.t
+	desc = ord.124.d
+	
+	is_triggered_only = yes
+	
+	option = {#Awe :(
+		name = ord.124.a
+		
+		custom_effect_tooltip = ORD_unlock_enlightened_alliance_tt
+		
+		set_country_flag = ORD_no_bitches_route
+		
+		larennis_cynicism_big = yes
+	}
+}
+
+country_event = { #Alliance Formed
+	id = ord.125
+	title = ord.125.t
+	desc = ord.125.d
+	
+	is_triggered_only = yes
+	
+	option = {#Yay
+		name = ord.125.a
+		
+		custom_effect_tooltip = ORD_unlock_enlightened_alliance_tt
+		
+		set_country_flag = ORD_no_bitches_route
+		
+		larennis_idealism_small = yes
+	}
+}
+
+country_event = { #Alliance Not Formed
+	id = ord.126
+	title = ord.126.t
+	desc = ord.126.d
+	
+	is_triggered_only = yes
+	
+	option = {#Boo
+		name = ord.126.a
+		
+		custom_effect_tooltip = ORD_unlock_enlightened_alliance_tt
+		
+		set_country_flag = ORD_no_bitches_route
+		
+		larennis_cynicism_medium = yes
+		
+		unlock_national_focus = ORD_enlightened_alliance
+		unlock_national_focus = ORD_return_utrocyle_quenthyne
+		unlock_national_focus = ORD_isolate_bear
+	}
+}
+
+country_event = { #Ordoria asks if we want to team up on the Union
+	id = ord.127
+	title = ord.127.t
+	desc = ord.127.d
+	
+	is_triggered_only = yes
+	
+	option = {#Yea
+		name = ord.127.a
+		
+		trigger = {
+			is_subject = no
+		}
+		
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 0
+				has_government = puritan
+			}
+		}
+		
+		custom_effect_tooltip = ORD_ally_we_will_fight_UNG_tt
+		
+		set_country_flag = ORD_ally_will_fight_UNG
+		
+		ORD = {
+			country_event = {
+				id = ord.128
+				days = 7
+			}
+		}
+	}
+	
+	option = {#Yea (revolt)
+		name = ord.127.b
+		
+		trigger = {
+			is_subject_of = UNG
+		}
+		
+		ai_chance = {
+			factor = 30
+		}
+		
+		custom_effect_tooltip = ORD_ally_we_will_fight_UNG_civil_war_tt
+		
+		set_country_flag = ORD_ally_will_fight_UNG_civil_war
+		
+		ORD = {
+			country_event = {
+				id = ord.129
+				days = 7
+			}
+		}
+	}
+	
+	option = {#Nah
+		name = ord.127.c
+		
+		ai_chance = {
+			factor = 1
+		}
+		
+		add_stability = 0.02
+
+		ORD = {
+			country_event = {
+				id = ord.130
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #FROM will join anti-Adalina pact
+	id = ord.128
+	title = ord.128.t
+	desc = ord.128.d
+	
+	is_triggered_only = yes
+	
+	option = {#Yay
+		name = ord.128.a
+		
+		larennis_idealism_small = yes
+
+		custom_effect_tooltip = ORD_ally_will_join_tt
+	}
+}
+
+country_event = { #FROM will join anti-Adalina pact - revolter
+	id = ord.129
+	title = ord.129.t
+	desc = ord.129.d
+	
+	is_triggered_only = yes
+	
+	option = {#Yay
+		name = ord.129.a
+
+		larennis_idealism_small = yes
+
+		custom_effect_tooltip = ORD_ally_will_join_civil_war_tt
+	}
+}
+
+
+country_event = { #FROM will not join anti-Adalina pact
+	id = ord.130
+	title = ord.130.t
+	desc = ord.130.d
+	
+	is_triggered_only = yes
+	
+	option = {#Ahw
+		name = ord.130.a
+		
+		larennis_cynicism_small = yes
+	}
+}
+
+country_event = { #ORD has gone to war against UNG, time for civil war
+	id = ord.131
+	title = ord.131.t
+	desc = ord.131.d
+	
+	is_triggered_only = yes
+	
+	option = {#And so we go
+		name = ord.131.a
+		
+		start_civil_war = {
+			ruling_party = monarchy_absolute
+			ideology = monarchy_constitutional
+			size = 0.5
+			
+			ORD = {
+				add_to_faction = ROOT
+			}
+			
+			set_country_flag = ORD_ally_will_fight_UNG_civil_war
 		}
 	}
 }

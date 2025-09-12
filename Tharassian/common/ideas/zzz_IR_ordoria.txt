@@ -3004,5 +3004,23 @@ ideas = {
 				attack_bonus_against = 0.25
 			}
 		}
+		
+		marriage_ORD_UNG = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_royal_marriage
+			
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = royal_marriage_warning_tt
+			}
+		}
 	}
 }

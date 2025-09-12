@@ -1504,7 +1504,7 @@ focus_tree = {
 	
 	focus = { #The People's Princess
 		id = UNG_peoples_princess
-		icon = GFX_focus_ung_young_hochprinzessin
+		icon = GFX_focus_AFG_retire_the_uncles
 		cost = 5
 		prerequisite = {
 			focus = UNG_gentle_hand 
@@ -1626,6 +1626,20 @@ focus_tree = {
 			add_popularity = {
 				ideology = republic_aristocrat
 				popularity = 0.08
+			}
+			
+			add_advisor_role = {
+				character = UNG_adalina_vlussinger
+				activate = yes
+				advisor = {
+					slot = political_advisor
+					idea_token = UNG_adalina_vlussinger_advisor
+					cost = 0
+					can_be_fired = no
+					traits = {
+						figurehead_hochprinzessin
+					}
+				}
 			}
 		}
 	}
@@ -3132,6 +3146,9 @@ focus_tree = {
 				NOT = {
 					country_exists = ORD
 				}
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		relative_position_id = UNG_imperial_diplomacy
@@ -3186,9 +3203,12 @@ focus_tree = {
 				NOT = {
 					country_exists = STA
 				}
-			}
-			STA = {
-				is_independent = yes
+				STA = {
+					is_independent = yes
+				}
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -3340,9 +3360,12 @@ focus_tree = {
 				NOT = {
 					country_exists = STA
 				}
-			}
-			STA = {
-				is_independent = yes
+				STA = {
+					is_independent = yes
+				}
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -3487,6 +3510,9 @@ focus_tree = {
 						}
 					}
 				}
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -3593,6 +3619,9 @@ focus_tree = {
 				NOT = {
 					country_exists = ORD
 				}
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		relative_position_id = UNG_unconditional_support
@@ -3635,6 +3664,9 @@ focus_tree = {
 					country_exists = ORD
 				}
 				has_war_with = ORD
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		ai_will_do = {
@@ -3676,6 +3708,18 @@ focus_tree = {
 			}
 			ORD = {
 				is_not_independent = yes
+			}
+			if = {
+				limit = {
+					ORD = {
+						has_completed_focus = ORD_mission_faustburg
+					}
+				}
+				NOT = {
+					ORD = {
+						has_completed_focus = ORD_mission_faustburg
+					}
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -3807,7 +3851,10 @@ focus_tree = {
 				is_independent = yes
 			}
 			ORD = {
-				is_not_independent = yes
+				OR = {
+					is_not_independent = yes
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		mutually_exclusive = {

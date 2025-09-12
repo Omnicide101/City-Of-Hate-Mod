@@ -1,3 +1,188 @@
+# Divides the Union between allies
+ORD_divide_union = {
+	if = {
+		limit = {
+			PRK = {
+				OR = {
+					has_country_flag = ORD_ally_will_fight_UNG
+					has_country_flag = ORD_ally_will_fight_UNG_civil_war
+				}
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = TEI
+			}
+			transfer_state_to = TEI
+		}
+		PRK = {
+			puppet = TEI
+		}
+		every_state = {
+			limit = {
+				is_core_of = SVT
+			}
+			transfer_state_to = SVT
+		}
+		PRK = {
+			puppet = SVT
+		}
+		every_state = {
+			limit = {
+				is_core_of = SPW
+			}
+			transfer_state_to = SPW
+		}
+		PRK = {
+			puppet = SPW
+		}
+	}
+	if = {
+		limit = {
+			BER = {
+				OR = {
+					has_country_flag = ORD_ally_will_fight_UNG
+					has_country_flag = ORD_ally_will_fight_UNG_civil_war
+				}
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = FTH
+			}
+			transfer_state_to = FTH
+		}
+		BER = {
+			puppet = FTH
+		}
+		every_state = {
+			limit = {
+				is_core_of = ARK
+			}
+			transfer_state_to = ARK
+		}
+		BER = {
+			puppet = ARK
+		}
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = UNG
+					is_core_of = FAU
+				}
+			}
+			transfer_state_to = FAU
+			remove_core_of = UNG
+			add_core_of = FAU
+		}
+		BER = {
+			puppet = FAU
+		}
+	}
+	if = {
+		limit = {
+			TLA = {
+				OR = {
+					has_country_flag = ORD_ally_will_fight_UNG
+					has_country_flag = ORD_ally_will_fight_UNG_civil_war
+				}
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = WSZ
+			}
+			transfer_state_to = WSZ
+		}
+		TLA = {
+			puppet = WSZ
+		}
+		every_state = {
+			limit = {
+				is_core_of = WIS
+			}
+			transfer_state_to = WIS
+		}
+		TLA = {
+			puppet = WIS
+		}
+		every_state = {
+			limit = {
+				is_core_of = SNF
+			}
+			transfer_state_to = SNF
+		}
+		TLA = {
+			puppet = SNF
+		}
+	}
+	if = {
+		limit = {
+			IRI = {
+				OR = {
+					has_country_flag = ORD_ally_will_fight_UNG
+					has_country_flag = ORD_ally_will_fight_UNG_civil_war
+				}
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = WSZ
+			}
+			transfer_state_to = WSZ
+		}
+		IRI = {
+			puppet = WSZ
+		}
+		every_state = {
+			limit = {
+				is_core_of = WIS
+			}
+			transfer_state_to = WIS
+		}
+		IRI = {
+			puppet = WIS
+		}
+		every_state = {
+			limit = {
+				is_core_of = SNF
+			}
+			transfer_state_to = SNF
+		}
+		IRI = {
+			puppet = SNF
+		}
+	}
+	every_state = {
+		limit = {
+			is_core_of = STA
+		}
+		transfer_state_to = STA
+	}
+	puppet = STA
+	every_state = {
+		limit = {
+			is_core_of = HLZ
+		}
+		transfer_state_to = HLZ
+	}
+	puppet = HLZ
+	every_state = {
+		limit = {
+			is_core_of = NOC
+		}
+		transfer_state_to = NOC
+	}
+	puppet = NOC
+	every_state = {
+		limit = {
+			is_core_of = NRK
+		}
+		transfer_state_to = NRK
+	}
+	puppet = NRK
+}
+
 # Creates a Sanctuary State and transfers population from non-Sanctuary states to this one
 ORD_create_sanctuary_state = {
 	add_dynamic_modifier = {
