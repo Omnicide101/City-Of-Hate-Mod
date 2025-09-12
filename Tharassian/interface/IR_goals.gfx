@@ -1,6 +1,12 @@
 spriteTypes = {
 
 	#### Mod-specific goal icons
+
+	SpriteType = {
+	name = "GFX_focus_generic_perkavland"
+	texturefile = "gfx/interface/goals/focus_generic_perkavland.dds"
+	}
+
 	SpriteType = {
 	name = "GFX_focus_SPW_heavy_head"
 	texturefile = "gfx/interface/goals/focus_SPW_heavy_head.dds"

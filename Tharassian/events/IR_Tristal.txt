@@ -23,7 +23,11 @@ country_event = { #Hastalians Seize Control!
 				days = 1
 			}
 			
-			puppet = TRS
+			puppet = {
+				target = TRS
+				end_wars = no
+				end_civil_wars = no
+			}
 		}
 		
 		remove_ideas = TRS_widespread_corruption

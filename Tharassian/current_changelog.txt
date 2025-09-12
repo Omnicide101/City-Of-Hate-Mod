@@ -1,4 +1,5 @@
 -Ordoria Rework
+-Removed all AI-generated pictures. I don't know what I was smoking that I put them in in the first place, but they're all gone now.
 -Added advisors to Ordoria
 -Re-enabled resistance uprisings and collaboration governments
 -Fixed various Schneefilde bugs

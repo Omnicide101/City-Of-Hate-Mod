@@ -643,6 +643,24 @@ ideas = {
 			}
 		}
 		
+		marriage_UNG_ORD = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_royal_marriage
+			
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = royal_marriage_warning_tt
+			}
+		}
+		
 		UNG_trade_monopolized = {
 			
 			allowed = {

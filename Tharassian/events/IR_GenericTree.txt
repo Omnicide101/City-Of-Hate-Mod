@@ -212,6 +212,13 @@ country_event = {#Order Maintained
 				has_government = monarchy_absolute
 				factor = 30
 			}
+			modifier = {
+				is_puppet_of = ORD
+				NOT = {
+					tag = EOR
+				}
+				factor = 0
+			}
 		}
 		set_politics = {
 			ruling_party = monarchy_absolute

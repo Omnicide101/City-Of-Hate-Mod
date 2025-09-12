@@ -3760,7 +3760,7 @@ country_event = { #Social War - Brotherhood Revolt
 		SKR = {
 			declare_war_on = {
 				target = SKA
-				type = annex_country
+				type = annex_everything
 			}
 			add_civil_war_target = SKA
 		}
