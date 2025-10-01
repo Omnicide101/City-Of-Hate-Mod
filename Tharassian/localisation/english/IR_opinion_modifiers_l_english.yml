@@ -40,7 +40,10 @@
  ORD_outraged:0 "Outraged"
  ORD_guardian_lathweyne:0 "Guardian of Lathweyne"
  ORD_ordorian_meddlers:0 "Ordorian Meddlers"
+<<<<<<< HEAD
  ORD_denied_spoils:0 "Denied Spoils of War"
+=======
+>>>>>>> b822b2ed02859076470c2ad214b7f0614a1d01c7
  RTH_monarchist_scum:0 "Monarchist Scum"
  closed_economy_trade_modifier:0 "We have a §YClosed Economy§!"
  limited_exports_trade_modifier:0 "We allow §YLimited Exports§!"

@@ -3724,9 +3724,9 @@ focus_tree = {
 		id = ORD_guardians_lathweyne
 		icon = GFX_focus_generic_league_of_nations
 		cost = 6
-		allow_branch = {
-			has_completed_focus = ORD_wheels_turn
-		}
+		#allow_branch = {
+		#	has_completed_focus = ORD_wheels_turn
+		#}
 		#prerequisite = {
 		#	focus = ORD_wheels_turn
 		#}
@@ -4653,6 +4653,7 @@ focus_tree = {
 	focus = { #Oversee New Elections
 		id = ORD_oversee_new_elections
 		icon = GFX_focus_AFG_promote_the_counter_elite
+		icon = GFX_
 		cost = 9
 		prerequisite = {
 			focus = ORD_intervene_hochprinztum

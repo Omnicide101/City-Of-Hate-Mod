@@ -5953,6 +5953,7 @@ country_event = { #ORD has gone to war against UNG, time for civil war
 			
 			set_country_flag = ORD_ally_will_fight_UNG_civil_war
 		}
+<<<<<<< HEAD
 	}
 }
 
@@ -5982,5 +5983,7 @@ country_event = { #Organizing new elections in UNG
 	option = {#Ban FAU and STA
 		name = ord.132.e
 		larennis_cynicism_big = yes
+=======
+>>>>>>> b822b2ed02859076470c2ad214b7f0614a1d01c7
 	}
 }

@@ -731,6 +731,7 @@
  ord.130.t:0 "[From.GetNameDef] Refuses the Call"
  ord.130.d:0 "We have received word from the envoys we have sent out to [From.GetNameDef] - the [From.GetNameAdj] have rejected our overtures!"
  ord.130.a:0 "Curses!"
+<<<<<<< HEAD
  ord.131.t:0 "Electoral Considerations"
  ord.131.d:0 "With the defeat of the warmongering Anthygyne empire and our decision to allow their people to elect their own, hopefully more peaceful, leader under our guidance, we must consider the matter of whom we will allow as candidates. The warmongers of Lilyasorynthe and the seditious rebels of Stauhyte could both be justifiably banned from the elections, but this will almost certainly upset the nobles of Anthygynaur."
  ord.131.a:0 "Let all eligible Freiprinztümer stand for election."
@@ -738,6 +739,11 @@
  ord.132.c:0 "The Bear of Stahlhof has caused enough trouble."
  ord.132.e:0 "Neither shall be allowed to take the crown!"
  ord.131.r:0 ""
+=======
+ ord.131.t:0 ""
+ ord.131.d:0 ""
+ ord.131.a:0 ""
+>>>>>>> b822b2ed02859076470c2ad214b7f0614a1d01c7
  ord.132.t:0 ""
  ord.132.d:0 ""
  ord.132.a:0 ""
@@ -750,7 +756,11 @@
  ord.135.t:0 ""
  ord.135.d:0 ""
  ord.135.a:0 ""
+<<<<<<< HEAD
  ord_lore.1.t:0 "Steward of Ordoria"
+=======
+ ord_lore.1t:0 "Steward of Ordoria"
+>>>>>>> b822b2ed02859076470c2ad214b7f0614a1d01c7
  ord_lore.1.d:0 "Isvenith sipped from the goblet of Ythelmarian wine and smiled, the loud sounds of the League members outside celebrating their recent victory at the Autumn Debate filtering in through his window. He had made a token appearance at the festivities before retreating to his quarters, hoping for an early night. Still, he could not find the rest he desired. Even after he and his men had diligently prevented the vile Dwarves of Skaelinger from installing that race traitor, Derathur, as their puppet ruler of all Ordorians, there were dissenting voices within the nation seeking to undermine his stewardship. Thankfully, sanity had prevailed, and the self-serving scum responsible for the Humiliation at Dosynnis had been prevented from leading his people to ruin again.\n\nIsvenith sighed and placed his goblet down. Relief made way for worry as the full weight of responsibility settled on his shoulders; not just for Ordoria, but for the entire Elven species. He did not relish the first step he had to take, but it had to be done. The rebels in the East, under the sway of that madman, Derathur, had to be put down. Isvenith did not look forward to spilling yet more Elven blood, but it had to be done. Ordoria must be reunited before it can take its vengeance on the Men and Elves of Lathweyne.\n\n'As Vanqys unified the Ordorians centuries ago, so too shall I bring unity to the Elves,' Isvenith thought, rising to his feet. He left his bedroom, the wine practically untouched, heading towards his study.\n\nThere was work to be done."
  ord_lore.1.a:0 "The first steps towards Ordoria's rebirth have been taken."
  ord_lore.2.t:0 "The Old King"

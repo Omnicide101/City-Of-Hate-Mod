@@ -339,11 +339,18 @@
  ORD_UNG_needs_agree_tt:0 "@UNG §Y[UNG.GetNameDef] needs to agree for the focus to take effect.§!"
  ORD_unlock_enlightened_alliance_tt:0 "Unlocks the §YEnlightened Alliance§! focus."
  ORD_unlock_diplomacy_heart_tt:0 "Unlocks the §YDiplomacy of the Heart§! focus."
+<<<<<<< HEAD
  ORD_ally_we_will_fight_UNG_tt:0 "We will join @ORD§Y[ORD.GetNameDef]§!'s §YFaction§! temporarily upon declaration of war, until @UNG§Y[UNG.GetNameDef]§! is defeated."
  ORD_ally_we_will_fight_UNG_civil_war_tt:0 "We will start a §Ycivil war§! and join @ORD§Y[ORD.GetNameDef]§!'s §YFaction§! temporarily upon declaration of war, until @UNG§Y[UNG.GetNameDef]§! is defeated."
  ORD_ally_will_join_tt:0 "When we march on @UNG§Y[UNG.GetNameDef]§!, §Y[FROM.GetNameAdj]§! will temporarily join us!"
  ORD_ally_will_join_civil_war_tt:0 "When we march on @UNG§Y[UNG.GetNameDef]§!, §Y[FROM.GetNameAdj]§! will temporarily join us, and start a §Ycivil war§! to cast off the Ungerdaler yoke!"
  ORD_divide_union_tt:0 "The lands of the former @UNG §Y[UNG.GetNameDef]§! and its constituent states will be divided between us and our allies."
+=======
+ ORD_ally_we_will_fight_UNG_civil_war_tt:0 "We will start a §Ycivil war§! and join @ORD§Y[ORD.GetNameDef]§!'s §YFaction§! temporarily, until @UNG§Y[UNG.GetNameDef]§! is defeated."
+ ORD_ally_we_will_fight_UNG_civil_war_tt:0 "We will start a §Ycivil war§! and join @ORD§Y[ORD.GetNameDef]§!'s §YFaction§! temporarily upon declaration of war, until @UNG§Y[UNG.GetNameDef]§! is defeated."
+ ORD_ally_will_join_tt:0 "When we march on @UNG§Y[UNG.GetNameDef]§!, §Y[FROM.GetNameAdj]§! will temporarily join us!"
+ ORD_ally_will_join_civil_war_tt:0 "When we march on @UNG§Y[UNG.GetNameDef]§!, §Y[FROM.GetNameAdj]§! will temporarily join us, and start a §Ycivil war§! to cast off the Ungerdaler yoke!"
+>>>>>>> b822b2ed02859076470c2ad214b7f0614a1d01c7
  EOR_disable_resistance_tt:0 "We will pacify the resistance in this state."
  BER_assisted_terugkeer_tt:0 "We will be able to start a war with the Kurgur to restore our homeland via decision. The Union will be called in."
  GMR_religious_branch_available_tt:0 "The Religious Dispute branch of the focus tree is now unlocked!"

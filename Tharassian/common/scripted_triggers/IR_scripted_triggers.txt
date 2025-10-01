@@ -242,6 +242,16 @@ has_royal_marriage = {
 				}
 			}
 		}
+		AND = {
+			tag = ORD
+			has_defensive_war = yes
+			has_idea = marriage_ORD_UNG
+			is_independent = yes
+			UNG = {
+				is_independent = yes
+				is_fighting_alongside_ROOT = no
+			}
+		}
 	}
 }
 

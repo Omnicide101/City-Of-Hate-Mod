@@ -28,8 +28,11 @@ country_event = { #Hastalians Seize Control!
 				end_wars = no
 				end_civil_wars = no
 			}
+<<<<<<< HEAD
 			
 			set_country_flag = HAS_el_gran_juego_achievement
+=======
+>>>>>>> b822b2ed02859076470c2ad214b7f0614a1d01c7
 		}
 		
 		remove_ideas = TRS_widespread_corruption
