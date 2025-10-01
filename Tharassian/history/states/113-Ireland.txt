@@ -2,7 +2,7 @@ state={
 	id=113
 	name="STATE_113"
 	provinces={
-		4448 7558 1776 2156 1717 200
+		7558 1776 200 3504
 	}
 	state_category = rural
 	manpower=4091
@@ -15,13 +15,6 @@ state={
 		buildings = {	
 			infrastructure = 2
 			forge = 1
-			4448 = {
-				bunker = 2
-			}
-			2156 = {
-				bunker = 2
-			}
-			
 		}
 		add_core_of = ORD
 	}

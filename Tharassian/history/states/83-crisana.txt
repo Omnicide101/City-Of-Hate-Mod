@@ -2,7 +2,7 @@ state={
 	id=83
 	name="STATE_83"
 	provinces={
-		6804 1925 935 6872 3134
+		935 6872 3134 2244 2367
 	}
 	state_category = pastoral
 	manpower=1026
@@ -15,10 +15,13 @@ state={
 		buildings = {	
 			infrastructure = 1
 			forge = 1
-			6804 = {
+			3134 = {
 				bunker = 2
 			}
-			3134 = {
+			2244 = {
+				bunker = 2
+			}
+			2367 = {
 				bunker = 2
 			}
 		}

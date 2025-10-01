@@ -2,7 +2,7 @@ state={
 	id=118
 	name="STATE_118"
 	provinces={
-		1941 1353 7404 5592
+		1941 1353 1155 1039
 	}
 	state_category = large_city
 	manpower=704390

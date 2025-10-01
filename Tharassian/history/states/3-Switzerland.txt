@@ -15,5 +15,6 @@ state={
 			workshop = 1
 		}
 		add_core_of = GMR
+		add_core_of = IRT
 	}
 }

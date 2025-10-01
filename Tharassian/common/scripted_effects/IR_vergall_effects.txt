@@ -424,37 +424,46 @@ reform_vergallheim = {
    		}
    		}
 	}
+	
 	if = {
 		limit = {
 			SKA = {
-				is_subject_of = ROOT
+				is_subject_of = VRG
 			}
 		}
-		annex_country = {
-			target = SKA
-			transfer_troops = yes
+		VRG = {
+			annex_country = {
+				target = SKA
+				transfer_troops = yes
+			}
 		}
 	}
+	
 	if = {
 		limit = {
 			BER = {
-				is_subject_of = ROOT
+				is_subject_of = VRG
 			}
 		}
-		annex_country = {
-			target = BER
-			transfer_troops = yes
+		every_state = {
+			limit = {
+				is_oramfell_state = yes
+				is_owned_by = BER
+			}
+			transfer_state_to = VRG
 		}
 	}
 	if = {
 		limit = {
 			RMT = {
-				is_subject_of = ROOT
+				is_subject_of = VRG
 			}
 		}
-		annex_country = {
-			target = RMT
-			transfer_troops = yes
+		VRG = {
+			annex_country = {
+				target = RMT
+				transfer_troops = yes
+			}
 		}
 	}
 	VRG = {

@@ -18,18 +18,21 @@ leader_traits = {
 		random = no
 		stability_factor = 0.15
 		political_power_gain = 0.5
+		monarchy_constitutional_drift = 0.02
 	}
 	
 	madre_familia_feroz = {
 		random = no
 		war_support_factor = 0.15
 		army_morale_factor = 0.1
+		monarchy_absolute_drift = 0.02
 	}
 	
 	padre_familia_adinerada = {
 		random = no
 		consumer_goods_factor = -0.2
 		trade_opinion_factor = 0.35
+		republic_aristocrat_drift = 0.02
 	}
 	
 	fervent_reactionary = {
@@ -286,6 +289,12 @@ leader_traits = {
 		army_morale_factor = 0.1
 	}
 	
+	figurehead_hochprinzessin = {
+		random = no
+		stability_factor = 0.15
+		political_power_gain = 0.15
+	}
+	
 	disempowered_freiprinzessin = {
 		random = no
 		political_power_gain = -0.35
@@ -302,6 +311,20 @@ leader_traits = {
 		random = no
 		political_power_gain = -0.25
 		stability_factor = -0.05
+	}
+	
+	beloved_of_larennis = {
+		random = no
+		political_power_gain = 0.5
+		army_morale_factor = 0.15
+		breakthrough_factor = 0.1
+	}
+	
+	beloved_of_adalina = {
+		random = no
+		political_power_gain = 0.5
+		army_morale_factor = 0.15
+		breakthrough_factor = 0.1
 	}
 	
 	power_behind_throne = {
@@ -537,6 +560,12 @@ leader_traits = {
 		random = no
 		army_core_defence_factor = 0.03
 		max_dig_in = 0.1
+	}
+	
+	bearer_of_an_banner = {
+		random = no
+		army_core_defence_factor = 0.03
+		army_morale_factor = 0.02
 	}
 	
 	diversity_racial_bonuses = {

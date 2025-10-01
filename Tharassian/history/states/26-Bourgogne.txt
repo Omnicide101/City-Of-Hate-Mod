@@ -26,7 +26,7 @@ state={
 			farm = 1
 		}
 		add_core_of = GMR
-
+		add_core_of = NAS
 	}
 
 }

@@ -2504,6 +2504,215 @@ ORD_autumn_debate_values = {
 	}
 }
 
+ORD_princelings_idealism = {
+	ORD_larennis_pursue_arts = {
+		
+		icon = eng_trade_unions_support
+		
+		visible = {
+			OR = {
+				has_completed_focus = ORD_decree_passes
+				has_completed_focus = ORD_decree_fails
+			}
+		}
+		
+		available = {
+			has_government = monarchy_absolute
+		}
+		
+		cost = 50
+		
+		days_remove = 15
+		
+		days_re_enable = 10
+		
+		ai_will_do = {
+			factor = 0
+			modifier = { #Only if we need an idealistic Larennis
+				add = 50
+				ORD_needs_more_idealistic_princeling = yes
+			}
+		}
+		
+		remove_effect = {
+			larennis_idealism_small = yes
+		}
+	}
+	
+	ORD_confide_in_father = {
+		
+		icon = SWI_support_humanitarian_efforts
+		
+		visible = {
+			OR = {
+				has_completed_focus = ORD_decree_passes
+				has_completed_focus = ORD_decree_fails
+			}
+		}
+		
+		available = {
+			has_government = monarchy_absolute
+		}
+		
+		cost = 75
+		
+		days_remove = 25
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 0
+			modifier = { #Only if we need an idealistic Larennis
+				add = 50
+				ORD_needs_more_idealistic_princeling = yes
+			}
+		}
+		
+		remove_effect = {
+			larennis_idealism_medium = yes
+		}
+	}
+	
+	ORD_time_with_friends = {
+	
+		icon = CHL_mapuche_liberate_isthmo_amerindia
+		
+		visible = {
+			OR = {
+				has_completed_focus = ORD_decree_passes
+				has_completed_focus = ORD_decree_fails
+			}
+		}
+		
+		available = {
+			has_government = monarchy_absolute
+		}
+		
+		cost = 135
+		
+		days_remove = 65
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 0
+			modifier = { #Only if we need an idealistic Larennis
+				add = 50
+				ORD_needs_more_idealistic_princeling = yes
+			}
+		}
+		
+		remove_effect = {
+			larennis_idealism_big = yes
+		}
+	}
+
+	ORD_meet_alstora = {
+		
+		icon = eng_ally_imperialist_coup
+		
+		visible = {
+			OR = {
+				has_completed_focus = ORD_decree_passes
+				has_completed_focus = ORD_decree_fails
+			}
+		}
+		
+		available = {
+			has_government = monarchy_absolute
+		}
+		
+		cost = 50
+		
+		days_remove = 15
+		
+		days_re_enable = 10
+		
+		ai_will_do = {
+			factor = 0
+			modifier = { #Only if we need a cynical Larennis
+				add = 50
+				ORD_needs_more_cynical_princeling = yes
+			}
+		}
+		
+		remove_effect = {
+			larennis_cynicism_small = yes
+		}
+		
+	}
+	
+	ORD_settle_legal_disputes = {
+		
+		icon = eng_trade_unions_demand
+		
+		visible = {
+			OR = {
+				has_completed_focus = ORD_decree_passes
+				has_completed_focus = ORD_decree_fails
+			}
+		}
+		
+		available = {
+			has_government = monarchy_absolute
+		}
+		
+		cost = 75
+		
+		days_remove = 25
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 0
+			modifier = { #Only if we need a cynical Larennis
+				add = 50
+				ORD_needs_more_cynical_princeling = yes
+			}
+		}
+		
+		remove_effect = {
+			larennis_cynicism_medium = yes
+		}
+		
+	}
+	
+	ORD_compromise_ideals = {
+	
+		icon = generic_break_treaty
+		
+		visible = {
+			OR = {
+				has_completed_focus = ORD_decree_passes
+				has_completed_focus = ORD_decree_fails
+			}
+		}
+		
+		available = {
+			has_government = monarchy_absolute
+		}
+		
+		cost = 135
+		
+		days_remove = 65
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 0
+			modifier = { #Only if we need a cynical Larennis
+				add = 50
+				ORD_needs_more_cynical_princeling = yes
+			}
+		}
+		
+		remove_effect = {
+			larennis_cynicism_big = yes
+		}
+		
+	}
+}
+
 ORD_expand_sanctuary = {
 	ORD_expand_sanctuary_in_state = {
 		
@@ -2923,7 +3132,7 @@ ORD_retribution_anthygynaur = {
 		on_map_mode = map_only
 
 		complete_effect = {
-			NOC = {
+			NRK = {
 				add_opinion_modifier = {
 					target = ORD
 					modifier = ORD_outraged

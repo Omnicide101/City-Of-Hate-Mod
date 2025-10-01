@@ -76,6 +76,11 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_idea_ung_adalina"
+		texturefile = "gfx/interface/ideas/characters/UNG/ung_adalina.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_idea_ung_blau"
 		texturefile = "gfx/interface/ideas/characters/UNG/ung_blau.dds"
 	}

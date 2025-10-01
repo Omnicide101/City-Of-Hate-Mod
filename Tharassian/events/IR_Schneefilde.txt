@@ -1035,13 +1035,6 @@ country_event = {#Lienihafen Victory
 		add_political_power = 15
 		transfer_state = 418
 		add_state_core = 418
-		418 = {
-			set_state_name = "Lienihafen"
-		}
-		set_province_name = {
-			id = 9478
-			name = "Lienihafen"
-		}
 	}
 }
 
@@ -1135,9 +1128,6 @@ country_event = {#Namweis Victory
 		add_political_power = 15
 		transfer_state = 622
 		add_state_core = 622
-		622 = {
-			set_state_name = "Namweis"
-		}
 	}
 }
 country_event = {#Gecsin Victory
@@ -1154,9 +1144,6 @@ country_event = {#Gecsin Victory
 		add_political_power = 15
 		transfer_state = 642
 		add_state_core = 642
-		642 = {
-			set_state_name = "Gecsin"
-		}
 	}
 }
 country_event = {#Krakincs Victory
@@ -1173,9 +1160,6 @@ country_event = {#Krakincs Victory
 		add_political_power = 15
 		transfer_state = 629
 		add_state_core = 629
-		629 = {
-			set_state_name = "Krakincs"
-		}
 	}
 }
 country_event = {#Vrizim Victory
@@ -1192,9 +1176,6 @@ country_event = {#Vrizim Victory
 		add_political_power = 15
 		transfer_state = 621
 		add_state_core = 621
-		621 = {
-			set_state_name = "Vrizim"
-		}
 	}
 }
 country_event = {#Pashinz Victory
@@ -1211,9 +1192,6 @@ country_event = {#Pashinz Victory
 		add_political_power = 15
 		transfer_state = 630
 		add_state_core = 630
-		630 = {
-			set_state_name = "Pashinz"
-		}
 	}
 }
 country_event = {#stufen Victory
@@ -1230,9 +1208,6 @@ country_event = {#stufen Victory
 		add_political_power = 15
 		transfer_state = 650
 		add_state_core = 650
-		650 = {
-			set_state_name = "Stufen"
-		}
 	}
 }
 country_event = {#Karistadt Victory
@@ -1249,13 +1224,6 @@ country_event = {#Karistadt Victory
 		add_political_power = 15
 		transfer_state = 416
 		add_state_core = 416
-		416 = {
-			set_state_name = "Karistadt"
-		}
-		set_province_name = {
-			id = 4944
-			name = "Karistadt"
-		}
 	}
 }
 country_event = {#Tinash Victory
@@ -1272,9 +1240,6 @@ country_event = {#Tinash Victory
 		add_political_power = 15
 		transfer_state = 620
 		add_state_core = 620
-		620 = {
-			set_state_name = "Tinash"
-		}
 	}
 }
 country_event = {#Scheidin Victory
@@ -1291,9 +1256,6 @@ country_event = {#Scheidin Victory
 		add_political_power = 15
 		transfer_state = 623
 		add_state_core = 623
-		623 = {
-			set_state_name = "Scheidin"
-		}
 	}
 }
 country_event = {#Flankenin Victory
@@ -1310,9 +1272,6 @@ country_event = {#Flankenin Victory
 		add_political_power = 15
 		transfer_state = 631
 		add_state_core = 631
-		631 = {
-			set_state_name = "Flankenin"
-		}
 	}
 }
 country_event = {#Schnitt Victory
@@ -1329,9 +1288,6 @@ country_event = {#Schnitt Victory
 		add_political_power = 15
 		transfer_state = 649
 		add_state_core = 649
-		649 = {
-			set_state_name = "Schnitt"
-		}
 	}
 }
 country_event = {#Nevedenn Victory
@@ -1348,13 +1304,6 @@ country_event = {#Nevedenn Victory
 		add_political_power = 15
 		transfer_state = 420
 		add_state_core = 420
-		420 = {
-			set_state_name = "Nevedenn"
-		}
-		set_province_name = {
-			id = 819
-			name = "Nevedenn"
-		}
 	}
 }
 country_event = {#Tsotoff Victory
@@ -1371,9 +1320,6 @@ country_event = {#Tsotoff Victory
 		add_political_power = 15
 		transfer_state = 645
 		add_state_core = 645
-		645 = {
-			set_state_name = "Tsotoff"
-		}
 	}
 }
 
@@ -1391,9 +1337,6 @@ country_event = {#Cena Victory
 		add_political_power = 15
 		transfer_state = 329
 		add_state_core = 329
-		329 = {
-			set_state_name = "Kalaster"
-		}
 	}
 }
 
@@ -1411,9 +1354,6 @@ country_event = {#BicleVictory
 		add_political_power = 15
 		transfer_state = 354
 		add_state_core = 354
-		354 = {
-			set_state_name = "Biscle"
-		}
 	}
 }
 
@@ -1431,9 +1371,6 @@ country_event = {#ResaVictory
 		add_political_power = 15
 		transfer_state = 355
 		add_state_core = 355
-		355 = {
-			set_state_name = "Resa"
-		}
 	}
 }
 
@@ -1451,9 +1388,6 @@ country_event = {#Nilse Victory
 		add_political_power = 15
 		transfer_state = 334
 		add_state_core = 334
-		334 = {
-			set_state_name = "Nilse"
-		}
 	}
 }
 

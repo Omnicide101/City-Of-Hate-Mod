@@ -1249,7 +1249,7 @@ focus = {#Repairing Image
 
 focus = {#Socialite Prince
 	id = HLZ_socialite_prince
-	icon = GFX_focus_hlz_diplomat_prince
+	icon = GFX_focus_ung_long_expected_party
 	cost = 8
 	prerequisite = {
 		focus = HLZ_repairing_image

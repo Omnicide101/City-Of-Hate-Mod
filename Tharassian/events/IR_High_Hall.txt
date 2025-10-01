@@ -47,25 +47,10 @@ country_event = { #Tharothep agrees
 	option = { #Pog
 		name = hih.2.a
 		transfer_state = 902
-		902 = {
-			set_state_name = "The Honourmount"
-		}
 		transfer_state = 905
-		905 = {
-			set_state_name = "Basalt Peak"
-		}
 		transfer_state = 510
-		510 = {
-			set_state_name = "Dunesgate"
-		}
 		transfer_state = 906
-		906 = {
-			set_state_name = "Deepdig"
-		}
 		transfer_state = 907
-		907 = {
-			set_state_name = "Northpost"
-		}
 		if = {
 			limit = {
 				controls_state = 903
@@ -73,9 +58,6 @@ country_event = { #Tharothep agrees
 			HIH = {
 				transfer_state = 903
 				add_state_core = 903
-			}
-			903 = {
-				set_state_name = "Trankhamen's Folly"
 			}
 		}
 		THA = {

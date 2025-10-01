@@ -10,6 +10,32 @@
 # protect
 # influence
 
+NPC_ordorian_buddies = {
+	enable = {
+		original_tag = NPC
+		is_in_faction_with = ORD
+	}
+	abort = {
+		OR = {
+			ORD = {
+				has_government = puritan
+				has_government = theocrat
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ORD
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = ORD
+		value = 200
+	}	
+}
+
 NPC_reunite_plains = {#Try to unify the Northern Plains
 	enable = {
 		original_tag = NPC

@@ -1504,7 +1504,7 @@ focus_tree = {
 	
 	focus = { #The People's Princess
 		id = UNG_peoples_princess
-		icon = GFX_focus_ung_young_hochprinzessin
+		icon = GFX_focus_AFG_retire_the_uncles
 		cost = 5
 		prerequisite = {
 			focus = UNG_gentle_hand 
@@ -1626,6 +1626,20 @@ focus_tree = {
 			add_popularity = {
 				ideology = republic_aristocrat
 				popularity = 0.08
+			}
+			
+			add_advisor_role = {
+				character = UNG_adalina_vlussinger
+				activate = yes
+				advisor = {
+					slot = political_advisor
+					idea_token = UNG_adalina_vlussinger_advisor
+					cost = 0
+					can_be_fired = no
+					traits = {
+						figurehead_hochprinzessin
+					}
+				}
 			}
 		}
 	}
@@ -3132,6 +3146,9 @@ focus_tree = {
 				NOT = {
 					country_exists = ORD
 				}
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		relative_position_id = UNG_imperial_diplomacy
@@ -3186,9 +3203,12 @@ focus_tree = {
 				NOT = {
 					country_exists = STA
 				}
-			}
-			STA = {
-				is_independent = yes
+				STA = {
+					is_independent = yes
+				}
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -3340,9 +3360,12 @@ focus_tree = {
 				NOT = {
 					country_exists = STA
 				}
-			}
-			STA = {
-				is_independent = yes
+				STA = {
+					is_independent = yes
+				}
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -3487,6 +3510,9 @@ focus_tree = {
 						}
 					}
 				}
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -3593,6 +3619,9 @@ focus_tree = {
 				NOT = {
 					country_exists = ORD
 				}
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		relative_position_id = UNG_unconditional_support
@@ -3635,6 +3664,9 @@ focus_tree = {
 					country_exists = ORD
 				}
 				has_war_with = ORD
+				ORD = {
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		ai_will_do = {
@@ -3676,6 +3708,18 @@ focus_tree = {
 			}
 			ORD = {
 				is_not_independent = yes
+			}
+			if = {
+				limit = {
+					ORD = {
+						has_completed_focus = ORD_mission_faustburg
+					}
+				}
+				NOT = {
+					ORD = {
+						has_completed_focus = ORD_mission_faustburg
+					}
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -3807,7 +3851,10 @@ focus_tree = {
 				is_independent = yes
 			}
 			ORD = {
-				is_not_independent = yes
+				OR = {
+					is_not_independent = yes
+					has_completed_focus = ORD_mission_faustburg
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -5243,6 +5290,11 @@ focus_tree = {
 		bypass = {
 
 		}
+		available = {
+			RMT = {
+				is_independent = yes
+			}
+		}
 		mutually_exclusive = {
 			focus = UNG_recognize_high_king
 			focus = UNG_assist_terugkeer
@@ -5536,70 +5588,42 @@ focus_tree = {
 		available = {
 			if = {
 				limit = {
-					NOT = {
-						SKA = {
-							is_in_faction_with = RMT
-							is_in_faction_with = BER
-						}
+					OR = {
+						has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
+						has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
 					}
 				}
 				OR = {
-					AND = {
-						OR = {
-							has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
-							has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
-						}
-						OR = {
-							SKA = {
-								owns_state = 383
-							}
-							RMT = {
-								is_puppet_of = SKA
-							}
-						}
+					SKA = {
+						owns_state = 383
 					}
-					AND = {
-						OR = {
-							has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
-							has_country_flag = UNG_nordtorf_summit_success_RMT_favoured
-						}
-						OR = {
-							RMT = {
-								owns_state = 146
-							}
-							RMT = {
-								has_non_aggression_pact_with = SKA
-							}
-							SKA = {
-								is_puppet_of = RMT
-							}
-						}
+					SKA = {
+						is_in_faction_with = RMT
+					}
+					RMT = {
+						is_puppet_of = SKA
 					}
 				}
 			}
 			if = {
 				limit = {
 					OR = {
-						SKA = {
-							is_in_faction_with = BER
-						}
-						SKA = {
-							is_in_faction_with = RMT
-						}
+						has_country_flag = UNG_nordtorf_summit_success_RMT_favoured
+						has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
 					}
 				}
-				AND = {
-					NOT = {
-						has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
-						has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
-						has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
-						has_country_flag = UNG_nordtorf_summit_success_RMT_favoured
+				OR = {
+					RMT = {
+						owns_state = 146
+					}
+					RMT = {
+						has_non_aggression_pact_with = SKA
+					}
+					RMT = {
+						is_in_faction_with = SKA
 					}
 					SKA = {
-						OR = {
-							is_in_faction_with = BER
-							is_in_faction_with = RMT
-						}
+						is_puppet_of = RMT
 					}
 				}
 			}

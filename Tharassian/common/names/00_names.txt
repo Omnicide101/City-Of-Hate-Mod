@@ -567,6 +567,134 @@ VAR = {
 	}
 }
 
+CSK = {
+	male = {
+		names = {
+			Thorys Lancthyr Usyne Wycthir Istvenys Wyngeryn Lorthyrys Orthyryn Asdyrgys Lycthyrys Pythylyn Uthyrs Ythyr Arysyn
+		}
+	}
+	female = {
+		names = {
+			Ancyta Lythrica Thorya Lycthynith Pythrys Wythene Ycthyna Systhyn Leryn
+		}
+	}
+	surnames = {
+		Dythene Incythre Lothinnys Ythynne Wycynnis Hynthythe Lyliryn Nythyrin
+	}
+}
+
+CST = {
+	male = {
+		names = {
+			Thorys Lancthyr Usyne Wycthir Istvenys Wyngeryn Lorthyrys Orthyryn Asdyrgys Lycthyrys Pythylyn Uthyrs Ythyr Arysyn
+		}
+	}
+	female = {
+		names = {
+			Ancyta Lythrica Thorya Lycthynith Pythrys Wythene Ycthyna Systhyn Leryn
+		}
+	}
+	surnames = {
+		Dythene Incythre Lothinnys Ythynne Wycynnis Hynthythe Lyliryn Nythyrin
+	}
+}
+
+CNC = {
+	male = {
+		names = {
+			Thorys Lancthyr Usyne Wycthir Istvenys Wyngeryn Lorthyrys Orthyryn Asdyrgys Lycthyrys Pythylyn Uthyrs Ythyr Arysyn
+		}
+	}
+	female = {
+		names = {
+			Ancyta Lythrica Thorya Lycthynith Pythrys Wythene Ycthyna Systhyn Leryn
+		}
+	}
+	surnames = {
+		Dythene Incythre Lothinnys Ythynne Wycynnis Hynthythe Lyliryn Nythyrin
+	}
+}
+
+CWS = {
+	male = {
+		names = {
+			Thorys Lancthyr Usyne Wycthir Istvenys Wyngeryn Lorthyrys Orthyryn Asdyrgys Lycthyrys Pythylyn Uthyrs Ythyr Arysyn
+		}
+	}
+	female = {
+		names = {
+			Ancyta Lythrica Thorya Lycthynith Pythrys Wythene Ycthyna Systhyn Leryn
+		}
+	}
+	surnames = {
+		Dythene Incythre Lothinnys Ythynne Wycynnis Hynthythe Lyliryn Nythyrin
+	}
+}
+
+CPK = {
+	male = {
+		names = {
+			Thorys Lancthyr Usyne Wycthir Istvenys Wyngeryn Lorthyrys Orthyryn Asdyrgys Lycthyrys Pythylyn Uthyrs Ythyr Arysyn
+		}
+	}
+	female = {
+		names = {
+			Ancyta Lythrica Thorya Lycthynith Pythrys Wythene Ycthyna Systhyn Leryn
+		}
+	}
+	surnames = {
+		Dythene Incythre Lothinnys Ythynne Wycynnis Hynthythe Lyliryn Nythyrin
+	}
+}
+
+CNS = {
+	male = {
+		names = {
+			Thorys Lancthyr Usyne Wycthir Istvenys Wyngeryn Lorthyrys Orthyryn Asdyrgys Lycthyrys Pythylyn Uthyrs Ythyr Arysyn
+		}
+	}
+	female = {
+		names = {
+			Ancyta Lythrica Thorya Lycthynith Pythrys Wythene Ycthyna Systhyn Leryn
+		}
+	}
+	surnames = {
+		Dythene Incythre Lothinnys Ythynne Wycynnis Hynthythe Lyliryn Nythyrin
+	}
+}
+
+CIR = {
+	male = {
+		names = {
+			Thorys Lancthyr Usyne Wycthir Istvenys Wyngeryn Lorthyrys Orthyryn Asdyrgys Lycthyrys Pythylyn Uthyrs Ythyr Arysyn
+		}
+	}
+	female = {
+		names = {
+			Ancyta Lythrica Thorya Lycthynith Pythrys Wythene Ycthyna Systhyn Leryn
+		}
+	}
+	surnames = {
+		Dythene Incythre Lothinnys Ythynne Wycynnis Hynthythe Lyliryn Nythyrin
+	}
+}
+
+CTR = {
+	male = {
+		names = {
+			Thorys Lancthyr Usyne Wycthir Istvenys Wyngeryn Lorthyrys Orthyryn Asdyrgys Lycthyrys Pythylyn Uthyrs Ythyr Arysyn
+		}
+	}
+	female = {
+		names = {
+			Ancyta Lythrica Thorya Lycthynith Pythrys Wythene Ycthyna Systhyn Leryn
+		}
+	}
+	surnames = {
+		Dythene Incythre Lothinnys Ythynne Wycynnis Hynthythe Lyliryn Nythyrin
+	}
+}
+
 VUD = {
 	male = {
 		names = {

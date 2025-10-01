@@ -16,10 +16,10 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			179 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Asolfsskali"
+	
 			}
 			176 = { #Impassable state, so paired with this one
-				set_state_name = "Hvanneyrr"
+	
 			}
 		}
 	}
@@ -148,7 +148,7 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			659 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Skaptaholt"
+	
 			}
 		}
 	}
@@ -400,7 +400,7 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			174 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Ruins of Zarathum"
+	
 			}
 		}
 	}
@@ -526,7 +526,7 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			173 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Neðar Zarathum"
+	
 			}
 		}
 	}
@@ -653,10 +653,10 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			106 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Álfrskaut"
+	
 			}
 			1274 = { #Impassable
-				set_state_name = "Álfrskaut Peaks"
+	
 			}
 		}
 	}
@@ -783,7 +783,7 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			139 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Mersingbjarg"
+	
 			}
 		}
 	}
@@ -910,7 +910,7 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			172 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Hár Perkafell"
+	
 			}
 		}
 	}
@@ -1036,10 +1036,10 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			203 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Neðar Perkafell"
+	
 			}
 			1275 = { #Impassable
-				set_state_name = "Perkafell Peaks"
+	
 			}
 		}
 	}
@@ -1166,7 +1166,7 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			365 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Hamingjafé"
+	
 			}
 		}
 	}
@@ -1292,10 +1292,10 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			207 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Teitrvín"
+	
 			}
 			1273 = { #Impassable
-				set_state_name = "High Teitrvín"
+	
 			}
 		}
 	}
@@ -1422,7 +1422,7 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			135 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Svinnersút"
+	
 			}
 		}
 	}
@@ -1548,7 +1548,7 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			133 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Khoringr"
+	
 			}
 		}
 	}
@@ -1799,7 +1799,7 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			815 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Kufremor"
+	
 			}
 		}
 	}
@@ -1925,7 +1925,7 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			22 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Skandár"
+	
 			}
 		}
 	}
@@ -2051,7 +2051,6 @@ country_event = {#Attacker Wins
 		hidden_effect = {
 			125 = {
 				save_event_target_as = DORF_border_conflict_state
-				set_state_name = "Thurgard"
 			}
 		}
 	}

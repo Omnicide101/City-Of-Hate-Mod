@@ -368,6 +368,51 @@ country_event = { #Annex Ordoria
 		#add_ideas = RTH_ordorian_resistance_idea
 		custom_effect_tooltip = rthaur_cores
 		hidden_effect = {
+			if = {
+				limit = {
+					has_subject = ORD
+				}
+				annex_country = {
+					target = ORD
+					transfer_troops = no
+				}
+			}
+			if = {
+				limit = {
+					has_subject = VUD
+				}
+				annex_country = {
+					target = VUD
+					transfer_troops = no
+				}
+			}
+			if = {
+				limit = {
+					has_subject = IST
+				}
+				annex_country = {
+					target = IST
+					transfer_troops = no
+				}
+			}
+			if = {
+				limit = {
+					has_subject = YTH
+				}
+				annex_country = {
+					target = YTH
+					transfer_troops = no
+				}
+			}
+			if = {
+				limit = {
+					has_subject = VAR
+				}
+				annex_country = {
+					target = VAR
+					transfer_troops = no
+				}
+			}
 			every_state = {
 				limit = {
 					OR = {
@@ -381,6 +426,7 @@ country_event = { #Annex Ordoria
 				add_core_of = RTH
 				remove_core_of = ORD
 			}
+			set_country_flag = RTH_chains_broken
 		}
 	}
 	option = { #Celebrate the Creation of New City States
@@ -400,6 +446,7 @@ country_event = { #Annex Ordoria
 				#}
 				#add_ideas = RTH_ordorian_city_states_1
 			}
+			set_country_flag = RTH_chains_broken
 		}
 	}
 }
@@ -1003,24 +1050,6 @@ country_event = { # SKA wants the Khorinor mountains back now
 		remove_state_core = 1271
 		remove_state_core = 1272
 		hidden_effect = {
-			106 = {
-				set_state_name = "Álfrskaut"
-			}
-			1274 = { #Impassable
-				set_state_name = "Álfrskaut Peaks"
-			}
-			125 = {
-				set_state_name = "Thurgard"
-			}
-			133 = {
-				set_state_name = "Khoringr"
-			}
-			135 = {
-				set_state_name = "Svinnersút"
-			}
-			139 = {
-				set_state_name = "Mersingbjarg"
-			}
 			if = {
 				limit = { 135 = { is_core_of = THR } }
 				135 = {

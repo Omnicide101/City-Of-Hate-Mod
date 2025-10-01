@@ -1,12 +1,11 @@
-
 strategic_region={
 	id=42
 	name="STRATEGICREGION_42"
 	provinces={
 		86 444 505 536 974 1380 1413 1429 1509 1592 1749 1897 2269 2502 2987 3067 4121 4180 4182 4378 4437 4672 7738 7746 7782 7832 7833 7930 
 	}
-	weather={#Southern Hemisphere Hot Weather - Humid
-		period={ #Summer
+	weather={
+		period={
 			between={ 0.0 30.2 }
 			temperature={ 28.0 37.0 }
 			no_phenomenon=0.500
@@ -19,7 +18,7 @@ strategic_region={
 			sandstorm=0.000
 			min_snow_level=0.000
 		}
-		period={ #Fall
+		period={
 			between={ 0.3 29.5 }
 			temperature={ -6.0 12.0 }
 			no_phenomenon=0.500
@@ -32,7 +31,7 @@ strategic_region={
 			sandstorm=0.000
 			min_snow_level=0.030
 		}
-		period={ #Winter
+		period={
 			between={ 0.6 29.8 }
 			temperature={ -12.0 4.0 }
 			no_phenomenon=0.500
@@ -45,7 +44,7 @@ strategic_region={
 			sandstorm=0.000
 			min_snow_level=0.370
 		}
-		period={ #Spring
+		period={
 			between={ 0.9 30.11 }
 			temperature={ 18.0 24.0 }
 			no_phenomenon=0.500

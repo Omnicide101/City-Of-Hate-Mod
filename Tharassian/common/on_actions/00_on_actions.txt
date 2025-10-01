@@ -304,6 +304,35 @@ on_actions = {
 		}
 	}
 	
+	#Adds every tag's cores to an array for later reference (in case cores get shuffled around and need to be restored, e.g. for ORD Commissiaries)
+	on_startup = {
+		effect = {
+			every_country = {
+				every_owned_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					add_to_array = {
+						array = PREV.original_cores
+						value = THIS.id
+					}
+				}
+			}
+			
+			# Gotta set manually for tags that have cores but don't exist yet
+			every_state = {
+				if = { limit = { is_core_of = IRT } add_to_array = { IRT.original_cores = THIS.id } }
+				if = { limit = { is_core_of = KRT } add_to_array = { KRT.original_cores = THIS.id } }
+				if = { limit = { is_core_of = FEL } add_to_array = { FEL.original_cores = THIS.id } }
+				if = { limit = { is_core_of = TRI } add_to_array = { TRI.original_cores = THIS.id } }
+				if = { limit = { is_core_of = KAL } add_to_array = { KAL.original_cores = THIS.id } }
+				if = { limit = { is_core_of = NAV } add_to_array = { NAV.original_cores = THIS.id } }
+				if = { limit = { is_core_of = NAS } add_to_array = { NAS.original_cores = THIS.id } }
+				if = { limit = { is_core_of = GMR } add_to_array = { NPC.original_cores = THIS.id } }
+			}
+		}
+	}
+	
 	#Sets AI strats that need to be scoped to every country
 	on_startup = {
 		effect = {

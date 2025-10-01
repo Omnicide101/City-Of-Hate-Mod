@@ -18,6 +18,6 @@ state={
 			farm = 2
 		}
 		add_core_of = GMR
-
+		add_core_of = NAS
 	}
 }

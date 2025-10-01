@@ -23,7 +23,13 @@ country_event = { #Hastalians Seize Control!
 				days = 1
 			}
 			
-			puppet = TRS
+			puppet = {
+				target = TRS
+				end_wars = no
+				end_civil_wars = no
+			}
+			
+			set_country_flag = HAS_el_gran_juego_achievement
 		}
 		
 		remove_ideas = TRS_widespread_corruption

@@ -16,13 +16,6 @@ country_event = {#Holzbrenn - Victory
 		add_political_power = 15
 		transfer_state = 96
 		add_state_core = 96
-		96 = {
-			set_state_name = "Heißjein"
-		}
-		set_province_name = {
-			id = 4339
-			name = "Heißjein"
-		}
 	}
 }
 
@@ -116,13 +109,6 @@ country_event = {#Holzbrenn - Victory 2
 		add_political_power = 15
 		transfer_state = 98
 		add_state_core = 98
-		98 = {
-			set_state_name = "Thölder"
-		}
-		set_province_name = {
-			id = 4600
-			name = "Thölder"
-		}
 	}
 }
 
@@ -216,9 +202,6 @@ country_event = {#Holzbrenn - Victory 3
 		add_political_power = 15
 		transfer_state = 97
 		add_state_core = 97
-		97 = {
-			set_state_name = "Pöltheren"
-		}
 	}
 }
 

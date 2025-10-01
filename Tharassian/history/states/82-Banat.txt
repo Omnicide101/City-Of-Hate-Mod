@@ -2,7 +2,7 @@ state={
 	id=82
 	name="STATE_82"
 	provinces={
-		4185 964 5171 5507 2473 3221 6751
+		4185 964 5171 5507 2473 3221 6751 6804 1925
 	}
 	state_category = pastoral
 	manpower=1148
@@ -21,7 +21,9 @@ state={
 			3221 = {
 				bunker = 2
 			}
-			
+			6804 = {
+				bunker = 2
+			}
 		}	
 		add_core_of = ORD
 	}

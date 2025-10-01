@@ -1,3 +1,250 @@
+# Divides the Union between allies
+ORD_divide_union = {
+
+	# -------------------------
+	# 0) ORD's own guaranteed puppets
+	# -------------------------
+	HLZ = { PREV_vassalize_THIS = yes }
+	NOC = { PREV_vassalize_THIS = yes }
+	NRK = { PREV_vassalize_THIS = yes }
+	STA = { PREV_vassalize_THIS = yes }
+
+	# -------------------------
+	# 1) Base assignments when allies are available
+	# -------------------------
+
+	# PRK base
+	if = {
+		limit = { PRK = { is_ORD_ally_available = yes } }
+		PRK = {
+			TEI = { PREV_vassalize_THIS = yes }
+			SVT = { PREV_vassalize_THIS = yes }
+			SPW = { PREV_vassalize_THIS = yes }
+		}
+	}
+
+	# BER base
+	if = {
+		limit = { BER = { is_ORD_ally_available = yes } }
+		BER = {
+			ARK = { PREV_vassalize_THIS = yes }
+			UNG = { PREV_vassalize_THIS = yes }   # effect will handle FAU transform if applicable
+			FTH = { PREV_vassalize_THIS = yes }
+		}
+	}
+
+	# TLA/IRI base (mutually exclusive; prefer TLA if available, else IRI)
+	# TLA path
+	if = {
+		limit = { TLA = { is_ORD_ally_available = yes } }
+		TLA = {
+			WSZ = { PREV_vassalize_THIS = yes }
+			WIS = { PREV_vassalize_THIS = yes }
+			SNF = { PREV_vassalize_THIS = yes }
+		}
+	}
+	# else IRI path
+	else = {
+		IRI = {
+			WSZ = { PREV_vassalize_THIS = yes }
+			WIS = { PREV_vassalize_THIS = yes }
+			SNF = { PREV_vassalize_THIS = yes }
+		}
+	}
+
+	# ----------------------------------
+	# 2) Single-unavailable fallbacks
+	# ----------------------------------
+
+	# If BER is unavailable:
+	# ARK -> ORD, FTH -> TLA/IRI, UNG -> PRK
+	if = {
+		limit = { BER = { is_ORD_ally_unavailable = yes } }
+
+		# ARK to ORD
+		ARK = { PREV_vassalize_THIS = yes }
+
+		# FTH to TLA/IRI (choose TLA first)
+		if = {
+			limit = { TLA = { is_ORD_ally_available = yes } }
+			TLA = { FTH = { PREV_vassalize_THIS = yes } }
+		}
+		else = {
+			if = {
+				limit = { IRI = { is_ORD_ally_available = yes } }
+				IRI = { FTH = { PREV_vassalize_THIS = yes } }
+			}
+		}
+
+		# UNG to PRK
+		if = {
+			limit = { PRK = { is_ORD_ally_available = yes } }
+			PRK = { UNG = { PREV_vassalize_THIS = yes } }
+		}
+	}
+
+	# If PRK is unavailable:
+	# TEI -> TLA/IRI, SPW -> ORD, SVT -> BER
+	if = {
+		limit = { PRK = { is_ORD_ally_unavailable = yes } }
+
+		# TEI to TLA/IRI
+		if = {
+			limit = { TLA = { is_ORD_ally_available = yes } }
+			TLA = { TEI = { PREV_vassalize_THIS = yes } }
+		}
+		else = {
+			if = {
+				limit = { IRI = { is_ORD_ally_available = yes } }
+				IRI = { TEI = { PREV_vassalize_THIS = yes } }
+			}
+		}
+
+		# SPW to ORD
+		ROOT = { SPW = { PREV_vassalize_THIS = yes } }
+
+		# SVT to BER
+		if = {
+			limit = { BER = { is_ORD_ally_available = yes } }
+			BER = { SVT = { PREV_vassalize_THIS = yes } }
+		}
+	}
+
+	# If both IRI and TLA are unavailable:
+	# WIS -> BER, SNF -> PRK, WSZ -> ORD
+	if = {
+		limit = {
+			AND = {
+				TLA = { is_ORD_ally_unavailable = yes }
+				IRI = { is_ORD_ally_unavailable = yes }
+			}
+		}
+
+		# WSZ to ORD
+		WSZ = { PREV_vassalize_THIS = yes }
+
+		# WIS to BER (if BER available)
+		if = {
+			limit = { BER = { is_ORD_ally_available = yes } }
+			BER = { WIS = { PREV_vassalize_THIS = yes } }
+		}
+
+		# SNF to PRK (if PRK available)
+		if = {
+			limit = { PRK = { is_ORD_ally_available = yes } }
+			PRK = { SNF = { PREV_vassalize_THIS = yes } }
+		}
+	}
+
+	# -------------------------
+	# 3) Pair-unavailable = apply BOTH single fallbacks, then patch conflicts
+	# -------------------------
+
+	# PRK + BER unavailable:
+	# Apply: (BER-unavail) ARK->ORD, FTH->TLA/IRI, UNG->PRK + (PRK-unavail) TEI->TLA/IRI, SPW->ORD, SVT->BER
+	# Patches: UNG can't go to PRK → send UNG -> TLA/IRI; SVT can't go to BER → send SVT -> ORD
+	if = {
+		limit = {
+			AND = {
+				PRK = { is_ORD_ally_unavailable = yes }
+				BER = { is_ORD_ally_unavailable = yes }
+			}
+		}
+
+		# From BER-unavail
+		ARK = { PREV_vassalize_THIS = yes }
+		# FTH -> TLA/IRI
+		if = { limit = { TLA = { is_ORD_ally_available = yes } } TLA = { FTH = { PREV_vassalize_THIS = yes } } }
+		else = { if = { limit = { IRI = { is_ORD_ally_available = yes } } IRI = { FTH = { PREV_vassalize_THIS = yes } } } }
+
+		# From PRK-unavail
+		ROOT = { SPW = { PREV_vassalize_THIS = yes } }
+		# TEI -> TLA/IRI
+		if = { limit = { TLA = { is_ORD_ally_available = yes } } TLA = { TEI = { PREV_vassalize_THIS = yes } } }
+		else = { if = { limit = { IRI = { is_ORD_ally_available = yes } } IRI = { TEI = { PREV_vassalize_THIS = yes } } } }
+
+		# Patches for the “to each other” parts
+		# SVT would have gone to BER, but BER unavailable
+		SVT = { PREV_vassalize_THIS = yes }
+		# UNG would have gone to PRK, but PRK unavailable → UNG -> TLA/IRI
+		if = { limit = { TLA = { is_ORD_ally_available = yes } } TLA = { UNG = { PREV_vassalize_THIS = yes } } }
+		else = { if = { limit = { IRI = { is_ORD_ally_available = yes } } IRI = { UNG = { PREV_vassalize_THIS = yes } } } }
+	}
+
+	# PRK + (TLA/IRI) unavailable:
+	# Apply: PRK-unavail (TEI->TLA/IRI, SPW->ORD, SVT->BER) + TLA/IRI-both-unavail (WSZ->ORD, WIS->BER, SNF->PRK)
+	# Patches: TEI can't go to TLA/IRI → TEI -> ORD; SNF can't go to PRK → SNF -> BER
+	if = {
+		limit = {
+			AND = {
+				PRK = { is_ORD_ally_unavailable = yes }
+				TLA = { is_ORD_ally_unavailable = yes }
+				IRI = { is_ORD_ally_unavailable = yes }
+			}
+		}
+		# From PRK-unavail
+		SPW = { PREV_vassalize_THIS = yes }
+		if = { limit = { BER = { is_ORD_ally_available = yes } } BER = { SVT = { PREV_vassalize_THIS = yes } } }
+		# TEI -> ORD (patch)
+		TEI = { PREV_vassalize_THIS = yes }
+
+		# From TLA/IRI-both-unavail
+		WSZ = { PREV_vassalize_THIS = yes }
+		if = { limit = { BER = { is_ORD_ally_available = yes } } BER = { WIS = { PREV_vassalize_THIS = yes } } }
+
+		# SNF -> BER (patch)
+		if = { limit = { BER = { is_ORD_ally_available = yes } } BER = { SNF = { PREV_vassalize_THIS = yes } } }
+	}
+
+	# BER + (TLA/IRI) unavailable:
+	# Apply: BER-unavail (ARK->ORD, FTH->TLA/IRI, UNG->PRK) + TLA/IRI-both-unavail (WSZ->ORD, WIS->BER, SNF->PRK)
+	# Patches: FTH can't go to TLA/IRI → FTH -> ORD; WIS can't go to BER → WIS -> PRK
+	if = {
+		limit = {
+			AND = {
+				BER = { is_ORD_ally_unavailable = yes }
+				TLA = { is_ORD_ally_unavailable = yes }
+				IRI = { is_ORD_ally_unavailable = yes }
+			}
+		}
+		# From BER-unavail
+		ARK = { PREV_vassalize_THIS = yes }
+		if = { limit = { PRK = { is_ORD_ally_available = yes } } PRK = { UNG = { PREV_vassalize_THIS = yes } } }
+		# FTH -> ORD (patch)
+		FTH = { PREV_vassalize_THIS = yes }
+
+		# From TLA/IRI-both-unavail
+		ROOT = { WSZ = { PREV_vassalize_THIS = yes } }
+		# WIS -> PRK (patch)
+		if = { limit = { PRK = { is_ORD_ally_available = yes } } PRK = { WIS = { PREV_vassalize_THIS = yes } } }
+		# SNF -> PRK
+		if = { limit = { PRK = { is_ORD_ally_available = yes } } PRK = { SNF = { PREV_vassalize_THIS = yes } } }
+	}
+
+	# ----------------------------------
+	# 4) All options unavailable → everything to ORD
+	# ----------------------------------
+	if = {
+		limit = {
+			AND = {
+				PRK = { is_ORD_ally_unavailable = yes }
+				BER = { is_ORD_ally_unavailable = yes }
+				TLA = { is_ORD_ally_unavailable = yes }
+				IRI = { is_ORD_ally_unavailable = yes }
+			}
+		}
+		TEI = { PREV_vassalize_THIS = yes }
+		SVT = { PREV_vassalize_THIS = yes }
+		SPW = { PREV_vassalize_THIS = yes }
+		ARK = { PREV_vassalize_THIS = yes }
+		UNG = { PREV_vassalize_THIS = yes }
+		FTH = { PREV_vassalize_THIS = yes }
+		WSZ = { PREV_vassalize_THIS = yes }
+		WIS = { PREV_vassalize_THIS = yes }
+		SNF = { PREV_vassalize_THIS = yes }
+	}
+}
+
 # Creates a Sanctuary State and transfers population from non-Sanctuary states to this one
 ORD_create_sanctuary_state = {
 	add_dynamic_modifier = {

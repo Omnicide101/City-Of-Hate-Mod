@@ -52,7 +52,7 @@ focus_tree = {
 	
 	focus = { #The Reformer Proclaims
 		id = ORD_reformer_proclaims
-		icon = GFX_focus_ord_vernythe
+		icon = GFX_focus_generic_secret_service_agency
 		cost = 1
 		prerequisite = {
 			focus = ORD_last_ditch_effort
@@ -70,7 +70,7 @@ focus_tree = {
 	
 	focus = { #The Steward Prepares
 		id = ORD_steward_prepares
-		icon = GFX_focus_ord_lothinnys
+		icon = GFX_focus_generic_conspiracy
 		cost = 1
 		prerequisite = {
 			focus = ORD_last_ditch_effort
@@ -88,7 +88,7 @@ focus_tree = {
 	
 	focus = { #The Princeling Provokes
 		id = ORD_princeling_provokes
-		icon = GFX_focus_ord_larennis
+		icon = GFX_focus_generic_industrialists
 		cost = 1
 		prerequisite = {
 			focus = ORD_last_ditch_effort
@@ -509,7 +509,7 @@ focus_tree = {
 	
 	focus = { #The Steward's Voice
 		id = ORD_stewards_voice
-		icon = GFX_focus_ord_lothinnys
+		icon = GFX_focus_generic_subjugation
 		cost = 2
 		prerequisite = {
 			focus = ORD_on_fora
@@ -745,7 +745,7 @@ focus_tree = {
 
 	focus = { #The Father's Wisdom
 		id = ORD_fathers_wisdom
-		icon = GFX_focus_ord_galerin
+		icon = GFX_focus_SOV_third_rome
 		cost = 1
 		prerequisite = {
 			focus = ORD_moderates
@@ -935,7 +935,7 @@ focus_tree = {
 	
 	focus = { #The Princeling's Passion
 		id = ORD_princelings_passion
-		icon = GFX_focus_ord_larennis
+		icon = GFX_focus_spa_save_the_alcazar
 		cost = 1
 		prerequisite = {
 			focus = ORD_moderates
@@ -1115,7 +1115,7 @@ focus_tree = {
 	
 	focus = { #The Court's Sway
 		id = ORD_courts_sway
-		icon = GFX_focus_ord_holynthor
+		icon = GFX_focus_BEL_national_redoubt_at_antwerp
 		cost = 1
 		prerequisite = {
 			focus = ORD_moderates
@@ -1669,6 +1669,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 7
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_matter_revolution
 		x = -3
@@ -1690,6 +1694,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 9
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_still_kin
 		x = -2
@@ -1711,6 +1719,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 11
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_military_oversight
 		x = 1
@@ -1732,6 +1744,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 9
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_still_kin
 		x = 0
@@ -1750,6 +1766,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 9
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_still_kin
 		x = 2
@@ -1812,6 +1832,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 11
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_general_amnesty
 		x = -1
@@ -1833,6 +1857,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 13
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_pow_protocols
 		x = -1
@@ -1891,6 +1919,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 13
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_pow_protocols
 		x = 1
@@ -1912,6 +1944,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 13
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_wardens_venthys
 		x = 1
@@ -1938,6 +1974,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 7
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_matter_revolution
 		x = 3
@@ -1959,6 +1999,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 9
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_safeguard_nation
 		x = -2
@@ -1988,6 +2032,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 11
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_support_eastern_aristocracy
 		x = 0
@@ -2054,6 +2102,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 13
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_homeward_corps
 		x = 1
@@ -2074,7 +2126,11 @@ focus_tree = {
 			focus = ORD_safeguard_nation
 		}
 		ai_will_do = {
-			factor = 9
+			factor = 9     
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_safeguard_nation
 		x = 0
@@ -2096,6 +2152,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 11
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_crowns_command
 		x = 0
@@ -2119,7 +2179,11 @@ focus_tree = {
 			focus = ORD_safeguard_nation
 		}
 		ai_will_do = {
-			factor = 9
+			factor = 9    
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_safeguard_nation
 		x = 2
@@ -2218,7 +2282,11 @@ focus_tree = {
 			focus = ORD_never_another_divide
 		}
 		ai_will_do = {
-			factor = 11
+			factor = 11      
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_never_another_divide
 		x = 0
@@ -2245,6 +2313,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 11
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
 		relative_position_id = ORD_legacy_inskyllithe
 		x = -1
@@ -2466,6 +2538,10 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			ORD_worsen_trad_power_3 = yes
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.02
+			}
 		}
 	}
 	
@@ -2484,6 +2560,10 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			ORD_worsen_faith_power_3 = yes
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.04
+			}
 		}
 	}
 	
@@ -2521,6 +2601,10 @@ focus_tree = {
 			ORD_worsen_royal_loyalty_3 = yes
 			ORD_worsen_trad_loyalty_3 = yes
 			ORD_worsen_faith_loyalty_3 = yes
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.16
+			}
 			add_ideas = ORD_acknowledged_reforms
 		}
 	}
@@ -2539,6 +2623,10 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.1
+			}
 			swap_ideas = {
 				remove_idea = ORD_acknowledged_reforms
 				add_idea = ORD_new_ordorian_model_idea
@@ -2579,6 +2667,10 @@ focus_tree = {
 			larennis_cynicism_medium = yes
 			ORD_improve_royal_power_3 = yes
 			ORD_improve_royal_loyalty_3 = yes
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.02
+			}
 			add_popularity = {
 				ideology = monarchy_absolute
 				popularity = 0.12
@@ -2623,6 +2715,10 @@ focus_tree = {
 			ORD_improve_trad_power_3 = yes
 			ORD_improve_faith_loyalty_3 = yes
 			ORD_improve_faith_power_3 = yes
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.05
+			}
 			add_political_power = 65
 		}
 	}
@@ -2643,6 +2739,10 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			add_ideas = ORD_restored_feudalism
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.03
+			}
 		}
 	}
 	
@@ -2661,6 +2761,10 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.35
+			}
 			if = {
 				limit = {
 					country_exists = EOR
@@ -2750,6 +2854,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.02
+			}
 			add_political_power = 35
 		}
 	}
@@ -2768,6 +2876,10 @@ focus_tree = {
 		x = -1
 		y = 1
 		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.06
+			}
 			add_timed_idea = {
 				idea = ORD_heal_nation_idea
 				days = 150
@@ -2805,6 +2917,10 @@ focus_tree = {
 		completion_reward = {
 			larennis_cynicism_small = yes
 			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.04
+			}
+			add_popularity = {
 				ideology = republic_merchant
 				popularity = 0.08
 			}
@@ -2827,6 +2943,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.03
+			}
 			add_stability = 0.03
 			129 = {
 				add_extra_state_shared_building_slots = 1
@@ -2899,6 +3019,10 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.07
+			}
 			every_state = {
 				limit = {
 					OR = {
@@ -2937,6 +3061,7 @@ focus_tree = {
 					larennis_idealism > 34
 				}
 			}
+			has_political_power > 134
 		}
 		mutually_exclusive = {
 			focus = ORD_protect_middle_class
@@ -2944,9 +3069,6 @@ focus_tree = {
 		relative_position_id = ORD_emissaries_reconciliation
 		x = 0
 		y = 1
-		available = {
-			has_political_power > 134
-		}
 		select_effect = {
 			add_political_power = -135
 		}
@@ -2956,6 +3078,10 @@ focus_tree = {
 		completion_reward = {
 			larennis_idealism_small = yes
 			ORD_worsen_royal_loyalty_3 = yes
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.11
+			}
 			add_stability = 0.07
 		}
 	}
@@ -2975,6 +3101,10 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			ORD_improve_royal_power_3 = yes
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.07
+			}
 			add_ideas = ORD_new_eastern_institutions
 			hidden_effect = {#Unlock the final focus of the tree if this is the last one that needed doing
 				if = {
@@ -3018,6 +3148,10 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			ORD_improve_royal_loyalty_2 = yes
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.11
+			}
 		}
 	}
 	
@@ -3035,6 +3169,10 @@ focus_tree = {
 		x = -1
 		y = 1
 		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.05
+			}
 			add_stability = 0.03
 			add_ideas = ORD_right_rule_idea
 			EOR = {
@@ -3046,7 +3184,7 @@ focus_tree = {
 	
 	focus = { #The Adored Governess
 		id = ORD_adored_governess
-		icon = GFX_focus_ord_holynthor
+		icon = GFX_focus_CHL_invite_french_aristocracy
 		cost = 5
 		prerequisite = {
 			focus = ORD_right_rule
@@ -3072,6 +3210,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.06
+			}
 			ORD_alstora_holynthor = {
 				add_country_leader_trait = governess_of_the_east
 			}
@@ -3129,6 +3271,10 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.02
+			}
 			add_stability = 0.08
 			add_war_support = 0.06
 			EOR = {
@@ -3191,6 +3337,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.03
+			}
 			EOR = {
 				add_ideas = EOR_professional_core
 			}
@@ -3567,6 +3717,1100 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			country_event = ord.120
+		}
+	}
+	
+	focus = { #Guardians of Lathweyne - Idealist Foreign Policy Branch
+		id = ORD_guardians_lathweyne
+		icon = GFX_focus_generic_league_of_nations
+		cost = 6
+		allow_branch = {
+			has_completed_focus = ORD_wheels_turn
+		}
+		#prerequisite = {
+		#	focus = ORD_wheels_turn
+		#}
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_leaning
+			}
+			custom_trigger_tooltip = {
+				tooltip = GUI_ORD_larennis_very_hopeful
+				check_variable = {
+					larennis_idealism > 90
+				}
+			}
+		}
+		relative_position_id = ORD_ground_up
+		x = -1
+		y = 1
+		completion_reward = {
+			larennis_idealism_medium = yes
+			ORD_worsen_trad_loyalty_7 = yes
+			ORD_worsen_faith_loyalty_7 = yes
+			add_political_power = 150
+			
+			if = {
+				limit = {
+					UNG = {
+						has_country_flag = UNG_soft_power_flag
+					}
+				}
+		
+				reverse_add_opinion_modifier = {
+					target = UNG
+					modifier = ORD_guardian_lathweyne
+				}
+				
+				reverse_add_opinion_modifier = {
+					target = GMR
+					modifier = ORD_ordorian_meddlers
+				}
+				
+				reverse_add_opinion_modifier = {
+					target = STA
+					modifier = ORD_ordorian_meddlers
+				}
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							UNG = {
+								has_country_flag = UNG_expansionist_flag
+								has_country_flag = UNG_soft_power_flag
+							}
+						}
+					}
+				}
+				hidden_effect = {
+					UNG = {
+						country_event = ung.85
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { # The Tyrant in the North
+		id = ORD_tyrant_north
+		icon = GFX_IRI_Ignite_Revolution_In_Grand_Masters_Realm
+		cost = 1
+		prerequisite = {
+			focus = ORD_guardians_lathweyne
+		}
+		ai_will_do = {
+			factor = 28
+		}
+		relative_position_id = ORD_guardians_lathweyne
+		x = -3
+		y = 1
+		completion_reward = {
+			GMR = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = threatened_opinion
+				}
+				hidden_effect = {
+					add_relation_modifier = {
+						target = ORD
+						modifier = threatened_opinion_modifier
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { # Contact Astrellion
+		id = ORD_contact_astrellion
+		icon = GFX_focus_gmr_rebels
+		cost = 5
+		prerequisite = {
+			focus = ORD_tyrant_north
+		}
+		ai_will_do = {
+			factor = 31
+		}
+		relative_position_id = ORD_tyrant_north 
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_astrellion_alliance_tt
+			set_country_flag = ORD_astrellion_alliance
+		}
+	}
+	
+	focus = { # Arming our Friends...
+		id = ORD_arm_friends
+		icon = GFX_focus_RAJ_kingmaker
+		cost = 6
+		prerequisite = {
+			focus = ORD_contact_astrellion
+		}
+		ai_will_do = {
+			factor = 34
+		}
+		relative_position_id = ORD_contact_astrellion
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_NPC_arms_shipments_tt
+			GMR = {
+				set_country_flag = NPC_ORD_arms_shipments
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -5000
+			}
+			
+			add_equipment_to_stockpile = {
+				type = ranged_equipment
+				amount = -3500
+			}
+			
+			add_equipment_to_stockpile = {
+				type = heavy_cavalry_equipment
+				amount = -300
+			}
+			
+			add_equipment_to_stockpile = {
+				type = light_cavalry_equipment
+				amount = -800
+			}
+			
+		}
+	}
+	
+	focus = { # ...and Expanding their Reach
+		id = ORD_expanding_reach
+		icon = GFX_focus_POL_riot_of_37
+		cost = 6
+		prerequisite = {
+			focus = ORD_contact_astrellion
+		}
+		ai_will_do = {
+			factor = 34
+		}
+		relative_position_id = ORD_contact_astrellion
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_NPC_expanding_reach_tt
+			GMR = {
+				set_country_flag = NPC_ORD_expanding_reach
+			}
+		}
+	}
+	
+	focus = { # Preparing our Intervention
+		id = ORD_prepare_intervention
+		icon = GFX_focus_ord_shatter_realm
+		cost = 4
+		prerequisite = {
+			focus = ORD_arm_friends
+		}
+		prerequisite = {
+			focus = ORD_expanding_reach
+		}
+		ai_will_do = {
+			factor = 37
+		}
+		relative_position_id = ORD_arm_friends
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ORD_GMR_prepare_intervention_tt
+			set_country_flag = ORD_GMR_prepared_intervention
+		}
+	}
+	
+	focus = { # Cast Down the Warlock
+		id = ORD_cast_down_warlock
+		icon = GFX_focus_gmr_direct_intervention
+		cost = 2
+		prerequisite = {
+			focus = ORD_prepare_intervention
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		relative_position_id = ORD_prepare_intervention
+		x = 0
+		y = 1
+		completion_reward = {
+			GMR = {
+				country_event = gmr.43
+			}
+		}
+	}
+	
+	focus = { # Warmonger in the South
+		id = ORD_warmonger_south
+		icon = GFX_focus_STA_stahlheer
+		cost = 1
+		prerequisite = {
+			focus = ORD_guardians_lathweyne
+		}
+		ai_will_do = {
+			factor = 28
+		}
+		bypass = {
+			NOT = {
+				AND = {
+					country_exists = UNG
+					OR = {
+						country_exists = STA
+						STA = {
+							is_subject = no
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = ORD_guardians_lathweyne
+		x = 6
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					UNG = {
+						has_country_flag = UNG_expansionist_flag
+					}
+				}
+				UNG = {
+					add_opinion_modifier = {
+						target = ORD
+						modifier = threatened_opinion
+					}
+					hidden_effect = {
+						add_relation_modifier = {
+							target = ORD
+							modifier = threatened_opinion_modifier
+						}
+					}
+				}
+			}
+			STA = {
+				add_opinion_modifier = {
+					target = STA
+					modifier = threatened_opinion
+				}
+				hidden_effect = {
+					add_relation_modifier = {
+						target = STA
+						modifier = threatened_opinion_modifier
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { # Mission to Faustburg
+		id = ORD_mission_faustburg
+		icon = GFX_focus_ung_union_forever
+		cost = 3
+		prerequisite = {
+			focus = ORD_warmonger_south
+		}
+		mutually_exclusive = {
+			focus = ORD_containing_ungerdal
+		}
+		available = {
+			country_exists = UNG
+			NOT = {
+				UNG = {
+					has_country_flag = UNG_expansionist_flag
+				}
+			}
+		}
+		bypass = {
+			NOT = {
+				AND = {
+					country_exists = UNG
+					OR = {
+						country_exists = STA
+						STA = {
+							is_subject = no
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 31
+		}
+		relative_position_id = ORD_warmonger_south
+		x = -5
+		y = 1
+		completion_reward = {
+			country_event = ord.122
+		}
+	}
+	
+	focus = { # Enlightened Alliance
+		id = ORD_enlightened_alliance
+		icon = GFX_focus_ung_pride_colours
+		cost = 1
+		prerequisite = {
+			focus = ORD_mission_faustburg
+		}
+		available = {
+			has_country_flag = ORD_no_bitches_route
+		}
+		ai_will_do = {
+			factor = 34
+		}
+		mutually_exclusive = {
+			focus = ORD_diplomacy_heart
+		}
+		relative_position_id = ORD_mission_faustburg
+		x = -1
+		y = 1
+		completion_reward = {
+		
+			ORD_worsen_faith_loyalty_5 = yes
+			ORD_worsen_trad_loyalty_7 = yes
+			
+			if = {
+				limit = {
+					UNG = {
+						is_in_faction = yes
+						is_faction_leader = no
+					}
+				}
+				UNG = {
+					leave_faction = yes
+				}
+			}
+			
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				
+				leave_faction = yes
+			}
+			
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = UNG
+			}
+			
+			if = {
+				limit = {
+					UNG = {
+						is_faction_leader = yes
+					}
+				}
+				UNG = {
+					add_to_faction = ORD
+				}
+			}
+			
+			if = {
+				limit = {
+					is_in_faction = no
+					UNG = {
+						is_faction_leader = no
+					}
+				}
+				create_faction = lathweynian_concord
+				
+				add_to_faction = UNG
+			}
+		}
+	}
+	
+	focus = { # Diplomacy of the Heart
+		id = ORD_diplomacy_heart
+		icon = GFX_focus_ord_cheering_royalists
+		cost = 1
+		prerequisite = {
+			focus = ORD_mission_faustburg
+		}
+		available = {
+			has_country_flag = ORD_rizz_adalina
+		}
+		bypass = {
+			NOT = {
+				AND = {
+					country_exists = UNG
+					OR = {
+						country_exists = STA
+						STA = {
+							is_subject = no
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 34
+		}
+		mutually_exclusive = {
+			focus = ORD_enlightened_alliance
+		}
+		relative_position_id = ORD_mission_faustburg
+		x = 1
+		y = 1
+		completion_reward = {
+			ORD_worsen_royal_loyalty_6 = yes
+			ORD_worsen_faith_loyalty_7 = yes
+			ORD_worsen_trad_loyalty_10 = yes
+			
+			if = {
+				limit = {
+					UNG = {
+						is_in_faction = yes
+						is_faction_leader = no
+					}
+				}
+				UNG = {
+					leave_faction = yes
+				}
+			}
+		
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				
+				leave_faction = yes
+			}
+			
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = UNG
+			}
+			
+			if = {
+				limit = {
+					UNG = {
+						is_faction_leader = yes
+					}
+				}
+				UNG = {
+					add_to_faction = ORD
+				}
+			}
+			
+			if = {
+				limit = {
+					is_in_faction = no
+					UNG = {
+						is_faction_leader = no
+					}
+				}
+				create_faction = lathweynian_concord
+				
+				add_to_faction = UNG
+			}
+			
+			UNG = {
+				if = {
+					limit = {
+						OR = {
+							has_government = monarchy_absolute
+							has_government = monarchy_constitutional
+						}
+					}
+					add_country_leader_trait = beloved_of_larennis
+				}
+				else = {
+					UNG = {
+						add_trait = {
+							character = UNG_adalina_vlussinger
+							slot = political_advisor
+							trait = beloved_of_larennis
+						}
+					}
+				}
+			}
+				
+			add_trait = {
+				character = ORD_larennis_valinthir
+				slot = political_advisor
+				trait = beloved_of_adalina
+			}
+			
+			add_ideas = marriage_ORD_UNG
+
+			UNG = {
+				add_ideas = marriage_UNG_ORD
+			}
+		}
+	}
+	
+	focus = { # Return our Lands
+		id = ORD_return_utrocyle_quenthyne
+		icon = GFX_goal_generic_major_war
+		cost = 3
+		prerequisite = {
+			focus = ORD_enlightened_alliance
+			focus = ORD_diplomacy_heart
+		}
+		ai_will_do = {
+			factor = 37
+		}
+		bypass = {
+			NOT = {
+				AND = {
+					country_exists = UNG
+					OR = {
+						country_exists = STA
+						STA = {
+							is_subject = no
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = ORD_enlightened_alliance
+		x = 1
+		y = 1
+		completion_reward = {
+			STA = {
+				country_event = {
+					id = sta.2
+					days = 5
+				}
+			}
+		}
+	}
+	
+	focus = { # Isolate the Bear
+		id = ORD_isolate_bear
+		icon = GFX_focus_eng_expose_the_belly_of_the_bear
+		cost = 4
+		prerequisite = {
+			focus = ORD_return_utrocyle_quenthyne
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		relative_position_id = ORD_return_utrocyle_quenthyne
+		x = 0
+		y = 1
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_subject_of = UNG
+				}
+				custom_effect_tooltip = FPT_increase_union_loyalty_large_tt
+				add_to_variable = {
+					var = FPT_union_loyalty
+					value = 5
+				}
+				custom_effect_tooltip = FPT_decrease_stahlhof_loyalty_large_tt
+				subtract_from_variable = {
+					var = FPT_stahlhof_loyalty
+					value = 5
+				}
+			}
+		}
+	}
+	
+	focus = { # Containing Ungerdaler Imperialism
+		id = ORD_containing_ungerdal
+		icon = GFX_IRI_Put_An_End_To_Ungerdalers
+		cost = 1
+		prerequisite = {
+			focus = ORD_warmonger_south
+		}
+		mutually_exclusive = {
+			focus = ORD_mission_faustburg
+		}
+		available = {
+			country_exists = UNG
+			UNG = {
+				has_country_flag = UNG_expansionist_flag
+			}
+		}
+		ai_will_do = {
+			factor = 31
+		}
+		relative_position_id = ORD_warmonger_south
+		x = 1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { # Friends in the South
+		id = ORD_contact_perkavland
+		icon = GFX_focus_generic_perkavland
+		cost = 1
+		prerequisite = {
+			focus = ORD_containing_ungerdal
+		}
+		available = {
+			any_other_country = {
+				is_og_perkav_chiefdom = yes
+				NOT = {
+					has_subject = UNG
+				}
+				OR = {
+					is_subject_of = UNG
+					NOT = {
+						is_in_faction_with = UNG
+					}
+				}
+			}
+			OR = {
+				UNG = {
+					has_completed_focus = UNG_punish_perkavland
+				}
+				any_other_country = {
+					original_tag = PRK
+					has_country_leader = {
+						character = PRK_miroslav_zlatko
+						ruling_only = yes
+					}
+				}
+			}
+			NOT = {
+				has_completed_focus = ORD_intervene_hochprinztum
+			}
+		}
+		ai_will_do = {
+			factor = 68 # Boosted to dissuade the AI from skipping doable foci
+		}
+		relative_position_id = ORD_containing_ungerdal
+		x = -3
+		y = 1
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_og_perkav_chiefdom = yes
+					OR = {
+						is_subject_of = UNG
+						NOT = {
+							is_in_faction_with = UNG
+						}
+					}
+				}
+				country_event = {
+					id = ord.127
+					days = 4
+				}
+			}
+		}
+	}
+	
+	focus = { # Contact Hieringen
+		id = ORD_contact_hieringen
+		icon = GFX_focus_generic_bergial_agreement
+		cost = 1
+		prerequisite = {
+			focus = ORD_containing_ungerdal
+		}
+		available = {
+			country_exists = BER
+			NOT = {
+				UNG = {
+					is_subject_of = BER
+				}
+			}
+			BER = {
+				OR = {
+					is_subject_of = UNG
+					NOT = {
+						is_in_faction_with = UNG
+					}
+				}
+			}
+			NOT = {
+				has_completed_focus = ORD_intervene_hochprinztum
+			}
+		}
+		bypass = {
+			OR = {
+				NOT = {
+					country_exists = BER
+				}
+				UNG = {
+					is_subject_of = BER
+				}
+				BER = {
+					AND = {
+						NOT = {
+							is_subject_of = UNG
+						}
+						is_in_faction_with = UNG
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 68 # Boosted to dissuade the AI from skipping doable foci
+		}
+		relative_position_id = ORD_containing_ungerdal
+		x = -1
+		y = 1
+		completion_reward = {
+			BER = {
+				country_event = {
+					id = ord.127
+					days = 4
+				}
+			}
+		}
+	}
+	
+	focus = { # Reach out to Tlarthingia
+		id = ORD_contact_tlarthingia
+		icon = GFX_IRI_Keep_The_King_Of_Tlarthingians
+		cost = 1
+		prerequisite = {
+			focus = ORD_containing_ungerdal
+		}
+		available = {
+			country_exists = TLA
+			NOT = {
+				UNG = {
+					is_subject_of = TLA
+				}
+			}
+			TLA = {
+				OR = {
+					is_subject_of = UNG
+					NOT = {
+						is_in_faction_with = UNG
+					}
+				}
+			}
+			NOT = {
+				has_completed_focus = ORD_intervene_hochprinztum
+			}
+		}
+		ai_will_do = {
+			factor = 68 # Boosted to dissuade the AI from skipping doable foci
+		}
+		mutually_exclusive = {
+			focus = ORD_contact_irinthios
+		}
+		relative_position_id = ORD_containing_ungerdal
+		x = 1
+		y = 1
+		completion_reward = {
+			TLA = {
+				country_event = {
+					id = ord.127
+					days = 4
+				}
+			}
+			
+		}
+	}
+	
+	focus = { # Align with Irinthios
+		id = ORD_contact_irinthios
+		icon = GFX_BLD_Seek_Dialogue_With_Irinthos
+		cost = 1
+		prerequisite = {
+			focus = ORD_containing_ungerdal
+		}
+		available = {
+			country_exists = IRI
+			NOT = {
+				UNG = {
+					is_subject_of = IRI
+				}
+			}
+			IRI = {
+				OR = {
+					is_subject_of = UNG
+					NOT = {
+						is_in_faction_with = UNG
+					}
+				}
+			}
+			NOT = {
+				has_completed_focus = ORD_intervene_hochprinztum
+			}
+		}
+		ai_will_do = {
+			factor = 68 # Boosted to dissuade the AI from skipping doable foci
+		}
+		mutually_exclusive = {
+			focus = ORD_contact_tlarthingia
+		}
+		relative_position_id = ORD_containing_ungerdal
+		x = 3
+		y = 1
+		completion_reward = {
+			IRI = {
+				country_event = {
+					id = ord.127
+					days = 4
+				}
+			}
+		}
+	}
+	
+	focus = { # Intervene against the Hochprinztum
+		id = ORD_intervene_hochprinztum
+		icon = GFX_IRI_Challenge_The_Freiprintzums_Union
+		cost = 1
+		prerequisite = {
+			focus = ORD_contact_perkavland
+			focus = ORD_contact_hieringen
+			focus = ORD_contact_tlarthingia
+			focus = ORD_contact_irinthios
+		}
+		ai_will_do = {
+			factor = 37
+		}
+		will_lead_to_war_with = UNG
+		relative_position_id = ORD_contact_hieringen
+		x = 1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						is_in_faction = yes
+					}
+				}
+				create_faction = ordorian_coalition
+			}
+			every_country = {
+				limit = {
+					has_country_flag = ORD_ally_will_fight_UNG
+					is_in_faction = no
+				}
+				ROOT = {
+					add_to_faction = PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = ORD_ally_will_fight_UNG
+					is_in_faction = yes
+				}
+				leave_faction = yes
+				ROOT = {
+					add_to_faction = PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = ORD_ally_will_fight_UNG_civil_war
+				}
+				country_event = {
+					id = ord.131
+					days = 1
+				}
+			}
+			declare_war_on = {
+				target = UNG
+				type = annex_everything
+			}
+		}
+	}
+	
+	focus = { #End the Union
+		id = ORD_end_union
+		icon = GFX_focus_BRA_utilize_security_law
+		cost = 5
+		prerequisite = {
+			focus = ORD_intervene_hochprinztum
+		}
+		mutually_exclusive = {
+			focus = ORD_oversee_new_elections
+		}
+		available = {
+			UNG = {
+				is_not_threat = yes
+			}
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		relative_position_id = ORD_intervene_hochprinztum
+		x = -1
+		y = 1
+		completion_reward = {
+			larennis_cynicism_small = yes
+			custom_override_tooltip = {
+				tooltip = ORD_divide_union_tt
+				ORD_divide_union = yes	
+			}
+		}
+	}
+	
+	focus = { #Oversee New Elections
+		id = ORD_oversee_new_elections
+		icon = GFX_focus_AFG_promote_the_counter_elite
+		cost = 9
+		prerequisite = {
+			focus = ORD_intervene_hochprinztum
+		}
+		mutually_exclusive = {
+			focus = ORD_end_union
+		}
+		available = {
+			UNG = {
+				is_not_threat = yes
+			}
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		relative_position_id = ORD_intervene_hochprinztum
+		x = 1
+		y = 1
+		completion_reward = {
+			larennis_idealism_small = yes
+			every_country = {
+				limit = {
+					OR = {
+						has_country_flag = ORD_ally_will_fight_UNG
+						has_country_flag = ORD_ally_will_fight_UNG_civil_war
+					}
+				}
+				add_opinion_modifier = {
+					target = ORD
+					modifier = ORD_denied_spoils
+				}
+			}
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = { #
+		id = 
+		icon = GFX_
+		cost = 
+		prerequisite = {
+			focus = 
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		relative_position_id = 
+		x = 
+		y = 
+		completion_reward = {
+			
 		}
 	}
 	
@@ -3993,7 +5237,7 @@ focus_tree = {
 	
 	focus = { #Commission Alsyon
 		id = ORD_commission_alsyon
-		icon = GFX_focus_ord_alsyon
+		icon = GFX_focus_BEL_the_lost_tribe
 		cost = 2
 		prerequisite = {
 			focus = ORD_deploy_drakeskins
@@ -4708,7 +5952,7 @@ focus_tree = {
 	
 	focus = { #Larennis
 		id = ORD_governor_larennis
-		icon = GFX_focus_ord_larennis
+		icon = GFX_focus_ORD_purple_pennant
 		cost = 1
 		prerequisite = {
 			focus = ORD_prepare_transition
@@ -4951,7 +6195,7 @@ focus_tree = {
 	
 	focus = { #Farnaur Ithinis
 		id = ORD_governor_ithinis
-		icon = GFX_focus_ord_farnaur_ithinis
+		icon = GFX_focus_ord_evil
 		cost = 3
 		prerequisite = {
 			focus = ORD_prepare_transition
@@ -6037,11 +7281,23 @@ focus_tree = {
 					target = ORD
 					modifier = threatened_opinion
 				}
+				hidden_effect = {
+					add_relation_modifier = {
+						target = ORD
+						modifier = threatened_opinion_modifier
+					}
+				}
 			}
 			UNG = {
 				add_opinion_modifier = {
 					target = ORD
 					modifier = threatened_opinion
+				}
+				hidden_effect = {
+					add_relation_modifier = {
+						target = ORD
+						modifier = threatened_opinion_modifier
+					}
 				}
 			}
 			add_war_support = 0.07
@@ -7289,7 +8545,7 @@ focus_tree = {
 
 	focus = { #
 		id = ORD_isolate_princeling
-		icon = GFX_focus_ord_larennis
+		icon = GFX_focus_generic_spread_fascism
 		cost = 4
 		ai_will_do = {
 			factor = 19
@@ -9466,6 +10722,9 @@ focus_tree = {
 			}
 		}
 		available = {
+			NOT = {
+				has_government = theocrat
+			}
 			has_completed_focus = ORD_utilise_skilled
 			has_completed_focus = ORD_study_skaelinger_tech
 			custom_trigger_tooltip = {
@@ -9513,6 +10772,9 @@ focus_tree = {
 			}
 		}
 		available = {
+			NOT = {
+				has_government = theocrat
+			}
 			NOT = {
 				has_country_flag = ORD_sophist_revolt_attempted
 			}
@@ -9619,7 +10881,7 @@ focus_tree = {
 	
 	focus = { #Absorbing the Sophistium
 		id = ORD_steward_sophistry
-		icon = GFX_focus_ord_lothinnys
+		icon = GFX_goal_generic_dangerous_deal
 		cost = 8
 		prerequisite = {
 			focus = ORD_dedication_shalyn
@@ -9638,6 +10900,9 @@ focus_tree = {
 			}
 		}
 		available = {
+			NOT = {
+				has_government = theocrat
+			}
 			has_completed_focus = ORD_dedication_lombrin
 			has_completed_focus = ORD_dedication_shalyn
 			custom_trigger_tooltip = {

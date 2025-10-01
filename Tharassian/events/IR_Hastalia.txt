@@ -93,7 +93,11 @@ country_event = { #Tristal Bends the Knee
 		name = has.2.a
 
 		effect_tooltip = {
-			puppet = TRS
+			puppet = {
+				target = TRS
+				end_wars = no
+				end_civil_wars = no
+			}
 			TRS = {
 				remove_ideas = TRS_widespread_corruption
 			}
@@ -168,6 +172,7 @@ country_event = { #Tristal Defiant!
 			HAS = {
 				puppet = {
 					target = PREV
+					end_wars = no
 					end_civil_wars = no
 				}
 				add_to_faction = PREV

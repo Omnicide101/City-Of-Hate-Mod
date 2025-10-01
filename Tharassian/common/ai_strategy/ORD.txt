@@ -10,6 +10,76 @@
 # protect
 # influence
 
+ORD_allies_against_union = {
+	enable = {
+		OR = {
+			has_country_flag = ORD_ally_will_fight_UNG
+			has_country_flag = ORD_ally_will_fight_UNG_civil_war
+		}
+	}
+	abort = {
+		OR = {
+			ORD = {
+				has_completed_focus = ORD_end_union
+				has_completed_focus = ORD_oversee_new_elections
+			}
+		}
+	}
+	ai_strategy = {
+		type = befriend
+		id = ORD
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = ORD
+		value = 200
+	}	
+}
+
+ORD_manage_factions = {
+	enable = {
+		tag = ORD
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = pp_spend_amount
+		id = idea
+		value = 300
+	}
+	ai_strategy = {
+		type = pp_spend_priority
+		id = decision
+		value = 300
+	}
+}
+
+ORD_astrellion_buddies = {
+	enable = {
+		original_tag = ORD
+		is_in_faction_with = NPC
+	}
+	abort = {
+		OR = {
+			ORD = {
+				has_government = puritan
+				has_government = theocrat
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NPC
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = NPC
+		value = 200
+	}	
+}
+
 schlelfen_plan = { # Get it? It's the Schlieffen Plan, but with elves? Fuck you, I'm funny.
 	enable = {
 		tag = ORD

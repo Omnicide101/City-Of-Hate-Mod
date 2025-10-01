@@ -51,7 +51,7 @@ units = {
 
 	division = {
 		name = "1st King's Men"
-		location = 5916
+		location = 3686
 		division_template = "King's Men"
 		start_experience_factor = 0.5
 	}

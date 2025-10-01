@@ -1714,6 +1714,7 @@ country_event = {#Power Seized
 			ideology = monarchy_constitutional
 			popularity = -0.35
 		}
+		
 		set_country_flag = UNG_noble_power_flag
 		remove_ideas = UNG_disgruntled_nobility
 	}
@@ -2669,8 +2670,13 @@ country_event = {#Stahlhof Defeated
 	trigger = {
 		tag = UNG
 		has_global_flag = UNG_STA_started_civil_war
-		NOT = {
-			country_exists = STA
+		OR = {
+			NOT = {
+				country_exists = STA
+			}
+			STA = {
+				is_subject_of = UNG
+			}
 		}
 		any_country = {
 			OR = {
@@ -2945,5 +2951,318 @@ country_event = {#Perkav Reactionaries take the W
 		}
 		set_country_flag = UNG_war_perkavland_flag
 		clr_country_flag = UNG_diplomatic_efforts_flag
+	}
+}
+
+country_event = {#Larennis is doing diplomacy, but we haven't picked a route yet
+	id = ung.85
+	title = ung.85.t
+	desc = ung.85.d
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {#Neat, soft power it is ig 
+		name = ung.85.a
+		set_country_flag = UNG_soft_power_flag
+				
+		add_opinion_modifier = {
+			target = ORD
+			modifier = ORD_guardian_lathweyne
+		}
+		
+		custom_effect_tooltip = UNG_soft_power_path_unlock_tt
+	}
+	
+	option = {#Fuck off, we make our own choices
+		name = ung.85.b
+		ai_chance = {
+			factor = 0 #Never
+		}
+		
+		set_country_flag = UNG_expansionist_flag
+				
+		add_opinion_modifier = {
+			target = ORD
+			modifier = ORD_ordorian_meddlers
+		}
+		
+		custom_effect_tooltip = UNG_expansionism_path_unlock_tt
+	}
+}
+
+country_event = {#Ordorian Mission to Faustburg - Platonic
+	id = ung.86
+	title = ung.86.t
+	desc = ung.86.d
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {#Yea
+		name = ung.86.a
+		
+		ORD = {
+			country_event = {
+				id = ord.125
+				days = 6
+			}
+		}
+		
+		custom_effect_tooltip = on_FROM_focus_completion_tt
+		
+		effect_tooltip = {
+				
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				leave_faction = yes
+			}
+			
+			if = {
+				limit = {
+					ORD = {
+						is_in_faction = yes
+						is_faction_leader = no
+					}
+				}
+				
+				ORD = {
+					leave_faction = yes
+				}
+			}
+			
+			if = {
+				limit = {
+					ORD = {
+						is_faction_leader = yes
+					}
+				}
+				ORD = {
+					add_to_faction = UNG
+				}
+			}
+			
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = ORD
+			}
+			
+			if = {
+				limit = {
+					ORD = {
+						is_in_faction = no
+					}
+					is_faction_leader = no
+				}
+				
+				ORD = {
+					create_faction = lathweynian_concord
+					
+					add_to_faction = UNG
+				}
+			}
+		}
+	}
+	
+	option = {#Nay
+		name = ung.86.b
+		ai_chance = {
+			factor = 0 #Never
+		}
+		
+		ORD = {
+			country_event = {
+				id = ord.126
+				days = 6
+			}
+		}
+	}
+}
+
+country_event = {#Ordorian Mission to Faustburg - Romantic
+	id = ung.87
+	title = ung.87.t
+	desc = ung.87.d
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {#Yea
+		name = ung.87.a
+		
+		ORD = {
+			country_event = {
+				id = ord.123
+				days = 6
+			}
+		}
+		
+		custom_effect_tooltip = on_FROM_focus_completion_tt
+		
+		effect_tooltip = {
+				
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				leave_faction = yes
+			}
+			
+			if = {
+				limit = {
+					ORD = {
+						is_in_faction = yes
+						is_faction_leader = no
+					}
+				}
+				
+				ORD = {
+					leave_faction = yes
+				}
+			}
+			
+			if = {
+				limit = {
+					ORD = {
+						is_faction_leader = yes
+					}
+				}
+				ORD = {
+					add_to_faction = UNG
+				}
+			}
+			
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = ORD
+			}
+			
+			if = {
+				limit = {
+					ORD = {
+						is_in_faction = no
+					}
+					is_faction_leader = no
+				}
+				
+				ORD = {
+					create_faction = lathweynian_concord
+					
+					add_to_faction = UNG
+				}
+			}
+			
+			add_trait = {
+				character = UNG_adalina
+				ideology = monarchy_constitutional_ideology
+				trait = beloved_of_larennis
+			}
+			
+			ORD = {
+				add_trait = {
+					character = ORD_larennis
+					slot = political_advisor
+					trait = beloved_of_adalina
+				}
+			}
+		}
+	}
+	
+	option = {#Nay, keep it platonic
+		name = ung.87.b
+		ai_chance = {
+			factor = 0 #Never
+		}
+		
+		ORD = {
+			country_event = {
+				id = ord.124
+				days = 6
+			}
+		}
+		
+		custom_effect_tooltip = on_FROM_focus_completion_tt
+		
+		effect_tooltip = {
+			
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				leave_faction = yes
+			}
+			
+			if = {
+				limit = {
+					ORD = {
+						is_in_faction = yes
+						is_faction_leader = no
+					}
+				}
+				
+				ORD = {
+					leave_faction = yes
+				}
+			}
+			
+			if = {
+				limit = {
+					ORD = {
+						is_faction_leader = yes
+					}
+				}
+				ORD = {
+					add_to_faction = UNG
+				}
+			}
+			
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = ORD
+			}
+			
+			if = {
+				limit = {
+					ORD = {
+						is_in_faction = no
+					}
+					is_faction_leader = no
+				}
+				
+				ORD = {
+					create_faction = lathweynian_concord
+					
+					add_to_faction = UNG
+				}
+			}
+		}
+	}
+	
+	option = {#Nay, no alliance
+		name = ung.87.c
+		ai_chance = {
+			factor = 0 #Never
+		}
+		
+		ORD = {
+			country_event = {
+				id = ord.126
+				days = 6
+			}
+		}
 	}
 }

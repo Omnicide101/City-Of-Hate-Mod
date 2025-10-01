@@ -427,6 +427,8 @@ country_event = {#Royalist Revolt
 				chivraism_religion
 			}
 		}
+		
+		set_country_flag = LIR_house_divided_war
 	}
 	
 	option = {#Church
@@ -590,6 +592,8 @@ country_event = {#Religious Revolt
 				chivraism_religion
 			}
 		}
+		
+		set_country_flag = LIR_house_divided_war
 	}
 	
 	option = {#Church

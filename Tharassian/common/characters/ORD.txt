@@ -588,17 +588,25 @@ characters={
 				has_government = monarchy_absolute
 			}
 			available = {
-				OR = {
-					AND = {
+				if = {
+					limit = {
 						tag = ORD
-						has_completed_focus = ORD_loyal_vassals
 					}
-					AND = {
+					has_completed_focus = ORD_loyal_vassals
+				}
+				if = {
+					limit = {
 						tag = EOR
-						ORD = {
-							has_completed_focus = ORD_ship_off_cronies
-						}
 					}
+					ORD = {
+						has_completed_focus = ORD_ship_off_cronies
+					}
+				}
+				if = {
+					limit = {
+						tag = ORB
+					}
+					has_government = monarchy_absolute
 				}
 			}
 			ai_will_do = {
@@ -634,17 +642,25 @@ characters={
 				has_government = monarchy_absolute
 			}
 			available = {
-				OR = {
-					AND = {
+				if = {
+					limit = {
 						tag = ORD
-						has_completed_focus = ORD_steadfast_friends
 					}
-					AND = {
+					has_completed_focus = ORD_steadfast_friends
+				}
+				if = {
+					limit = {
 						tag = EOR
-						ORD = {
-							has_completed_focus = ORD_ship_off_friends
-						}
 					}
+					ORD = {
+						has_completed_focus = ORD_ship_off_friends
+					}
+				}
+				if = {
+					limit = {
+						tag = ORB
+					}
+					has_government = monarchy_absolute
 				}
 			}
 			ai_will_do = {
@@ -680,17 +696,25 @@ characters={
 				has_government = monarchy_absolute
 			}
 			available = {
-				OR = {
-					AND = {
+				if = {
+					limit = {
 						tag = ORD
-						has_completed_focus = ORD_steadfast_friends
 					}
-					AND = {
+					has_completed_focus = ORD_steadfast_friends
+				}
+				if = {
+					limit = {
 						tag = EOR
-						ORD = {
-							has_completed_focus = ORD_ship_off_friends
-						}
 					}
+					ORD = {
+						has_completed_focus = ORD_ship_off_friends
+					}
+				}
+				if = {
+					limit = {
+						tag = ORB
+					}
+					has_government = monarchy_absolute
 				}
 			}
 			ai_will_do = {
@@ -748,17 +772,25 @@ characters={
 				has_government = monarchy_absolute
 			}
 			available = {
-				OR = {
-					AND = {
+				if = {
+					limit = {
 						tag = ORD
-						has_completed_focus = ORD_steadfast_friends
 					}
-					AND = {
+					has_completed_focus = ORD_steadfast_friends
+				}
+				if = {
+					limit = {
 						tag = EOR
-						ORD = {
-							has_completed_focus = ORD_ship_off_friends
-						}
 					}
+					ORD = {
+						has_completed_focus = ORD_ship_off_friends
+					}
+				}
+				if = {
+					limit = {
+						tag = ORB
+					}
+					has_government = monarchy_absolute
 				}
 			}
 			ai_will_do = {
@@ -793,17 +825,25 @@ characters={
 				has_government = monarchy_absolute
 			}
 			available = {
-				OR = {
-					AND = {
+				if = {
+					limit = {
 						tag = ORD
-						has_completed_focus = ORD_steadfast_friends
 					}
-					AND = {
+					has_completed_focus = ORD_steadfast_friends
+				}
+				if = {
+					limit = {
 						tag = EOR
-						ORD = {
-							has_completed_focus = ORD_ship_off_friends
-						}
 					}
+					ORD = {
+						has_completed_focus = ORD_ship_off_friends
+					}
+				}
+				if = {
+					limit = {
+						tag = ORB
+					}
+					has_government = monarchy_absolute
 				}
 			}
 			ai_will_do = {

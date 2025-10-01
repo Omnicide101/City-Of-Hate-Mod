@@ -39,101 +39,6 @@ country_event = { #Conquest of Stahlhof
 			}
 		}
 	}
-	
-	immediate = {
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						tag = ORD
-						tag = EOR
-						ROOT = {
-							is_subject_of = ORD
-						}
-						ROOT = {
-							is_subject_of = EOR
-						}
-					}
-				}
-				STA = {
-					has_cosmetic_tag = STA_OSG
-				}
-			}
-			STA = {
-				drop_cosmetic_tag = yes
-				set_party_name = {
-					ideology = puritan
-					long_name = STA_puritan_party
-					name = STA_puritan_party
-				}
-				set_party_name = {
-					ideology = theocrat
-					long_name = STA_theocrat_party
-					name = STA_theocrat_party
-				}
-				set_party_name = {
-					ideology = monarchy_absolute
-					long_name = STA_monarchy_absolute_party
-					name = STA_monarchy_absolute_party
-				}
-				kill_ideology_leader = monarchy_absolute
-				kill_ideology_leader = puritan
-				kill_ideology_leader = theocrat
-				remove_ideas = OSG_settler_government
-				delete_unit_template_and_units = {
-					division_template = "Grove Guards"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Bladesingers"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Rangers"
-				}
-				load_oob = "STA_empty"
-				
-				swap_ideas = {
-					remove_idea = elf_country
-					add_idea = human_country
-				}
-				swap_ideas = {
-					remove_idea = itherynism_religion
-					add_idea = septism_religion
-				}
-				
-				country_event = {
-					id = annex.0
-					days = 5
-				}
-			}
-			
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = HLZ
-						is_core_of = NRK
-						is_core_of = ARK
-					}
-				}
-				remove_core_of = STA
-			}
-			
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = HLZ
-						is_core_of = NRK
-						is_core_of = ARK
-					}
-				}
-				reset_state_name = yes
-			}
-			
-			reset_province_name = 4340
-			reset_province_name = 1467
-			reset_province_name = 1316
-			reset_province_name = 1829
-		}
-	}
 
 	trigger = {
 		NOT = {
@@ -181,6 +86,7 @@ country_event = { #Conquest of Stahlhof
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -217,10 +123,13 @@ country_event = { #Conquest of Stahlhof
 		name = annex.1.b
 		trigger = {
 			NOT = {
-				tag = UNG
-				is_subject_of = UNG
-				UNG = {
-					is_subject_of = ROOT
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+					UNG = {
+						is_subject_of = ROOT
+					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -271,6 +180,7 @@ country_event = { #Conquest of Stahlhof
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -521,18 +431,6 @@ country_event = { #Conquest of Rthauiaur
 			}
 		}
 		
-		139 = {
-			set_state_name = "Mersingbjarg"
-		}
-		
-		135 = {
-			set_state_name = "Svinnersút"
-		}
-		
-		133 = {
-			set_state_name = "Khoringr"
-		}
-		
 		if = {
 			limit = {
 				is_in_faction = yes
@@ -608,6 +506,8 @@ country_event = { #Conquest of Rthauiaur
 				target = RTH
 				modifier = staunch_allies_opinion_modifier
 			}
+			
+			set_country_flag = SKA_unlikely_brotherhood
 		}
 	}
 
@@ -719,6 +619,7 @@ country_event = { #Conquest of Holzbrenn
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 			NOT = {
@@ -774,20 +675,23 @@ country_event = { #Conquest of Holzbrenn
 		
 		trigger = {
 			NOT = {
-				AND = {
-					country_exists = STA
-					tag = ORD
-					STA = {
-						has_country_flag = STA_defect
-					}
-					STA = {
-						is_subject_of = ORD
+				OR = {
+					AND = {
+						country_exists = STA
+						tag = ORD
+						STA = {
+							has_country_flag = STA_defect
+						}
+						STA = {
+							is_subject_of = ORD
+						}
 					}
 					tag = UNG
 					is_subject_of = UNG
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -837,6 +741,7 @@ country_event = { #Conquest of Holzbrenn
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -954,6 +859,7 @@ country_event = { #Conquest of Neureik
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 			NOT = {
@@ -1003,20 +909,23 @@ country_event = { #Conquest of Neureik
 		
 		trigger = {
 			NOT = {
-				AND = {
-					country_exists = STA
-					tag = ORD
-					STA = {
-						has_country_flag = STA_defect
-					}
-					STA = {
-						is_subject_of = ORD
+				OR = {
+					AND = {
+						country_exists = STA
+						tag = ORD
+						STA = {
+							has_country_flag = STA_defect
+						}
+						STA = {
+							is_subject_of = ORD
+						}
 					}
 					tag = UNG
 					is_subject_of = UNG
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -1066,6 +975,7 @@ country_event = { #Conquest of Neureik
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -1183,6 +1093,7 @@ country_event = { #Conquest of Arkanisturm
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 			NOT = {
@@ -1232,20 +1143,24 @@ country_event = { #Conquest of Arkanisturm
 		
 		trigger = {
 			NOT = {
-				AND = {
-					country_exists = STA
-					tag = ORD
-					STA = {
-						has_country_flag = STA_defect
+				OR = {
+					AND = {
+						country_exists = STA
+						tag = ORD
+						STA = {
+							has_country_flag = STA_defect
+						}
+						STA = {
+							is_subject_of = ORD
+						}
 					}
-					STA = {
-						is_subject_of = ORD
-					}
+					
 					tag = UNG
 					is_subject_of = UNG
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -1295,6 +1210,7 @@ country_event = { #Conquest of Arkanisturm
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -1368,101 +1284,6 @@ country_event = { #Conquest of Nochwald
 	mean_time_to_happen = {
 		days = 15
 	}
-	
-	immediate = {
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						tag = ORD
-						tag = EOR
-						ROOT = {
-							is_subject_of = ORD
-						}
-						ROOT = {
-							is_subject_of = EOR
-						}
-					}
-				}
-				NOC = {
-					has_cosmetic_tag = NOC_OSG
-				}
-			}
-			NOC = {
-				drop_cosmetic_tag = yes
-				set_party_name = {
-					ideology = puritan
-					long_name = NOC_puritan_party
-					name = NOC_puritan_party
-				}
-				set_party_name = {
-					ideology = theocrat
-					long_name = NOC_theocrat_party
-					name = NOC_theocrat_party
-				}
-				set_party_name = {
-					ideology = monarchy_absolute
-					long_name = NOC_monarchy_absolute_party
-					name = NOC_monarchy_absolute_party
-				}
-				kill_ideology_leader = monarchy_absolute
-				kill_ideology_leader = puritan
-				kill_ideology_leader = theocrat
-				remove_ideas = OSG_settler_government
-				delete_unit_template_and_units = {
-					division_template = "Grove Guards"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Bladesingers"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Rangers"
-				}
-				load_oob = "NOC_empty"
-				
-				swap_ideas = {
-					remove_idea = elf_country
-					add_idea = human_country
-				}
-				swap_ideas = {
-					remove_idea = itherynism_religion
-					add_idea = septism_religion
-				}
-				
-				country_event = {
-					id = annex.0
-					days = 5
-				}
-			}
-			
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = SVT
-						is_core_of = SPW
-						is_core_of = TEI
-					}
-				}
-				remove_core_of = NOC
-			}
-			
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = SVT
-						is_core_of = SPW
-						is_core_of = TEI
-					}
-				}
-				reset_state_name = yes
-			}
-			
-			reset_province_name = 8473
-			reset_province_name = 9285
-			reset_province_name = 9005
-			reset_province_name = 8473
-		}
-	}
 
 	trigger = {
 		NOT = {
@@ -1507,6 +1328,7 @@ country_event = { #Conquest of Nochwald
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 			NOT = {
@@ -1556,20 +1378,23 @@ country_event = { #Conquest of Nochwald
 		
 		trigger = {
 			NOT = {
-				AND = {
-					country_exists = STA
-					tag = ORD
-					STA = {
-						has_country_flag = STA_defect
-					}
-					STA = {
-						is_subject_of = ORD
+				OR = {
+					AND = {
+						country_exists = STA
+						tag = ORD
+						STA = {
+							has_country_flag = STA_defect
+						}
+						STA = {
+							is_subject_of = ORD
+						}
 					}
 					tag = UNG
 					is_subject_of = UNG
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -1619,6 +1444,7 @@ country_event = { #Conquest of Nochwald
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -1736,6 +1562,7 @@ country_event = { #Conquest of Spochwald
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 			NOT = {
@@ -1785,20 +1612,23 @@ country_event = { #Conquest of Spochwald
 		
 		trigger = {
 			NOT = {
-				AND = {
-					country_exists = STA
-					tag = ORD
-					STA = {
-						has_country_flag = STA_defect
-					}
-					STA = {
-						is_subject_of = ORD
+				OR = {
+					AND = {
+						country_exists = STA
+						tag = ORD
+						STA = {
+							has_country_flag = STA_defect
+						}
+						STA = {
+							is_subject_of = ORD
+						}
 					}
 					tag = UNG
 					is_subject_of = UNG
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -1848,6 +1678,7 @@ country_event = { #Conquest of Spochwald
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -1965,6 +1796,7 @@ country_event = { #Conquest of St. Vichtlas
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 			NOT = {
@@ -2014,20 +1846,23 @@ country_event = { #Conquest of St. Vichtlas
 		
 		trigger = {
 			NOT = {
-				AND = {
-					country_exists = STA
-					tag = ORD
-					STA = {
-						has_country_flag = STA_defect
-					}
-					STA = {
-						is_subject_of = ORD
+				OR = {
+					AND = {
+						country_exists = STA
+						tag = ORD
+						STA = {
+							has_country_flag = STA_defect
+						}
+						STA = {
+							is_subject_of = ORD
+						}
 					}
 					tag = UNG
 					is_subject_of = UNG
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -2077,6 +1912,7 @@ country_event = { #Conquest of St. Vichtlas
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -2194,6 +2030,7 @@ country_event = { #Conquest of Teigerholen
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 			NOT = {
@@ -2243,20 +2080,23 @@ country_event = { #Conquest of Teigerholen
 		
 		trigger = {
 			NOT = {
-				AND = {
-					country_exists = STA
-					tag = ORD
-					STA = {
-						has_country_flag = STA_defect
-					}
-					STA = {
-						is_subject_of = ORD
+				OR = {
+					AND = {
+						country_exists = STA
+						tag = ORD
+						STA = {
+							has_country_flag = STA_defect
+						}
+						STA = {
+							is_subject_of = ORD
+						}
 					}
 					tag = UNG
 					is_subject_of = UNG
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -2306,6 +2146,7 @@ country_event = { #Conquest of Teigerholen
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -2423,6 +2264,7 @@ country_event = { #Conquest of Schneefilde
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 			NOT = {
@@ -2472,20 +2314,23 @@ country_event = { #Conquest of Schneefilde
 		
 		trigger = {
 			NOT = {
-				AND = {
-					country_exists = STA
-					tag = ORD
-					STA = {
-						has_country_flag = STA_defect
-					}
-					STA = {
-						is_subject_of = ORD
+				OR = {
+					AND = {
+						country_exists = STA
+						tag = ORD
+						STA = {
+							has_country_flag = STA_defect
+						}
+						STA = {
+							is_subject_of = ORD
+						}
 					}
 					tag = UNG
 					is_subject_of = UNG
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -2535,6 +2380,7 @@ country_event = { #Conquest of Schneefilde
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -2608,94 +2454,6 @@ country_event = { #Conquest of Wistingen
 	mean_time_to_happen = {
 		days = 15
 	}
-	
-	immediate = {
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						tag = ORD
-						tag = EOR
-						ROOT = {
-							is_subject_of = ORD
-						}
-						ROOT = {
-							is_subject_of = EOR
-						}
-					}
-				}
-				WIS = {
-					has_cosmetic_tag = WIS_OSG
-				}
-			}
-			WIS = {
-				drop_cosmetic_tag = yes
-				set_party_name = {
-					ideology = puritan
-					long_name = WIS_puritan_party
-					name = WIS_puritan_party
-				}
-				set_party_name = {
-					ideology = theocrat
-					long_name = WIS_theocrat_party
-					name = WIS_theocrat_party
-				}
-				set_party_name = {
-					ideology = monarchy_absolute
-					long_name = WIS_monarchy_absolute_party
-					name = WIS_monarchy_absolute_party
-				}
-				kill_ideology_leader = monarchy_absolute
-				kill_ideology_leader = puritan
-				kill_ideology_leader = theocrat
-				remove_ideas = OSG_settler_government
-				delete_unit_template_and_units = {
-					division_template = "Grove Guards"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Bladesingers"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Rangers"
-				}
-				load_oob = "WIS_empty"
-				
-				swap_ideas = {
-					remove_idea = elf_country
-					add_idea = human_country
-				}
-				swap_ideas = {
-					remove_idea = itherynism_religion
-					add_idea = anzella_patron
-				}
-				
-				country_event = {
-					id = annex.0
-					days = 5
-				}
-			}
-			
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = WIS
-						is_core_of = WSZ
-						is_core_of = FTH
-						is_core_of = SNF
-						is_core_of = UNG
-						is_core_of = FAU
-					}
-				}
-				reset_state_name = yes
-			}
-			
-			reset_province_name = 4748
-			reset_province_name = 4080
-			reset_province_name = 8753
-			reset_province_name = 1754
-			reset_province_name = 807
-		}
-	}
 
 	trigger = {
 		NOT = {
@@ -2740,6 +2498,7 @@ country_event = { #Conquest of Wistingen
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 			NOT = {
@@ -2789,15 +2548,18 @@ country_event = { #Conquest of Wistingen
 		
 		trigger = {
 			NOT = {
-				AND = {
-					country_exists = STA
-					tag = ORD
-					STA = {
-						has_country_flag = STA_defect
+				OR = {
+					AND = {
+						country_exists = STA
+						tag = ORD
+						STA = {
+							has_country_flag = STA_defect
+						}
+						STA = {
+							is_subject_of = ORD
+						}
 					}
-					STA = {
-						is_subject_of = ORD
-					}
+					has_country_flag = ORD_help_UNG_against_STA
 					tag = UNG
 					is_subject_of = UNG
 					UNG = {
@@ -2852,6 +2614,7 @@ country_event = { #Conquest of Wistingen
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -2924,93 +2687,6 @@ country_event = { #Conquest of Skaelinger
 	desc = annex.12.d
 	mean_time_to_happen = {
 		days = 15
-	}
-	
-	immediate = {
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						tag = ORD
-						tag = EOR
-						ROOT = {
-							is_subject_of = ORD
-						}
-						ROOT = {
-							is_subject_of = EOR
-						}
-					}
-				}
-				SKA = {
-					has_cosmetic_tag = SKA_OSG
-				}
-			}
-			SKA = {
-				drop_cosmetic_tag = yes
-				set_party_name = {
-					ideology = puritan
-					long_name = SKA_puritan_party
-					name = SKA_puritan_party
-				}
-				set_party_name = {
-					ideology = theocrat
-					long_name = SKA_theocrat_party
-					name = SKA_theocrat_party
-				}
-				set_party_name = {
-					ideology = monarchy_absolute
-					long_name = SKA_monarchy_absolute_party
-					name = SKA_monarchy_absolute_party
-				}
-				kill_ideology_leader = monarchy_absolute
-				kill_ideology_leader = puritan
-				kill_ideology_leader = theocrat
-
-				remove_ideas = OSG_settler_government
-				delete_unit_template_and_units = {
-					division_template = "Grove Guards"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Bladesingers"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Rangers"
-				}
-				load_oob = "SKA_empty"
-				set_technology = {
-					dwarven_warriors = 1
-				}
-				
-				#load_focus_tree = {
-				#	tree = skaelinger_focus
-				#	keep_completed = yes
-				#}
-				
-				swap_ideas = {
-					remove_idea = elf_country
-					add_idea = dwarf_country
-				}
-				swap_ideas = {
-					remove_idea = itherynism_religion
-					add_idea = dwarven_ancestor_worship_religion
-				}
-				
-				country_event = {
-					id = annex.0
-					days = 5
-				}
-			}
-			
-			every_state = {
-				limit = {
-					is_core_of = SKA
-				}
-				reset_state_name = yes
-			}
-			
-			reset_province_name = 7100
-			
-		}
 	}
 
 	trigger = {
@@ -3348,6 +3024,7 @@ country_event = { #Conquest of Fritzhafen
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 			NOT = {
@@ -3397,20 +3074,23 @@ country_event = { #Conquest of Fritzhafen
 		
 		trigger = {
 			NOT = {
-				AND = {
-					country_exists = STA
-					tag = ORD
-					STA = {
-						has_country_flag = STA_defect
-					}
-					STA = {
-						is_subject_of = ORD
+				OR = {
+					AND = {
+						country_exists = STA
+						tag = ORD
+						STA = {
+							has_country_flag = STA_defect
+						}
+						STA = {
+							is_subject_of = ORD
+						}
 					}
 					tag = UNG
 					is_subject_of = UNG
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -3460,6 +3140,7 @@ country_event = { #Conquest of Fritzhafen
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -3577,6 +3258,7 @@ country_event = { #Conquest of Wertszvorde
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 			NOT = {
@@ -3626,20 +3308,23 @@ country_event = { #Conquest of Wertszvorde
 		
 		trigger = {
 			NOT = {
-				AND = {
-					country_exists = STA
-					tag = ORD
-					STA = {
-						has_country_flag = STA_defect
-					}
-					STA = {
-						is_subject_of = ORD
+				OR = {
+					AND = {
+						country_exists = STA
+						tag = ORD
+						STA = {
+							has_country_flag = STA_defect
+						}
+						STA = {
+							is_subject_of = ORD
+						}
 					}
 					tag = UNG
 					is_subject_of = UNG
 					UNG = {
 						is_subject_of = ROOT
 					}
+					has_country_flag = ORD_help_UNG_against_STA
 				}
 			}
 		}
@@ -3689,6 +3374,7 @@ country_event = { #Conquest of Wertszvorde
 				UNG = {
 					is_subject_of = ROOT
 				}
+				has_country_flag = ORD_help_UNG_against_STA
 			}
 		}
 		
@@ -5330,93 +5016,10 @@ country_event = { #Conquest of Ierethayne
 	mean_time_to_happen = {
 		days = 15
 	}
-	
-	immediate = {
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						tag = ORD
-						tag = EOR
-						ROOT = {
-							is_subject_of = ORD
-						}
-						ROOT = {
-							is_subject_of = EOR
-						}
-					}
-				}
-				IRT = {
-					has_cosmetic_tag = IRT_OSG
-				}
-			}
-			IRT = {
-				drop_cosmetic_tag = yes
-				set_party_name = {
-					ideology = puritan
-					long_name = IRT_puritan_party
-					name = IRT_puritan_party
-				}
-				set_party_name = {
-					ideology = theocrat
-					long_name = IRT_theocrat_party
-					name = IRT_theocrat_party
-				}
-				set_party_name = {
-					ideology = monarchy_absolute
-					long_name = IRT_monarchy_absolute_party
-					name = IRT_monarchy_absolute_party
-				}
-				kill_ideology_leader = monarchy_absolute
-				kill_ideology_leader = puritan
-				kill_ideology_leader = theocrat
-				remove_ideas = OSG_settler_government
-				delete_unit_template_and_units = {
-					division_template = "Grove Guards"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Bladesingers"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Rangers"
-				}
-				load_oob = "IRT_empty"
-				
-				swap_ideas = {
-					remove_idea = elf_country
-					add_idea = human_country
-				}
-				swap_ideas = {
-					remove_idea = itherynism_religion
-					add_idea = lorthorism_religion
-				}
-				
-				country_event = {
-					id = annex.0
-					days = 5
-				}
-			}
-			
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = IRT
-						is_core_of = FEL
-					}
-				}
-				reset_state_name = yes
-			}
-			
-			reset_province_name = 3069
-			reset_province_name = 4730
-		}
-	}
 
 	trigger = {
 		NOT = {
 			tag = NBI
-		}
-		NOT = {
 			tag = IRT
 			tag = GMR
 			tag = NPC
@@ -5482,26 +5085,6 @@ country_event = { #Conquest of Ierethayne
 				}
 			}
 			factor = 100
-		}
-
-		hidden_effect = {
-			IRT = {
-				add_state_core = 1
-				add_state_core = 2
-				add_state_core = 3
-				add_state_core = 4
-				add_state_core = 5
-				add_state_core = 6
-				add_state_core = 7
-				add_state_core = 8
-				add_state_core = 9
-				add_state_core = 10
-				add_state_core = 11
-				add_state_core = 13
-				add_state_core = 14
-				add_state_core = 41
-				add_state_core = 31
-			}
 		}
 
 		every_state = {
@@ -5602,26 +5185,6 @@ country_event = { #Conquest of Ierethayne
 			factor = 100
 		}
 		
-		hidden_effect = {
-			IRT = {
-				add_state_core = 1
-				add_state_core = 2
-				add_state_core = 3
-				add_state_core = 4
-				add_state_core = 5
-				add_state_core = 6
-				add_state_core = 7
-				add_state_core = 8
-				add_state_core = 9
-				add_state_core = 10
-				add_state_core = 11
-				add_state_core = 13
-				add_state_core = 14
-				add_state_core = 41
-				add_state_core = 31
-			}
-		}
-		
 		every_state = {
 			limit = {
 				is_core_of = IRT
@@ -5710,97 +5273,13 @@ country_event = { #Conquest of Trifell
 	mean_time_to_happen = {
 		days = 15
 	}
-	
-	immediate = {
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						tag = ORD
-						tag = EOR
-						ROOT = {
-							is_subject_of = ORD
-						}
-						ROOT = {
-							is_subject_of = EOR
-						}
-					}
-				}
-				TRI = {
-					has_cosmetic_tag = TRI_OSG
-				}
-			}
-			TRI = {
-				drop_cosmetic_tag = yes
-				set_party_name = {
-					ideology = puritan
-					long_name = TRI_puritan_party
-					name = TRI_puritan_party
-				}
-				set_party_name = {
-					ideology = theocrat
-					long_name = TRI_theocrat_party
-					name = TRI_theocrat_party
-				}
-				set_party_name = {
-					ideology = monarchy_absolute
-					long_name = TRI_monarchy_absolute_party
-					name = TRI_monarchy_absolute_party
-				}
-				kill_ideology_leader = monarchy_absolute
-				kill_ideology_leader = puritan
-				kill_ideology_leader = theocrat
-				remove_ideas = OSG_settler_government
-				delete_unit_template_and_units = {
-					division_template = "Grove Guards"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Bladesingers"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Rangers"
-				}
-				load_oob = "TRI_empty"
-				
-				swap_ideas = {
-					remove_idea = elf_country
-					add_idea = human_country
-				}
-				swap_ideas = {
-					remove_idea = itherynism_religion
-					add_idea = lorthorism_religion
-				}
-				
-				country_event = {
-					id = annex.0
-					days = 5
-				}
-			}
-			
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = TRI
-						is_core_of = NAV
-						is_core_of = KAL
-					}
-				}
-				reset_state_name = yes
-			}
-			
-			reset_province_name = 2379
-			reset_province_name = 6106
-			reset_province_name = 5840
-		}
-	}
 
 	trigger = {
 		NOT = {
 			tag = NBI
-		}
-		NOT = {
-			original_tag = TRI
+			tag = TRI
 			tag = GMR
+			tag = NPC
 		}
 		OR = {
 			AND = {
@@ -5863,24 +5342,6 @@ country_event = { #Conquest of Trifell
 				}
 			}
 			factor = 100
-		}
-		
-		hidden_effect = {
-			TRI = {
-				add_state_core = 29
-				add_state_core = 65
-				add_state_core = 59
-				add_state_core = 53
-				add_state_core = 54
-				add_state_core = 58
-				add_state_core = 48
-				add_state_core = 47
-				add_state_core = 44
-				add_state_core = 43
-				add_state_core = 42
-				add_state_core = 74
-				add_state_core = 15
-			}
 		}
 		
 		every_state = {
@@ -5981,24 +5442,6 @@ country_event = { #Conquest of Trifell
 			factor = 100
 		}
 		
-		hidden_effect = {
-			TRI = {
-				add_state_core = 29
-				add_state_core = 65
-				add_state_core = 59
-				add_state_core = 53
-				add_state_core = 54
-				add_state_core = 58
-				add_state_core = 48
-				add_state_core = 47
-				add_state_core = 44
-				add_state_core = 43
-				add_state_core = 42
-				add_state_core = 74
-				add_state_core = 15
-			}
-		}
-		
 		every_state = {
 			limit = {
 				is_core_of = TRI
@@ -6087,100 +5530,13 @@ country_event = { #Conquest of Nastrogdar
 	mean_time_to_happen = {
 		days = 15
 	}
-	
-	immediate = {
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						tag = ORD
-						tag = EOR
-						ROOT = {
-							is_subject_of = ORD
-						}
-						ROOT = {
-							is_subject_of = EOR
-						}
-					}
-				}
-				NAS = {
-					has_cosmetic_tag = NAS_OSG
-				}
-			}
-			NAS = {
-				drop_cosmetic_tag = yes
-				set_party_name = {
-					ideology = puritan
-					long_name = NAS_puritan_party
-					name = NAS_puritan_party
-				}
-				set_party_name = {
-					ideology = theocrat
-					long_name = NAS_theocrat_party
-					name = NAS_theocrat_party
-				}
-				set_party_name = {
-					ideology = monarchy_absolute
-					long_name = NAS_monarchy_absolute_party
-					name = NAS_monarchy_absolute_party
-				}
-				every_state = {
-					limit = {
-							is_core_of = KRT
-					}
-					remove_core_of = NAS
-				}
-				kill_ideology_leader = monarchy_absolute
-				kill_ideology_leader = puritan
-				kill_ideology_leader = theocrat
-				remove_ideas = OSG_settler_government
-				delete_unit_template_and_units = {
-					division_template = "Grove Guards"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Bladesingers"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Rangers"
-				}
-				load_oob = "NAS_empty"
-				swap_ideas = {
-					remove_idea = elf_country
-					add_idea = human_country
-				}
-				swap_ideas = {
-					remove_idea = itherynism_religion
-					add_idea = lorthorism_religion
-				}
-				
-				country_event = {
-					id = annex.0
-					days = 5
-				}
-			}
-			
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = NAS
-						is_core_of = KRT
-					}
-				}
-				reset_state_name = yes
-			}
-			
-			reset_province_name = 829
-			reset_province_name = 6633
-		}
-	}
 
 	trigger = {
 		NOT = {
 			tag = NBI
-		}
-		NOT = {
-			original_tag = NAS
+			tag = NAS
 			tag = GMR
+			tag = NPC
 		}
 		OR = {
 			AND = {
@@ -6243,19 +5599,6 @@ country_event = { #Conquest of Nastrogdar
 				}
 			}
 			factor = 100
-		}
-		
-		hidden_effect = {
-			NAS = {
-				add_state_core = 25
-				add_state_core = 26
-				add_state_core = 73
-				add_state_core = 20
-				add_state_core = 21
-				add_state_core = 22
-				add_state_core = 723
-				add_state_core = 49
-			}
 		}
 		
 		every_state = {
@@ -6356,19 +5699,6 @@ country_event = { #Conquest of Nastrogdar
 			factor = 100
 		}
 		
-		hidden_effect = {
-			NAS = {
-				add_state_core = 25
-				add_state_core = 26
-				add_state_core = 73
-				add_state_core = 20
-				add_state_core = 21
-				add_state_core = 22
-				add_state_core = 723
-				add_state_core = 49
-			}
-		}
-		
 		every_state = {
 			limit = {
 				is_core_of = NAS
@@ -6461,10 +5791,9 @@ country_event = { #Conquest of Kortinall
 	trigger = {
 		NOT = {
 			tag = NBI
-		}
-		NOT = {
-			original_tag = KRT
+			tag = KRT
 			tag = GMR
+			tag = NPC
 		}
 		OR = {
 			AND = {
@@ -6527,23 +5856,6 @@ country_event = { #Conquest of Kortinall
 				}
 			}
 			factor = 100
-		}
-		
-		hidden_effect = {
-			KRT = {
-				add_state_core = 36
-				add_state_core = 75
-				add_state_core = 35
-				add_state_core = 17
-				add_state_core = 18
-				add_state_core = 16
-				add_state_core = 27
-				add_state_core = 23
-				add_state_core = 24
-				add_state_core = 12
-				add_state_core = 30
-				add_state_core = 19
-			}
 		}
 		
 		every_state = {
@@ -6644,23 +5956,6 @@ country_event = { #Conquest of Kortinall
 			factor = 100
 		}
 		
-		hidden_effect = {
-			KRT = {
-				add_state_core = 36
-				add_state_core = 75
-				add_state_core = 35
-				add_state_core = 17
-				add_state_core = 18
-				add_state_core = 16
-				add_state_core = 27
-				add_state_core = 23
-				add_state_core = 24
-				add_state_core = 12
-				add_state_core = 30
-				add_state_core = 19
-			}
-		}
-		
 		every_state = {
 			limit = {
 				is_core_of = KRT
@@ -6694,21 +5989,6 @@ country_event = { #Conquest of Kortinall
 		
 		ai_chance = {
 			factor = 10000
-		}
-		
-		every_state = {
-			limit = {
-				is_core_of = KRT
-				is_controlled_by = ROOT
-				NOT = {
-					is_core_of = ROOT
-					is_claimed_by = ROOT
-				}
-			}
-			GMR = {
-				add_state_core = PREV
-				transfer_state = PREV
-			}
 		}
 	}
 	
@@ -6753,10 +6033,9 @@ country_event = { #Conquest of Felweyne
 	trigger = {
 		NOT = {
 			tag = NBI
-		}
-		NOT = {
-			original_tag = FEL
+			tag = FEL
 			tag = GMR
+			tag = NPC
 		}
 		OR = {
 			AND = {
@@ -6819,21 +6098,6 @@ country_event = { #Conquest of Felweyne
 				}
 			}
 			factor = 100
-		}
-		
-		hidden_effect = {
-			FEL = {
-				add_state_core = 40
-				add_state_core = 28
-				add_state_core = 37
-				add_state_core = 32
-				add_state_core = 50
-				add_state_core = 38
-				add_state_core = 39
-				add_state_core = 52
-				add_state_core = 46
-				add_state_core = 33
-			}
 		}
 		
 		every_state = {
@@ -6934,21 +6198,6 @@ country_event = { #Conquest of Felweyne
 			factor = 100
 		}
 		
-		hidden_effect = {
-			FEL = {
-				add_state_core = 40
-				add_state_core = 28
-				add_state_core = 37
-				add_state_core = 32
-				add_state_core = 50
-				add_state_core = 38
-				add_state_core = 39
-				add_state_core = 52
-				add_state_core = 46
-				add_state_core = 33
-			}
-		}
-		
 		every_state = {
 			limit = {
 				is_core_of = FEL
@@ -7041,10 +6290,9 @@ country_event = { #Conquest of Navandonne
 	trigger = {
 		NOT = {
 			tag = NBI
-		}
-		NOT = {
-			original_tag = NAV
+			tag = NAV
 			tag = GMR
+			tag = NPC
 		}
 		OR = {
 			AND = {
@@ -7107,19 +6355,6 @@ country_event = { #Conquest of Navandonne
 				}
 			}
 			factor = 100
-		}
-		
-		hidden_effect = {
-			NAV = {
-				add_state_core = 72
-				add_state_core = 68
-				add_state_core = 70
-				add_state_core = 69
-				add_state_core = 44
-				add_state_core = 67
-				add_state_core = 71
-				add_state_core = 66
-			}
 		}
 		
 		every_state = {
@@ -7220,19 +6455,6 @@ country_event = { #Conquest of Navandonne
 			factor = 100
 		}
 		
-		hidden_effect = {
-			NAV = {
-				add_state_core = 72
-				add_state_core = 68
-				add_state_core = 70
-				add_state_core = 69
-				add_state_core = 44
-				add_state_core = 67
-				add_state_core = 71
-				add_state_core = 66
-			}
-		}
-		
 		every_state = {
 			limit = {
 				is_core_of = NAV
@@ -7325,10 +6547,9 @@ country_event = { #Conquest of Kaltire
 	trigger = {
 		NOT = {
 			tag = NBI
-		}
-		NOT = {
-			original_tag = KAL
+			tag = KAL
 			tag = GMR
+			tag = NPC
 		}
 		OR = {
 			AND = {
@@ -7391,21 +6612,6 @@ country_event = { #Conquest of Kaltire
 				}
 			}
 			factor = 100
-		}
-		
-		hidden_effect = {
-			KAL = {
-				add_state_core = 34
-				add_state_core = 62
-				add_state_core = 56
-				add_state_core = 63
-				add_state_core = 64
-				add_state_core = 45
-				add_state_core = 57
-				add_state_core = 55
-				add_state_core = 61
-				add_state_core = 60
-			}
 		}
 		
 		every_state = {
@@ -7504,21 +6710,6 @@ country_event = { #Conquest of Kaltire
 		
 		ai_chance = {
 			factor = 100
-		}
-		
-		hidden_effect = {
-			KAL = {
-				add_state_core = 34
-				add_state_core = 62
-				add_state_core = 56
-				add_state_core = 63
-				add_state_core = 64
-				add_state_core = 45
-				add_state_core = 57
-				add_state_core = 55
-				add_state_core = 61
-				add_state_core = 60
-			}
 		}
 		
 		every_state = {
@@ -7984,68 +7175,6 @@ country_event = { #Conquest of the Confederation
 		}
 		
 		hidden_effect = {
-		
-			1 = {
-				set_state_name = "Ierethayne"
-			}
-			set_province_name = {
-				id = 3069
-				name = "Ierethayne"
-			}
-			
-			28 = {
-				set_state_name = "Felweyne"
-			}
-			set_province_name = {
-				id = 3966
-				name = "Felweyne"
-			}
-			
-			17 = {
-				set_state_name = "Kortinall"
-			}
-			
-			set_province_name = {
-				id = 7830
-				name = "Kortinall"
-			}
-			
-			72 = {
-				set_state_name = "Navandonne"
-			}
-			
-			set_province_name = {
-				id = 1334
-				name = "Navandonne"
-			}
-			
-			34 = {
-				set_state_name = "Kaltire"
-			}
-			
-			set_province_name = {
-				id = 3863
-				name = "Kaltire"
-			}
-			
-			20 = {
-				set_state_name = "Nastrodoge"
-			}
-			
-			set_province_name = {
-				id = 4931
-				name = "Nastrodoge"
-			}
-			
-			29 = {
-				set_state_name = "Trifell"
-			}
-			
-			set_province_name = {
-				id = 8702
-				name = "Trifell"
-			}
-
 			every_state = {
 				limit = {
 					is_core_of = GMR
@@ -8154,91 +7283,6 @@ country_event = { #Conquest of Perkavland
 				tag = SNF
 			}
 			set_country_flag = achievement_something_done_right
-		}
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						tag = ORD
-						tag = EOR
-						ROOT = {
-							is_subject_of = ORD
-						}
-						ROOT = {
-							is_subject_of = EOR
-						}
-					}
-				}
-				PRK = {
-					has_cosmetic_tag = PRK_OSG
-				}
-			}
-			PRK = {
-				drop_cosmetic_tag = yes
-				set_party_name = {
-					ideology = puritan
-					long_name = PRK_puritan_party
-					name = PRK_puritan_party
-				}
-				set_party_name = {
-					ideology = theocrat
-					long_name = PRK_theocrat_party
-					name = PRK_theocrat_party
-				}
-				set_party_name = {
-					ideology = monarchy_absolute
-					long_name = PRK_monarchy_absolute_party
-					name = PRK_monarchy_absolute_party
-				}
-				kill_ideology_leader = monarchy_absolute
-				kill_ideology_leader = puritan
-				kill_ideology_leader = theocrat
-				remove_ideas = OSG_settler_government
-				delete_unit_template_and_units = {
-					division_template = "Grove Guards"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Bladesingers"
-				}
-				delete_unit_template_and_units = {
-					division_template = "Rangers"
-				}
-				load_oob = "PRK_empty"
-				
-				swap_ideas = {
-					remove_idea = elf_country
-					add_idea = human_country
-				}
-				swap_ideas = {
-					remove_idea = itherynism_religion
-					add_idea = krostov_religion
-				}
-				
-				country_event = {
-					id = annex.0
-					days = 5
-				}
-			}
-			
-			every_state = {
-				limit = {
-					is_core_of = PRK
-				}
-				reset_state_name = yes
-			}
-			
-			reset_province_name = 4527
-			reset_province_name = 9576
-			reset_province_name = 1453
-			reset_province_name = 5418
-			reset_province_name = 3287
-			reset_province_name = 9478
-			reset_province_name = 2171
-			reset_province_name = 3038
-			reset_province_name = 4805
-			reset_province_name = 1491
-			reset_province_name = 4805
-			reset_province_name = 575
 		}
 	}
 
@@ -9232,27 +8276,6 @@ country_event = { #Conquest of Kurgur
 					tag = SKA
 				}
 			}
-			659 = {
-				set_state_name = "Skaptaholt"
-			}
-			179 = {
-				set_state_name = "Asolfsskali"
-			}
-			176 = {
-				set_state_name = "Hvanneyrr"
-			}
-			174 = {
-				set_state_name = "Ruins of Zarathum"
-			}
-			173 = {
-				set_state_name = "Lagraskr"
-			}
-			172 = {
-				set_state_name = "Valgring"
-			}
-			365 = {
-				set_state_name = "Tholorg"
-			}
 		}
 	}
 
@@ -9461,28 +8484,6 @@ country_event = { #Conquest of Kurgur
 					transfer_state = PREV
 				}
 			}
-		}
-		
-		659 = {
-			set_state_name = "Skaptaholt"
-		}
-		179 = {
-			set_state_name = "Asolfsskali"
-		}
-		176 = {
-			set_state_name = "Hvanneyrr"
-		}
-		174 = {
-			set_state_name = "Ruins of Zarathum"
-		}
-		173 = {
-			set_state_name = "Lagraskr"
-		}
-		172 = {
-			set_state_name = "Valgring"
-		}
-		365 = {
-			set_state_name = "Tholorg"
 		}
 		
 		if = {
@@ -15306,6 +14307,161 @@ country_event = { #Conquest of Hastalia
 		UNG = {
 			set_autonomy = {
 				target = HAS
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+}
+
+country_event = { #Conquest of the Akkanids
+	id = annex.66
+	title = annex.66.t
+	desc = annex.66.d
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		NOT = {
+			tag = NBI
+		}
+		NOT = {
+			original_tag = AKK
+		}
+		OR = {
+			AND = {
+				AKK = {
+					has_capitulated = yes
+				}
+				controls_state = 522
+			}
+			AND = {
+				NOT = {
+					country_exists = AKK
+				}
+				controls_state = 522
+			}
+			owns_state = 522
+		}
+		NOT = {
+			ROOT = {
+				has_country_flag = conquest_of_akkanids
+			}
+		}
+	}
+
+	option = {# Liberate
+		name = annex.66.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = UNG
+					is_subject_of = UNG
+				}
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = puritan
+					has_government = theocrat
+				}
+			}
+			factor = 100
+		}
+
+		every_state = {
+			limit = {
+				is_core_of = AKK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			AKK = {
+				transfer_state = PREV
+			}
+		}
+		
+		puppet = AKK
+		set_country_flag = conquest_of_akkanids
+	}
+	
+	option = { # Annex
+		name = annex.66.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_government = puritan
+						has_government = theocrat
+					}
+				}
+			}
+		}
+
+		set_country_flag = conquest_of_akkanids
+
+		custom_effect_tooltip = annex_tt
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = puritan
+							has_government = theocrat
+						}
+					}
+				}
+				add_political_power = -50
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	option = { # Freiprinztum
+		name = annex.66.c
+		trigger = {
+			OR = {
+				tag = UNG
+				ROOT = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		every_state = {
+			limit = {
+				is_core_of = AKK
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			AKK = {
+				transfer_state = PREV
+			}
+		}
+		
+		UNG = {
+			set_autonomy = {
+				target = AKK
 				autonomy_state = autonomy_IR_freiprinztum
 			}
 		}

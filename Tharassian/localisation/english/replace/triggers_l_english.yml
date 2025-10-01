@@ -1,0 +1,3 @@
+﻿l_english:
+ TRIGGER_IS_IRONMAN:0 "Game is not in Ironman mode." #These are flipped, for some reason
+ TRIGGER_IS_NOT_IRONMAN:0 "Game is in Ironman mode."

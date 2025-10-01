@@ -14,13 +14,23 @@ country_event = {#Restored Zarathum!
 	
 	option = {#Glory!
 		name = vrg.1.a
-		174 = {
-			set_state_name = "Zarathum"
-		}
 		set_province_name = {
 			id = 7798
 			name = "Zarathum"
 		}
+		if = {
+			limit = {
+				NOT = {
+					owns_state = 174
+				}
+				any_other_country = {
+					is_subject_of = ROOT
+					owns_state = 174
+				}
+			}
+			transfer_state = 174
+		}
+		add_state_core = 174
 		set_capital = {
 			state = 174
 		}
@@ -137,7 +147,10 @@ country_event = { #Random Migrants Arrive
 	picture = GFX_report_event_crowd_in_prague
 	
 	trigger = {
-		has_country_flag = DORF_migrants_coming
+		OR = {
+			has_country_flag = DORF_migrants_coming
+			has_country_flag = DORF_migrants_coming_while_rebuilding
+		}
 	}
 	
 	mean_time_to_happen = {

@@ -1,3 +1,64 @@
+# Return all original states, based on the TAG.original_cores array (set in on_actions at game start)
+THIS_return_og_states = {
+	for_each_scope_loop = {
+		array = THIS.original_cores
+		
+		transfer_state_to = PREV
+		
+	}
+}
+
+# Transfer all core states to THIS and make puppet of PREV - in case you need to puppet someone else's conquests
+# Scope this in a tag in a tag, e.g. PRK = { RKS = { PREV_vassalize_THIS = yes } } will cause PRK to puppet RKS
+PREV_vassalize_THIS = {
+	if = {
+		limit = {
+			NOT = {
+				THIS = {
+					tag = UNG
+				}
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = PREV
+				owner = {
+					OR = {
+						tag = PREV.PREV.PREV
+						is_in_faction_with = PREV.PREV.PREV
+						is_subject_of = PREV.PREV.PREV
+					}
+				}
+			}
+			transfer_state_to = PREV
+		}
+		PREV = {
+			puppet = PREV
+		}
+	}
+	# Special case for turning UNG into FAU
+	else = {
+		every_state = {
+			limit = {
+				is_core_of = PREV
+				owner = {
+					OR = {
+						tag = PREV.PREV.PREV
+						is_in_faction_with = PREV.PREV.PREV
+						is_subject_of = PREV.PREV.PREV
+					}
+				}
+			}
+			add_core_of = FAU
+			transfer_state_to = FAU
+			remove_core_of = PREV
+		}
+		PREV = {
+			puppet = FAU
+		}
+	}
+}
+
 # Free prisoner
 free_prisoner = {
 	random_character = {

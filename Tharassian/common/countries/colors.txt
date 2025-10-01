@@ -5,6 +5,46 @@ XXX = { #Wastelands placeholder
 	color_ui = rgb { 14 14 14 }
 }
 
+CSK = {
+	color = rgb { 170 213 31 }
+	color_ui = rgb { 179 219 39 }
+}
+
+CST = {
+	color = rgb { 170 213 31 }
+	color_ui = rgb { 179 219 39 }
+}
+
+CNC = { # Hehe, that stands for, uh... computer numerical control? Yeah, that. Definitely. Yup. Nothin' else. God, I'm glad I'm not doing this professionally, or I'd probably get in trouble for that.
+	color = rgb { 170 213 31 }
+	color_ui = rgb { 179 219 39 }
+}
+
+CWS = {
+	color = rgb { 170 213 31 }
+	color_ui = rgb { 179 219 39 }
+}
+
+CPK = {
+	color = rgb { 170 213 31 }
+	color_ui = rgb { 179 219 39 }
+}
+
+CNS = {
+	color = rgb { 170 213 31 }
+	color_ui = rgb { 179 219 39 }
+}
+
+CIR = {
+	color = rgb { 170 213 31 }
+	color_ui = rgb { 179 219 39 }
+}
+
+CTR = {
+	color = rgb { 170 213 31 }
+	color_ui = rgb { 179 219 39 }
+}
+
 HAS = {
 	color = rgb { 140 185 185 }
 	color_ui = rgb { 150 195 195 }

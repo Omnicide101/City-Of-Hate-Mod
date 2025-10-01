@@ -14,6 +14,6 @@ state={
 			forge = 1
 		}
 		add_core_of = GMR
-
+		add_core_of = TRI
 	}
 }

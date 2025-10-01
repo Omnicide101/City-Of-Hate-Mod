@@ -92,7 +92,6 @@ add_namespace = console_command
 					add_core_of = NBI
 				}
 				191 = {
-					set_state_name = "Nonbinary Gang HQ"
 					set_state_category = megalopolis
 					add_core_of = NBI
 					add_manpower = 1000000

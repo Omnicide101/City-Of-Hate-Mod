@@ -2,7 +2,7 @@ state={
 	id=98
 	name="STATE_98"
 	provinces={
-		4092 7822 125 7797 4600 5060 4769 3190 2787
+		7797 5060 4769 3190 2787
 	}
 	state_category = large_town
 	manpower=15720
@@ -12,17 +12,11 @@ state={
 		mount = 2
 	}
 		history={
-		victory_points = {4600 14}
+		victory_points = {5060 14}
 		owner = ORD
 		buildings = {
-		4600 = {
+		5060 = {
 			naval_base = 2
-			bunker = 2
-		}
-		7822 = {
-			bunker = 2
-		}
-		125 = {
 			bunker = 2
 		}
 		infrastructure = 1

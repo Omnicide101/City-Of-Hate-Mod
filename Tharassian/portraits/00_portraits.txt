@@ -3519,6 +3519,1206 @@ ORD = {
 	}
 }
 
+CSK = {
+
+	operative = {
+		male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+	}
+	
+	army = {
+		male = {
+			GFX_ORD_generic_army_leader_1
+			GFX_ORD_generic_army_leader_2
+			GFX_ORD_generic_army_leader_3
+		}
+		female = {
+			GFX_ORD_generic_army_leader_4
+			GFX_ORD_generic_army_leader_5
+			GFX_ORD_generic_army_leader_6
+		}
+	}
+	
+	navy = {
+		male = {
+			GFX_ORD_generic_navy_leader_1
+			GFX_ORD_generic_navy_leader_2
+		}
+		female = {
+			GFX_ORD_generic_navy_leader_3
+		}
+	}
+	
+	political = {
+		puritan = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_absolute = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_constitutional = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_aristocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_peasant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_merchant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		theocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+	}
+}
+
+CST = {
+
+	operative = {
+		male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+	}
+	
+	army = {
+		male = {
+			GFX_ORD_generic_army_leader_1
+			GFX_ORD_generic_army_leader_2
+			GFX_ORD_generic_army_leader_3
+		}
+		female = {
+			GFX_ORD_generic_army_leader_4
+			GFX_ORD_generic_army_leader_5
+			GFX_ORD_generic_army_leader_6
+		}
+	}
+	
+	navy = {
+		male = {
+			GFX_ORD_generic_navy_leader_1
+			GFX_ORD_generic_navy_leader_2
+		}
+		female = {
+			GFX_ORD_generic_navy_leader_3
+		}
+	}
+	
+	political = {
+		puritan = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_absolute = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_constitutional = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_aristocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_peasant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_merchant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		theocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+	}
+}
+
+CNC = {
+
+	operative = {
+		male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+	}
+	
+	army = {
+		male = {
+			GFX_ORD_generic_army_leader_1
+			GFX_ORD_generic_army_leader_2
+			GFX_ORD_generic_army_leader_3
+		}
+		female = {
+			GFX_ORD_generic_army_leader_4
+			GFX_ORD_generic_army_leader_5
+			GFX_ORD_generic_army_leader_6
+		}
+	}
+	
+	navy = {
+		male = {
+			GFX_ORD_generic_navy_leader_1
+			GFX_ORD_generic_navy_leader_2
+		}
+		female = {
+			GFX_ORD_generic_navy_leader_3
+		}
+	}
+	
+	political = {
+		puritan = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_absolute = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_constitutional = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_aristocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_peasant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_merchant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		theocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+	}
+}
+
+CWS = {
+
+	operative = {
+		male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+	}
+	
+	army = {
+		male = {
+			GFX_ORD_generic_army_leader_1
+			GFX_ORD_generic_army_leader_2
+			GFX_ORD_generic_army_leader_3
+		}
+		female = {
+			GFX_ORD_generic_army_leader_4
+			GFX_ORD_generic_army_leader_5
+			GFX_ORD_generic_army_leader_6
+		}
+	}
+	
+	navy = {
+		male = {
+			GFX_ORD_generic_navy_leader_1
+			GFX_ORD_generic_navy_leader_2
+		}
+		female = {
+			GFX_ORD_generic_navy_leader_3
+		}
+	}
+	
+	political = {
+		puritan = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_absolute = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_constitutional = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_aristocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_peasant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_merchant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		theocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+	}
+}
+
+CPK = {
+
+	operative = {
+		male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+	}
+	
+	army = {
+		male = {
+			GFX_ORD_generic_army_leader_1
+			GFX_ORD_generic_army_leader_2
+			GFX_ORD_generic_army_leader_3
+		}
+		female = {
+			GFX_ORD_generic_army_leader_4
+			GFX_ORD_generic_army_leader_5
+			GFX_ORD_generic_army_leader_6
+		}
+	}
+	
+	navy = {
+		male = {
+			GFX_ORD_generic_navy_leader_1
+			GFX_ORD_generic_navy_leader_2
+		}
+		female = {
+			GFX_ORD_generic_navy_leader_3
+		}
+	}
+	
+	political = {
+		puritan = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_absolute = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_constitutional = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_aristocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_peasant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_merchant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		theocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+	}
+}
+
+CNS = {
+
+	operative = {
+		male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+	}
+	
+	army = {
+		male = {
+			GFX_ORD_generic_army_leader_1
+			GFX_ORD_generic_army_leader_2
+			GFX_ORD_generic_army_leader_3
+		}
+		female = {
+			GFX_ORD_generic_army_leader_4
+			GFX_ORD_generic_army_leader_5
+			GFX_ORD_generic_army_leader_6
+		}
+	}
+	
+	navy = {
+		male = {
+			GFX_ORD_generic_navy_leader_1
+			GFX_ORD_generic_navy_leader_2
+		}
+		female = {
+			GFX_ORD_generic_navy_leader_3
+		}
+	}
+	
+	political = {
+		puritan = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_absolute = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_constitutional = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_aristocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_peasant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_merchant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		theocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+	}
+}
+
+CIR = {
+
+	operative = {
+		male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+	}
+	
+	army = {
+		male = {
+			GFX_ORD_generic_army_leader_1
+			GFX_ORD_generic_army_leader_2
+			GFX_ORD_generic_army_leader_3
+		}
+		female = {
+			GFX_ORD_generic_army_leader_4
+			GFX_ORD_generic_army_leader_5
+			GFX_ORD_generic_army_leader_6
+		}
+	}
+	
+	navy = {
+		male = {
+			GFX_ORD_generic_navy_leader_1
+			GFX_ORD_generic_navy_leader_2
+		}
+		female = {
+			GFX_ORD_generic_navy_leader_3
+		}
+	}
+	
+	political = {
+		puritan = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_absolute = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_constitutional = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_aristocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_peasant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_merchant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		theocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+	}
+}
+
+CTR = {
+
+	operative = {
+		male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+	}
+	
+	army = {
+		male = {
+			GFX_ORD_generic_army_leader_1
+			GFX_ORD_generic_army_leader_2
+			GFX_ORD_generic_army_leader_3
+		}
+		female = {
+			GFX_ORD_generic_army_leader_4
+			GFX_ORD_generic_army_leader_5
+			GFX_ORD_generic_army_leader_6
+		}
+	}
+	
+	navy = {
+		male = {
+			GFX_ORD_generic_navy_leader_1
+			GFX_ORD_generic_navy_leader_2
+		}
+		female = {
+			GFX_ORD_generic_navy_leader_3
+		}
+	}
+	
+	political = {
+		puritan = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_absolute = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		monarchy_constitutional = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_aristocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_peasant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		republic_merchant = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+		theocrat = {
+			male = {
+				GFX_ORD_generic_army_leader_1
+				GFX_ORD_generic_army_leader_2
+				GFX_ORD_generic_army_leader_3
+				GFX_ORD_generic_navy_leader_1
+				GFX_ORD_generic_navy_leader_2
+			}
+			female = {
+				GFX_ORD_generic_army_leader_4
+				GFX_ORD_generic_army_leader_5
+				GFX_ORD_generic_army_leader_6
+				GFX_ORD_generic_navy_leader_3
+			}
+		}
+	}
+}
+
 ARK = {
 	army = {
 		male = {

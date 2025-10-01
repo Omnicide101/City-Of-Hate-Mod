@@ -141,6 +141,18 @@ opinion_modifiers = {
 		value = -100
 	}
 	
+	ORD_guardian_lathweyne = {
+		value = 35
+	}
+	
+	ORD_ordorian_meddlers = {
+		value = -15
+	}
+	
+	ORD_denied_spoils = {
+		value = -15
+	}
+	
 	RTH_monarchist_scum = {
 		value = -25
 	}

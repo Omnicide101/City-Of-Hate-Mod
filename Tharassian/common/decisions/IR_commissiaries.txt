@@ -39,232 +39,76 @@ commissiaries = {
 	}
 	
 	ORD_skylynaur_commissiary = {
-		
 		icon = GFX_decision_ordorian_settler_governments
-		
-		allowed = {
-			original_tag = ORD
-		}
-		
+		allowed = { original_tag = ORD }
 		available = {
 			OR = {
-				SKA = {
-					is_puppet_of = ORD
-				}
+				SKA = { is_puppet_of = ORD }
 				owns_state = 146
+				AND = {
+					country_exists = SKA
+					SKA = {
+						all_owned_state = {
+							controller = {
+								OR = {
+									tag = ORD
+									is_subject_of = ORD
+								}
+							}
+						}
+					}
+				}
 			}
 		}
-		
 		cost = 0
-		
-		ai_will_do = {
-			factor = 200
-		}
-		
+		ai_will_do = { factor = 200 }
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
-			NOT = {
-				SKA = {
-					has_cosmetic_tag = SKA_OSG
-				}
-			}
+			NOT = { country_exists = CSK }
 		}
-		
+
 		complete_effect = {
-			
-			146 = {
-				set_state_name = "Skylynaur"
-			}			
-			
-			set_province_name = {
-				id = 7100
-				name = "Skylynaur"
-			}
-			
-			186 = {
-				set_state_name = "Votryss"
-			}
-			
-			187 = {
-				set_state_name = "Witraur"
-			}
-			
-			157 = {
-				set_state_name = "Wysgyn"
-			}
-			
-			149 = {
-				set_state_name = "Hostryn"
-			}
-			
 			hidden_effect = {
 				set_country_flag = ORD_settled_skaelinger
-				if = {
-					limit = {
-						NOT = {
-							country_exists = SKA
-						}
-					}
-					release_autonomy = {
-						target = SKA
-						autonomy_state = autonomy_IR_commissiary
-						freedom_level = 0.5
-					}
-				}
-				
+
 				every_state = {
 					limit = {
-						is_core_of = KUR
-						is_owned_by = ORD
+						OR = {
+							AND = {
+								is_owned_by = ORD
+								NOT = {
+									is_core_of = ORD
+								}
+							}
+							AND = {
+								is_owned_by = EOR
+								NOT = {
+									is_core_of = EOR
+								}
+							}
+							AND = {
+								is_owned_by = SKA
+								is_core_of = SKA
+								controller = {
+									OR = {
+										tag = ORD
+										is_subject_of = ORD
+									}
+								}
+							}
+						}
+						is_oramfell_state = yes
 					}
-					SKA = {
-						transfer_state = PREV #prevent ORD from hanging onto states conquered by SKA
-					}
+					add_core_of = CSK
+					transfer_state_to = CSK
 				}
 				
-				if = {
-					limit = {
-						has_government = puritan
-					}
-					SKA = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 27
-
-							puritan = 60
-						}
-						set_politics = {
-							ruling_party = puritan
-						}
-					}
-				}
-
-				if = {
-					limit = {
-						has_government = theocrat
-					}
-					SKA = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 60
-
-							puritan = 27
-						}
-						
-						set_politics = {
-							ruling_party = theocrat
-						}
-					}
-				}
-				SKA = {
-					set_cosmetic_tag = SKA_OSG
-					load_focus_tree = generic_focus
-				}
-				SKA = {
-					set_party_name = {
-						ideology = puritan
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = theocrat
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = monarchy_absolute
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-				}
-				
-				SKA = {
-					add_ideas = OSG_settler_government
-					delete_unit_template_and_units = {
-						division_template = "Hearthguards"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Tunnel Fighters"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Mountainbreakers"
-					}
-					load_oob = "OSG_empty"
-					set_technology = {
-						dwarven_warriors = 0
-					}
-				}
-				SKA = {
-					create_country_leader = {
-						name = "Solsthyr Isventhe"
-						desc = "politics_OSG_isventhe_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
-						expire = "1965.1.1"
-						ideology = puritan_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Solsthyr Isventhe"
-						desc = "politics_OSG_isventhe_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
-						expire = "1965.1.1"
-						ideology = theocrat_ideology
-						traits = {		
-						}
-					}
-					create_country_leader = {
-						name = "Solsthyr Isventhe"
-						desc = "politics_OSG_isventhe_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_1.dds"
-						expire = "1965.1.1"
-						ideology = monarchy_absolute_ideology
-						traits = {		
-						}
-					}
-					
-					swap_ideas = {
-						remove_idea = dwarf_country
-						add_idea = elf_country
-					}
-					swap_ideas = {
-						remove_idea = dwarven_ancestor_worship_religion
-						add_idea = itherynism_religion
-					}
-					every_state = {
-						limit = {
-							is_core_of = SKA
-						}
-						force_enable_resistance = SKA
-					}
-					
-					set_technology = {
-						dwarven_warriors = 0 #No Dwarf units for you
-					}
-				}
+				set_autonomy = { target = CSK autonomous_state = autonomy_IR_commissiary }
+				every_state = { limit = { is_core_of = CSK NOT = { is_core_of = KUR }} force_enable_resistance = CSK }
 			}
 		}
 	}
+
 	
 	ORD_stauhyte_commissiary = {
 		
@@ -275,2362 +119,400 @@ commissiaries = {
 		}
 		
 		available = {
-			OR = {
-				STA = {
-					is_puppet_of = ORD
-				}
-				owns_state = 192
-			}
-			OR = {
-				HLZ = {
-					is_puppet_of = ORD
-				}
-				owns_state = 232
-			}
-			OR = {
-				NRK = {
-					is_puppet_of = 284
-				}
-				owns_state = 284
-			}
-			OR = {
-				ARK = {
-					is_puppet_of = ORD
-				}
-				owns_state = 206
-			}
+			OR = { STA = { is_puppet_of = ORD } owns_state = 192 AND = { country_exists = STA STA = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+			OR = { HLZ = { is_puppet_of = ORD } owns_state = 232 AND = { country_exists = HLZ HLZ = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+			OR = { NRK = { is_puppet_of = ORD } owns_state = 285 AND = { country_exists = NRK NRK = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+			OR = { ARK = { is_puppet_of = ORD } owns_state = 206 AND = { country_exists = ARK ARK = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
 		}
-		
 		cost = 0
-		
-		ai_will_do = {
-			factor = 200
-		}
+		ai_will_do = { factor = 200 }
 		
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
-			NOT = {
-				STA = {
-					has_cosmetic_tag = STA_OSG
-				}
-			}
+			NOT = { country_exists = CST }
 		}
 		
 		complete_effect = {
-			
 			hidden_effect = {
 				every_state = {
-					limit = {
-						has_dynamic_modifier = {
-							modifier = ORD_drakeskin_guarded_lands
-						}
-					}
-					remove_dynamic_modifier = {
-						modifier = ORD_drakeskin_guarded_lands
-					}
+					limit = { has_dynamic_modifier = { modifier = ORD_drakeskin_guarded_lands } }
+					remove_dynamic_modifier = { modifier = ORD_drakeskin_guarded_lands }
 				}
-				ORD = {
-					set_country_flag = ORD_drakeskins_not_guarding_border
-				}
-			}
-			
-			192 = {
-				set_state_name = "Stauhyte"
-			}
-			
-			set_province_name = {
-				id = 4340
-				name = "Stauhyte"
-			}
-			
-			232 = {
-				set_state_name = "Hysbryn"
-			}
-			
-			set_province_name = {
-				id = 1467
-				name = "Hysbryn"
-			}
-			
-			284 = {
-				set_state_name = "Norothe"
-			}
-			
-			set_province_name = {
-				id = 1316
-				name = "Norothe"
-			}
-			
-			206 = {
-				set_state_name = "Ofynhaur"
-			}
-			
-			set_province_name = {
-				id = 1829
-				name = "Ofynhaur"
-			}
-			
-			238 = {
-				set_state_name = "Nymyngr"
-			}
-			
-			218 = {
-				set_state_name = "Nortyf"
-			}
-			
-			318 = {
-				set_state_name = "Yringaur"
-			}
-			
-			287 = {
-				set_state_name = "Rintygr"
-			}
-			
-			291 = {
-				set_state_name = "Lothinnysorynthe"
-			}
-			
-			209 = {
-				set_state_name = "Onywasr"
-			}
-			
-			305 = {
-				set_state_name = "Varthysaur"
-			}
-			
-			299 = {
-				set_state_name = "Grosbaraur"
-			}
-			
-			294 = {
-				set_state_name = "Ruhyskyst"
+				ORD = {	set_country_flag = ORD_drakeskins_not_guarding_border }
 			}
 			
 			hidden_effect = {
 				set_country_flag = ORD_settled_stahlhof
-			
-				if = {
-					limit = {
-						NOT = {
-							country_exists = STA
-						}
-					}
-					release_autonomy = {
-						target = STA
-						autonomy_state = autonomy_IR_commissiary
-						freedom_level = 0.5
-					}
+				
+				for_each_scope_loop = {
+					array = STA.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CST = { add_state_core = PREV }
+					transfer_state_to = CST
 				}
 				
-				if = {
-					limit = {
-						country_exists = HLZ
-					}
-					STA = {
-						annex_country = {
-							target = HLZ
-							transfer_troops = yes
-						}
-					}
+				for_each_scope_loop = {
+					array = HLZ.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CST = { add_state_core = PREV }
+					transfer_state_to = CST
 				}
 				
-				every_state = {
-					limit = {
-						is_core_of = HLZ
-					}
-					add_core_of = STA
+				for_each_scope_loop = {
+					array = NRK.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CST = { add_state_core = PREV }
+					transfer_state_to = CST
 				}
 				
-				
-				if = {
-					limit = {
-						country_exists = NRK
-					}
-					STA = {
-						annex_country = {
-							target = NRK
-							transfer_troops = yes
-						}
-					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = NRK
-					}
-					add_core_of = STA
-				}
-
-			if = {
-				limit = {
-					country_exists = ARK
-				}
-				STA = {
-					annex_country = {
-						target = ARK
-						transfer_troops = yes
-					}
-				}
-			}
-				every_state = {
-					limit = {
-						is_core_of = ARK
-					}
-					add_core_of = STA
+				for_each_scope_loop = {
+					array = ARK.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CST = { add_state_core = PREV }
+					transfer_state_to = CST
 				}
 				
-				every_state = {
-					limit = {
-						is_core_of = STA
-						is_controlled_by = ROOT
-						NOT = {
-							is_core_of = ROOT
-							is_claimed_by = ROOT
-						}
-					}
-					STA = {
-						transfer_state = PREV
-					}
-				}
-		
-				if = {
-					limit = {
-						has_government = puritan
-					}
-					STA = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 27
-
-							puritan = 60
-						}
-						set_politics = {
-							ruling_party = puritan
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_government = theocrat
-					}
-					STA = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 60
-
-							puritan = 27
-						}
-						
-						set_politics = {
-							ruling_party = theocrat
-						}
-					}
-				}
-				
-				STA = {
-					set_cosmetic_tag = STA_OSG
-					load_focus_tree = generic_focus
-				}
-				
-				STA = {
-					set_party_name = {
-						ideology = puritan
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = theocrat
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = monarchy_absolute
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-				}
-				
-				STA = {
-					add_ideas = OSG_settler_government
-					delete_unit_template_and_units = {
-						division_template = "Stadtwache"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Prinztruppen"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Stahlritter"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Späher"
-					}
-					load_oob = "OSG_empty"
-				}
-				
-				STA = {
-					create_country_leader = {
-						name = "Ystvalin Estonnys"
-						desc = "politics_OSG_estonnys_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
-						expire = "1965.1.1"
-						ideology = puritan_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Ystvalin Estonnys"
-						desc = "politics_OSG_estonnys_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
-						expire = "1965.1.1"
-						ideology = theocrat_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Ystvalin Estonnys"
-						desc = "politics_OSG_estonnys_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_2.dds"
-						expire = "1965.1.1"
-						ideology = monarchy_absolute_ideology
-						traits = {
-						}
-					}
-					swap_ideas = {
-						remove_idea = human_country
-						add_idea = elf_country
-					}
-					swap_ideas = {
-						remove_idea = septism_religion
-						add_idea = itherynism_religion
-					}
-					every_state = {
-						limit = {
-							is_core_of = STA
-						}
-						force_enable_resistance = STA
-					}
-				}
+				set_autonomy = { target = CST autonomous_state = autonomy_IR_commissiary }
+				every_state = { limit = { is_core_of = CST } force_enable_resistance = CST }
 			}
 		}
 	}
 	
 	ORD_nocthorin_commissiary = {
-		
 		icon = GFX_decision_ordorian_settler_governments
-		
-		allowed = {
-			original_tag = ORD
-		}
-		
+		allowed = { original_tag = ORD }
 		available = {
 			OR = {
-				NOC = {
-					is_puppet_of = ORD
-				}
-				owns_state = 228
+				NOC = { is_puppet_of = ORD } owns_state = 228
 			}
-			OR = {
-				SVT = {
-					is_puppet_of = ORD
-				}
-				owns_state = 227
-			}
-			OR = {
-				SPW = {
-					is_puppet_of = 284
-				}
-				owns_state = 226
-			}
-			OR = {
-				TEI = {
-					is_puppet_of = ORD
-				}
-				owns_state = 225
-			}
+			OR = { SVT = { is_puppet_of = ORD } owns_state = 227 AND = { country_exists = SVT SVT = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+			OR = { SPW = { is_puppet_of = ORD } owns_state = 226 AND = { country_exists = SPW SPW = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+			OR = { TEI = { is_puppet_of = ORD } owns_state = 225 AND = { country_exists = TEI TEI = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
 		}
-		
 		cost = 0
-		
-		ai_will_do = {
-			factor = 200
-		}
-		
+		ai_will_do = { factor = 200 }
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
-			NOT = {
-				NOC = {
-					has_cosmetic_tag = NOC_OSG
-				}
-			}
+			NOT = { country_exists = CNC }
 		}
-		
+
 		complete_effect = {
-			
-			228 = {
-				set_state_name = "Nocthorin"
-			}
-			
-			set_province_name = {
-				id = 8473
-				name = "Nocthorin"
-			}
-			
-			227 = {
-				set_state_name = "Itherynthyne"
-			}
-			
-			set_province_name = {
-				id = 9285
-				name = "Itherynthyne"
-			}
-			
-			226 = {
-				set_state_name = "Spauhyte"
-			}
-			
-			set_province_name = {
-				id = 9005
-				name = "Spauhyte"
-			}
-			
-			225 = {
-				set_state_name = "Thyssorthor"
-			}
-			
-			set_province_name = {
-				id = 9224
-				name = "Thyssorthor"
-			}
-			
 			hidden_effect = {
 				set_country_flag = ORD_settled_nochwald
-				if = {
-					limit = {
-						NOT = {
-							country_exists = NOC
-						}
-					}
-					release_autonomy = {
-						target = NOC
-						autonomy_state = autonomy_IR_commissiary
-						freedom_level = 0.5
-					}
-				}
-				
-				if = {
-					limit = {
-						country_exists = SVT
-					}
-					STA = {
-						annex_country = {
-							target = SVT
-							transfer_troops = yes
-						}
-					}
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = SVT
-					}
-					add_core_of = SVT
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = SVT
-					}
-					add_core_of = NOC
-				}
-				
-				if = {
-					limit = {
-						country_exists = SPW
-					}
-					STA = {
-						annex_country = {
-							target = SPW
-							transfer_troops = yes
-						}
-					}
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = SPW
-					}
-					add_core_of = NOC
-				}
-				
-				if = {
-					limit = {
-						country_exists = TEI
-					}
-					STA = {
-						annex_country = {
-							target = TEI
-							transfer_troops = yes
-						}
-					}
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = TEI
-					}
-					add_core_of = NOC
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = NOC
-						is_controlled_by = ROOT
-						NOT = {
-							is_core_of = ROOT
-							is_claimed_by = ROOT
-						}
-					}
-					NOC = {
-						transfer_state = PREV
-					}
-				}
-			
-				if = {
-					limit = {
-						has_government = puritan
-					}
-					NOC = {
-						set_popularities = {
 
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 27
-
-							puritan = 60
-						}
-						set_politics = {
-							ruling_party = puritan
-						}
-					}
+				for_each_scope_loop = {
+					array = NOC.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CNC = { add_state_core = PREV }
+					transfer_state_to = CNC
 				}
-				
-				if = {
-					limit = {
-						has_government = theocrat
-					}
-					NOC = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 60
-
-							puritan = 27
-						}
-						set_politics = {
-							ruling_party = theocrat
-						}
-					}
+				for_each_scope_loop = {
+					array = SVT.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CNC = { add_state_core = PREV }
+					transfer_state_to = CNC
 				}
-				
-				NOC = {
-					set_cosmetic_tag = NOC_OSG
-					load_focus_tree = generic_focus
+				for_each_scope_loop = {
+					array = SPW.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CNC = { add_state_core = PREV }
+					transfer_state_to = CNC
 				}
-				
-				NOC = {
-					set_party_name = {
-						ideology = puritan
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = theocrat
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = monarchy_absolute
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
+				for_each_scope_loop = {
+					array = TEI.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CNC = { add_state_core = PREV }
+					transfer_state_to = CNC
 				}
-				
-				NOC = {
-					add_ideas = OSG_settler_government
-					delete_unit_template_and_units = {
-						division_template = "Stadtwache"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Prinztruppen"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Prinzritter"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Späher"
-					}
-					load_oob = "OSG_empty"
-				}
-			
-				NOC = {
-					create_country_leader = {
-						name = "Ystala Verysne"
-						desc = "politics_OSG_verysne_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
-						expire = "1965.1.1"
-						ideology = puritan_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Ystala Verysne"
-						desc = "politics_OSG_verysne_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
-						expire = "1965.1.1"
-						ideology = theocrat_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Ystala Verysne"
-						desc = "politics_OSG_verysne_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_4.dds"
-						expire = "1965.1.1"
-						ideology = monarchy_absolute_ideology
-						traits = {
-						}
-					}
-					swap_ideas = {
-						remove_idea = human_country
-						add_idea = elf_country
-					}
-					swap_ideas = {
-						remove_idea = septism_religion
-						add_idea = itherynism_religion
-					}
-					every_state = {
-						limit = {
-							is_core_of = NOC
-						}
-						force_enable_resistance = NOC
-					}
-				}
+
+				set_autonomy = { target = CNC autonomous_state = autonomy_IR_commissiary }
+				every_state = { limit = { is_core_of = CNC } force_enable_resistance = CNC }
 			}
 		}
 	}
-	
+
 	ORD_wystine_commissiary = {
-		
 		icon = GFX_decision_ordorian_settler_governments
-		
-		allowed = {
-			original_tag = ORD
-		}
-		
+		allowed = { original_tag = ORD }
 		available = {
+			OR = { WIS = { is_puppet_of = ORD } owns_state = 234 AND = { country_exists = WIS WIS = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+			OR = { WSZ = { is_puppet_of = ORD } owns_state = 235 AND = { country_exists = WSZ WSZ = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+			OR = { FTH = { is_puppet_of = ORD } owns_state = 236 AND = { country_exists = FTH FTH = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+			OR = { SNF = { is_puppet_of = ORD } owns_state = 224 AND = { country_exists = SNF SNF = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
 			OR = {
-				WIS = {
-					is_puppet_of = ORD
-				}
-				owns_state = 234
-			}
-			OR = {
-				WSZ = {
-					is_puppet_of = ORD
-				}
-				owns_state = 235
-			}
-			OR = {
-				FTH = {
-					is_puppet_of = 284
-				}
-				owns_state = 236
-			}
-			OR = {
-				SNF = {
-					is_puppet_of = ORD
-				}
-				owns_state = 224
-			}
-			OR = {
-				UNG = {
-					is_puppet_of = ORD
-				}
-				FAU = {
-					is_puppet_of = ORD
-				}
+				UNG = { is_puppet_of = ORD }
+				AND = { country_exists = UNG UNG = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } }
+				FAU = { is_puppet_of = ORD }
+				AND = { country_exists = FAU FAU = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } }
 				owns_state = 233
 			}
 		}
-		
 		cost = 0
-		
-		ai_will_do = {
-			factor = 200
-		}
-		
+		ai_will_do = { factor = 200 }
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
-			NOT = {
-				WIS = {
-					has_cosmetic_tag = WIS_OSG
-				}
-			}
+			NOT = { country_exists = CWS }
 		}
-		
+
 		complete_effect = {
-			234 = {
-				set_state_name = "Wystine"
-			}
-			
-			set_province_name = {
-				id = 4748
-				name = "Wystine"
-			}
-			
-			235 = {
-				set_state_name = "Anthysione"
-			}
-			
-			set_province_name = {
-				id = 4080
-				name = "Anthysione"
-			}
-			
-			236 = {
-				set_state_name = "Marysione"
-			}
-			
-			set_province_name = {
-				id = 8753
-				name = "Marysione"
-			}
-			
-			224 = {
-				set_state_name = "Yghalissa"
-			}
-			
-			set_province_name = {
-				id = 1754
-				name = "Yghalissa"
-			}
-			
-			233 = {
-				set_state_name = "Lilyasorynthe"
-			}
-			
-			set_province_name = {
-				id = 807
-				name = "Lilyasorynthe"
-			}
-			
 			hidden_effect = {
 				set_country_flag = ORD_settled_wistingen
-				if = {
-					limit = {
-						NOT = {
-							country_exists = WIS
-						}
-					}
-					release_autonomy = {
-						target = WIS
-						autonomy_state = autonomy_IR_commissiary
-						freedom_level = 0.5
-					}
+
+				for_each_scope_loop = {
+					array = WIS.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CWS = { add_state_core = PREV }
+					transfer_state_to = CWS
 				}
-				
-				if = {
-					limit = {
-						country_exists = WSZ
-					}
-					WIS = {
-						annex_country = {
-							target = WSZ
-							transfer_troops = yes
-						}
-					}
+				for_each_scope_loop = {
+					array = WSZ.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CWS = { add_state_core = PREV }
+					transfer_state_to = CWS
 				}
-				
-				every_state = {
-					limit = {
-						is_core_of = WSZ
-					}
-					add_core_of = WSZ
+				for_each_scope_loop = {
+					array = FTH.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CWS = { add_state_core = PREV }
+					transfer_state_to = CWS
 				}
-				
-				every_state = {
-					limit = {
-						is_core_of = WSZ
-					}
-					add_core_of = WIS
+				for_each_scope_loop = {
+					array = SNF.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CWS = { add_state_core = PREV }
+					transfer_state_to = CWS
 				}
-				
-				
-				if = {
-					limit = {
-						country_exists = FTH
-					}
-					WIS = {
-						annex_country = {
-							target = FTH
-							transfer_troops = yes
-						}
-					}
+				for_each_scope_loop = {
+					array = UNG.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CWS = { add_state_core = PREV }
+					transfer_state_to = CWS
 				}
-				
-				every_state = {
-					limit = {
-						is_core_of = FTH
-					}
-					add_core_of = WIS
-				}
-				
-				if = {
-					limit = {
-						country_exists = SNF
-					}
-					WIS = {
-						annex_country = {
-							target = SNF
-							transfer_troops = yes
-						}
-					}
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = SNF
-					}
-					add_core_of = WIS
-				}
-				
-				if = {
-					limit = {
-						country_exists = UNG
-					}
-					WIS = {
-						annex_country = {
-							target = UNG
-							transfer_troops = yes
-						}
-					}
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = UNG
-					}
-					add_core_of = WIS
-				}
-				
-				if = {
-					limit = {
-						country_exists = FAU
-					}
-					WIS = {
-						annex_country = {
-							target = FAU
-							transfer_troops = yes
-						}
-					}
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = FAU
-					}
-					add_core_of = WIS
-				}
-			
-				every_state = {
-					limit = {
-						is_core_of = WIS
-						is_controlled_by = ROOT
-						NOT = {
-							is_core_of = ROOT
-							is_claimed_by = ROOT
-						}
-					}
-					WIS = {
-						transfer_state = PREV
-					}
+				for_each_scope_loop = {
+					array = FAU.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CWS = { add_state_core = PREV }
+					transfer_state_to = CWS
 				}
 
-				if = {
-					limit = {
-						has_government = puritan
-					}
-					WIS = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 27
-
-							puritan = 60
-						}
-						set_politics = {
-							ruling_party = puritan
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_government = theocrat
-					}
-					WIS = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 60
-
-							puritan = 27
-						}
-						set_politics = {
-							ruling_party = theocrat
-						}
-					}
-				}
-				
-				WIS = {
-					set_cosmetic_tag = WIS_OSG
-					load_focus_tree = generic_focus
-				}
-				
-				WIS = {
-					set_party_name = {
-						ideology = puritan
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = theocrat
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = monarchy_absolute
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-				}
-				
-				WIS = {
-					add_ideas = OSG_settler_government
-					delete_unit_template_and_units = {
-						division_template = "Stadtwache"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Prinztruppen"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Prinzritter"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Späher"
-					}
-					load_oob = "OSG_empty"
-				}
-
-				WIS = {
-					create_country_leader = {
-						name = "Ranestha Lysorin"
-						desc = "politics_OSG_lysorin_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
-						expire = "1965.1.1"
-						ideology = puritan_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Ranestha Lysorin"
-						desc = "politics_OSG_lysorin_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
-						expire = "1965.1.1"
-						ideology = theocrat_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Ranestha Lysorin"
-						desc = "politics_OSG_lysorin_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_5.dds"
-						expire = "1965.1.1"
-						ideology = monarchy_absolute_ideology
-						traits = {
-						}
-					}
-					swap_ideas = {
-						remove_idea = human_country
-						add_idea = elf_country
-					}
-					swap_ideas = {
-						remove_idea = anzella_patron
-						add_idea = itherynism_religion
-					}
-					every_state = {
-						limit = {
-							is_core_of = WIS
-						}
-						force_enable_resistance = WIS
-					}
-				}
+				set_autonomy = { target = CWS autonomous_state = autonomy_IR_commissiary }
+				every_state = { limit = { is_core_of = CWS } force_enable_resistance = CWS }
 			}
 		}
 	}
-	
+
 	ORD_nasthyrin_commissiary = {
-		
 		icon = GFX_decision_ordorian_settler_governments
-		
-		allowed = {
-			original_tag = ORD
-		}
-		
+		allowed = { original_tag = ORD }
 		available = {
-			OR = {
-				GMR = {
-					is_puppet_of = ORD
-				}
-				NPC = {
-					is_puppet_of = ORD
-				}
+			OR = { 
+				GMR = { is_puppet_of = ORD }
+				AND = { country_exists = GMR GMR = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } }
+				NPC = { is_puppet_of = ORD }
+				AND = { country_exists = NPC NPC = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } }
 				AND = {
-					OR = {
-						NAS = {
-							is_puppet_of = ORD
-						}
-						owns_state = 20
-					}
-					OR = {
-						KRT = {
-							is_puppet_of = ORD
-						}
-						owns_state = 17
-					}
+					OR = { NAS = { is_puppet_of = ORD } owns_state = 20 AND = { country_exists = NAS NAS = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					OR = { KRT = { is_puppet_of = ORD } owns_state = 17 AND = { country_exists = KRT KRT = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
 				}
 			}
 		}
-		
 		cost = 0
-		
-		ai_will_do = {
-			factor = 200
-		}
-		
+		ai_will_do = { factor = 200 }
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
-			NOT = {
-				NAS = {
-					has_cosmetic_tag = NAS_OSG
-				}
-			}
+			NOT = { country_exists = CNS }
 		}
-		
+
 		complete_effect = {
-			
-			20 = {
-				set_state_name = "Nasthyrin"
-			}
-			
-			set_province_name = {
-				id = 829
-				name = "Nasthyrin"
-			}
-
-			17 = {
-				set_state_name = "Cyrthinnis"
-			}
-			
-			set_province_name = {
-				id = 6633
-				name = "Cyrthinnis"
-			}
-
-			26 = {
-				set_state_name = "Vislythe"
-			}			
-
-			75 = {
-				set_state_name = "Splythwiss"
-			}
-			
-			723 = {
-				set_state_name = "Thyrrintyl"
-			}			
-			
-			12 = {
-				set_state_name = "Xorynthaur"
-			}
-			
 			hidden_effect = {
 				set_country_flag = ORD_settled_nastrogdar
-				NAS = {
-					add_state_core = 25
-					add_state_core = 20
-					add_state_core = 21
-					add_state_core = 22
-					add_state_core = 19
-					add_state_core = 36
-					add_state_core = 50
-					add_state_core = 26
-					add_state_core = 75
-					add_state_core = 73
-					add_state_core = 723
+
+				for_each_scope_loop = {
+					array = NAS.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CNS = { add_state_core = PREV }
+					transfer_state_to = CNS
 				}
-				
-				KRT = {
-					add_state_core = 16
-					add_state_core = 17
-					add_state_core = 18
-					add_state_core = 30
-					add_state_core = 19
-					add_state_core = 23
-					add_state_core = 24
-					add_state_core = 12
-					add_state_core = 27
-					add_state_core = 35
-				}
-				
-				if = {
-					limit = {
-						NOT = {
-							country_exists = NAS
-						}
-					}
-					release_autonomy = {
-						target = NAS
-						autonomy_state = autonomy_IR_commissiary
-						freedom_level = 0.5
-					}
-				}
-				
-				if = {
-					limit = {
-						country_exists = KRT
-					}
-					NAS = {
-						annex_country = {
-							target = KRT
-							transfer_troops = yes
-						}
-					}
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = KRT
-					}
-					add_core_of = KRT
-				}
-			
-			
-				every_state = {
-					limit = {
-						is_core_of = KRT
-					}
-					add_core_of = NAS
+				for_each_scope_loop = {
+					array = KRT.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CNS = { add_state_core = PREV }
+					transfer_state_to = CNS
 				}
 
-				every_state = {
-					limit = {
-						is_core_of = NAS
-						is_controlled_by = ROOT
-						NOT = {
-							is_core_of = ROOT
-							is_claimed_by = ROOT
-						}
-					}
-					NAS = {
-						transfer_state = PREV
-					}
-				}
-
-				if = {
-					limit = {
-						has_government = puritan
-					}
-					NAS = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 27
-
-							puritan = 60
-						}
-						set_politics = {
-							ruling_party = puritan
-						}
-					}
-				}
-				
-				if = {
-					limit = {
-						has_government = theocrat
-					}
-					NAS = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 60
-
-							puritan = 27
-						}
-						set_politics = {
-							ruling_party = theocrat
-						}
-					}
-				}
-				
-				NAS = {
-					set_cosmetic_tag = NAS_OSG
-				}
-				
-				NAS = {
-					set_party_name = {
-						ideology = puritan
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = theocrat
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = monarchy_absolute
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-				}
-				
-				NAS = {
-					add_ideas = OSG_settler_government
-					delete_unit_template_and_units = {
-						division_template = "Farmer's Guard"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Fieldwatch"
-					}
-					load_oob = "OSG_empty"
-				}
-
-				NAS = {
-					create_country_leader = {
-						name = "Jysthar Olthore"
-						desc = "politics_OSG_olthore_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
-						expire = "1965.1.1"
-						ideology = puritan_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Jysthar Olthore"
-						desc = "politics_OSG_olthore_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
-						expire = "1965.1.1"
-						ideology = theocrat_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Jysthar Olthore"
-						desc = "politics_OSG_olthore_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_land_3.dds"
-						expire = "1965.1.1"
-						ideology = monarchy_absolute_ideology
-						traits = {
-						}
-					}
-					swap_ideas = {
-						remove_idea = human_country
-						add_idea = elf_country
-					}
-					swap_ideas = {
-						remove_idea = lorthorism_religion
-						add_idea = itherynism_religion
-					}
-					every_state = {
-						limit = {
-							is_core_of = NAS
-						}
-						force_enable_resistance = NAS
-					}
-				}
+				set_autonomy = { target = CNS autonomous_state = autonomy_IR_commissiary }
+				every_state = { limit = { is_core_of = CNS } force_enable_resistance = CNS }
 			}
 		}
 	}
 	
 	ORD_triferyn_commissiary = {
-		
 		icon = GFX_decision_ordorian_settler_governments
-		
-		allowed = {
-			original_tag = ORD
-		}
-		
+		allowed = { original_tag = ORD }
 		available = {
-			OR = {
-				GMR = {
-					is_puppet_of = ORD
-				}
-				NPC = {
-					is_puppet_of = ORD
-				}
+			OR = { 
+				GMR = { is_puppet_of = ORD }
+				AND = { country_exists = GMR GMR = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } }
+				NPC = { is_puppet_of = ORD }
+				AND = { country_exists = NPC NPC = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } }
 				AND = {
-					OR = {
-						TRI = {
-							is_puppet_of = ORD
-						}
-						owns_state = 29
-					}
-					OR = {
-						NAV = {
-							is_puppet_of = ORD
-						}
-						owns_state = 72
-					}
+					OR = { TRI = { is_puppet_of = ORD } owns_state = 29 AND = { country_exists = TRI TRI = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					OR = { NAV = { is_puppet_of = ORD } owns_state = 72 AND = { country_exists = NAV NAV = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					OR = { KAL = { is_puppet_of = ORD } owns_state = 34 AND = { country_exists = KAL KAL = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
 				}
 			}
 		}
-		
 		cost = 0
-		
-		ai_will_do = {
-			factor = 200
-		}
-		
+		ai_will_do = { factor = 200 }
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
-			NOT = {
-				TRI = {
-					has_cosmetic_tag = TRI_OSG
-				}
-			}
+			NOT = { country_exists = CTR }
 		}
-		
+
 		complete_effect = {
-			
-			29 = {
-				set_state_name = "Triferyn"
-			}			
-			set_province_name = {
-				id = 2379
-				name = "Triferyn"
-			}
-			
-			34 = {
-				set_state_name = "Cylthis"
-			}			
-			set_province_name = {
-				id = 6106
-				name = "Cylthis"
-			}
-			
-			72 = {
-				set_state_name = "Yghalmarys"
-			}			
-			set_province_name = {
-				id = 5840
-				name = "Yghalmarys"
-			}
-			
 			hidden_effect = {
 				set_country_flag = ORD_settled_trifersi
 				
-				TRI = {
-					add_state_core = 67
-					add_state_core = 29
-					add_state_core = 43
-					add_state_core = 54
-					add_state_core = 44
-					add_state_core = 53
+				for_each_scope_loop = {
+					array = TRI.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CTR = { add_state_core = PREV }
+					transfer_state_to = CTR
 				}
-				
-				NAV = {
-					add_state_core = 72
-					add_state_core = 71
-					add_state_core = 66
-					add_state_core = 70
-					add_state_core = 69
-					add_state_core = 68
+				for_each_scope_loop = {
+					array = NAV.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CTR = { add_state_core = PREV }
+					transfer_state_to = CTR
 				}
-				
-				KAL = {
-					add_state_core = 65
-					add_state_core = 55
-					add_state_core = 64
-					add_state_core = 57
-					add_state_core = 58
-					add_state_core = 45
-					add_state_core = 52
-					add_state_core = 58
-					add_state_core = 61
-					add_state_core = 59
-					add_state_core = 60
-					add_state_core = 34
-					add_state_core = 63
-					add_state_core = 62
-					add_state_core = 56
-					add_state_core = 51
-					add_state_core = 49
-				}	
-					
-				if = {
-					limit = {
-						NOT = {
-							country_exists = TRI
-						}
-					}
-					release_autonomy = {
-						target = TRI
-						autonomy_state = autonomy_IR_commissiary
-						freedom_level = 0.5
-					}
-				}
-				
-				if = {
-					limit = {
-						country_exists = NAV
-					}
-					TRI = {
-						annex_country = {
-							target = NAV
-							transfer_troops = yes
-						}
-					}
-				}
-				
-				if = {
-					limit = {
-						country_exists = KAL
-					}
-					TRI = {
-						annex_country = {
-							target = KAL
-							transfer_troops = yes
-						}
-					}
+				for_each_scope_loop = {
+					array = KAL.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CTR = { add_state_core = PREV }
+					transfer_state_to = CTR
 				}
 
-				every_state = {
-					limit = {
-						is_core_of = KAL
-					}
-					add_core_of = TRI
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = NAV
-					}
-					add_core_of = NAV
-				}
-
-				every_state = {
-					limit = {
-						is_core_of = NAV
-					}
-					add_core_of = TRI
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = TRI
-						is_controlled_by = ROOT
-						NOT = {
-							is_core_of = ROOT
-							is_claimed_by = ROOT
-						}
-					}
-					TRI = {
-						transfer_state = PREV
-					}
-				}
-
-				if = {
-					limit = {
-						has_government = puritan
-					}
-					TRI = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 27
-
-							puritan = 60
-						}
-						set_politics = {
-							ruling_party = puritan
-						}
-					}
-				}
-				
-				if = {
-					limit = {
-						has_government = theocrat
-					}
-					TRI = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 60
-
-							puritan = 27
-						}
-						set_politics = {
-							ruling_party = theocrat
-						}
-					}
-				}
-				
-				TRI = {
-					set_cosmetic_tag = TRI_OSG
-				}
-				
-				TRI = {
-					set_party_name = {
-						ideology = puritan
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = theocrat
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = monarchy_absolute
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-				}
-			
-				TRI = {
-					add_ideas = OSG_settler_government
-					delete_unit_template_and_units = {
-						division_template = "City Guard"
-					}
-					delete_unit_template_and_units = {
-						division_template = "King's Men"
-					}
-					load_oob = "OSG_empty"
-				}
-
-				TRI = {
-					create_country_leader = {
-						name = "Alenthys Isthanora"
-						desc = "politics_OSG_isthanora_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
-						expire = "1965.1.1"
-						ideology = puritan_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Alenthys Isthanora"
-						desc = "politics_OSG_isthanora_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
-						expire = "1965.1.1"
-						ideology = theocrat_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Alenthys Isthanora"
-						desc = "politics_OSG_isthanora_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_2.dds"
-						expire = "1965.1.1"
-						ideology = monarchy_absolute_ideology
-						traits = {
-						}
-					}
-					swap_ideas = {
-						remove_idea = human_country
-						add_idea = elf_country
-					}
-					swap_ideas = {
-						remove_idea = lorthorism_religion
-						add_idea = itherynism_religion
-					}
-					every_state = {
-						limit = {
-							is_core_of = TRI
-						}
-						force_enable_resistance = TRI
-					}
-				}
+				set_autonomy = { target = CTR autonomous_state = autonomy_IR_commissiary }
+				every_state = { limit = { is_core_of = CTR } force_enable_resistance = CTR }
 			}
 		}
 	}
 	
 	ORD_irythyn_commissiary = {
-		
 		icon = GFX_decision_ordorian_settler_governments
-		
-		allowed = {
-			original_tag = ORD
-		}
-		
+		allowed = { original_tag = ORD }
 		available = {
-			OR = {
-				GMR = {
-					is_puppet_of = ORD
-				}
-				NPC = {
-					is_puppet_of = ORD
-				}
+			OR = { 
+				GMR = { is_puppet_of = ORD }
+				AND = { country_exists = GMR GMR = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } }
+				NPC = { is_puppet_of = ORD }
+				AND = { country_exists = NPC NPC = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } }
 				AND = {
-					OR = {
-						IRT = {
-							is_puppet_of = ORD
-						}
-						owns_state = 1
-					}
-					OR = {
-						FEL = {
-							is_puppet_of = ORD
-						}
-						owns_state = 28
-					}
+					OR = { IRT = { is_puppet_of = ORD } owns_state = 1 AND = { country_exists = IRT IRT = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					OR = { FEL = { is_puppet_of = ORD } owns_state = 28 AND = { country_exists = FEL FEL = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
 				}
 			}
 		}
-		
 		cost = 0
-		
-		ai_will_do = {
-			factor = 200
-		}
-		
+		ai_will_do = { factor = 200 }
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
-			NOT = {
-				IRT = {
-					has_cosmetic_tag = IRT_OSG
-				}
-			}
+			NOT = { country_exists = CIR }
 		}
-		
+
 		complete_effect = {
-			
-			1 = {
-				set_state_name = "Irythyn"
-			}			
-			set_province_name = {
-				id = 3069
-				name = "Irythyn"
-			}
-			
-			28 = {
-				set_state_name = "Fylwyne"
-			}
-			
-			set_province_name = {
-				id = 4730
-				name = "Fylwyne"
-			}
-			
 			hidden_effect = {
 				set_country_flag = ORD_settled_irenthar
 				
-				IRT = {
-					add_state_core = 1
-					add_state_core = 2
-					add_state_core = 3
-					add_state_core = 4
-					add_state_core = 5
-					add_state_core = 6
-					add_state_core = 7
-					add_state_core = 8
-					add_state_core = 9
-					add_state_core = 10
-					add_state_core = 11
-					add_state_core = 13
-					add_state_core = 31
-					add_state_core = 14
+				for_each_scope_loop = {
+					array = IRT.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CIR = { add_state_core = PREV }
+					transfer_state_to = CIR
 				}
-				
-				FEL = {
-					add_state_core = 28
-					add_state_core = 32
-					add_state_core = 37
-					add_state_core = 41
-					add_state_core = 15
-					add_state_core = 38
-					add_state_core = 39
-					add_state_core = 42
-					add_state_core = 47
-					add_state_core = 46
-					add_state_core = 33
-					add_state_core = 40
-					add_state_core = 48
-					add_state_core = 74
-				}
-					
-				if = {
-					limit = {
-						NOT = {
-							country_exists = IRT
-						}
-					}
-					release_autonomy = {
-						target = IRT
-						autonomy_state = autonomy_IR_commissiary
-						freedom_level = 0.5
-					}
-				}
-				
-				if = {
-					limit = {
-						country_exists = FEL
-					}
-					IRT = {
-						annex_country = {
-							target = FEL
-							transfer_troops = yes
-						}
-					}
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = FEL
-					}
-					add_core_of = FEL
+				for_each_scope_loop = {
+					array = FEL.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CIR = { add_state_core = PREV }
+					transfer_state_to = CIR
 				}
 
-				every_state = {
-					limit = {
-						is_core_of = FEL
-					}
-					add_core_of = IRT
-				}
-
-				every_state = {
-					limit = {
-						is_core_of = IRT
-						is_controlled_by = ROOT
-						NOT = {
-							is_core_of = ROOT
-							is_claimed_by = ROOT
-						}
-					}
-					IRT = {
-						transfer_state = PREV
-					}
-				}
-
-				if = {
-					limit = {
-						has_government = puritan
-					}
-					IRT = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 27
-
-							puritan = 60
-						}
-						set_politics = {
-							ruling_party = puritan
-						}
-					}
-				}
-				
-				if = {
-					limit = {
-						has_government = theocrat
-					}
-					IRT = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 60
-
-							puritan = 27
-						}
-						set_politics = {
-							ruling_party = theocrat
-						}
-					}
-				}
-				
-				IRT = {
-					set_cosmetic_tag = IRT_OSG
-				}
-				
-				IRT = {
-					set_party_name = {
-						ideology = puritan
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = theocrat
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = monarchy_absolute
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-				}
-				
-				IRT = {
-					add_ideas = OSG_settler_government
-					
-					delete_unit_template_and_units = {
-						division_template = "Freewatch"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Silver Gargoyles"
-					}
-					load_oob = "OSG_empty"
-				}
-
-				IRT = {
-					create_country_leader = {
-						name = "Algothyne Lysthennia"
-						desc = "politics_OSG_lysthennia_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
-						expire = "1965.1.1"
-						ideology = puritan_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Algothyne Lysthennia"
-						desc = "politics_OSG_lysthennia_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
-						expire = "1965.1.1"
-						ideology = theocrat_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Algothyne Lysthennia"
-						desc = "politics_OSG_lysthennia_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_1.dds"
-						expire = "1965.1.1"
-						ideology = monarchy_absolute_ideology
-						traits = {
-						}
-					}
-					swap_ideas = {
-						remove_idea = human_country
-						add_idea = elf_country
-					}
-					swap_ideas = {
-						remove_idea = lorthorism_religion
-						add_idea = itherynism_religion
-					}
-					every_state = {
-						limit = {
-							is_core_of = IRT
-						}
-						force_enable_resistance = IRT
-					}
-				}
+				set_autonomy = { target = CIR autonomous_state = autonomy_IR_commissiary }
+				every_state = { limit = { is_core_of = CIR } force_enable_resistance = CIR }
 			}
 		}
 	}
-	
+
 	ORD_pyrkhiv_commissiary = {
-		
 		icon = GFX_decision_ordorian_settler_governments
-		
-		allowed = {
-			original_tag = ORD
-		}
-		
+		allowed = { original_tag = ORD }
 		available = {
-			OR = {
-				PRK = {
-					is_puppet_of = ORD
-				}
-				owns_state = 413
-			}
+			OR = { PRK = { is_puppet_of = ORD } owns_state = 413 AND = { country_exists = PRK PRK = { all_owned_state = { controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
 		}
-		
 		cost = 0
-		
-		ai_will_do = {
-			factor = 200
-		}
-		
+		ai_will_do = { factor = 200 }
 		visible = {
 			has_country_flag = ORD_settler_governments_enabled
-			NOT = {
-				PRK = {
-					has_cosmetic_tag = PRK_OSG
-				}
-			}
+			NOT = { country_exists = CPK }
 		}
-		
-		complete_effect = {
-			
-			413 = {
-				set_state_name = "Ythele-Resderin"
-			}			
-			set_province_name = {
-				id = 4527
-				name = "Ythele-Resderin"
-			}
-			
-			414 = {
-				set_state_name = "Vythcyne"
-			}			
-			set_province_name = {
-				id = 9576
-				name = "Vythcyne"
-			}
-			
-			415= {
-				set_state_name = "Rilvyne"
-			}			
-			set_province_name = {
-				id = 1453
-				name = "Rilvyne"
-			}
-			
-			416= {
-				set_state_name = "Karcyn"
-			}			
-			set_province_name = {
-				id = 5418
-				name = "Karcyn"
-			}
-			
-			417= {
-				set_state_name = "Vlincyne"
-			}			
-			set_province_name = {
-				id = 3287
-				name = "Vlincyne"
-			}
-			
-			418= {
-				set_state_name = "Lincyne"
-			}			
-			set_province_name = {
-				id = 9478
-				name = "Lincyne"
-			}
-			
-			419= {
-				set_state_name = "Wyltrivyn"
-			}			
-			set_province_name = {
-				id = 2171
-				name = "Wyltrivyn"
-			}
-			
-			420= {
-				set_state_name = "Nevythkyn"
-			}			
-			set_province_name = {
-				id = 3038
-				name = "Nevythkyn"
-			}
-			
-			421= {
-				set_state_name = "Stovyne"
-			}			
-			set_province_name = {
-				id = 4805
-				name = "Stovyne"
-			}
-			
-			329= {
-				set_state_name = "Cysrin"
-			}			
-			set_province_name = {
-				id = 1491
-				name = "Cysrin"
-			}
-			
-			421= {
-				set_state_name = "Stovyne"
-			}			
-			set_province_name = {
-				id = 4805
-				name = "Stovyne"
-			}
-			
-			
-			627= {
-				set_state_name = "Mincyn"
-			}			
-			set_province_name = {
-				id = 575
-				name = "Mincyn"
-			}
 
+		complete_effect = {
 			hidden_effect = {
 				set_country_flag = ORD_settled_perkavland
-				every_state = {
-					limit = {
-						OR ={
-							is_core_of = PRK
-							is_core_of = NVT
-							is_core_of = KRL
-							is_core_of = SVC
-							is_core_of = VTZ
-							is_core_of = RLV
-							is_core_of = WLT
-							is_core_of = VLN
-							is_core_of = KRZ
-							is_core_of = LNK
-						}
-					}
-					add_core_of = PRK
-					if = {
-						limit = {
-							OR = {
-								is_owned_by = ORD
-								any_country = {
-									is_subject_of = ORD
-									owns_state = PREV
-								}
-							}
-							is_core_of = PRK
-						}
-						PRK = {
-							transfer_state = PREV
-						}
-					}
-				}
-				if = {
-					limit = {
-						NOT = {
-							country_exists = PRK
-						}
-					}
-					release_autonomy = {
-						target = PRK
-						autonomy_state = autonomy_IR_commissiary
-						freedom_level = 0.5
-					}
-				}
-			
-				if = {
-					limit = {
-						has_government = puritan
-					}
-					PRK = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 27
-
-							puritan = 60
-						}
-						set_politics = {
-							ruling_party = puritan
-						}
-					}
-				}
-
-				if = {
-					limit = {
-						has_government = theocrat
-					}
-					PRK = {
-						set_popularities = {
-
-							monarchy_absolute = 13
-
-							monarchy_constitutional = 0
-
-							republic_peasant = 0
-
-							republic_aristocrat = 0
-
-							republic_merchant = 0
-
-							theocrat = 60
-
-							puritan = 27
-						}
-						
-						set_politics = {
-							ruling_party = theocrat
-						}
-					}
-				}
 				
-				PRK = {
-					set_cosmetic_tag = PRK_OSG
+				for_each_scope_loop = { array = PRK.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CPK = { add_state_core = PREV }
+					transfer_state_to = CPK
 				}
-				PRK = {
-					set_party_name = {
-						ideology = puritan
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = theocrat
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
-					set_party_name = {
-						ideology = monarchy_absolute
-						long_name = OSG_party_name
-						name = OSG_party_name
-					}
+				for_each_scope_loop = { array = NVT.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CPK = { add_state_core = PREV }
+					transfer_state_to = CPK
 				}
-				
-				PRK = {
-					add_ideas = OSG_settler_government
-					delete_unit_template_and_units = {
-						division_template = "Stráže"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Wojownicy"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Fosztogató"
-					}
-					delete_unit_template_and_units = {
-						division_template = "Vozhdi"
-					}
-					load_oob = "OSG_empty"
-					
-					set_technology = {
-						perkav_raiders = 0 #No Perkav units for you
-						perkav_raiders_naval = 0
-					}
+				for_each_scope_loop = { array = KRL.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CPK = { add_state_core = PREV }
+					transfer_state_to = CPK
 				}
-				
-				if = {
-					limit = {
-						PRK = {
-							has_idea = PRK_tribal_nation
-						}
-					}
-					PRK = {
-						remove_ideas = PRK_tribal_nation
-					}
+				for_each_scope_loop = { array = SVC.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CPK = { add_state_core = PREV }
+					transfer_state_to = CPK
 				}
-				
-				if = {
-					limit = {
-						PRK = {
-							has_idea = PRK_administrative_reform
-						}
-					}
-					PRK = {
-						remove_ideas = PRK_administrative_reform
-					}
+				for_each_scope_loop = { array = VTZ.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CPK = { add_state_core = PREV }
+					transfer_state_to = CPK
 				}
-				
-				if = {
-					limit = {
-						PRK = {
-							has_idea = PRK_perkav_census_idea
-						}
-					}
-					PRK = {
-						remove_ideas = PRK_perkav_census_idea
-					}
+				for_each_scope_loop = { array = RLV.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CPK = { add_state_core = PREV }
+					transfer_state_to = CPK
+				}
+				for_each_scope_loop = { array = WLT.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CPK = { add_state_core = PREV }
+					transfer_state_to = CPK
+				}
+				for_each_scope_loop = { array = VLN.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CPK = { add_state_core = PREV }
+					transfer_state_to = CPK
+				}
+				for_each_scope_loop = { array = KRZ.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CPK = { add_state_core = PREV }
+					transfer_state_to = CPK
+				}
+				for_each_scope_loop = { array = LNK.original_cores
+					if = { limit = { OR = { owner = { OR = { tag = ORD is_subject_of = ORD } } AND = { owner = { has_capitulated = yes } controller = { OR = { tag = ORD is_subject_of = ORD } } } } } }
+					CPK = { add_state_core = PREV }
+					transfer_state_to = CPK
 				}
 
-				if = {
-					limit = {
-						PRK = {
-							has_idea = PRK_perkav_script
-						}
-					}
-					PRK = {
-						remove_ideas = PRK_perkav_script
-					}
-				}
-
-				if = {
-					limit = {
-						PRK = {
-							has_idea = PRK_oral_tradition
-						}
-					}
-					PRK = {
-						remove_ideas = PRK_oral_tradition
-					}
-				}
-				
-				if = {
-					limit = {
-						PRK = {
-							has_idea = PRK_beginnings_literacy
-						}
-					}
-					PRK = {
-						remove_ideas = PRK_beginnings_literacy
-					}
-				}
-			
-				PRK = {
-					create_country_leader = {
-						name = "Ycthara Venthryse"
-						desc = "politics_OSG_venthryse_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
-						expire = "1965.1.1"
-						ideology = puritan_ideology
-						traits = {
-						}
-					}
-					create_country_leader = {
-						name = "Ycthara Venthryse"
-						desc = "politics_OSG_venthryse_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
-						expire = "1965.1.1"
-						ideology = theocrat_ideology
-						traits = {		
-						}
-					}
-					create_country_leader = {
-						name = "Ycthara Venthryse"
-						desc = "politics_OSG_venthryse_desc"
-						picture = "gfx/leaders/ORD/Portrait_Ordoria_Generic_navy_3.dds"
-						expire = "1965.1.1"
-						ideology = monarchy_absolute_ideology
-						traits = {		
-						}
-					}
-					swap_ideas = {
-						remove_idea = human_country
-						add_idea = elf_country
-					}
-					swap_ideas = {
-						remove_idea = krostov_religion
-						add_idea = itherynism_religion
-					}
-					every_state = {
-						limit = {
-							is_core_of = PRK
-						}
-						force_enable_resistance = PRK
-					}
-				}
+				set_autonomy = { target = CPK autonomous_state = autonomy_IR_commissiary }
+				every_state = { limit = { is_core_of = CPK } force_enable_resistance = CPK }
 			}
 		}
 	}

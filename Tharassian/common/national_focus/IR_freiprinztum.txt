@@ -107,7 +107,7 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 	
 	shared_focus = {#Rapprochement
 		id = FPT_rapprochement_stvichtlas
-		icon = GFX_focus_freiprinzen_septa
+		icon = GFX_focus_generic_self_management
 		cost = 10
 		available = {
 			has_country_flag = FPT_septists_forgiven
@@ -1010,6 +1010,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 				has_country_flag = UNG_civil_war_started
 			}
 		}
+		bypass = {
+			has_country_flag = UNG_civil_war_started
+		}
 		relative_position_id = FPT_recover_hex_scare
 		x = 9
 		y = 0
@@ -1024,7 +1027,7 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 	
 	shared_focus = {#Adalina Path
 		id = FPT_join_adalina
-		icon = GFX_focus_ung_young_hochprinzessin
+		icon = GFX_IRI_Found_Coallition_Of_Irinth
 		cost = 10
 		prerequisite = {
 			focus = FPT_our_place_union
@@ -1412,6 +1415,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 				has_country_flag = UNG_civil_war_started
 			}
 		}
+		bypass = {
+			has_country_flag = UNG_civil_war_started
+		}
 		mutually_exclusive = {
 			focus = FPT_join_adalina
 			focus = FPT_join_ferdinand
@@ -1456,6 +1462,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 				has_country_flag = UNG_civil_war_started
 			}
 		}
+		bypass = {
+			has_country_flag = UNG_civil_war_started
+		}
 		relative_position_id = FPT_exploit_chaos
 		x = 0
 		y = 1
@@ -1492,6 +1501,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 				has_country_flag = UNG_civil_war_started
 			}
 		}
+		bypass = {
+			has_country_flag = UNG_civil_war_started
+		}
 		relative_position_id = FPT_strategic_ambivalence
 		x = 0
 		y = 1
@@ -1511,22 +1523,6 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 		ai_will_do = {
 			factor = 15 #Most likely
 		}
-		available = {
-			STA = {
-				has_war_with = UNG
-			}
-			custom_trigger_tooltip = {
-				tooltip = FPT_joining_winners_tt
-				OR = {	
-					check_variable = {
-						UNG_num_allies > STA_num_allies
-					}
-					check_variable = {
-						STA_num_allies > UNG_num_allies
-					}
-				}
-			}
-		}
 		mutually_exclusive = {
 			focus = FPT_break_from_union
 			focus = FPT_declare_neutrality
@@ -1544,7 +1540,13 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 					}
 				}
 				UNG = {
-					add_to_faction = ROOT
+					set_autonomy = {
+						target = ROOT
+						autonomous_state = autonomy_IR_freiprinztum
+					}
+					faction_leader = {
+						add_to_faction = ROOT
+					}
 				}
 			}
 			if = {
@@ -1556,7 +1558,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 					}
 				}
 				STA = {
-					add_to_faction = ROOT
+					faction_leader = {
+						add_to_faction = ROOT
+					}
 				}
 			}
 		}
@@ -1659,7 +1663,7 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 	
 	shared_focus = {#Ferdinand Path
 		id = FPT_join_ferdinand
-		icon = GFX_focus_freiprinzen_schwarzenbach
+		icon = GFX_focus_generic_secret_treaty
 		cost = 10
 		prerequisite = {
 			focus = FPT_our_place_union

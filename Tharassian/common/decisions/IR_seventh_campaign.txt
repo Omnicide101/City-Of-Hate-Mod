@@ -82,7 +82,13 @@ DORF_seventh_campaign = {
 		}
 		
 		available = {
-			owns_state = 174
+			OR = {
+				owns_state = 174
+				any_other_country = {
+					is_subject_of = ROOT
+					owns_state = 174
+				}
+			}
 			num_of_civilian_factories > 14
 		}
 				
@@ -119,7 +125,7 @@ DORF_seventh_campaign = {
 		
 		cost = 250
 		
-		days_remove = 365
+		days_remove = 5
 		
 		modifier = {
 			civilian_factory_use = 15
@@ -130,10 +136,15 @@ DORF_seventh_campaign = {
 			MONTHLY_POPULATION = -2
 		}
 		
+		complete_effect = {
+			set_country_flag = DORF_migrants_coming_while_rebuilding
+		}
+		
 		remove_effect = {
 			custom_effect_tooltip = DORF_restore_zarathum_tt
 			set_global_flag = DORF_zarathum_restored
 			set_country_flag = DORF_we_got_zarathum
+			clr_country_flag = DORF_migrants_coming_while_rebuilding
 			set_country_flag = DORF_migrants_coming
 			hidden_effect = {
 				174 = {
@@ -230,7 +241,13 @@ DORF_seventh_campaign = {
 		
 		cancel_trigger = {
 			NOT = {
-				controls_state = 174
+				OR = {
+					controls_state = 174
+					any_other_country = {
+						is_subject_of = ROOT
+						controls_state = 174
+					}
+				}
 			}
 		}
 	}
@@ -249,42 +266,80 @@ DORF_seventh_campaign = {
 		}
 		
 		available = {
-			has_country_flag = DORF_we_got_zarathum
-			owns_state = 174
+			has_global_flag = DORF_zarathum_restored
+			OR = {
+				owns_state = 174
+				any_other_country = {
+					is_subject_of = ROOT
+					owns_state = 174
+				}
+			}
 			OR = {
 				owns_state = 146
+				any_other_country = {
+					is_subject_of = ROOT
+					owns_state = 146
+				}
 				SKA = {
 					is_subject_of = ROOT
 				}
 			}
 			OR = {
 				owns_state = 381
+				any_other_country = {
+					is_subject_of = ROOT
+					owns_state = 381
+				}
 				RMT = {
 					is_subject_of = ROOT
 				}
 			}
 			OR = {
 				owns_state = 382
+				any_other_country = {
+					is_subject_of = ROOT
+					owns_state = 382
+				}
 				RMT = {
 					is_subject_of = ROOT
 				}
 			}
 			OR = {
 				owns_state = 383
+				any_other_country = {
+					is_subject_of = ROOT
+					owns_state = 383
+				}
 				RMT = {
 					is_subject_of = ROOT
 				}
 			}
 			OR = {
 				owns_state = 384
+				any_other_country = {
+					is_subject_of = ROOT
+					owns_state = 384
+				}
 				RMT = {
 					is_subject_of = ROOT
 				}
 			}
 			OR = {
 				owns_state = 365
+				any_other_country = {
+					is_subject_of = ROOT
+					owns_state = 365
+				}
 				owns_state = 723
+				any_other_country = {
+					is_subject_of = ROOT
+					owns_state = 723
+				}
 				owns_state = 815
+				any_other_country = {
+					is_subject_of = ROOT
+					owns_state = 815
+				}
 			}
 			OR = {
 				original_tag = SKA
@@ -309,6 +364,7 @@ DORF_seventh_campaign = {
 		}
 		
 		complete_effect = {
+			set_country_flag = DORF_we_reformed_vergallheim
 			hidden_effect = {
 				reform_vergallheim = yes
 			}

@@ -75,6 +75,26 @@ characters={
 			id=-1
 		}
 	}
+	HLZ_marius_pressler={
+		name="Marius Pressler"
+		portraits={
+			civilian={
+				large="gfx/leaders/HLZ/Portrait_HLZ_Pressler.dds"
+			}
+		}
+		country_leader={
+			desc="politics_HLZ_pressler_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_HLZ_beckenbauer_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
 	HLZ_kaspar_rosenblut={
 		name="Kaspar Rosenblut"
 		portraits={

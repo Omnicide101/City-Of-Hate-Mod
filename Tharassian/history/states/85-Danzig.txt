@@ -2,7 +2,7 @@ state={
 	id=85
 	name="STATE_85"
 	provinces={
-		7577 3159 2273 3698 4747 7511 7460 7403 7572 4644
+		7577 3159 2273 3698 4747 7511 7572 4644 4448
 	}
 	state_category = metropolis
 	manpower=1066921
@@ -22,6 +22,9 @@ state={
 				bunker = 3
 			}
 			4747 = {
+				bunker = 2
+			}
+			4448 = {
 				bunker = 2
 			}
 		}	

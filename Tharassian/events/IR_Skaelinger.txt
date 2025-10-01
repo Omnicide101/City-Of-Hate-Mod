@@ -387,154 +387,113 @@ country_event = { #Second Rthaur Revolution
 		ai_chance = {
 			factor = 9
 		}
-		if = {
-			limit = {
-				is_puppet_of = ORD
+		SKA = {
+			annex_country = {
+				target = ROOT
 			}
-			ORD = {
-				set_autonomy =  {
-					target = SKA
-					autonomy_state = autonomy_free
+			
+			if = {
+				limit = {
+					has_war_with = RTH
+				}
+				effect_tooltip = {
+					white_peace = RTH
+				}
+				hidden_effect = {
+					white_peace = {
+						tag = RTH
+						message = SKA_RTH_ii_rev_peace_tt
+					}
 				}
 			}
-		}
-		if = {
-			limit = {
-				has_cosmetic_tag = SKA_OSG
+			
+			if = {
+				limit = {
+					has_war_with = RMT
+				}
+				effect_tooltip = {
+					white_peace = RMT
+				}
+				hidden_effect = {
+					white_peace = {
+						tag = RMT
+						message = SKA_RMT_ii_rev_peace_tt
+					}
+				}
 			}
-			drop_cosmetic_tag = yes
-			kill_country_leader = yes
-			set_popularities = {
-
-				monarchy_absolute = 0
-
-				monarchy_constitutional = 65
-				
-				republic_peasant = 15
-
-				republic_aristocrat = 10
-
-				republic_merchant = 5
-
-				theocrat = 5
-
-				puritan = 0
-
+			
+			if = {
+				limit = {
+					has_war_with = BER
+				}
+				effect_tooltip = {
+					white_peace = BER
+				}
+				hidden_effect = {
+					white_peace = {
+						tag = BER
+						message = SKA_BER_ii_rev_peace_tt
+					}
+				}
 			}
-			set_politics = {
-				ruling_party = monarchy_constitutional
+			
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = RTH
 			}
-		}
-		
-		if = {
-			limit = {
-				has_idea = OSG_settler_government
+			
+			if = {
+				limit = {
+					is_in_faction = no
+				}
+				create_faction = "brotherhood_alliance"
+				add_to_faction = RTH
 			}
-			remove_ideas = OSG_settler_government
-		}
-		
-		if = {
-			limit = {
-				has_war_with = RTH
+			
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				leave_faction = yes
+				create_faction = "brotherhood_alliance"
+				add_to_faction = RTH
 			}
-			effect_tooltip = {
-				white_peace = RTH
-			}
+			
+			add_war_support = 0.1
 			hidden_effect = {
-				white_peace = {
-					tag = RTH
-					message = SKA_RTH_ii_rev_peace_tt
+				load_oob = "SKA_ii_rev"
+			}
+			add_to_war = {
+				targeted_alliance = RTH
+				enemy = ORD
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_relation_modifier = {
+							target = RTH
+							modifier = staunch_allies_opinion_modifier
+						}
+					}
+				}
+				add_opinion_modifier = {
+					target = RTH
+					modifier = staunch_allies
+				}
+				add_relation_modifier = {
+					target = RTH
+					modifier = staunch_allies_opinion_modifier
 				}
 			}
-		}
-		
-		if = {
-			limit = {
-				has_war_with = RMT
-			}
-			effect_tooltip = {
-				white_peace = RMT
-			}
-			hidden_effect = {
-				white_peace = {
-					tag = RMT
-					message = SKA_RMT_ii_rev_peace_tt
+			
+			RTH = {
+				country_event = {
+					id = rth.11
+					days = 2
 				}
-			}
-		}
-		
-		if = {
-			limit = {
-				has_war_with = BER
-			}
-			effect_tooltip = {
-				white_peace = BER
-			}
-			hidden_effect = {
-				white_peace = {
-					tag = BER
-					message = SKA_BER_ii_rev_peace_tt
-				}
-			}
-		}
-		
-		if = {
-			limit = {
-				is_faction_leader = yes
-			}
-			add_to_faction = RTH
-		}
-		
-		if = {
-			limit = {
-				is_in_faction = no
-			}
-			create_faction = "brotherhood_alliance"
-			add_to_faction = RTH
-		}
-		
-		if = {
-			limit = {
-				is_in_faction = yes
-				is_faction_leader = no
-			}
-			leave_faction = yes
-			create_faction = "brotherhood_alliance"
-			add_to_faction = RTH
-		}
-		
-		add_war_support = 0.1
-		hidden_effect = {
-			load_oob = "SKA_ii_rev"
-		}
-		add_to_war = {
-			targeted_alliance = RTH
-			enemy = ORD
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_opinion_modifier = staunch_allies
-				}
-			}
-			add_opinion_modifier = {
-				target = RTH
-				modifier = staunch_allies
-			}
-			add_relation_modifier = {
-				target = RTH
-				modifier = staunch_allies_opinion_modifier
-			}
-		}
-		
-		set_technology = {
-			dwarven_warriors = 1 #Dwarf units for you
-		}
-
-		RTH = {
-			country_event = {
-				id = rth.11
-				days = 2
 			}
 		}
 	}
@@ -3530,18 +3489,21 @@ country_event = { #Social War Ends, Bad Tie
 		SKP = {
 			declare_war_on = {
 				target = SKR
-				type = civil_war
+				type = annex_everything
 			}
 			declare_war_on = {
 				target = SKA
-				type = civil_war
+				type = annex_everything
 			}
+			add_civil_war_target = SKR
+			add_civil_war_target = SKA
 		}
 		SKR = {
 			declare_war_on = {
 				target = SKA
-				type = civil_war
+				type = annex_everything
 			}
+			add_civil_war_target = SKA
 		}
 	}
 }
@@ -3647,8 +3609,9 @@ country_event = { #Social War - Soltruist Revolt
 		SKP = {
 			declare_war_on = {
 				target = SKA
-				type = civil_war
+				type = annex_everything
 			}
+			add_civil_war_target = SKA
 		}
 	}
 }
@@ -3756,8 +3719,9 @@ country_event = { #Social War - Brotherhood Revolt
 		SKR = {
 			declare_war_on = {
 				target = SKA
-				type = civil_war
+				type = annex_everything
 			}
+			add_civil_war_target = SKA
 		}
 	}
 }
@@ -4273,11 +4237,12 @@ country_event = { #The coup
 			
 			declare_war_on = {
 				target = SKR
-				type = civil_war
+				type = annex_everything
 			}
 			
 			SKR = {
 				change_tag_from = SKA
+				add_civil_war_target = SKA
 			}
 		}
 	}
@@ -4384,11 +4349,12 @@ country_event = { #The Grand Offering to Mohrok
 			
 			declare_war_on = {
 				target = SKP
-				type = civil_war
+				type = annex_everything
 			}
 			
 			SKP = {
 				change_tag_from = SKA
+				add_civil_war_target = SKA
 			}
 		}
 	}
@@ -5307,11 +5273,12 @@ country_event = { #Anti-GLC riots 4, we've lost control dawg
 			
 			declare_war_on = {
 				target = SKR
-				type = civil_war
+				type = annex_everything
 			}
 			
 			SKR = {
 				change_tag_from = SKA
+				add_civil_war_target = SKA
 			}
 		}
 		remove_ideas = SKA_anger_at_glc
@@ -5905,14 +5872,8 @@ country_event = { # SKA wants the Khorinor mountains back now
 		SKA = {
 			transfer_state = 133
 			add_state_core = 133
-			133 = {
-				set_state_name = "Khoringr"
-			}
 			transfer_state = 135
 			add_state_core = 135
-			135 = {
-				set_state_name = "Svinnersút"
-			}
 			country_event = { id = rth.25 hours = 3 }
 		}
 		remove_state_core = 133

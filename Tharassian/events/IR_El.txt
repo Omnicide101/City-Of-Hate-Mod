@@ -47,23 +47,10 @@ country_event = { #Tharothep agrees
 		name = del.2.a
 		transfer_state = 910
 		add_state_core = 910
-		910 = {
-			set_state_name = "El's Passage"
-		}
 		transfer_state = 901
 		add_state_core = 901
-		901 = {
-			set_state_name = "Newland"
-		}
 		transfer_state = 501
 		add_state_core = 501
-		501 = {
-			set_state_name = "New El"
-		}
-		set_province_name = {
-			id = 3490
-			name = "Riverside"
-		}
 		white_peace = THA
 	}
 }

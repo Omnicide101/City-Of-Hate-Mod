@@ -2,7 +2,7 @@ state={
 	id=128
 	name="STATE_128"
 	provinces={
-		2094 4118 6885 3564
+		2094 4118 6885 3564 6815 3157 3675
 	}
 	state_category = rural
 	manpower=1092
@@ -11,12 +11,21 @@ state={
 	resources = {
 		lumber = 4
 	}
-		history={	
+		history={
+		victory_points = {
+			6815 2
+		}
 		owner = RTH
 		buildings = {
 			farm = 1
 			infrastructure = 1
 			2094 = {
+				bunker = 2
+			}
+			6815 = {
+				bunker = 2
+			}
+			3157 = {
 				bunker = 2
 			}
 		}	

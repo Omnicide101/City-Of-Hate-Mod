@@ -137,6 +137,7 @@ recruit_character = HLZ_bernd_beck
 recruit_character = HLZ_eva_katzmann
 recruit_character = HLZ_melchior_speidel
 recruit_character = HLZ_kaspar_rosenblut
+recruit_character = HLZ_marius_pressler
 recruit_character = HLZ_laurenz_reinmann
 recruit_character = HLZ_sabina_heuberger
 recruit_character = HLZ_erwin_bloch

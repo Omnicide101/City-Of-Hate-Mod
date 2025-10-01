@@ -1119,6 +1119,38 @@
  EOR_puritan_DEF:0 "The Viceroyalty of Eastern Ordoria"
  EOR_puritan_ADJ:0 "Eastern Ordorian"
  
+ CSK:0 "Skylynaur Commissiary"
+ CSK_DEF:0 "The Commissiary of Skylynaur"
+ CSK_ADJ:0 "Skylynaur"
+ 
+ CST:0 "Stauhyte Commissiary"
+ CST_DEF:0 "The Commissiary of Stauhyte"
+ CST_ADJ:0 "Stauhyte"
+ 
+ CNC:0 "Nocthorin Commissiary"
+ CNC_DEF:0 "The Commissiary of Nocthorin"
+ CNC_ADJ:0 "Nocthorin"
+ 
+ CWS:0 "Wystine Commissiary"
+ CWS_DEF:0 "The Commissiary of Wystine"
+ CWS_ADJ:0 "Wystine"
+ 
+ CPK:0 "Pyrkhiv Commissiary"
+ CPK_DEF:0 "The Commissiary of Pyrkhiv"
+ CPK_ADJ:0 "Pyrkhiv"
+ 
+ CNS:0 "Nasthyrin Commissiary"
+ CNS_DEF:0 "The Commissiary of Nasthyrin"
+ CNS_ADJ:0 "Nasthyrin"
+ 
+ CIR:0 "Irythyn Commissiary"
+ CIR_DEF:0 "The Commissiary of Irythyn"
+ CIR_ADJ:0 "Irythyn"
+ 
+ CTR:0 "Triferyn Commissiary"
+ CTR_DEF:0 "The Commissiary of Triferyn"
+ CTR_ADJ:0 "Triferyn"
+ 
  RTH:0 "Eastern Jungles"
  RTH_DEF:0 "Eastern Jungles"
  RTH_monarchy_absolute:0 "Kingdom of The Eastern Jungles"

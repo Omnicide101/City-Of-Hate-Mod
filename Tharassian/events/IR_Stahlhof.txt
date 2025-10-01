@@ -63,7 +63,7 @@ country_event = {# Negotiations - Medium Demands
 			factor = 10
 			}
 		remove_state_core = 193
-		remove_state_core = 194
+		remove_state_core = 195
 		hidden_effect = {
 			ORD = {
 				country_event = {
@@ -76,9 +76,18 @@ country_event = {# Negotiations - Medium Demands
 
 	option = { # Reject
 		name = sta.2.b
+		trigger = {
+			NOT = {
+				has_country_flag = STA_beaten_in_civil_war
+			}
+		}
 		ai_chance = {
 			factor = 3
-			}
+		}
+		custom_effect_tooltip = STA_warning_civil_war_early_tt
+		custom_effect_tooltip = STA_cast_die_tt
+		set_country_flag = STA_started_civil_war
+		
 		hidden_effect = {
 			ORD = {
 				country_event = {
@@ -126,13 +135,7 @@ country_event = {# Negotiations - Exchange
 		remove_state_core = 193
 		remove_state_core = 194
 		add_state_core = 106
-		106= {
-			set_state_name = "Elfstein"
-		}
 		add_state_core = 105
-		105= {
-			set_state_name = "Elfwald"
-		}
 		hidden_effect = {
 			ORD = {
 				country_event = {
@@ -1775,6 +1778,26 @@ country_event = {#Launch Civil War
 				targeted_alliance = UNG
 				enemy = STA
 				hostility_reason = asked_to_join
+			}
+		}
+		
+		
+		# Make Ordoria join if this was a consequence of negotiations over territory breaking down (Larennis - Idealist path)
+		if = {
+			limit = {
+				ORD = {
+					has_country_flag = ORD_help_UNG_against_STA
+					NOT = {
+						is_in_faction_with = UNG
+					}
+				}
+			}
+			ORD = {
+				add_to_war = { 
+					targeted_alliance = UNG
+					enemy = STA
+					hostility_reason = asked_to_join
+				}
 			}
 		}
 	}

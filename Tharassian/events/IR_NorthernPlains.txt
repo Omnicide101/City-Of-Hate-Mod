@@ -27,32 +27,6 @@ country_event = { #The Revolution Triumphant
 	option = { #Victory is ours!
 		name = npc.1.a
 		hidden_effect = {
-		
-			1 = {
-				set_state_name = "Ierethayne"
-			}
-			set_province_name = {
-				id = 3109
-				name = "Ierethayne"
-			}
-			
-			28 = {
-				set_state_name = "Felweyne"
-			}
-			set_province_name = {
-				id = 3966
-				name = "Felweyne"
-			}
-			
-			72 = {
-				set_state_name = "Navandonne"
-			}
-			
-			set_province_name = {
-				id = 1334
-				name = "Navandonne"
-			}
-			
 			hidden_effect = {
 				GMR = {
 					remove_state_core = 1

@@ -103,7 +103,10 @@ country_event = {#Domestic Unrest
 	
 	option = {#Republic
 		name = generic.1.c
-		ai_chance = {	
+		trigger = {
+			is_ORD_commissiary = no
+		}
+		ai_chance = {
 			factor = 1
 			modifier = {
 				has_government = republic_merchant
@@ -212,6 +215,13 @@ country_event = {#Order Maintained
 				has_government = monarchy_absolute
 				factor = 30
 			}
+			modifier = {
+				is_puppet_of = ORD
+				NOT = {
+					tag = EOR
+				}
+				factor = 0
+			}
 		}
 		set_politics = {
 			ruling_party = monarchy_absolute
@@ -226,6 +236,9 @@ country_event = {#Order Maintained
 	
 	option = {#Constitutional Monarchy
 		name = generic.3.b
+		trigger = {
+			is_ORD_commissiary = no
+		}
 		ai_chance = {	
 			factor = 1
 			modifier = {
@@ -255,6 +268,9 @@ country_event = {#Order Maintained
 	
 	option = {#Aristocratic Republic
 		name = generic.3.c
+		trigger = {
+			is_ORD_commissiary = no
+		}
 		ai_chance = {	
 			factor = 1
 			modifier = {

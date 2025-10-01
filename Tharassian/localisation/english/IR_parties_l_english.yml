@@ -10,6 +10,7 @@
  _theocrat_party_long:0 ""
  _puritan_party:0 ""
  _puritan_party_long:0 ""
+ 
  monarchy_absolute:0 "Absolute Monarchist"
  monarchy_absolute_noun:0 "Absolute Monarchism"
  monarchy_absolute_desc:0 "Absolutist"
@@ -31,6 +32,7 @@
  puritan:0 "Puritan"
  puritan_noun:0 "Puritanism"
  puritan_desc:0 "Puritan"
+ 
  monarchy_absolute_ideology:0 "Absolutist"
  monarchy_absolute_ideology_desc:0 "Absolute monarchy is the purest form of monarchy, where one individual has unlimited power within their kingdom. Even so, this power is frequently tempered by a necessary reliance on powerful vassals for purposes of administration."
  monarchy_constitutional_ideology:0 "Constitutionalist"
@@ -284,6 +286,7 @@
  ORB_theocrat_party:0 "Faithful"
  ORB_puritan_party:0 "Traditionalists"
  OSG_party_name:0 "Ordorian Settler Government"
+ OSG_resist_party_name:0 "Resistance Movement"
  EOR_monarchy_absolute_party:0 "Larennis' Clique - Orthodox"
  EOR_monarchy_constitutional_party:0 "Larennis' Clique - Reformists"
  EOR_republic_aristocrat_party:0 "Larennis' Clique - Radicals"

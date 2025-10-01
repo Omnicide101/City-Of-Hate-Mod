@@ -3514,6 +3514,9 @@ focus_tree = {
 			focus = SKA_popular_figurehead
 			focus = SKA_popular_general
 		}
+		available = {
+			has_war = no
+		}
 		bypass = {
 			OR = {
 				has_government = monarchy_absolute
@@ -4447,6 +4450,7 @@ focus_tree = {
 				}
 				has_government = republic_peasant
 			}
+			has_war = no
 		}
 		bypass = {
 			has_government = republic_peasant
@@ -4501,6 +4505,7 @@ focus_tree = {
 				}
 				has_government = puritan
 			}
+			has_war = no
 		}
 		ai_will_do = {
 			factor = 5

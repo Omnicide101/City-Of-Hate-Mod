@@ -18,7 +18,7 @@ sic_semper_tyrannis = {
 		difficulty > 1
 		has_any_custom_difficulty_setting = no
 		game_rules_allow_achievements = yes
-		tag = HLZ
+		original_tag = HLZ
 	}
 	happened = {
 		has_completed_focus = HLZ_last_straw
@@ -31,11 +31,50 @@ you_bastard = {
 		difficulty > 1
 		has_any_custom_difficulty_setting = no
 		game_rules_allow_achievements = yes
-		tag = HLZ
+		original_tag = HLZ
 	}
 	happened = {
-		has_country_leader = {
-			character = HLZ_marius_pressler
+		HLZ = {
+			has_country_leader = {
+				character = HLZ_marius_pressler
+			}
+		}
+	}
+}
+
+division_of_labour = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = ORD
+	}
+	happened = {
+		85 = {
+			has_dynamic_modifier = {
+				modifier = city_of_foundries
+			}
+		}
+		111 = {
+			has_dynamic_modifier = {
+				modifier = city_of_erudition
+			}
+		}
+		112 = {
+			OR = {
+				has_dynamic_modifier = {
+					modifier = city_of_harbours
+				}
+				has_dynamic_modifier = {
+					modifier = city_of_slavers
+				}
+			}
+		}
+		84 = {
+			has_dynamic_modifier = {
+				modifier = city_of_generals
+			}
 		}
 	}
 }
@@ -57,17 +96,250 @@ just_a_warmup = {
 	}
 }
 
+lets_hope_for_a_pu = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+	}
+	happened = {
+		has_royal_marriage = yes
+	}
+}
+
+sins_father = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = ORD
+	}
+	happened = {
+		RTH = {
+			has_government = republic_peasant
+			NOT = {
+				has_country_leader = {
+					character = RTH_alucien_derathur
+					ruling_only = yes
+				}
+			}
+		}
+	}
+}
+
+dwarf_fortress = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		has_idea = dwarf_country
+	}
+	happened = {
+		capital_scope = {
+			bunker > 4
+		}
+	}
+}
+
+el_gran_juego = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = HAS
+	}
+	happened = {
+		has_country_flag = HAS_el_gran_juego_achievement
+	}
+}
+
+golden_republic = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = IRI
+	}
+	happened = {
+		has_government = republic_merchant
+		has_completed_focus = IRI_take_the_hands_model
+	}
+}
+
+###########################
+## 3 MEDIUM ACHIEVEMENTS
+#############################
+
+i_rule_alone = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = ORD
+	}
+	happened = {
+		OR = {
+			AND = {
+				has_government = puritan
+				has_country_flag = ORD_faiths_defeated
+				has_country_flag = ORD_mods_defeated
+			}
+			AND = {
+				has_government = theocrat
+				has_country_flag = ORD_trads_defeated
+				has_country_flag = ORD_mods_defeated
+			}
+			AND = {
+				has_government = monarchy_absolute
+				has_country_flag = ORD_trads_defeated
+				has_country_flag = ORD_faiths_defeated
+			}
+		}
+	}
+}
+
+laid_to_rest = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = ORD
+	}
+	happened = {
+		85 = {
+			has_dynamic_modifier = {
+				modifier = tomb_of_inskyllithe
+			}
+		}
+	}
+}
+
+break_the_chains = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = ORD
+	}
+	happened = {
+		original_tag = RTH
+		has_country_flag = RTH_chains_broken
+	}
+}
+
+more_like_new_management = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = ORD
+	}
+	happened = {
+		has_completed_focus = ORD_support_separatists
+		has_subject = CTR
+		has_subject = CIR
+		has_subject = CNS
+	}
+}
+
+mistakes_were_made = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = ORD
+	}
+	happened = {
+		has_completed_focus = ORD_support_rebels
+		capital_scope = {
+			controller = {
+				original_tag = NPC
+			}
+		}
+	}
+}
+
+the_exile_returns = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = GMR
+	}
+	happened = {
+		OR = {
+			has_subject = HAS
+			AND = {
+				NOT = {
+					country_exists = HAS
+				}
+				owns_state = 459
+				owns_state = 461
+				owns_state = 466
+				owns_state = 460
+				owns_state = 463
+				owns_state = 464
+				owns_state = 465
+				owns_state = 467 
+				owns_state = 474
+			}
+		}
+	}
+}
+
+a_house_divided = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = LIR
+	}
+	happened = {
+		has_country_leader = {
+			character = LIR_jeanphilippe_ansoudin
+			ruling_only = yes
+		}
+		has_country_flag = LIR_house_divided_war
+		has_war = no
+	}
+}
 
 ###########################
 ## 4 HARD ACHIEVEMENTS
 #############################
+
+sigismunds_legacy = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = STA
+	}
+	happened = {
+		has_country_flag = STA_victorious_civil_war
+	}
+}
+
 something_done_right = {
 	possible = {
 		is_ironman = yes
 		difficulty > 1
 		has_any_custom_difficulty_setting = no
 		game_rules_allow_achievements = yes
-		tag = SNF
+		original_tag = SNF
 	}
 	happened = {
 		OR = {
@@ -79,5 +351,112 @@ something_done_right = {
 				is_subject_of = SNF
 			}
 		}
+	}
+}
+
+glory_of_the_past = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		OR = {
+			original_tag = RMT
+			original_tag = SKA
+			original_tag = BER
+		}
+	}
+	happened = {
+		original_tag = VRG
+		has_country_flag = DORF_we_got_zarathum
+		has_country_flag = DORF_we_reformed_vergallheim
+	}
+}
+
+unlikely_brotherhood = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = SKA
+	}
+	happened = {
+		has_country_flag = SKA_unlikely_brotherhood
+	}
+}
+
+i_ship_it = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = ORD
+	}
+	happened = {
+		ORD = {
+			ORD_larennis_valinthir = {
+				has_trait = beloved_of_adalina
+			}
+		}
+	}
+}
+
+the_dragon_roars = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = TLA
+	}
+	happened = {
+		IRI = {
+			has_focus_tree = irinthios_focus_2
+		}
+	}
+}
+
+strength_in_numbers = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = AKK
+	}
+	happened = {
+		is_faction_leader = yes
+		pc_is_on_winning_side = yes
+		TRS = {
+			pc_is_loser = yes
+		}
+	}
+}
+
+###########################
+## 5 VERY HARD
+#############################
+
+inskyllithe_avenged = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		original_tag = ORD
+	}
+	happened = {
+		has_government = puritan
+		has_completed_focus = ORD_hegemony
+		has_subject = CTR
+		has_subject = CIR
+		has_subject = CNS
+		has_subject = CSK
+		has_subject = CST
+		has_subject = CNC
+		has_subject = CWS
+		has_subject = CPK
 	}
 }

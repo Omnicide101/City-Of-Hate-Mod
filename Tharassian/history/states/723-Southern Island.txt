@@ -20,6 +20,7 @@ state={
 		}
 		add_core_of = GMR
 		add_core_of = RMT
+		add_core_of = NAS
 	}
 	resources = {
 		steel = 8

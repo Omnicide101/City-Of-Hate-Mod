@@ -110,6 +110,7 @@ is_oramfell_state = {
 		state = 22
 		state = 125
 		state = 135
+		state = 1270
 		state = 1271
 		state = 1272
 		state = 1273
@@ -177,45 +178,68 @@ is_fighting_alongside_ROOT = {
 # checks if a country has a relevant Royal Marriage and can thus call someone to arms. I'd love to figure out how to make this into a dynamic variable, probably with ROOT and FROM, but I don't know how at the moment. This'll have to do.
 
 has_royal_marriage = {
-	OR = {
-		AND = {
-			tag = UNG
-			has_defensive_war = yes
-			has_idea = marriage_UNG_IRI
-			is_independent = yes
-			IRI = {
+	custom_trigger_tooltip = {
+		tooltip = have_a_royal_marriage_tt
+		OR = {
+			AND = {
+				tag = UNG
+				has_defensive_war = yes
+				has_idea = marriage_UNG_ORD
 				is_independent = yes
-				is_fighting_alongside_ROOT = no
+				ORD = {
+					is_independent = yes
+					is_fighting_alongside_ROOT = no
+				}
 			}
-		}
-		AND = {
-			tag = UNG
-			has_defensive_war = yes
-			has_idea = marriage_UNG_GMR
-			is_independent = yes
-			GMR = {
+			AND = {
+				tag = UNG
+				has_defensive_war = yes
+				has_idea = marriage_UNG_IRI
 				is_independent = yes
-				is_fighting_alongside_ROOT = no
+				IRI = {
+					is_independent = yes
+					is_fighting_alongside_ROOT = no
+				}
 			}
-		}
-		AND = {
-			tag = IRI
-			has_defensive_war = yes
-			has_idea = marriage_IRI_UNG
-			is_independent = yes
-			UNG = {
+			AND = {
+				tag = UNG
+				has_defensive_war = yes
+				has_idea = marriage_UNG_GMR
 				is_independent = yes
-				is_fighting_alongside_ROOT = no
+				GMR = {
+					is_independent = yes
+					is_fighting_alongside_ROOT = no
+				}
 			}
-		}
-		AND = {
-			tag = GMR
-			has_defensive_war = yes
-			has_idea = marriage_GMR_UNG
-			is_independent = yes
-			UNG = {
+			AND = {
+				tag = IRI
+				has_defensive_war = yes
+				has_idea = marriage_IRI_UNG
 				is_independent = yes
-				is_fighting_alongside_ROOT = no
+				UNG = {
+					is_independent = yes
+					is_fighting_alongside_ROOT = no
+				}
+			}
+			AND = {
+				tag = GMR
+				has_defensive_war = yes
+				has_idea = marriage_GMR_UNG
+				is_independent = yes
+				UNG = {
+					is_independent = yes
+					is_fighting_alongside_ROOT = no
+				}
+			}
+			AND = {
+				tag = ORD
+				has_defensive_war = yes
+				has_idea = marriage_ORD_UNG
+				is_independent = yes
+				UNG = {
+					is_independent = yes
+					is_fighting_alongside_ROOT = no
+				}
 			}
 		}
 	}
