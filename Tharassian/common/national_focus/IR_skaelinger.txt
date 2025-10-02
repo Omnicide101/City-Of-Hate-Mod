@@ -4543,6 +4543,10 @@ focus_tree = {
 		y = 1
 		available = {
 			has_idea = SKA_destabilization_caste_system
+			OR = {
+				has_government = republic_peasant
+				has_government = puritan
+			}
 		}
 		completion_reward = {
 			remove_ideas = SKA_destabilization_caste_system
@@ -4563,6 +4567,7 @@ focus_tree = {
 		y = 1
 		available = {
 			has_idea = SKA_destabilization_caste_system
+			has_government = puritan
 		}
 		completion_reward = {
 			remove_ideas = SKA_destabilization_caste_system
@@ -4576,6 +4581,9 @@ focus_tree = {
 		cost = 5
 		prerequisite = {
 			focus = SKA_follow_rthaur_brothers
+		}
+		available = {
+			has_government = republic_peasant
 		}
 		relative_position_id = SKA_follow_rthaur_brothers
 		x = 0
@@ -4594,6 +4602,9 @@ focus_tree = {
 		prerequisite = {
 			focus = SKA_making_republican_constitution
 		}
+		available = {
+			has_government = republic_peasant
+		}
 		relative_position_id = SKA_making_republican_constitution
 		x = -1
 		y = 1
@@ -4608,6 +4619,9 @@ focus_tree = {
 		prerequisite = {
 			focus = SKA_making_republican_constitution
 		}
+		available = {
+			has_government = republic_peasant
+		}
 		relative_position_id = SKA_making_republican_constitution
 		x = 1
 		y = 1
@@ -4621,6 +4635,9 @@ focus_tree = {
 		cost = 5
 		prerequisite = {
 			focus = SKA_centralized_guild_republics
+		}
+		available = {
+			has_government = republic_peasant
 		}
 		relative_position_id = SKA_centralized_guild_republics
 		x = -1
@@ -4639,6 +4656,9 @@ focus_tree = {
 		prerequisite = {
 			focus = SKA_centralized_guild_republics
 		}
+		available = {
+			has_government = republic_peasant
+		}
 		relative_position_id = SKA_centralized_guild_republics
 		x = 1
 		y = 1
@@ -4652,6 +4672,9 @@ focus_tree = {
 		cost = 5
 		prerequisite = {
 			focus = SKA_establish_universal_suffrage
+		}
+		available = {
+			has_government = republic_peasant
 		}
 		relative_position_id = SKA_establish_universal_suffrage
 		x = 1
@@ -4672,6 +4695,9 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = SKA_control_the_prices
+		}
+		available = {
+			has_government = republic_peasant
 		}
 		relative_position_id = SKA_provide_housing
 		x = 0
@@ -4696,6 +4722,9 @@ focus_tree = {
 		prerequisite = {
 			focus = SKA_hold_lathweyne_republican_conference
 		}
+		available = {
+			has_government = republic_peasant
+		}
 		relative_position_id = SKA_hold_lathweyne_republican_conference
 		x = 0
 		y = 1
@@ -4709,6 +4738,9 @@ focus_tree = {
 		cost = 5
 		prerequisite = {
 			focus = SKA_sun_beneath_stone
+		}
+		available = {
+			has_government = puritan
 		}
 		mutually_exclusive = {
 			focus = SKA_destroy_temple
@@ -4739,6 +4771,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SKA_convert_temple_to_soltruism
 		}
+		available = {
+			has_government = puritan
+		}
 		ai_will_do = {
 			factor = 3
 		}
@@ -4765,6 +4800,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = SKA_merge_all_guilds
+		}
+		available = {
+			has_government = puritan
 		}
 		ai_will_do = {
 			factor = 3
@@ -4811,6 +4849,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SKA_state_controlled_guild
 		}
+		available = {
+			has_government = puritan
+		}
 		ai_will_do = {
 			factor = 3
 		}
@@ -4831,6 +4872,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = SKA_rediscover_runesmithing
+		}
+		available = {
+			has_government = puritan
 		}
 		ai_will_do = {
 			factor = 1
@@ -4853,6 +4897,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = SKA_conventional_studies
+		}
+		available = {
+			has_government = puritan
 		}
 		ai_will_do = {
 			factor = 15
@@ -4883,6 +4930,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = SKA_esoteric_council
+		}
+		available = {
+			has_government = puritan
 		}
 		relative_position_id = SKA_rediscover_runesmithing
 		x = -2
@@ -4915,6 +4965,9 @@ focus_tree = {
 		prerequisite = {
 			focus = SKA_conventional_studies
 			focus = SKA_rediscover_runesmithing
+		}
+		available = {
+			has_government = puritan
 		}
 		mutually_exclusive = {
 			focus = SKA_pragmatist_warlordship
@@ -4949,6 +5002,9 @@ focus_tree = {
 			focus = SKA_pragmatist_warlordship
 			focus = SKA_esoteric_council
 		}
+		available = {
+			has_government = puritan
+		}
 		relative_position_id = SKA_esoteric_council
 		x = -1
 		y = 1
@@ -4969,6 +5025,9 @@ focus_tree = {
 		cost = 5
 		prerequisite = {
 			focus = SKA_pragmatist_warlordship
+		}
+		available = {
+			has_government = puritan
 		}
 		relative_position_id = SKA_pragmatist_warlordship
 		x = 0
@@ -5005,6 +5064,9 @@ focus_tree = {
 		prerequisite = {
 			focus = SKA_esoteric_council
 		}
+		available = {
+			has_government = puritan
+		}
 		relative_position_id = SKA_esoteric_council
 		x = 0
 		y = 2
@@ -5023,6 +5085,9 @@ focus_tree = {
 			focus = SKA_war_focused_economy
 			focus = SKA_utilize_kurgur_plans
 		}
+		available = {
+			has_government = puritan
+		}
 		relative_position_id = SKA_crush_kurgur
 		x = 0
 		y = 2
@@ -5039,6 +5104,7 @@ focus_tree = {
 		}
 		available = {
 			KUR = { exists = no }
+			has_government = puritan
 		}
 		relative_position_id = SKA_begin_mohrok_indoctrination
 		x = 0

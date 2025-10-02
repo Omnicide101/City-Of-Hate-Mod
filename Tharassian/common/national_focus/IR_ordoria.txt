@@ -4336,6 +4336,16 @@ focus_tree = {
 				has_country_flag = UNG_expansionist_flag
 			}
 		}
+		bypass = {
+			OR = {
+				NOT = {
+					country_exists = UNG
+				}
+				UNG = {
+					is_subject = yes
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 31
 		}
@@ -4437,10 +4447,13 @@ focus_tree = {
 		bypass = {
 			OR = {
 				NOT = {
+					country_exists = UNG
+				}
+				NOT = {
 					country_exists = BER
 				}
 				UNG = {
-					is_subject_of = BER
+					is_subject = yes
 				}
 				BER = {
 					AND = {
@@ -4569,6 +4582,16 @@ focus_tree = {
 			focus = ORD_contact_tlarthingia
 			focus = ORD_contact_irinthios
 		}
+		bypass = {
+			OR = {
+				NOT = {
+					country_exists = UNG
+				}
+				UNG = {
+					is_subject = yes
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 37
 		}
@@ -4603,6 +4626,7 @@ focus_tree = {
 				ROOT = {
 					add_to_faction = PREV
 				}
+				country_event = ord.132
 			}
 			every_country = {
 				limit = {
@@ -4635,6 +4659,28 @@ focus_tree = {
 				is_not_threat = yes
 			}
 		}
+		bypass = {
+			OR = {
+				AND = {
+					NOT = {
+						country_exists = UNG
+						ORD = {
+							owns_state = 233
+						}
+					}
+				}
+				AND = {
+					UNG = {
+						is_subject = yes
+					}
+					NOT = {
+						UNG = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 40
 		}
@@ -4653,7 +4699,6 @@ focus_tree = {
 	focus = { #Oversee New Elections
 		id = ORD_oversee_new_elections
 		icon = GFX_focus_AFG_promote_the_counter_elite
-		icon = GFX_
 		cost = 9
 		prerequisite = {
 			focus = ORD_intervene_hochprinztum
@@ -4686,6 +4731,7 @@ focus_tree = {
 					modifier = ORD_denied_spoils
 				}
 			}
+			country_event = ord.133
 		}
 	}
 	

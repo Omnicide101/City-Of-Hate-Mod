@@ -31,17 +31,27 @@ country_event = { #Conquest of Stahlhof
 			limit = {
 				tag = ORD
 			}
-			ORD = {
-				add_state_claim = 193
-				add_state_claim = 194
-				add_state_claim = 195
-				add_state_claim = 198
+			hidden_effect = {
+				ORD = {
+					add_state_claim = 193
+					add_state_claim = 194
+					add_state_claim = 195
+					add_state_claim = 198
+				}
 			}
 		}
 	}
 
 	trigger = {
 		NOT = {
+			OR = {
+				AND = {
+					tag = UNG
+					check_variable = {
+						UNG_constituent_state = STA
+					}
+				}
+			}
 			OR = {
 				tag = NBI
 				original_tag = STA
@@ -578,6 +588,14 @@ country_event = { #Conquest of Holzbrenn
 
 	trigger = {
 		NOT = {
+			AND = {
+				tag = UNG
+				check_variable = {
+					UNG_constituent_state = HLZ
+				}
+			}
+		}
+		NOT = {
 			tag = NBI
 		}
 		NOT = {
@@ -818,6 +836,14 @@ country_event = { #Conquest of Neureik
 
 	trigger = {
 		NOT = {
+			AND = {
+				tag = UNG
+				check_variable = {
+					UNG_constituent_state = NRK
+				}
+			}
+		}
+		NOT = {
 			tag = NBI
 		}
 		NOT = {
@@ -1051,6 +1077,14 @@ country_event = { #Conquest of Arkanisturm
 	}
 
 	trigger = {
+		NOT = {
+			AND = {
+				tag = UNG
+				check_variable = {
+					UNG_constituent_state = ARK
+				}
+			}
+		}
 		NOT = {
 			tag = NBI
 		}
@@ -1287,6 +1321,14 @@ country_event = { #Conquest of Nochwald
 
 	trigger = {
 		NOT = {
+			AND = {
+				tag = UNG
+				check_variable = {
+					UNG_constituent_state = NOC
+				}
+			}
+		}
+		NOT = {
 			tag = NBI
 		}
 		NOT = {
@@ -1520,6 +1562,14 @@ country_event = { #Conquest of Spochwald
 	}
 
 	trigger = {
+		NOT = {
+			AND = {
+				tag = UNG
+				check_variable = {
+					UNG_constituent_state = SPW
+				}
+			}
+		}
 		NOT = {
 			tag = NBI
 		}
@@ -1755,6 +1805,14 @@ country_event = { #Conquest of St. Vichtlas
 
 	trigger = {
 		NOT = {
+			AND = {
+				tag = UNG
+				check_variable = {
+					UNG_constituent_state = SVT
+				}
+			}
+		}
+		NOT = {
 			tag = NBI
 		}
 		NOT = {
@@ -1988,6 +2046,16 @@ country_event = { #Conquest of Teigerholen
 	}
 
 	trigger = {
+	
+		NOT = {
+			AND = {
+				tag = UNG
+				check_variable = {
+					UNG_constituent_state = TEI
+				}
+			}
+		}
+	
 		NOT = {
 			tag = NBI
 		}
@@ -2222,6 +2290,16 @@ country_event = { #Conquest of Schneefilde
 	}
 
 	trigger = {
+	
+		NOT = {
+			AND = {
+				tag = UNG
+				check_variable = {
+					UNG_constituent_state = SNF
+				}
+			}
+		}
+	
 		NOT = {
 			tag = NBI
 		}
@@ -2456,6 +2534,14 @@ country_event = { #Conquest of Wistingen
 	}
 
 	trigger = {
+		NOT = {
+			AND = {
+				tag = UNG
+				check_variable = {
+					UNG_constituent_state = WIS
+				}
+			}
+		}
 		NOT = {
 			tag = NBI
 		}
@@ -2983,6 +3069,14 @@ country_event = { #Conquest of Fritzhafen
 
 	trigger = {
 		NOT = {
+			AND = {
+				tag = UNG
+				check_variable = {
+					UNG_constituent_state = FTH
+				}
+			}
+		}
+		NOT = {
 			tag = NBI
 		}
 		NOT = {
@@ -3216,6 +3310,14 @@ country_event = { #Conquest of Wertszvorde
 	}
 
 	trigger = {
+		NOT = {
+			AND = {
+				tag = UNG
+				check_variable = {
+					UNG_constituent_state = WSZ
+				}
+			}
+		}
 		NOT = {
 			tag = NBI
 		}

@@ -219,9 +219,7 @@
  FPT_border_conflicts_enabled:0 "The Union's authority has crumbled sufficiently to disrupt the peace."
  FPT_has_recently_done_border_conflict:0 "We have launched a border conflict in the last §Ysix months§!."
  RMT_UNG_invade_skaelinger:0 "The Union has declare war on Skaelinger on our behalf."
+ FPT_already_voted:0 "We have already cast our vote."
  DORF_we_got_zarathum:0 "We have restored the city of Zarathum to its ancient glory."
-<<<<<<< HEAD
  DORF_zarathum_restored:0 "The city of Zarathum has been restored to its ancient glory!"
  DORF_we_reformed_vergallheim:0 "We have reformed the lost Empire of Vergallheim!"
-=======
->>>>>>> b822b2ed02859076470c2ad214b7f0614a1d01c7

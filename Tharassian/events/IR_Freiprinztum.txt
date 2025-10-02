@@ -1071,3 +1071,151 @@ country_event = {#Conflicted Loyalties
 		}
 	}
 }
+
+country_event = {#New Hochprinztum elected
+	id = fpt.24
+	title = fpt.24.t
+	desc = fpt.24.d
+
+	is_triggered_only = yes
+
+	#Let the most prepared Freiprinztum win
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						OR = {
+							check_variable = {
+								FPT_electoral_votes > ROOT.FPT_electoral_votes
+							}
+							check_variable = {
+								FPT_electoral_votes = ROOT.FPT_electoral_votes
+							}
+						}
+					}
+				}
+			}
+			set_country_flag = FPT_new_hochprinz_elect
+		}
+		#Pick a random winner if there's a tie
+		if = {
+			limit = {
+				has_variable = FPT_electoral_votes
+				NOT = {
+					any_other_country = {
+						OR = {
+							check_variable = {
+								FPT_electoral_votes > ROOT.FPT_electoral_votes
+							}
+							has_country_flag = FPT_new_hochprinz_elect
+						}
+					}
+				}
+				any_other_country = {
+					check_variable = {
+						FPT_electoral_votes = ROOT.FPT_electoral_votes
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					has_variable = FPT_electoral_votes
+					NOT = {
+						any_other_country = {
+							check_variable = {
+								FPT_electoral_votes > ROOT.FPT_electoral_votes
+							}
+						}
+					}
+				}
+				set_country_flag = FPT_new_hochprinz_elect
+			}
+		}
+	}
+	
+	option = {#Let's see
+		name = fpt.24.a
+		if = {
+			limit = {
+				has_country_flag = FPT_new_hochprinz_elect
+			}
+			hidden_effect = {
+				country_event = fpt.25
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = FPT_new_hochprinz_elect
+				}
+			}
+			hidden_effect = {
+				country_event = fpt.26
+			}
+		}
+	}
+}
+
+country_event = {#We got elected!
+	id = fpt.25
+	title = fpt.25.t
+	desc = fpt.25.d
+	picture = GFX_report_event_japanese_reply
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {#LET'S FUCKING GOOOOO
+		name = fpt.25.a
+		hidden_effect = {
+			become_hochprinz = yes
+			UNG = {
+				transfer_all_ROOT_characters_to_PREV = yes
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						has_country_flag = FPT_can_vote_new_elections_ORD_supervision
+					}
+				}
+				every_country = {
+					limit = {
+						is_og_freiprinz = yes
+						is_subject_of = ORD
+					}
+					UNG = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_IR_freiprinztum
+						}
+					}
+				}
+			}
+			UNG = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = grateful
+				}
+				reverse_add_opinion_modifier = {
+					target = ORD
+					modifier = magnanimous
+				}
+			}
+		}
+	}
+}
+
+country_event = {#We didn't get elected
+	id = fpt.26
+	title = fpt.26.t
+	desc = fpt.26.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	
+	is_triggered_only = yes
+	
+	option = {#Rip
+		name = fpt.26.a
+	}
+}
