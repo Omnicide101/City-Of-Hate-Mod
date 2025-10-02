@@ -1,0 +1,9 @@
+FPT_elections = {
+	icon = GFX_decision_category_wiederherstellung
+	
+	allowed = {
+		is_og_freiprinz = yes
+	}
+	
+	visible_when_empty = yes
+}

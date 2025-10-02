@@ -5953,37 +5953,124 @@ country_event = { #ORD has gone to war against UNG, time for civil war
 			
 			set_country_flag = ORD_ally_will_fight_UNG_civil_war
 		}
-<<<<<<< HEAD
 	}
 }
 
-
-country_event = { #Organizing new elections in UNG
+country_event = { #ORD has gone to war against UNG, time to join
 	id = ord.132
 	title = ord.132.t
 	desc = ord.132.d
 	
 	is_triggered_only = yes
 	
-	option = {#Allow everyone to participate
+	option = {#Let's go
 		name = ord.132.a
+			
+		effect_tooltip = {
+			ORD = {
+				add_to_faction = ROOT
+			}
+		}
+	}
+}
+
+
+country_event = { #Organizing new elections in UNG
+	id = ord.133
+	title = ord.133.t
+	desc = ord.133.d
+	
+	is_triggered_only = yes
+	
+	option = {#Allow everyone to participate
+		name = ord.133.a
 		larennis_idealism_small = yes
+		every_country = {
+			limit = {
+				is_og_freiprinz = yes
+			}
+			country_event = ord.134
+			activate_mission = FPT_electing_new_hochprinz
+		}
 	}
 	
 	option = {#Ban FAU
-		name = ord.132.B
+		name = ord.133.b
 		larennis_cynicism_medium = yes
+		set_country_flag = ORD_new_UNG_elections_FAU_banned
+		every_country = {
+			limit = {
+				is_og_freiprinz = yes
+			}
+			country_event = ord.134
+			activate_mission = FPT_electing_new_hochprinz
+		}
 	}
 	
 	option = {#Ban STA
-		name = ord.132.c
+		name = ord.133.c
 		larennis_cynicism_small = yes
+		set_country_flag = ORD_new_UNG_elections_STA_banned
+		every_country = {
+			limit = {
+				is_og_freiprinz = yes
+			}
+			country_event = ord.134
+			activate_mission = FPT_electing_new_hochprinz
+		}
 	}
 	
 	option = {#Ban FAU and STA
-		name = ord.132.e
+		name = ord.133.e
 		larennis_cynicism_big = yes
-=======
->>>>>>> b822b2ed02859076470c2ad214b7f0614a1d01c7
+		set_country_flag = ORD_new_UNG_elections_FAU_STA_banned
+		every_country = {
+			limit = {
+				is_og_freiprinz = yes
+			}
+			country_event = ord.134
+			activate_mission = FPT_electing_new_hochprinz
+		}
+	}
+}
+
+country_event = { #FPT - time to vote for a new Hochprinz under Ordorian supervision
+	id = ord.134
+	title = ord.134.t
+	desc = ord.134.d
+	
+	is_triggered_only = yes
+	
+	option = {#Say "It's votin' time!" and vote all over the place
+		name = ord.134.a
+		
+		set_country_flag = FPT_can_vote_new_elections_ORD_supervision
+		
+		FROM_improve_THIS_relations = yes
+		
+		if = {
+			limit = {
+				ORD = {
+					has_country_flag = ORD_new_UNG_elections_FAU_banned
+				}
+			}
+			custom_effect_tooltip = FPT_hochprinz_elections_ORD_banned_FAU
+		}
+		if = {
+			limit = {
+				ORD = {
+					has_country_flag = ORD_new_UNG_elections_STA_banned
+				}
+			}
+			custom_effect_tooltip = FPT_hochprinz_elections_ORD_banned_STA
+		}
+		if = {
+			limit = {
+				ORD = {
+					has_country_flag = ORD_new_UNG_elections_FAU_STA_banned
+				}
+			}
+			custom_effect_tooltip = FPT_hochprinz_elections_ORD_banned_FAU_STA
+		}
 	}
 }

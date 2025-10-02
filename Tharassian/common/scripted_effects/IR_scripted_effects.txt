@@ -1,3 +1,172 @@
+# Transfer all characters from ROOT to PREV (for formables)
+transfer_all_ROOT_characters_to_PREV = {
+	ROOT = {
+		# Edge case for monarchists - can't promote to multiple parties, which is really annoying
+		# TODO - add a character flag to make country leaders swap to the party they're intended to lead
+		# So that e.g. a Teigerholen-united Ungeradler Union that switches from aristocratic to absolutist
+		# Gets led by an absolutist Krukenberg and not a rando
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = monarchy_constitutional
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							OR = {
+								has_ideology_group = monarchy_absolute
+								has_ideology_group = republic_aristocrat
+							}
+						}
+						ROOT = {
+							has_government = monarchy_constitutional
+						}
+						AND = {
+							OR = {
+								has_ideology_group = monarchy_absolute
+								has_ideology_group = republic_aristocrat
+							}
+							NOT = {
+								OR = {
+									ROOT = {
+										has_government = monarchy_absolute
+										has_government = republic_aristocrat
+									}
+								}
+							}
+						}
+					}
+				}
+				set_nationality = PREV.PREV
+				promote_character = monarchy_constitutional_ideology
+			}
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = monarchy_absolute
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							OR = {
+								has_ideology_group = monarchy_constitutional
+								has_ideology_group = republic_aristocrat
+							}
+						}
+						ROOT = {
+							has_government = monarchy_absolute
+						}
+						AND = {
+							OR = {
+								has_ideology_group = monarchy_constitutional
+								has_ideology_group = republic_aristocrat
+							}
+							NOT = {
+								OR = {
+									ROOT = {
+										has_government = monarchy_constitutional
+										has_government = republic_aristocrat
+									}
+								}
+							}
+						}
+					}
+				}
+				set_nationality = PREV.PREV
+				promote_character = monarchy_absolute_ideology
+			}
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = republic_peasant
+			}
+			set_nationality = PREV.PREV
+			promote_character = republic_peasant_ideology
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = republic_aristocrat
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							OR = {
+								has_ideology_group = monarchy_absolute
+								has_ideology_group = monarchy_constitutional
+							}
+						}
+						ROOT = {
+							has_government = republic_aristocrat
+						}
+						AND = {
+							OR = {
+								has_ideology_group = monarchy_absolute
+								has_ideology_group = monarchy_constitutional
+							}
+							NOT = {
+								OR = {
+									ROOT = {
+										has_government = monarchy_absolute
+										has_government = monarchy_constitutional
+									}
+								}
+							}
+						}
+					}
+				}
+				set_nationality = PREV.PREV
+				promote_character = republic_aristocrat_ideology
+			}
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = republic_merchant
+			}
+			set_nationality = PREV.PREV
+			promote_character = republic_merchant_ideology
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = theocrat
+			}
+			set_nationality = PREV.PREV
+			promote_character = theocrat_ideology
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = puritan
+			}
+			set_nationality = PREV.PREV
+			promote_character = puritan_ideology
+		}
+		#every_character = { 	#Doesn't seem to work, activate_advisor requires a token and doesn't appear to accept scopes :/
+		#	limit = {
+		#		is_hired_as_advisor = yes
+		#	}
+		#	set_nationality = PREV.PREV
+		#	PREV = {
+		#		activate_advisor = PREV
+		#	}
+		#}
+		every_character = {
+			limit = {
+				can_be_country_leader = no
+				#is_hired_as_advisor = no
+			}
+			set_nationality = PREV.PREV
+		}
+	}
+}
+
 # Return all original states, based on the TAG.original_cores array (set in on_actions at game start)
 THIS_return_og_states = {
 	for_each_scope_loop = {
@@ -1936,17 +2105,403 @@ set_steel_road = {
 	}
 }
 
-#Unification of the Union
-
-unite_the_union = {
-	every_state = {
-		limit = {
-			is_owned_by = ROOT
+#Become the new Hochprinz of the Union
+become_hochprinz = {
+	set_temp_variable = {
+		UNG_new_capital = ROOT.capital
+	}
+	UNG = {
+		set_variable = {
+			UNG_constituent_state = ROOT
 		}
-		UNG = {
-			transfer_state = PREV
+		transfer_state = var:UNG_new_capital
+		set_capital = {
+			state = var:UNG_new_capital
+			remember_old_capital = no
 		}
 	}
+	puppet = UNG
+	every_country = {
+		limit = {
+			is_subject_of = ROOT
+			NOT = {
+				tag = UNG
+			}
+		}
+		UNG = {
+			set_autonomy = {
+				target = PREV
+				autonomous_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+	every_country = {
+		limit = {
+			is_in_faction_with = ROOT
+		}
+		PREV = {
+			add_to_faction = UNG
+		}
+	}
+	every_country = {
+		limit = {
+			has_war_with = ROOT
+		}
+		UNG = {
+			add_to_war = { 
+				targeted_alliance = ROOT 
+				enemy = PREV
+			}
+		}
+	}
+	UNG = {
+		if = {
+			limit = {
+				ROOT = {
+					tag = HLZ
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = HLZ_monarchy_absolute_party
+					long_name = HLZ_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = HLZ_monarchy_constitutional_party
+					long_name = HLZ_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = HLZ_monarchy_constitutional_party 
+					long_name = HLZ_monarchy_constitutional_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = NOC
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = NOC_monarchy_absolute_party
+					long_name = NOC_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = NOC_monarchy_constitutional_party
+					long_name = NOC_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = NOC_republic_aristocrat_party 
+					long_name = NOC_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = SPW
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = SPW_monarchy_absolute_party
+					long_name = SPW_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = SPW_monarchy_constitutional_party
+					long_name = SPW_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = SPW_republic_aristocrat_party 
+					long_name = SPW_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = SVT
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = SVT_monarchy_absolute_party
+					long_name = SVT_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = SVT_monarchy_constitutional_party
+					long_name = SVT_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = SVT_republic_aristocrat_party 
+					long_name = SVT_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = TEI
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = TEI_monarchy_absolute_party
+					long_name = TEI_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = TEI_monarchy_constitutional_party
+					long_name = TEI_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = TEI_republic_aristocrat_party 
+					long_name = TEI_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = NRK
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = RKS_monarchy_absolute_party
+					long_name = NRK_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = RKS_monarchy_constitutional_party
+					long_name = NRK_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = RKS_republic_aristocrat_party 
+					long_name = NRK_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = RKS
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = RKS_monarchy_absolute_party
+					long_name = RKS_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = RKS_monarchy_constitutional_party
+					long_name = RKS_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = RKS_republic_aristocrat_party 
+					long_name = RKS_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = FAU
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = FAU_monarchy_absolute_party
+					long_name = FAU_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = FAU_monarchy_constitutional_party
+					long_name = FAU_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = FAU_republic_aristocrat_party 
+					long_name = FAU_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = SNF
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = SNF_monarchy_absolute_party
+					long_name = SNF_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = SNF_monarchy_constitutional_party
+					long_name = SNF_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = SNF_republic_aristocrat_party 
+					long_name = SNF_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = WIS
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = WIS_monarchy_absolute_party
+					long_name = WIS_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = WIS_monarchy_constitutional_party
+					long_name = WIS_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = WIS_republic_aristocrat_party 
+					long_name = WIS_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = WSZ
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = WSZ_monarchy_absolute_party
+					long_name = WSZ_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = WSZ_monarchy_constitutional_party
+					long_name = WSZ_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = WSZ_republic_aristocrat_party 
+					long_name = WSZ_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = FTH
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = FTH_monarchy_absolute_party
+					long_name = FTH_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = FTH_monarchy_constitutional_party
+					long_name = FTH_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = FTH_republic_aristocrat_party 
+					long_name = FTH_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = ARK
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = ARK_monarchy_absolute_party
+					long_name = ARK_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = ARK_monarchy_constitutional_party
+					long_name = ARK_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = ARK_republic_aristocrat_party 
+					long_name = ARK_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = STA
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = STA_monarchy_absolute_party
+					long_name = STA_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = STA_monarchy_constitutional_party
+					long_name = STA_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = STA_republic_aristocrat_party 
+					long_name = STA_republic_aristocrat_party 
+				}
+			}
+		}
+		inherit_technology = ROOT
+		annex_country = {
+			target = ROOT
+			transfer_troops = yes
+		}
+		change_tag_from = ROOT
+	}
+}
+
+#Unification of the Union
+unite_the_union = {
 	every_state = {
 		limit = {
 			OR = {
@@ -1980,6 +2535,18 @@ unite_the_union = {
 		remove_core_of = WSZ
 		remove_core_of = FTH
 		add_core_of = UNG
+	}
+	every_country = {
+		limit = {
+			is_subject_of = UNG
+			is_og_freiprinz = yes
+		}
+		UNG = {
+			annex_country = {
+				target = PREV
+				transfer_troops = yes
+			}
+		}
 	}
 }
 

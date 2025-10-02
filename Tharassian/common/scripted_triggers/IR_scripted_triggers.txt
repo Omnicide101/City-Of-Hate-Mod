@@ -36,7 +36,7 @@ is_loyal_to_union = {
 	}
 }
 
-# checks if a country is one of the original freiprinztÅmer
+# checks if a country is one of the original freiprinzt¸mer
 
 is_og_freiprinz = {
 	OR ={
@@ -242,16 +242,6 @@ has_royal_marriage = {
 				}
 			}
 		}
-		AND = {
-			tag = ORD
-			has_defensive_war = yes
-			has_idea = marriage_ORD_UNG
-			is_independent = yes
-			UNG = {
-				is_independent = yes
-				is_fighting_alongside_ROOT = no
-			}
-		}
 	}
 }
 
@@ -332,72 +322,120 @@ is_not_threat = {
 dominates_freiprinzen = {
 	OR = {
 		controls_state = 228
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 228
+		}
 		NOC = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 227
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 227
+		}
 		SVT = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 192
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 192
+		}
 		STA = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 284
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 284
+		}
 		NRK = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 226
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 226
+		}
 		SPW = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 225
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 225
+		}
 		TEI = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 206
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 206
+		}
 		ARK = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 233
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 233
+		}
 		FAU = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 224
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 224
+		}
 		SNF = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 234
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 234
+		}
 		WIS = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 235
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 235
+		}
 		WSZ = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 236
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 236
+		}
 		FTH = {
 			is_subject_of = ROOT
 		}

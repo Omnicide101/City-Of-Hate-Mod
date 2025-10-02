@@ -2367,52 +2367,6 @@ country_event = {#Kingsmen Rebellion!
 				division_template = "Outrider Scouts"
 			}
 			
-<<<<<<< HEAD
-			if = {
-				limit = {
-					has_country_flag = NPC_ORD_arms_shipments
-				}
-				NPC = {
-					load_oob = "NPC_revolution_ORD_backing"
-				}
-=======
-			17 = {
-				set_state_name = "Kortinall"
-			}
-		
-			set_province_name = {
-				id = 6594
-				name = "Kortinall"
-			}
-		
-			34 = {
-			set_state_name = "Kaltire"
-			}
-		
-			set_province_name = {
-				id = 6053
-				name = "Kaltire"
-			}
-		
-			20 = {
-				set_state_name = "Nastrodoge"
-			}
-			
-			set_province_name = {
-				id = 6489
-				name = "Nastrodoge"
-			}
-		
-			29 = {
-				set_state_name = "Trifell"
-			}
-		
-			set_province_name = {
-				id = 2379
-				name = "Trifell"
->>>>>>> b822b2ed02859076470c2ad214b7f0614a1d01c7
-			}
-			
 			if = {
 				limit = {
 					has_country_flag = NPC_ORD_arms_shipments
@@ -2558,45 +2512,6 @@ country_event = {#Kingsmen Rebellion!
 			delete_unit_template_and_units = {
 				division_template = "Outrider Scouts"
 			}
-<<<<<<< HEAD
-=======
-			
-			17 = {
-				set_state_name = "Kortinall"
-			}
-		
-			set_province_name = {
-				id = 6594
-				name = "Kortinall"
-			}
-		
-			34 = {
-				set_state_name = "Kaltire"
-			}
-		
-			set_province_name = {
-				id = 6053
-				name = "Kaltire"
-			}
-		
-			20 = {
-				set_state_name = "Nastrodoge"
-			}
-			
-			set_province_name = {
-				id = 6489
-				name = "Nastrodoge"
-			}
-		
-			29 = {
-				set_state_name = "Trifell"
-			}
-		
-			set_province_name = {
-				id = 2379
-				name = "Trifell"
-			}
->>>>>>> b822b2ed02859076470c2ad214b7f0614a1d01c7
 
 			NPC = {
 				
