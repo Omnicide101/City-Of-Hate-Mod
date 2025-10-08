@@ -5953,37 +5953,373 @@ country_event = { #ORD has gone to war against UNG, time for civil war
 			
 			set_country_flag = ORD_ally_will_fight_UNG_civil_war
 		}
-<<<<<<< HEAD
 	}
 }
 
-
-country_event = { #Organizing new elections in UNG
+country_event = { #ORD has gone to war against UNG, time to join
 	id = ord.132
 	title = ord.132.t
 	desc = ord.132.d
 	
 	is_triggered_only = yes
 	
-	option = {#Allow everyone to participate
+	option = {#Let's go
 		name = ord.132.a
+			
+		effect_tooltip = {
+			ORD = {
+				add_to_faction = ROOT
+			}
+		}
+	}
+}
+
+
+country_event = { #Organizing new elections in UNG
+	id = ord.133
+	title = ord.133.t
+	desc = ord.133.d
+	
+	is_triggered_only = yes
+	
+	option = {#Allow everyone to participate
+		name = ord.133.a
 		larennis_idealism_small = yes
+		every_country = {
+			limit = {
+				is_og_freiprinz = yes
+			}
+			country_event = ord.134
+			activate_mission = FPT_electing_new_hochprinz
+		}
 	}
 	
 	option = {#Ban FAU
-		name = ord.132.B
+		name = ord.133.b
+		trigger = {
+			NOT = {
+				has_completed_focus = ORD_stahlhof_union
+			}
+		}
 		larennis_cynicism_medium = yes
+		set_country_flag = ORD_new_UNG_elections_FAU_banned
+		every_country = {
+			limit = {
+				is_og_freiprinz = yes
+			}
+			country_event = ord.134
+			activate_mission = FPT_electing_new_hochprinz
+		}
 	}
 	
 	option = {#Ban STA
-		name = ord.132.c
+		name = ord.133.c
 		larennis_cynicism_small = yes
+		set_country_flag = ORD_new_UNG_elections_STA_banned
+		every_country = {
+			limit = {
+				is_og_freiprinz = yes
+			}
+			country_event = ord.134
+			activate_mission = FPT_electing_new_hochprinz
+		}
 	}
 	
 	option = {#Ban FAU and STA
-		name = ord.132.e
+		name = ord.133.e
+		trigger = {
+			NOT = {
+				has_completed_focus = ORD_stahlhof_union
+			}
+		}
 		larennis_cynicism_big = yes
-=======
->>>>>>> b822b2ed02859076470c2ad214b7f0614a1d01c7
+		set_country_flag = ORD_new_UNG_elections_FAU_STA_banned
+		every_country = {
+			limit = {
+				is_og_freiprinz = yes
+			}
+			country_event = ord.134
+			activate_mission = FPT_electing_new_hochprinz
+		}
+	}
+}
+
+country_event = { #FPT - time to vote for a new Hochprinz under Ordorian supervision
+	id = ord.134
+	title = ord.134.t
+	desc = ord.134.d
+	
+	is_triggered_only = yes
+	
+	option = {#Say "It's votin' time!" and vote all over the place
+		name = ord.134.a
+		
+		set_country_flag = FPT_can_vote_new_elections_ORD_supervision
+		
+		FROM_improve_THIS_relations = yes
+		
+		if = {
+			limit = {
+				ORD = {
+					has_country_flag = ORD_new_UNG_elections_FAU_banned
+				}
+			}
+			custom_effect_tooltip = FPT_hochprinz_elections_ORD_banned_FAU
+		}
+		if = {
+			limit = {
+				ORD = {
+					has_country_flag = ORD_new_UNG_elections_STA_banned
+				}
+			}
+			custom_effect_tooltip = FPT_hochprinz_elections_ORD_banned_STA
+		}
+		if = {
+			limit = {
+				ORD = {
+					has_country_flag = ORD_new_UNG_elections_FAU_STA_banned
+				}
+			}
+			custom_effect_tooltip = FPT_hochprinz_elections_ORD_banned_FAU_STA
+		}
+	}
+}
+
+country_event = { #Fuck STA all my homies hate STA
+	id = ord.135
+	title = ord.135.t
+	desc = ord.135.d
+	
+	is_triggered_only = yes
+	
+	option = {#Yeah screw that guy
+		name = ord.135.a
+		
+		larennis_cynicism_small = yes
+		add_war_support = 0.04
+	}
+}
+
+country_event = { #FPT - ORD preparing for war against STA, wants us to stay out of it
+	id = ord.136
+	title = ord.136.t
+	desc = ord.136.d
+	
+	is_triggered_only = yes
+	
+	option = {#Yea
+		name = ord.136.a
+		
+		ai_chance = {
+			factor = 15
+		}
+		
+		add_ideas = FPT_abandoned_bear
+		
+		ORD = {
+			country_event = {
+				id = ord.137
+				days = 3
+			}
+		}
+	}
+	
+	option = {#Nay
+		name = ord.136.b
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				STA = {
+					is_ai = no
+				}
+				factor = 5 #Sssh, don't tell the player we're helping them
+			}
+		}
+		
+		ORD = {
+			country_event = {
+				id = ord.138
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #FPT will stay out of our war with STA
+	id = ord.137
+	title = ord.137.t
+	desc = ord.137.d
+	
+	is_triggered_only = yes
+	
+	option = {#Sweet
+		name = ord.137.a
+		
+		larennis_idealism_small = yes
+	}
+}
+
+country_event = { #FPT won't stay out of our war with STA
+	id = ord.138
+	title = ord.138.t
+	desc = ord.138.d
+	
+	is_triggered_only = yes
+	
+	option = {#Awe
+		name = ord.138.a
+		
+		larennis_cynicism_small = yes
+	}
+}
+
+
+### LATHWEYNIAN CONCLAVE ###
+country_event = { #We have been invited to join
+	id = ord.139
+	title = ord.139.t
+	desc = ord.139.d
+	
+	is_triggered_only = yes
+	
+	option = {#Yay (join faction)
+		name = ord.139.a
+		
+		trigger = {
+			NOT = {
+				OR = {
+					has_government = monarchy_absolute
+					has_government = puritan
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_faction_leader = yes
+				factor = 0.5
+			}
+			modifier = { # Have mercy on the player
+				any_other_country = {
+					is_in_faction_with = PREV
+					is_ai = no
+					is_faction_leader = yes
+				}
+				factor = 0
+			}
+		}
+		
+		add_ideas = ORD_lathweynian_conclave_member
+		ORD = {
+			country_event = {
+				id = ord.140
+				days = 5
+			}
+		}
+		
+		if = {
+			limit = {
+				is_faction_leader = yes
+			}
+			dismantle_faction = yes
+		}
+		else_if = {
+			limit = {
+				is_in_faction = yes
+				NOT = {
+					is_in_faction_with = ORD
+				}
+			}
+			leave_faction = yes
+		}
+		ORD = {
+			add_to_faction = ROOT
+		}
+		set_country_flag = ORD_FROM_joined_conclave_alliance
+	}
+	
+	option = {#Yay (don't join faction)
+		name = ord.139.b
+		
+		trigger = {
+			NOT = {
+				OR = {
+					has_government = monarchy_absolute
+					has_government = puritan
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 10
+		}
+		
+		add_ideas = ORD_lathweynian_conclave_member
+		ORD = {
+			country_event = ord.140
+		}
+	}
+	
+	option = {#Nah
+		name = ord.139.c
+		
+		ai_chance = {
+			factor = 1
+		}
+		
+		ORD = {
+			country_event = {
+				id = ord.141
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #FROM joins!
+	id = ord.140
+	title = ord.140.t
+	desc = ord.140.d
+	
+	is_triggered_only = yes
+	
+	option = {#Yay
+		name = ord.140.a
+		
+		larennis_idealism_small = yes
+		
+		FROM_improve_THIS_relations = yes
+		
+		effect_tooltip = {
+			FROM = {
+				add_ideas = ORD_lathweynian_conclave_member
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = ORD_FROM_joined_conclave_alliance
+					}
+				}
+				add_to_faction = FROM
+			}
+		}
+	}
+}
+
+country_event = { #FROM doesn't join
+	id = ord.141
+	title = ord.141.t
+	desc = ord.141.d
+	
+	is_triggered_only = yes
+	
+	option = {#Awhe
+		name = ord.141.a
+		
+		larennis_cynicism_small = yes
+		
+		FROM_worsen_THIS_relations = yes
 	}
 }

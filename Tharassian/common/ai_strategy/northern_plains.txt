@@ -10,6 +10,93 @@
 # protect
 # influence
 
+NORTHPLAINS_separatists_hate_arthenon = {#Band together to fight the GMR
+	enable = {
+		is_og_northern_plains_state = yes
+		NOT = {
+			OR = {
+				tag = GMR
+				tag = NPC
+			}
+		}
+		country_exists = GMR
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = alliance
+		id = IRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = IRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = FEL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FEL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = TRI
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TRI
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = NAV
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NAV
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = KAL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KAL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = KRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRT
+		value = 200
+	}
+}
+
 NORTHPLAINS_reunite_plains = {#Try to unify the Northern Plains
 	enable = {
 		is_og_northern_plains_state = yes
@@ -18,6 +105,12 @@ NORTHPLAINS_reunite_plains = {#Try to unify the Northern Plains
 				tag = GMR
 				tag = NPC
 				is_og_northern_plains_state = yes
+			}
+		}
+		NOT = {
+			OR = {
+				has_war_with = GMR
+				has_war_with = ORD
 			}
 		}
 	}
@@ -40,6 +133,24 @@ NORTHPLAINS_reunite_plains = {#Try to unify the Northern Plains
 		type = declare_war
 		id = GMR
 		value = 500
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = NPC
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NPC
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NPC
+		value = 200
 	}
 	
 	ai_strategy = {

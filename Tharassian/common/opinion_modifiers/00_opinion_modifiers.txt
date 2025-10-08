@@ -101,6 +101,14 @@ opinion_modifiers = {
 		value = 35
 	}
 	
+	grateful = {
+		value = 50
+	}
+	
+	magnanimous = {
+		value = 50
+	}
+	
 	UNG_heavy_concessions = {
 		value = -50
 	}
@@ -152,7 +160,7 @@ opinion_modifiers = {
 	ORD_denied_spoils = {
 		value = -15
 	}
-
+	
 	RTH_monarchist_scum = {
 		value = -25
 	}

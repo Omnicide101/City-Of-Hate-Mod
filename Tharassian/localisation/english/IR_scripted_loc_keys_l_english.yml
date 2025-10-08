@@ -33,3 +33,7 @@
  loc_key_SKA_rad_sol_anger_3:0 "Bad"
  loc_key_SKA_rad_sol_anger_4:0 "Horrible"
  loc_key_SKA_rad_sol_anger_5:0 "Unmendable"
+ loc_key_ungerdaler_elections_faustburg_banned:0 "§RNot eligible§!"
+ loc_key_ungerdaler_elections_faustburg_allowed:0 "§Y[?FAU.FPT_electoral_votes]§! votes"
+ loc_key_ungerdaler_elections_stahlhof_banned:0 "§RNot eligible§!"
+ loc_key_ungerdaler_elections_stahlhof_allowed:0 "§Y[?STA.FPT_electoral_votes]§! votes"

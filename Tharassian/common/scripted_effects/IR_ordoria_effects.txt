@@ -1,5 +1,6 @@
 # Divides the Union between allies
 ORD_divide_union = {
+
 	# -------------------------
 	# 0) ORD's own guaranteed puppets
 	# -------------------------

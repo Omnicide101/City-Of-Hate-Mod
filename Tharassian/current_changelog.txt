@@ -62,6 +62,9 @@
 -Added a decision to send manpower to your subjects if they can't staff their garrisons
 -AI will now switch to more food-friendly economy laws if starvation is imminent
 -Separated Venaur into two states
+-Rejigged Ordorian and Rthaur states to follow the rivers
+-Changed strategic regions to account for changed state borders
+-Added 24 achievements
 -Forced AI to demobilize if not at risk of war
 -Fixed Chairophon's divisions in the Irinthian Civil War accidentally being sent to Republican Spain
 -Rimatu: Refusing the expanded Ogregeld will now result in a border conflict rather than a full war

@@ -1776,6 +1776,162 @@ FPT_loyalties = {
 	}
 }
 
+FPT_elections = {
+	FPT_vote_for_candidate = {
+		icon = GFX_decision_restore_ungerdaler_union
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = THIS
+				is_capital = yes
+				owner = {
+					is_og_freiprinz = yes
+				}
+			}
+		}
+		
+		allowed = {
+			is_og_freiprinz = yes
+		}
+		
+		visible = {
+			has_country_flag = FPT_can_vote_new_elections_ORD_supervision
+		}
+		
+		available = {			
+			NOT = {
+				has_country_flag = FPT_already_voted
+			}
+			
+			if = {
+				limit = {
+					ORD = {
+						OR = {
+							has_country_flag = ORD_new_UNG_elections_FAU_STA_banned
+							has_country_flag = ORD_new_UNG_elections_FAU_banned
+						}
+					}
+				}
+				NOT = {
+					FROM = {
+						owner = {
+							tag = FAU
+						}
+					}
+				}
+			}
+						
+			if = {
+				limit = {
+					ORD = {
+						OR = {
+							has_country_flag = ORD_new_UNG_elections_FAU_STA_banned
+							has_country_flag = ORD_new_UNG_elections_STA_banned
+						}
+					}
+				}
+				NOT = {
+					FROM = {
+						owner = {
+							tag = STA
+						}
+					}
+				}
+			}
+
+		}
+
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 5
+				AND = {
+					FROM = {
+						owner = {
+							tag = FAU
+						}
+					}
+					OR = {
+						check_variable = {
+							FPT_union_loyalty > FPT_stahlhof_loyalty
+						}
+						has_idea = FPT_legitimist_freiprinztum
+					}
+				}
+			}
+			modifier = {
+				factor = 5
+				AND = {
+					FROM = {
+						owner = {
+							tag = STA
+						}
+					}
+					OR = {
+						check_variable = {
+							FPT_stahlhof_loyalty > FPT_union_loyalty
+						}
+						has_idea = FPT_ferdinist_freiprinztum
+					}
+				}
+			}
+		}
+		
+		complete_effect = {
+			set_country_flag = FPT_already_voted
+			FROM = {
+				owner = {
+					add_to_variable = {
+						FPT_electoral_votes = 1
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						any_country = {
+							is_og_freiprinz = yes
+							NOT = {
+								has_country_flag = FPT_already_voted
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = FPT_already_voted
+					}
+					country_event = fpt.24
+				}
+				remove_mission = FPT_electing_new_hochprinz
+			}
+		}
+	}
+	FPT_electing_new_hochprinz = {
+		icon = GFX_decision_eng_puppet_usa
+		allowed = {
+			is_og_freiprinz = yes
+		}
+		available = {
+			always = no
+		}
+		activation = {
+			always = no # Triggered only
+		}
+		is_good = yes
+		fire_only_once = yes
+		days_mission_timeout = 183
+		timeout_effect = {
+			country_event = fpt.24
+		}
+	}
+}
+
 rally_princes = {
 	
 	FPT_rally_princes = {

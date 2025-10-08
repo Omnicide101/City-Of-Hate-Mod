@@ -3024,5 +3024,68 @@ ideas = {
 				custom_modifier_tooltip = royal_marriage_warning_tt
 			}
 		}
+		
+		ORD_cast_down_schwarzenbach = {
+			allowed = {
+				OR = {
+					original_tag = ORD
+					original_tag = ORB
+				}
+			}
+			
+			allowed_civil_war = {
+				has_government = monarchy_absolute
+			}
+			
+			picture = IRI_Sacked_North
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = STA
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+		}
+		
+		ORD_guardians_lathweyne_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = monarchy_absolute
+			}
+			
+			picture = generic_royal_marriage
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.33
+				political_power_gain = 2
+				opinion_gain_monthly_factor = 0.5
+				guarantee_cost = -0.5
+			}
+		}
+		
+		ORD_lathweynian_conclave_member = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = AFG_parliament_building
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				opinion_gain_monthly_factor = 0.1
+			}
+		}
 	}
 }

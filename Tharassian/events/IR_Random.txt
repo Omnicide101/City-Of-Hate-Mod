@@ -348,6 +348,13 @@ country_event = {#City Demands Privileges
 	
 	trigger = {
 		NOT = {
+			OR = {
+				tag = NBI
+				tag = ADV
+				tag = XXX
+			}
+		}
+		NOT = {
 			has_country_flag = RND_recent_random_event
 		}
 		any_owned_state = {
@@ -436,6 +443,12 @@ country_event = {#Disease!
 	
 	trigger = {
 		always = no #TODO Finish event
+		NOT = {
+			OR = {
+				tag = NBI
+				tag = ADV
+			}
+		}
 		NOT = {
 			has_country_flag = RND_recent_random_event
 		}
@@ -826,6 +839,16 @@ country_event = {#Anbennar reference
 	
 	mean_time_to_happen = {
 		days = 3650
+	}
+	
+	trigger = {
+		NOT = {
+			OR = {
+				tag = NBI
+				tag = ADV
+				tag = XXX
+			}
+		}
 	}
 	
 	fire_only_once = yes

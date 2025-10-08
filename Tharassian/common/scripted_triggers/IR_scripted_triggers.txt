@@ -36,7 +36,7 @@ is_loyal_to_union = {
 	}
 }
 
-# checks if a country is one of the original freiprinztÅmer
+# checks if a country is one of the original freiprinzt¸mer
 
 is_og_freiprinz = {
 	OR ={
@@ -177,6 +177,80 @@ is_fighting_alongside_ROOT = {
 
 # checks if a country has a relevant Royal Marriage and can thus call someone to arms. I'd love to figure out how to make this into a dynamic variable, probably with ROOT and FROM, but I don't know how at the moment. This'll have to do.
 
+ROOT_has_royal_marriage_with_THIS = {
+	custom_trigger_tooltip = {
+		tooltip = ROOT_has_royal_marriage_with_THIS_tt
+		OR = {
+			AND = {
+				OR = {
+					AND = {
+						tag = UNG
+						has_idea = marriage_UNG_ORD
+					}
+					AND = {
+						tag = ORD
+						has_idea = marriage_ORD_UNG
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = UNG }
+						has_idea = marriage_ORD_UNG
+					}
+					AND = {
+						ROOT = { tag = ORD }
+						has_idea = marriage_UNG_ORD
+					}
+				}
+			}
+			AND = {
+				OR = {
+					AND = {
+						tag = UNG
+						has_idea = marriage_UNG_IRI
+					}
+					AND = {
+						tag = IRI
+						has_idea = marriage_IRI_UNG
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = UNG }
+						has_idea = marriage_IRI_UNG
+					}
+					AND = {
+						ROOT = { tag = IRI }
+						has_idea = marriage_UNG_IRI
+					}
+				}
+			}
+			AND = {
+				OR = {
+					AND = {
+						tag = UNG
+						has_idea = marriage_UNG_GMR
+					}
+					AND = {
+						tag = GMR
+						has_idea = marriage_GMR_UNG
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = UNG }
+						has_idea = marriage_GMR_UNG
+					}
+					AND = {
+						ROOT = { tag = GMR }
+						has_idea = marriage_UNG_GMR
+					}
+				}
+			}
+		}
+	}
+}
+
 has_royal_marriage = {
 	custom_trigger_tooltip = {
 		tooltip = have_a_royal_marriage_tt
@@ -240,16 +314,6 @@ has_royal_marriage = {
 					is_independent = yes
 					is_fighting_alongside_ROOT = no
 				}
-			}
-		}
-		AND = {
-			tag = ORD
-			has_defensive_war = yes
-			has_idea = marriage_ORD_UNG
-			is_independent = yes
-			UNG = {
-				is_independent = yes
-				is_fighting_alongside_ROOT = no
 			}
 		}
 	}
@@ -332,72 +396,120 @@ is_not_threat = {
 dominates_freiprinzen = {
 	OR = {
 		controls_state = 228
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 228
+		}
 		NOC = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 227
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 227
+		}
 		SVT = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 192
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 192
+		}
 		STA = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 284
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 284
+		}
 		NRK = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 226
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 226
+		}
 		SPW = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 225
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 225
+		}
 		TEI = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 206
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 206
+		}
 		ARK = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 233
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 233
+		}
 		FAU = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 224
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 224
+		}
 		SNF = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 234
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 234
+		}
 		WIS = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 235
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 235
+		}
 		WSZ = {
 			is_subject_of = ROOT
 		}
 	}
 	OR = {
 		controls_state = 236
+		any_country = {
+			is_subject_of = ROOT
+			controls_state = 236
+		}
 		FTH = {
 			is_subject_of = ROOT
 		}
