@@ -5,7 +5,7 @@ Hey Guys, So Irenthar is a labour of love for all the People on the team and it 
 
 This should be a place to honor all of these Absolute Legends who worked with us on this project.
 
-## The OG who left
+## The OGs who left
 
 Finnoman (The OG Union lore dev, he really made some if not most of the foundations of Union lore)
 
