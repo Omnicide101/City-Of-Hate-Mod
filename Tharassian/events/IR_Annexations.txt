@@ -338,6 +338,20 @@ country_event = { #Conquest of Rthauiaur
 			}
 			revive_rthaur = yes
 		}
+		
+		if = {
+			limit = {
+				tag = SKA
+			}
+			RTH = {
+				every_owned_state = {
+					for_each_scope_loop = {
+						array = SKA.original_cores
+						transfer_state_to = SKA
+					}
+				}
+			}
+		}
 	}
 	
 	option = { # Annex

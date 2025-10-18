@@ -1041,6 +1041,15 @@ country_event = { # SKA wants the Khorinor mountains back now
 			
 			country_event = { id = rth.25 hours = 3 }
 		}
+		hidden_effect = {
+				every_owned_state = {
+				for_each_scope_loop = {
+					array = SKA.original_cores
+					transfer_state_to = SKA
+					add_core_of = SKA
+				}
+			}
+		}
 		remove_state_core = 106
 		remove_state_core = 125
 		remove_state_core = 133

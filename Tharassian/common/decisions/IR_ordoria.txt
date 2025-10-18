@@ -438,6 +438,18 @@ ORD_autumn_debate_values = {
 				}
 				
 				add_civil_war_target = ORB
+				
+				every_other_country = {
+					limit = {
+						has_war_with = ORD
+					}
+					ORB = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
 			}
 		}
 	}
@@ -500,28 +512,62 @@ ORD_autumn_debate_values = {
 				
 				set_country_flag = ORD_royalist_revolt_attempted
 				
-				ORD_larennis_valinthir = {
-					set_nationality = ORB
-					add_country_leader_role = {
-						character = ORD_larennis_valinthir
-						promote_leader = yes
-						country_leader = {
-							ideology = monarchy_absolute_ideology
-							traits = { youthful_princeling }
+				if = {
+					limit = {
+						has_character = ORD_larennis_valinthir
+					}
+					ORD_larennis_valinthir = {
+						set_nationality = ORB
+						if = {
+							limit = {
+								NOT = {
+									any_country = {
+										can_be_country_leader = ORD_larennis_valinthir
+									}
+								}
+							}
+							add_country_leader_role = {
+								character = ORD_larennis_valinthir
+								promote_leader = yes
+								country_leader = {
+									ideology = monarchy_absolute_ideology
+									traits = { youthful_princeling }
+								}
+							}
 						}
 					}
 				}
-				ORD_yntha = {
-					set_nationality = ORB
+				if = {
+					limit = {
+						has_character = ORD_yntha
+					}
+					ORD_yntha = {
+						set_nationality = ORB
+					}
 				}
-				ORD_alwyen = {
-					set_nationality = ORB
+				if = {
+					limit = {
+						has_character = ORD_alwyen
+					}
+					ORD_alwyen = {
+						set_nationality = ORB
+					}
 				}
-				ORD_gylar = {
-					set_nationality = ORB
+				if = {
+					limit = {
+						has_character = ORD_gylar
+					}
+					ORD_gylar = {
+						set_nationality = ORB
+					}
 				}
-				ORD_thrysmere = {
-					set_nationality = ORB
+				if = {
+					limit = {
+						has_character = ORD_thrysmere
+					}
+					ORD_thrysmere = {
+						set_nationality = ORB
+					}
 				}
 				
 				ORB = {
@@ -603,8 +649,13 @@ ORD_autumn_debate_values = {
 						}
 					}
 					
-					ORD_alstora_holynthor = {
-						set_nationality = ORB
+					if = {
+						limit = {
+							has_character = ORD_alstora_holynthor
+						}
+						ORD_alstora_holynthor = {
+							set_nationality = ORB
+						}
 					}
 					
 					ORB = {
@@ -802,6 +853,29 @@ ORD_autumn_debate_values = {
 				}
 				
 				add_civil_war_target = ORB
+				
+				if = {
+					limit = {
+						ORD = {
+							has_country_flag = ORD_governor_larennis_flag
+						}
+					}
+					EOR = {
+						country_event = ord_east.1
+					}
+				}
+				
+				every_other_country = {
+					limit = {
+						has_war_with = ORD
+					}
+					ORB = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
 			}
 		}
 	}
@@ -1119,6 +1193,18 @@ ORD_autumn_debate_values = {
 				}
 				
 				add_civil_war_target = ORB
+				
+				every_other_country = {
+					limit = {
+						has_war_with = ORD
+					}
+					ORB = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
 			}
 		}
 	}
@@ -4105,6 +4191,205 @@ ORD_skirmishes_rebels = {
 
 ORD_looming_steel_crisis = {
 	
+}
+
+ORD_lathweynian_conclave = {
+
+	ORD_censure_tyrant = {
+		icon = intelligence_operation
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = THIS
+				is_capital = yes
+				OR = {
+					is_on_continent = latherin
+					is_on_continent = asweyne
+				}
+				owner = {
+					OR = {
+						AND = {
+							NOT = {
+								tag = ORD
+							}
+							has_government = monarchy_absolute
+						}
+						has_government = puritan
+					}
+				}
+			}
+		}
+		
+		available = {
+			has_idea = ORD_lathweynian_conclave_member
+			FROM = {
+				OR = {
+					is_on_continent = latherin
+					is_on_continent = asweyne
+				}
+				owner = {
+					OR = {
+						AND = {
+							has_government = monarchy_absolute
+							NOT = {
+								tag = ORD # Larennis is exempted, yes this is hypocritical, welcome to realpolitik
+							}
+						}
+						has_government = puritan
+					}
+					has_idea = ORD_lathweynian_conclave_member
+				}
+			}
+		}
+		
+		visible = {
+			has_idea = ORD_lathweynian_conclave_member
+			any_other_country = {
+				has_idea = ORD_lathweynian_conclave_member
+				capital_scope = {
+					OR = {
+						is_on_continent = latherin
+						is_on_continent = asweyne
+					}
+				}
+				OR = {
+					AND = {
+						has_government = monarchy_absolute
+						NOT = {
+							tag = ORD # Larennis is exempted, yes this is hypocritical, welcome to realpolitik
+						}
+					}
+					has_government = puritan
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 50
+			modifier = {
+				any_country = {
+					has_country_flag = ORD_lathweynian_conclave_censure_player_said_no
+				}
+				factor = 0
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 35
+		
+		complete_effect = {
+			# TODO make this a vote
+			FROM = {
+				owner = {
+					faction_leader = {
+						remove_from_faction = PREV
+					}
+					remove_ideas = ORD_lathweynian_conclave_member
+				}
+			}
+		}
+	}
+
+	ORD_cast_down_tyrant = {
+		icon = intelligence_operation
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = THIS
+				is_capital = yes
+				OR = {
+					is_on_continent = latherin
+					is_on_continent = asweyne
+				}
+				owner = {
+					OR = {
+						AND = {
+							NOT = {
+								tag = ORD
+							}
+							has_government = monarchy_absolute
+						}
+						has_government = puritan
+					}
+				}
+			}
+		}
+		
+		available = {
+			has_idea = ORD_lathweynian_conclave_member
+			FROM = {
+				OR = {
+					is_on_continent = latherin
+					is_on_continent = asweyne
+				}
+				owner = {
+					OR = {
+						AND = {
+							has_government = monarchy_absolute
+							NOT = {
+								tag = ORD # Larennis is exempted, yes this is hypocritical, welcome to realpolitik
+							}
+						}
+						has_government = puritan
+					}
+					NOT = {
+						has_idea = ORD_lathweynian_conclave_member
+					}
+				}
+			}
+		}
+		
+		visible = {
+			has_idea = ORD_lathweynian_conclave_member
+			any_other_country = {
+				NOT = {
+					has_idea = ORD_lathweynian_conclave_member
+				}
+				capital_scope = {
+					OR = {
+						is_on_continent = latherin
+						is_on_continent = asweyne
+					}
+				}
+				OR = {
+					AND = {
+						has_government = monarchy_absolute
+						NOT = {
+							tag = ORD # Larennis is exempted, yes this is hypocritical, welcome to realpolitik
+						}
+					}
+					has_government = puritan
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 50
+			modifier = {
+				any_country = {
+					has_country_flag = ORD_lathweynian_conclave_censure_player_said_no
+				}
+				factor = 0
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 35
+		
+		complete_effect = {
+			# TODO make this a vote
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+	}
 }
 
 ORD_searching_inskyllithe = {

@@ -121,7 +121,7 @@ restore_sigismunds_stahlhof = {
 	
 	STA = {
 	
-		set_country_flag = STA_victorious_civil_war
+		set_global_flag = STA_victorious_civil_war
 		
 		set_cosmetic_tag = STA_empire_sigismund
 		

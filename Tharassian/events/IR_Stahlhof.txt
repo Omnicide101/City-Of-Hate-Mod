@@ -2011,3 +2011,18 @@ country_event = {#Defender Cancel
 
 	}
 }
+
+## ORDORIA EVENT ##
+
+country_event = {#Idealistic Larennis  agitates against us
+	id = sta.85
+	title = sta.85.t
+	desc = sta.85.d
+	
+	is_triggered_only = yes
+
+	option = { # Bring it
+		name = sta.85.a
+		add_war_support = 0.06
+	}
+}

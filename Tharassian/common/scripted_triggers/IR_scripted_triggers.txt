@@ -177,6 +177,80 @@ is_fighting_alongside_ROOT = {
 
 # checks if a country has a relevant Royal Marriage and can thus call someone to arms. I'd love to figure out how to make this into a dynamic variable, probably with ROOT and FROM, but I don't know how at the moment. This'll have to do.
 
+ROOT_has_royal_marriage_with_THIS = {
+	custom_trigger_tooltip = {
+		tooltip = ROOT_has_royal_marriage_with_THIS_tt
+		OR = {
+			AND = {
+				OR = {
+					AND = {
+						tag = UNG
+						has_idea = marriage_UNG_ORD
+					}
+					AND = {
+						tag = ORD
+						has_idea = marriage_ORD_UNG
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = UNG }
+						has_idea = marriage_ORD_UNG
+					}
+					AND = {
+						ROOT = { tag = ORD }
+						has_idea = marriage_UNG_ORD
+					}
+				}
+			}
+			AND = {
+				OR = {
+					AND = {
+						tag = UNG
+						has_idea = marriage_UNG_IRI
+					}
+					AND = {
+						tag = IRI
+						has_idea = marriage_IRI_UNG
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = UNG }
+						has_idea = marriage_IRI_UNG
+					}
+					AND = {
+						ROOT = { tag = IRI }
+						has_idea = marriage_UNG_IRI
+					}
+				}
+			}
+			AND = {
+				OR = {
+					AND = {
+						tag = UNG
+						has_idea = marriage_UNG_GMR
+					}
+					AND = {
+						tag = GMR
+						has_idea = marriage_GMR_UNG
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = UNG }
+						has_idea = marriage_GMR_UNG
+					}
+					AND = {
+						ROOT = { tag = GMR }
+						has_idea = marriage_UNG_GMR
+					}
+				}
+			}
+		}
+	}
+}
+
 has_royal_marriage = {
 	custom_trigger_tooltip = {
 		tooltip = have_a_royal_marriage_tt

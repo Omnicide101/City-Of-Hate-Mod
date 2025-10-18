@@ -3807,7 +3807,7 @@ focus_tree = {
 			factor = 28
 		}
 		relative_position_id = ORD_guardians_lathweyne
-		x = -3
+		x = -8
 		y = 1
 		completion_reward = {
 			GMR = {
@@ -3959,20 +3959,18 @@ focus_tree = {
 			factor = 28
 		}
 		bypass = {
-			NOT = {
-				AND = {
+			OR = {
+				has_global_flag = STA_victorious_civil_war
+				NOT = {
 					country_exists = UNG
-					OR = {
-						country_exists = STA
-						STA = {
-							is_subject = no
-						}
-					}
+				}
+				UNG = {
+					is_subject = yes
 				}
 			}
 		}
 		relative_position_id = ORD_guardians_lathweyne
-		x = 6
+		x = 2
 		y = 1
 		completion_reward = {
 			if = {
@@ -4018,6 +4016,7 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = ORD_containing_ungerdal
+			focus = ORD_stahlhof_union
 		}
 		available = {
 			country_exists = UNG
@@ -4029,22 +4028,18 @@ focus_tree = {
 		}
 		bypass = {
 			NOT = {
-				AND = {
-					country_exists = UNG
-					OR = {
-						country_exists = STA
-						STA = {
-							is_subject = no
-						}
-					}
-				}
+				has_global_flag = STA_victorious_civil_war
+				country_exists = UNG
+			}
+			UNG = {
+				is_subject = yes
 			}
 		}
 		ai_will_do = {
 			factor = 31
 		}
 		relative_position_id = ORD_warmonger_south
-		x = -5
+		x = -6
 		y = 1
 		completion_reward = {
 			country_event = ord.122
@@ -4329,6 +4324,7 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = ORD_mission_faustburg
+			focus = ORD_stahlhof_union
 		}
 		available = {
 			country_exists = UNG
@@ -4339,6 +4335,7 @@ focus_tree = {
 		bypass = {
 			OR = {
 				NOT = {
+					has_global_flag = STA_victorious_civil_war
 					country_exists = UNG
 				}
 				UNG = {
@@ -4350,10 +4347,22 @@ focus_tree = {
 			factor = 31
 		}
 		relative_position_id = ORD_warmonger_south
-		x = 1
+		x = 0
 		y = 1
 		completion_reward = {
-			
+			add_war_support = 0.07
+			UNG = {
+				add_opinion_modifier = {
+					target = ORD
+					modifier = threatened_opinion
+				}
+				hidden_effect = {
+					add_relation_modifier = {
+						target = ORD
+						modifier = threatened_opinion_modifier
+					}
+				}
+			}
 		}
 	}
 	
@@ -4594,6 +4603,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 37
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
 		}
 		will_lead_to_war_with = UNG
 		relative_position_id = ORD_contact_hieringen
@@ -4643,6 +4656,139 @@ focus_tree = {
 			}
 		}
 	}
+
+	focus = { # Tickling the Bear - very funny, Destroyer -Mira
+		id = ORD_stahlhof_union
+		icon = GFX_focus_ung_stahlhof_demands
+		cost = 1
+		prerequisite = {
+			focus = ORD_warmonger_south
+		}
+		mutually_exclusive = {
+			focus = ORD_mission_faustburg
+			focus = ORD_containing_ungerdal
+		}
+		available = {
+			has_global_flag = STA_victorious_civil_war
+		}
+		bypass = { 
+			
+			STA = {
+				is_sphered = yes
+			}
+		}
+		ai_will_do = {
+			factor = 31
+		}
+		relative_position_id = ORD_warmonger_south
+		x = 6
+		y = 1
+		completion_reward = {
+			add_war_support = 0.07
+			ORD = {
+				country_event = ord.135
+			} 
+			STA = {
+				country_event = sta.85
+			} 
+		}
+	}
+	
+	focus = { # Rallying the 'Allies'
+		id = ORD_stahlhof_rebel_1
+		icon = GFX_focus_generic_shatter
+		cost = 2
+		prerequisite = {
+			focus = ORD_stahlhof_union
+		}
+		ai_will_do = {
+			factor = 34
+		}
+		bypass = { 
+			STA = {
+				is_sphered = yes
+			}
+		}
+		relative_position_id = ORD_stahlhof_union
+		x = -1
+		y = 1
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_in_faction_with = STA
+				}
+				country_event = ord.136
+			}
+		}
+	}
+	
+	focus = { # Rallying the Subjugated
+		id = ORD_stahlhof_rebel_2
+		icon = GFX_IRI_Immunity_For_All_Nobles
+		cost = 2
+		prerequisite = {
+			focus = ORD_stahlhof_union
+		}
+		ai_will_do = {
+			factor = 34
+		}
+		bypass = { 
+			STA = {
+				is_sphered = yes
+			}
+		}
+		relative_position_id = ORD_stahlhof_union
+		x = 1
+		y = 1
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_subject_of = STA
+				}
+				country_event = ord.136
+			}
+		}
+	}
+	
+	focus = { # Rallying against the Despot
+		id = ORD_stahlhof_war
+		icon = GFX_focus_generic_conspiracy
+		cost = 1
+		prerequisite = {
+			focus = ORD_stahlhof_rebel_1
+		}
+		prerequisite = {
+			focus = ORD_stahlhof_rebel_2
+		}
+		ai_will_do = {
+			factor = 37
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		bypass = { 
+			STA = {
+				is_sphered = yes
+			}
+		}
+		relative_position_id = ORD_stahlhof_rebel_1
+		x = 1
+		y = 1
+		select_effect = { 
+			country_event = ORD.101
+			STA = {
+				country_event = STA.103
+			}
+		}
+		completion_reward = {
+			add_timed_idea = { 
+				idea = ORD_cast_down_schwarzenbach
+				days = 180
+			}
+			ORD = { declare_war_on = { target = STA type = annex_everything } }
+		}
+	}
 	
 	focus = { #End the Union
 		id = ORD_end_union
@@ -4650,6 +4796,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = {
 			focus = ORD_intervene_hochprinztum
+			focus = ORD_stahlhof_war
 		}
 		mutually_exclusive = {
 			focus = ORD_oversee_new_elections
@@ -4685,10 +4832,21 @@ focus_tree = {
 			factor = 40
 		}
 		relative_position_id = ORD_intervene_hochprinztum
-		x = -1
+		x = 2
 		y = 1
 		completion_reward = {
-			larennis_cynicism_small = yes
+			if = {
+				limit = {
+					has_completed_focus = ORD_intervene_hochprinztum
+				}
+				larennis_cynicism_small = yes
+			}
+			if = {
+				limit = {
+					has_completed_focus = ORD_stahlhof_war
+				}
+				larennis_cynicism_big = yes
+			}
 			custom_override_tooltip = {
 				tooltip = ORD_divide_union_tt
 				ORD_divide_union = yes	
@@ -4702,6 +4860,7 @@ focus_tree = {
 		cost = 9
 		prerequisite = {
 			focus = ORD_intervene_hochprinztum
+			focus = ORD_stahlhof_war
 		}
 		mutually_exclusive = {
 			focus = ORD_end_union
@@ -4715,10 +4874,21 @@ focus_tree = {
 			factor = 40
 		}
 		relative_position_id = ORD_intervene_hochprinztum
-		x = 1
+		x = 4
 		y = 1
 		completion_reward = {
-			larennis_idealism_small = yes
+			if = {
+				limit = {
+					has_completed_focus = ORD_intervene_hochprinztum
+				}
+				larennis_idealism_small = yes
+			}
+			if = {
+				limit = {
+					has_completed_focus = ORD_stahlhof_war
+				}
+				larennis_idealism_big = yes
+			}
 			every_country = {
 				limit = {
 					OR = {
@@ -4735,111 +4905,86 @@ focus_tree = {
 		}
 	}
 	
-	focus = { #
-		id = 
-		icon = GFX_
-		cost = 
+	focus = { # Peace in the West
+		id = ORD_peace_west
+		icon = GFX_focus_ord_dare_dream
+		cost = 1
 		prerequisite = {
-			focus = 
+			focus = ORD_cast_down_warlock
+			focus = ORD_isolate_bear
+			focus = ORD_end_union
+			focus = ORD_oversee_new_elections
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 43
 		}
-		relative_position_id = 
-		x = 
-		y = 
+		available = {
+			NPC = {
+				is_sphered = yes
+			}
+			UNG = {
+				is_sphered = yes
+				ROOT_has_royal_marriage_with_THIS = yes
+			}
+		}
+		relative_position_id = ORD_isolate_bear
+		x = 4
+		y = 1
 		completion_reward = {
-			
+			add_ideas = ORD_guardians_lathweyne_idea
 		}
 	}
 	
-	focus = { #
-		id = 
-		icon = GFX_
-		cost = 
+	focus = { #Found the Lathweynian Conclave
+		id = ORD_lathweyne_conclave
+		icon = GFX_focus_BRA_tribunal
+		cost = 5
 		prerequisite = {
-			focus = 
+			focus = ORD_peace_west
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 46
 		}
-		relative_position_id = 
-		x = 
-		y = 
+		relative_position_id = ORD_peace_west
+		x = 0
+		y = 1
 		completion_reward = {
-			
-		}
-	}
-	
-	focus = { #
-		id = 
-		icon = GFX_
-		cost = 
-		prerequisite = {
-			focus = 
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		relative_position_id = 
-		x = 
-		y = 
-		completion_reward = {
-			
-		}
-	}
-	
-	focus = { #
-		id = 
-		icon = GFX_
-		cost = 
-		prerequisite = {
-			focus = 
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		relative_position_id = 
-		x = 
-		y = 
-		completion_reward = {
-			
-		}
-	}
-	
-	focus = { #
-		id = 
-		icon = GFX_
-		cost = 
-		prerequisite = {
-			focus = 
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		relative_position_id = 
-		x = 
-		y = 
-		completion_reward = {
-			
-		}
-	}
-	
-	focus = { #
-		id = 
-		icon = GFX_
-		cost = 
-		prerequisite = {
-			focus = 
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		relative_position_id = 
-		x = 
-		y = 
-		completion_reward = {
-			
+			add_ideas = ORD_lathweyne_conclave_member
+			#TODO News event
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_faction_name = lathweynian_conclave
+			}
+			else_if ={
+				limit = {
+					is_in_faction = yes
+				}
+				leave_faction = yes
+				create_faction = lathweynian_conclave
+			}
+			else = {
+				create_faction = lathweynian_conclave
+			}
+			every_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							is_on_continent = latherin
+							is_on_continent = asweyne
+						}
+					}
+					NOT = {
+						OR = {
+							has_government = monarchy_absolute
+							has_government = puritan
+							has_government = republic_peasant
+						}
+					}
+				}
+				country_event = ord.139
+			}
 		}
 	}
 	
@@ -6131,6 +6276,14 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			ORD_alstora_holynthor = {
+				remove_trait = {
+					slot = political_advisor
+					trait = governess_in_exile
+				}
+				add_trait = {
+					slot = political_advisor
+					trait = governess_of_the_east_warlike
+				}
 				set_nationality = {
 					target_country = EOR
 					character = PREV
@@ -7961,6 +8114,7 @@ focus_tree = {
 		x = 0
 		y = 5
 		completion_reward = {
+			#TODO news event
 			if = {
 				limit = {
 					has_idea = ORD_ordoria_reunited_idea

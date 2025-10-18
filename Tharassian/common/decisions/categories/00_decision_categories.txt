@@ -31,6 +31,28 @@ ORD_expand_sanctuary = {
 	visible_when_empty = yes
 }
 
+ORD_lathweynian_conclave = {
+	icon = GFX_decision_category_generic_formable_nations
+	
+	allowed = {
+		always = yes # Not sure if setting allowed on capital will let countries that don't exist at game start (i.e. East Ordoria, Vergallheim, the Rooks) join, so just in case
+	}
+	
+	visible = {
+		if = {
+			limit = {
+				country_exists = THIS
+			}
+			capital_scope = {
+				OR = {
+					is_on_continent = latherin
+					is_on_continent = asweyne
+				}
+			}
+		}
+	}
+}
+
 EOR_pacify_land = {
 
 	icon = GFX_decision_category_eng_move_to_secure_the_dominions

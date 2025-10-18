@@ -9,6 +9,27 @@
 # garrison
 # protect
 # influence
+
+ordorian_lover = {
+	enable = {
+		has_idea = marriage_UNG_ORD
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = ORD
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = ORD
+		value = 200
+	}
+}
+
 you_can_take_perkavland = {
 	enable = {
 		original_tag = UNG

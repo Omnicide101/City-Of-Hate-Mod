@@ -10,6 +10,45 @@
 # protect
 # influence
 
+ORD_lathweynian_conclave_buddies = {
+	enable = {
+		has_idea = ORD_lathweynian_conclave_member
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = ORD
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = ORD
+		value = 200
+	}	
+}
+
+ungerdaler_lover = {
+	enable = {
+		has_idea = marriage_ORD_UNG
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = UNG
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = UNG
+		value = 200
+	}
+}
+
 ORD_allies_against_union = {
 	enable = {
 		OR = {
