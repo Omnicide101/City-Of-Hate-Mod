@@ -980,6 +980,32 @@ leader_traits = {
 		army_morale_factor = 0.05
 		republic_aristocrat_drift = -0.1
 	}
+	desperate_opportunist = {
+		random = no
+		stability_factor = -0.05
+		party_stability_factor = -0.1
+		monarchy_absolute_drift = -0.05
+	}
+	dreamy_prince = {
+		random = no
+		opinion_gain_monthly_factor = 0.25
+		army_morale_factor = 0.05
+		stability_factor = 0.05
+	}
+	disempowered_wreck = {
+		random = no
+		political_power_gain = -0.3
+		army_morale_factor = -0.1
+		stability_factor = -0.1
+		command_power_gain = -0.3
+	}
+	fury_of_the_south = {
+		random = no
+		political_power_gain = 0.1
+		army_morale_factor = 0.1
+		army_org_factor = 0.03
+		command_power_gain = 0.05
+	}
 	courtly_captured = {
 		random = no
 	}

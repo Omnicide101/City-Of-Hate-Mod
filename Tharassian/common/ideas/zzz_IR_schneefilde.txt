@@ -536,6 +536,9 @@ SNF_mil_equipment_standart = {
 			light_cavalry_equipment = {
 				build_cost_ic = -0.1 instant = yes
 				}
+			infantry_equipment = {
+				build_cost_ic = -0.1 instant = yes
+				}
 		}
 }
 ####
@@ -816,7 +819,11 @@ SNF_hutrigs_guard = {
 #####
 
 SNF_perkav_studied = {
-			
+
+			available = {
+			country_exists = PRK
+			}
+
 			allowed = {
 				always = no
 			}
@@ -833,6 +840,37 @@ SNF_perkav_studied = {
 					tag = PRK
 					attack_bonus_against = 0.05
 					defense_bonus_against = 0.05
+			}
+		}
+#####
+	WWS_wistingen_trade_konkord = {
+		
+			allowed = {
+				always = no
+			}
+
+			available = {
+			country_exists = WIS
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_brewery
+			
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				local_resources_factor = 0.1
+				}
+			
+			targeted_modifier = {
+					tag = WIS
+					trade_opinion_factor = 0.15
+					extra_trade_to_target_factor = 0.1
+					trade_cost_for_target_factor = -0.3
 			}
 		}
 	}
@@ -859,6 +897,27 @@ SNF_perkav_studied = {
 			
 			traits = {
 				second_prince
+			}
+		}
+		evil_ulrich_drecht = {
+			name = ulrich_drecht
+			picture = snf_drecht
+			
+			allowed = {
+				original_tag = SNF
+			}
+		
+			available = {
+				NOT = {
+				has_country_leader = {
+   				 name = "Ulrich Drecht"
+   				 ruling_only = yes
+				}
+				}
+			}
+			
+			traits = {
+				desperate_opportunist
 			}
 		}
 	}

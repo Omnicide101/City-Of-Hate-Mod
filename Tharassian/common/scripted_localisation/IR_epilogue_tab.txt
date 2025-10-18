@@ -1,0 +1,39 @@
+defined_text = { #Sets which text is supposed to show
+	name = GetCorrectEpilogueText
+	text = {
+		trigger = {
+			NOT = { original_tag = ORD }
+			has_country_flag = country_context_text_flag_epilogue
+		}
+		localization_key = epilogue_context
+	}
+	text = {
+		trigger = {
+			original_tag = ORD
+			has_country_flag = country_context_text_flag
+		}
+		localization_key = ORD_epilogue_context
+	}
+}
+
+defined_text = { #Sets which text header is supposed to show
+	name = GetCorrectEpilogueHeader
+	text = {
+        trigger = {
+            has_country_flag = country_context_text_flag_epilogue
+        }
+        localization_key = loc_key_epilogue_tab_hist_summary_header
+    }
+}
+
+defined_text = { #Sets which text title is supposed to show
+	name = GetCorrectEpilogueTitle
+	text = {
+		trigger = {
+			has_country_flag = country_context_text_flag
+		}
+		localization_key = loc_key_epilogue_tab_hist_summary_title
+	}
+}
+
+####################################################
