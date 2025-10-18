@@ -1,0 +1,132 @@
+guiTypes = {
+	
+	containerWindowType = {
+		name = "epilogue_tab_list"
+		position = { x = -650 y = -450}	
+		
+		size = {
+			width = 1195
+			height = 791
+		}
+		
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		show_sound = menu_open_window
+		click_to_front = yes
+        
+		orientation = center
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_lore_tab_bg"
+		}
+		
+		buttonType = {
+			name = "close_button"
+			position = {
+				x = -45
+				y = 13
+			}
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "hoi_16mbs"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}	
+		
+		
+		instantTextBoxType = {
+			name = "epilogue_country_name_text"
+			position = {
+				x = 780
+				y = 30
+			}
+			maxwidth = 400
+			text = "Story of The [Root.GetAdjective] People"
+			font = "hoi_24header"
+		}
+		
+		instantTextBoxType = {
+			name = "tab_name_text"
+			position = {
+				x = 125
+				y = 93
+			}
+			maxwidth = 500
+			text = "[GetCorrectEpilogueHeader]"
+			font = "hoi_18mbs"
+		}
+		
+		# if you want a scroll bar, you have to add a parent container to your grid
+		containerWindowType = {
+			name = "epilogue_text_container"
+			position = {x = 105 y = 125}
+			size = {width = 1069 height = 612 }
+            margin = { top = 10 bottom = 10 }
+			Orientation = upper_left
+			
+			verticalScrollbar = "right_vertical_slider"
+
+			# background is necessary for scrollbars to work
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window_1b_thin_border"
+			}
+			
+			#Too much lore for a single loc string, so allow people to tab between them
+	#		buttonType = {
+	#			name = "prev_button"
+	#			position = {
+	#				x = -80
+	#				y = 0
+	#			}
+	#			quadTextureSprite ="option_prev"
+	#			buttonFont = "hoi_16mbs"
+	#			shortcut = "q"
+	#			Orientation = "UPPER_RIGHT"
+	#			clicksound = click_close
+	#			pdx_tooltip = "PREV"
+	#		}
+	#		buttonType = {
+	#			name = "next_button"
+	#			position = {
+	#				x = -60
+	#				y = 0
+	#			}
+	#			quadTextureSprite ="option_next"
+	#			buttonFont = "hoi_16mbs"
+	#			shortcut = "e"
+	#			Orientation = "UPPER_RIGHT"
+	#			clicksound = click_close
+	#			pdx_tooltip = "NEXT"
+	#		}
+	#		
+			instantTextBoxType = {
+				name = "epilogue_title_text"
+				position = {
+					x = 60
+					y = 10
+				}
+				maxwidth = 900
+				maxheight = 50
+				text = "[GetCorrectEpilogueTitle]"
+				font = "hoi_36header"	
+			}
+		
+			instantTextBoxType = {
+				name = "epilogue_text"
+				position = {
+					x = 60
+					y = 60
+				}
+				maxwidth = 900
+				maxheight = 500
+				text = "[GetCorrectEpilogueText]"
+				font = "hoi_16mbs"
+				scrollbartype = "standardtext_slider"
+			}
+		}
+    }
+}

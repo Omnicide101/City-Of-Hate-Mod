@@ -125,6 +125,12 @@ country_event = {#Nobility end their struggle
 			id = snf.25
 			days = 49
 			}
+		WSZ = {
+			country_event = {
+			id = wsz.4
+			days = 49
+			}
+			}
 		}
 	}
 }
@@ -471,6 +477,19 @@ country_event = {#Drecht befriended
 		name = snf.16.a
 		clr_country_flag  = SNF_Drecht_opportunity_flag
 		set_country_flag = SNF_Drecht_advisor
+		deactivate_advisor = evil_ulrich_drecht
+		add_advisor_role = {
+    		character = SNF_ulrich_drecht
+    		activate = yes
+    		advisor = {
+        	slot = political_advisor
+        	cost = 50
+        	idea_token = ulrich_drecht
+        	traits = {
+            	second_prince
+        			}
+    			}
+			}
 	}
 }
 ###############
@@ -596,7 +615,7 @@ country_event = {#Wertzvorde declines
 	}
 }
 ###
-country_event = {#Gain cores since funny war
+country_event = {#Gain cores since funny war, 2025 change: NO CORES
 	id = snf.21
 	title = snf.21.t
 	desc = snf.21.d
@@ -616,13 +635,13 @@ country_event = {#Gain cores since funny war
 	
 	option = {#mfw
 	name = snf.21.a
-	every_state = {
-			limit = {
-        			is_owned_by = PRK
-     			is_claimed_by = SNF
-    			}
-    		add_core_of = SNF
-		}
+	#every_state = {
+	#		limit = {
+    #    			is_owned_by = PRK
+    # 			is_claimed_by = SNF
+    #			}
+    #		add_core_of = SNF
+	#	}
 	set_country_flag = SNF_SPK_WAR
 	}
 }
@@ -873,7 +892,73 @@ country_event = {#The Exodus for PRK
 		}
 	}
 }
+#
+country_event = {#Till Lehmkuhl hi
+	id = snf.29
+	title = snf.29.t
+	desc = snf.29.d
+	picture = GFX_report_event_military_planning
+	
+	fire_only_once = yes
+	
+	trigger = {
+	tag = SNF
+	has_completed_focus = SNF_support_kalaster
+	}
 
+	mean_time_to_happen = {
+		days = 80
+	}
+	
+	option = {#Yeah sure, help us
+		name = snf.29.a
+		set_country_flag = SNF_recruited_till_lehmkuhl
+		#custom_effect_tooltip = available_political_advisor
+		#show_ideas_tooltip = till_lehmkuhl
+		activate_advisor = till_lehmkuhl
+	}
+	option = {#i hate perkavite druids, fuck you
+		name = snf.29.b
+		add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.08
+			}
+	}
+}
+country_event = {#Otto kills some nobles
+	id = snf.30
+	title = snf.30.t
+	desc = snf.30.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {#yay
+		name = snf.30.a
+		if = {
+		   limit = { has_idea = SNF_vilified_nobility }
+		swap_ideas = {
+		remove_idea = SNF_vilified_nobility
+		add_idea = SNF_dwindling_nobility
+		}
+		}
+		if = {
+		limit = { has_idea = SNF_wary_of_nobles }
+		swap_ideas = {
+		remove_idea = SNF_wary_of_nobles
+		add_idea = SNF_worried_nobles
+		}
+		}
+		add_political_power = -150
+		add_stability = -0.1
+		add_popularity = {
+				ideology = republic_aristocrat
+				popularity = 0.20
+			}
+	}
+}
 ################
 country_event = {#Drecht wins
 	id = snf.100

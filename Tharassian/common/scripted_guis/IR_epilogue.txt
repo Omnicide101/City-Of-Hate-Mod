@@ -1,0 +1,60 @@
+scripted_gui = {
+
+	epilogue_tab = {
+		context_type = player_context
+		
+		window_name = "epilogue_tab_container"
+		
+		visible = {
+			always = yes
+		}
+		
+		effects = {
+			epilogue_tab_button_click = {
+				set_country_flag = open_epilogue_tab_button_flag
+			}
+		}
+	}
+	
+	epilogue_tab_list = {
+		context_type = player_context
+		
+		window_name = "epilogue_tab_list"
+		
+		visible = {
+			has_country_flag = open_epilogue_tab_button_flag
+		}
+		
+		triggers = {
+			prev_button_visible = {
+				tag = ORD
+				OR = {
+					has_country_flag = country_context_text_flag_epilogue
+					has_country_flag = country_history_text_2_flag_epilogue
+				}
+			}
+			
+			next_button_visible = {
+				tag = ORD
+				OR = {
+					has_country_flag = country_context_text_flag_epilogue
+					has_country_flag = country_history_text_2_flag_epilogue
+				}
+			}
+		}
+		
+		effects = {
+			close_button_click = {
+				clr_country_flag = open_epilogue_tab_button_flag
+			}
+			prev_button_click = {
+				set_country_flag = country_context_text_flag_epilogue
+				clr_country_flag = country_history_text_2_flag_epilogue
+			}
+			next_button_click = {
+				set_country_flag = country_history_text_2_flag_epilogue
+				clr_country_flag = country_context_text_flag_epilogue
+			}
+		}
+	}
+}

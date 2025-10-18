@@ -1,0 +1,806 @@
+﻿### UNGERDALER UNION GENERIC FREIPRINZ FOCUS TREE ###
+
+focus_tree = { #General Foci
+	id = wws_shared_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 5
+			OR = {
+				tag = SNF
+				tag = WIS
+				tag = WSZ
+				AND = {
+				tag = TEI
+				has_country_flag = wws_konkord_yes
+					}
+			}
+		}
+	}
+	shared_focus = WWS_wistinger_konkord
+}
+
+	###	Restore the Wistinger Konkordat ###
+	
+	joint_focus = { # Wistinger Konkord
+		id = WWS_wistinger_konkord
+		icon = GFX_IRI_Reign_Of_Strategos
+		cost = 5
+		available = {
+			has_country_flag = FPT_border_conflicts_enabled
+			UNG = {
+			has_country_flag = UNG_schneefilde_sacked
+			}
+		}
+		allow_branch = {
+				OR = {
+				TAG = SNF
+				TAG = WIS
+				TAG = WSZ
+				AND = {
+				TAG = TEI
+				has_country_flag = wws_konkord_yes
+					}
+				}
+    		}
+		prerequisite = {
+			focus = FPT_our_place_union
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		relative_position_id = FPT_our_place_union
+		x = 10
+		y = 1
+		completion_reward_joint_originator = {
+		SNF = {
+			country_event = {
+				id = wws.1
+				days = 1
+				}
+			}
+		WIS = {
+			country_event = {
+				id = wws.2
+				days = 1
+				}
+			}
+		WSZ = {
+			country_event = {
+				id = wws.3
+				days = 1
+				}
+			}
+		TEI = {
+			country_event = {
+				id = wws.4
+				days = 4
+				}
+			}
+		}
+	}
+
+	joint_focus = {#Wistingen n Wertz forts
+		id = WWS_defensive_planning
+		icon = GFX_BLD_Urbanisation_Investments
+		cost = 8
+		prerequisite = {
+			focus = WWS_wistinger_konkord
+		}
+		available = {
+		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				TAG = WSZ
+				factor = 100
+			}
+		}
+		allow_branch = {
+				OR = {
+				TAG = SNF
+				TAG = WIS
+				TAG = WSZ
+				AND = {
+				TAG = TEI
+				has_country_flag = wws_konkord_yes
+					}
+				}
+				NOT = { has_country_flag = wws_konkord_no }
+    		}
+		relative_position_id = WWS_wistinger_konkord
+		x = 0
+		y = 1
+		bypass = {
+		WSZ = { has_country_flag = wws_konkord_no }
+		}
+		completion_reward_joint_originator = {
+		add_stability = 0.05
+		if = {
+			limit = {
+			WIS = {
+			has_country_flag = wws_konkord_yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+			}
+			335 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+			235 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			352 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+						}
+					}
+				}
+			}
+		}
+
+	joint_focus = { # Schneefilde Military Aid
+		id = WWS_schneefilde_supplies
+		icon = GFX_focus_ung_sudschild_plan
+		cost = 8
+		available = {
+		OR = {
+			AND = {
+				WIS = {
+				has_country_flag = wws_konkord_yes
+				has_equipment = {
+    				infantry_equipment_1 > 249
+						}
+				has_equipment = {
+    				light_cavalry_equipment > 124
+						}
+					}
+				}
+			AND = {
+				WSZ = {
+				has_country_flag = wws_konkord_yes
+				has_equipment = {
+    				infantry_equipment_1 > 249
+						}
+				has_equipment = {
+    				light_cavalry_equipment > 124
+						}
+					}
+				}
+			}
+		}
+		allow_branch = {
+				OR = {
+				TAG = SNF
+				TAG = WIS
+				TAG = WSZ
+				AND = {
+				TAG = TEI
+				has_country_flag = wws_konkord_yes
+					}
+				}
+				NOT = { has_country_flag = wws_konkord_no }
+    		}
+		prerequisite = {
+			focus = WWS_wistinger_konkord
+		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				TAG = SNF
+				factor = 100
+			}
+		}
+		bypass = {
+		OR = {
+		SNF = { has_country_flag = wws_konkord_no }
+		AND = {
+			WIS = { has_country_flag = wws_konkord_no }
+			WSZ = { has_country_flag = wws_konkord_no }
+				}
+			}
+		}
+		relative_position_id = WWS_wistinger_konkord
+		x = -2
+		y = 1
+		completion_reward = {
+		if = {
+			limit = {
+			has_country_flag = wws_konkord_yes
+			}
+		add_ideas = SNF_mil_equipment_standart
+		}
+		if = {
+			limit = {
+			original_tag = WIS
+			has_country_flag = wws_konkord_yes
+			SNF = {
+			has_country_flag = wws_konkord_yes
+				}
+			}
+			SNF = {
+				FROM_improve_THIS_relations = yes
+			}
+			add_equipment_to_stockpile = {
+   			type = infantry_equipment_0
+   			amount = -250
+				}
+			add_equipment_to_stockpile = {
+   			type = light_cavalry_equipment_0
+   			amount = -125
+				}
+			}
+		if = {
+			limit = {
+			original_tag = WSZ
+			SNF = {
+			has_country_flag = wws_konkord_yes
+				}
+			}
+			SNF = {
+				FROM_improve_THIS_relations = yes
+			}
+			add_equipment_to_stockpile = {
+   			type = infantry_equipment_0
+   			amount = -250
+				}
+			add_equipment_to_stockpile = {
+   			type = light_cavalry_equipment_0
+   			amount = -125
+				}
+			}
+				if = {
+			limit = {
+			original_tag = SNF
+			has_country_flag = wws_konkord_yes
+			WIS = {
+			has_country_flag = wws_konkord_yes
+				}
+			WSZ = {
+			has_country_flag = wws_konkord_yes
+				}
+			}
+			add_equipment_to_stockpile = {
+   			type = infantry_equipment_0
+   			amount = 500
+				}
+			add_equipment_to_stockpile = {
+   			type = light_cavalry_equipment_0
+   			amount = 250
+				}
+			}
+		if = {
+			limit = {
+			original_tag = SNF
+			has_country_flag = wws_konkord_yes
+			OR = {
+				AND = {
+					WIS = {has_country_flag = wws_konkord_yes }
+					NOT = { WSZ = { has_country_flag = wws_konkord_yes } }
+				}
+				AND = {
+					WSZ = {has_country_flag = wws_konkord_yes }
+					NOT = { WIS = { has_country_flag = wws_konkord_yes } }
+				}
+			}
+			}
+			add_equipment_to_stockpile = {
+   			type = infantry_equipment_0
+   			amount = 250
+				}
+			add_equipment_to_stockpile = {
+   			type = light_cavalry_equipment_0
+   			amount = 125
+				}
+			}
+		}
+	}
+joint_focus = {#Wistingen Migration
+		id = WWS_promote_wistingen_farming
+		icon = GFX_focus_hlz_agricultural_boom
+		cost = 10
+		prerequisite = {
+			focus = WWS_wistinger_konkord
+		}
+		available = {
+		NOT = {
+		WIS = {
+			has_idea = refugee_crisis
+			}
+			}
+		}
+		allow_branch = {
+				OR = {
+				TAG = SNF
+				TAG = WIS
+				TAG = WSZ
+				AND = {
+				TAG = TEI
+				has_country_flag = wws_konkord_yes
+					}
+				}
+				NOT = { has_country_flag = wws_konkord_no }
+    		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				TAG = WIS
+				factor = 100
+			}
+		}
+		bypass = {
+		WIS = { has_country_flag = wws_konkord_no }
+		}
+		relative_position_id = WWS_wistinger_konkord
+		x = 2
+		y = 1
+		
+		completion_reward_joint_originator = {
+		add_stability = 0.05
+		if = {
+			limit = {
+			has_country_flag = wws_konkord_yes
+			}
+		add_ideas = WWS_wistingen_trade_konkord
+		}
+		WIS = {
+			add_timed_idea = {
+				idea = UNG_migrants_resettled
+				days = 170
+			}
+		}
+			333 = {
+			add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = farm
+					level = 1
+					instant_build = yes
+					}
+				}
+			340 = {
+			add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = farm
+					level = 1
+					instant_build = yes
+					}
+				}
+			344 = {
+			add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = farm
+					level = 1
+					instant_build = yes
+					}
+				}
+			}
+		}
+joint_focus = { #support the road to Wistingen
+		id = SNF_konkordat_highroad
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10
+		available = {
+		}
+		allow_branch = {
+				OR = {
+				TAG = SNF
+				TAG = WIS
+				TAG = WSZ
+				AND = {
+				TAG = TEI
+				has_country_flag = wws_konkord_yes
+					}
+				}
+				NOT = { has_country_flag = wws_konkord_no }
+    		}
+		prerequisite = {
+			focus = WWS_promote_wistingen_farming
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		relative_position_id = WWS_promote_wistingen_farming
+		x = 1
+		y = 1
+		completion_reward = {
+		build_railway = {
+    	level = 3
+    	build_only_on_allied = no
+    	controller_priority = {
+        base = 1
+    	}
+    	fallback = yes
+    	path = { 4748 2331 9160 9185 4589 1080 3100 4539 9362 2213 3183 1131 4008 1754 }
+    	start_province = 4748
+    	target_province = 1754
+		}
+		build_railway = {
+    	level = 3
+    	build_only_on_allied = no
+    	controller_priority = {
+        base = 1
+    	}
+    	fallback = yes
+    	path = { 4748 2331 9160 9185 2305 9228 4733 9294 4080 }
+    	start_province = 4748
+    	target_province = 4080
+		}
+		335 = {
+		add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+		344 = {
+		add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+		240 = {
+		add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+		324 = {
+		add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+		252 = {
+		add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+		325 = {
+		add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+		353 = {
+		add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+		add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+					type = workshop
+					level = 2
+					instant_build = yes
+				}
+			}
+
+	  }
+}
+joint_focus = {#Joint Perkav Studies
+		id = WWS_joint_perkav_studies
+		icon = GFX_focus_ung_punish_perkavland
+		cost = 10
+		prerequisite = {
+			focus = WWS_schneefilde_supplies
+			focus = WWS_defensive_planning
+		}
+		available = {
+		}
+		ai_will_do = {
+			factor = 70
+		}
+		bypass = {
+		WSZ = { has_country_flag = wws_konkord_no }
+		SNF = { has_country_flag = wws_konkord_no }
+		}
+		relative_position_id = WWS_defensive_planning
+		x = -3
+		y = 1
+		
+		completion_reward = {
+		if = {
+			limit = {
+			has_country_flag = wws_konkord_yes
+			}
+		random_owned_controlled_state= {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state= {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state= {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		add_ideas = SNF_perkav_studied
+		army_experience = 25
+				}
+			}
+		}
+
+joint_focus = { # Support Loyal Baronies in Teigerholen
+		id = WWS_teigerholen_baronies_support
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 5
+		available = {
+		TEI = {
+			has_country_flag = wws_konkord_yes
+			}
+		}
+		allow_branch = {
+				NOT = { has_country_flag = wws_konkord_no }
+				OR = {
+				TAG = SNF
+				TAG = WIS
+				TAG = WSZ
+				AND = {
+				TAG = TEI
+				has_country_flag = wws_konkord_yes
+					}
+				}
+    		}
+		prerequisite = {
+			focus = WWS_defensive_planning
+			focus = WWS_schneefilde_supplies
+		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				TAG = TEI
+				factor = 100
+			}
+		}
+		relative_position_id = WWS_defensive_planning
+		x = -1
+		y = 1
+		completion_reward_joint_originator = {
+		add_stability = 0.05
+		custom_effect_tooltip = WIP_not_done_note #When Teigerholen civil war happens, the one whose loyalties are closest to the one of the WWS gets some buffs
+		TEI = {
+			add_stability = 0.05
+			add_political_power = 150
+		}
+		}
+}
+joint_focus = { # Non-Aggressions
+		id = WWS_lessened_hostilities
+		icon = GFX_focus_ung_coalition_willing
+		cost = 10
+		available = {
+		}
+		allow_branch = {
+				NOT = { has_country_flag = wws_konkord_no }
+				OR = {
+				TAG = SNF
+				TAG = WIS
+				TAG = WSZ
+				AND = {
+				TAG = TEI
+				has_country_flag = wws_konkord_yes
+					}
+				}
+    		}
+		prerequisite = {
+			focus = WWS_defensive_planning
+			focus = WWS_schneefilde_supplies
+			focus = WWS_promote_wistingen_farming
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		relative_position_id = WWS_defensive_planning
+		x = 1
+		y = 1
+		completion_reward_joint_originator = {
+		add_stability = 0.05
+		}
+		completion_reward = {
+		if = {
+			limit = {
+			has_country_flag = wws_konkord_yes
+			SNF = {
+				has_country_flag = wws_konkord_yes
+				}
+			}
+		SNF = {
+			FROM_improve_THIS_relations = yes
+		}
+		diplomatic_relation = {
+			country = SNF
+			relation = non_aggression_pact
+			active = yes
+			}
+		}
+		if = {
+			limit = {
+			has_country_flag = wws_konkord_yes
+			WIS = {
+				has_country_flag = wws_konkord_yes
+				}
+			}
+		WIS = {
+			FROM_improve_THIS_relations = yes
+		}
+		diplomatic_relation = {
+			country = WIS
+			relation = non_aggression_pact
+			active = yes
+			}
+		}
+		if = {
+			limit = {
+			has_country_flag = wws_konkord_yes
+			WSZ = {
+				has_country_flag = wws_konkord_yes
+				}
+			}
+		WSZ = {
+			FROM_improve_THIS_relations = yes
+		}
+		diplomatic_relation = {
+			country = WSZ
+			relation = non_aggression_pact
+			active = yes
+			}
+		}
+		if = {
+			limit = {
+			has_country_flag = wws_konkord_yes
+			TEI = {
+				has_country_flag = wws_konkord_yes
+				}
+			}
+		TEI = {
+			FROM_improve_THIS_relations = yes
+		}
+		diplomatic_relation = {
+			country = TEI
+			relation = non_aggression_pact
+			active = yes
+			}
+		}
+					}
+				}
+joint_focus = { # Collective Movement
+		id = WWS_collective_action
+		icon = GFX_focus_freiprinzen_civilwar
+		cost = 5
+		available = {
+		}
+		allow_branch = {
+				NOT = { has_country_flag = wws_konkord_no }
+				OR = {
+				TAG = SNF
+				TAG = WIS
+				TAG = WSZ
+				AND = {
+				TAG = TEI
+				has_country_flag = wws_konkord_yes
+					}
+				}
+    		}
+		prerequisite = {
+			focus = WWS_teigerholen_baronies_support
+			focus = WWS_lessened_hostilities
+		}
+		ai_will_do = {
+			factor = 70
+		}
+		relative_position_id = WWS_defensive_planning
+		x = 0
+		y = 2
+		completion_reward_joint_originator = {
+		add_political_power = 75
+		}
+		completion_reward = {
+		custom_effect_tooltip = wws_konkord_collectve_movement_tooltip
+		if = {
+			limit = {
+			has_country_flag = wws_konkord_yes
+			}
+		set_country_flag = wws_konkord_collectve_movement
+			}
+		}
+	}
+}
+

@@ -67,3 +67,123 @@ country_event = {#Defeat in Loserhafen
 		add_stability = -0.05
 	}
 }
+country_event = {#Ayo Get Nevadenn
+	id = wsz.4
+	title = wsz.4.t
+	desc = wsz.4.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+
+	option = {
+	name = wsz.4.a
+		ai_chance = {
+			factor = 3
+		}
+		add_political_power = 20
+		set_country_flag = SNF_retake_nevedenn_flag
+		420 = {
+			add_claim_by = WSZ
+		}
+		354 = {
+			add_claim_by = WSZ
+		}
+		355 = {
+			add_claim_by = WSZ
+		}
+		334 = {
+			add_claim_by = WSZ
+		}
+		custom_effect_tooltip = retake_Nevadenn_tt
+	}
+	option = { #i don't feel like it
+	name = wsz.4.b
+	ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {#Kristin Kindl torture sesh 2
+	id = wsz.5
+	title = wsz.5.t
+	desc = wsz.5.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+
+	option = {
+	name = wsz.5.a
+		ai_chance = {
+			factor = 3
+		}
+		custom_effect_tooltip = kindl_invite_tooltip
+		hidden_effect = {
+		SNF = {
+		country_event = {
+				id = wsz.6
+				days = 14
+				}
+			}
+		}
+	}
+
+}
+country_event = {#Kristin Kindl torture sesh 3 (Otto Edition)
+	id = wsz.6
+	title = wsz.6.t
+	desc = wsz.6.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+
+	option = {
+	name = wsz.6.a
+		ai_chance = {
+			factor = 3
+		}
+		hidden_effect = {
+		country_event = {
+				id = wsz.6
+				days = 7
+				}
+			}
+	}
+
+}
+
+country_event = {#Kristin Kindl torture sesh 3 (yaoi)
+	id = wsz.7
+	title = wsz.7.t
+	desc = wsz.7.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+
+	option = {
+	name = wsz.7.a
+		ai_chance = {
+			factor = 3
+		}
+	remove_country_leader_trait = disempowered_wreck
+	custom_effect_tooltip = WIP_not_done_note
+	#basically whenever Wertzworde gets stuff, this would allow for the marriage proposal
+	}
+
+}

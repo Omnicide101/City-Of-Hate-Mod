@@ -12,7 +12,8 @@ focus_tree = {
 	shared_focus = FPT_recover_hex_scare
 	shared_focus = FPT_memories_crisis
 	shared_focus = FPT_our_place_union
-	
+	shared_focus = UNG_schneefilde_sack
+
 	continuous_focus_position = { x = 50 y = 1750 }
 	
 	#focus = { #
@@ -44,27 +45,27 @@ focus_tree = {
 	
 ### Sack of Schneefilde ###
 
-	focus = { #Sack of Schneefilde
-		id = SNF_sack_of_schneefilde
-		icon = GFX_focus_ung_sack_schneefilde
-		cost = 5
-		available = {
-			has_idea = SNF_opposing_nobility
-		}
-		ai_will_do = {
-			factor = 50
-		}
-		x = 30
-		y = 0
-		completion_reward = {
-			country_event = {
-				id = snf.6
-				days = 1
-			}
-			set_country_flag = SNF_Drecht_opportunity_flag
-			activate_mission = SNF_drecht_hiding
-		}
-	}
+	#focus = { #Sack of Schneefilde
+	#	id = SNF_sack_of_schneefilde
+	#	icon = GFX_focus_ung_sack_schneefilde
+	#	cost = 5
+	#	available = {
+	#		has_idea = SNF_opposing_nobility
+	#	}
+	#	ai_will_do = {
+	#		factor = 50
+	#	}
+	#	x = 30
+	#	y = 0
+	#	completion_reward = {
+	#		country_event = {
+	#			id = snf.6
+	#			days = 1
+	#		}
+	#		set_country_flag = SNF_Drecht_opportunity_flag
+	#		activate_mission = SNF_drecht_hiding
+	#	}
+	#}
 #### CURTAIL NOBLES PATH
 	focus = { #curtail the nobility
 		id = SNF_curtail_nobles
@@ -73,8 +74,11 @@ focus_tree = {
 		available = {
 			has_country_flag = SNF_curtail_nobility
 		}
+		allow_branch = {
+            	original_tag = SNF
+    		}
 		prerequisite = {
-			focus = SNF_sack_of_schneefilde
+			focus = UNG_schneefilde_sack
 		}
 		bypass = {
 		has_government = republic_aristocrat
@@ -82,8 +86,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 50
 		}
-		relative_position_id = SNF_sack_of_schneefilde
-		x = -4
+		relative_position_id = UNG_schneefilde_sack
+		x = 17
 		y = 1
 		completion_reward = {
 		add_popularity = {
@@ -147,7 +151,7 @@ focus_tree = {
 		has_government = republic_aristocrat
 		}
 		relative_position_id = SNF_curtail_nobles
-		x = -2
+		x = 2
 		y = 1
 		completion_reward = {
 		add_ideas = SNF_military_loyalty
@@ -163,8 +167,11 @@ focus_tree = {
 			has_country_flag = SNF_folksprintz
 		}
 		prerequisite = {
-			focus = SNF_sack_of_schneefilde
+			focus = UNG_schneefilde_sack
 		}
+		allow_branch = {
+            	original_tag = SNF
+    		}
 		#available = {
 		#	has_government = abs
 		#}
@@ -174,8 +181,8 @@ focus_tree = {
 		bypass = {
 		has_government = republic_aristocrat
 		}
-		relative_position_id = SNF_sack_of_schneefilde
-		x = -2
+		relative_position_id = UNG_schneefilde_sack
+		x = 15
 		y = 1
 		completion_reward = {
 		add_popularity = {
@@ -231,6 +238,9 @@ focus_tree = {
 			focus = SNF_vilify_policies
 			focus = SNF_promote_councils
 		}
+		mutually_exclusive = {
+			focus = SNF_a_knightly_putsch
+		}
 		bypass = {
 		has_government = republic_aristocrat
 		}
@@ -238,7 +248,7 @@ focus_tree = {
 			factor = 100
 		}
 		relative_position_id = SNF_promote_councils
-		x = -1
+		x = 0
 		y = 1
 		completion_reward = {
 		UNG = {
@@ -247,6 +257,36 @@ focus_tree = {
 			days = 3
 			}
 		    }
+		}
+	}
+	focus = { #recreate a Neureik
+		id = SNF_a_knightly_putsch
+		icon = GFX_focus_STA_last_march
+		cost = 5
+		available = {
+		#	has_country_flag = SNF_curtail_nobility
+		}
+		prerequisite = {
+			focus = SNF_vilify_policies
+			focus = SNF_promote_councils
+		}
+		mutually_exclusive = {
+			focus = SNF_faustburg_assistance
+		}
+		bypass = {
+		has_government = republic_aristocrat
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		relative_position_id = SNF_promote_councils
+		x = 2
+		y = 1
+		completion_reward = {
+			country_event = {
+			id = snf.30
+			days = 1
+			}
 		}
 	}
 	###################################################################
@@ -264,10 +304,10 @@ focus_tree = {
 		has_government = republic_aristocrat
 		}
 		ai_will_do = {
-			factor = 50
+			factor = 150
 		}
 		relative_position_id = SNF_Volkprinz
-		x = 2
+		x = -2
 		y = 1
 		completion_reward = {
 		add_political_power = 50
@@ -326,21 +366,23 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = SNF_faustburg_assistance
+			focus = SNF_a_knightly_putsch
 		}
-		prerequisite = {
-			focus = SNF_blackmail_drecht
-			focus = SNF_placate_drecht
-		}
+		#prerequisite = {
+		#	focus = SNF_blackmail_drecht
+		#	focus = SNF_placate_drecht
+		#}
 		#available = {
 		#	has_government = abs
 		#}
 		ai_will_do = {
 			factor = 100
 		}
-		relative_position_id = SNF_sack_of_schneefilde
-		x = 0
-		y = 4
+		relative_position_id = SNF_faustburg_assistance
+		x = 1
+		y = 1
 		completion_reward = {
+		#custom_effect_tooltip = SNF_demand_noble_surrender_tooltip
 		if = {
 			limit = {
 			OR = {
@@ -349,7 +391,6 @@ focus_tree = {
 			}
 			}
 		random_list = {
-				
 				60 = {
 					country_event = {
 						id = snf.12
@@ -361,7 +402,6 @@ focus_tree = {
 					}
 				}
 			}
-		
 		else = {
 		country_event = {
 						id = snf.12
@@ -374,18 +414,21 @@ focus_tree = {
 ########################### END CONTROL THE NOBILITY TREE - Circumvent Drecht tree begins
 focus = { #Question of Ulrich Drecht
 		id = SNF_question_drecht
-		icon = GFX_focus_rom_abdicate
+		icon = GFX_goal_generic_major_war
 		cost = 5
 		available = {
 		}
 		prerequisite = {
-			focus = SNF_sack_of_schneefilde
+			focus = UNG_schneefilde_sack
 		}
+		allow_branch = {
+            	original_tag = SNF
+    		}
 		#available = {
 		#	has_government = abs
 		#}
 		ai_will_do = {
-			factor = 100
+			factor = 150
 			modifier = {
 				has_game_rule = {
 					rule = SNF_game_plan
@@ -416,8 +459,8 @@ focus = { #Question of Ulrich Drecht
 		bypass = {
 		has_government = republic_aristocrat
 		}
-		relative_position_id = SNF_sack_of_schneefilde
-		x = 3
+		relative_position_id = UNG_schneefilde_sack
+		x = 10
 		y = 1
 		completion_reward = {
 		country_event = {
@@ -439,7 +482,7 @@ focus = { #Spy over Drecht
 			focus = SNF_question_drecht
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 150
 		}
 		bypass = {
 		OR = {
@@ -503,7 +546,7 @@ focus = { #Spy over Drecht
 focus = { #Blackmail Drecht
 		id = SNF_blackmail_drecht
 		icon = GFX_focus_hlz_hard_power
-		cost = 10
+		cost = 5
 		available = {
 		has_political_power > 74
 		has_country_flag = SNF_Drecht_opportunity_flag
@@ -513,7 +556,7 @@ focus = { #Blackmail Drecht
 			focus = SNF_rid_of_drecht
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 150
 		}
 		bypass = {
 			OR = {
@@ -531,6 +574,7 @@ focus = { #Blackmail Drecht
 			add_political_power = -75
 		}
 		completion_reward = {
+		deactivate_advisor = evil_ulrich_drecht
 		if = {
 			limit = {
 				has_active_mission = SNF_drecht_hiding
@@ -651,7 +695,7 @@ focus = { #Reach out to Drecht
 			focus = SNF_question_drecht
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 150
 		}
 		bypass = {
 		OR = {
@@ -666,8 +710,8 @@ focus = { #Reach out to Drecht
 		y = 1
 		completion_reward = {
 		add_popularity = {
-			ideology = republic_aristocrat
-			popularity = 0.05
+			ideology = monarchy_absolute
+			popularity = -0.08
 		}
 		if = {
 			limit = {
@@ -717,7 +761,7 @@ focus = { #Placate Drecht
 			focus = SNF_talk_to_drecht
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 150
 		}
 		bypass = {
 		OR = {
@@ -731,7 +775,23 @@ focus = { #Placate Drecht
 		x = 0
 		y = 1
 		completion_reward = {
-		add_political_power = 50
+		add_popularity = {
+			ideology = republic_aristocrat
+			popularity = -0.08
+		}
+		deactivate_advisor = evil_ulrich_drecht
+		add_advisor_role = {
+    		character = SNF_ulrich_drecht
+    		activate = yes
+    		advisor = {
+        	slot = political_advisor
+        	cost = 50
+        	idea_token = ulrich_drecht
+        	traits = {
+            	second_prince
+        			}
+    			}
+			}
 		if = {
 			limit = {
 				has_active_mission = SNF_drecht_hiding
@@ -817,35 +877,6 @@ focus = { #Placate Drecht
 #		}
 #	       }
 ######################### Beginning of Economic tree
-focus = { #support rural farms
-		id = SNF_support_rural_farms
-		icon = GFX_focus_hlz_day_plow_rule
-		cost = 5
-		available = {
-		NOT = {
-		has_country_flag = SNF_Drecht_opportunity_flag
-		}
-		}
-		prerequisite = {
-			focus = SNF_demand_noble_surrender
-		}
-		#available = {
-		#	has_government = abs
-		#}
-		ai_will_do = {
-			factor = 55
-		}
-		relative_position_id = SNF_demand_noble_surrender
-		x = 5
-		y = 1
-		completion_reward = {
-		add_stability = 0.05
-		swap_ideas = {
-		remove_idea = SNF_brittle_economy
-		add_idea = SNF_brittle_economy2
-		}
-		}
-	}
 focus = { #support Kalaster
 		id = SNF_support_kalaster
 		icon = GFX_BLD_Promote_Farming
@@ -854,13 +885,16 @@ focus = { #support Kalaster
 		owns_state = 329
 		}
 		prerequisite = {
-			focus = SNF_support_rural_farms
+			focus = UNG_princely_relief
 		}
 		ai_will_do = {
 			factor = 40
 		}
-		relative_position_id = SNF_support_rural_farms
-		x = 1
+		allow_branch = {
+            	original_tag = SNF
+    		}
+		relative_position_id = UNG_princely_relief
+		x = -4
 		y = 1
 		completion_reward = {
 		if = {
@@ -905,44 +939,123 @@ focus = { #support Kalaster
 					instant_build = yes
 				}
 			}
+		add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.04
+			}
 		}
 	}
-focus = { #improve farming
-		id = SNF_improve_farming
-		icon = GFX_focus_hlz_agricultural_boom
-		cost = 8
-		available = {
-		}
-		prerequisite = {
-			focus = SNF_support_kalaster
-		}
-		ai_will_do = {
-			factor = 25
-		}
-		relative_position_id = SNF_support_kalaster
-		x = 2
-		y = 1
-		completion_reward = {
-		custom_effect_tooltip = available_political_advisor
-		show_ideas_tooltip = till_lehmkuhl
-		#add_ideas = SNF_supported_farmers
-		}
-	}
-focus = { #Steel Prospecting
-		id = SNF_steel_prospecting
-		icon = GFX_BLD_Blackhill_Iron_Mines
+#focus = { #improve farming
+#		id = SNF_improve_farming
+#		icon = GFX_focus_hlz_agricultural_boom
+#		cost = 8
+#		available = {
+#		}
+#		prerequisite = {
+#			focus = SNF_support_kalaster
+#		}
+#		ai_will_do = {
+#			factor = 25
+#		}
+#		relative_position_id = SNF_support_kalaster
+#		x = 2
+#		y = 1
+#		completion_reward = {
+#		custom_effect_tooltip = available_political_advisor
+#		show_ideas_tooltip = till_lehmkuhl
+#		#add_ideas = SNF_supported_farmers
+#		}
+#	}
+focus = { #invest in the capital
+		id = SNF_invest_in_capital
+		icon = GFX_focus_spa_save_the_alcazar
 		cost = 10
 		available = {
-		OR = {
-		owns_state = 325
-		owns_state = 324
-		}
+		owns_state = 224
 		}
 		prerequisite = {
-			focus = SNF_support_kalaster
+			focus = UNG_princely_relief
 		}
 		ai_will_do = {
 			factor = 40
+		}
+		allow_branch = {
+            	original_tag = SNF
+    		}
+		relative_position_id = UNG_princely_relief
+		x = -2
+		y = 1
+		completion_reward = {
+		add_research_slot = 1
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy4
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy4
+		add_idea = SNF_brittle_economy5
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy3
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy3
+		add_idea = SNF_brittle_economy4
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy2
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy2
+		add_idea = SNF_brittle_economy3
+		}
+		}
+		224 = {
+		add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+		add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+		add_building_construction = {
+					type = cathedral
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+focus = { #support the road to wertzvorde
+		id = SNF_wertvorde_highroad
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 5
+		available = {
+		NOT = { has_country_flag = wws_konkord_no }
+		WSZ = {
+			owns_state = 420
+			}
+		}
+		prerequisite = {
+			focus = SNF_support_kalaster
+		}
+		prerequisite = {
+			focus = SNF_konkordat_highroad
+			}
+		mutually_exclusive = {
+			focus = SNF_Road_to_faustburg
+		}
+		ai_will_do = {
+			factor = 70
 		}
 		relative_position_id = SNF_support_kalaster
 		x = 0
@@ -975,199 +1088,140 @@ focus = { #Steel Prospecting
 		add_idea = SNF_brittle_economy3
 		}
 		}
+		build_railway = {
+    	level = 3
+    	build_only_on_allied = no
+    	controller_priority = {
+        base = 1
+    	}
+    	fallback = yes
+    	path = { 2213 3739 1491 9405 4786 9391 9372 3522 4080 }
+    	start_province = 2213
+    	target_province = 4080
+		}
+
+	  }
+}
+focus = { #support the road to faustburg
+		id = SNF_Road_to_faustburg
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8
+		available = {
+		owns_state = 224
+		SNF = {
+				is_not_independent = yes
+			}
+		}
+		mutually_exclusive = {
+			focus = SNF_konkordat_highroad
+		}
+		prerequisite = {
+			focus = SNF_invest_in_capital
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		relative_position_id = SNF_invest_in_capital
+		x = 0
+		y = 1
+		completion_reward = {
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy4
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy4
+		add_idea = SNF_brittle_economy5
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy3
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy3
+		add_idea = SNF_brittle_economy4
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy2
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy2
+		add_idea = SNF_brittle_economy3
+		}
+		}
+		build_railway = {
+    	level = 3
+    	build_only_on_allied = no
+    	controller_priority = {
+        base = 1
+        modifier = {
+            tag = UNG
+            add = 2
+        }
+    	}
+    	fallback = yes
+    	path = { 1764 3510 3484 1280 4553 9292 9299 3509 9368 2243 1754}
+    	start_province = 1764
+    	target_province = 1754
+		}
 		add_resource = {
 					type = steel
 					amount = 9
-					state = 325
+					state = 224
 				}
 		add_resource = {
 					type = steel
 					amount = 3
 					state = 324
 				}
-		}
-	}
-focus = { #Equipment Standart
-		id = SNF_equipment_standart
-		icon = GFX_BLD_Give_Lead_To_Progressive_Faction
-		cost = 8
-		available = {
-		}
-		prerequisite = {
-			focus = SNF_steel_prospecting
-		}
-		ai_will_do = {
-			factor = 2
-		}
-		relative_position_id = SNF_steel_prospecting
-		x = 1
-		y = 1
-		completion_reward = {
-		add_ideas = SNF_mil_equipment_standart
-		
-	  }
-	  
-	 }
-focus = { #invest in the capital
-		id = SNF_invest_in_capital
-		icon = GFX_focus_spa_save_the_alcazar
-		cost = 8
-		available = {
-		owns_state = 224
-		}
-		prerequisite = {
-			focus = SNF_support_rural_farms
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		relative_position_id = SNF_support_rural_farms
-		x = -1
-		y = 1
-		completion_reward = {
-		if = {
-			limit = {
-			has_idea = SNF_brittle_economy4
-			}
-		swap_ideas = {
-		remove_idea = SNF_brittle_economy4
-		add_idea = SNF_brittle_economy5
-		}
-		}
-		if = {
-			limit = {
-			has_idea = SNF_brittle_economy3
-			}
-		swap_ideas = {
-		remove_idea = SNF_brittle_economy3
-		add_idea = SNF_brittle_economy4
-		}
-		}
-		if = {
-			limit = {
-			has_idea = SNF_brittle_economy2
-			}
-		swap_ideas = {
-		remove_idea = SNF_brittle_economy2
-		add_idea = SNF_brittle_economy3
-		}
-		}
-		224 = {
-		add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
+		SNF = {
+				custom_effect_tooltip = FPT_increase_union_loyalty_small_tt
+				add_to_variable = {
+					var = FPT_union_loyalty
+					value = 1
 				}
-		add_extra_state_shared_building_slots = 1
-		add_building_construction = {
-					type = workshop
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-focus = { #develop institutions
-		id = SNF_develop_institutions
-		icon = GFX_IRI_International_Academy_Of_Philosophy
-		cost = 8
-		available = {
-		owns_state = 224
-		}
-		prerequisite = {
-			focus = SNF_invest_in_capital
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		relative_position_id = SNF_invest_in_capital
-		x = -2
-		y = 1
-		completion_reward = {
-		add_research_slot = 1
-		224 = {
-		add_extra_state_shared_building_slots = 1
-		add_building_construction = {
-					type = cathedral
-					level = 1
-					instant_build = yes
-				}
-				}
-			}
-	}
-focus = { #support the road to faustburg
-		id = SNF_Road_to_faustburg
-		icon = GFX_goal_generic_construct_infrastructure
-		cost = 8
-		available = {
-		owns_state = 324
-		owns_state = 252
-		}
-		prerequisite = {
-			focus = SNF_invest_in_capital
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		relative_position_id = SNF_invest_in_capital
-		x = 0
-		y = 1
-		completion_reward = {
-		if = {
-			limit = {
-			has_idea = SNF_brittle_economy4
-			}
-		swap_ideas = {
-		remove_idea = SNF_brittle_economy4
-		add_idea = SNF_brittle_economy5
-		}
-		}
-		if = {
-			limit = {
-			has_idea = SNF_brittle_economy3
-			}
-		swap_ideas = {
-		remove_idea = SNF_brittle_economy3
-		add_idea = SNF_brittle_economy4
-		}
-		}
-		if = {
-			limit = {
-			has_idea = SNF_brittle_economy2
-			}
-		swap_ideas = {
-		remove_idea = SNF_brittle_economy2
-		add_idea = SNF_brittle_economy3
-		}
-		}
-		324 = {
-		add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-		add_extra_state_shared_building_slots = 1
-		add_building_construction = {
-					type = workshop
-					level = 1
-					instant_build = yes
-				}
-			}
-		252 = {
-		add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-		add_extra_state_shared_building_slots = 1
-		add_building_construction = {
-					type = workshop
-					level = 1
-					instant_build = yes
-				}
+				set_loyalty_approximations = yes
 			}
 	  }
 }
+
+focus = { #support rural farms
+		id = SNF_support_rural_farms
+		icon = GFX_focus_hlz_day_plow_rule
+		cost = 6
+		available = {
+		}
+		allow_branch = {
+            	original_tag = SNF
+    		}
+		prerequisite = {
+			focus = SNF_wertvorde_highroad
+			focus = SNF_Road_to_faustburg
+		}
+		#prerequisite = {
+		#	focus = UNG_tax_breaks
+		#}
+		#available = {
+		#	has_government = abs
+		#}
+		ai_will_do = {
+			factor = 55
+		}
+		relative_position_id = SNF_Road_to_faustburg
+		x = -1
+		y = 1
+		completion_reward = {
+		add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.08
+			}
+		remove_ideas = SNF_brittle_economy5
+		}
+	}
+
 focus = { #Promote Forging
 		id = SNF_promote_forging
 		icon = GFX_goal_generic_construct_mil_factory
@@ -1175,13 +1229,13 @@ focus = { #Promote Forging
 		available = {
 		}
 		prerequisite = {
-			focus = SNF_Road_to_faustburg
+			focus = SNF_support_rural_farms
 		}
 		ai_will_do = {
 			factor = 2
 		}
-		relative_position_id = SNF_Road_to_faustburg
-		x = -1
+		relative_position_id = SNF_support_rural_farms
+		x = -2
 		y = 1
 		completion_reward = {
 		324 = {
@@ -1218,31 +1272,31 @@ focus = { #Promote Forging
 			}
 		}	  
 	 }
-focus = { #Un-brittled economy
-		id = SNF_Sturdy_economy
-		icon = GFX_goal_generic_positive_trade_relations
-		cost = 10
-		available = {
-		}
-		prerequisite = {
-			focus = SNF_Road_to_faustburg
-		}
-		prerequisite = {
-		focus = SNF_steel_prospecting
-		}
-		ai_will_do = {
-			factor = 40
-		}
-		relative_position_id = SNF_Road_to_faustburg
-		x = 1
-		y = 1
-		completion_reward = {
-		add_stability = 0.1
-		remove_ideas = SNF_brittle_economy5
-		
-	  }
-	  
-	 }
+#focus = { #Un-brittled economy
+#		id = SNF_Sturdy_economy
+#		icon = GFX_goal_generic_positive_trade_relations
+#		cost = 10
+#		available = {
+#		}
+#		prerequisite = {
+#			focus = SNF_Road_to_faustburg
+#		}
+#		prerequisite = {
+#		focus = SNF_steel_prospecting
+#		}
+#		ai_will_do = {
+#			factor = 40
+#		}
+#		relative_position_id = SNF_Road_to_faustburg
+#		x = 1
+#		y = 1
+#		completion_reward = {
+#		add_stability = 0.1
+#		remove_ideas = SNF_brittle_economy5
+#		
+#	  }
+#	  
+#	 }
 ####### Military Tree beginning # Keep Cavalry
 focus = { #reorganize the army
 		id = SNF_restore_knightly_discipline
@@ -1345,11 +1399,15 @@ focus = { #climate training
 	  }
 	  
 	 }
-focus = { #restore the order
+focus = { #restore the order EDIT: This should probably play into Hexism somehow
 		id = SNF_restore_the_order
 		icon = GFX_BLD_Unify_The_Church
 		cost = 8
 		available = {
+		custom_trigger_tooltip = {
+		tooltip = has_hutrig_patron_tooltip
+		has_idea = hutrig_patron
+			}
 		}
 		prerequisite = {
 			focus = SNF_army_payment
@@ -1368,9 +1426,10 @@ focus = { #restore the order
 			remove_idea = SNF_decrepit_military4
 			add_idea = SNF_hutrigs_guard
 			}
-			SVT = {
-				FROM_improve_THIS_relations = yes
-			}
+			#SVT = {
+			#	FROM_improve_THIS_relations = yes
+			#}
+			#The Orden was kinda hexist actually 
 		}
 	  
 	 }
@@ -1508,14 +1567,18 @@ focus = { #reclaim lost territory
 		id = SNF_southern_reclamation
 		icon = GFX_focus_ung_no_more_raids
 		cost = 5
+		allow_branch = {
+			TAG = SNF
+			}
 		available = {
 		NOT = {
 		has_country_flag = SNF_Drecht_opportunity_flag
 		}
 		has_government = monarchy_absolute
+		has_completed_focus = UNG_schneefilde_sack
 		}
 		prerequisite = {
-			focus = SNF_demand_noble_surrender
+			focus = FPT_memories_crisis
 		}
 		ai_will_do = {
 			factor = 80
@@ -1539,8 +1602,8 @@ focus = { #reclaim lost territory
 				factor = 0.5
 			}
 		}
-		relative_position_id = SNF_demand_noble_surrender
-		x = -5
+		relative_position_id = FPT_memories_crisis
+		x = 15
 		y = 1
 		completion_reward = {
 		PRK = {
@@ -1548,8 +1611,7 @@ focus = { #reclaim lost territory
 					target = SNF
 					modifier = threatened_opinion
 				}
-			}
-			
+			}	
 		hidden_effect = {
 		329 = {
 		add_claim_by = SNF
@@ -1581,6 +1643,9 @@ focus = { #reclaim lost territory
 		649 = {
 		add_claim_by = SNF
 		}
+		648 = {
+		add_claim_by = SNF
+		}
 		631 = {
 		add_claim_by = SNF
 		}
@@ -1594,29 +1659,6 @@ focus = { #reclaim lost territory
 		add_claim_by = SNF
 		}
 		}
-		
-	  }
-	  
-	 }
-focus = { #study Perkav strategy
-		id = SNF_study_perkav 
-		icon = GFX_focus_ung_punish_perkavland
-		cost = 10
-		available = {
-		has_government = monarchy_absolute
-		}
-		prerequisite = {
-			focus = SNF_southern_reclamation
-		}
-		ai_will_do = {
-			factor = 40
-		}
-		relative_position_id = SNF_southern_reclamation
-		x = -1
-		y = 1
-		completion_reward = {
-		army_experience = 10
-		add_ideas = SNF_perkav_studied
 		
 	  }
 	  
@@ -1635,7 +1677,7 @@ focus = { #retake Lienihafen
 			factor = 40
 		}
 		relative_position_id = SNF_southern_reclamation
-		x = 1
+		x = -1
 		y = 1
 		completion_reward = {
 		custom_effect_tooltip = retake_lienihafen_tooltip
@@ -1650,6 +1692,32 @@ focus = { #retake Lienihafen
 	 	 }
 	  }
 	 }
+focus = { #eastern push
+		id = SNF_push_eastwards
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		available = {
+		has_government = monarchy_absolute
+		owns_state = 329
+		}
+		prerequisite = {
+			focus = SNF_southern_reclamation
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+		has_country_flag = SNF_UNG_said_no
+		}
+		relative_position_id = SNF_southern_reclamation
+		x = 1
+		y = 1
+		completion_reward = {
+		custom_effect_tooltip = retake_east_tooltip
+		set_country_flag = SNF_push_eastwards_flag
+	 	 }
+	  
+	 }
 focus = { #consolidate local land
 		id = SNF_nearby_conquests
 		icon = GFX_goal_generic_major_war
@@ -1660,6 +1728,9 @@ focus = { #consolidate local land
 		}
 		prerequisite = {
 			focus = SNF_retake_lienihafen
+		}
+		prerequisite = {
+			focus = SNF_push_eastwards
 		}
 		ai_will_do = {
 			factor = 10
@@ -1681,11 +1752,12 @@ focus = { #thrust into Karistadt
 		has_government = monarchy_absolute
 		owns_state = 224
 		}
+		#prerequisite = {
+		#	focus = SNF_retake_nevedenn
+		#	focus = SNF_assist_wertzworde
+		#}
 		prerequisite = {
-			focus = SNF_retake_lienihafen
-		}
-		prerequisite = {
-			focus = SNF_study_perkav 
+			focus = SNF_nearby_conquests
 		}
 		ai_will_do = {
 			factor = 10
@@ -1693,38 +1765,12 @@ focus = { #thrust into Karistadt
 		bypass = {
 		has_country_flag = SNF_UNG_said_no
 		}
-		relative_position_id = SNF_retake_lienihafen
-		x = -1
-		y = 1
+		relative_position_id = SNF_southern_reclamation
+		x = 0
+		y = 3
 		completion_reward = {
 		custom_effect_tooltip = retake_karistadt_tooltip
 		set_country_flag = SNF_karistadt_flag
-	 	 }
-	  
-	 }
-focus = { #eastern push
-		id = SNF_push_eastwards
-		icon = GFX_goal_generic_political_pressure
-		cost = 5
-		available = {
-		has_government = monarchy_absolute
-		owns_state = 329
-		}
-		prerequisite = {
-			focus = SNF_study_perkav 
-		}
-		ai_will_do = {
-			factor = 10
-		}
-		bypass = {
-		has_country_flag = SNF_UNG_said_no
-		}
-		relative_position_id = SNF_study_perkav
-		x = -1
-		y = 1
-		completion_reward = {
-		custom_effect_tooltip = retake_east_tooltip
-		set_country_flag = SNF_push_eastwards_flag
 	 	 }
 	  
 	 }
@@ -1732,6 +1778,9 @@ focus = { #retake Nevedenn
 		id = SNF_retake_nevedenn
 		icon = GFX_focus_spa_no_compromise_on_carlist_ideals
 		cost = 5
+		allow_branch = {
+		always = no #idk this is kinda weird to deal with now
+		}
 		available = {
 		has_government = monarchy_absolute
 		OR = {
@@ -1767,6 +1816,9 @@ focus = { #Assist Wertzworde
 		id = SNF_assist_wertzworde
 		icon = GFX_goal_molotov_ribbentrop_pact
 		cost = 5
+		allow_branch = {
+		always = no #idk this is kinda weird to deal with now
+		}
 		available = {
 		has_government = monarchy_absolute
 		has_country_leader = {
@@ -1779,6 +1831,7 @@ focus = { #Assist Wertzworde
 		}
 		prerequisite = {
 			focus = SNF_push_eastwards
+			focus = SNF_retake_lienihafen
 		}
 		ai_will_do = {
 			factor = 10
@@ -1799,37 +1852,64 @@ focus = { #Assist Wertzworde
 	 	}
 	  
 	 }
-focus = { #Allince Wertzworde
-		id = SNF_ally_wertzworde
-		icon = GFX_focus_generic_royal_wedding
+#focus = { #Allince Wertzworde EDIT: Removed, purpose replaced by the shared Wistinger Focuses
+#		id = SNF_ally_wertzworde
+#		icon = GFX_focus_generic_royal_wedding
+#		cost = 5
+#		available = {
+#		has_government = monarchy_absolute
+#		has_country_leader = {
+#   				 name = "Otto Kolb"
+#   				 ruling_only = yes
+#				}
+#		WSZ = {
+#		owns_state = 420
+#		}
+#		}
+#		prerequisite = {
+#			focus = SNF_assist_wertzworde
+#		}
+#		ai_will_do = {
+#			factor = 10
+#		}
+#		relative_position_id = SNF_assist_wertzworde
+#		x = 0
+#		y = 1
+#		completion_reward = {
+#		WSZ = {
+#		country_event = {
+#			id = snf.22
+#			days = 1
+#			}
+#		}
+#		custom_effect_tooltip = WIP_not_done_note
+#	 	}
+#	  
+#	 }
+focus = { #develop new territory
+		id = SNF_develop_new_land
+		icon = GFX_focus_ung_union_reconstruct_sudstadt
 		cost = 5
 		available = {
 		has_government = monarchy_absolute
-		has_country_leader = {
-   				 name = "Otto Kolb"
-   				 ruling_only = yes
-				}
-		WSZ = {
-		owns_state = 420
+		OR = {
+		owns_state = 416
+		owns_state = 418
 		}
 		}
 		prerequisite = {
-			focus = SNF_assist_wertzworde
+			focus = SNF_support_rural_farms
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 40
 		}
-		relative_position_id = SNF_assist_wertzworde
-		x = 0
+		relative_position_id = SNF_support_rural_farms
+		x = 2
 		y = 1
 		completion_reward = {
-		WSZ = {
-		country_event = {
-			id = snf.22
-			days = 1
-			}
-		}
-		custom_effect_tooltip = WIP_not_done_note
+		add_political_power = 50
+		set_country_flag = SNF_supporting_new_territory
+		custom_effect_tooltip = support_new_territory_tooltip
 	 	}
 	  
 	 }
@@ -1842,13 +1922,13 @@ focus = { #placate perkav soldiers
 		owns_state = 416
 		}
 		prerequisite = {
-			focus = SNF_thrust_into_karistadt
+			focus = SNF_support_rural_farms
 		}
 		ai_will_do = {
 			factor = 10
 		}
-		relative_position_id = SNF_thrust_into_karistadt
-		x = 1
+		relative_position_id = SNF_support_rural_farms
+		x = 0
 		y = 1
 		completion_reward = {
 		custom_effect_tooltip = perkav_volunteers_tooltip
@@ -1862,35 +1942,34 @@ focus = { #placate perkav soldiers
 	 	}
 	  
 	 }
-focus = { #develop new territory
-		id = SNF_develop_new_land
-		icon = GFX_focus_ung_union_reconstruct_sudstadt
+############### Otto Lost lol
+focus = { #Kolbs fell off
+		id = SNF_fall_from_grace
+		icon = GFX_focus_rom_abdicate
 		cost = 5
 		available = {
-		has_government = monarchy_absolute
-		OR = {
-		owns_state = 416
-		owns_state = 418
-		}
+		hidden_trigger = {
+		always = no
+			}
 		}
 		prerequisite = {
-			focus = SNF_thrust_into_karistadt
-			focus = SNF_nearby_conquests
 		}
 		ai_will_do = {
-			factor = 40
+			factor = 10
 		}
-		relative_position_id = SNF_nearby_conquests
+		bypass = {
+		NOT = {
+		has_country_flag = SNF_Drecht_opportunity_flag
+		}
+		has_government = republic_aristocrat
+		}
+		relative_position_id = SNF_blackmail_drecht
 		x = 1
 		y = 1
-		completion_reward = {
-		add_political_power = 50
-		set_country_flag = SNF_supporting_new_territory
-		custom_effect_tooltip = support_new_territory_tooltip
-	 	}
-	  
-	 }
-###############
+		completion_reward = { 
+		custom_effect_tooltip = snf_fall_from_grace_tooltip
+		}
+	}
 focus = { #Ulrich Ascendant
 		id = SNF_Drecht_Ascendant
 		icon = GFX_focus_rom_royal_dictatorship
@@ -1905,7 +1984,7 @@ focus = { #Ulrich Ascendant
 		has_government = republic_aristocrat
 		}
 		prerequisite = {
-			focus = SNF_demand_noble_surrender
+			focus = SNF_fall_from_grace
 		}
 		ai_will_do = {
 			factor = 10
@@ -1917,7 +1996,7 @@ focus = { #Ulrich Ascendant
 				factor = 0
 			}
 		}
-		relative_position_id = SNF_demand_noble_surrender
+		relative_position_id = SNF_fall_from_grace
 		x = -1
 		y = 1
 		completion_reward = {
@@ -1968,9 +2047,10 @@ focus = { #Proof of skill
 		add_country_leader_trait = powerful_noble
 		}
 	}
+#
 focus = { #Noble consolidation
 		id = SNF_nobles_consolidation
-		icon = GFX_focus_rom_abdicate
+		icon = GFX_focus_rom_handle_king
 		cost = 5
 		mutually_exclusive = {
 		focus = SNF_Drecht_Ascendant
@@ -1982,7 +2062,7 @@ focus = { #Noble consolidation
 		has_government = republic_aristocrat
 		}
 		prerequisite = {
-			focus = SNF_demand_noble_surrender
+			focus = SNF_fall_from_grace
 		}
 		ai_will_do = {
 			factor = 10
@@ -1994,7 +2074,7 @@ focus = { #Noble consolidation
 				factor = 0
 			}
 		}
-		relative_position_id = SNF_demand_noble_surrender
+		relative_position_id = SNF_fall_from_grace
 		x = 1
 		y = 1
 		completion_reward = {

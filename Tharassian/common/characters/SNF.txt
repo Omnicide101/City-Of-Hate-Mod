@@ -9,14 +9,14 @@ characters={
 		country_leader={
 			desc="politics_SNF_kolb_desc"
 			ideology=monarchy_absolute_ideology
-			traits={ ambitious_prince }
+			traits={ dreamy_prince }
 			expire="1965.1.1.1"
 			id=-1
 		}
 		country_leader={
 			desc="politics_SNF_kolb_desc"
 			ideology=monarchy_constitutional_ideology
-			traits={ ambitious_prince }
+			traits={ dreamy_prince }
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -39,7 +39,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ cavalry_officer commando }
+			traits={ infantry_officer commando }
 			skill=3
 			attack_skill=2
 			defense_skill=2
@@ -63,15 +63,25 @@ characters={
 			expire="1965.1.1.1"
 			id=-1
 		}
+		corps_commander={
+			traits={ cavalry_officer stubborn }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=4
+			logistics_skill=2
+		}
 		advisor={
 			slot=political_advisor
-			idea_token=ulrich_drecht
+			idea_token=evil_ulrich_drecht
 			allowed ={
-				original_tag =SNF
-			}
-			available={
-				has_government=monarchy_absolute	
-				has_country_flag=SNF_Drecht_advisor
+				original_tag = SNF
+				NOT = {
+					OR = {
+						has_completed_focus = SNF_blackmail_drecht
+						has_completed_focus = SNF_placate_drecht
+					}
+				}
 				NOT={
 					has_country_leader={
 						name="Ulrich Drecht"
@@ -79,8 +89,18 @@ characters={
 					}
 				}
 			}
+			available={
+				has_government=monarchy_absolute
+				NOT={
+					has_country_leader={
+						name="Ulrich Drecht"
+						ruling_only=yes
+					}
+				}
+			}
+			can_be_fired = no
 			traits={
-				second_prince
+				desperate_opportunist
 			}
 		}
 	}
@@ -102,7 +122,7 @@ characters={
 				taboo_farmer
 			}			
 			available={
-				has_completed_focus=SNF_improve_farming
+				has_country_flag = SNF_recruited_till_lehmkuhl
 			}
 		}
 	}

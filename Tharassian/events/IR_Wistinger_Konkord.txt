@@ -1,0 +1,281 @@
+﻿### Wistinger Konkord EVENTS
+
+add_namespace = wws
+
+country_event = {#Schneefilde begging
+	id = wws.1
+	title = wws.1.t
+	desc = wws.1.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+
+	option = {
+	name = wws.1.a #i mean this is my idea
+		ai_chance = {
+			factor = 3
+		}
+		set_country_flag = wws_konkord_yes
+		add_to_variable = {
+    		var = wws_member_count
+    		value = 1
+		}
+	}
+	option = {
+	name = wws.1.b #no this is silly, AI factors probably should change depending on who is in charge
+		ai_chance = {
+			factor = 0
+		}
+		set_country_flag = wws_konkord_no
+	}
+
+}
+
+country_event = {#Wistingen chilling cautiously
+	id = wws.2
+	title = wws.2.t
+	desc = wws.2.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+
+	option = {
+	name = wws.2.a
+		ai_chance = {
+			factor = 3
+		}
+		set_country_flag = wws_konkord_yes
+		add_to_variable = {
+    		var = wws_member_count
+    		value = 1
+		}
+	}
+	option = {
+	name = wws.2.b #no this is silly
+		ai_chance = {
+			factor = 0
+		}
+		set_country_flag = wws_konkord_no
+	}
+
+}
+
+country_event = {#Kristin Kindl torture sesh 1
+	id = wws.3
+	title = wws.3.t
+	desc = wws.3.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+
+	option = {
+	name = wws.3.a
+		ai_chance = {
+			factor = 3
+		}
+		add_to_variable = {
+    		var = wws_member_count
+    		value = 1
+		}
+		set_country_flag = wws_konkord_yes
+		hidden_effect = {
+		country_event = {
+				id = wsz.5
+				days = 1
+				}
+			}
+	}
+	option = {
+	name = wws.3.b #AAAAAAAAAAAAAAAAAAAAAA
+		ai_chance = {
+			factor = 0
+		}
+		set_country_flag = wws_konkord_no
+	}
+
+}
+
+#
+
+country_event = {#Teigerholen considering
+	id = wws.4
+	title = wws.4.t
+	desc = wws.4.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	is_triggered_only = yes
+
+	option = {
+	name = wws.4.a #why not?
+		ai_chance = {
+			factor = 5
+		}
+		every_country = {
+			limit = {
+					has_country_flag = wws_konkord_yes
+					}
+		country_event = {
+				id = wws.5
+				days = 5
+				}
+			}
+	}
+	option = { 
+	name = wws.4.b #those guys suck
+		ai_chance = {
+			factor = 5
+		}
+	}
+
+}
+
+country_event = {#Konkord considering Teigerholen considering
+	id = wws.5
+	title = wws.5.t
+	desc = wws.5.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	is_triggered_only = yes
+	
+	option = {
+	name = wws.5.a #the more the merrier
+		ai_chance = {
+			factor = 5
+		}
+		add_to_variable = {
+    		var = wws_member_teigerholen_yes
+    		value = 1
+		}
+		add_to_variable = {
+    		var = wws_konkord_teigerholen_vote_quantity
+    		value = 1
+		}
+		set_country_flag = wws_konkord_teigerholen_invite_yes
+	}
+	option = {
+	name = wws.5.b #why the hell would we have a powderkeg as an ally???
+		ai_chance = {
+			factor = 1
+		}
+		add_to_variable = {
+    		var = wws_member_teigerholen_no
+    		value = 1
+		}
+		add_to_variable = {
+    		var = wws_konkord_teigerholen_vote_quantity
+    		value = 1
+		}
+		set_country_flag = wws_konkord_teigerholen_invite_no
+	}
+
+}
+
+country_event = {#Konkord considering Teigerholen finale
+	id = wws.6
+	title = wws.6.t
+	desc = wws.6.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+	tag = TEI
+	NOT = { TEI = { has_country_flag = wws_konkord_yes } }
+	SNF = { has_completed_focus = WWS_wistinger_konkord }
+	check_variable = {
+    var = wws_member_count
+    value = var:wws_konkord_teigerholen_vote_quantity
+    compare = equals
+	}
+	}
+	
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+
+	option = {
+	name = wws.6.a #success!
+		trigger = {
+			check_variable = {
+    		var = wws_member_count
+    		value = var:wws_konkord_teigerholen_yes
+    		compare = equals
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = wws_konkord_yes
+		custom_effect_tooltip = wws_teigerholen_note
+	}
+	option = { 
+	name = wws.6.b #nuh uh
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			NOT = { 
+			check_variable = {
+    		var = wws_member_count
+    		value = var:wws_konkord_teigerholen_yes
+    		compare = equals
+			} 
+			}
+		}
+	}
+
+	after = {
+	every_country = {
+			limit = {
+					has_country_flag = wws_konkord_yes
+					}
+		country_event = {
+				id = wws.7
+				days = 1
+				}
+			}
+	}
+
+}
+
+country_event = {#Teigerholen added notif
+	id = wws.7
+	title = wws.7.t
+	desc = wws.7.d
+	picture = GFX_report_event_spr_anarchist_uprising
+	
+	is_triggered_only = yes
+	
+	option = {
+	name = wws.7.a #success!
+		trigger = {
+			check_variable = { wws_member_count = wws_member_teigerholen_yes }
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+	name = wws.7.b #nuh uh
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			NOT = { check_variable = { wws_member_count = wws_member_teigerholen_yes } }
+		}
+	}
+}

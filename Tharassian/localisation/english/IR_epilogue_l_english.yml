@@ -1,0 +1,6 @@
+﻿l_english:
+loc_key_epilogue_tab_hist_summary_header: "A$HEADER$"
+loc_key_epilogue_tab_hist_summary_title: "$TITLE$ A"
+epilogue_context: "$CONTEXT1$ $CONTEXT2$ $CONTEXT3$ A" 
+
+ORD_epilogue_context: "stuff"
