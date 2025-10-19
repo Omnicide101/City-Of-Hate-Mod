@@ -1,0 +1,32 @@
+state = {
+	id = 1051
+	name = "STATE_1051"
+	provinces = {
+		556 1499 1876 4097 4354 5133 7173 
+	}
+	manpower = 8086
+	state_category = rural
+	
+	resources = {
+		lumber = 7
+		food = 4
+		steel = 13
+	}
+	
+	history = {
+		victory_points = {
+			7173 2
+		}
+		victory_points = {
+			5133 2
+		}
+		buildings = {
+			infrastructure = 1
+			farm = 2
+		}
+		owner = TRS
+		add_core_of = TRS
+	}
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

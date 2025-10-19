@@ -1,0 +1,119 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+hastalia_buddies = {
+	enable = {
+		original_tag = TRS
+		country_exists = HAS
+		has_opinion_modifier = staunch_allies
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = HAS
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = HAS
+		value = 200
+	}
+}
+
+
+subdue_new_breakaways = {
+	enable = {
+		original_tag = TRS
+		country_exists = ATH
+		485 = {
+			is_owned_by = ATH
+		}
+		date > 887.6.1
+		has_war = no
+		ATH = {
+			is_not_sphered = yes
+		}
+		is_subject = no
+		NOT = {
+			is_justifying_wargoal_against = ATH
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = conquer
+		id = ATH
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = ATH
+		value = 200
+	}
+	ai_strategy = {
+		type = declare_war
+		id = ATH
+		value = 200
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = ATH
+		target = generate_wargoal
+		value = 200
+	}
+}
+
+strike_at_leader = {
+	enable = {
+		original_tag = TRS
+		country_exists = AKK
+		522 = {
+			is_owned_by = AKK
+		}
+		date > 888.1.1
+		has_war = no
+		AKK = {
+			is_not_sphered = yes
+		}
+		is_subject = no
+		NOT = {
+			is_justifying_wargoal_against = AKK
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = conquer
+		id = AKK
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = AKK
+		value = 200
+	}
+	ai_strategy = {
+		type = declare_war
+		id = AKK
+		value = 200
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = AKK
+		target = generate_wargoal
+		value = 200
+	}
+}

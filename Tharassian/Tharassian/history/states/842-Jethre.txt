@@ -1,0 +1,20 @@
+state={
+	id=842
+	name="STATE_842"
+	provinces={
+		1402 3896 4518 8435 8487 8531 
+	}
+	buildings_max_level_factor=1.000
+	manpower=342
+	state_category=pastoral
+	history={
+		owner = TRX
+		add_core_of = TRX
+		add_claim_by = SAL
+		
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+	}
+}

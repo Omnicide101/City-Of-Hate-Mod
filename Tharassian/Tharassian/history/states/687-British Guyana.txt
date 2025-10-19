@@ -1,0 +1,21 @@
+state={
+	id=687
+	name="STATE_687"
+	provinces={
+		2536 7622
+	}
+	state_category = rural
+	manpower=2695
+	buildings_max_level_factor=1.000
+	resources = {
+		mount = 2
+	}
+	history={
+		owner = KUR
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+		}
+		add_core_of = KUR
+	}
+}

@@ -1,0 +1,35 @@
+state = {
+	id = 1066
+	name = "STATE_1066"
+	provinces = {
+		383 1574 1719 2373 2546 2890 3397 6192 
+	}
+	manpower = 15823
+	state_category = town
+	history = {
+		victory_points = {
+			383 1
+		}
+		victory_points = {
+			2890 5
+		}
+		victory_points = {
+			1574 4
+		}
+		buildings = {
+			infrastructure = 3
+			farm = 1
+			workshop = 3
+		}
+		owner = HAS
+		add_core_of = HAS
+	}
+	
+	resources = {
+		food = 11
+		mount = 2
+		steel = 24
+	}
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

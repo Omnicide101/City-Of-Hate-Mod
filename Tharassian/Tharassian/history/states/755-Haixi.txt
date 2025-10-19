@@ -1,0 +1,20 @@
+state={
+	id=755
+	name="STATE_755"
+	provinces={
+		2514 1972
+	}
+	state_category = town
+	manpower=15724
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = { 1972 10 }
+		owner = IRI
+		buildings = {
+			infrastructure = 3
+			workshop = 3
+			forge = 1
+		}
+		add_core_of = IRI
+	}
+}

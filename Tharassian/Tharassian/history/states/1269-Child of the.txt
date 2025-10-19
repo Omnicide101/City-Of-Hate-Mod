@@ -1,0 +1,19 @@
+state = {
+	id = 1269
+	name = "STATE_1269"
+	provinces = {
+		2166 7374 7394 7407 7426 
+	}
+	manpower = 8872
+	state_category = rural
+	history = {
+		buildings = {
+			infrastructure = 1
+			forge = 1
+		}
+		owner = TRS
+		add_core_of = TRS
+	}
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

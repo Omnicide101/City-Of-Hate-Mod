@@ -1,0 +1,23 @@
+state={
+	id=746
+	name="STATE_746"
+	provinces={
+		1501 3359 2953
+	}
+	state_category = town
+	manpower=14423
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = { 1501 14 }
+		owner = IRI
+		buildings = {
+			infrastructure = 2
+			workshop = 1
+			forge = 2
+			1501 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = IRI
+	}
+}

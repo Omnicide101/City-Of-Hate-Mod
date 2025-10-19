@@ -1,0 +1,32 @@
+state = {
+	id = 1081
+	name = "STATE_1081"
+	provinces = {
+		2443 2946 5466 6186 6207 6212 6227 6233 6240 
+	}
+	manpower = 28775
+	state_category = town
+	history = {
+		victory_points = {
+			2443 15
+		}
+		buildings = {
+			infrastructure = 3
+			farm = 1
+			workshop = 2
+			forge = 1
+		}
+		owner = HAS
+		add_core_of = HAS
+	}
+	
+	
+	resources = {
+		food = 6
+		mount = 7
+		lumber = 9
+	}
+	
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

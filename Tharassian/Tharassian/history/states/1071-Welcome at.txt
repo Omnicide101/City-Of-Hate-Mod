@@ -1,0 +1,25 @@
+state = {
+	id = 1071
+	name = "STATE_1071"
+	provinces = {
+		3516 4012 4316 4363 4892 5169 6790 
+	}
+	manpower = 2540
+	state_category = rural
+	history = {
+		buildings = {
+			infrastructure = 2
+			farm = 1
+			forge = 1
+		}
+		owner = HAS
+		add_core_of = HAS
+	}
+	
+	resources = {
+		lumber = 14
+	}
+	
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

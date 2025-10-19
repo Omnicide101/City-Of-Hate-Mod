@@ -1,0 +1,133 @@
+﻿### ALLIANCE EVENTS
+
+add_namespace = ir.political
+
+country_event = {#Sets opinion modifiers
+	id = ir.political.1
+		
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		set_opinion_modifiers = yes
+	}
+}
+
+country_event = {#Clears opinion modifiers
+	id = ir.political.2
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		clear_opinion_modifier = yes
+	}
+}
+
+country_event = {#Sets faith
+	id = ir.political.3
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		set_religions = yes
+	}
+}
+
+country_event = {#Clears faith
+	id = ir.political.4
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		clear_religious_opinion_modifier = yes
+	}
+}
+
+country_event = {#Clears Civil War NS
+	id = ir.political.5
+	title = ir.political.5.t
+	desc = ir.political.5.d
+	picture = GFX_report_event_communist_leader
+	
+	trigger = {
+		has_idea = GENERIC_civil_war_isolation
+		has_war = no
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = SKA
+				}
+				every_state = {
+					limit = {
+						is_core_of = SKP
+					}
+					remove_core_of = SKP
+				}
+				every_state = {
+					limit = {
+						is_core_of = SKR
+					}
+					remove_core_of = SKR
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ir.political.5.a
+		
+		remove_ideas = GENERIC_civil_war_isolation
+	}
+}
+
+country_event = {#Hack workaround to remove embargoes on formerly-Puritan states
+	id = ir.political.6
+		
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		break_embargo = FROM
+	}
+}
+
+country_event = {#Add Northern Plains separatist tags to the Northern Plains Alliance
+	id = ir.political.7
+	
+	hidden = yes
+	
+	trigger = {
+		is_og_northern_plains_state = yes
+		is_in_faction = no
+		has_global_flag = GENERIC_northern_plains_alliance_created
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		random_other_country = {
+			limit = {
+				is_og_northern_plains_state = yes
+				is_faction_leader = yes
+			}
+			add_to_faction = ROOT
+		}
+	}
+}

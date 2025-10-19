@@ -1,0 +1,30 @@
+state={
+	id=97
+	name="STATE_97"
+	provinces={
+		4092 4762 7767 1377 7844 878 7745 7812 1732 7822 125 4600
+	}
+	state_category = rural
+	manpower=1092
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 7
+	}
+		history={	
+		owner = ORD
+		buildings = {	
+			infrastructure = 1
+			forge = 2
+			125 = {
+				bunker = 2
+			}
+			7822 = {
+				bunker = 2
+			}
+			4600 = {
+				bunker = 2
+			}
+		}	
+		add_core_of = ORD
+		}
+}

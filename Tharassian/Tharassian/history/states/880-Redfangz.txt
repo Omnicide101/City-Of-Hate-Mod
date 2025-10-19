@@ -1,0 +1,25 @@
+state={
+	id=880
+	name="STATE_880"
+	provinces={
+		1891 7755 7826 
+	}
+	buildings_max_level_factor=1.000
+	manpower=10992
+	state_category=pastoral
+	
+	resources = {
+		mount = 4
+		lumber = 23
+		food = 5
+	}
+	
+	history={
+		victory_points = { 7755 3 }
+		owner = STB
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = STB
+	}
+}

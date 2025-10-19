@@ -1,0 +1,22 @@
+state={
+	id=920
+	name="STATE_920"
+	provinces={
+		3621 3713 4601 5341 8084
+	}
+	manpower=3048
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = rural
+	
+    history = {
+        owner = SAL
+        add_core_of = SLA
+		add_claim_by = AGE
+        buildings = {
+            infrastructure = 2
+			workshop = 1
+		}
+		victory_points = { 3621 2 }
+	}
+}

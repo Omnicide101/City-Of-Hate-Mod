@@ -1,0 +1,20 @@
+state={
+	id=724
+	name="STATE_724"
+	provinces={
+		3229 3161 769 3286
+	}
+	state_category = town
+	manpower=5509
+	impassable = yes
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = { 2316 14 }
+		owner = RMT
+		buildings = {
+			infrastructure = 2
+			workshop = 2
+		}
+		add_core_of = RMT
+	}
+}

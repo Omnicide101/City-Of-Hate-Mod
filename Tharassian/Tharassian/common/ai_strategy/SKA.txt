@@ -1,0 +1,243 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+ungerdaler_buddies = {
+	enable = {
+		tag = SKA
+		NOT = {
+			has_government = puritan
+		}
+		UNG = {
+			OR = {
+				has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
+				has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = UNG
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = UNG			
+		value = 200
+	}
+	ai_strategy = {
+		type = protect
+		id = UNG			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = UNG
+		target = military_access
+		value = 200
+	}
+}
+
+rthaur_buddies = {
+	enable = {
+		original_tag = SKA
+		NOT = {
+			OR = {
+				has_government = puritan
+				has_completed_focus = SKA_cut_ties_with_rthauriaur
+				has_completed_focus = SKA_end_alliance_convenience
+			}
+		}
+		country_exists = RTH
+		has_opinion_modifier = staunch_allies
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = RTH
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = RTH			
+		value = 200
+	}
+	ai_strategy = {
+		type = protect
+		id = RTH			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = RTH
+		target = military_access
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = RTH
+		value = 50
+	}
+}
+
+fuck_the_kurgur = {
+	enable = {
+		original_tag = SKA
+		has_war = no
+		NOT = {
+			owns_state = 659
+			owns_state = 176
+			owns_state = 174
+			owns_state = 173
+			owns_state = 172
+		}
+		KUR = {
+			OR = {
+				owns_state = 659
+				owns_state = 176
+				owns_state = 174
+				owns_state = 173
+				owns_state = 172
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = prepare_for_war
+		id = KUR
+		value = 200
+	}
+}
+
+awful_ordorians = {
+	enable = {
+		original_tag = SKA
+		NOT = {
+			has_government = puritan
+		}
+		country_exists = ORD
+		ORD = {
+			OR = {
+				has_government = puritan
+				has_government = monarchy_absolute
+				has_government = theocrat
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = contain
+		id = ORD
+		value = 200
+	}
+}
+
+fuck_ordoria = {
+	enable = {
+		RTH = {
+			has_war_with = ORD
+		}
+		has_guaranteed = RTH
+		NOT = {
+			has_war_with = ORD
+		}
+		has_war = no
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = declare_war
+		id = ORD
+		value = 200
+	}
+}
+
+
+default_unit_production = {
+	enable = {
+		original_tag = SKA
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = dwarven_warriors
+		value = 35
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = frontline
+		value = 45
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = archer
+		value = 25
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 5
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = light_cavalry
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = heavy_cavalry
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 60
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = train
+		value = 10
+	}
+}

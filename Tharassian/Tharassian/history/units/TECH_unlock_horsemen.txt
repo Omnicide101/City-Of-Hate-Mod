@@ -1,0 +1,8 @@
+﻿division_template = {
+	name = "Horsemen"
+	regiments = {
+		horsemen = { x = 0 y = 0 }
+        horsemen = { x = 0 y = 1 }
+        horsemen = { x = 1 y = 0 }
+	}
+}

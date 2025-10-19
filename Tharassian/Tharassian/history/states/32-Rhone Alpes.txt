@@ -1,0 +1,22 @@
+state={
+	id=32
+	name="STATE_32"
+	provinces={
+		4394 5052 1783 1090 1515 5190 659
+	}
+	state_category = town
+	manpower=15756
+	buildings_max_level_factor=1.000
+	resources = {
+		mount = 13
+	}
+	history={
+		owner = GMR
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+		}
+		add_core_of = GMR    
+		add_core_of = FEL
+	}
+}

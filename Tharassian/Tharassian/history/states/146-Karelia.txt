@@ -1,0 +1,23 @@
+state={
+	id=146
+	name="STATE_146"
+	state_category = megalopolis
+	provinces={
+		5038 5368 7082 7100 
+	}
+	manpower=232775
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 27
+	}
+	history={	
+		victory_points = { 7100 64 }
+		owner = SKA
+		buildings = {
+			infrastructure = 3
+			workshop = 6
+			forge = 5
+		}
+		add_core_of = SKA
+		}
+}

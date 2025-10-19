@@ -1,0 +1,26 @@
+state={
+	id=878
+	name="STATE_878"
+	provinces={
+		230 534 1017 4127 
+	}
+	buildings_max_level_factor=1.000
+	manpower=10493
+	state_category=town
+	
+	resources = {
+		food = 27
+		mount = 6
+	}
+	
+	history={
+		victory_points = { 4127 17 }
+		owner = STB
+		buildings = {
+			infrastructure = 2
+			forge = 1
+			farm = 3
+		}
+		add_core_of = STB
+	}
+}

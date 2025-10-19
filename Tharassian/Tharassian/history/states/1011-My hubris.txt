@@ -1,0 +1,23 @@
+state = {
+	id = 1011
+	name = "STATE_1011"
+	provinces = {
+		649 1116 1324 7326 7364 7452 
+	}
+	manpower = 26912
+	state_category = town
+	history = {
+		victory_points = {
+			1116 13
+		}
+		buildings = {
+			infrastructure = 3
+			workshop = 1
+			forge = 3
+		}
+		owner = TRS
+		add_core_of = TRS
+	}
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

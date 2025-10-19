@@ -1,0 +1,21 @@
+state={
+	id=189
+	name="STATE_189"
+	provinces={
+		7068 7112 2637
+	}
+	state_category = pastoral
+	manpower=2997
+	impassable = yes
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 2
+	}
+	history={
+		owner = SKA
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = SKA
+	}
+}

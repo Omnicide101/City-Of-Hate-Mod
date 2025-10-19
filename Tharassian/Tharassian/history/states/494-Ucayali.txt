@@ -1,0 +1,28 @@
+state={
+	id=494
+	name="STATE_494"
+	provinces={
+		8937 4396 4379 8900 3304
+	}
+	state_category = large_city
+	manpower = 509382
+	buildings_max_level_factor=1.000
+	history={
+		owner = TRX
+		add_core_of = TRX
+		
+		victory_points = {
+			4396 41
+		}
+		
+		buildings = {
+			infrastructure = 4
+			workshop = 5
+			forge = 1
+			dockyard = 1
+			4396 = {
+				naval_base = 4
+			}
+		}
+	}
+}

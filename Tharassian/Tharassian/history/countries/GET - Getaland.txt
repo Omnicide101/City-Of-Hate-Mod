@@ -1,0 +1,151 @@
+capital = 449
+
+set_oob = "GET_1936"
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "GET_1936_naval_mtg"
+	else = {
+		set_naval_oob = "GET_1936_naval"
+	}
+}
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	improved_woodworking = 1
+	basic_ship_hull = 1
+}
+
+
+
+set_research_slots = 3
+set_stability = 0.43
+set_war_support = 0.67
+
+set_politics = {
+	ruling_party = monarchy_constitutional
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 23
+
+	monarchy_constitutional = 53
+	
+	republic_peasant = 17
+
+	republic_aristocrat = 4
+
+	republic_merchant = 0
+	
+	theocrat = 3
+
+	puritan = 0
+}
+
+add_ideas = {
+	tribal_society
+	unorganized_economy
+	gnome_country
+	jursarg_religion
+}
+
+diplomatic_relation = {
+	country = ITH
+	relation = non_aggression_pact
+	active = yes
+}
+
+add_opinion_modifier = {
+	target = ITH
+	modifier = supportive_opinion
+}
+
+add_opinion_modifier = {
+	target = DIA
+	modifier = bitter_rivals
+}
+
+add_relation_modifier = {
+	target = DIA
+	modifier = bitter_rivals_opinion_modifier
+}
+
+create_country_leader = {
+	name = "Halgryn Thrusr"
+	desc = "politics_GET_thrusr_desc"
+	picture = "gfx/leaders/SUL/Portrait_Sulfurisle_Generic_navy_1.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Vatna-Class"
+		type = destroyer_1
+		parent_version = 0
+		upgrades = {
+			
+		}
+	}
+}
+
+if = {
+	limit = { 
+		has_dlc = "Man the Guns"
+	}
+	### Variants ###
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Vatna-Class"
+		type = ship_hull_light_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = light_ship_ballista_0
+			fixed_ship_engine_slot = light_ship_rowers_0
+		}
+	}
+}

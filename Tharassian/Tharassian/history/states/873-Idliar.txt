@@ -1,0 +1,23 @@
+state={
+	id=873
+	name="STATE_873"
+	provinces={
+		3900 4069 8557 8583 
+	}
+	state_category = town
+	manpower = 15329
+	
+	resources = {
+		food = 3
+	}
+	
+	history={
+		owner = TES
+		victory_points = { 8583 6 }
+		buildings = {
+			infrastructure = 2
+			forge = 1
+		}
+		add_core_of = TES
+	}
+}

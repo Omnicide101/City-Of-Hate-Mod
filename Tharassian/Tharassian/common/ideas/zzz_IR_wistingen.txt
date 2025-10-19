@@ -1,0 +1,48 @@
+ideas = {
+	
+	country = {
+		
+		#NATIONAL SPIRITS
+		
+		WIS_whiskey = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_brewery
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				army_morale_factor = 0.2
+				army_core_defence_factor = 0.15
+			}
+		}
+		
+		WIS_trade_spochwald = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_foreign_capital
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.075
+				local_resources_factor = 0.15
+			}
+		}
+	}
+}

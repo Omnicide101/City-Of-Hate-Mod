@@ -1,0 +1,66 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+tristal_buddies = {
+	enable = {
+		original_tag = HAS
+		country_exists = TRS
+		has_opinion_modifier = staunch_allies
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = TRS
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = TRS
+		value = 200
+	}
+}
+
+dont_commit_to_tristal_war = {
+	enable = {
+		original_tag = HAS
+		has_war_together_with = TRS
+		TRS = {
+			has_idea = TRS_widespread_corruption
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = TRS
+		value = 10
+	}
+	
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = TRS
+		value = 20
+		target = send_expeditionary_force
+	}
+	
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = TRS
+		value = 20
+		target = lend_lease
+	}
+}

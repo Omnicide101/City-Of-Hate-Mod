@@ -1,0 +1,21 @@
+state={
+	id=285
+	name="STATE_285"
+	provinces={
+		4432 8673 8658 1002 4840 8612 2596 4697 2247 8547
+	}
+	state_category = rural
+	manpower=5342
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			8612 1
+		}
+		owner = NRK
+		buildings = {
+			infrastructure = 2
+			farm = 1	
+		}
+		add_core_of = NRK
+		}
+}

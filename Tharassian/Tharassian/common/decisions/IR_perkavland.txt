@@ -1,0 +1,453 @@
+PRK_council = {
+	
+PRK_upset_krz = {
+		
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			#tag = PRK
+			always = no #needs finetuning
+		}
+		visible = {
+			NOT = {
+			has_country_flag = PRK_council_ended
+			country_exists = KRZ
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+			tooltip = krz_unupset_trigger_val_tt
+			check_variable = { krz_var > 15 }
+			}
+		}
+		
+		activation = {
+		NOT = {
+		has_active_mission = PRK_upset_vln
+		}
+			custom_trigger_tooltip = {
+			tooltip = krz_upset_trigger_val_tt
+			check_variable = { krz_var < 15 }
+			}
+		}
+		
+		days_mission_timeout = 180
+		
+		fire_only_once = no
+		selectable_mission = no
+		is_good = no
+		
+		timeout_effect = {
+			country_event = prk.100
+		}
+	}
+PRK_upset_wlt = {
+		
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			#tag = PRK
+			always = no #needs finetuning
+		}
+		visible = {
+			NOT = {
+			has_country_flag = PRK_council_ended
+			country_exists = KRZ
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+			tooltip = wlt_unupset_trigger_val_tt
+			check_variable = { wlt_var > 15 }
+			}
+		}
+		
+		activation = {
+		NOT = {
+		has_active_mission = PRK_upset_vtz
+		}
+			custom_trigger_tooltip = {
+			tooltip = wlt_upset_trigger_val_tt
+			check_variable = { wlt_var < 15 }
+			}
+		}
+		
+		days_mission_timeout = 180
+		
+		fire_only_once = no
+		selectable_mission = no
+		is_good = no
+		
+		timeout_effect = {
+			country_event = prk.101
+		}
+	}
+PRK_upset_vtz = {
+		
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			#tag = PRK
+			always = no #needs finetuning
+		}
+		visible = {
+			NOT = {
+			has_country_flag = PRK_council_ended
+			country_exists = KRZ
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+			tooltip = vtz_unupset_trigger_val_tt
+			check_variable = { vtz_var > 15 }
+			}
+		}
+		
+		activation = {
+		NOT = {
+		has_active_mission = PRK_upset_wlt
+		}
+			custom_trigger_tooltip = {
+			tooltip = vtz_upset_trigger_val_tt
+			check_variable = { vtz_var < 15 }
+			}
+		}
+		
+		days_mission_timeout = 180
+		
+		fire_only_once = no
+		selectable_mission = no
+		is_good = no
+		
+		timeout_effect = {
+			country_event = prk.102
+		}
+	}
+PRK_upset_vln = {
+		
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			#tag = PRK
+			always = no #needs finetuning
+		}
+		visible = {
+			NOT = {
+			has_country_flag = PRK_council_ended
+			country_exists = KRZ
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+			tooltip = vln_unupset_trigger_val_tt
+			check_variable = { vln_var > 15 }
+			}
+		}
+		
+		activation = {
+		NOT = {
+		has_active_mission = PRK_upset_krz
+		}
+			custom_trigger_tooltip = {
+			tooltip = vln_upset_trigger_val_tt
+			check_variable = { vln_var < 15 }
+			}
+		}
+		
+		days_mission_timeout = 180
+		
+		fire_only_once = no
+		selectable_mission = no
+		is_good = no
+		
+		timeout_effect = {
+			country_event = prk.103
+		}
+	}	
+}
+
+PRK_modernize_nation = {
+	PRK_modernize_perkavland = {
+		
+		icon = GFX_decision_SOV_place_hq
+		
+		fire_only_once = yes
+		
+		allowed = {
+			is_og_perkav_chiefdom = yes
+		}
+		
+		available = {
+			OR = {
+				has_idea = PRK_tribal_nation
+				has_idea = PRK_oral_tradition
+			}
+			has_tech = tech_medieval_development
+			if = { # Can't do it if the Union does it for you
+				limit = {
+					UNG = {
+						has_completed_focus = UNG_diplomatic_efforts
+					}
+				}
+				NOT = {
+					UNG = {
+						has_completed_focus = UNG_diplomatic_efforts
+					}
+				}
+			}
+		}
+		
+		visible = {
+			is_og_perkav_chiefdom = yes
+			OR = {
+				has_idea = PRK_tribal_nation
+				has_idea = PRK_oral_tradition
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000 # Important!!!
+		}
+		
+		cost = 200
+		
+		days_remove = 200
+		
+		remove_effect = {
+			remove_ideas = PRK_tribal_nation
+			remove_ideas = PRK_oral_tradition
+		}
+	}
+}
+
+plunder_schneefilde = {
+		
+	PRK_plunder_schneefilde = {
+		
+		icon = GFX_decision_generic_raid
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = PRK
+		}
+		
+		available = {
+			NOT = {
+				has_war_with = SNF
+			}
+			NOT = {
+				SNF = {
+					is_subject_of = PRK
+				}
+			}
+			NOT = {
+				is_subject_of = UNG
+			}
+			NOT = {
+				controls_state = 224
+			}
+			divisions_in_border_state = {
+				size > 2
+				state = 621
+				border_state = 254
+			}
+			has_army_manpower = {
+				size > 19999
+			}
+		}
+
+		visible = {
+			tag = PRK
+			country_exists = SNF
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		on_map_mode = map_and_decisions_view 
+		
+		days_remove = 50
+		
+		remove_effect = {
+			621 = {
+				remove_dynamic_modifier = {
+					modifier = ongoing_border_conflict
+				}
+			}
+			254 = {
+				remove_dynamic_modifier = {
+					modifier = ongoing_border_conflict
+				}
+			}
+			if = {
+				limit = {
+					has_border_war_between = {
+						attacker = 621
+						defender = 254
+					}
+				}
+				finalize_border_war = {
+					defender_win = yes
+					attacker = 621
+					defender = 254
+				}
+			}
+		}
+		
+		complete_effect = {
+			621 = {
+				add_dynamic_modifier = {
+					modifier = ongoing_border_conflict
+				}
+			}
+			254 = {
+				add_dynamic_modifier = {
+					modifier = ongoing_border_conflict
+				}
+			}
+			SNF = {
+				country_event = {
+					id = snf.1
+					hours = 3
+				}
+			}
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 621
+					num_provinces = 4
+					on_win = perkav_schneefilder_sack.1
+					on_lose = perkav_schneefilder_sack.2
+					on_cancel = perkav_schneefilder_sack.3
+				}
+				defender = {
+					state = 254
+					num_provinces = 3
+					on_win = schneefilde_schneefilder_sack.1
+					on_lose = schneefilde_schneefilder_sack.2
+					on_cancel = schneefilde_schneefilder_sack.3
+				}
+			}
+			set_country_flag = PRK_schneefilde_raided
+		}
+	}
+}
+
+perkav_piracy = {
+	
+	PRK_perkav_piracy = {
+		
+		icon = GFX_decision_generic_raid
+		
+		allowed = {
+			tag = PRK
+		}
+		
+		available = {
+			tag = PRK
+			custom_trigger_tooltip = {
+				tooltip = PRK_coastal_state_in_raid_range_flag
+				perkav_raiding_target_exists = yes
+			}
+			#Disabled until we add a navy
+			#ships_in_state_ports = {
+			#	type = destroyer
+			#	size > 2
+			#	state = 413
+			#}
+			has_country_flag = PRK_can_raid
+			NOT = {
+				has_country_flag = PRK_recent_raid
+			}
+		}
+
+		visible = {
+			tag = PRK
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = piracy_random_tt
+			set_country_flag = PRK_recent_raid
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = UNG_fight_perkav_pirates
+						}
+					}
+					random_list = {
+						
+						60 = { #Merchant Fleet Raided!
+							random_country = {
+								limit = {
+									any_owned_state = {
+										has_state_flag = PRK_coastal_state_in_raid_range_flag
+									}
+								}
+								country_event = {
+									id = arr.1
+									days = 13
+								}
+							}
+						}
+						
+						40 = { #Raid Fails!
+							random_country = {
+								limit = {
+									any_owned_state = {
+										has_state_flag = PRK_coastal_state_in_raid_range_flag
+									}
+								}
+								country_event = {
+									id = arr.6
+									days = 13
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = UNG_fight_perkav_pirates
+					}
+					random_list = {
+						
+						40 = { #Merchant Fleet Raided!
+							random_country = {
+								limit = {
+									any_owned_state = {
+										has_state_flag = PRK_coastal_state_in_raid_range_flag
+									}
+								}
+								country_event = {
+									id = arr.1
+									days = 13
+								}
+							}
+						}
+						
+						60 = { #Raid Fails!
+							random_country = {
+								limit = {
+									any_owned_state = {
+										has_state_flag = PRK_coastal_state_in_raid_range_flag
+									}
+								}
+								country_event = {
+									id = arr.6
+									days = 13
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

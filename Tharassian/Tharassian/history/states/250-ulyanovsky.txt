@@ -1,0 +1,23 @@
+state={
+	id=250
+	name="STATE_250"
+	provinces={
+		9162 3510 1764 4158 1786 9065 1277 9033
+	}
+	state_category = pastoral
+	manpower=3924
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 8
+	}
+	history={
+		victory_points = {
+			9162 1
+		}
+		owner = UNG
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = UNG
+		}
+}

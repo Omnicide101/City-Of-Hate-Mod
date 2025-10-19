@@ -1,0 +1,26 @@
+
+state={
+	id=203
+	name="STATE_203"
+	resources={
+		steel=3.000
+	}
+
+	history={
+		owner = STA
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = STA
+
+	}
+
+	provinces={
+		1896 7962 
+	}
+	manpower=2912
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

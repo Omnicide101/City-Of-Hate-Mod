@@ -1,0 +1,37 @@
+ideas = {
+	
+	country = {
+	
+		NBI_be_trans_throw_hands = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = nbi_enby_pride
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_attack_factor = 0.75
+				army_defence_factor = 0.75
+				army_speed_factor = 0.75
+				army_org_factor = 0.75
+				army_morale_factor = 0.75
+				training_time_factor = -0.75
+				production_speed_buildings_factor = 0.5
+				consumer_goods_factor = -0.5
+				industrial_capacity_factory = 0.5
+				land_reinforce_rate = 0.3
+				production_factory_efficiency_gain_factor = -0.15
+				command_power_gain = 1
+				army_leader_start_level = 5
+				army_fuel_consumption_factor = -0.9
+			}
+		}
+	}
+}

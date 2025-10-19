@@ -1,0 +1,51 @@
+﻿division_template = {
+	name = "Settlement Guards"
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Colonial Division"
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		men_at_arms = { x = 0 y = 1 }
+       	halberdier = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		men_at_arms = { x = 1 y = 1 }
+		swordsmen = { x = 1 y = 2 }
+		men_at_arms = { x = 2 y = 0 }
+		men_at_arms = { x = 2 y = 1 }
+		men_at_arms = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Arrowslingers"
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		archer_longbow = { x = 0 y = 1 }
+       	archer_longbow = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		archer_longbow = { x = 1 y = 1 }
+		archer_longbow = { x = 1 y = 2 }
+		men_at_arms = { x = 2 y = 0 }
+		archer_longbow = { x = 2 y = 1 }
+		archer_longbow = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Rangers"
+	regiments = {
+		light_cavalry = { x = 0 y = 0 }
+        light_cavalry = { x = 0 y = 1 }
+        light_cavalry = { x = 1 y = 0 }
+		light_cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    scouts_cavalry = { x = 0 y = 0 }
+	}
+}

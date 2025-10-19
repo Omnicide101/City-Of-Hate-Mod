@@ -1,0 +1,15 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Cabhlach Cráifeach"
+		naval_base = 9542 # Creideamh
+		task_force = {
+			name = "Flít Beannaithe"
+			location = 9542 # Creideamh
+			ship = { name = "Breithiúnas" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = DIA version_name = "Ceartaiseach-Class"} } }
+			ship = { name = "Gaiscíoch" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = DIA version_name = "Treascair-Class"} } }
+			ship = { name = "Craorag" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = DIA version_name = "Treascair-Class"} } }
+		}
+	}
+}

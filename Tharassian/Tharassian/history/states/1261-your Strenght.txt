@@ -1,0 +1,24 @@
+state={
+	id=1261
+	name="STATE_1261"
+	provinces={
+		455 2800 4678 9018 9076 
+	}
+	state_category = town
+	manpower=83291
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			2800 13
+		}
+		owner = ATH
+		buildings = {
+			infrastructure = 4
+			workshop = 1
+			dockyard = 1
+		}
+		add_core_of = ATH
+		add_claim_by = TRS
+
+	}
+}

@@ -1,0 +1,20 @@
+state={
+	id=305
+	name="STATE_305"
+	provinces={
+		694 151 4159 8301
+	}
+	state_category = town
+	manpower=15319
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = { 694 17 }
+		owner = HLZ
+		buildings = {
+			infrastructure = 2
+			workshop = 1
+			forge = 1
+		}
+		add_core_of = HLZ
+	}
+}

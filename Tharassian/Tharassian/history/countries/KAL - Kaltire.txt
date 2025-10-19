@@ -1,0 +1,158 @@
+﻿capital = 34
+
+set_oob = "empty"
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+
+
+set_research_slots = 3
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = monarchy_constitutional
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 1
+
+	monarchy_constitutional = 10
+
+	republic_peasant = 24
+
+	republic_aristocrat = 17
+
+	republic_merchant = 18
+
+	theocrat = 21
+
+	puritan = 9
+}
+
+add_ideas = {
+	human_country
+	lorthorism_religion
+}
+
+create_country_leader = {
+	name = "Lastora Ivenne"
+	desc = "politics_KAL_ivenne_desc"
+	picture = "gfx/leaders/KAL/Portrait_KAL_Ivenne.dds"
+	ideology = monarchy_absolute_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Lastora Ivenne"
+	desc = "politics_KAL_ivenne_desc"
+	picture = "gfx/leaders/KAL/Portrait_KAL_Ivenne.dds"
+	ideology = monarchy_constitutional_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Jehennis Tolise"
+	desc = "politics_KAL_tolise_desc"
+	picture = "gfx/leaders/KAL/Portrait_KAL_Tolise.dds"
+	ideology = theocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Josique Fastelleux"
+	desc = "politics_KAL_fastelleux_desc"
+	picture = "gfx/leaders/KAL/Portrait_KAL_Fastelleux.dds"
+	ideology = republic_aristocrat_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Rinte Senger"
+	desc = "politics_KAL_senger_desc"
+	picture = "gfx/leaders/KAL/Portrait_KAL_Senger.dds"
+	ideology = republic_peasant_ideology
+}
+
+create_country_leader = {
+	name = "Dosquine Velceau"
+	desc = "politics_KAL_velceau_desc"
+	picture = "gfx/leaders/KAL/Portrait_KAL_Velceau.dds"
+	ideology = republic_merchant_ideology
+}
+
+create_country_leader = {
+	name = "Vorren Lithas"
+	desc = "politics_KAL_lithas_desc"
+	picture = "gfx/leaders/KAL/Portrait_KAL_Lithas.dds"
+	ideology = puritan_ideology
+}

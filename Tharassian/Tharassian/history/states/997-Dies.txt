@@ -1,0 +1,26 @@
+state={
+	id=997
+	name="STATE_997"
+	provinces={
+		3442 3630 5393 8538 8615 
+	}
+	state_category = town
+	manpower=31993
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 4
+	}
+	history={
+		owner = ATH
+		victory_points = {
+			3442 14
+		}
+		buildings = {
+			infrastructure = 3
+			forge = 1
+		}
+		add_core_of = ATH
+		add_claim_by = TRS
+
+	}
+}

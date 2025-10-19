@@ -1,0 +1,219 @@
+﻿division_template = {
+	name = "Grove Guards"	
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Bladesingers"
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		men_at_arms = { x = 0 y = 1 }
+       	halberdier = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		men_at_arms = { x = 1 y = 1 }
+		swordsmen = { x = 1 y = 2 }
+		men_at_arms = { x = 2 y = 0 }
+		men_at_arms = { x = 2 y = 1 }
+		men_at_arms = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "King's Rangers"
+	regiments = {
+		light_cavalry = { x = 0 y = 0 }
+        light_cavalry = { x = 0 y = 1 }
+        light_cavalry = { x = 1 y = 0 }
+		light_cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    scouts_cavalry = { x = 0 y = 0 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "1st King's Militia"
+		location = 7152
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "2nd King's Militia"
+		location = 7236
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "3rd King's Militia"
+		location = 2290
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "4th King's Militia"
+		location = 1952
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "5th King's Militia"
+		location = 995
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "6th King's Militia"
+		location = 7174
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "7th King's Militia"
+		location = 2401
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "8th King's Militia"
+		location = 2826
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+	
+	division = {
+		name = "9th King's Militia"
+		location = 4636
+		division_template = "Grove Guards"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "1st Loyalists"
+		location = 3838
+		division_template = "Bladesingers"
+		start_experience_factor = 1.2
+	}
+
+	division = {
+		name = "2nd Loyalists"
+		location = 6796
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "3rd Loyalists"
+		location = 6818
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+
+	}
+
+	division = {
+		name = "4th Loyalists"
+		location = 1350
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "5th Loyalists"
+		location = 408
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "6th Loyalists"
+		location = 3312
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "7th Loyalists"
+		location = 4185
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "8th Loyalists"
+		location = 7275
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "9th Loyalists"
+		location = 5188
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		name = "10th Loyalists"
+		location = 7152
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	
+	division = {
+		name = "11th Loyalists"
+		location = 2408
+		division_template = "Bladesingers"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "1st King's Rangers"
+		location = 6854
+		division_template = "King's Rangers"
+		start_experience_factor = 0.4
+	}
+
+	division = {
+		name = "2nd King's Rangers"
+		location = 2504
+		division_template = "King's Rangers"
+		start_experience_factor = 0.4
+	}
+
+	division = {
+		name = "3rd King's Rangers"
+		location = 2983
+		division_template = "King's Rangers"
+		start_experience_factor = 0.4
+	}
+
+	division = {
+		name = "4th King's Rangers"
+		location = 3134
+		division_template = "King's Rangers"
+		start_experience_factor = 0.4
+	}	
+	
+}

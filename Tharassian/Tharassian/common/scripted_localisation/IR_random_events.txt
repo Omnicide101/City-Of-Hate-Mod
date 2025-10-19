@@ -1,0 +1,19 @@
+defined_text = { # Get a specific state name for the 'City Requests Privileges' random event
+    name = GetStateName1
+    text = {
+        trigger = {
+            has_variable = RND_city_privileges_state_id
+        }
+        localization_key = loc_key_RND_city_privileges
+    }
+}
+
+defined_text = { # Get a specific state name for the 'Roaming Monster' random event
+    name = GetStateName2
+    text = {
+        trigger = {
+            has_variable = RND_roaming_monster_state_id
+        }
+        localization_key = loc_key_RND_roaming_monster
+    }
+}

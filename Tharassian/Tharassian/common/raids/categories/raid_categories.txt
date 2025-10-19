@@ -1,0 +1,10 @@
+categories = {
+
+	air_raids = {
+	    visible = {
+			has_dlc = "Gotterdammerung"
+			always = no #disabled for mod
+		}
+	    intel_source = air
+	}
+}

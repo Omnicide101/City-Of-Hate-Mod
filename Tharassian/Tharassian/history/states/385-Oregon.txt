@@ -1,0 +1,26 @@
+
+state={
+	id=385
+	name="STATE_385"
+	provinces={
+		563 4594 5254 6435 6482 6515 
+	}
+	state_category = city
+	manpower=10982
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 4
+		food = 3
+	}
+	history={
+		victory_points = { 563 17 }
+		owner = BLD
+		buildings = {
+			infrastructure = 2
+			forge = 1
+			workshop = 1
+			farm = 1
+		}
+		add_core_of = BLD
+	}
+}

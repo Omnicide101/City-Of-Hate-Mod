@@ -1,0 +1,29 @@
+state={
+	id=499
+	name="STATE_499"
+	provinces={
+		7894 4631 1549 2786 7887 3978
+	}
+	buildings_max_level_factor=1.000
+	manpower=1223105
+	state_category=large_city
+	
+	resources = {
+		steel = 5
+	}
+	
+	history={
+		victory_points = { 2786 35 }
+		owner = STB
+		buildings = {
+			infrastructure = 3
+			workshop = 2
+			forge = 1
+			dockyard = 3
+			2786 = {
+				naval_base = 4
+			}	
+		}
+		add_core_of = STB
+	}
+}

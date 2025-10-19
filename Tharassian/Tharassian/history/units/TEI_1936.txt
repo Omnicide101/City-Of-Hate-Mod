@@ -1,0 +1,96 @@
+﻿division_template = {
+	name = "Stadtwache"	
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Prinztruppen"
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		men_at_arms = { x = 0 y = 1 }
+       	halberdier = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		men_at_arms = { x = 1 y = 1 }
+		swordsmen = { x = 1 y = 2 }
+		men_at_arms = { x = 2 y = 0 }
+		men_at_arms = { x = 2 y = 1 }
+		men_at_arms = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Bogenschützen"
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		archer_shortbow = { x = 0 y = 1 }
+       	archer_shortbow = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		archer_shortbow = { x = 1 y = 1 }
+		archer_shortbow = { x = 1 y = 2 }
+		men_at_arms = { x = 2 y = 0 }
+		archer_shortbow = { x = 2 y = 1 }
+		archer_shortbow = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Teigerritter"
+	regiments = {
+		heavy_cavalry = { x = 0 y = 0 }
+        heavy_cavalry = { x = 0 y = 1 }
+		heavy_cavalry = { x = 1 y = 0 }
+		heavy_cavalry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Späher"
+	regiments = {
+		light_cavalry = { x = 0 y = 0 }
+        light_cavalry = { x = 0 y = 1 }
+        light_cavalry = { x = 1 y = 0 }
+		light_cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    scouts_cavalry = { x = 0 y = 0 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "1st Regiment 'Wasserwachen'"
+		location = 4827
+		division_template = "Prinztruppen"
+		start_experience_factor = 0.5
+
+	}
+	
+	division = {
+		name = "2nd Regiment 'Nachtklingen'"
+		location = 103
+		division_template = "Prinztruppen"
+		start_experience_factor = 0.5
+
+	}
+	
+	division = {
+		name = "1st Cavalry 'Teigermänner'"
+		location = 1547
+		division_template = "Teigerritter"
+		start_experience_factor = 0.7
+
+	}
+	
+	division = {
+		name = "Teigerholen City Watch"
+		location = 9217
+		division_template = "Stadtwache"
+		start_experience_factor = 0.05
+
+	}
+}

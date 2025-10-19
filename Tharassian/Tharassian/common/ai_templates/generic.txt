@@ -1,0 +1,556 @@
+ogre_warriors_generic = {
+
+	role = ogre_warriors
+	
+	available_for = {
+        BLD
+    }
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 5
+		}
+	}
+
+
+	
+	ogre_warriors_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				ogre_warriors = 6
+			}
+		}
+	}
+}
+
+perkav_raiders_generic = {
+
+	role = perkav_raiders
+	
+	available_for = {
+		PRK
+		KRL
+		SVC
+		RLV
+		WLT
+		VTZ
+		NVT
+		VLN
+		KRZ
+		LNK
+    }
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 5
+		}
+	}
+
+
+	
+	perkav_raiders_default = {
+	upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				perkav_raiders = 6
+			}
+		}
+	}
+}
+
+dwarven_warriors_generic = {
+
+	role = dwarven_warriors
+	
+	available_for = {
+        SKA
+		BER
+		RMT
+		VRG
+    }
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 5
+		}
+	}
+
+
+	
+	dwarven_warriors_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				dwarven_warriors = 6
+			}
+		}
+	}
+}
+
+garrison_generic = {
+
+	role = garrison
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 1 #Backline
+		}
+	}
+
+
+	
+	garrison_default = {
+	
+		target_template = {
+
+			regiments = {
+				garrison = 5
+			}
+		}
+	}
+}
+
+frontline_infantry_generic = {
+
+	role = frontline
+	
+	upgrade_prio = {
+		factor = 1
+
+		modifier = {
+			factor = 1
+		}
+	}
+
+
+	
+	warband_default = {
+	
+		upgrade_prio = {
+			factor = 0.1
+
+			modifier = {
+				factor = 0
+				has_tech = peasant_levy
+			}
+		}
+		
+		enable = {
+			NOT = {
+				has_tech = peasant_levy #Don't bother once we got the upgrade
+			}	
+		}
+		
+		target_template = {
+			
+			regiments = {
+				warband = 10
+			}
+		}
+		
+		replace_at_match = 0.5
+		replace_with = balanced_infantry_default
+	}
+	
+	balanced_infantry_default = {
+	
+		upgrade_prio = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				men_at_arms = 4
+				swordsmen = 2
+				halberdier = 2
+			}
+		}
+	}
+	
+	offensive_infantry_default = {
+	
+		
+	
+		upgrade_prio = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				men_at_arms = 4
+				swordsmen = 4
+			}
+		}
+	}
+	
+	defensive_infantry_default = {
+	
+		
+	
+		upgrade_prio = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				men_at_arms = 4
+				halberdier = 4
+			}
+		}
+	}
+	
+	balanced_infantry_large_default = {
+	
+		upgrade_prio = {
+			factor = 1
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				men_at_arms = 8
+				swordsmen = 4
+				halberdier = 4
+			}
+		}
+	}
+}
+
+archer_generic = {
+
+	role = archer
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 5
+		}
+	}
+
+
+	
+	early_archer_default = { #Shortbows
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		enable = {
+			NOT = {
+				has_tech = longbow #Don't bother once we got the upgrade
+			}	
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts = 1
+			}
+			
+			regiments = {
+				men_at_arms = 3
+				archer_shortbow = 7
+			}
+		}
+		
+		replace_at_match = 0.6
+		replace_with = archer_default
+	}
+	
+	archer_default = { #Longbows
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts = 1
+			}
+			
+			regiments = {
+				men_at_arms = 3
+				archer_longbow = 7
+			}
+		}
+	}
+	
+	arbalists_default = { #Crossbows
+	
+		
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts = 1
+			}
+			
+			regiments = {
+				men_at_arms = 4
+				arbalists = 4
+			}
+		}
+	}
+	
+	arbalists_fuck_cavalry = { #Anti-cav template
+	
+		
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts = 1
+			}
+			
+			regiments = {
+				men_at_arms = 2
+				halberdier = 5
+				arbalists = 7
+			}
+		}
+	}
+}
+
+cavalry_generic = {
+
+	role = light_cavalry
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 5 #Important
+		}
+	}
+
+
+	
+	horsemen_default = {
+	
+		upgrade_prio = {
+			factor = 5
+
+			modifier = {
+				factor = 2 #Important to get through ASAP
+			}
+		}
+		
+		reinforce_prio = 1 #default
+		
+		enable = {
+			NOT = {
+				has_tech = light_cavalry #Don't bother once we got the upgrade
+			}	
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				horsemen = 5
+			}
+		}
+		
+		## Optional replace-with chain: If the match score is at least 'replace_at_match', then replace the currently targeted template with 'replace_with', as long as the match score between best matching template and the next target template is at least 'target_min_match'.
+		replace_at_match = 0.9
+		replace_with = light_cavalry_default
+	}
+	
+	light_cavalry_default = {
+	
+		upgrade_prio = {
+			factor = 8
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				light_cavalry = 5
+			}
+		}
+	}
+}
+	
+heavy_cavalry_generic = {
+
+	role = heavy_cavalry
+	
+	upgrade_prio = {
+		factor = 8 #Important!
+
+		modifier = {
+			factor = 2
+		}
+	}
+	heavy_cavalry_transition_default = {
+		#Light cav with some heavy mixed in
+		#Template to make the AI swap part of its light cav divisions over to heavy cav
+		#Without completely abandoning light cav
+	
+		upgrade_prio = {
+			factor = 8
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				light_cavalry = 3
+				heavy_cavalry = 2
+			}
+		}
+		
+		## Optional replace-with chain: If the match score is at least 'replace_at_match', then replace the currently targeted template with 'replace_with', as long as the match score between best matching template and the next target template is at least 'target_min_match'.
+		replace_at_match = 0.1 #Immediately, please
+		replace_with = heavy_cavalry_default
+	}
+	
+	
+	heavy_cavalry_default = {
+	
+		upgrade_prio = {
+			factor = 8
+
+			modifier = {
+				factor = 2
+			}
+		}
+		
+		target_template = {
+			
+			support = {
+				scouts_cavalry = 1
+			}
+			
+			regiments = {
+				heavy_cavalry = 5
+			}
+		}
+	}
+}

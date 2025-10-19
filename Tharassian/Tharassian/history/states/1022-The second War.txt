@@ -1,0 +1,24 @@
+state = {
+	id = 1022
+	name = "STATE_1022"
+	provinces = {
+		638 3271 3475 3735 8140 
+	}
+	manpower = 517
+	state_category = pastoral
+	
+	resources = {
+		lumber = 5
+	}
+	
+	history = {
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		owner = TRS
+		add_core_of = TRS
+	}
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

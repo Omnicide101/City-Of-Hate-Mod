@@ -1,0 +1,18 @@
+state = {
+	id = 1209
+	name = "STATE_1209"
+	provinces = {
+		89 461 2543 3711 5508 5649 5654 
+	}
+	manpower = 823
+	state_category = pastoral
+	history = {
+		buildings = {
+			infrastructure = 1
+		}
+		owner = XXX
+		add_core_of = XXX
+	}
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

@@ -1,0 +1,1847 @@
+﻿### PERKAV EVENTS
+
+add_namespace = prk
+
+country_event = { # Union offers Schneefilder Land
+	id = prk.1
+	title = prk.1.t
+	desc = prk.1.d
+	picture = report_event_pierre_laval
+	
+	is_triggered_only = yes
+	
+	option = {#Sure
+		name = prk.1.a
+		ai_chance = {
+			factor = 3
+		}
+		custom_effect_tooltip = KRZ_increase_var_tooltip
+		add_to_variable = {
+				var = krz_var
+				value = 2
+			}
+		SNF = {
+			country_event = {
+				id = snf.2
+				days = 5
+			}
+		}
+	}
+	
+	option = {#Nah
+		name = prk.1.b
+		ai_chance = {
+			factor = 1
+		}
+		add_war_support = 0.05
+		UNG = {
+			country_event = {
+				id = ung.16
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { # Union offers Wertszer Land
+	id = prk.2
+	title = prk.2.t
+	desc = prk.2.d
+	picture = report_event_pierre_laval
+	
+	is_triggered_only = yes
+	
+	option = {#Sure
+		name = prk.2.a
+		ai_chance = {
+			factor = 3
+		}
+		custom_effect_tooltip = KRZ_increase_var_tooltip
+		add_to_variable = {
+				var = krz_var
+				value = 1
+			}
+		WSZ = {
+			country_event = {
+				id = wsz.1
+				days = 5
+			}
+		}
+	}
+
+	option = {#Nah
+		name = prk.2.b
+		ai_chance = {
+			factor = 1
+		}
+		add_war_support = 0.05
+		UNG = {
+			country_event = {
+				id = ung.16
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {#Schneefilde Accepts
+	id = prk.3
+	title = prk.3.t
+	desc = prk.3.d
+	picture = GFX_report_event_generic_rally_3
+	
+	is_triggered_only = yes
+	
+	option = {#Yay
+		name = prk.3.a
+		PRK = {
+			transfer_state = 253
+			add_state_core = 253
+		}
+	}
+}
+
+country_event = {#Schneefilde Rejects
+	id = prk.4
+	title = prk.4.t
+	desc = prk.4.d
+	picture = GFX_report_event_poland_rejects
+	
+	is_triggered_only = yes
+	
+	option = {#Back down
+		name = prk.4.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = -25
+		UNG = {
+			set_country_flag = UNG_unsuccesful_territorial_appeasement
+		}
+	}
+	
+	option = {#Push Claim
+		name = prk.4.b
+		ai_chance = {
+			factor = 2
+		}
+		custom_effect_tooltip = KRZ_increase_var_tooltip
+		add_to_variable = {
+				var = krz_var
+				value = 1
+			}
+		start_border_war = {
+			change_state_after_war = yes
+			attacker = {
+				state = 622 #nice
+				num_provinces = 2
+				on_win = prk.5
+				on_lose = prk.6
+				on_cancel = prk.6
+			}
+			defender = {
+				state = 253
+				num_provinces = 2
+				on_win = snf.3
+				on_lose = snf.4
+				on_cancel = snf.3
+			}
+		}
+	}
+}
+
+country_event = {#Victory in Gielhasser
+	id = prk.5
+	title = prk.5.t
+	desc = prk.5.d
+	picture = GFX_report_event_fascists_posing
+	
+	is_triggered_only = yes
+	
+	option = {#Glory!
+		name = prk.5.a
+		add_political_power = 35
+		PRK = {
+			transfer_state = 253
+			add_state_core = 253
+		}
+	}
+}
+
+country_event = {#Defeat in Gielhasser
+	id = prk.6
+	title = prk.6.t
+	desc = prk.6.d
+	picture = GFX_report_event_generic_army
+	
+	is_triggered_only = yes
+	
+	option = {#Damn
+		name = prk.6.a
+		add_stability = -0.05
+		UNG = {
+			set_country_flag = UNG_unsuccesful_territorial_appeasement
+		}
+	}
+}
+
+country_event = {#Wertszvorde Accepts
+	id = prk.7
+	title = prk.7.t
+	desc = prk.7.d
+	picture = GFX_report_event_generic_rally_3
+	
+	is_triggered_only = yes
+	
+	option = {#Yay
+		name = prk.7.a
+		PRK = {
+			transfer_state = 352
+			add_state_core = 352
+		}
+	}
+}
+
+country_event = {#Wertszvorde Rejects
+	id = prk.8
+	title = prk.8.t
+	desc = prk.8.d
+	picture = GFX_report_event_poland_rejects
+	
+	is_triggered_only = yes
+	
+	option = {#Back down
+		name = prk.8.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = -25
+		UNG = {
+			set_country_flag = UNG_unsuccesful_territorial_appeasement
+		}
+	}
+	
+	option = {#Push Claim
+		name = prk.8.b
+		ai_chance = {
+			factor = 2
+		}
+		custom_effect_tooltip = KRZ_increase_var_tooltip
+		add_to_variable = {
+				var = krz_var
+				value = 1
+			}
+		start_border_war = {
+			change_state_after_war = yes
+			attacker = {
+				state = 354 #nice
+				num_provinces = 1
+				on_win = prk.9
+				on_lose = prk.10
+				on_cancel = prk.10
+			}
+			defender = {
+				state = 352
+				num_provinces = 1
+				on_win = wsz.2
+				on_lose = wsz.3
+				on_cancel = wsz.3
+			}
+		}
+	}
+}
+
+country_event = {#Victory in Loserhafen
+	id = prk.9
+	title = prk.9.t
+	desc = prk.9.d
+	picture = GFX_report_event_fascists_posing
+	
+	is_triggered_only = yes
+	
+	option = {#Glory!
+		name = prk.9.a
+		add_political_power = 35
+		PRK = {
+			transfer_state = 352
+			add_state_core = 352
+		}
+	}
+}
+
+country_event = {#Defeat in Loserhafen
+	id = prk.10
+	title = prk.10.t
+	desc = prk.10.d
+	picture = GFX_report_event_generic_army
+	
+	is_triggered_only = yes
+	
+	option = {#Damn
+		name = prk.10.a
+		add_stability = -0.05
+		UNG = {
+			set_country_flag = UNG_unsuccesful_territorial_appeasement
+		}
+	}
+}
+
+country_event = {#The Union Reaches Out
+	id = prk.11
+	title = prk.11.t
+	desc = prk.11.d
+	picture = GFX_report_event_royal_visit
+	
+	is_triggered_only = yes
+	
+	option = {#We will accept their aid
+		name = prk.11.a
+		custom_effect_tooltip = PRK_union_warning_tt
+		ai_chance = {
+			factor = 1
+			modifier = {
+				NOT = {
+					has_government = puritan
+					has_government = monarchy_absolute
+				}
+				factor = 10
+			}
+		}
+		custom_effect_tooltip = KRZ_decrease_var_tooltip
+		subtract_from_variable = {
+				var = krz_var
+				value = 5
+			}
+		UNG = {
+			country_event = {
+				days = 5
+				id = ung.18
+			}
+		}
+	}
+	
+	option = {#We're good
+		name = prk.11.b
+		ai_chance = {
+			factor = 5
+		}
+		custom_effect_tooltip = KRZ_increase_var_tooltip
+		add_to_variable = {
+				var = krz_var
+				value = 3
+			}
+		add_war_support = 0.05
+		UNG = {
+			country_event = {
+				days = 5
+				id = ung.19
+			}
+		}
+	}
+}
+
+country_event = {#The Perkav Census
+	id = prk.12
+	title = prk.12.t
+	desc = prk.12.d
+	picture = GFX_report_event_partition_of_india
+	
+	is_triggered_only = yes
+	
+	option = {#Good Stuff
+		name = prk.12.a
+		custom_effect_tooltip = KRZ_decrease_var_tooltip
+		subtract_from_variable = {
+				var = krz_var
+				value = 2
+			}
+		swap_ideas = {
+			remove_idea = PRK_perkav_script
+			add_idea = PRK_beginnings_literacy
+		}
+		swap_ideas = {
+			remove_idea = PRK_administrative_reform
+			add_idea = PRK_perkav_census_idea
+		}
+	}
+}
+
+country_event = {#Perkav University
+	id = prk.13
+	title = prk.13.t
+	desc = prk.13.d
+	picture = GFX_report_event_soviet_finnish_pact
+	
+	is_triggered_only = yes
+	
+	option = {#Good Stuff
+		name = prk.13.a
+		remove_ideas = PRK_beginnings_literacy
+		add_research_slot = 1
+	}
+}
+
+country_event = {#Perkav Script
+	id = prk.14
+	title = prk.14.t
+	desc = prk.14.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {#Good Stuff
+		name = prk.14.a
+		custom_effect_tooltip = KRZ_decrease_var_tooltip
+		subtract_from_variable = {
+				var = krz_var
+				value = 2
+			}
+		swap_ideas = {
+			remove_idea = PRK_oral_tradition
+			add_idea = PRK_perkav_script
+		}
+	}
+}
+
+country_event = {#Union Proselytizing
+	id = prk.15
+	title = prk.15.t
+	desc = prk.15.d
+	picture = GFX_report_event_soviet_purge_speech
+	
+	is_triggered_only = yes
+	
+	option = {#Let Them
+		name = prk.15.a
+		custom_effect_tooltip = VTZ_decrease_var_tooltip
+		subtract_from_variable = {
+				var = vtz_var
+				value = 3
+			}
+		custom_effect_tooltip = PRK_proselytize_tt
+		
+		ai_chance = {
+			factor = 5
+			modifier = {
+				has_government = theocrat
+				factor = 0
+			}
+		}
+		
+		set_country_flag = PRK_union_proselytizing
+		
+	}
+	
+	option = {#No
+		name = prk.15.b
+		
+		ai_chance = {
+			factor = 3
+		}
+		
+		add_stability = 0.1
+	}
+}
+
+country_event = {#Conversion Time
+	id = prk.16
+	title = prk.16.t
+	desc = prk.16.d
+	picture = GFX_report_event_pierre_laval
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = PRK_union_proselytizing
+	}
+	
+	mean_time_to_happen = {
+		days = 356
+	}
+	
+	option = {#Praise the Seven
+		name = prk.16.a
+		custom_effect_tooltip = VTZ_decrease_var_tooltip
+		subtract_from_variable = {
+				var = vtz_var
+				value = 5
+			}
+		
+		clr_country_flag = PRK_union_proselytizing
+		set_country_flag = PRK_converted_to_septism
+		swap_ideas = {
+			remove_idea = krostov_religion
+			add_idea = septism_religion
+		}
+		every_country = {
+			country_event = {
+				id = ir.political.4
+			}
+		}
+		every_country = {
+			country_event = {
+				id = ir.political.3
+			}
+		}
+	}
+}
+
+country_event = {#Reactionary Civil War!
+	id = prk.17
+	title = prk.17.t
+	desc = prk.17.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	fire_only_once = yes
+	
+	immediate = {
+		UNG = {
+			set_country_flag = UNG_perkav_rebels
+		}
+		hidden_effect = {
+			add_ideas = GENERIC_civil_war_isolation
+		}
+	}
+	
+	trigger = {
+		NOT = {
+			has_country_flag = PRK_rebels_stopped
+		}
+		OR = {
+			has_country_flag = PRK_converted_to_septism
+			has_country_flag = PRK_crowned_wendelin_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 550 #Might seem long, but doing the Perkav Census takes a LONG time
+	}
+	
+	option = {#Support Krell
+		name = prk.17.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		
+		start_civil_war = {
+			ruling_party = monarchy_constitutional
+			ideology = monarchy_absolute
+			size = 0.45
+			capital = 415
+			states = {
+				415
+				421
+				622
+				626
+				627
+				625
+				414
+				620
+				619
+				639
+				642
+				643
+				646
+				416
+				637
+				638
+				640
+				644
+				643
+				646
+				645
+				644
+				641
+				638
+				637
+				647
+				648
+			}
+			
+			PREV = {
+				PRK_miroslav_zlatko = {
+					set_nationality = PREV.PREV
+				}
+				PRK_justýna_létalová = {
+					set_nationality = PREV.PREV
+				}
+			}
+			
+			promote_character = PRK_miroslav_zlatko
+			promote_character = PRK_justýna_létalová
+		}
+		
+		hidden_effect = {
+			random_other_country = {
+				limit = {
+					original_tag = PRK
+					has_government = monarchy_absolute
+				}
+				set_party_name = {
+					ideology = monarchy_absolute
+					long_name = PRK_monarchy_absolute_reactionary
+					name = PRK_monarchy_absolute_reactionary
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					long_name = PRK_monarchy_constitutional_reactionary
+					name = PRK_monarchy_constitutional_reactionary
+				}
+				set_country_flag = PRK_reactionaries_flag
+				
+				add_ideas = GENERIC_civil_war_isolation
+				
+				if = {
+					limit = {
+						has_idea = septism_religion
+					}
+					swap_ideas = {
+						remove_idea = septism_religion
+						add_idea = krostov_religion
+					}
+				}
+				
+				if = {
+					limit = {
+						has_idea = hieyrenous_patron
+					}
+					swap_ideas = {
+						remove_idea = hieyrenous_patron
+						add_idea = krostov_religion
+					}
+				}
+				
+				if = {
+					limit = {
+						has_idea = daskellin_patron
+					}
+					swap_ideas = {
+						remove_idea = daskellin_patron
+						add_idea = krostov_religion
+					}
+				}
+				
+				if = {
+					limit = {
+						has_idea = tergewelft_patron
+					}
+					swap_ideas = {
+						remove_idea = tergewelft_patron
+						add_idea = krostov_religion
+					}
+				}
+				
+				if = {
+					limit = {
+						has_idea = anzella_patron
+					}
+					swap_ideas = {
+						remove_idea = anzella_patron
+						add_idea = krostov_religion
+					}
+				}
+				
+				if = {
+					limit = {
+						has_idea = nurhelm_patron
+					}
+					swap_ideas = {
+						remove_idea = nurhelm_patron
+						add_idea = krostov_religion
+					}
+				}
+				
+				if = {
+					limit = {
+						has_idea = hutrig_patron
+					}
+					swap_ideas = {
+						remove_idea = hutrig_patron
+						add_idea = krostov_religion
+					}
+				}
+				
+				if = {
+					limit = {
+						has_idea = bitha_patron
+					}
+					swap_ideas = {
+						remove_idea = bitha_patron
+						add_idea = krostov_religion
+					}
+				}
+			}
+			
+			UNG = {
+				country_event = ung.83
+			}
+		}
+	}
+	
+	option = {#Support Reactionaries
+		name = prk.17.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		
+		hidden_effect = {		
+			PRK = {
+				set_capital = {
+					state = 415
+				}
+			}
+		}
+
+		start_civil_war = {
+			ruling_party = monarchy_absolute
+			ideology = monarchy_constitutional
+			size = 0.45
+			capital = 413
+			states = {
+				413
+				630
+				629
+				628
+				631
+				632
+				653
+				654
+				655
+				651
+				652
+				649
+				650
+				420
+				623
+				624
+				621
+				419
+				618
+				617
+				417
+				636
+				635
+				633
+				634
+				418
+			}
+			
+			keep_political_party_members = yes
+			
+			PREV = {
+				PRK_wendelin_krell = {
+					set_nationality = PREV.PREV
+				}
+			}
+			
+			promote_character = {
+				character = PRK_wendelin_krell
+				ideology = monarchy_constitutional_ideology
+			}
+		}
+		
+		set_country_flag = PRK_reactionaries_flag
+		
+		hidden_effect = {
+			
+			set_party_name = {
+				ideology = monarchy_absolute
+				long_name = PRK_monarchy_absolute_reactionary
+				name = PRK_monarchy_absolute_reactionary
+			}
+			set_party_name = {
+				ideology = monarchy_constitutional
+				long_name = PRK_monarchy_constitutional_reactionary
+				name = PRK_monarchy_constitutional_reactionary
+			}
+			
+			add_ideas = GENERIC_civil_war_isolation
+			
+			promote_character = PRK_miroslav_zlatko
+			
+			if = {
+				limit = {
+					has_idea = septism_religion
+				}
+				swap_ideas = {
+					remove_idea = septism_religion
+					add_idea = krostov_religion
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = hieyrenous_patron
+				}
+				swap_ideas = {
+					remove_idea = hieyrenous_patron
+					add_idea = krostov_religion
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = daskellin_patron
+				}
+				swap_ideas = {
+					remove_idea = daskellin_patron
+					add_idea = krostov_religion
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = tergewelft_patron
+				}
+				swap_ideas = {
+					remove_idea = tergewelft_patron
+					add_idea = krostov_religion
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = anzella_patron
+				}
+				swap_ideas = {
+					remove_idea = anzella_patron
+					add_idea = krostov_religion
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = nurhelm_patron
+				}
+				swap_ideas = {
+					remove_idea = nurhelm_patron
+					add_idea = krostov_religion
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = hutrig_patron
+				}
+				swap_ideas = {
+					remove_idea = hutrig_patron
+					add_idea = krostov_religion
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = bitha_patron
+				}
+				swap_ideas = {
+					remove_idea = bitha_patron
+					add_idea = krostov_religion
+				}
+			}
+			UNG = {
+				country_event = ung.83
+			}
+		}
+	}
+}
+
+country_event = {#Rename Krell's Hall on Victory
+	id = prk.18
+	title = prk.18.t
+	desc = prk.18.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = PRK_reactionaries_flag
+		owns_state = 413
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {#Rename
+		name = prk.18.a
+		hidden_effect = {
+			set_capital = {
+				state = 415
+			}
+			UNG = {
+				country_event = ung.84
+			}
+		}
+		413 = {
+			set_state_name = "Zlatko's Hall"
+		}
+		set_province_name = {
+			id = 7533
+			name = "Zlatko's Hall"
+		}
+		add_political_power = 50
+	}
+	
+	option = {#Rename and move capital
+		name = prk.18.b
+		set_capital = {
+			state = 413
+		}
+		413 = {
+			set_state_name = "Zlatko's Hall"
+		}
+		set_province_name = {
+			id = 7533
+			name = "Zlatko's Hall"
+		}
+		add_political_power = 50
+		hidden_effect = {
+			UNG = {
+				country_event = ung.84
+			}
+		}
+	}
+}
+
+country_event = {#Reformed Administration
+	id = prk.19
+	title = prk.19.t
+	desc = prk.19.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	
+	is_triggered_only = yes
+	
+	option = {#Good Stuff
+		name = prk.19.a
+		custom_effect_tooltip = KRZ_decrease_var_tooltip
+		subtract_from_variable = {
+				var = krz_var
+				value = 5
+			}
+		swap_ideas = {
+			remove_idea = PRK_tribal_nation
+			add_idea = PRK_administrative_reform
+		}
+		swap_ideas = {
+			remove_idea = unorganized_economy
+			add_idea = agrarianism_economy
+		}
+	}
+}
+
+country_event = {#Crown Wendelin
+	id = prk.20
+	title = prk.20.t
+	desc = prk.20.d
+	picture = GFX_report_event_crowd_in_prague
+	
+	is_triggered_only = yes
+	
+	option = {#Hail to the King
+		name = prk.20.a
+		custom_effect_tooltip = WLT_decrease_var_tooltip
+		subtract_from_variable = {
+				var = wlt_var
+				value = 5
+			}
+		set_politics = {
+			ruling_party = monarchy_constitutional
+		}
+		add_popularity = {
+			ideology = monarchy_constitutional
+			popularity = 0.1
+		}
+		swap_ideas = {
+			remove_idea = tribal_society
+			add_idea = feudal_society
+		}
+		remove_ideas = PRK_perkav_census_idea
+		add_stability = 0.15
+		set_country_flag = PRK_crowned_wendelin_flag
+	}
+}
+
+country_event = {#Freiprinztum?
+	id = prk.21
+	title = prk.21.t
+	desc = prk.21.d
+	picture = GFX_report_event_romania_parliament
+	
+	is_triggered_only = yes
+	
+	option = {#Sure
+		name = prk.21.a
+		
+		ai_chance = {
+			factor = 1
+		}
+		
+		UNG = {
+			country_event = {
+				id = ung.23
+				days = 5
+			}
+		}
+	}
+	
+	option = {#Nah
+		name = prk.21.b
+		
+		ai_chance = {
+			factor = 3
+		}
+		
+		add_political_power = 15
+		
+		UNG = {
+			country_event = {
+				id = ung.24
+			}
+		}
+	}
+}
+
+country_event = {#Goods Plundered!
+	id = prk.22
+	title = prk.22.t
+	desc = prk.22.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	is_triggered_only = yes
+	
+	option = {#Yay
+		name = prk.22.a
+		custom_effect_tooltip = KRZ_increase_var_tooltip
+		add_to_variable = {
+				var = krz_var
+				value = 1
+			}
+		custom_effect_tooltip = VLN_increase_var_tooltip
+		add_to_variable = {
+				var = vln_var
+				value = 1
+			}
+		add_timed_idea = {
+			idea = ARR_economic_booty
+			days = 80
+		}
+		add_manpower = -13
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -8
+		}
+		navy_experience = 10
+	}
+}
+
+country_event = {#Arms Plundered!
+	id = prk.23
+	title = prk.23.t
+	desc = prk.23.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	is_triggered_only = yes
+	
+	option = {#Yay
+		name = prk.23.a
+		custom_effect_tooltip = KRZ_increase_var_tooltip
+		add_to_variable = {
+				var = krz_var
+				value = 1
+			}
+		custom_effect_tooltip = VLN_increase_var_tooltip
+		add_to_variable = {
+				var = vln_var
+				value = 1
+			}
+		add_timed_idea = {
+			idea = ARR_military_booty
+			days = 80
+		}
+		add_manpower = -13
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -8
+		}
+		navy_experience = 10
+	}
+}
+
+country_event = {#Tech Plundered!
+	id = prk.24
+	title = prk.24.t
+	desc = prk.24.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	is_triggered_only = yes
+	
+	option = {#Yay
+		name = prk.24.a
+		custom_effect_tooltip = KRZ_increase_var_tooltip
+		add_to_variable = {
+				var = krz_var
+				value = 1
+			}
+		custom_effect_tooltip = VLN_increase_var_tooltip
+		add_to_variable = {
+				var = vln_var
+				value = 1
+			}
+		add_timed_idea = {
+			idea = ARR_tech_booty
+			days = 80
+		}
+		add_manpower = -13
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -8
+		}
+		navy_experience = 10
+	}
+}
+
+country_event = {#Artifact Plundered!
+	id = prk.25
+	title = prk.25.t
+	desc = prk.25.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	is_triggered_only = yes
+	
+	option = {#Yay
+		name = prk.25.a
+		custom_effect_tooltip = KRZ_increase_var_tooltip
+		add_to_variable = {
+				var = krz_var
+				value = 3
+			}
+		custom_effect_tooltip = VLN_increase_var_tooltip
+		add_to_variable = {
+				var = vln_var
+				value = 3
+			}
+		grant_magic_item_to_country_leader = yes
+		add_manpower = -13
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -8
+		}
+		navy_experience = 10
+		
+	}
+	
+	option = {#Yay
+		name = prk.25.b
+		custom_effect_tooltip = KRZ_increase_var_tooltip
+		add_to_variable = {
+				var = krz_var
+				value = 3
+			}
+		custom_effect_tooltip = VLN_increase_var_tooltip
+		add_to_variable = {
+				var = vln_var
+				value = 3
+			}
+		random_unit_leader = {
+			grant_magic_item_to_commander = yes
+		}
+		add_manpower = -13
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -8
+		}
+		navy_experience = 10
+	}
+}
+
+country_event = {#Reset Raid
+	id = prk.26
+	title = prk.26.t
+	desc = prk.26.d
+	picture = GFX_report_event_czech_soldiers_01
+	
+	trigger = {
+		has_country_flag = PRK_recent_raid
+	}
+	
+	mean_time_to_happen = {
+		days = 182
+	}
+	
+	option = {#Yay
+		name = prk.26.a
+		clr_country_flag = PRK_recent_raid
+	}
+}
+
+country_event = {#Raiders Fought Off
+	id = prk.27
+	title = prk.27.t
+	desc = prk.27.d
+	picture = GFX_report_event_panay_incident
+	
+	is_triggered_only = yes
+	
+	option = {#Dang
+		name = prk.27.a
+		custom_effect_tooltip = KRZ_decrease_var_tooltip
+		subtract_from_variable = {
+				var = krz_var
+				value = 1
+			}
+		custom_effect_tooltip = VLN_decrease_var_tooltip
+		subtract_from_variable = {
+				var = vln_var
+				value = 1
+			}
+		add_manpower = -32
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -57
+		}
+		navy_experience = 5
+	}
+}
+
+country_event = {#Union-Bergialer Joint Patrols
+	id = prk.28
+	title = prk.28.t
+	desc = prk.28.d
+	picture = GFX_report_event_panay_incident
+	
+	is_triggered_only = yes
+	
+	option = { #Curses
+		name = prk.28.a
+		custom_effect_tooltip = VLN_decrease_var_tooltip
+		subtract_from_variable = {
+				var = vln_var
+				value = 5
+			}
+		set_country_flag = UNG_fight_perkav_pirates
+		custom_effect_tooltip = PRK_raids_harder_tt
+	}
+}
+
+###################################### Focuses - Spoils
+
+country_event = {#So What we doin'?
+	id = prk.30
+	title = prk.30.t
+	desc = prk.30.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	is_triggered_only = yes
+	
+	option = { #Wee bit of raidin'
+		name = prk.30.a
+		set_country_flag = prk_enjoy_the_spoils_flag
+	}
+	option = { #lil' druidry
+		name = prk.30.b
+		set_country_flag = prk_enrich_temples_flag
+	}
+	option = { #bit'o industry
+		name = prk.30.c
+		set_country_flag = prk_sigma_krell
+	}
+}
+########
+country_event = {#Tribal Dispute
+	id = prk.31
+	title = prk.31.t
+	desc = prk.31.d
+	picture = GFX_report_event_czech_soldiers_01
+	
+	is_triggered_only = yes
+	
+	option = { #lyrning about
+		name = prk.31.a
+		set_country_flag = prk_sided_with_lyrn
+	}
+	option = { #nevet!
+		name = prk.31.b
+		set_country_flag = prk_sided_with_nevet
+	}
+}
+#######
+
+
+###################################### REBELLIONS
+
+country_event = {#Western Alliance rebels
+	id = prk.100
+	title = prk.100.t
+	desc = prk.100.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+		UNG = {
+			set_country_flag = UNG_perkav_rebels # IDK what this means for UNG tbh
+		}
+		add_ideas = GENERIC_civil_war_isolation
+		set_variable = { var = krz_var value = 15 }
+		every_state = {
+			limit = {
+			has_state_flag = PRK_tribal_territory_krz
+			is_owned_by = PRK
+			}
+		KRZ = {
+		transfer_state = PREV
+		}
+		add_core_of = KRZ
+		}
+		#release = KRZ
+		KRZ = {
+		inherit_technology = PRK
+		add_ideas = GENERIC_civil_war_isolation
+		set_cosmetic_tag = KRZ_Western_Alliance
+		}
+		transfer_units_fraction= {
+			target = KRZ
+			size = 0.1
+			stockpile_ratio = 0.4
+			army_ratio = 0.3
+			navy_ratio = 0.2
+			air_ratio = 0.0
+		}
+		}
+	}
+	
+	option = {#Support Krell
+		name = prk.100.a
+		ai_chance = {
+			factor = 1
+		}
+		KRZ = {
+		declare_war_on = {
+  			  target = PRK
+		      type = annex_everything
+			}
+		}
+	}
+	
+	option = {#Support Western Alliance
+		name = prk.100.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		KRZ = { change_tag_from = PRK }
+		hidden_effect = {
+			KRZ = {
+			declare_war_on = {
+  			  target = PRK
+		      type = annex_everything
+			}
+		}
+		}
+		}
+	}
+
+country_event = {#southern dominion rebels
+	id = prk.101
+	title = prk.101.t
+	desc = prk.101.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+		UNG = {
+			set_country_flag = UNG_perkav_rebels # IDK what this means for UNG tbh
+		}
+		add_ideas = GENERIC_civil_war_isolation
+		set_variable = { var = wlt_var value = 15 }
+		every_state = {
+			limit = {
+			has_state_flag = PRK_tribal_territory_wlt
+			is_owned_by = PRK
+			}
+		WLT = {
+		transfer_state = PREV
+		}
+		add_core_of = WLT
+		}
+		WLT = {
+		inherit_technology = PRK
+		add_ideas = GENERIC_civil_war_isolation
+		set_cosmetic_tag = WLT_Dominion
+		}
+		transfer_units_fraction= {
+			target = WLT
+			size = 0.1
+			stockpile_ratio = 0.4
+			army_ratio = 0.3
+			navy_ratio = 0.2
+			air_ratio = 0.0
+		}
+		}
+	}
+	
+	option = {#Support Krell
+		name = prk.101.a
+		ai_chance = {
+			factor = 1
+		}
+		WLT = {
+		declare_war_on = {
+  			  target = PRK
+		      type = annex_everything
+			}
+		}
+	}
+	
+	option = {#Support dominion
+		name = prk.101.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		WLT = { change_tag_from = PRK }
+		hidden_effect = {
+			WLT = {
+			declare_war_on = {
+  			  target = PRK
+		      type = annex_everything
+			}
+		}
+		}
+		}
+	}
+
+country_event = {#Druidic Circles' rebels
+	id = prk.102
+	title = prk.102.t
+	desc = prk.102.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+		UNG = {
+			set_country_flag = UNG_perkav_rebels # IDK what this means for UNG tbh
+		}
+		add_ideas = GENERIC_civil_war_isolation
+		set_variable = { var = vtz_var value = 15 }
+		every_state = {
+			limit = {
+			has_state_flag = PRK_tribal_territory_vtz
+			is_owned_by = PRK
+			}
+		VTZ = {
+		transfer_state = PREV
+		}
+		add_core_of = VTZ
+		}
+		VTZ = {
+		inherit_technology = PRK
+		add_ideas = GENERIC_civil_war_isolation
+		set_cosmetic_tag = VTZ_druids
+		retire_country_leader = yes
+		create_country_leader = {
+		name = "Wojskav Rekow"
+		desc = "politics_PRK_rekow_desc"
+		picture = "gfx/leaders/PRK/Portrait_PRK_Rekow.dds"
+		ideology = monarchy_absolute_ideology
+		}
+		}
+		transfer_units_fraction= {
+			target = VTZ
+			size = 0.1
+			stockpile_ratio = 0.4
+			army_ratio = 0.4
+			navy_ratio = 0.2
+			air_ratio = 0.0
+		}
+		}
+	}
+	
+	option = {#Support Krell
+		name = prk.102.a
+		ai_chance = {
+			factor = 1
+		}
+		VTZ = {
+		declare_war_on = {
+  			  target = PRK
+		      type = annex_everything
+			}
+		}
+	}
+	
+	option = {#Support druids
+		name = prk.102.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		VTZ = { change_tag_from = PRK }
+		hidden_effect = {
+			VTZ = {
+			declare_war_on = {
+  			  target = PRK
+		      type = annex_everything
+			}
+		}
+		}
+		}
+	}
+
+country_event = {#Druidic Circles' rebels
+	id = prk.103
+	title = prk.103.t
+	desc = prk.103.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+		UNG = {
+			set_country_flag = UNG_perkav_rebels # IDK what this means for UNG tbh
+		}
+		add_ideas = GENERIC_civil_war_isolation
+		set_variable = { var = vln_var value = 15 }
+		every_state = {
+			limit = {
+			has_state_flag = PRK_tribal_territory_vln
+			is_owned_by = PRK
+			}
+		VLN = {
+		transfer_state = PREV
+		}
+		add_core_of = VLN
+		}
+		VLN = {
+		inherit_technology = PRK
+		add_ideas = GENERIC_civil_war_isolation
+		set_cosmetic_tag = VLN_pirates
+		retire_country_leader = yes
+		create_country_leader = {
+		name = "Tobiasz Janeczko"
+		desc = "politics_PRK_Janec_desc"
+		picture = "gfx/leaders/PRK/Portrait_PRK_Janec.dds"
+		ideology = monarchy_absolute_ideology
+		}
+		}
+		transfer_units_fraction= {
+			target = VLN
+			stockpile_ratio = 0.4
+			army_ratio = 0.3
+			navy_ratio = 0.4
+			air_ratio = 0.0
+		}
+		}
+	}
+	
+	option = {#Support Krell
+		name = prk.103.a
+		ai_chance = {
+			factor = 1
+		}
+		VLN = {
+		declare_war_on = {
+  			  target = PRK
+		      type = annex_everything
+			}
+		}
+	}
+	
+	option = {#Support druids
+		name = prk.103.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		VLN = { change_tag_from = PRK }
+		hidden_effect = {
+			VLN = {
+			declare_war_on = {
+  			  target = PRK
+		      type = annex_everything
+			}
+		}
+		}
+		}
+	}
+#Rebellion outcome
+##################
+country_event = {#Rebels defeated
+	id = prk.104
+	title = prk.104.t
+	desc = prk.104.d
+	picture = GFX_report_event_czech_soldiers_01
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	fire_only_once = no
+	trigger = {
+	tag = PRK
+	UNG = {
+			has_country_flag = UNG_perkav_rebels # IDK what this means for UNG tbh
+		}
+	#has_idea = GENERIC_civil_war_isolation
+	any_state = {
+		OR = {
+		is_core_of = KRZ
+		is_core_of = WLT
+		is_core_of = VTZ
+		is_core_of = VLN
+		}
+	}
+	has_war = no
+	has_capitulated = no
+	exists = yes
+	}
+	option = {#Good
+		name = prk.104.a
+		ai_chance = {
+			factor = 1
+		}
+		custom_effect_tooltip = prk_rebel_defeat_tooltip
+		add_to_variable = {
+			var = krz_var
+			value = 10
+		}
+		add_to_variable = {
+			var = wlt_var
+			value = 10
+		}
+		add_to_variable = {
+			var = vtz_var
+			value = 10
+		}
+		add_to_variable = {
+			var = vln_var
+			value = 10
+		}
+		UNG = {
+			clr_country_flag = UNG_perkav_rebels # IDK what this means for UNG tbh
+		}
+		remove_ideas = GENERIC_civil_war_isolation
+		every_country = {
+		limit = {
+		has_idea = GENERIC_civil_war_isolation
+			OR = {
+				tag = KRZ
+				tag = WLT
+				tag = VTZ
+				tag = VLN
+				}
+			}
+		remove_ideas = GENERIC_civil_war_isolation
+		}
+		every_state = {
+			limit = {
+			OR = {
+				is_core_of = KRZ
+				is_core_of = WLT
+				is_core_of = VTZ
+				is_core_of = VLN
+				}
+			}
+		remove_core_of = KRZ
+		remove_core_of = WLT
+		remove_core_of = VTZ
+		remove_core_of = VLN
+		}
+	}
+}
+
+country_event = {#Rebels win
+	id = prk.105
+	title = prk.105.t
+	desc = prk.105.d
+	picture = GFX_report_event_czech_soldiers_01
+	
+	fire_only_once = yes
+	trigger = {
+	OR = {
+	tag = KRZ
+	tag = WLT
+	tag = VTZ
+	tag = VLN
+	}
+	UNG = {
+			has_country_flag = UNG_perkav_rebels # IDK what this means for UNG tbh
+		}
+	#has_idea = GENERIC_civil_war_isolation
+	has_war = no
+	has_capitulated = no
+	exists = yes
+	}
+	option = {#balkanazisation time
+		name = prk.105.a
+		trigger = {
+			OR = {
+				tag = KRZ
+				tag = WLT
+				}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		UNG = {
+			clr_country_flag = UNG_perkav_rebels # IDK what this means for UNG tbh
+		}
+		every_country = {
+		limit = {
+		has_idea = GENERIC_civil_war_isolation
+			OR = {
+				tag = KRZ
+				tag = WLT
+				tag = PRK
+				}
+			}
+		remove_ideas = GENERIC_civil_war_isolation
+		}
+		every_state = {
+			limit = {
+			has_state_flag = PRK_tribal_territory_krz
+			is_owned_by = ROOT
+			}
+		add_core_of = KRZ
+		remove_core_of = PRK
+		KRZ = {
+		transfer_state = PREV
+		}
+		}
+		every_state = {
+			limit = {
+			has_state_flag = PRK_tribal_territory_wlt
+			is_owned_by = ROOT
+			}
+		add_core_of = WLT
+		remove_core_of = PRK
+		WLT = {
+		transfer_state = PREV
+		}
+		}
+		every_state = {
+			limit = {
+			is_core_of = PRK
+			is_owned_by = ROOT
+				NOT = {
+					has_state_flag = PRK_tribal_territory_krz
+					has_state_flag = PRK_tribal_territory_wlt
+				}
+			}
+		add_core_of = KRL
+		remove_core_of = PRK
+		KRL = {
+		transfer_state = PREV
+		}
+	}
+	KRZ = {
+	set_cosmetic_tag = KRZ_Western_Alliance
+	}
+	WLT = {
+	set_cosmetic_tag = WLT_Dominion
+	}
+}
+
+	option = {#take over time
+		name = prk.105.b
+		trigger = {
+			OR = {
+				tag = VTZ
+				tag = VLN
+				}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		UNG = {
+			clr_country_flag = UNG_perkav_rebels # IDK what this means for UNG tbh
+		}
+		every_country = {
+		limit = {
+		has_idea = GENERIC_civil_war_isolation
+			OR = {
+				tag = VTZ
+				tag = VLN
+				tag = PRK
+				}
+			}
+		remove_ideas = GENERIC_civil_war_isolation
+		}
+		if = {
+			limit = {
+			tag = VTZ
+			}
+			drop_cosmetic_tag = yes
+			PRK = {
+			transfer_state = 413
+			set_country_flag = PRK_VTZ_druidic_rebel_win
+			set_cosmetic_tag = PRK_druidic
+			annex_country = {
+   				 target = VTZ
+  				 transfer_troops = yes
+				}
+			set_variable = { var = vtz_var value = 100 }
+			retire_country_leader = yes
+			create_country_leader = {
+			name = "Tobiasz Janeczko"
+			desc = "politics_PRK_Janec_desc"
+			picture = "gfx/leaders/PRK/Portrait_PRK_Janec.dds"
+			ideology = monarchy_absolute_ideology
+			}
+			change_tag_from = VTZ
+			}
+		}
+		if = {
+			limit = {
+			tag = VLN
+			}
+			drop_cosmetic_tag = yes
+			PRK = {
+			transfer_state  = 413
+			set_country_flag = PRK_VLN_pirate_rebel_win
+			set_cosmetic_tag = PRK_pirate
+			annex_country = {
+   				 target = VLN
+  				 transfer_troops = yes
+				}
+			set_variable = { var = vln_var value = 100 }
+			retire_country_leader = yes
+			create_country_leader = {
+			name = "Wojskav Rekow"
+			desc = "politics_PRK_rekow_desc"
+			picture = "gfx/leaders/PRK/Portrait_PRK_Rekow.dds"
+			ideology = monarchy_absolute_ideology
+			}
+			change_tag_from = VLN
+			}
+		}
+		every_state = {
+			limit = {
+			OR = {
+				is_core_of = KRZ
+				is_core_of = WLT
+				is_core_of = VTZ
+				is_core_of = VLN
+				}
+			}
+		remove_core_of = KRZ
+		remove_core_of = WLT
+		remove_core_of = VTZ
+		remove_core_of = VLN
+		}
+	}
+}
+
+#####################################

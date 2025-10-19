@@ -1,0 +1,35 @@
+state = {
+	id = 1008
+	name = "STATE_1008"
+	provinces = {
+		2904 3478 4731 4803 5603 
+	}
+	manpower = 68448
+	state_category = large_town
+	
+	resources = {
+		lumber = 21
+		food = 13
+		mount = 8
+		steel = 3
+	}
+	
+	history = {
+		victory_points = {
+			2904 13
+		}
+		victory_points = {
+			3478 4
+		}
+		buildings = {
+			infrastructure = 2
+			farm = 3
+			workshop = 1
+			forge = 1
+		}
+		owner = TRS
+		add_core_of = TRS
+	}
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

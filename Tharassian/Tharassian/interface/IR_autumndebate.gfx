@@ -1,0 +1,56 @@
+spriteTypes = {
+	
+	spriteType = { 
+		name = "GFX_autumn_debate_button"
+		textureFile = "gfx/interface/autumn_debate_button.dds" 
+		noOfFrames = 1
+	}
+	
+	spriteType = { 
+		name = "GFX_generic_panel_bg"
+		textureFile = "gfx/interface/generic_gui_panel.dds" 
+		noOfFrames = 1
+	}
+	
+	spriteType = { 
+		name = "GFX_autumn_debate_podium"
+		textureFile = "gfx/interface/autumn_debate_podium.dds" 
+		noOfFrames = 1
+	}
+	
+	spriteType = { 
+		name = "GFX_autumn_debate_flag_traditionalist"
+		textureFile = "gfx/interface/autumn_debate_flag_traditionalist.dds" 
+		noOfFrames = 1
+	}
+	
+	spriteType = { 
+		name = "GFX_autumn_debate_flag_moderate"
+		textureFile = "gfx/interface/autumn_debate_flag_moderate.dds" 
+		noOfFrames = 1
+	}
+	
+	spriteType = { 
+		name = "GFX_autumn_debate_flag_faithful"
+		textureFile = "gfx/interface/autumn_debate_flag_faithful.dds" 
+		noOfFrames = 1
+	}
+	
+	spriteType = { 
+		name = "GFX_autumn_debate_lothinnys"
+		textureFile = "gfx/interface/autumn_debate_lothinnys.dds" 
+		noOfFrames = 1
+	}
+	
+	spriteType = { 
+		name = "GFX_autumn_debate_valinthir"
+		textureFile = "gfx/interface/autumn_debate_valinthir.dds" 
+		noOfFrames = 1
+	}
+	
+	spriteType = { 
+		name = "GFX_autumn_debate_vernythe"
+		textureFile = "gfx/interface/autumn_debate_vernythe.dds" 
+		noOfFrames = 1
+	}
+}

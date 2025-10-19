@@ -1,0 +1,19 @@
+state={
+	id=867
+	name="STATE_867"
+	provinces={
+		2068 2530 3268 8532 
+	}
+	state_category = rural
+	manpower = 1033
+	
+	history={
+		owner = TES
+		buildings = {
+			infrastructure = 1
+			workshop = 2
+		}
+		add_core_of = TES
+		add_claim_by = THX
+	}
+}

@@ -1,0 +1,37 @@
+
+state={
+	id=518
+	name="STATE_518"
+
+	history={
+		owner = AGE
+		add_core_of = AGE
+		victory_points = {
+			2192 27
+		}
+		buildings = {
+			infrastructure = 4
+			forge = 3
+			workshop = 3
+			dockyard = 3
+			2192 = {
+				naval_base = 5
+			}
+		}
+	}
+
+	resources = {
+		steel = 4
+		food = 12
+		mount = 5
+		lumber = 18
+	}
+
+	provinces={
+		507 2192 2816 3712 5578 7676 7724 
+	}
+	manpower=738129
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

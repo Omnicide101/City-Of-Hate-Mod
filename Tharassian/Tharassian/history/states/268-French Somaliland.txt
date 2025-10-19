@@ -1,0 +1,27 @@
+
+state={
+	id=268
+	name="STATE_268"
+	resources={
+		lumber=5.000
+	}
+
+	history={
+		owner = SPW
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = SPW
+		add_core_of = RKS
+
+	}
+
+	provinces={
+		715 9155 9183 
+	}
+	manpower=1022
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

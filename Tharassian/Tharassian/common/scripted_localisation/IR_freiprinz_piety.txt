@@ -1,0 +1,29 @@
+defined_text = { # Country
+	name = GetFreiprinzPiety
+	text = { 
+		trigger = {
+			has_variable = FPT_piety
+		}
+		localization_key = loc_key_freiprinz_piety
+	}
+}
+
+defined_text = { # Modifiers
+	name = GetFreiprinzPietyMobilization
+	text = {
+		trigger = {
+			has_variable = FPT_piety
+		}
+		localization_key = loc_key_freiprinz_piety_mobilization
+	}
+}
+
+defined_text = { # Modifiers
+	name = GetFreiprinzPietyScience
+	text = {
+		trigger = {
+			has_variable = FPT_piety
+		}
+		localization_key = loc_key_freiprinz_piety_science
+	}
+}

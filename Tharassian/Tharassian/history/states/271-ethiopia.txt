@@ -1,0 +1,21 @@
+state={
+	id=271
+	name="STATE_271"
+	provinces={
+		450 3868 1196 369 9261 817 3743 153
+	}
+	state_category = rural
+	manpower=4452
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			153 3
+		}
+		owner = SVT
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = SVT
+	}
+}

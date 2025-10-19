@@ -1,0 +1,98 @@
+STA_convince_freiprinzen = {
+	icon = GFX_decision_category_eng_appeal_to_imperial_loyalists
+
+	picture = GFX_decision_cat_union
+	
+	allowed = {
+		always = yes
+	}
+	
+	visible = {
+		NOT = {
+			has_cosmetic_tag = STA_OSG
+		}
+	}
+}
+
+STA_politics_steel_court = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		always = yes
+	}
+	
+	visible = {
+		NOT = {
+			has_cosmetic_tag = STA_OSG
+		}
+	}
+}
+
+STA_request_war_resources_category = {
+	icon = generic_prospect_for_resources
+    visible = {
+		original_tag = STA
+		has_completed_focus = STA_lessons_of_the_restoration_war
+		AND = {
+			UNG = {exists = yes}
+			NOT = { has_war_with = UNG }
+			is_puppet_of = UNG
+		}
+	}
+	available = { 
+		original_tag = STA
+		has_completed_focus = STA_lessons_of_the_restoration_war
+		AND = {
+			UNG = {exists = yes}
+			NOT = { has_war_with = UNG }
+			is_puppet_of = UNG
+		}
+    }
+}
+STA_a_convincing_act_category = {
+     icon = military_operation
+     visible = {
+		original_tag = STA
+		has_completed_focus = STA_a_convincing_act
+		OR = {
+			Not = { STA = { owns_state = 104 } }
+			Not = { STA = { owns_state = 105 } }
+			Not = { STA = { owns_state = 106 } }
+			Not = { STA = { owns_state = 107 } }
+			Not = { STA = { owns_state = 96 } }
+			}
+		NOT = {
+			has_cosmetic_tag = STA_OSG
+		}
+	 }
+	 
+	 visible_when_empty = yes
+	 
+	 available = { 
+		hidden_trigger = {
+			original_tag = STA
+			has_completed_focus = STA_a_convincing_act
+		}
+     }
+}
+
+STA_trial_by_fire_category = {
+     icon = border_war
+     visible = {
+		original_tag = STA
+		has_completed_focus = STA_trial_by_fire
+		Not = { STA = { owns_state = 218 } }
+		NOT = {
+			has_cosmetic_tag = STA_OSG
+		}
+	 }
+	 
+	 visible_when_empty = yes
+	 
+	 available = { 
+		hidden_trigger = {
+			original_tag = STA
+			has_completed_focus = STA_trial_by_fire
+		}
+     }
+}

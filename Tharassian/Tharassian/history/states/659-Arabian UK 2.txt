@@ -1,0 +1,21 @@
+state={
+	id=659
+	name="STATE_659"
+	provinces={
+		655 2769
+	}
+	state_category = rural
+	manpower=9029
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 5
+	}
+	history={
+		owner = KUR
+		buildings = {
+			infrastructure = 1
+			workshop = 2
+		}
+		add_core_of = KUR
+	}
+}

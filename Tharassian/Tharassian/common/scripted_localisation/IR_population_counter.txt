@@ -1,0 +1,42 @@
+defined_text = { # Country
+	name = GetPopulationValue1
+	text = { 
+		trigger = {
+			has_variable = total_population
+		}
+		localization_key = loc_key_pop_k
+	}
+	text = { 
+		trigger = {
+			has_variable = total_population_k
+		}
+		localization_key = loc_key_pop_m
+	}
+	text = { 
+		trigger = {
+			check_variable = { total_population_k > 10000 }
+		}
+		localization_key = loc_key_pop_m2
+	}
+}
+defined_text = { # Country
+	name = GetPopulationValue2
+	text = { 
+		trigger = {
+			has_variable = core_population
+		}
+		localization_key = loc_key_core_pop_k
+	}
+	text = { 
+		trigger = {
+			has_variable = core_population_k
+		}
+		localization_key = loc_key_core_pop_m
+	}
+	text = { 
+		trigger = {
+			check_variable = { core_population_k > 10000 }
+		}
+		localization_key = loc_key_core_pop_m2
+	}
+}

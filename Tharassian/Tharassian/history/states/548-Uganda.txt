@@ -1,0 +1,19 @@
+
+state={
+	id=548
+	name="STATE_548"
+	provinces={
+		8102 8076
+	}
+	state_category = pastoral
+	manpower=3029
+	buildings_max_level_factor=1.000
+	history={
+		owner = BER
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = BER
+	}
+}

@@ -1,0 +1,16 @@
+characters={
+	ADV_guild={
+		name="The Guild"
+		portraits={
+			civilian={
+				large="gfx/leaders/Portrait_XXX.dds"
+			}
+		}
+		country_leader={
+			ideology=monarchy_absolute_ideology
+			traits={ welcoming_guild }
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

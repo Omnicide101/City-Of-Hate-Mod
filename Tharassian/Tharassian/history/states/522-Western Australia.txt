@@ -1,0 +1,36 @@
+state = {
+	id = 522
+	name = "STATE_522"
+	provinces = {
+		1041 2343 7286 3835 2804 2214 9716 431
+	}
+	state_category = metropolis
+	manpower = 944291
+	buildings_max_level_factor = 1.000
+	
+	resources = {
+		mount = 13
+		food = 23
+		lumber = 8
+	}
+	
+	history = {
+		buildings = {
+		  infrastructure = 5
+		  workshop = 4
+		  forge = 1
+		  dockyard = 2
+		  1041 = {
+			naval_base = 4
+		  }
+		}
+		victory_points = {
+			1041 37
+		}
+		victory_points = {
+			2214 11
+		}
+		owner = AKK
+		add_core_of = AKK
+	}
+}

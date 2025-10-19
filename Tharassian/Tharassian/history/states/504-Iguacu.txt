@@ -1,0 +1,30 @@
+state={
+	id=504
+	name="STATE_504"
+	provinces={
+		508 8296 8349
+	}
+	buildings_max_level_factor=1.000
+	manpower=198217
+	state_category=town
+	
+	resources = {
+		food = 15
+		mount = 12
+		lumber = 17
+	}
+	
+	history={
+		victory_points = {
+			508 19
+		}
+		owner = DEL
+		add_core_of = DEL
+		
+		buildings = {
+			infrastructure = 4
+			workshop = 1
+			farm = 1
+		}
+	}
+}

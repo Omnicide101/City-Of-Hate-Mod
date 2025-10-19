@@ -1,0 +1,53 @@
+﻿	### ESPIONAGE EVENTS ###
+
+add_namespace = spy
+	
+country_event = {#Burnt Granaries
+	id = spy.1
+	title = spy.1.t
+	desc = spy.1.d
+	
+	is_triggered_only = yes
+	
+	option = {#Radical Republicanism is when no food
+		name = spy.1.a
+		add_timed_idea = {
+			idea = SPY_burnt_granaries
+			days = 150
+		}
+		
+		destroy_food = yes
+	}
+}
+
+country_event = {#Poisoned Wells
+	id = spy.2
+	title = spy.2.t
+	desc = spy.2.d
+	
+	is_triggered_only = yes
+	
+	option = {#But does turn the freaking frogs gay?
+		name = spy.2.a
+		add_timed_idea = {
+			idea = SPY_poisoned_wells
+			days = 150
+		}
+	}
+}
+
+country_event = {#Terror Tactics
+	id = spy.3
+	title = spy.3.t
+	desc = spy.3.d
+	
+	is_triggered_only = yes
+	
+	option = {#Spooky scary slaughterers
+		name = spy.3.a
+		add_timed_idea = {
+			idea = SPY_terrorized_populace
+			days = 150
+		}
+	}
+}

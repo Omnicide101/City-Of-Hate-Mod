@@ -1,0 +1,22 @@
+state={
+	id=264
+	name="STATE_264"
+	provinces={
+		9142 9156 3387 9120 4559
+	}
+	state_category = pastoral
+	manpower=3003
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 3
+	}
+	history={
+		owner = UNG
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = UNG
+		add_core_of = RKS
+	}
+}

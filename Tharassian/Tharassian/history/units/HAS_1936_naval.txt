@@ -1,0 +1,26 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "1a Armada"
+		naval_base = 6182 # Ancamario
+		task_force = {
+			name = "1a Fuerza Naval"
+			location = 6182 # Ancamario
+			ship = { name = "Viajera" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = HAS } } }
+			ship = { name = "Espada Valiente" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = HAS } } }
+			ship = { name = "Gloria de las Familias" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = HAS } } }
+		}
+	}
+	
+	fleet = {
+		name = "2a Armada"
+		naval_base = 6778 # Narravasca
+		task_force = {
+			name = "2a Fuerza Naval"
+			location = 6778 # Narravasca
+			ship = { name = "Portadora de Comercio" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = HAS } } }
+			ship = { name = "Vientos Esperanzadores" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = HAS } } }
+		}
+	}
+}

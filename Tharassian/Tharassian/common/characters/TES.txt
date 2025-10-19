@@ -1,0 +1,94 @@
+characters={
+	TES_baker_blackbow={
+		name="Baker Blackbow"
+		portraits={
+			civilian={
+				large="gfx/leaders/UnionSouth/Portrait_Union_South_Generic_navy_1.dds"
+			}
+		}
+		country_leader={
+			desc="politics_TES_blackbow_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	TES_alexander_jones={
+		name="Alexander Jones"
+		portraits={
+			civilian={
+				large="gfx/leaders/leader_unknown.dds"
+			}
+		}
+		country_leader={
+			ideology=monarchy_absolute_ideology
+			expire="900.1.1.12"
+			id=-1
+		}
+	}
+	TES_juliette_taylor={
+		name="Juliette Taylor"
+		portraits={
+			civilian={
+				large="gfx/leaders/leader_unknown.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_peasant_ideology
+			expire="898.1.1.12"
+			id=-1
+		}
+	}
+	TES_juliette_brown={
+		name="Juliette Brown"
+		portraits={
+			civilian={
+				large="gfx/leaders/leader_unknown.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_aristocrat_ideology
+			expire="896.1.1.12"
+			id=-1
+		}
+	}
+	TES_john_wilson={
+		name="John Wilson"
+		portraits={
+			civilian={
+				large="gfx/leaders/leader_unknown.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_merchant_ideology
+			expire="894.1.1.12"
+			id=-1
+		}
+	}
+	TES_juliette_williams={
+		name="Juliette Williams"
+		portraits={
+			civilian={
+				large="gfx/leaders/leader_unknown.dds"
+			}
+		}
+		country_leader={
+			ideology=theocrat_ideology
+			expire="907.1.1.12"
+			id=-1
+		}
+	}
+	TES_marcus_williams={
+		name="Marcus Williams"
+		portraits={
+			civilian={
+				large="gfx/leaders/leader_unknown.dds"
+			}
+		}
+		country_leader={
+			ideology=puritan_ideology
+			expire="905.1.1.12"
+			id=-1
+		}
+	}
+}

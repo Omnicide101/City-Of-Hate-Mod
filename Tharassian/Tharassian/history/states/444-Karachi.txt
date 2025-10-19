@@ -1,0 +1,25 @@
+state={
+	id=444
+	name="STATE_444"
+	provinces={
+		2389 9655 5036 3930 2593 9636 9627 981 9629
+	}
+	state_category = rural
+	manpower = 2713
+	
+	resources = {
+		food = 1
+	}
+	
+	history={
+		victory_points = {
+			9655 3
+		}
+		owner = GET
+			buildings = {
+				infrastructure = 1
+				forge = 1
+			}
+		add_core_of = GET
+	}
+}

@@ -1,0 +1,22 @@
+state={
+	id=489
+	name="STATE_489"
+	provinces={
+		8518 8563 5033 2765 8463
+	}
+	state_category = large_town
+	manpower = 403912
+	
+	history={
+		victory_points = { 8518 21 }
+		owner = TES
+		buildings = {
+			infrastructure = 2
+			dockyard = 3
+			8518 = {
+				naval_base = 4
+			}
+		}
+		add_core_of = TES
+	}
+}

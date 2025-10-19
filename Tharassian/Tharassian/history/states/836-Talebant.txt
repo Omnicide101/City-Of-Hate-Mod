@@ -1,0 +1,23 @@
+state={
+	id=836
+	name="STATE_836"
+	provinces={
+		2701 4502 4617 8809 
+	}
+	buildings_max_level_factor=1.000
+	manpower=632
+	state_category=pastoral
+	
+	resources = {
+		lumber = 6
+	}
+	
+	history={
+		owner = TRX
+		add_core_of = TRX
+		
+		buildings = {
+			infrastructure = 1
+		}
+	}
+}

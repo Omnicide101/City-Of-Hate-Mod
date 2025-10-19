@@ -1,0 +1,29 @@
+state={
+	id=72
+	name="STATE_72"
+	state_category = metropolis
+	manpower = 845739	
+	
+	provinces={
+		3119 5852 5849 4323 5840 4665 5833 2140
+	}
+	
+	history={
+		owner = GMR
+		victory_points = { 5840 38 }
+		buildings = {
+			infrastructure = 2
+			forge = 3
+			workshop = 2
+			dockyard = 5
+			5840 = {
+				naval_base = 8
+			}
+		}
+		add_core_of = GMR
+		add_core_of = NAV
+	}
+
+
+
+}

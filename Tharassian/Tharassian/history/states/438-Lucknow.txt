@@ -1,0 +1,18 @@
+state={
+	id=438
+	name="STATE_438"
+	provinces={
+		9646 3866 4685 5255 4240
+	}
+	
+	state_category = pastoral
+	manpower = 188
+	
+	history={
+		owner = GET
+			buildings = {
+				infrastructure = 1
+			}
+		add_core_of = GET
+	}
+}

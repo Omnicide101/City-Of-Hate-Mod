@@ -1,0 +1,17 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Da Navy"
+		naval_base = 2786 # Shipwrekz
+		task_force = {
+			name = "Da Fleet"
+			location = 2786 # Shipwrekz
+			ship = { name = "Plundagits" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = STB } } }
+			ship = { name = "Sea-Spida" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = STB } } }
+			ship = { name = "Loottaka's Taka" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = STB } } }
+			ship = { name = "Gruska's Cog" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = STB } } }
+			ship = { name = "Da Unwrekked" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = STB } } }
+		}
+	}
+}

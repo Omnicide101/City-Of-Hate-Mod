@@ -1,0 +1,311 @@
+﻿division_template = {
+	name = "Local Militia"
+	
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Aethell Legion"
+	
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		men_at_arms = { x = 0 y = 1 }
+       	halberdier = { x = 0 y = 2 }
+       	halberdier = { x = 0 y = 3 }
+		men_at_arms = { x = 1 y = 0 }
+		men_at_arms = { x = 1 y = 1 }
+		halberdier = { x = 1 y = 2 }
+		halberdier = { x = 1 y = 3 }
+		men_at_arms = { x = 2 y = 0 }
+		men_at_arms = { x = 2 y = 1 }
+		swordsmen = { x = 2 y = 2 }
+		swordsmen = { x = 2 y = 3 }
+		men_at_arms = { x = 3 y = 0 }
+		men_at_arms = { x = 3 y = 1 }
+		swordsmen = { x = 3 y = 2 }
+		swordsmen = { x = 3 y = 3 }
+	}
+}
+
+division_template = {
+	name = "Fletchlevy"
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		archer_shortbow = { x = 0 y = 1 }
+       	archer_shortbow = { x = 0 y = 2 }
+       	archer_shortbow = { x = 0 y = 3 }
+		men_at_arms = { x = 1 y = 0 }
+		archer_shortbow = { x = 1 y = 1 }
+		archer_shortbow = { x = 1 y = 2 }
+		archer_shortbow = { x = 1 y = 3 }
+		men_at_arms = { x = 2 y = 0 }
+		archer_shortbow = { x = 2 y = 1 }
+		archer_shortbow = { x = 2 y = 2 }
+		archer_shortbow = { x = 2 y = 3 }
+	}
+}
+
+division_template = {
+	name = "Aethell Steedlords"
+	
+	regiments = {
+		light_cavalry = { x = 0 y = 0 }
+        light_cavalry = { x = 0 y = 1 }
+        light_cavalry = { x = 0 y = 2 }
+		light_cavalry = { x = 0 y = 3 }
+        light_cavalry = { x = 1 y = 0 }
+		light_cavalry = { x = 1 y = 1 }
+        light_cavalry = { x = 1 y = 2 }
+		light_cavalry = { x = 1 y = 3 }
+	}
+	support = {
+	    scouts_cavalry = { x = 0 y = 0 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "Siniath Guard"
+		location = 8603
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Dovea Guard"
+		location = 8534
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Liathen Guard"
+		location = 5249
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Amselia Guard"
+		location = 1079
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Selise Guard"
+		location = 618
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Delamis Guard"
+		location = 2800
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Berise Guard"
+		location = 8812
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "Binise Guard"
+		location = 657
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+
+	division = {
+		name = "Beriath Guard"
+		location = 1118
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+
+	division = {
+		name = "Toriaed Guard"
+		location = 8926
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+
+	division = {
+		name = "Biras Guard"
+		location = 3442
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+
+	division = {
+		name = "Hovea Guard"
+		location = 4170
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+
+	division = {
+		name = "Deriath Guard"
+		location = 8464
+		division_template = "Local Militia"
+		start_experience_factor = 0.3
+
+	}
+
+	division = {
+		name = "1st Aethell Steedlords"
+		location = 8478
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		name = "2nd Aethell Steedlords"
+		location = 618
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "3rd Aethell Steedlords"
+		location = 8610
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+
+	}
+
+	division = {
+		name = "4th Aethell Steedlords"
+		location = 5140
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "5th Aethell Steedlords"
+		location = 48
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "6th Aethell Steedlords"
+		location = 4197
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "7th Aethell Steedlords"
+		location = 3642
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "8th Aethell Steedlords"
+		location = 1950
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+	}
+
+	division = {
+		name = "9th Aethell Steedlords"
+		location = 3886
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		name = "10th Aethell Steedlords"
+		location = 8447
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+	}	
+
+	division = {
+		name = "11th Aethell Steedlords"
+		location = 1412
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+	}	
+
+	division = {
+		name = "12th Aethell Steedlords"
+		location = 9007
+		division_template = "Aethell Steedlords"
+		start_experience_factor = 0.5
+	}
+}
+
+
+
+
+### STARTING PRODUCTION ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "ATH"
+		}
+		requested_factories = 4
+		progress = 0.48
+		efficiency = 37
+	}
+	
+	add_equipment_production = {
+		equipment = {
+			type = ranged_equipment_0
+			creator = "ATH"
+		}
+		requested_factories = 2
+		progress = 0.28
+		efficiency = 31
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = light_cavalry_equipment_0
+			creator = "ATH" 
+		}
+		requested_factories = 12
+		progress = 0.9
+		efficiency = 46
+	}
+	
+	add_equipment_production = {
+		equipment = {
+			type = heavy_cavalry_equipment_0
+			creator = "ATH" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 12
+	}
+}

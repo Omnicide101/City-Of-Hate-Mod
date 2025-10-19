@@ -1,0 +1,21 @@
+state={
+	id=39
+	name="STATE_39"
+	provinces={
+		6194 6177 6180 3538 963 6157 4095 6144 3669
+	}
+	state_category = town
+	manpower=14330
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			3538 1
+		}
+		owner = GMR
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = GMR
+		add_core_of = FEL
+	}
+}

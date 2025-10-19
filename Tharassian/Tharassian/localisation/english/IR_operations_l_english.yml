@@ -1,0 +1,11 @@
+﻿l_english:
+ operation_vanquish_monster:0 "Vanquish Monster"
+ operation_vanquish_monster_desc:0 "§LA horrible monster is rampaging through our lands. We must send a brave Adventurer to quell this threat, before it hurts anyone else.§!"
+ operation_vanquish_monster_outcome:0 "§LVanquish Monster§! success chance" 
+ operation_vanquish_monster_risk:0 "§LVanquish Monster§! risk"
+ operation_burn_granaries:0 "Burn Granaries"
+ operation_burn_granaries_desc:0 "§LAn army marches on its stomach, and if we put their food to the torch, it will rapidly become useless and easily swept aside by our troops.§!"
+ operation_poison_wells:0 "Poison Wells"
+ operation_poison_wells_desc:0 "§LPotable water is perhaps the most important resource in any situation. Cutting off the enemy's access to it will greatly hinder their efforts.§!"
+ operation_terrorize_populace:0 "Terrorize Populace"
+ operation_terrorize_populace_desc:0 "§LStriking the enemy's morale is an excellent way to hamstring their defences without even fighting. Send an Adventurer to cow their civilian populace and destabilize their society.§!"

@@ -1,0 +1,15 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Heilige Marine"
+		naval_base = 9285 # St. Vichtlas
+		task_force = {
+			name = "Vichtlasflotte"
+			location = 9285 # St. Vichtlas
+			ship = { name = "Verurteilung" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = SVT version_name = "Septa-Class"} } }
+			ship = { name = "Höllenfeuer" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SVT version_name = "Geheiligt-Class"} } }
+			ship = { name = "Exorzismus" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SVT version_name = "Geheiligt-Class"} } }
+		}
+	}
+}

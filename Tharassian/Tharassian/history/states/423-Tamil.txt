@@ -1,0 +1,28 @@
+state={
+	id=423
+	name="STATE_423"
+	provinces={
+		9196 1139 3280 2532 9166 9191 9150 3262 1568 5176
+	}
+	
+	state_category = city
+	manpower = 544329
+	
+	resources = {
+		steel = 11
+	}
+	
+	history={
+		owner = TAR
+		victory_points = { 9191 33 }
+			buildings = {
+				infrastructure = 2
+				forge = 4
+				farm = 2
+				9191  = {
+					naval_base = 4
+				}
+			}
+		add_core_of = TAR
+	}
+}

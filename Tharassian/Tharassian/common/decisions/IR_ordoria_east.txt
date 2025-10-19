@@ -1,0 +1,133 @@
+EOR_pacify_land = {
+	EOR_pacify_lands_ithinis = {
+		
+		icon = oppression
+		
+		visible = {
+			has_government = puritan
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				is_owned_by = ROOT
+				is_controlled_by = ROOT
+				OR = {
+					has_active_resistance = yes
+					compliance > 0
+				}
+			}
+		}
+		
+		available = {
+			FROM = {
+				OR = {
+					has_active_resistance = yes
+					compliance > 0
+				}
+				is_controlled_by = ROOT
+				compliance > 35
+				resistance < 50
+			}
+			has_manpower > 149
+			has_equipment = {
+				infantry_equipment > 149
+			}
+		}
+		
+		
+		on_map_mode = map_only
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 35
+		}
+		
+		days_remove = 75
+		
+		complete_effect = {
+			add_manpower = -150
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -150
+			}
+		}
+		
+		modifier = {
+			stability_weekly = -0.001
+		}
+		
+		remove_effect = {			
+			FROM = {
+				force_disable_resistance = ROOT
+				cancel_resistance = yes
+			}
+			custom_effect_tooltip = EOR_disable_resistance_tt
+		}
+	}
+	
+	EOR_pacify_lands_larennis = {
+		
+		icon = hol_exchange_intelligence_data
+		
+		visible = {
+			OR = {
+				has_government = monarchy_absolute
+				has_government = monarchy_constitutional
+				has_government = republic_aristocrat
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				is_owned_by = ROOT
+				is_controlled_by = ROOT
+				OR = {
+					has_active_resistance = yes
+					compliance > 0
+				}
+			}
+		}
+		
+		available = {
+			FROM = {
+				OR = {
+					has_active_resistance = yes
+					compliance > 0
+				}
+				is_controlled_by = ROOT
+				compliance > 50
+				resistance < 35
+			}
+		}
+		
+		
+		on_map_mode = map_only
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 35
+		}
+		
+		days_remove = 75
+		
+		modifier = {
+			political_power_gain = -1.0
+		}
+		
+		remove_effect = {
+			FROM = {
+				force_disable_resistance = ROOT
+				cancel_resistance = yes
+			}
+			custom_effect_tooltip = EOR_disable_resistance_tt
+		}
+	}
+}

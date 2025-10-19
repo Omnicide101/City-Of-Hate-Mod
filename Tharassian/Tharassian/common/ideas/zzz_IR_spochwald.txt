@@ -1,0 +1,26 @@
+ideas = {
+	
+	country = {
+
+		SPW_wistinger_trade = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_brewery
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = 0.3
+				breakthrough_factor = 0.3
+				consumer_goods_factor = -0.15
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+﻿l_english:
+ #cai
+ CAI:0 "Cai"
+ CAI_DEF:0 "Cai"
+ CAI_ADJ:0 "Caian"
+ #tion
+ TIO:0 "Tion"
+ TIO_DEF:0 "Tion"
+ TIO_ADJ:0 "Tionnese"
+ #tykinthios
+ TYK:0 "Tykinthos"
+ TYK_DEF:0 "Tykinthos"
+ TYK_ADJ:0 "Tykinthotian"
+ #sasnai
+ SAS:0 "Sasnai"
+ SAS_DEF:0 "Sasnai"
+ SAS_ADJ:0 "Sasnaian"
+ #Tofnos
+ TOF:0 "Tofnos"
+ TOF_DEF:0 "Tofnos"
+ TOF_ADJ:0 "Tofnossi"
+ #Cyttra
+ CYT:0 "Cyttra"
+ CYT_DEF:0 "Cyttra"
+ CYT_ADJ:0 "Cyttran"
+ #marakai
+ MAK:0 "Marakai"
+ MAK_DEF:0 "Marakai"
+ MAK_ADJ:0 "Marakan"
+ #tikynthios
+ TKT:0 "Tikynthaios"
+ TKT_DEF:0 "Tikynthaios"
+ TKT_ADJ:0 "Tikynthaiossian"

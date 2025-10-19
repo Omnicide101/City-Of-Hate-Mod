@@ -1,0 +1,2006 @@
+STA_politics_steel_court = {
+	
+	STA_promote_free_trade = {
+		icon = GFX_decision_gre_investment_decisions
+		
+		allowed = {	
+			tag = STA
+		}
+		available = {
+			has_completed_focus = STA_the_bear_of_stahlhof
+			NOT = {
+				has_idea = STA_free_trade
+			}
+		}
+		
+		visible = {
+			tag = STA
+			has_completed_focus = STA_the_bear_of_stahlhof
+		}
+		
+		ai_will_do = {
+			factor = 0 #Not without good reason
+			modifier = {
+				add = 50
+				STA_already_taken_steel_court_decision = no
+				STA_should_buff_republicanism = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
+			}
+			modifier = {
+				add = 500 #Tiebreaker
+				OR = {
+					STA_republicanism_puritanism_or_theocracy_tiebreaker_republicanism = yes
+					STA_republicanism_puritanism_or_aristocracy_tiebreaker_republicanism = yes
+					STA_republicanism_theocracy_or_aristocracy_tiebreaker_republicanism = yes
+					STA_republicanism_or_puritanism_tiebreaker_republicanism = yes
+					STA_republicanism_or_theocracy_tiebreaker_republicanism = yes
+					STA_republicanism_or_aristocracy_tiebreaker_republicanism = yes
+				}
+			}
+		}
+		
+		cost = 35
+		complete_effect = {
+			add_timed_idea = {
+				idea = republic_merchant_drift_idea
+				days = 50
+			}
+			add_timed_idea = {
+				idea = STA_free_trade
+				days = 70
+			}
+		}
+	}
+	
+	STA_anti_ordorian_propaganda = {
+		icon = GFX_decision_eng_blackshirt_speech
+		
+		allowed = {		
+			tag = STA
+		}
+		available = {
+			has_completed_focus = STA_the_bear_of_stahlhof
+			NOT = {
+				has_idea = STA_racist_bullshit
+			}
+		}
+		
+		visible = {
+			tag = STA
+			has_completed_focus = STA_the_bear_of_stahlhof
+		}
+		
+		ai_will_do = {
+			factor = 0 #Not without good reason
+			modifier = {
+				add = 50
+				STA_already_taken_steel_court_decision = no
+				STA_should_buff_puritanism = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
+			}
+			modifier = {
+				add = 500 #Tiebreaker
+				OR = {
+					STA_republicanism_puritanism_or_theocracy_tiebreaker_puritanism = yes
+					STA_republicanism_puritanism_or_aristocracy_tiebreaker_puritanism = yes
+					STA_puritanism_theocracy_or_aristocracy_tiebreaker_puritanism = yes
+					STA_republicanism_or_puritanism_tiebreaker_puritanism = yes
+					STA_puritanism_or_theocracy_tiebreaker_puritanism = yes
+					STA_puritanism_or_aristocracy_tiebreaker_puritanism = yes
+				}
+			}
+		}
+		
+		cost = 35
+		complete_effect = {
+			add_timed_idea = {
+				idea = puritan_drift_idea
+				days = 50
+			}
+			add_timed_idea = {
+				idea = STA_racist_bullshit
+				days = 70
+			}
+		}
+	}
+	
+	STA_do_penance = {
+		icon = GFX_decision_eng_trade_unions_support
+		
+		allowed = {	
+			tag = STA
+		}
+		available = {
+			has_completed_focus = STA_the_bear_of_stahlhof
+			NOT = {
+				has_idea = STA_pious_north
+			}
+		}
+		
+		visible = {
+			tag = STA
+			has_completed_focus = STA_the_bear_of_stahlhof
+		}
+		
+		ai_will_do = {
+			factor = 0 #Not without good reason
+			modifier = {
+				add = 50
+				STA_already_taken_steel_court_decision = no
+				STA_should_buff_theocracy = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
+			}
+			modifier = {
+				add = 500 #Tiebreaker
+				OR = {
+					STA_republicanism_puritanism_or_theocracy_tiebreaker_theocracy = yes
+					STA_republicanism_theocracy_or_aristocracy_tiebreaker_theocracy = yes
+					STA_puritanism_theocracy_or_aristocracy_tiebreaker_theocracy = yes
+					STA_republicanism_or_theocracy_tiebreaker_theocracy = yes
+					STA_puritanism_or_theocracy_tiebreaker_theocracy = yes
+					STA_theocracy_or_aristocracy_tiebreaker_theocracy = yes
+				}
+			}
+		}
+		
+		cost = 35
+		complete_effect = {
+			add_timed_idea = {
+				idea = theocrat_drift_idea
+				days = 50
+			}
+			add_timed_idea = {
+				idea = STA_pious_north
+				days = 70
+			}
+		}
+	}
+	
+	STA_host_hornbergers = {
+		icon = GFX_decision_eng_ally_imperialist_coup
+		
+		allowed = {	
+			tag = STA
+		}
+		available = {
+			has_completed_focus = STA_the_bear_of_stahlhof
+			NOT = {
+				has_idea = STA_hornbergers_placated
+			}
+		}
+		
+		visible = {
+			tag = STA
+			has_completed_focus = STA_the_bear_of_stahlhof
+		}
+		
+		ai_will_do = {
+			factor = 0 #Not without good reason
+			modifier = {
+				add = 50
+				STA_already_taken_steel_court_decision = no
+				STA_should_buff_aristocracy = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
+			}
+			modifier = {
+				add = 500 #Tiebreaker
+				OR = {
+					STA_republicanism_puritanism_or_aristocracy_tiebreaker_aristocracy = yes
+					STA_republicanism_theocracy_or_aristocracy_tiebreaker_aristocracy = yes
+					STA_puritanism_theocracy_or_aristocracy_tiebreaker_aristocracy = yes
+					STA_republicanism_or_aristocracy_tiebreaker_aristocracy = yes
+					STA_puritanism_or_aristocracy_tiebreaker_aristocracy = yes
+					STA_theocracy_or_aristocracy_tiebreaker_aristocracy = yes
+				}
+			}
+		}
+		
+		cost = 35
+		complete_effect = {
+			add_timed_idea = {
+				idea = republic_aristocrat_drift_idea
+				days = 50
+			}
+			add_timed_idea = {
+				idea = STA_hornbergers_placated
+				days = 70
+			}
+		}
+	}
+	
+	STA_assert_schwarzenbach = {
+		icon = GFX_decision_oppression
+		
+		allowed = {	
+			tag = STA
+		}
+		available = {
+			has_completed_focus = STA_the_bear_of_stahlhof
+			NOT = {
+				has_idea = STA_schwarzenbach_control
+			}
+		}
+		
+		visible = {
+			tag = STA
+			has_completed_focus = STA_the_bear_of_stahlhof
+		}
+		
+		ai_will_do = {
+			factor = 0 #Not without good reason
+			modifier = {
+				add = 5 #Less important than sorting out the other foci first
+				STA_already_taken_steel_court_decision = no
+				STA_should_buff_absolutism = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
+			}
+		}
+		
+		cost = 35
+		complete_effect = {
+			add_timed_idea = {
+				idea = monarchy_absolute_drift_idea
+				days = 50
+			}
+			add_timed_idea = {
+				idea = STA_schwarzenbach_control
+				days = 70
+			}
+		}
+	}
+}
+
+STA_request_war_resources_category = {
+	 ##Idea 1
+	 STA_request_equipment_decision = {
+		icon = generic_ignite_civil_war
+		
+		cost = 40
+		days_remove = 70
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		visible = {
+			UNG = {exists = yes}
+			NOT = { has_war_with = UNG }
+			is_puppet_of = UNG
+			ORD = {exists = yes}
+			ORD = { is_puppet = no }
+			NOT = { is_in_faction_with = ORD }
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			UNG = { country_event = { id = sta.8 hours = 12 } }
+		}
+	 }
+}
+
+STA_a_convincing_act_category = {
+	
+	STA_a_convincing_act_decision = {
+		
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_a_convincing_act
+			Not = { STA = { owns_state = 96 } }
+			owns_state = 194
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 194
+				border_state = 96
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 96
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 96
+			}
+		}
+		
+		state_target = yes
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		194 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		96 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		 has_border_war_between = {
+ 		   attacker = 194
+  		   defender = 96
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 194
+  		defender = 96
+		}
+		}
+		}
+		
+		complete_effect = {
+		194 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		96 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 194
+					num_provinces = 3
+					on_win = sta.19
+					on_lose = sta.20
+					on_cancel = sta.21
+				}
+				
+				defender = {
+					state = 96
+					num_provinces = 2
+					on_win = sta.22
+					on_lose = sta.23
+					on_cancel = sta.24
+				}
+			}
+		}
+	}
+	
+	STA_retake_nordland_decision = {
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_stahlplan_zhertis
+			Not = { STA = { owns_state = 194 } }
+			owns_state = 198
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 198
+				border_state = 194
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 194
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 194
+			}
+		}
+		
+		state_target = yes
+
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		198 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		194 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		 has_border_war_between = {
+ 		   attacker = 198
+  		   defender = 194
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 198
+  		defender = 194
+		}
+		}
+		}
+		
+		complete_effect = {
+		198 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		194 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+			
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 198
+					num_provinces = 3
+					on_win = sta.74
+					on_lose = sta.20
+					on_cancel = sta.21
+				}
+				
+				defender = {
+					state = 194
+					num_provinces = 4
+					on_win = sta.22
+					on_lose = sta.23
+					on_cancel = sta.24
+				}
+			}
+		}
+	}
+	
+	STA_retake_westfront_decision = {
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_stahlplan_zhertis
+			Not = { STA = { owns_state = 198 } }
+			owns_state = 197
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 197
+				border_state = 198
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 198
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 198
+			}
+		}
+		
+		state_target = yes
+
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		198 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		197 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		 has_border_war_between = {
+ 		   attacker = 197
+  		   defender = 198
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 197
+  		defender = 198
+		}
+		}
+		}
+		
+		complete_effect = {
+		198 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		197 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+			
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 197
+					num_provinces = 3
+					on_win = sta.75
+					on_lose = sta.20
+					on_cancel = sta.21
+				}
+				
+				defender = {
+					state = 198
+					num_provinces = 2
+					on_win = sta.22
+					on_lose = sta.23
+					on_cancel = sta.24
+				}
+			}
+		}
+	}
+	
+	STA_retake_grunstein_decision = {
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_stahlplan_zhertis
+			Not = { STA = { owns_state = 195 } }
+			owns_state = 192
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 192
+				border_state = 195
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 195
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 195
+			}
+		}
+		
+		state_target = yes
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		192 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		195 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		 has_border_war_between = {
+ 		   attacker = 192
+  		   defender = 195
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 192
+  		defender = 195
+		}
+		}
+		}
+		
+		complete_effect = {
+		192 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		195 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+			
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 192
+					num_provinces = 3
+					on_win = sta.76
+					on_lose = sta.20
+					on_cancel = sta.21
+				}
+				
+				defender = {
+					state = 195
+					num_provinces = 2
+					on_win = sta.22
+					on_lose = sta.23
+					on_cancel = sta.24
+				}
+			}
+		}
+	}
+	
+	STA_retake_neuwald_decision = {
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_stahlplan_zhertis
+			Not = { STA = { owns_state = 193 } }
+			owns_state = 211
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 211
+				border_state = 193
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 193
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 193
+			}
+		}
+		
+		state_target = yes
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		211 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		193 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		 has_border_war_between = {
+ 		   attacker = 211
+  		   defender = 193
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 211
+  		defender = 193
+		}
+		}
+		}
+		
+		complete_effect = {
+		211 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		193 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+			
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 211
+					num_provinces = 3
+					on_win = sta.77
+					on_lose = sta.20
+					on_cancel = sta.21
+				}
+				
+				defender = {
+					state = 193
+					num_provinces = 2
+					on_win = sta.22
+					on_lose = sta.23
+					on_cancel = sta.24
+				}
+			}
+		}
+	}
+	
+	STA_stahlplan_zhertis_decision = {
+		
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_stahlplan_zhertis
+			Not = { STA = { owns_state = 105 } }
+			owns_state = 214
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 214
+				border_state = 105
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 105
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 105
+			}
+		}
+		
+		state_target = yes
+	
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		214 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		105 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		 has_border_war_between = {
+ 		   attacker = 214
+  		   defender = 105
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 214
+  		defender = 105
+		}
+		}
+		}
+		
+		complete_effect = {
+		214 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		105 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+			
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 214
+					num_provinces = 2
+					on_win = sta.25
+					on_lose = sta.26
+					on_cancel = sta.27
+				}
+				
+				defender = {
+					state = 105
+					num_provinces = 2
+					on_win = sta.28
+					on_lose = sta.29
+					on_cancel = sta.30
+				}
+			}
+		}
+	}
+	
+	STA_stahlplan_karis_decision = {
+		
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_stahlplan_karis
+			Not = { STA = { owns_state = 1291 } }
+			owns_state = 202
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 202
+				border_state = 1291
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 1291
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 1291
+			}
+		}
+		
+		state_target = yes
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		202 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		1291 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		 has_border_war_between = {
+ 		   attacker = 202
+  		   defender = 1291
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 202
+  		defender = 1291
+		}
+		}
+		}
+		
+		complete_effect = {
+		202 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		1291 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+			
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 202
+					num_provinces = 1
+					on_win = sta.79
+					on_lose = sta.80
+					on_cancel = sta.81
+				}
+				
+				defender = {
+					state = 1291
+					num_provinces = 1
+					on_win = sta.82
+					on_lose = sta.83
+					on_cancel = sta.84
+				}
+			}
+		}
+	}
+	
+	STA_stahlplan_venohr_decision = {
+		
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_stahlplan_karis
+			Not = { STA = { owns_state = 106 } }
+			owns_state = 203
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 203
+				border_state = 106
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 106
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 106
+			}
+		}
+		
+		state_target = yes
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		203 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		106 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		 has_border_war_between = {
+ 		   attacker = 203
+  		   defender = 106
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 203
+  		defender = 106
+		}
+		}
+		}
+		
+		complete_effect = {
+		203 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		106 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+			
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 203
+					num_provinces = 1
+					on_win = sta.31
+					on_lose = sta.32
+					on_cancel = sta.33
+				}
+				
+				defender = {
+					state = 106
+					num_provinces = 1
+					on_win = sta.34
+					on_lose = sta.35
+					on_cancel = sta.36
+				}
+			}
+		}
+	}
+	
+	STA_stahlplan_anzitt_decision = {
+		
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_stahlplan_anzitt
+			Not = { STA = { owns_state = 104 } }
+			owns_state = 195
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 195
+				border_state = 104
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 104
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 104
+			}
+		}
+		
+		state_target = yes
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		195 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		104 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		has_border_war_between = {
+ 		   attacker = 195
+  		   defender = 104
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 195
+  		defender = 104
+		}
+		}
+		}
+		
+		complete_effect = {
+		195 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		104 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 195
+					num_provinces = 1
+					on_win = sta.37
+					on_lose = sta.38
+					on_cancel = sta.39
+				}
+				
+				defender = {
+					state = 104
+					num_provinces = 1
+					on_win = sta.40
+					on_lose = sta.41
+					on_cancel = sta.42
+				}
+			}
+		}
+	}
+	
+	STA_stahlplan_fratin_decision = {
+		
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_stahlplan_fratin
+			Not = { STA = { owns_state = 107 } }
+			owns_state = 105
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 105
+				border_state = 107
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 107
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 107
+			}
+		}
+		
+		state_target = yes
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		105 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		107 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		 has_border_war_between = {
+ 		   attacker = 105
+  		   defender = 107
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 105
+  		defender = 107
+		}
+		}
+		}
+		
+		complete_effect = {
+		105 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		107 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 105
+					num_provinces = 2
+					on_win = sta.43
+					on_lose = sta.44
+					on_cancel = sta.45
+				}
+				
+				defender = {
+					state = 107
+					num_provinces = 2
+					on_win = sta.46
+					on_lose = sta.47
+					on_cancel = sta.48
+					}
+			}
+			
+		
+		}
+	}
+	
+	STA_stahlplan_fratin_decision2 = {
+		
+		icon = generic_ignite_civil_war
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_stahlplan_fratin
+			Not = { STA = { owns_state = 107 } }
+			owns_state = 104
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 104
+				border_state = 107
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 107
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				state = 107
+			}
+		}
+		
+		state_target = yes
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		104 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		107 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		has_border_war_between = {
+ 		   attacker = 104
+  		   defender = 107
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 104
+  		defender = 107
+		}
+		}
+		}
+		
+		complete_effect = {
+		104 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		107 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+
+			start_border_war = {
+				
+					change_state_after_war = no
+				
+					attacker = {
+						state = 104
+						num_provinces = 5
+						on_win = sta.49
+						on_lose = sta.50
+						on_cancel = sta.51
+					}
+				
+					defender = {
+						state = 107
+						num_provinces = 3
+						on_win = sta.52
+						on_lose = sta.53
+						on_cancel = sta.54
+						}
+				}
+			
+		
+		}
+	}
+
+}
+
+STA_trial_by_fire_category = {
+	
+	STA_trial_by_fire_decision = {
+		
+		icon = generic_research
+		
+		cost = 30
+		days_remove = 70
+		
+		available = {
+			has_completed_focus = STA_trial_by_fire
+			Not = { STA = { owns_state = 218 } }
+			owns_state = 212
+			has_border_war = no
+			divisions_in_border_state = {
+				size > 2
+				state = 212
+				border_state = 218
+			}
+		}
+		
+		visible = {
+			NOT = {
+				owns_state = 218
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = 218
+			}
+		}
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		remove_effect = {
+		212 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		218 = {
+		remove_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		if = {
+		 limit = {
+		 has_border_war_between = {
+ 		   attacker = 212
+  		   defender = 218
+		 }
+		 }
+		finalize_border_war = {
+   		defender_win = yes
+  		attacker = 212
+  		defender = 218
+		}
+		}
+		}
+		
+		complete_effect = {
+		212 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+		218 = {
+		add_dynamic_modifier = {
+			modifier = ongoing_border_conflict
+		}
+		}
+			
+			start_border_war = {
+				
+				change_state_after_war = no
+				
+				attacker = {
+					state = 212
+					num_provinces = 2
+					on_win = sta.60
+					on_lose = sta.61
+					on_cancel = sta.62
+				}
+				
+				defender = {
+					state = 218
+					num_provinces = 3
+					on_win = sta.63
+					on_lose = sta.64
+					on_cancel = sta.65
+				}
+			}
+			UNG = {
+				add_opinion_modifier = {
+					target = STA modifier = STA_conducted_inner_hostilities_opinion
+				}
+			}
+		}
+	}
+}
+
+STA_convince_freiprinzen = {
+	
+	STA_launch_civilwar = {
+		icon = GFX_decision_generic_prepare_civil_war
+		
+		allowed = {
+			tag = STA
+		}
+		
+		available = {
+			is_subject_of = UNG
+			has_completed_focus = STA_scare_the_faustburg_soldiers_into_submission
+			OR = {
+				has_completed_focus = STA_alliance_of_equals
+				has_completed_focus = STA_push_our_advantage
+			}
+		}
+		
+		visible = {
+			is_subject_of = UNG
+			tag = STA
+			NOT = {
+				has_country_flag = STA_started_civil_war
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 0.1
+				has_war_with = ORD
+				surrender_progress > 0.1
+			}
+		}
+		
+		cost = 125
+		
+		complete_effect = {
+			set_country_flag = STA_started_civil_war
+			custom_effect_tooltip = STA_cast_die_tt
+		}
+	}
+	
+	STA_convince_FPT = {
+		icon = GFX_decision_stahlhof_nationalism
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = THIS
+				is_capital = yes
+				owner = {
+					is_subject_of = UNG
+					NOT = {
+						tag = STA
+					}
+				}
+			}
+		}
+		
+		allowed = {
+			tag = STA
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = STA_civil_war_started
+			}
+		}
+		
+		available = {
+			NOT = {
+				has_country_flag = STA_already_convincing_someone
+			}
+			FROM.owner = {
+				is_subject_of = UNG
+				NOT = {
+					tag = STA
+				}
+			}
+			
+			#Can't directly access FPT_small_loyalty_cost for some reason, so workaround
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							NOT = {
+								has_completed_focus = FPT_buying_time
+							}
+						}
+					}
+				}
+				
+				has_political_power > 49
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							has_completed_focus = FPT_buying_time
+						}
+					}
+				}
+				
+				has_political_power > 99
+			}
+		}
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				add = 5
+				AND = {
+					FROM = {
+						owner = {
+							check_variable = {
+								var = FPT_union_loyalty
+								value = var:FPT_stahlhof_loyalty
+								compare = equals
+							}
+						}
+					}
+					NOT = {
+						has_country_flag = recently_convinced_freiprinz
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				AND = {
+					FROM = {
+						owner = {
+							check_variable = {
+								var = FPT_union_loyalty
+								value = var:FPT_stahlhof_loyalty
+								compare = greater_than
+							}
+						}
+					}
+					NOT = {
+						has_country_flag = recently_convinced_freiprinz
+					}
+				}
+			}
+		}
+		
+		days_remove = 15
+		
+		complete_effect = {
+			set_country_flag = STA_already_convincing_someone
+			
+			#Can't directly access FPT_small_loyalty_cost for some reason, so workaround
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							NOT = {
+								has_completed_focus = FPT_buying_time
+							}
+						}
+					}
+				}
+				
+				add_political_power = -50
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							has_completed_focus = FPT_buying_time
+						}
+					}
+				}
+				
+				add_political_power = -100
+			}
+		}
+		
+		remove_effect = {
+			clr_country_flag = STA_already_convincing_someone
+			add_to_variable = {
+				var = FROM.owner:FPT_stahlhof_loyalty
+				value = 1
+			}
+			FROM.owner = {
+				custom_effect_tooltip = FPT_increase_stahlhof_loyalty_small_tt
+			}
+			set_country_flag = {
+				flag = recently_convinced_freiprinz
+				days = 50
+			}
+			FROM.owner = {
+				set_loyalty_approximations = yes
+			}
+		}
+	}
+	
+	STA_convince_FPT_ii = {
+		icon = GFX_decision_eng_trade_unions_demand
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = THIS
+				is_capital = yes
+				owner = {
+					is_subject_of = UNG
+					NOT = {
+						tag = STA
+					}
+				}
+			}
+		}
+		
+		allowed = {
+			tag = STA
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = STA_civil_war_started
+			}
+		}
+		
+		available = {
+			NOT = {
+				has_country_flag = STA_already_convincing_someone
+			}
+			FROM.owner = {
+				is_subject_of = UNG
+				NOT = {
+					tag = STA
+				}
+			}
+			
+			#Can't directly access FPT_small_loyalty_cost for some reason, so workaround
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							NOT = {
+								has_completed_focus = FPT_buying_time
+							}
+						}
+					}
+				}
+				
+				has_political_power > 74
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							has_completed_focus = FPT_buying_time
+						}
+					}
+				}
+				
+				has_political_power > 149
+			}
+		}
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				add = 5
+				AND = {
+					FROM = {
+						owner = {
+							check_variable = {
+								var = FPT_union_loyalty
+								value = var:FPT_stahlhof_loyalty
+								compare = equals
+							}
+						}
+					}
+					NOT = {
+						has_country_flag = recently_convinced_freiprinz
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				AND = {
+					FROM = {
+						owner = {
+							check_variable = {
+								var = FPT_union_loyalty
+								value = var:FPT_stahlhof_loyalty
+								compare = greater_than
+							}
+						}
+					}
+					NOT = {
+						has_country_flag = recently_convinced_freiprinz
+					}
+				}
+			}
+		}
+		
+		days_remove = 30
+		
+		complete_effect = {
+			set_country_flag = STA_already_convincing_someone
+			
+			#Can't directly access FPT_small_loyalty_cost for some reason, so workaround
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							NOT = {
+								has_completed_focus = FPT_buying_time
+							}
+						}
+					}
+				}
+				
+				add_political_power = -75
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							has_completed_focus = FPT_buying_time
+						}
+					}
+				}
+				
+				add_political_power = -150
+			}
+		}
+		
+		remove_effect = {
+			clr_country_flag = STA_already_convincing_someone
+			add_to_variable = {
+				var = FROM.owner:FPT_stahlhof_loyalty
+				value = 3
+			}
+			FROM.owner = {
+				custom_effect_tooltip = FPT_increase_stahlhof_loyalty_tt
+			}
+			set_country_flag = {
+				flag = recently_convinced_freiprinz
+				days = 75
+			}
+			FROM.owner = {
+				set_loyalty_approximations = yes
+			}
+		}
+	}
+	
+	STA_convince_FPT_iii = {
+		icon = GFX_decision_generic_military
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = THIS
+				is_capital = yes
+				owner = {
+					is_subject_of = UNG
+					NOT = {
+						tag = STA
+					}
+				}
+			}
+		}
+		
+		allowed = {
+			tag = STA
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = STA_civil_war_started
+			}
+		}
+		
+		available = {
+			NOT = {
+				has_country_flag = STA_already_convincing_someone
+			}
+			FROM.owner = {
+				is_subject_of = UNG
+				NOT = {
+					tag = STA
+				}
+			}
+			
+			#Can't directly access FPT_small_loyalty_cost for some reason, so workaround
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							NOT = {
+								has_completed_focus = FPT_buying_time
+							}
+						}
+					}
+				}
+				
+				has_political_power > 99
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							has_completed_focus = FPT_buying_time
+						}
+					}
+				}
+				
+				has_political_power > 199
+			}
+		}
+		
+		on_map_mode = map_only
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				add = 5
+				AND = {
+					FROM = {
+						owner = {
+							check_variable = {
+								var = FPT_union_loyalty
+								value = var:FPT_stahlhof_loyalty
+								compare = equals
+							}
+						}
+					}
+					NOT = {
+						has_country_flag = recently_convinced_freiprinz
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				AND = {
+					FROM = {
+						owner = {
+							check_variable = {
+								var = FPT_union_loyalty
+								value = var:FPT_stahlhof_loyalty
+								compare = greater_than
+							}
+						}
+					}
+					NOT = {
+						has_country_flag = recently_convinced_freiprinz
+					}
+				}
+			}
+		}
+		
+		days_remove = 50
+		
+		complete_effect = {
+			set_country_flag = STA_already_convincing_someone
+			
+			#Can't directly access FPT_small_loyalty_cost for some reason, so workaround
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							NOT = {
+								has_completed_focus = FPT_buying_time
+							}
+						}
+					}
+				}
+				
+				add_political_power = -100
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						owner = {
+							has_completed_focus = FPT_buying_time
+						}
+					}
+				}
+				
+				add_political_power = -200
+			}
+		}
+		
+		remove_effect = {
+			clr_country_flag = STA_already_convincing_someone
+			add_to_variable = {
+				var = FROM.owner:FPT_stahlhof_loyalty
+				value = 5
+			}
+			FROM.owner = {
+				custom_effect_tooltip = FPT_increase_stahlhof_loyalty_large_tt
+			}
+			set_country_flag = {
+				flag = recently_convinced_freiprinz
+				days = 100
+			}
+			FROM.owner = {
+				set_loyalty_approximations = yes
+			}
+		}
+	}
+}

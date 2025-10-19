@@ -1,0 +1,21 @@
+
+state={
+	id=988
+	name="STATE_988"
+	provinces={
+		1797 3584 4528 9118 
+	}
+	state_category = rural
+	manpower=3232
+	buildings_max_level_factor=1.000
+	history={
+		owner = ATH
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+		}
+		add_core_of = ATH
+		add_claim_by = TRS
+
+	}
+}

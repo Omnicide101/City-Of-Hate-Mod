@@ -1,0 +1,26 @@
+state={
+	id=508
+	name="STATE_508"
+	provinces={
+		8417 5409 8352 8361
+	}
+	state_category = town
+	manpower=44023
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 14
+	}
+	history={
+		victory_points = {
+			8361 22
+		}
+		owner = HIH
+		buildings = {
+			infrastructure = 2
+			workshop = 2
+			forge = 1
+		}
+		add_core_of = HIH
+
+	}
+}

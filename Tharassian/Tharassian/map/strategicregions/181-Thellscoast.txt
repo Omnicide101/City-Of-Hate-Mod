@@ -1,0 +1,61 @@
+strategic_region={
+	id=181
+	name="STRATEGICREGION_181"
+	provinces={
+		9882 10138 10401 10452 10690 10757 10898 11166 11244 11548 11702 11742 11828 11905 12134 12293 12302 12665 13198 14069 14239 14351 14777 15508 15514 15713 15982 17571 17592 17597 17618 17634 17651 17671 17683 
+	}
+	weather={#Southern Hemisphere Cold Weather - Humid
+		period={ #Summer
+			between={ 0.0 30.2 }
+			temperature={ 18.0 26.0 }
+			no_phenomenon=0.500
+			rain_light=0.020
+			rain_heavy=0.005
+			snow=0.005
+			blizzard=0.000
+			arctic_water=0.000
+			mud=0.025
+			sandstorm=0.000
+			min_snow_level=0.000
+		}
+		period={#Fall
+			between={ 0.3 29.5 }
+			temperature={ -6.0 12.0 }
+			no_phenomenon=0.500
+			rain_light=0.120
+			rain_heavy=0.065
+			snow=0.080
+			blizzard=0.005
+			arctic_water=1.000
+			mud=0.270
+			sandstorm=0.000
+			min_snow_level=0.000
+		}
+		period={#Winter
+			between={ 0.6 29.8 }
+			temperature={ -12.0 4.0 }
+			no_phenomenon=0.500
+			rain_light=0.070
+			rain_heavy=0.010
+			snow=0.320
+			blizzard=0.030
+			arctic_water=1.000
+			mud=0.120
+			sandstorm=0.000
+			min_snow_level=0.120
+		}
+		period={ #Spring
+			between={ 0.9 30.11 }
+			temperature={ 10.0 18.0 }
+			no_phenomenon=0.500
+			rain_light=0.070
+			rain_heavy=0.050
+			snow=0.000
+			blizzard=0.000
+			arctic_water=0.000
+			mud=0.110
+			sandstorm=0.000
+			min_snow_level=0.000
+		}
+	}
+}

@@ -1,0 +1,198 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+NPC_ordorian_buddies = {
+	enable = {
+		original_tag = NPC
+		is_in_faction_with = ORD
+	}
+	abort = {
+		OR = {
+			ORD = {
+				has_government = puritan
+				has_government = theocrat
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ORD
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = ORD
+		value = 200
+	}	
+}
+
+NPC_reunite_plains = {#Try to unify the Northern Plains
+	enable = {
+		original_tag = NPC
+		any_other_country = {
+			OR = {
+				original_tag = GMR
+				is_og_northern_plains_state = yes
+			}
+		}
+		any_other_country = {
+			is_og_northern_plains_state = yes
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = antagonize
+		id = GMR
+		value = 500 # Prioritize the Grand Master
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = GMR
+		value = 500
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = GMR
+		value = 500
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = IRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = IRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = IRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = FEL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = FEL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = FEL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = TRI
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = TRI
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = TRI
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = NAV
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NAV
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NAV
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = KAL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = KAL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = KAL
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = KRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = KRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = KRT
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = NAS
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NAS
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NAS
+		value = 200
+	}
+}

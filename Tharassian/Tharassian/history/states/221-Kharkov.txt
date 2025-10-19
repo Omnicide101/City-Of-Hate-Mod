@@ -1,0 +1,21 @@
+state={
+	id=221
+	name="STATE_221"
+	provinces={
+		5382 8984 8969 8957 8975 2374 8992
+	}
+	state_category = rural
+	manpower=6091
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			5382 3
+		}
+		owner = UNG
+		buildings = {
+			infrastructure = 2	
+		}
+		add_core_of = UNG
+		}
+}
+

@@ -1,0 +1,117 @@
+defined_text = { # Country
+	name = GetFreiprinzUnionLoyalty
+	text = { 
+		trigger = {
+			is_subject_of = UNG
+			NOT = {
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+		}
+		localization_key = loc_key_freiprinz_union_loyalty
+	}
+}
+
+defined_text = { # Country
+	name = GetFreiprinzStahlhofLoyalty
+	text = { 
+		trigger = {
+			is_subject_of = UNG
+			NOT = {
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+		}
+		localization_key = loc_key_freiprinz_stahlhof_loyalty
+	}
+}
+
+defined_text = { #Country
+	name = GetLoyaltyApproximationUnion
+	text = {
+		trigger = {
+			check_variable = {
+				FPT_loyalty_leaning = -2
+			}
+		}
+		localization_key = GUI_UNG_FPT_very_disloyal
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				FPT_loyalty_leaning = -1
+			}
+		}
+		localization_key = GUI_UNG_FPT_disloyal
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				FPT_loyalty_leaning = 0
+			}
+		}
+		localization_key = GUI_FPT_neutral
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				FPT_loyalty_leaning = 1
+			}
+		}
+		localization_key = GUI_UNG_FPT_loyal
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				FPT_loyalty_leaning = 2
+			}
+		}
+		localization_key = GUI_UNG_FPT_very_loyal
+	}
+}
+
+defined_text = { #Country
+	name = GetLoyaltyApproximationStahlhof
+	text = {
+		trigger = {
+			check_variable = {
+				FPT_loyalty_leaning = 2
+			}
+		}
+		localization_key = GUI_STA_FPT_very_loyal
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				FPT_loyalty_leaning = 1
+			}
+		}
+		localization_key = GUI_STA_FPT_loyal
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				FPT_loyalty_leaning = 0
+			}
+		}
+		localization_key = GUI_FPT_neutral
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				FPT_loyalty_leaning = -1
+			}
+		}
+		localization_key = GUI_STA_FPT_disloyal
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				FPT_loyalty_leaning = -2
+			}
+		}
+		localization_key = GUI_STA_FPT_very_disloyal
+	}
+}

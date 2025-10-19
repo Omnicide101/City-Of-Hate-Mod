@@ -1,0 +1,18 @@
+state={
+	id=680
+	name="STATE_680"
+	provinces={
+		1691 341 308
+	}
+	state_category = pastoral
+	manpower=3095
+	buildings_max_level_factor=1.000
+	history={
+		owner = KUR
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = KUR
+	}
+}

@@ -1,0 +1,25 @@
+state={
+	id=111
+	name="STATE_111"
+	provinces={
+		199 7168 3506 3881 4563 7151
+	}
+	state_category = metropolis
+	manpower=992728
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 1
+		lumber = 3
+	}
+		history={
+			victory_points = {3881 46}
+			owner = ORD	
+			buildings = {	
+			forge = 1
+			farm = 2
+			workshop = 3
+			infrastructure = 2
+		}
+		add_core_of = ORD
+		}
+}

@@ -1,0 +1,335 @@
+division_template = {
+	name = "Eternal Watchers"	
+
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+		garrison = { x = 1 y = 0 }
+		garrison = { x = 1 y = 1 }
+		garrison = { x = 1 y = 2 }
+		garrison = { x = 2 y = 0 }
+		garrison = { x = 2 y = 1 }
+		garrison = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Crypt Knights"
+	
+	regiments = {
+		heavy_cavalry = { x = 0 y = 0 }
+		heavy_cavalry = { x = 0 y = 1 }
+		heavy_cavalry = { x = 0 y = 2 }
+		light_cavalry = { x = 1 y = 0 }
+		light_cavalry = { x = 1 y = 1 }
+		light_cavalry = { x = 1 y = 2 }
+		light_cavalry = { x = 1 y = 3 }
+		heavy_cavalry = { x = 2 y = 0 }
+		heavy_cavalry = { x = 2 y = 1 }
+		heavy_cavalry = { x = 2 y = 2 }
+	}
+	support = {
+	    scouts_cavalry = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Unbarrowed Legion"
+	
+	regiments = { 
+		halberdier = { x = 0 y = 0 }
+		halberdier = { x = 0 y = 1 }
+		men_at_arms = { x = 0 y = 2 }
+		men_at_arms = { x = 0 y = 3 }
+		halberdier = { x = 1 y = 0 }
+		halberdier = { x = 1 y = 1 }
+		men_at_arms = { x = 1 y = 2 }
+		men_at_arms = { x = 1 y = 3 }
+		halberdier = { x = 2 y = 0 }
+		halberdier = { x = 2 y = 1 }
+		men_at_arms = { x = 2 y = 2 }
+		men_at_arms = { x = 2 y = 3 }
+		halberdier = { x = 3 y = 0 }
+		halberdier = { x = 3 y = 1 }
+		men_at_arms = { x = 3 y = 2 }
+		men_at_arms = { x = 3 y = 3 }
+	}
+}
+
+units = {
+	division = {
+		name = "Ivorytower Watchers"
+		location = 2192
+		division_template = "Eternal Watchers"
+		start_experience_factor = 0.52
+	}
+}
+
+units = {
+	division = {
+		name = "Eternus Watchers"
+		location = 1171
+		division_template = "Eternal Watchers"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "Bonewatchers"
+		location = 1633
+		division_template = "Eternal Watchers"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "Longlyfe Watchers"
+		location = 1994
+		division_template = "Eternal Watchers"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "Almarte Portwatch"
+		location = 7242
+		division_template = "Eternal Watchers"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "Kran Gadaz Watchers"
+		location = 7779
+		division_template = "Eternal Watchers"
+		start_experience_factor = 0.44
+	}
+}
+
+units = {
+	division = {
+		name = "Val Gar Watchers"
+		location = 3493
+		division_template = "Eternal Watchers"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "1st Unbarrowed"
+		location = 2901
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "2nd Unbarrowed"
+		location = 7873
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "3rd Unbarrowed"
+		location = 705
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "4th Unbarrowed"
+		location = 2816
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "5th Unbarrowed"
+		location = 3644
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "6th Unbarrowed"
+		location = 299
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "7th Unbarrowed"
+		location = 4857
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "8th Unbarrowed"
+		location = 7790
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "9th Unbarrowed"
+		location = 720
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "10th Unbarrowed"
+		location = 4790
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "11th Unbarrowed"
+		location = 4328
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "12th Unbarrowed"
+		location = 580
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "13th Unbarrowed"
+		location = 3047
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 0.32
+	}
+}
+
+units = {
+	division = {
+		name = "The Necromancer's Host"
+		location = 2198
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 1
+	}
+}
+
+units = {
+	division = {
+		name = "The Necromancer's Host"
+		location = 2198
+		division_template = "Unbarrowed Legion"
+		start_experience_factor = 1
+	}
+}
+
+units = {
+	division = {
+		name = "The Bloodhost"
+		location = 1201
+		division_template = "Crypt Knights"
+		start_experience_factor = 1
+	}
+}
+
+units = {
+	division = {
+		name = "The First and Final"
+		location = 7518
+		division_template = "Crypt Knights"
+		start_experience_factor = 1
+	}
+}
+
+units = {
+	division = {
+		name = "Riders of the Apocalypse"
+		location = 2368
+		division_template = "Crypt Knights"
+		start_experience_factor = 1
+	}
+}
+
+units = {
+	division = {
+		name = "The Fangblades"
+		location = 7304
+		division_template = "Crypt Knights"
+		start_experience_factor = 1
+	}
+}
+
+### STARTING PRODUCTION ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "AGE"
+		}
+		requested_factories = 4
+		progress = 0.11
+		efficiency = 36
+	}
+	
+	add_equipment_production = {
+		equipment = {
+			type = ranged_equipment_0
+			creator = "AGE"
+		}
+		requested_factories = 3
+		progress = 0.28
+		efficiency = 31
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = light_cavalry_equipment_0
+			creator = "AGE" 
+		}
+		requested_factories = 2
+		progress = 0.3
+		efficiency = 12
+	}
+	
+	add_equipment_production = {
+		equipment = {
+			type = heavy_cavalry_equipment_0
+			creator = "AGE" 
+		}
+		requested_factories = 2
+		progress = 0.3
+		efficiency = 12
+	}
+}

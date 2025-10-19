@@ -1,0 +1,24 @@
+
+state={
+	id=992
+	name="STATE_992"
+	provinces={
+		110 1118 1408 1507 8785 8861 
+	}
+	state_category = town
+	manpower=43521
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			1118 11
+		}
+		owner = ATH
+		buildings = {
+			infrastructure = 3
+			farm = 2
+		}
+		add_core_of = ATH
+		add_claim_by = TRS
+
+	}
+}

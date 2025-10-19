@@ -1,0 +1,34 @@
+
+state={
+	id=912
+	name="STATE_912"
+	provinces={
+		1077 1526 2971 3853 8480 8627 
+	}
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = rural
+	manpower = 8339
+	
+	resources = {
+		lumber = 12
+		food = 6
+		mount = 5
+	}
+	
+	history={
+		owner = SAL
+		victory_points = {
+			1077 12
+		}
+		buildings = {
+			infrastructure = 3
+			dockyard = 1
+			1077 = {
+				naval_base = 3
+			}
+		}
+		add_core_of = SAL
+		add_core_of = TRX
+	}
+}

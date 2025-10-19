@@ -1,0 +1,142 @@
+division_template = {
+	name = "Holy Guardians"	
+
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+		garrison = { x = 1 y = 0 }
+		garrison = { x = 1 y = 1 }
+		garrison = { x = 1 y = 2 }
+		garrison = { x = 2 y = 0 }
+		garrison = { x = 2 y = 1 }
+		garrison = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Legionary Remnants"
+	
+	regiments = {
+		heavy_cavalry = { x = 0 y = 0 }
+		heavy_cavalry = { x = 0 y = 1 }
+		heavy_cavalry = { x = 0 y = 2 }
+		light_cavalry = { x = 1 y = 0 }
+		light_cavalry = { x = 1 y = 1 }
+		light_cavalry = { x = 1 y = 2 }
+		light_cavalry = { x = 1 y = 3 }
+		heavy_cavalry = { x = 2 y = 0 }
+		heavy_cavalry = { x = 2 y = 1 }
+		heavy_cavalry = { x = 2 y = 2 }
+	}
+	support = {
+	    scouts_cavalry = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Pious Host"
+	
+	regiments = { 
+		halberdier = { x = 0 y = 0 }
+		halberdier = { x = 0 y = 1 }
+		men_at_arms = { x = 0 y = 2 }
+		men_at_arms = { x = 0 y = 3 }
+		halberdier = { x = 1 y = 0 }
+		halberdier = { x = 1 y = 1 }
+		men_at_arms = { x = 1 y = 2 }
+		men_at_arms = { x = 1 y = 3 }
+		halberdier = { x = 2 y = 0 }
+		halberdier = { x = 2 y = 1 }
+		men_at_arms = { x = 2 y = 2 }
+		men_at_arms = { x = 2 y = 3 }
+		halberdier = { x = 3 y = 0 }
+		halberdier = { x = 3 y = 1 }
+		men_at_arms = { x = 3 y = 2 }
+		men_at_arms = { x = 3 y = 3 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "First Legion"
+		location = 4423
+		division_template = "Legionary Remnants"
+		start_experience_factor = 1
+		start_equipment_factor = 0.2
+	}
+	
+	division = {
+		name = "Second Legion"
+		location = 9570
+		division_template = "Legionary Remnants"
+		start_experience_factor = 1
+		start_equipment_factor = 0.07
+
+	}
+	
+	division = {
+		name = "Third Legion"
+		location = 2885
+		division_template = "Legionary Remnants"
+		start_experience_factor = 1
+		start_equipment_factor = 0.13
+
+	}
+	
+	division = {
+		name = "Trasna's Divine Protectors"
+		location = 1769
+		division_template = "Holy Guardians"
+		start_experience_factor = 0.15
+		start_equipment_factor = 0.63
+	}
+	
+	division = {
+		name = "Creideamh's Salvation"
+		location = 9542
+		division_template = "Holy Guardians"
+		start_experience_factor = 0.15
+		start_equipment_factor = 0.63
+	}
+	
+	division = {
+		name = "First Pilgrimage"
+		location = 9726
+		division_template = "Pious Host"
+		start_experience_factor = 0.12
+		start_equipment_factor = 0.82
+	}
+	
+	division = {
+		name = "Second Pilgrimage"
+		location = 9727
+		division_template = "Pious Host"
+		start_experience_factor = 0
+	}
+	
+	division = {
+		name = "Third Pilgrimage"
+		location = 9539
+		division_template = "Pious Host"
+		start_experience_factor = 0
+		start_equipment_factor = 0.95
+	}
+}
+
+
+
+
+### STARTING PRODUCTION ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "DIA"
+		}
+		requested_factories = 2
+		progress = 0.11
+		efficiency = 7
+	}
+}

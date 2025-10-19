@@ -1,0 +1,9 @@
+TRS_HAS_government = {
+	color = rgb { 140 185 185 }
+	color_ui = rgb { 150 195 195 }
+}
+
+STA_empire_sigismund = {
+	color = rgb { 97 97 185 }
+	color_ui = rgb { 102 102 192 }
+}

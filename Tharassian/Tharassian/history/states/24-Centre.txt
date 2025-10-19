@@ -1,0 +1,25 @@
+state={
+	id=24
+	name="STATE_24"
+	provinces={
+		6489 6454 3022 594 6450 6380 1602 487
+	}
+	state_category = pastoral
+	manpower=2528
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 6
+	}
+	history={
+		victory_points = {
+			487 1
+		}
+		owner = GMR
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = GMR
+		add_core_of = NAS
+	}
+
+}

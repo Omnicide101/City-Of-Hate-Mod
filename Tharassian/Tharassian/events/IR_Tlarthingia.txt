@@ -1,0 +1,648 @@
+﻿### TLARTHINGIAN EVENTS
+
+add_namespace = tla
+
+### UNION
+
+country_event = { #Adaliana Demands Subjugation
+	id = tla.1
+	title = tla.1.t
+	desc = tla.1.d
+	picture = GFX_report_event_romania_poland_visit
+	
+	is_triggered_only = yes
+	
+	option = {#Fine
+		name = tla.1.a
+		ai_chance = {
+			factor = 4
+		}
+		add_stability = -0.05
+		UNG = {
+			set_autonomy = {
+				target = TLA
+				autonomy_state = autonomy_IR_freiprinztum
+			}
+		}
+	}
+
+	option = {#Never!
+		name = tla.1.b
+		ai_chance = {
+			factor = 6
+		}
+		add_war_support = 0.05
+		UNG = {
+			country_event = {
+				id = ung.26
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {# Union Offers Alliance
+	id = tla.2
+	title = tla.2.t
+	desc = tla.2.d
+	picture = GFX_report_event_romania_poland_visit
+	
+	is_triggered_only = yes
+	
+	option = {#Yes
+		name = tla.2.a
+		ai_chance = {
+			factor = 9
+		}
+		UNG = {
+			country_event = {
+				id = ung.51
+				days = 4
+			}
+		}
+		
+	}
+	
+	option = {#No
+		name = tla.2.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_war_with = IRI
+				factor = 0
+			}
+		}
+		UNG = {
+			country_event = {
+				id = ung.52
+				days = 4
+			}
+		}
+	}
+}
+
+country_event = {# North taken by IRI
+	id = tla.3
+	title = tla.3.t
+	desc = tla.3.d
+	picture = GFX_report_event_romania_poland_visit
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = TLA
+		has_war_with = IRI
+		OR = {
+			AND = {
+				374 = {
+					is_owned_by = TLA
+					is_controlled_by = IRI
+				}
+				377 = {
+					is_owned_by = TLA
+					is_controlled_by = IRI
+				}
+				774 = {
+					is_owned_by = TLA
+					is_controlled_by = IRI
+				}
+			}
+			surrender_progress > 0.5
+		}
+	}
+	
+	option = {#We should cede the northern lands, to try and appease the Irinthians
+		name = tla.3.a
+		ai_chance = {
+			factor = 6
+		}
+		IRI = {
+			country_event = {
+				id = iri.54
+				hours = 6
+			}
+		}
+		
+	}
+	
+	option = {#We will fight until the end!
+		name = tla.3.b
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_government = puritan }
+			}
+		}
+		add_war_support = 0.05
+	}
+}
+
+country_event = {# Irinthios refuses peace offer
+	id = tla.4
+	title = tla.4.t
+	desc = tla.4.d
+	picture = GFX_report_event_romania_poland_visit
+	
+	is_triggered_only = yes
+	
+	option = {#Oops
+		name = tla.4.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -50
+		add_war_support = 0.05
+	}
+}
+
+#pilgrimage events
+
+country_event = {#Tlarthingian pilgrims arrive in lirothlind LIR
+	id = tla.5
+	title = tla.5.t
+	desc = tla.5.d
+	
+	is_triggered_only = yes
+	
+	option = {#What are lizards doing all the way up here?
+		name = tla.5.a
+		ai_chance = {
+			factor = 7
+		}
+		set_country_flag = TLA_allowed_pilgrims
+		hidden_effect = {
+			TLA = {
+				add_to_variable = { TLA_rituals_done = 1 }
+			}
+			GMR = {
+				country_event = { id = tla.6 days = 9 random = 24 }
+			}
+		}
+	}
+	option = {#Get them out of here
+		name = tla.5.b
+		ai_chance = {
+			factor = 3
+		}
+		TLA = {
+			country_event = { id = tla.13 days = 1 hours = 12 }
+		}
+	}
+}
+
+country_event = {#Tlarthingian pilgrims arrive in GMR
+	id = tla.6
+	title = tla.6.t
+	desc = tla.6.d
+	
+	is_triggered_only = yes
+	
+	option = {#keep an eye on them
+		name = tla.6.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = TLA_allowed_pilgrims
+		hidden_effect = {
+			country_event = { id = tla.7 days = 70 random = 480 }
+			TLA = {
+				add_to_variable = { TLA_rituals_done = 1 }
+			}
+		}
+	}
+	option = {#send them back home
+		name = tla.6.b
+		ai_chance = {
+			factor = 5
+		}
+		TLA = {
+			country_event = { id = tla.13 days = 1 hours = 12 }
+		}
+	}
+}
+
+country_event = {#Tlarthingian pilgrims ask GMR for a boat to take to Ordoria
+	id = tla.7
+	title = tla.7.t
+	desc = tla.7.d
+	
+	is_triggered_only = yes
+	
+	option = {#i guess lend them a boat?
+		name = tla.7.a
+		ai_chance = {
+			factor = 5
+		}
+		add_equipment_to_stockpile = {
+			type = convoy
+			amount = -1
+		}
+		hidden_effect = {
+			#random list for them returning the boat or not returning
+			random_list = {
+				50 = {
+					country_event = { id = tla.8 days = 70 random = 480 }
+				}
+				50 = {
+					#ordoria gets an event about finding the ritual
+				}
+			}
+		}
+	}
+	option = {#send them back home
+		name = tla.7.b
+		ai_chance = {
+			factor = 5
+		}
+		TLA = {
+			country_event = { id = tla.13 days = 1 hours = 12 }
+		}
+	}
+}
+
+country_event = {#Tlarthingian pilgrims returning the boat
+	id = tla.8
+	title = tla.8.t
+	desc = tla.8.d
+	
+	is_triggered_only = yes
+	
+	option = {#thanks?
+		name = tla.8.a
+		ai_chance = {
+			factor = 5
+		}
+		add_equipment_to_stockpile = {
+			type = convoy
+			amount = 1
+		}
+		TLA = {
+			country_event = { id = tla.18 days = 35 hours = 12 random = 48 }
+			add_to_variable = { TLA_rituals_done = 3 }
+		}
+	}
+}
+
+country_event = {#Tlarthingian pilgrims arrive in SKA
+	id = tla.9
+	title = tla.9.t
+	desc = {
+		trigger = {
+			has_war_with = ORD
+		}
+		text = tla.9.d1
+	}
+	desc = {
+		trigger = {
+			NOT = { has_war_with = ORD }
+		}
+		text = tla.9.d2
+	}
+	
+	is_triggered_only = yes
+	
+	option = {#What are lizards doing all the way up here?
+		name = tla.9.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = TLA_allowed_pilgrims
+		hidden_effect = {
+			TLA = {
+				add_to_variable = { TLA_rituals_done = 1 }
+			}
+
+		}
+	}
+	option = {#Get them out of here
+		name = tla.6.b
+		ai_chance = {
+			factor = 5
+		}
+		TLA = {
+			country_event = { id = tla.13 days = 1 hours = 12 }
+		}
+	}
+}
+
+country_event = {#Tlarthingian pilgrims arrive in stahlhof STA
+	id = tla.10
+	title = tla.10.t
+	desc = {
+		trigger = {
+			has_war_with = UNG
+		}
+		text = tla.10.d1
+	}
+	desc = {
+		trigger = {
+			NOT = { has_war_with = UNG }
+		}
+		text = tla.10.d2
+	}
+	
+	is_triggered_only = yes
+	
+	option = {#Okay
+		name = tla.10.a
+		ai_chance = {
+			factor = 6
+		}
+		set_country_flag = TLA_allowed_pilgrims
+		hidden_effect = {
+			TLA = {
+				add_to_variable = { TLA_rituals_done = 1 }
+				country_event = { id = tla.14 days = 14 }
+			}
+		}
+	}
+	option = {#Get them out of here
+		name = tla.5.b
+		ai_chance = {
+			factor = 4
+		}
+		TLA = {
+			country_event = { id = tla.13 days = 1 hours = 12 }
+		}
+	}
+}
+
+country_event = {#Tlarthingian pilgrims arrive in fritzhaven
+	id = tla.11
+	title = tla.11.t
+	desc = tla.11.d
+	
+	is_triggered_only = yes
+	
+	option = {#Okay
+		name = tla.10.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = TLA_allowed_pilgrims
+		hidden_effect = {
+			TLA = {
+				add_to_variable = { TLA_rituals_done = 1 }
+			}
+			STA = {
+				country_event = { id = tla.10 days = 30 }
+			}
+		}
+	}
+	option = {#Get them out of here
+		name = tla.5.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				tag = WSZ
+			}
+		}
+		TLA = {
+			country_event = { id = tla.13 days = 1 hours = 12 }
+		}
+	}
+}
+
+country_event = {#shamans see the signs
+	id = tla.12
+	title = tla.12.t
+	desc = tla.12.d
+	
+	is_triggered_only = yes
+	
+	option = {#Okay
+		name = tla.12.a
+		set_country_flag = TLA_ritual_signs_seen
+		unlock_decision_category_tooltip = TLA_pilgrimages_category
+	}
+}
+
+country_event = {#pilgrims turned back
+	id = tla.13
+	title = tla.13.t
+	desc = tla.13.d
+	
+	is_triggered_only = yes
+	
+	option = {#we must find another way around them
+		name = tla.13.a
+		if = {
+			limit = {
+				FROM = {
+					tag = FTH
+				}
+			}
+			set_country_flag = TLA_need_another_union_port
+			unlock_decision_tooltip = TLA_find_another_union_port
+		}
+	}
+}
+
+country_event = {#event for pilgrims encountering supernatural in spochwald
+	id = tla.14
+	title = tla.14.t
+	desc = tla.14.d
+	
+	is_triggered_only = yes
+	
+	option = {#intervene to crush it
+		name = tla.14.a
+		ai_chance = {
+			factor = 5
+		}
+		SPW = {
+			country_event = { id = tla.15 hours = 12 }
+		}
+	}
+	option = {#focus on the pilgrimage
+		name = tla.14.b
+		ai_chance = {
+			factor = 5
+		}
+		HLZ = {
+			country_event = { id = tla.17 hours = 12 }
+		}
+	}
+}
+
+country_event = {#event for pilgrims encountering supernatural in spochwald
+	id = tla.15
+	title = tla.15.t
+	desc = tla.15.d
+	
+	is_triggered_only = yes
+	
+	option = {#give thanks to the tlarthingians
+		name = tla.15.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = TLA_allowed_pilgrims
+		add_stability = 0.03
+		TLA = {
+			country_event = { id = tla.16 days = 1 hours = 12 }
+		}
+		hidden_effect = {
+			HLZ = {
+				country_event = { id = tla.17 hours = 12 }
+			}
+		}
+	}
+}
+
+country_event = {#event for pilgrims encountering supernatural in spochwald
+	id = tla.16
+	title = tla.16.t
+	desc = tla.16.d
+	
+	is_triggered_only = yes
+	
+	option = {#good, perhaps more faithful should follow their example?
+		name = tla.16.a
+		ai_chance = {
+			factor = 5
+		}
+		add_to_variable = { TLA_rituals_done = 1 }
+		#add an idea about the mobilization of the faithful, following this example
+	}
+}
+
+country_event = {#Tlarthingian pilgrims arrive in holzbrenn
+	id = tla.17
+	title = tla.17.t
+	desc = tla.17.d
+	
+	is_triggered_only = yes
+	
+	option = {#Okay
+		name = tla.17.a
+		ai_chance = {
+			factor = 7
+		}
+		set_country_flag = TLA_allowed_pilgrims
+		hidden_effect = {
+			TLA = {
+				add_to_variable = { TLA_rituals_done = 1 }
+				country_event = { id = tla.18 days = 35 hours = 12 random = 48 }
+			}
+		}
+	}
+	option = {#Get them out of here
+		name = tla.5.b
+		ai_chance = {
+			factor = 3
+		}
+		TLA = {
+			country_event = { id = tla.13 days = 1 hours = 12 }
+		}
+	}
+}
+
+country_event = {#Tlarthingian pilgrims return successfully
+	id = tla.18
+	title = tla.18.t
+	desc = {
+		trigger = {
+			FROM = { tag = HLZ }
+		}
+		text = tla.18.d1
+	}
+	desc = {
+		trigger = {
+			FROM = { tag = GMR }
+		}
+		text = tla.18.d2
+	}
+	
+	is_triggered_only = yes
+	
+	option = {#amazing!
+		name = tla.18.a
+		ai_chance = {
+			factor = 7
+		}
+		
+	}
+}
+
+country_event = {#getting close to capitulating Irinthios
+	id = tla.19
+	title = tla.19.t
+	desc = tla.19.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = TLA
+		has_war_with = IRI
+		IRI = {
+			surrender_progress > 0.5
+		}
+	}
+	
+	option = {#we'll just take some money and inflict some restrictions
+		name = tla.19.a
+		ai_chance = {
+			factor = 7
+		}
+		set_global_flag = TLA_nice_capitulation_IRI
+	}
+	option = {#we'll just take some money and inflict some restrictions
+		name = tla.19.b
+		ai_chance = {
+			factor = 0
+		}
+		
+	}
+}
+
+country_event = {#waaaaaaa we lost to the sexy lizards waaaaaa
+	id = tla.20
+	title = tla.20.t
+	desc = tla.20.d
+	
+	is_triggered_only = yes
+
+	immediate = {
+		set_variable = { IRI_debt_var = 0.15 }
+	}
+	
+	option = {#Dang
+		name = tla.20.a
+		ai_chance = {
+			factor = 7
+		}
+		add_ideas = {
+			IRI_treaty_of_hand
+		}
+		add_dynamic_modifier = { modifier = IRI_debts_to_TLA }
+		remove_ideas = {
+			IRI_Irinthios_Will_Rise_Again
+		}
+		load_focus_tree = {
+			tree = irinthios_focus_2
+			keep_completed = yes
+		}
+	}
+}
+
+country_event = {#Irinthios paid up some debts
+	id = tla.21
+	title = tla.21.t
+	desc = tla.21.d
+	
+	is_triggered_only = yes
+	
+	option = {#Nice
+		name = tla.21.a
+		ai_chance = {
+			factor = 7
+		}
+		add_timed_idea = {
+			idea = TLA_war_debts_paid
+			days = 30
+		}
+	}
+}

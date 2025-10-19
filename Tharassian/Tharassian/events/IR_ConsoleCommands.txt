@@ -1,0 +1,190 @@
+﻿### ALLIANCE EVENTS
+
+add_namespace = console_command
+
+
+	country_event = {#Free-for-All
+		id = console_command.1
+		title = console_command.1.t
+		desc = console_command.1.d
+		picture = GFX_report_event_ast_troops_landing
+		
+		is_triggered_only = yes
+		
+		option = {#Die
+			name = console_command.1.a
+						
+			every_country = {
+				limit = {
+					is_subject_of = UNG
+				}
+				UNG = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_free
+					}
+				}
+			}
+			every_other_country = {
+				every_country = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+	
+	country_event = {#Irenthar Says Trans Rights
+		id = console_command.2
+		title = console_command.2.t
+		desc = console_command.2.d
+		picture = GFX_report_event_be_gay_do_crimes
+		
+		is_triggered_only = yes
+		
+		option = {#Be Gay Do Crimes
+			name = console_command.2.a
+			hidden_effect = {
+				NBI = {
+					transfer_state = 191
+					add_state_core = 191
+					load_oob = "NBI_empty"
+					load_oob = "NBI_trans_rights_army"
+					delete_unit_template_and_units = {
+						division_template = "Hearthguards"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Tunnel Fighters"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Cave Cleaners"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Mountainbreakers"
+					}
+					add_manpower = 1000000
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1000000
+						producer = NBI
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 1000000
+						producer = NBI
+					}
+					add_equipment_to_stockpile = {
+						type = heavy_cavalry_equipment
+						amount = 1000000
+						producer = NBI
+					}
+					add_equipment_to_stockpile = {
+						type = light_cavalry_equipment
+						amount = 1000000
+						producer = NBI
+					}
+					add_political_power = 2000
+					change_tag_from = ROOT
+				}
+				every_state = {
+					add_core_of = NBI
+				}
+				191 = {
+					set_state_category = megalopolis
+					add_core_of = NBI
+					add_manpower = 1000000
+					add_resource = {
+						type = steel
+						amount = 500
+					}
+					add_resource = {
+						type = food
+						amount = 500
+					}
+					add_resource = {
+						type = mount
+						amount = 500
+					}
+					add_resource = {
+						type = lumber
+						amount = 500
+					}
+					add_extra_state_shared_building_slots = 13
+					set_building_level = {
+						type = infrastructure
+						level = 10
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 5
+						instant_build = yes
+						province = {
+							all_provinces = yes
+						}
+					}
+				}
+				add_victory_points = {
+					province = 154
+					value = 69 #nice
+				}
+			}
+			custom_effect_tooltip = pronouns_tt
+		}
+	}
+	
+	country_event = {#Make Enby Gang go to War
+		id = console_command.3
+		hidden = yes
+		
+		trigger = {
+			tag = NBI
+			is_ai = yes
+			has_war = no
+		}
+		
+		mean_time_to_happen = {
+			days = 2
+		}
+		
+		option = {
+			random_neighbor_country = {	
+				declare_war_on = {
+					target = ROOT
+					type = annex_everything
+				}
+			}
+		}
+	}

@@ -1,0 +1,22 @@
+state={
+	id=711
+	name="STATE_711"
+	provinces={
+		6383 4676 6357 6384
+	}
+	state_category = rural
+	manpower=3554
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 3
+		lumber = 2
+	}
+	history={
+		owner = RMT
+		buildings = {
+			infrastructure = 2
+			farm = 1
+		}
+		add_core_of = RMT
+	}
+}

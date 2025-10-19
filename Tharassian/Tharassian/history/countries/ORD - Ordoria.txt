@@ -1,0 +1,319 @@
+﻿capital = 85
+
+set_major = yes
+
+set_oob = "ORD_1936"
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "ORD_1936_naval_mtg"
+	else = {
+		set_naval_oob = "ORD_1936_naval"
+	}
+}
+
+
+
+set_research_slots = 4
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	bodkin_arrows = 1
+	longbow = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
+}
+
+set_variable = {
+	var = ORD_steel_crisis_division_limit
+	value = 47
+}
+
+set_variable = {
+	var = ORD_steel_crisis_multiplier_war_support
+	value = 0
+}
+
+set_variable = {
+	var = ORD_steel_crisis_multiplier_attack
+	value = 0
+}
+
+set_variable = {
+	var = ORD_steel_crisis_multiplier_defence
+	value = 0
+}
+
+set_variable = {
+	var = ORD_steel_crisis_multiplier_breakthrough
+	value = 0
+}
+
+set_variable = {
+	var = ORD_steel_crisis_multiplier_resource_penalty
+	value = 0
+}
+
+set_variable = {
+	var = ORD_moderates_influence
+	value = 11
+}
+
+set_variable = {
+	var = ORD_moderates_loyalty
+	value = 11
+}
+
+set_variable = {
+	var = ORD_traditionalists_influence
+	value = 16
+}
+
+set_variable = {
+	var = ORD_traditionalists_loyalty
+	value = 13
+}
+
+set_variable = {
+	var = ORD_faithful_influence
+	value = 12
+}
+
+set_variable = {
+	var = ORD_faithful_loyalty
+	value = 15
+}
+
+set_politics = {
+	ruling_party = puritan
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 16
+
+	monarchy_constitutional = 3
+
+	republic_peasant = 0
+
+	republic_aristocrat = 4
+
+	republic_merchant = 0
+
+	theocrat = 29
+
+	puritan = 48
+}
+
+	recruit_character = ORD_dalyn_rohyis
+	recruit_character = ORD_alstora_holynthor
+	recruit_character = ORD_thulyen_gyume
+	recruit_character = ORD_isvenith_lothinnys
+	recruit_character = ORD_galerin_valinthir
+	recruit_character = ORD_larennis_valinthir
+	recruit_character = ORD_histarine_vernythe
+	recruit_character = ORD_vernusa_jiseyne
+	recruit_character = ORD_wenaura_feryd
+	recruit_character = ORD_yntha
+	recruit_character = ORD_alwyen
+	recruit_character = ORD_gylar
+	recruit_character = ORD_thrysmere
+	recruit_character = ORD_thylmar_ghirian
+	recruit_character = ORD_ghylsin_dhysmarin
+	recruit_character = ORD_tholsthyr_ghylauden
+	recruit_character = ORD_alyniss_quynara
+	recruit_character = ORD_mynaud_thurys
+	recruit_character = ORD_marinalle_nuriopan
+	recruit_character = ORD_tasar_beijyre
+	recruit_character = ORD_arun_fenmys
+	recruit_character = ORD_taenaran_sylquinal
+	recruit_character = ORD_namys_yesydark
+	recruit_character = ORD_thrystyr_gadayn
+	recruit_character = ORD_galadywe_tolhyn
+	recruit_character = ORD_khyriad_systhen
+	recruit_character = ORD_dasyn_maryd
+	recruit_character = ORD_vysiara_kylas
+
+	activate_advisor = isvenith_lothinnys
+
+	add_opinion_modifier = {
+		target = RTH
+		modifier = bitter_rivals
+	}
+	
+	add_relation_modifier = {
+		target = RTH
+		modifier = bitter_rivals_opinion_modifier
+	}
+	
+	add_ideas = {
+		autarkic_isolationism
+		ORD_firstborn_state
+		ORD_fragmented_government
+		ORD_rthaur_rebellion
+		ORD_looming_steel_crisis_idea
+		ORD_disrupted_industry
+		ORD_slavery_3
+		elf_country
+		itheryn_vengeance_patron
+	}
+	
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_operative_leader = {
+			name = "Myla Jhylere"
+			GFX = GFX_Portrait_ORD_Jhylere
+			traits = { thief_class ord_league operative_has_magic_sword operative_has_magic_ring }
+			bypass_recruitment = yes
+			female = yes
+			nationalities = { ORD }
+		}
+	}
+	
+	create_intelligence_agency = {
+		name = "Oath of Harquiss"
+		icon = GFX_intelligence_agency_logo_ord
+	}
+
+	if = {
+		limit = {
+			NOT = {
+				has_dlc = "Man the Guns"
+			}
+		}
+		### Variants ###
+		# Destroyers #
+		create_equipment_variant = {
+			name = "Orthor-Class"
+			type = destroyer_1
+			parent_version = 0
+			upgrades = {
+				
+			}
+		}
+		# Light Cruisers #
+		create_equipment_variant = {
+			name = "Issa-Class"
+			type = destroyer_1 #Should be light cruiser
+			parent_version = 0
+			upgrades = {
+				
+			}
+		}
+		# Heavy Cruisers #
+		create_equipment_variant = {
+			name = "Quwyl-Class"
+			type = heavy_cruiser_1
+			parent_version = 0
+			upgrades = {
+				
+			}
+		}
+	}
+
+	if = {
+		limit = { 
+			has_dlc = "Man the Guns"
+		}
+		### Variants ###
+		# Destroyers #
+		create_equipment_variant = {
+			name = "Orthor-Class"
+			type = ship_hull_light_1
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = light_ship_ballista_0
+				fixed_ship_engine_slot = light_ship_rowers_0
+			}
+		}
+		# Light Cruisers #
+		#create_equipment_variant = {
+		#		name = "Issa-Class"
+		#		type = ship_hull_cruiser_0
+		#		parent_version = 0
+		#		modules = {
+		#			fixed_ship_battery_slot = ship_medium_battery_1
+		#			fixed_ship_anti_air_slot = empty
+		#			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+		#			fixed_ship_radar_slot = empty
+		#			fixed_ship_engine_slot = cruiser_ship_engine_2
+		#			fixed_ship_armor_slot = ship_armor_cruiser_2
+		#			mid_1_custom_slot = ship_torpedo_1
+		#			mid_2_custom_slot = ship_secondaries_2
+		#			rear_1_custom_slot = ship_light_medium_battery_2
+		#		}
+		#}
+		# Heavy Cruisers #
+		create_equipment_variant = {
+			name = "Quwyl-Class"
+			type = ship_hull_heavy_1
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = heavy_ship_ballista_0
+				fixed_ship_engine_slot = heavy_ship_rowers_0
+			}
+		}
+	}

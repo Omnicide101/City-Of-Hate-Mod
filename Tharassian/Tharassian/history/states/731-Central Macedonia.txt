@@ -1,0 +1,30 @@
+
+state={
+	id=731
+	name="STATE_731"
+	resources={
+		steel=13.000
+	}
+
+	history={
+		victory_points = {
+			5924 8 
+		}
+		owner = RMT
+		buildings = {
+			infrastructure = 2
+			workshop = 2
+
+		}
+		add_core_of = RMT
+
+	}
+
+	provinces={
+		352 3236 4783 5924 
+	}
+	manpower=12542
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

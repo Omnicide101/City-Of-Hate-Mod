@@ -1,0 +1,32 @@
+state = {
+	id = 480
+	name = "STATE_480"
+	provinces = {
+		1519 7453 7485 4348 4373
+	}
+	state_category = city
+	
+	resources = {
+		lumber = 16
+		food = 18
+		mount = 11
+	}
+	
+	manpower = 592032
+	buildings_max_level_factor = 1.000
+	history = {
+		owner = TRS
+		add_core_of = TRS
+		victory_points = { 4348 21 }
+		victory_points = { 4373 8 }
+		buildings = {
+			infrastructure = 3
+			workshop = 1
+			forge = 1
+			dockyard = 2
+			4373 = {
+				naval_base = 6
+			}
+		}
+	}
+}

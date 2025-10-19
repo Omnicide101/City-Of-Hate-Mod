@@ -1,0 +1,67 @@
+﻿capital = 911
+
+set_oob = "empty"
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+
+set_technology ={
+
+}
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = monarchy_absolute
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 100
+
+	monarchy_constitutional = 0
+
+	republic_peasant = 0
+
+	republic_aristocrat = 0
+
+	republic_merchant = 0
+
+	theocrat = 0
+
+	puritan = 0
+}
+
+recruit_character = ADV_guild
+recruit_character = ORD_captain_alsyon
+
+add_ideas = {
+	hidden_all_seeing_observer
+}

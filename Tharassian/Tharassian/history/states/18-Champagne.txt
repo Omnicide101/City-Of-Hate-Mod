@@ -1,0 +1,22 @@
+state={
+	id=18
+	name="STATE_18"
+	provinces={
+		3702
+	}
+	state_category = rural
+	manpower=5718
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 3
+	}
+	history={
+		owner = GMR
+		buildings = {
+			infrastructure = 1
+			farm = 2
+		}
+		add_core_of = GMR
+		add_core_of = KRT
+	}
+}

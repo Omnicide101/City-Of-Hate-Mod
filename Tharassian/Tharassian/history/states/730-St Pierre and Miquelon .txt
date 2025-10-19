@@ -1,0 +1,18 @@
+state={
+	id=730
+	name="STATE_730"
+	provinces={
+		6063 1484 5996
+	}
+	state_category = rural
+	manpower=6672
+	impassable = yes
+	buildings_max_level_factor=1.000
+	history={
+		owner = RMT
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = RMT
+	}
+}

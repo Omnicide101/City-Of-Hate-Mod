@@ -1,0 +1,23 @@
+state={
+	id=136
+	name="STATE_136"
+	provinces={
+		1214 1842 2022 4959 3715 121
+	}
+	state_category = town
+	manpower=15293
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 4
+	}
+	history={
+		victory_points = { 4959 16 }
+		owner = RTH
+		buildings = {
+			infrastructure = 2
+			workshop = 1
+			farm = 3
+		}
+		add_core_of = RTH
+	}
+}

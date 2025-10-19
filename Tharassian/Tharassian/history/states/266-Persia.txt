@@ -1,0 +1,21 @@
+state={
+	id=266
+	name="STATE_266"
+	provinces={
+		8364 1405 2956 8486
+	}
+	state_category = pastoral
+	manpower=4002
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			8364 1
+		}
+		owner = NOC
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = NOC
+	}
+}

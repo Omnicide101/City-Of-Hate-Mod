@@ -9,12 +9,14 @@ characters={
 		country_leader={
 			desc="politics_WSZ_kindl_desc"
 			ideology=monarchy_absolute_ideology
+			traits = { disempowered_wreck }
 			expire="1.1.1.1"
 			id=-1
 		}
 		country_leader={
 			desc="politics_WSZ_kindl_desc"
 			ideology=monarchy_constitutional_ideology
+			traits = { disempowered_wreck }
 			expire="1.1.1.1"
 			id=-1
 		}

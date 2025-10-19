@@ -1,0 +1,69 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+default_unit_production = {
+	enable = {
+		original_tag = BLD
+	}
+	
+	abort = {
+		always = no
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = cavalry
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = men_at_arms
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = ogre_warriors
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 60
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = train
+		value = 10
+	}
+}

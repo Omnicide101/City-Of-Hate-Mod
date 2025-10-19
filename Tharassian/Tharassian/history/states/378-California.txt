@@ -1,0 +1,34 @@
+state={
+	id=378
+	name="STATE_378"
+	provinces={
+		6861 3856
+	}
+	state_category = metropolis
+	manpower=450192
+	buildings_max_level_factor=1.000
+	
+	resources = {
+		food = 8
+		mount = 9
+		lumber = 7
+		steel = 11
+	}
+	
+	history={
+		victory_points = { 6861 27 }
+		owner = MER
+		buildings = {
+			infrastructure = 3
+			workshop = 3
+			forge = 1
+			dockyard = 4
+			6861 = {
+				naval_base = 10
+			}
+		}
+		add_core_of = MER
+	}
+}
+
+

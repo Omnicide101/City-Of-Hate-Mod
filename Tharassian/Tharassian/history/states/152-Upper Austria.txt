@@ -1,0 +1,31 @@
+
+state={
+	id=152
+	name="STATE_152"
+	resources={
+		steel=6.000
+	}
+
+	history={
+		victory_points = {
+			2320 11 
+		}
+		owner = SKA
+		buildings = {
+			infrastructure = 2
+			workshop = 1
+			forge = 1
+
+		}
+		add_core_of = SKA
+
+	}
+
+	provinces={
+		2899 7372 
+	}
+	manpower=10492
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

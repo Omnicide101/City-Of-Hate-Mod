@@ -1,0 +1,23 @@
+state={
+	id=390
+	name="STATE_390"
+	provinces={
+		2547 3495 5163 5210 2870 5957 5981 5257
+	}
+	state_category = large_city
+	manpower=181392
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 6
+		mount = 3
+	}
+	history={
+		victory_points = { 5163 34 }
+		owner = LIR
+		buildings = {
+			infrastructure = 3
+			workshop = 2
+		}
+		add_core_of = LIR
+	}
+}

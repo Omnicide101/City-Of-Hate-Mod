@@ -1,0 +1,19 @@
+state={
+	id=902
+	name="STATE_902"
+	provinces={
+		742 8219 
+	}
+	buildings_max_level_factor=1.000
+	manpower=3012
+	state_category=pastoral
+	history={
+		victory_points = { 8219 3 }
+		owner = THA
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = THA
+		add_core_of = HIH
+	}
+}

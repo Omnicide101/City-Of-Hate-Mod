@@ -1,0 +1,99 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+viva_la_revolucion = {
+	enable = {
+		original_tag = HLZ
+		has_government = republic_peasant
+		country_exists = RTH
+		RTH = {
+			has_government = republic_peasant
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = RTH
+		value = 200
+	}
+}
+
+get_pressler = {
+	enable = {
+		has_completed_focus = HLZ_soft_power
+		OR = {
+			has_active_mission = HLZ_pressler_hiding
+			has_active_mission = HLZ_pressler_regrouping
+			has_active_mission = HLZ_pressler_gathering_strength
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = pp_spend_amount
+		id = idea
+		value = -125
+	}
+	
+	ai_strategy = {
+		type = pp_spend_amount
+		id = decision
+		value = -125
+	}
+}
+
+get_pressler_urgent = {
+	enable = {
+		has_completed_focus = HLZ_soft_power
+		OR = {
+			has_active_mission = HLZ_pressler_hiding
+			has_active_mission = HLZ_pressler_regrouping
+			has_active_mission = HLZ_pressler_gathering_strength
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = pp_spend_amount
+		id = idea
+		value = -350
+	}
+	
+	ai_strategy = {
+		type = pp_spend_amount
+		id = decision
+		value = -350
+	}
+}
+
+tholder_bay_campaign = {
+	enable = {
+		original_tag = HLZ
+		has_completed_focus = HLZ_strategic_battleplans
+	}
+	abort = {
+		AND = {
+			owns_state = 96
+			owns_state = 98
+			owns_state = 97
+		}
+	}
+	ai_strategy = {
+		type = area_priority
+		id = tholder_bay_border
+		value = 500
+	}
+}

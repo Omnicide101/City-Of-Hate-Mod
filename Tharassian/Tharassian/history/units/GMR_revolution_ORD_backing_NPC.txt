@@ -1,0 +1,308 @@
+﻿division_template = {
+	name = "Enforcers"
+	
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Black Gargoyles"
+	
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		men_at_arms = { x = 0 y = 1 }
+       	halberdier = { x = 0 y = 2 }
+       	halberdier = { x = 0 y = 3 }
+		men_at_arms = { x = 1 y = 0 }
+		men_at_arms = { x = 1 y = 1 }
+		halberdier = { x = 1 y = 2 }
+		halberdier = { x = 1 y = 3 }
+		men_at_arms = { x = 1 y = 0 }
+		men_at_arms = { x = 1 y = 1 }
+		swordsmen = { x = 1 y = 2 }
+		swordsmen = { x = 1 y = 3 }
+		men_at_arms = { x = 1 y = 0 }
+		men_at_arms = { x = 1 y = 1 }
+		swordsmen = { x = 1 y = 2 }
+		swordsmen = { x = 1 y = 3 }
+	}
+}
+
+division_template = {
+	name = "Sail Knights"
+	
+	regiments = {
+		heavy_cavalry = { x = 0 y = 0 }
+        heavy_cavalry = { x = 0 y = 1 }
+        heavy_cavalry = { x = 1 y = 0 }
+		heavy_cavalry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Outrider Scouts"
+	
+	regiments = {
+		light_cavalry = { x = 0 y = 0 }
+        light_cavalry = { x = 0 y = 1 }
+        light_cavalry = { x = 1 y = 0 }
+		light_cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    scouts_cavalry = { x = 0 y = 0 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "Sinlis Militia"
+		location = 6225
+		division_template = "Enforcers"
+		start_experience_factor = 0.1
+
+	}
+
+	division = {
+		name = "Urinnes Militia"
+		location = 1768
+		division_template = "Enforcers"
+		start_experience_factor = 0.1
+
+	}
+	
+	division = {
+		name = "Kirgann Militia"
+		location = 2316
+		division_template = "Enforcers"
+		start_experience_factor = 0.1
+
+	}
+
+	division = {
+		name = "Rothanar Militia"
+		location = 6630
+		division_template = "Enforcers"
+		start_experience_factor = 0.1
+
+	}
+	
+	division = {
+		name = "Xarinthe Militia"
+		location = 2388
+		division_template = "Enforcers"
+		start_experience_factor = 0.1
+
+	}
+	
+	division = {
+		name = "Irenthar Black Gargoyles"
+		location = 3069
+		division_template = "Black Gargoyles"
+		start_experience_factor = 1.2
+
+	}
+	
+	division = {
+		name = "Felwerin Black Gargoyles"
+		location = 6197
+		division_template = "Black Gargoyles"
+		start_experience_factor = 1.2
+
+	}
+	
+	division = {
+		name = "Navandon Black Gargoyles"
+		location = 3119
+		division_template = "Black Gargoyles"
+		start_experience_factor = 1.2
+
+	}
+	
+	division = {
+		name = "1st Levy"
+		location = 5917
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "3rd Levy"
+		location = 1205
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "4th Levy"
+		location = 3914
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "6th Levy"
+		location = 520
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "17th Levy"
+		location = 6657
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "18th Levy"
+		location = 4704
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "19th Levy"
+		location = 6708
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "20th Levy"
+		location = 4101
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "21st Levy"
+		location = 1305
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "22nd Levy"
+		location = 2187
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "23rd Levy"
+		location = 6433
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "24th Levy"
+		location = 6348
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "25th Levy"
+		location = 4648
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "26th Levy"
+		location = 6250
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "27th Levy"
+		location = 5523
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "28th Levy"
+		location = 1414
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "29th Levy"
+		location = 2700
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "30th Levy"
+		location = 6508
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "35th Levy"
+		location = 1486
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "36th Levy"
+		location = 1571
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "37th Levy"
+		location = 1387
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "38th Levy"
+		location = 8
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+	
+	division = {
+		name = "39th Levy"
+		location = 1617
+		division_template = "Black Gargoyles"
+		start_experience_factor = 0.13
+
+	}
+}

@@ -1,0 +1,51 @@
+### HOLZBRENN EVENTS
+
+add_namespace = hlz_lore
+
+### FUCK ROSENBLUT EVENTS
+
+country_event = { #Strike?
+	id = hlz_lore.1
+	title = hlz_lore.1.t
+	desc = hlz_lore.1.d
+	picture = GFX_report_event_generic_strike
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = HLZ
+		has_government = puritan
+		has_completed_focus = HLZ_mad_prince
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {#This is definitely going to go well
+		name = hlz_lore.1.a
+	}
+}
+
+country_event = { #Hmmm today I will protest the Mad Freiprinz
+	id = hlz_lore.2
+	title = hlz_lore.2.t
+	desc = hlz_lore.2.d
+	picture = GFX_report_event_generic_riot
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = HLZ
+		has_government = puritan
+		has_completed_focus = HLZ_carpenter_strike
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {#Oh god oh fuck
+		name = hlz_lore.2.a
+	}
+}

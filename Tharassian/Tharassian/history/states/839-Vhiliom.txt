@@ -1,0 +1,22 @@
+state={
+	id=839
+	name="STATE_839"
+	provinces={
+		1075 1675 1780 2376 8758 
+	}
+	buildings_max_level_factor=1.000
+	manpower=4328
+	state_category=rural
+	history={
+		owner = TRX
+		add_core_of = TRX
+		
+		victory_points = {
+			1780 3
+		}
+		buildings = {
+			infrastructure = 2
+			farm = 1
+		}
+	}
+}

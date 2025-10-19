@@ -1,0 +1,29 @@
+
+state={
+	id=512
+	name="STATE_512"
+	provinces={
+		193 938 4088 8413 
+	}
+	manpower=190823
+	buildings_max_level_factor=1.000
+	state_category=city
+	history={
+		owner = TRX
+		add_core_of = TRX
+		add_claim_by = SAL
+		
+		victory_points = {
+			4088 30
+		}
+		victory_points = {
+			938 8
+		}
+		
+		buildings = {
+			infrastructure = 3
+			farm = 3
+			workshop = 2
+		}
+	}
+}

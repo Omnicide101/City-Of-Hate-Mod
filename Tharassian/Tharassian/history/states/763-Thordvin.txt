@@ -1,0 +1,23 @@
+state={
+	id=763
+	name="STATE_763"
+	provinces={
+		4279 6938 3201 5611
+	}
+	state_category = rural
+	manpower=3281
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 3
+	}
+	history={
+		victory_points = {
+			3201 3
+		}
+		owner = BLD
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = BLD
+	}
+}

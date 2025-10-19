@@ -1,0 +1,148 @@
+# For minor countries where advisors are not defined
+# Generate them from a generic template
+
+# Political advisors
+every_possible_country = {
+	generate_character = {
+		token_base = knightly_paragon # token will be TAG_token_base
+		advisor = {
+			slot = army_chief
+			traits = { gallant_paladin }
+			available = {
+				OR = {
+					has_government = monarchy_absolute
+					has_government = monarchy_constitutional
+					has_government = republic_aristocrat
+				}
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		portraits = { 
+			army = {
+				small = GFX_idea_generic_knightly_paragon
+			}
+		}
+	}
+	
+	generate_character = {
+		token_base = folk_hero # token will be TAG_token_base
+		advisor = {
+			slot = army_chief
+			traits = { heroic_commoner }
+			available = {
+				always = yes
+			}
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 2
+					has_government = republic_peasant
+				}
+			}
+		}
+		portraits = { 
+			army = {
+				small = GFX_idea_generic_folk_hero
+			}
+		}
+	}
+	
+	generate_character = {
+		token_base = veteran # token will be TAG_token_base
+		advisor = {
+			slot = army_chief
+			traits = { grizzled_warrior }
+			available = {
+				always = yes
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		portraits = { 
+			army = {
+				small = GFX_idea_generic_veteran
+			}
+		}
+	}
+	
+	generate_character = {
+		token_base = privateer # token will be TAG_token_base
+		advisor = {
+			slot = navy_chief
+			traits = { black_sails_midnight }
+			available = {
+				always = yes
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		portraits = { 
+			army = {
+				small = GFX_idea_generic_privateer
+			}
+		}
+	}
+	
+	generate_character = {
+		token_base = distinguished_admiral # token will be TAG_token_base
+		advisor = {
+			slot = navy_chief
+			traits = { experienced_sailor }
+			available = {
+				always = yes
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		portraits = { 
+			army = {
+				small = GFX_idea_generic_distinguished_admiral
+			}
+		}
+	}
+	
+	generate_character = {
+		token_base = merchant_captain # token will be TAG_token_base
+		gender = female
+		advisor = {
+			slot = navy_chief
+			traits = { silver_tongued_negotiator }
+			available = {
+				has_government = republic_merchant
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		portraits = { 
+			army = {
+				small = GFX_idea_generic_merchant_captain
+			}
+		}
+	}
+	
+	generate_character = {
+		token_base = military_scholar # token will be TAG_token_base
+		gender = female
+		advisor = {
+			slot = theorist
+			traits = { student_of_warfare }
+			available = {
+				always = yes
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		portraits = { 
+			army = {
+				small = GFX_idea_Union_North_navy_3
+			}
+		}
+	}
+}

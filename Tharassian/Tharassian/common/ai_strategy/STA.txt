@@ -1,0 +1,231 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+yoink_nordtorf = {
+
+	enable = {
+		original_tag = STA
+		has_completed_focus = STA_trial_by_fire
+		NOT = {
+			owns_state = 218
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = put_unit_buffers
+		
+		states = {
+			212
+		}
+		
+		ratio = 0.3
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = ARK
+		value = 500
+	}
+}
+
+save_pp_for_foci = {#Let's not always take decisions if we need PP for our foci
+	enable = {
+		original_tag = STA
+		NOT = {
+			has_completed_focus = STA_the_anti_ordorian_front
+			has_completed_focus = STA_turn_to_the_caravaneers
+			has_completed_focus = STA_the_league_of_temples
+		}
+		has_political_power < 75
+		has_completed_focus = STA_the_unthinkable_deal
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = pp_spend_priority
+		id = decision
+		value = -15
+	}
+}
+
+prio_political_decisions = {#Make sure we can balance our politics well
+	enable = {
+		original_tag = STA
+		NOT = {
+			OR = {
+				has_completed_focus = STA_the_stahlheer
+				has_completed_focus = STA_the_pragmatik_allianz
+			}
+			OR = {
+				has_completed_focus = STA_the_merchants_of_fritzhafen
+				has_completed_focus = STA_der_nordhandel_wuergegriff
+			}
+			OR = {
+				has_completed_focus = STA_the_priests_of_st_vichtlas
+				has_completed_focus = STA_break_with_the_orthodoxy
+			}
+			OR = {
+				has_completed_focus = STA_the_aristocrats_of_stahlhof
+				has_completed_focus = STA_blood_ties_to_wertszvoerde
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = pp_spend_amount
+		id = decision
+		value = 70
+	}
+}
+
+stop_fucking_cheating = {#Stop building troops while not being allowed to
+	enable = {
+		original_tag = STA
+		NOT = {
+			OR = {
+				has_completed_focus = STA_scare_the_faustburg_soldiers_into_submission
+				has_completed_focus = STA_the_last_march_of_the_faustburgsoldaten
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = land_xp_spend_priority
+		value = -999
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = cavalry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = warband
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = garrison
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = frontline
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = archer
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = light_cavalry
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = heavy_cavalry
+		value = -1000
+	}
+}
+
+arkanisturm_civil_war = {#Let's not take Arkanisturm land if we're fighting for Resmayer
+	enable = {
+		original_tag = STA
+		country_exists = ARB
+		has_war_with = ARK
+	}
+	
+	abort = {
+		OR = {
+			NOT = {
+				country_exists = ARB
+				has_war_with = ARK
+			}
+		}
+	}
+	ai_strategy = {
+		type = befriend
+		id = ARB
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = ARB			
+		value = 200
+	}
+	ai_strategy = {
+		type = protect
+		id = ARB			
+		value = 200
+	}	
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = ARB
+		value = 200
+	}
+}
+
+neureik_besties = {
+	enable = {
+		original_tag = STA
+		country_exists = NRK
+		has_government = monarchy_absolute
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = NRK
+		value = 200
+	}
+}
+
+neureik_besties_NRK = {
+	enable = {
+		original_tag = NRK
+		country_exists = STA
+		STA = {
+			has_government = monarchy_absolute
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = STA
+		value = 200
+	}
+}

@@ -1,0 +1,18 @@
+state={
+	id=445
+	name="STATE_445"
+	provinces={
+		3632 1955 1351 4029 9644 2549 9632 4148 9622
+	}
+	
+	state_category = rural
+	manpower = 3409
+	
+	history={
+		owner = GET
+			buildings = {
+				infrastructure = 1
+			}
+		add_core_of = GET
+	}
+}

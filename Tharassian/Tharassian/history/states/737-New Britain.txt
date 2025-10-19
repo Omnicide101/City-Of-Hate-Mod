@@ -1,0 +1,24 @@
+state={
+	id=737
+	name="STATE_737"
+	provinces={
+		4934 6517 1152 6478 
+	}
+	state_category = rural
+	manpower=5689
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 20
+	}
+	history={
+		victory_points = {
+			1152 3
+		}
+		owner = IRI
+		buildings = {
+			infrastructure = 3
+			farm = 2
+		}
+		add_core_of = IRI
+	}
+}

@@ -1,0 +1,196 @@
+﻿### EVENTS FOR MAKING THE AI WORK PROPERLY
+
+add_namespace = ai
+
+
+country_event = {#Set border modifiers
+	id = ai.1
+	
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		every_controlled_state = {
+			limit = {
+				has_state_flag = border_incident_active
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = ongoing_border_conflict
+					}
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = ongoing_border_conflict
+			}
+		}
+	}
+}
+
+country_event = {#Tell player to build intel networks in the Guild
+	id = ai.2
+	title = ai.2.t
+	desc = ai.2.d
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			goto_state = 911
+		}
+	}
+	
+	option = {
+		name = ai.2.a
+	}
+}
+
+country_event = {#If low on food and not on either Agrarianism or Manorialism, switch to that econ law
+	id = ai.3
+	title = ai.3.t
+	desc = ai.3.d
+	
+	trigger = {
+		is_ai = yes
+		OR = {
+			has_fuel < 100
+			fuel_ratio < 0.1
+			has_idea = FOOD_starvation
+		}
+		NOT = {
+			OR = {
+				has_idea = agrarianism_economy
+				has_idea = manorialism_economy
+				has_idea = autarkic_isolationism
+				has_idea = communalism_economy
+				has_idea = steam_and_steel
+				has_idea = unorganized_economy
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+		modifier = {
+			factor = 0.5
+		}
+	}
+	
+	option = {
+		name = ai.3.a
+		random_list = {
+			50 = {
+				add_ideas = agrarianism_economy
+			}
+			50 = {
+				add_ideas = manorialism_economy
+			}
+		}
+		#Pay with PP if possible, take a stab hit otherwise
+		if = {
+			limit = {
+				has_political_power > 149
+			}
+			add_political_power = -150
+		}
+		else = {
+			add_stability = -0.07
+		}
+	}
+}
+
+country_event = {#Force demobilization after war - weighing ideas doesn't seem to work
+	id = ai.4
+	title = ai.4.t
+	desc = ai.4.d
+	
+	trigger = {
+		is_ai = yes
+		has_war = no
+		NOT = {
+			any_other_country = {
+				OR = {
+					has_wargoal_against = ROOT
+					is_justifying_wargoal_against = ROOT
+				}
+			}
+		}
+		OR = {
+			has_idea = extensive_conscription
+			has_idea = service_by_requirement
+			has_idea = all_adults_serve
+			has_idea = scraping_the_barrel
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+		modifier = {
+			factor = 0.5
+		}
+	}
+	
+	option = {
+		name = ai.4.a
+		#Pay with PP if possible, take a war support hit otherwise
+		if = {
+			limit = {
+				has_political_power > 149
+				has_idea = extensive_conscription
+			}
+			add_political_power = -150
+		}
+		else_if = {
+			limit = {
+				has_idea = extensive_conscription
+			}
+			add_war_support = -0.03
+		}
+		
+		if = {
+			limit = {
+				has_political_power > 299
+				has_idea = service_by_requirement
+			}
+			add_political_power = -300
+		}
+		else_if = {
+			limit = {
+				has_idea = service_by_requirement
+			}
+			add_war_support = -0.06
+		}
+		
+		if = {
+			limit = {
+				has_political_power > 449
+				has_idea = all_adults_serve
+			}
+			add_political_power = -450
+		}
+		else_if = {
+			limit = {
+				has_idea = all_adults_serve
+			}
+			add_war_support = -0.09
+		}
+		
+		if = {
+			limit = {
+				has_political_power > 599
+				has_idea = scraping_the_barrel
+			}
+			add_political_power = -600
+		}
+		else_if = {
+			limit = {
+				has_idea = scraping_the_barrel
+			}
+			add_war_support = -0.12
+		}
+		
+		add_ideas = limited_conscription
+	}
+}

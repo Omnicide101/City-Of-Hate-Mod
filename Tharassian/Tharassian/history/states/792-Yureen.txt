@@ -1,0 +1,23 @@
+state={
+	id=792
+	name="STATE_792"
+	provinces={
+		7318 2929 3636 1907 733 3315 5317 2864
+	}
+	state_category = rural
+	manpower=3723
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 4
+	}
+	history={
+		victory_points = {
+			1907 2 #snapcube moment
+		}
+		owner = TLA
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = TLA
+	}
+}

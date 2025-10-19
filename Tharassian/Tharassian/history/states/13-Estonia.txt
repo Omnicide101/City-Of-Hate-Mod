@@ -1,0 +1,26 @@
+state={
+	id=13
+	name="STATE_13"
+	provinces={
+		6443 805 6476 4237 4101 6479 1365
+	}
+	
+	history={
+		owner = GMR
+		victory_points = { 4101 8 }
+		buildings = {
+			infrastructure = 2
+			workshop = 2
+		}
+		add_core_of = GMR                     
+		add_core_of = IRT
+	}
+	
+	state_category = rural
+	manpower=18253
+	buildings_max_level_factor=1.000
+	
+	resources = {
+		mount = 4
+	}
+}

@@ -1,0 +1,143 @@
+
+	
+	#Tells AI to STOP BUILDING FUCKING DIVISIONS
+	#PLEASE WHY DOESN'T AI_STRATEGY WORK
+	#MAYBE THIS DOES
+	#WHAT THE FUCK AI YOU DON'T HAVE TO DECLARE WAR ON MY CPU
+	
+	on_weekly = {
+		effect = {
+			every_country = {
+				limit = {
+					always = no #DISABLED
+					is_ai = yes
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = ai_division_limiter
+						}
+					}
+					OR = {
+						AND = {
+							is_major = yes
+							NOT = {
+								tag = RTH #Needs to fight Ordoria
+								tag = STA #Needs a leg up against the Union
+								tag = ORD #Fighting everyone means they need more dudes
+								tag = BLD #Not enough infrastructure for a large army
+								tag = PRK #Not enough infrastructure for a large army
+								tag = NPC #Need a leg up against the GMR
+								tag = NBI #Not bound by the laws of mortals
+							}
+							num_divisions > 119
+						}
+						AND = {
+							is_major = no
+							NOT = {
+								tag = RTH
+								tag = STA
+								tag = ORD
+								tag = BLD
+								tag = PRK
+								tag = NPC
+								tag = NBI
+							}
+							num_divisions > 23
+						}
+						AND = {
+							tag = RTH
+							num_divisions > 47
+						}
+						AND = {
+							tag = STA
+							num_divisions > 71
+						}
+						AND = {
+							tag = ORD
+							num_divisions > 239
+						}
+						AND = {
+							tag = BLD
+							num_divisions > 23
+						}
+						AND = {
+							tag = PRK
+							num_divisions > 71
+						}
+						AND = {
+							tag = NPC
+							num_divisions > 129
+						}
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = ai_division_limiter
+				}
+				country_lock_all_division_template = yes
+			}
+			every_country = {
+				limit = {
+					always = no #DISABLED
+					is_ai = yes
+					has_dynamic_modifier = {
+						modifier = ai_division_limiter
+					}
+					OR = {
+						AND = {
+							is_major = yes
+							NOT = {	
+								tag = RTH #Needs to fight Ordoria
+								tag = STA #Needs a leg up against the Union
+								tag = ORD #Fighting everyone means they need more dudes
+								tag = BLD #Not enough infrastructure for a large army
+								tag = PRK #Not enough infrastructure for a large army
+								tag = NPC #Need a leg up against the GMR
+								tag = NBI #Not bound by the laws of mortals
+							}
+							num_divisions < 120
+						}
+						AND = {
+							is_major = no
+							NOT = {
+								tag = RTH
+								tag = STA
+								tag = ORD
+								tag = BLD
+								tag = PRK
+								tag = NPC
+								tag = NBI
+							}
+							num_divisions < 24
+						}
+						AND = {
+							tag = RTH
+							num_divisions < 48
+						}
+						AND = {
+							tag = STA
+							num_divisions < 72
+						}
+						AND = {
+							tag = ORD
+							num_divisions < 240
+						}
+						AND = {
+							tag = BLD
+							num_divisions < 24
+						}
+						AND = {
+							tag = PRK
+							num_divisions < 72
+						}
+						AND = {
+							tag = NPC
+							num_divisions < 130
+						}
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = ai_division_limiter
+				}
+				country_lock_all_division_template = no
+			}
+		}
+	}

@@ -1,0 +1,33 @@
+state={
+	id=431
+	name="STATE_431"
+	
+	state_category = city 
+	manpower = 101923
+	
+	provinces={
+		2112 9575 9566
+	}
+	resources = {
+		steel = 2
+		food = 8
+		lumber = 2
+		mount = 1
+	}
+	
+	history={
+		owner = ITH
+		victory_points = { 2112 23 }
+			buildings = {
+				infrastructure = 2
+				forge = 1
+				workshop = 2
+				dockyard = 2
+				farm = 1
+				2112  = {
+					naval_base = 4
+				}
+			}
+		add_core_of = ITH
+	}
+}

@@ -1,0 +1,25 @@
+state={
+	id=879
+	name="STATE_879"
+	provinces={
+		2445 3962 4313 4658 
+	}
+	buildings_max_level_factor=1.000
+	manpower=26174
+	state_category=rural
+	
+	resources = {
+		mount = 4
+		steel = 2
+		lumber = 5
+	}
+	
+	history={
+		victory_points = { 4313 6 }
+		owner = STB
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = STB
+	}
+}

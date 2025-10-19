@@ -1,0 +1,21 @@
+state={
+	id=108
+	name="STATE_108"
+	provinces={
+		7739 877 7702 4464
+	}
+	state_category = rural
+	manpower=3028
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 1
+	}
+	history={	
+		owner = ORD
+		buildings = {	
+			infrastructure = 1
+			forge = 1
+		}
+		add_core_of = ORD
+	}
+}

@@ -1,0 +1,71 @@
+# List of names and logos for intelligence agencies
+# available trigger will determine if the logo is in the list of available logos or not
+# names is a list of names. Can be a localization entry, or the name directly. A random name will be picked from them.
+
+intelligence_agency = {
+
+	picture = GFX_intelligence_agency_logo_ord
+	names = {
+		"Oath of Harquiss"
+	}
+	
+	default = {
+		OR = {
+			tag = ORD
+			tag = EOR
+		}
+	}
+	
+	available = {
+		OR = {
+			original_tag = ORD
+			original_tag = EOR
+		}
+	}
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_1
+	names = { "Heroic League" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_2
+	names = { "Quester's Guild" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_3
+	names = { "Gloryseekers" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_4
+	names = { "Dawnlight" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_5
+	names = { "Golden Lion" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}

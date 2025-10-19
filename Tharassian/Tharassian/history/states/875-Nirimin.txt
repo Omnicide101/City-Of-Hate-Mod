@@ -1,0 +1,22 @@
+state={
+	id=875
+	name="STATE_875"
+	provinces={
+		3378 4005 8432 8462 8482 8523 
+	}
+	state_category = rural
+	manpower = 1122
+	
+	history={
+		victory_points = {
+			8523 2
+		}
+		owner = TES
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+			farm = 1
+		}
+		add_core_of = TES
+	}
+}

@@ -1,0 +1,28 @@
+state={
+	id=935
+	name="STATE_935"
+	provinces={
+		720 1201 2255 7578 7625 
+	}
+	manpower=5712
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = rural
+	
+	resources = {
+        lumber = 7
+	}
+    history = {
+        owner = AGE
+        add_core_of = AGE
+        buildings = {
+            infrastructure = 3
+			dockyard = 1
+			2255 = { 
+				naval_base = 1
+			}
+		}
+		victory_points = { 2255 4 }
+		victory_points = { 7578 1 }
+	}
+}

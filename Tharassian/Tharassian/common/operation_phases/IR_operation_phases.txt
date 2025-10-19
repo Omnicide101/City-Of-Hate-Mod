@@ -1,0 +1,181 @@
+#Monster Hunting
+journey_foot = {
+	name = "Journey by Foot"
+	desc = "The Adventurer will have to slog by foot, occasionally joining a merchant caravan or peasant on their way to the market, until they reach the area where monster sightings have been reported."
+	outcome = "After an arduous trek, the Adventurer arrived in a town near to where the monster has oft been sighted."
+	icon = "GFX_phase_capture_cyphers_raid_small"
+	picture = "GFX_report_event_korean_war_march"
+}
+
+journey_horse = {
+	name = "Journey by Horse"
+	desc = "Borrowing some of the Guild's finest horses, the Adventurer will cover great distances by switching horses every so often, only occasionally stopping for food or rest."
+	outcome = "After travelling with great speed, the Adventurer arrived at the source of the monster sightings."
+	icon = "GFX_phase_bruneval_exfiltration_small"
+	picture = "GFX_report_event_yugoslavian_cavalry"
+	
+	equipment = {
+		light_cavalry_equipment = 3
+	}
+	
+	return_on_complete = yes
+}
+
+journey_teleport = {
+	name = "Journey by Teleportation"
+	desc = "As a master of the arcane, the Adventurer will simply teleport themselves to the location of the monster."
+	outcome = "With a teleportation circle and the snap of a finger, the Adventurer reached their destination."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_usa_pearl_harbor_airphoto"
+	
+	#requirements = {
+	#	any_operative_leader = {
+	#		has_trait = wizard_class
+	#	}
+	#}
+}
+
+scouting_ask_around = {
+	name = "Chasing Rumours"
+	desc = "By buying rounds, tossing coppers to urchins, and asking after anyone who has heard of the monster's attacks, the Adventurer will track down its hideout by schmoozing with the local populace."
+	outcome = "Being several new friends richer but several gold poorer, the Adventurer finally found the monster's likely whereabouts."
+	icon = "GFX_phase_bruneval_infiltration_small"
+	picture = "GFX_report_event_vienna_award_hungary"
+}
+
+scouting_track_path = {
+	name = "Tracking the Beast"
+	desc = "By drawing on their training and experience, the Adventurer will track the beast's path through its spoor, prints, and other markings of passage."
+	outcome = "Having passed through many burnt-out villages and devastated forest trails, the Adventurer located the beast's lair."
+	icon = "GFX_phase_lar_fra_coup_pre_position_units_small"
+	picture = "GFX_report_event_military_planning"
+}
+
+scouting_infiltrate_lair = {
+	name = "Infiltrating the Lair"
+	desc = "As an expert in stealth and hiding, the Adventurer knows how to find and sneak into the monster's lair and will wait for it to return from its latest rampage."
+	outcome = "After several days and false starts, the Adventurer finally found the beast's hidehout and prepared to take it by surprise."
+	icon = "GFX_phase_targeted_sabotage_collapse_tunnel_small"
+	picture = "GFX_report_event_kenya_army"
+}
+
+fighting_lead_militia = {
+	name = "Leading Militia"
+	desc = "By rallying local hunters, town guard, and uspet farmers with mean-looking dogs, the Adventurer will slay the monster with the aid of their impromptu regiment."
+	outcome = "Having the local populace on their side, the Adventurer and their band marched in and finally put an end to the beast's reign of terror."
+	icon = "GFX_phase_resistance_support_coordinate_groups_small"
+	picture = "GFX_report_event_peasant_revolt"
+}
+
+fighting_charge_in = {
+	name = "Charging In"
+	desc = "Kick down the door and bash its head in! The Adventurer shall take the classic approach to monster infestations - walking loudly, and carrying a huge stick."
+	outcome = "The Adventurer faced the monster head-on, and they fought for a full day before eventually, the Adventurer staggered out into the sunlight, carrying the monster's head in their bloodied and battered hand."
+	icon = "GFX_phase_resistance_contacts_radio_circuits_small"
+	picture = "GFX_report_event_ger_civil_war"
+}
+
+fighting_ambush = {
+	name = "Staging Ambush"
+	desc = "By predicting the monster's next move, the Adventurer hopes to prepare an ambush and kill the beast in one blow."
+	outcome = "Succesfully springing an acttack on the beast, the Adventurer inflicted a mortal wound with a single strike, retreating from the monster's dying thrashes to let it perish from blood loss."
+	icon = "GFX_phase_exfiltration_border_small"
+	picture = "GFX_report_event_generic_ruins"
+}
+
+fighting_magical_barrage = {
+	name = "Magical Barrage"
+	desc = "The Adventurer will unleash the mystical might they possess, hopefully reducing the monster to a glowing purple sludge with nary the flick of a wrist."
+	outcome = "Calling down mighty fireballs and devastating conjurations, the Adventurer put the monster down with ease, although it took a great deal of their energy."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_panay_incident"
+}
+
+#Burning Granaries
+infiltration_mole = {
+	name = "Infiltration"
+	desc = "The Adventurer will pretend to be a loyal citizen of the enemy, taking menial jobs in the neighbourhood of their target. Once established, they will map out the area and find the best places to strike."
+	outcome = "Taking a job hauling goods to and fro a warehouse close to the target, our Adventurer has found excellent opportunities to map out potential entry and exit points, as well as times when the target is generally poorly guarded or even entirely unobserved."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_panay_incident"
+}
+
+infiltration_identity_theft = {
+	name = "Identity Theft"
+	desc = "The Adventurer will identify an incoming individual with access to the target area and neutralize them, assuming their identity and position."
+	outcome = "Taking advantage of the assignment of a new functionary to the local quartermaster, the Adventurer intercepted the erstwhile assistant, disposed of them, and took their place."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_panay_incident"
+}
+
+infiltration_glamour = {
+	name = "Glamour"
+	desc = "The Adventurer will work their way into the target area through charms and enchantments, beguiling those in their way."
+	outcome = "Charming those in their way with impeccable spellcraft, the Adventurer succesfully made their way into the target zone."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_panay_incident"
+}
+
+generic_hostile_action_hired_thugs = {
+	name = "Hire Thugs"
+	desc = "The Adventurer will toss some coin to local street toughs in exchange for a series of unfortunate accidents happening to the target."
+	outcome = "Paying local muscle to do the dirty work, the Adventurer has kept their hands clean while seeing their mission through."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_panay_incident"
+}
+
+exfiltration_flee = {
+	name = "Flee"
+	desc = "The Adventurer will escape the area by any means available."
+	outcome = "Stealing a horse in the confusion caused by their actions, the Adventurer succesfully fled the area before the alarm could be fully raised."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_usa_pearl_harbor_airphoto"
+}
+
+exfiltration_sneak_out = {
+	name = "Sneak Out"
+	desc = "The Adventurer will utilize stealth to flee the area undetected."
+	outcome = "Passing quietly by panicked citizens and guards cordoning the area off alike, the Adventurer succesfully escaped without notice."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_usa_pearl_harbor_airphoto"
+}
+
+exfiltration_teleport = {
+	name = "Teleport to Safety"
+	desc = "The Adventurer will use their magical talents and blink to a safe distance from the area before making their getaway."
+	outcome = "With a quick spell, the Adventurer disappeared from the scene of the crime, appearing a short distance out of town before fleeing on horse."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_usa_pearl_harbor_airphoto"
+}
+
+burning_flaming_arrow = {
+	name = "Flaming Arrow"
+	desc = "The Adventurer will draw inspiration from folk hero tales and shoot a flaming arrow at the granary, setting it ablaze from a distance."
+	outcome = "Firing a flaming arrow from a safe distance, the Adventurer succesfully torched the granaries targeted."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_panay_incident"
+}
+
+burning_sneaky = {
+	name = "Stealthy Arson"
+	desc = "The Adventurer will use the scouting they have done to break into the granaries and set them aflame."
+	outcome = "Sneaking in through an unbarred window, the Adventurer succesfully put the granaries ablaze without being noticed."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_panay_incident"
+}
+
+poisoning_sneaky = {
+	name = "Stealthy Poisoning"
+	desc = "The Adventurer will covertly empty vials of virulent toxins into the target wells, rendering them completely unusable."
+	outcome = "Without being noticed, the Adventurer succesfully depoisted poison into the target wells. Reports of sickness in the area have already surfaced."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_panay_incident"
+}
+
+terrorism_murder = {
+	name = "High-Profile Murder"
+	desc = "The Adventurer will brutally murder a local dignitary in their own home, leaving a visceral scene as a message to the locals."
+	outcome = "Quietly, the Adventurer snuck into the office of a government official in the area, and executed the target as desired. The grisly scene has spread fear across the local populace, and riots have already started."
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+	picture = "GFX_report_event_panay_incident"
+}

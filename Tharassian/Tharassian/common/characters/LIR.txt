@@ -1,0 +1,81 @@
+characters={
+	LIR_jeanphilippe_ansoudin={
+		name="Jean-Philippe Ansoudin"
+		portraits={
+			civilian={
+				large="gfx/leaders/LIR/Portrait_LIR_Ansoudin.dds"
+			}
+		}
+		country_leader={
+			desc="politics_LIR_ansoudin_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_LIR_ansoudin_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_LIR_ansoudin_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	LIR_charlène_morel={
+		name="Charlène Morel"
+		portraits={
+			civilian={
+				large="gfx/leaders/LIR/Portrait_LIR_Morel.dds"
+			}
+		}
+		country_leader={
+			desc="politics_LIR_morel_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	LIR_nathalie_jaurès={
+		name="Nathalie Jaurès"
+		portraits={
+			civilian={
+				large="gfx/leaders/LIR/Portrait_Lirothlind_Generic_land_4.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_peasant_ideology
+			expire="900.1.1.12"
+			id=-1
+		}
+	}
+	LIR_alphonse_baraguey_dhilliers={
+		name="Alphonse Baraguey d'Hilliers"
+		portraits={
+			civilian={
+				large="gfx/leaders/LIR/Portrait_Lirothlind_Generic_navy_1.dds"
+			}
+		}
+		country_leader={
+			ideology=republic_merchant_ideology
+			expire="900.1.1.12"
+			id=-1
+		}
+	}
+	LIR_robert_cousinmountauban={
+		name="Robert Cousin-Mountauban"
+		portraits={
+			civilian={
+				large="gfx/leaders/LIR/Portrait_Lirothlind_Generic_navy_1.dds"
+			}
+		}
+		country_leader={
+			ideology=puritan_ideology
+			expire="900.1.1.12"
+			id=-1
+		}
+	}
+}

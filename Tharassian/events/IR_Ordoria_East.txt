@@ -1,0 +1,71 @@
+### EAST ORDORIAN EVENTS
+
+add_namespace = ord_east
+
+### TRADITIONALIST EVENTS
+
+country_event = { #ORD Royalist Revolt while we are led by Larennis
+	id = ord_east.1
+	title = ord_east.1.t
+	desc = ord_east.1.d
+	
+	is_triggered_only = yes
+	
+	option = {#Our hand is forced, we go to war
+		name = ord_east.1.a
+		
+		ORB = {
+			puppet = EOR
+		}
+		add_to_war = {
+			targeted_alliance = ORB
+			enemy = ORD
+		}
+
+		ORD_larennis_valinthir = {
+			set_nationality = ORB
+			if = {
+				limit = {
+					can_be_country_leader = yes
+				}
+				promote_character = monarchy_absolute_ideology
+			}
+			else = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						ideology = monarchy_absolute_ideology
+						traits = { youthful_princeling }
+					}
+				}
+			}
+		}
+		ORD_yntha = {
+			set_nationality = ORB
+		}
+		ORD_alwyen = {
+			set_nationality = ORB
+		}
+		ORD_gylar = {
+			set_nationality = ORB
+		}
+		ORD_thrysmere = {
+			set_nationality = ORB
+		}
+		ORD_alstora_holynthor = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					ideology = monarchy_absolute_ideology
+					traits = { governess_of_the_east_warlike }
+				}
+			}
+		}
+		every_character = {
+			limit = {
+				has_trait = ord_royalist
+			}
+			set_nationality = ORB
+		}
+	}
+}

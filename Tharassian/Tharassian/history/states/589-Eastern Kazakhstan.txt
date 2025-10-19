@@ -1,0 +1,20 @@
+state={
+	id=589
+	name="STATE_589"
+	provinces={
+		395 2371
+	}
+	state_category = rural
+	manpower=4982
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			2371 1
+		}
+		owner = BER
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = BER
+	}
+}

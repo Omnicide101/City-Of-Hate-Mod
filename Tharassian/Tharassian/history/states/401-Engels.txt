@@ -1,0 +1,27 @@
+state={
+	id=401
+	name="STATE_401"
+	provinces={
+		6677 6652 6650 4717 2074 6577 1540 5211
+	}
+	state_category = large_city
+	manpower=472913
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 3
+	}
+	history={
+		victory_points = { 4717 21 }
+		owner = IRI
+		buildings = {
+			infrastructure = 2
+			workshop = 2
+			forge = 2
+			dockyard = 2
+			4717 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = IRI
+	}
+}

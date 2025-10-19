@@ -1,0 +1,32 @@
+
+state={
+	id=715
+	name="STATE_715"
+
+	history={
+		victory_points = {
+			4820 11 
+		}
+		owner = RMT
+		buildings = {
+			infrastructure = 2
+			forge = 2
+			3043 = {
+				bunker = 3
+			}
+			6255 = {
+				bunker = 2
+			}
+		}
+		add_core_of = RMT
+
+	}
+
+	provinces={
+		3043 4820 6255 
+	}
+	manpower=12468
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

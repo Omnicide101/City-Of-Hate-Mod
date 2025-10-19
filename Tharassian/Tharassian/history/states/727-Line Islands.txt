@@ -1,0 +1,26 @@
+
+state={
+	id=727
+	name="STATE_727"
+	resources={
+		steel=5.000
+	}
+
+	history={
+		owner = RMT
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = RMT
+
+	}
+
+	provinces={
+		29 2984 
+	}
+	manpower=8672
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

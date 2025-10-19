@@ -1,0 +1,234 @@
+ideas = {
+	
+	country = {
+
+		DIA_4_occupied_cities = {
+			allowed = {
+				original_tag = DIA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = IRI_Sacked_North
+		
+			removal_cost = -1
+		
+			modifier = {
+				offensive_war_stability_factor = 0.4
+				stability_factor = -0.4
+				war_support_factor = 0.2
+				attack_bonus_against_cores = 0.2
+			}
+		}
+		
+		DIA_the_ithian_problem = {
+			
+			allowed = {
+				original_tag = DIA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			
+			picture = ITH_ithian_question
+		
+			modifier = {
+				stability_factor = -0.1
+			}
+		}
+		
+		# manpower laws will already be in _manpower
+		DIA_legionary_remnants ={
+
+			allowed = {
+				original_tag = DIA
+			}
+			
+			picture = IRI_Military_Parades
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+				hidden_modifier = {
+					ai_focus_aggressive_factor = 0.7
+					ai_badass_factor = 0.3
+				}
+			}
+		}
+		
+		DIA_new_legionary_tactics ={
+
+			allowed = {
+				original_tag = DIA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			
+			modifier = {	
+				army_org_Factor = 0.05
+				dig_in_speed_factor = 0.2
+				max_dig_in = 10
+			}
+			research_bonus = {
+				land_doctrine = 0.10
+			}
+		}
+		
+		DIA_burning_legion ={
+			
+			allowed = {
+				original_tag = DIA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			
+			modifier = {
+				recruitable_population = 0.025
+				recruitable_population_factor = 0.2
+				army_org_Factor = 0.2
+				army_org = 10
+				army_speed_factor = 0.1
+				max_dig_in = 5
+			}
+		}
+			
+		DIA_burning_legion_2 ={
+		
+			allowed = {
+				original_tag = DIA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			
+			modifier = {
+				recruitable_population = 0.05
+				recruitable_population_factor = 0.4
+				army_org = 12
+				army_org_Factor = 0.3
+				dig_in_speed_factor = 0.25
+				max_dig_in = 20
+				army_core_defence_factor = 0.2
+			}
+			research_bonus = {
+				land_doctrine = 0.15
+			}	
+		}
+		
+		DIA_4th_legion ={
+		
+			allowed = {
+				original_tag = DIA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			
+			modifier = {
+				recruitable_population = 0.01
+				army_core_attack_factor = -0.2
+				army_org = 6
+				army_org_Factor = 0.1
+				army_morale = 6
+				army_morale_factor = 0.1
+				max_dig_in = 5
+				army_speed_factor = 0.1
+				army_fuel_consumption_factor = -0.05
+				attrition = -0.05
+				breakthrough_factor = 0.1			
+			}
+			research_bonus = {
+				land_doctrine = 0.10
+			}
+		}
+		
+		DIA_4th_legion_2 ={
+	
+			allowed = {
+				original_tag = DIA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			
+			modifier = {
+				recruitable_population = 0.015
+				recruitable_population_factor = -0.4
+				army_core_attack_factor = 0.2
+				army_org = 10
+				army_org_Factor = 0.2
+				army_morale = 10
+				army_morale_factor = 0.15
+				dig_in_speed_factor = 0.2
+				max_dig_in = 10
+				army_speed_factor = 0.15
+				army_fuel_consumption_factor = -0.1
+				attrition = -0.1
+				breakthrough_factor = 0.2
+			}
+			research_bonus = {
+				land_doctrine = 0.25
+			}
+		}
+	}
+
+	mercenary_company = {
+
+		DIA_veteran_tutors = {
+
+			picture = prk_tribal_nation
+
+			allowed = {
+				tag = DIA
+			}
+
+			available = {
+				OR = {
+					has_government = theocrat
+					has_government = puritan
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_political_power > 174
+					num_of_civilian_factories > 4
+					has_idea = IR_no_mercenaries
+					add = 2
+				}
+			}
+
+			cost = 100
+
+			modifier = {
+				consumer_goods_factor = 0.03
+				weekly_manpower = 15
+				training_time_factor = -0.1
+				org_loss_when_moving = -0.05
+			}
+
+		}
+
+	}
+}

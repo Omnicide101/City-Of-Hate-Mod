@@ -1,0 +1,24 @@
+state = {
+	id = 1205
+	name = "STATE_1205"
+	provinces = {
+		31 952 2148 5015 5701 5707 5709 
+	}
+	manpower = 80213
+	state_category = large_town
+	history = {
+		victory_points = {
+			5701 23
+		}
+		buildings = {
+			infrastructure = 3
+			farm = 2
+			workshop = 2
+			forge = 1
+		}
+		owner = XXX
+		add_core_of = XXX
+	}
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

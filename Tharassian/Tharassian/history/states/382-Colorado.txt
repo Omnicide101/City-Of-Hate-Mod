@@ -1,0 +1,31 @@
+
+state={
+	id=382
+	name="STATE_382"
+	resources={
+		food=8.000
+		steel=15.000
+	}
+
+	history={
+		victory_points = {
+			6403 21 
+		}
+		owner = RMT
+		buildings = {
+			infrastructure = 2
+			workshop = 2
+
+		}
+		add_core_of = RMT
+
+	}
+
+	provinces={
+		4526 6403 
+	}
+	manpower=39283
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

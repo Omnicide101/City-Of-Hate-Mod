@@ -1,0 +1,14 @@
+state = {
+	id = 430
+	name = "STATE_430"
+	provinces = {
+		3550 9618 9617 4277 2270 9579 5538
+	}
+	state_category = rural
+	manpower = 1
+	buildings_max_level_factor = 1.000
+	history = {
+		owner = XXX
+		add_core_of = XXX
+	}
+}

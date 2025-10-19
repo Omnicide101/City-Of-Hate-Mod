@@ -1,0 +1,224 @@
+﻿capital = 233
+
+set_major = yes
+
+set_oob = "UNG_1936"
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+
+
+set_research_slots = 4
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
+}
+
+set_variable = { #What's this used for?
+	var = UNG_num_allies
+	value = 11
+}
+
+set_variable = {
+	var = UNG_num_loyal_freiprinzen
+	value = 9
+}
+
+
+1939.1.1 = {
+}
+
+set_politics = {
+	ruling_party = monarchy_constitutional
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 8
+
+	monarchy_constitutional = 82
+
+	republic_peasant = 2
+
+	republic_aristocrat = 5
+
+	republic_merchant = 1
+
+	theocrat = 1
+
+	puritan = 1
+}
+
+recruit_character = UNG_adalina_vlussinger
+recruit_character = UNG_thirza_lichtenfels
+recruit_character = UNG_severin_tauber
+recruit_character = UNG_achimer_kümmel
+recruit_character = UNG_aristokratischer_rat
+recruit_character = UNG_ferdinand_holzer
+recruit_character = UNG_heinrich_brengst
+recruit_character = UNG_stella_galde
+recruit_character = UNG_alko_blau
+recruit_character = UNG_cecilia_freisler
+
+add_ideas = {
+	UNG_trade_realm
+	human_country
+	septism_religion
+	heinrich_brengst
+	stella_galde
+	alko_blau
+}
+
+add_equipment_to_stockpile = {
+    type = convoy
+    amount = 50
+}
+
+add_opinion_modifier = {
+	target = STA
+	modifier = bitter_rivals
+}
+
+add_relation_modifier = {
+	target = STA
+	modifier = bitter_rivals_opinion_modifier
+}
+
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = STA
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = HLZ
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = NOC
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = SPW
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = SVT
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = TEI
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = SNF
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = WIS
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = WSZ
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = FTH
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = ARK
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = NRK
+		autonomous_state = autonomy_IR_freiprinztum
+		freedom_level = 0.4
+	}
+	else = {
+		puppet = ARK
+		puppet = FTH
+		puppet = NOC
+		puppet = STA
+		puppet = SPW
+		puppet = SNF
+		puppet = NRK
+		puppet = WSZ
+		puppet = WIS
+		puppet = TEI
+		puppet = SVT
+		puppet = HLZ
+		}
+}

@@ -1,0 +1,26 @@
+
+state={
+	id=148
+	name="STATE_148"
+	resources={
+		steel=1.000
+	}
+
+	history={
+		owner = SKA
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = SKA
+
+	}
+
+	provinces={
+		329 3444 7137 
+	}
+	manpower=1924
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

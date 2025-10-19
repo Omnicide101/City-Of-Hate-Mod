@@ -1,0 +1,29 @@
+state={
+	id=227
+	name="STATE_227"
+	provinces={
+		9285 1596 5312 9253
+	}
+	state_category = city
+	manpower=934215
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 5
+		steel = 3
+	}
+	history={
+		victory_points = { 9285 54 }
+		owner = SVT
+		buildings = {
+			infrastructure = 2	
+			forge = 2
+			workshop = 3
+			dockyard = 1
+			9285 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = SVT
+
+	}
+}

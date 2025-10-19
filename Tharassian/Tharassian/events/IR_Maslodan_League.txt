@@ -1,0 +1,211 @@
+﻿### ANTYHRISS EVENTS
+
+add_namespace = masleague
+
+country_event = {#Oh fuck oh shit light the beacons
+	id = masleague.1
+	title = masleague.1.t
+	desc = masleague.1.d
+	is_triggered_only = yes
+	
+	option = {#To arms!
+		name = masleague.1.a
+		every_other_country = {
+			limit = {
+				OR = {
+					has_idea = MASLEAGUE_member_fervent
+					has_idea = MASLEAGUE_member_committed
+					has_idea = MASLEAGUE_member_wavering
+				}
+			}
+			country_event = {
+				id = masleague.2
+				days = 7
+			}
+		}
+		
+		create_faction = maslodan_league_faction
+	}
+	
+	option = {#We stand strong alone
+		name = masleague.1.b
+		ai_chance = {
+			factor = 0
+		}
+		add_war_support = 0.04
+	}
+}
+
+country_event = {#War calls!
+	id = masleague.2
+	title = masleague.2.t
+	desc = masleague.2.d
+	is_triggered_only = yes
+	
+	option = {#To arms!
+		name = masleague.2.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				has_idea = MASLEAGUE_member_wavering
+				factor = 0.33
+			}
+		}
+		if = {
+			limit = {
+				has_idea = MASLEAGUE_member_wavering
+			}
+			add_war_support = -0.05
+			random_list = {
+				60 = {
+					swap_ideas = {
+						remove_idea = MASLEAGUE_member_wavering
+						add_idea = MASLEAGUE_member_committed
+					}
+				}
+				20 = {
+					swap_ideas = {
+						remove_idea = MASLEAGUE_member_wavering
+						add_idea = MASLEAGUE_member_fervent
+					}
+				}
+				20 = {
+					
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_idea = MASLEAGUE_member_committed
+			}
+			random = {
+				chance = 40
+				swap_ideas = {
+					remove_idea = MASLEAGUE_member_committed
+					add_idea = MASLEAGUE_member_fervent
+				}
+			}
+		}
+		add_to_war = {
+			targeted_alliance = FROM
+			enemy = TRS
+			hostility_reason = asked_to_join
+		}
+		#Flag to stop wars between league members that both join
+		if = {
+			limit = {
+				any_other_country = {
+					OR = {
+						has_idea = MASLEAGUE_member_fervent
+						has_idea = MASLEAGUE_member_committed
+						has_idea = MASLEAGUE_member_wavering
+					}
+					has_war_with = ROOT
+				}
+			}
+			custom_effect_tooltip = MASLEAGUE_war_stop_warning_tt
+			set_country_flag = MASLEAGUE_willing_to_stop_inter_league_war_flag
+		}
+		
+		FROM = {
+			add_to_faction = ROOT
+		}
+	}
+	
+	option = {#Not feelin it
+		name = masleague.2.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				has_idea = MASLEAGUE_member_fervent
+				factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_idea = MASLEAGUE_member_fervent
+			}
+			add_stability = -0.17
+			remove_ideas = MASLEAGUE_member_fervent
+		}
+		if = {
+			limit = {
+				has_idea = MASLEAGUE_member_committed
+			}
+			add_stability = -0.05
+			remove_ideas = MASLEAGUE_member_committed
+		}
+		if = {
+			limit = {
+				has_idea = MASLEAGUE_member_wavering
+			}
+			remove_ideas = MASLEAGUE_member_wavering
+		}
+	}
+}
+
+country_event = {#Hey let's not fight each other for like five minutes
+	id = masleague.3
+	hidden = yes
+
+	trigger = {
+		has_country_flag = MASLEAGUE_willing_to_stop_inter_league_war_flag
+		any_other_country = {
+			OR = {
+				has_idea = MASLEAGUE_member_fervent
+				has_idea = MASLEAGUE_member_committed
+				has_idea = MASLEAGUE_member_wavering
+			}
+			has_war_with = ROOT
+			has_country_flag = MASLEAGUE_willing_to_stop_inter_league_war_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {#To arms!.. against the other guys!
+		every_other_country = {
+			limit = {
+				OR = {
+					has_idea = MASLEAGUE_member_fervent
+					has_idea = MASLEAGUE_member_committed
+					has_idea = MASLEAGUE_member_wavering
+				}
+				has_war_with = ROOT
+				has_country_flag = MASLEAGUE_willing_to_stop_inter_league_war_flag
+			}
+			white_peace = {
+				tag = ROOT
+				message = MASLEAGUE_unity_against_tristal_tt
+			}
+		}
+	}
+}
+
+country_event = { #War's over, disband the faction
+	id = masleague.4
+	title = masleague.4.t
+	desc = masleague.4.d
+	trigger = {
+		is_faction_leader = yes
+		OR = {
+			has_idea = MASLEAGUE_member_fervent
+			has_idea = MASLEAGUE_member_committed
+			has_idea = MASLEAGUE_member_wavering
+		}
+		NOT = {
+			has_war_with = TRS
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {#Pog (unless we lost ig)
+		name = masleague.4.a
+		dismantle_faction = yes
+	}
+}

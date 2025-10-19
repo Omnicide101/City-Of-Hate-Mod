@@ -1,0 +1,124 @@
+characters={
+	SKA_ystvigg_hellirfast={
+		name="Ystvigg Hellirfast"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Hellirfast.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SKA_hellirfast_desc"
+			ideology=monarchy_absolute_ideology
+			traits={
+				first_oberjarl_elect
+				last_victim_miners_blight
+			}
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_SKA_hellirfast_desc"
+			ideology=monarchy_constitutional_ideology
+			traits={
+				first_oberjarl_elect
+				last_victim_miners_blight
+			}
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	SKA_reev_hellirfast={
+		name = "Reev Hellirfast"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Hellirfast_ii.dds"
+			}
+		}
+	}
+	SKA_petar_grimvald={
+		name = "Petar Grimvald"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Grimvald.dds"
+			}
+		}
+	}
+	SKA_kytos_palmkevist={
+		name = "Kytos Palmekvist"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Palmkevist.dds"
+			}
+		}
+	}
+	SKA_yngvild_rettrdaga={
+		name="Yngvild Rettrdaga"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Rettrdaga.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SKA_rettrdaga_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	SKA_halstigg_urkbani={
+		name="Halstigg Urkbani"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Urkbani.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SKA_urkbani_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	SKA_banskr_salmogr={
+		name="Banskr Salmogr"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Salmogr.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SKA_salmogr_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	SKA_brynhild_lasengra={
+		name="Brynhild Lasengra"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Lasengra.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SKA_lasengra_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	SKA_freydis_vantangr={
+		name="Freydis Vantangr"
+		portraits={
+			civilian={
+				large="gfx/leaders/SKA/Portrait_SKA_Vantangr.dds"
+			}
+		}
+		country_leader={
+			desc="politics_SKA_vantangr_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

@@ -1,0 +1,161 @@
+﻿division_template = {
+	name = "Town Watch"
+	
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "King's Guard"
+	
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		men_at_arms = { x = 0 y = 1 }
+       	halberdier = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		men_at_arms = { x = 1 y = 1 }
+		swordsmen = { x = 1 y = 2 }
+		men_at_arms = { x = 2 y = 0 }
+		men_at_arms = { x = 2 y = 1 }
+		men_at_arms = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Free Plainsmen"
+	
+	regiments = {
+		archer_shortbow = { x = 0 y = 0 }
+		archer_shortbow = { x = 0 y = 1 }
+		archer_shortbow = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Dawn Riders"
+	
+	regiments = {
+		heavy_cavalry = { x = 0 y = 0 }
+        heavy_cavalry = { x = 0 y = 1 }
+        heavy_cavalry = { x = 1 y = 0 }
+		heavy_cavalry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Sunset Riders"
+	
+	regiments = {
+		light_cavalry = { x = 0 y = 0 }
+        light_cavalry = { x = 0 y = 1 }
+        light_cavalry = { x = 1 y = 0 }
+		light_cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    scouts_cavalry = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "Vernass Kingsmen"
+		location = 5876
+		division_template = "King's Guard"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Vernass Plainsmen"
+		location = 3439
+		division_template = "Free Plainsmen"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Vernass Dawnriders"
+		location = 5878
+		division_template = "Dawn Riders"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Westrenne Kingsmen"
+		location = 5417
+		division_template = "King's Guard"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Westrenne Plainsmen"
+		location = 3108
+		division_template = "Free Plainsmen"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Westrenne Sunset Riders"
+		location = 6262
+		division_template = "Sunset Riders"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Renthin Kingsmen"
+		location = 5052
+		division_template = "King's Guard"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Renthin Plainsmen"
+		location = 659
+		division_template = "Free Plainsmen"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Raelon Kingsmen"
+		location = 636
+		division_template = "King's Guard"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Raelon Plainsmen"
+		location = 3222
+		division_template = "Free Plainsmen"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Comrag Dawnriders"
+		location = 6107
+		division_template = "Dawn Riders"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Selessine Sunset Riders"
+		location = 3638
+		division_template = "Sunset Riders"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Polmaum Dawnriders"
+		location = 3538
+		division_template = "Dawn Riders"
+		start_experience_factor = 0.13
+
+	}
+	division = {
+		name = "Ithys Plainsmen"
+		location = 6502
+		division_template = "Free Plainsmen"
+		start_experience_factor = 0.13
+
+	}
+}

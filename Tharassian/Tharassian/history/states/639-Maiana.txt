@@ -1,0 +1,23 @@
+state={
+	id=639
+	name="STATE_639"
+	provinces={
+		2903 9610 9603 5501 3786 4365 2043 4700
+	}
+	state_category = pastoral
+	manpower=672
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			2043 2
+		}
+		owner = PRK
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = PRK
+	}
+	resources = {
+		steel = 4
+	}
+}

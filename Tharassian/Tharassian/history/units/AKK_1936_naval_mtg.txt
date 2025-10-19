@@ -1,0 +1,15 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Akkanid Navy"
+		naval_base = 5581 # Balda'Amir-Al-Bahr
+		task_force = {
+			name = "First Akkanid Fleet"
+			location = 5581 # Balda'Amir-Al-Bahr
+			ship = { name = "Ghawwas" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = AKK version_name = "Alliance-Class" } } }
+			ship = { name = "Târnûsh" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = AKK version_name = "Alliance-Class" } } }
+			ship = { name = "Haliaish" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = AKK version_name = "Alliance-Class" } } }
+		}
+	}
+}

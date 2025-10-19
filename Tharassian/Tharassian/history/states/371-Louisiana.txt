@@ -1,0 +1,21 @@
+
+state={
+	id=371
+	name="STATE_371"
+	provinces={
+		7829 4308 7783 7761 1391 4974 9717
+	}
+	state_category = city
+	manpower=512318
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = { 7829 34 }
+		owner = TLA
+		buildings = {
+			infrastructure = 2
+			forge = 2
+			workshop = 3
+		}
+		add_core_of = TLA
+	}
+}

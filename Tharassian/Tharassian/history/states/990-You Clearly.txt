@@ -1,0 +1,24 @@
+
+state={
+	id=990
+	name="STATE_990"
+	provinces={
+		550 1950 2656 8897 
+	}
+	state_category = pastoral
+	manpower=857
+	buildings_max_level_factor=1.000
+	history={
+		owner = ATH
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = ATH
+		add_claim_by = TRS
+
+	}
+	resources = {
+		steel = 2
+	}
+}

@@ -1,0 +1,22 @@
+state={
+	id=1286
+	name="STATE_1286"
+	provinces={
+		2336 5214 9024 9047 
+	}
+	
+	history={
+		owner = SPW
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = SPW
+
+	}
+	
+	manpower=302
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

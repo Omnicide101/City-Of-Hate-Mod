@@ -1,0 +1,27 @@
+state={
+	id=333
+	name="STATE_333"
+	provinces={
+		9068 1237 9096 9074 4093 2202 9138 9159 4715
+	}
+	state_category = pastoral
+	resources = {
+		mount = 14
+	}
+	manpower=1219
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 3
+		mount = 2
+	}
+	history={
+		victory_points = {
+			9159 1
+		}
+		owner = WIS
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = WIS
+		}
+}

@@ -1,0 +1,23 @@
+state={
+	id=123
+	name="STATE_123"
+	provinces={
+		7365 5258 7339 1397 5006 5592 7404 2894
+	}
+	state_category = rural
+	manpower=2373
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 3
+		food = 2
+	}
+		history={	
+		owner = RTH
+		buildings = {	
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = RTH
+
+		}
+}

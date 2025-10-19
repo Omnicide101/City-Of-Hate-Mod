@@ -1,0 +1,23 @@
+state={
+	id=716
+	name="STATE_716"
+	provinces={
+		4799 1710 6136
+	}
+	state_category = rural
+	manpower=7099
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 3
+	}
+	history={
+		victory_points = {
+			1710 1
+		}
+		owner = RMT
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = RMT
+	}
+}

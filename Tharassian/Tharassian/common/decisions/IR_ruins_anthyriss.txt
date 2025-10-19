@@ -1,0 +1,115 @@
+ruins_anthyriss = {
+	
+	seize_ruins = {
+		
+		icon = GFX_decision_generic_intelligence_operation
+		
+		allowed = {
+			OR = {
+				tag = ORD
+				tag = RTH
+				tag = EOR
+			}
+		}
+
+		
+		available = {
+			NOT = {
+				controls_state = 833
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = rth_eor_troops_in_wasrythaur_tt
+					OR = {
+						tag = RTH
+						tag = EOR
+					}
+					controls_state = 144
+					divisions_in_state = {
+						size > 0
+						state = 144
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = ord_troops_in_bhenne_tt		
+					tag = ORD
+					controls_state = 108
+					divisions_in_state = {
+						size > 0
+						state = 108
+					}
+				}
+			}
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 200
+			modifier = { #Let's sort out our current war first
+				has_war = yes
+				factor = 0
+			}
+			modifier = { #Let's not start a conflict without Elves to fill out the ranks
+				has_manpower < 10000
+				factor = 0
+			}
+		}
+		
+		visible = {
+			NOT = {
+				controls_state = 833
+			}
+			OR = {
+				tag = RTH
+				AND = {
+					tag = ORD
+					NOT = {
+						EOR = {
+							controls_state = 833
+						}
+					}
+				}
+				AND = {
+					tag = EOR
+					NOT = {
+						ORD = {
+							controls_state = 833
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 75
+		
+		complete_effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = EOR
+						tag = RTH
+					}
+				}
+				start_border_war = {
+					change_state_after_war = no
+					attacker = {
+						state = 144
+						num_provinces = 1
+						on_win = anthyriss.1
+						on_lose = anthyriss.2
+						on_cancel = anthyriss.3
+					}
+					
+					defender = {
+						state = 833
+						num_provinces = 1
+						on_win = anthyriss.4
+						on_lose = anthyriss.5
+						on_cancel = anthyriss.3
+					}
+				}
+			}
+		}
+	}
+}

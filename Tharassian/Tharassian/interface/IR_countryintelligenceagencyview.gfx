@@ -1,0 +1,42 @@
+spriteTypes = {
+	#------------------- AGENCY LOGOS -------------------------------
+	spriteType = {
+		name = "GFX_intelligence_agency_logo_ord"
+		texturefile = "gfx/interface/operatives/agencies/agency_logo_ord.dds"
+		noOfFrames = 2
+	}
+	
+	#generic
+	spriteType = {
+		name = "GFX_intelligence_agency_logo_generic_1"
+		texturefile = "gfx/interface/operatives/agencies/agency_logo_generic_1.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_intelligence_agency_logo_generic_2"
+		texturefile = "gfx/interface/operatives/agencies/agency_logo_generic_2.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_intelligence_agency_logo_generic_3"
+		texturefile = "gfx/interface/operatives/agencies/agency_logo_generic_3.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_intelligence_agency_logo_generic_4"
+		texturefile = "gfx/interface/operatives/agencies/agency_logo_generic_4.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_intelligence_agency_logo_generic_5"
+		texturefile = "gfx/interface/operatives/agencies/agency_logo_generic_5.dds"
+		noOfFrames = 2
+	}
+	
+	#------------------- DEPARTMENT UPGRADE ICONS -------------------------------
+	
+	spriteType = {
+		name = "GFX_agency_fireforge_weaponry"
+		texturefile = "gfx/interface/operatives/icons/agency_fireforge_weaponry.dds"
+	}
+}

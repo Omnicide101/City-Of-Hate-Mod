@@ -1,0 +1,1886 @@
+hire_mercenaries = {
+	
+	MERCS_perkav_raiders = {
+		
+		icon = GFX_decision_hire_perkav_raiders
+		
+		allowed = {
+			always = yes
+		}
+		
+		available = {
+			num_of_civilian_factories > 9
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							tag = STA
+							AND = {
+								tag = IRI
+								has_completed_focus = IRI_land_of_mercenaries
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_a_group
+					check_variable = { num_mercs_hiring < 1 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = STA
+						AND = {
+							tag = IRI
+							has_completed_focus = IRI_land_of_mercenaries
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_2_groups
+					check_variable = { num_mercs_hiring < 2 }
+				}
+			}
+			NOT = {
+				has_country_flag = MERCS_hiring_perkav_raiders_flag
+			}
+			NOT = {
+				any_country = { 
+					has_idea = MERCS_hiring_perkav_raiders_idea
+				}
+			}
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		
+		visible = {
+			OR = {
+				has_tech = perkav_raiders
+				has_country_flag = MERCS_perkav_raiders_unlocked
+			}
+			NOT = { has_war_with = PRK }
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Let's not if we are very low on factories
+				num_of_civilian_factories < 13
+				factor = 0.25
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = MERCS_hire_perkav_raiders_effects_tt
+			add_to_variable = { num_mercs_hiring = 1 }
+			hidden_effect = {
+				division_template = {
+					name = "Perkav Raider Mercenaries"
+					is_locked = yes
+					
+					regiments = {
+						perkav_raiders = { x = 0 y = 0 }
+						perkav_raiders = { x = 0 y = 1 }
+						perkav_raiders = { x = 0 y = 2 }
+				        perkav_raiders = { x = 1 y = 0 }
+						perkav_raiders = { x = 1 y = 1 }
+						perkav_raiders = { x = 1 y = 2 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+					    division = "name = \"Botev's Warband\" division_template = \"Perkav Raider Mercenaries\" start_experience_factor = 1"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Warriors of Stehlík\" division_template = \"Perkav Raider Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Vladislavovna's Warriors\" division_template = \"Perkav Raider Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Szczesny's Raiders\" division_template = \"Perkav Raider Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Raiders of Macháčková\" division_template = \"Perkav Raider Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_idea = IR_perkav_raider_company
+					}
+					capital_scope = {
+						create_unit = {
+					    division = "name = \"Warband of Vlencin\" division_template = \"Perkav Raider Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+						}
+					}
+				}
+				
+				add_timed_idea = {
+					idea = MERCS_hiring_perkav_raiders_idea
+					days = 183
+				}
+				country_event = { id = merc.1 days = 184 }
+				set_country_flag = MERCS_hiring_perkav_raiders_flag	
+			}
+		}
+	}
+	
+	MERCS_drakeskins = {
+		
+		icon = GFX_decision_hire_drakeskins
+		
+		allowed = {
+			OR = {
+				tag = ORD
+				tag = ORB
+				tag = EOR
+			}
+		}
+		
+		available = {
+			has_idea = ORD_drakeskins_company
+			OR = {
+				num_of_civilian_factories > 9
+				has_completed_focus = ORD_deploy_drakeskins
+			}
+			NOT = {
+				has_country_flag = MERCS_hiring_drakeskins_flag
+			}
+			NOT = {
+				any_country = { 
+					has_idea = MERCS_hiring_drakeskins_idea
+				}
+			}
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 0
+
+		days_re_enable = 540
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				NOT = {
+					has_completed_focus = ORD_deploy_drakeskins
+				}
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Let's not if we are very low on factories
+				NOT = {
+					has_completed_focus = ORD_deploy_drakeskins
+				}
+				num_of_civilian_factories < 13
+				factor = 0.25
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			add_to_variable = { num_mercs_hiring = 1 }
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = ORD_deploy_drakeskins
+					}
+				}
+				custom_effect_tooltip = MERCS_hire_drakeskins_effects_tt
+			}
+			if = {
+				limit = {
+					has_completed_focus = ORD_deploy_drakeskins
+				}
+				custom_effect_tooltip = MERCS_hire_drakeskins_effects_free_tt
+			}
+			if = {
+				limit = {
+					NOT = {	
+						tag = ORD
+					}
+					ORD = {
+						has_completed_focus = ORD_deploy_drakeskins
+					}
+				}
+				custom_effect_tooltip = MERCS_alsyon_commissioned_tt
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						has_character = ORD_captain_alsyon
+						has_country_flag = MERCS_hiring_drakeskins_flag
+					}
+				}
+				custom_effect_tooltip = MERCS_alsyon_hired_tt
+			}
+			if = {
+				limit = {
+					NOT = {
+						ORD = {
+							has_completed_focus = ORD_deploy_drakeskins
+						}
+					}
+					any_other_country = {
+						has_character = ORD_captain_alsyon
+						NOT = {
+							has_country_flag = MERCS_hiring_drakeskins_flag
+						}
+					}
+				}
+				every_possible_country = {
+					limit = {
+						has_character = ORD_captain_alsyon
+					}
+					random_character = {
+						limit = {
+							is_character = ORD_captain_alsyon
+						}
+						set_nationality = ROOT
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = ORD_drakeskin_guarded_lands
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			hidden_effect = {
+				division_template = {
+					name = "Drakeskin Mercenaries"
+					is_locked = yes
+					
+					regiments = {
+						halberdier = { x = 0 y = 0 }
+						halberdier = { x = 0 y = 1 }
+						halberdier = { x = 0 y = 2 }
+				        halberdier = { x = 1 y = 0 }
+						halberdier = { x = 1 y = 1 }
+						halberdier = { x = 1 y = 2 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+					    division = "name = \"1st Drakeskin Company\" division_template = \"Drakeskin Mercenaries\" start_experience_factor = 1"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"2nd Drakeskin Company\" division_template = \"Drakeskin Mercenaries\" start_experience_factor = 1"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"3rd Drakeskin Company\" division_template = \"Drakeskin Mercenaries\" start_experience_factor = 1"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"4th Drakeskin Company\" division_template = \"Drakeskin Mercenaries\" start_experience_factor = 1"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"5th Drakeskin Company\" division_template = \"Drakeskin Mercenaries\" start_experience_factor = 1"
+					    owner = ROOT
+					}
+				}
+				
+				if = {
+					limit = {
+						NOT = {
+							has_completed_focus = ORD_deploy_drakeskins
+						}
+					}
+					add_timed_idea = {
+						idea = MERCS_hiring_drakeskins_idea
+						days = 183
+					}
+				}
+				country_event = { id = merc.3 days = 184 }
+				set_country_flag = MERCS_hiring_drakeskins_flag	
+			}
+		}
+	}
+
+	MERCS_irinthian_legion = {
+		
+		icon = GFX_decision_hol_draw_up_staff_plans
+		
+		allowed = {
+			OR = {
+				tag = GMR
+				tag = RMT
+				tag = LIR
+				tag = MER
+				tag = IRI
+				tag = KUR
+				tag = SKA
+				tag = RTH
+				tag = BER
+				is_og_freiprinz = yes
+				tag = PRK
+			}
+		}
+		
+		available = {
+			num_of_civilian_factories > 9
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							tag = STA
+							AND = {
+								tag = IRI
+								has_completed_focus = IRI_land_of_mercenaries
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_a_group
+					check_variable = { num_mercs_hiring < 1 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = STA
+						AND = {
+							tag = IRI
+							has_completed_focus = IRI_land_of_mercenaries
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_2_groups
+					check_variable = { num_mercs_hiring < 2 }
+				}
+			}
+			NOT = {
+				any_country = { 
+					has_idea = MERCS_hiring_irinthian_legion_idea
+				}
+			}
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		
+		visible = {
+			NOT = {
+				OR = {
+					has_war_with = IRI
+					has_country_flag = MERCS_hiring_irinthian_legion_flag
+				}
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 0
+
+		days_re_enable = 540
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Let's not if we are very low on factories
+				num_of_civilian_factories < 13
+				factor = 0.25
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = MERCS_hire_irinthian_legion_effects_tt
+			add_to_variable = { num_mercs_hiring = 1 }
+			hidden_effect = {
+				division_template = {
+					name = "Irinthian Legion Mercenaries"
+					is_locked = yes
+					
+					regiments = {
+						halberdier = { x = 0 y = 0 }
+						halberdier = { x = 0 y = 1 }
+						halberdier = { x = 0 y = 2 }
+						halberdier = { x = 1 y = 0 }
+						arbalists = { x = 1 y = 1 }
+						halberdier = { x = 1 y = 2 }
+						arbalists = { x = 2 y = 0 }
+						arbalists = { x = 2 y = 1 }
+						arbalists = { x = 2 y = 2 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+					    division = "name = \"Sasnai Foreign Legion\" division_template = \"Irinthian Legion Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Ryspyrus Foreign Legion\" division_template = \"Irinthian Legion Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Kallikos Foreign Legion\" division_template = \"Irinthian Legion Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Kaipnos Foreign Legion\" division_template = \"Irinthian Legion Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Jorinos Foreign Legion\" division_template = \"Irinthian Legion Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_idea = IR_irinthian_mercenary_company
+					}
+					capital_scope = {
+						create_unit = {
+					    division = "name = \"Tykinthos Foreign Legion\" division_template = \"Irinthian Legion Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+						}
+					}
+				}
+				
+				add_timed_idea = {
+					idea = MERCS_hiring_irinthian_legion_idea
+					days = 183
+				}
+				country_event = { id = merc.4 days = 184 }
+				set_country_flag = MERCS_hiring_irinthian_legion_flag	
+			}
+		}
+	}
+
+	MERCS_tlarthingian_paladins = {
+		
+		icon = GFX_GFX_generic_prepare_civil_war
+		
+		allowed = {
+			always = yes
+		}
+		
+		available = {
+			num_of_civilian_factories > 9
+			if = {
+				limit = {
+					NOT = { tag = STA }
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_a_group
+					check_variable = { num_mercs_hiring < 1 }
+				}
+			}
+			if = {
+				limit = {
+					tag = STA
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_2_groups
+					check_variable = { num_mercs_hiring < 2 }
+				}
+			}
+			has_idea = IR_tlarthingian_paladin_company
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			NOT = {
+				any_country = { 
+					has_idea = MERCS_hiring_tlarthingian_paladin_idea
+				}
+			}
+		}
+		
+		visible = {
+			OR = {
+				tag = TLA
+				AND = {
+					has_country_flag = TLA_allowed_pilgrims
+					NOT = {
+						has_war_with = TLA
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = MERCS_hiring_tlarthingian_paladin_flag
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+
+		days_re_enable = 540
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Let's not if we are very low on factories
+				num_of_civilian_factories < 13
+				factor = 0.25
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = MERCS_hire_tlarthingian_paladin_effects_tt
+			add_to_variable = { num_mercs_hiring = 1 }
+			hidden_effect = {
+				division_template = {
+					name = "Tlarthingian Paladin Mercenaries"
+					is_locked = yes
+					
+					regiments = {
+						swordsmen = { x = 0 y = 0 }
+						swordsmen = { x = 0 y = 1 }
+						halberdier = { x = 0 y = 2 }
+				    swordsmen = { x = 1 y = 0 }
+						swordsmen = { x = 1 y = 1 }
+						halberdier = { x = 1 y = 2 }
+						swordsmen = { x = 2 y = 0 }
+						swordsmen = { x = 2 y = 1 }
+						halberdier = { x = 2 y = 2 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+					    division = "name = \"Egg Protectors\" division_template = \"Tlarthingian Paladin Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Servants of the Drake\" division_template = \"Tlarthingian Paladin Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Fate's Claw\" division_template = \"Tlarthingian Paladin Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Shields of the Scales\" division_template = \"Tlarthingian Paladin Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Green Snappers\" division_template = \"Tlarthingian Paladin Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_idea = IR_tlarthingian_paladin_company
+					}
+					capital_scope = {
+						create_unit = {
+					    division = "name = \"Eyes of the Basilisk\" division_template = \"Tlarthingian Paladin Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+						}
+					}
+				}
+				
+				add_timed_idea = {
+					idea = MERCS_hiring_tlarthingian_paladin_idea
+					days = 183
+				}
+				country_event = { id = merc.5 days = 184 }
+				set_country_flag = MERCS_hiring_tlarthingian_paladin_flag	
+			}
+		}
+	}
+
+	MERCS_green_bastards = {
+		
+		icon = GFX_generic_prepare_civil_war
+		
+		allowed = {
+			OR = {
+				tag = BER
+				is_og_freiprinz = yes
+			}
+		}
+		
+		available = {
+			num_of_civilian_factories > 9
+			if = {
+				limit = {
+					NOT = { tag = STA }
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_a_group
+					check_variable = { num_mercs_hiring < 1 }
+				}
+			}
+			if = {
+				limit = {
+					tag = STA
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_2_groups
+					check_variable = { num_mercs_hiring < 2 }
+				}
+			}
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			NOT = {
+				any_country = { 
+					has_idea = MERCS_hiring_green_bastards_idea
+				}
+			}
+		}
+		
+		visible = {
+			NOT = {
+				OR = {
+					has_war_with = FTH
+					has_country_flag = MERCS_hiring_green_bastards_flag
+				}
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 0
+
+		days_re_enable = 540
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Let's not if we are very low on factories
+				num_of_civilian_factories < 13
+				factor = 0.25
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = MERCS_hire_green_bastards_effects_tt
+			add_to_variable = { num_mercs_hiring = 1 }
+			hidden_effect = {
+				division_template = {
+					name = "Green Bastards Mercenaries"
+					is_locked = yes
+					
+					regiments = {
+						swordsmen = { x = 0 y = 0 }
+						archer_longbow = { x = 0 y = 1 }
+						archer_longbow = { x = 0 y = 2 }
+						swordsmen = { x = 1 y = 0 }
+						archer_longbow = { x = 1 y = 1 }
+						archer_longbow = { x = 1 y = 2 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+					    division = "name = \"Wulf Luther's Warband\" division_template = \"Green Bastards Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Tree Hugger Division\" division_template = \"Green Bastards Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Sky Piercers\" division_template = \"Green Bastards Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Trailblazer Division\" division_template = \"Green Bastards Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Rage of the Riverfolk\" division_template = \"Green Bastards Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_idea = UNG_green_bastards_company
+					}
+					capital_scope = {
+						create_unit = {
+					    division = "name = \"Druidic Rejects Division\" division_template = \"Green Bastards Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+						}
+					}
+				}
+				
+				add_timed_idea = {
+					idea = MERCS_hiring_green_bastards_idea
+					days = 183
+				}
+				country_event = { id = merc.6 days = 184 }
+				set_country_flag = MERCS_hiring_green_bastards_flag	
+			}
+		}
+	}
+
+	MERCS_red_talons = {
+		
+		icon = GFX_generic_industry
+		
+		allowed = {
+			is_og_freiprinz = yes
+		}
+		
+		available = {
+			num_of_civilian_factories > 9
+			if = {
+				limit = {
+					NOT = { tag = STA }
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_a_group
+					check_variable = { num_mercs_hiring < 1 }
+				}
+			}
+			if = {
+				limit = {
+					tag = STA
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_2_groups
+					check_variable = { num_mercs_hiring < 2 }
+				}
+			}
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			NOT = {
+				any_country = { 
+					has_idea = MERCS_hiring_red_talons_idea
+				}
+			}
+		}
+		
+		visible = {
+			NOT = {
+				OR = {
+					has_war_with = TEI
+					has_country_flag = MERCS_hiring_red_talons_flag
+				}
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 0
+
+		days_re_enable = 540
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Let's not if we are very low on factories
+				num_of_civilian_factories < 13
+				factor = 0.25
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = MERCS_hire_red_talons_effects_tt
+			add_to_variable = { num_mercs_hiring = 1 }
+			hidden_effect = {
+				division_template = {
+					name = "Red Talons Mercenaries"
+					is_locked = yes
+					
+					regiments = {
+						swordsmen = { x = 0 y = 0 }
+						swordsmen = { x = 0 y = 1 }
+						swordsmen = { x = 0 y = 2 }
+						swordsmen = { x = 1 y = 0 }
+						swordsmen = { x = 1 y = 1 }
+						swordsmen = { x = 1 y = 2 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+					    division = "name = \"Wulf Luther's Warband\" division_template = \"Red Talons Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Red Wave\" division_template = \"Red Talons Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Fresh Blood Division\" division_template = \"Red Talons Mercenaries\" start_experience_factor = 0.2"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"The Invincible Division\" division_template = \"Red Talons Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Vengeful Tide Division\" division_template = \"Red Talons Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_idea = UNG_red_talons_company
+					}
+					capital_scope = {
+						create_unit = {
+					    division = "name = \"Tiger Claws Division\" division_template = \"Red Talons Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+						}
+					}
+				}
+				
+				add_timed_idea = {
+					idea = MERCS_hiring_red_talons_idea
+					days = 183
+				}
+				country_event = { id = merc.7 days = 184 }
+				set_country_flag = MERCS_hiring_red_talons_flag	
+			}
+		}
+	}
+
+	MERCS_the_hand = {
+		
+		icon = GFX_generic_civil_support
+		
+		allowed = {
+			is_og_freiprinz = yes
+		}
+		
+		available = {
+			num_of_civilian_factories > 9
+			if = {
+				limit = {
+					NOT = { tag = STA }
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_a_group
+					check_variable = { num_mercs_hiring < 1 }
+				}
+			}
+			if = {
+				limit = {
+					tag = STA
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_2_groups
+					check_variable = { num_mercs_hiring < 2 }
+				}
+			}
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			NOT = {
+				any_country = { 
+					has_idea = MERCS_hiring_the_hand_idea
+				}
+			}
+		}
+		
+		visible = {
+			NOT = {
+				OR = {
+					has_war_with = NOC
+					has_country_flag = MERCS_hiring_the_hand_flag
+				}
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 0
+
+		days_re_enable = 540
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Let's not if we are very low on factories
+				num_of_civilian_factories < 13
+				factor = 0.25
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = MERCS_hire_the_hand_effects_tt
+			add_to_variable = { num_mercs_hiring = 1 }
+			hidden_effect = {
+				division_template = {
+					name = "The Hand Mercenaries"
+					is_locked = yes
+					
+					regiments = {
+						swordsmen = { x = 0 y = 0 }
+						halberdier = { x = 0 y = 1 }
+						archer_shortbow = { x = 0 y = 2 }
+						swordsmen = { x = 1 y = 0 }
+						halberdier = { x = 1 y = 1 }
+						archer_shortbow = { x = 1 y = 2 }
+					}
+
+					support = {
+						scouts = { x = 0 y = 0 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+					    division = "name = \"Touch of Death\" division_template = \"The Hand Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Advance Infiltration Division\" division_template = \"The Hand Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Fulgur's Force\" division_template = \"The Hand Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Forest Watchers\" division_template = \"The Hand Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Shadowy Warband\" division_template = \"The Hand Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_idea = UNG_the_hand_company
+					}
+					capital_scope = {
+						create_unit = {
+					    division = "name = \"Ghost Division\" division_template = \"The Hand Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+						}
+					}
+				}
+				
+				add_timed_idea = {
+					idea = MERCS_hiring_the_hand_idea
+					days = 183
+				}
+				country_event = { id = merc.8 days = 184 }
+				set_country_flag = MERCS_hiring_the_hand_flag	
+			}
+		}
+	}
+
+	MERCS_twin_axes = {
+		
+		icon = generic_civil_support
+		
+		allowed = {
+			OR = {
+				tag = GMR
+				tag = RMT
+				tag = LIR
+				tag = MER
+				tag = BLD
+				tag = IRI
+				tag = TLA
+				tag = KUR
+				tag = SKA
+				tag = RTH
+				tag = BER
+				is_og_freiprinz = yes
+				tag = PRK
+			}
+		}
+		
+		available = {
+			num_of_civilian_factories > 9
+			if = {
+				limit = {
+					NOT = { tag = STA }
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_a_group
+					check_variable = { num_mercs_hiring < 1 }
+				}
+			}
+			if = {
+				limit = {
+					tag = STA
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_2_groups
+					check_variable = { num_mercs_hiring < 2 }
+				}
+			}
+			NOT = {
+				has_country_flag = MERCS_hiring_twin_axes_flag
+			}
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			NOT = {
+				any_country = { 
+					has_idea = MERCS_hiring_twin_axes_idea
+				}
+			}
+		}
+		
+		visible = {
+			has_idea = RMT_twin_axe_band_company
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 0
+
+		days_re_enable = 540
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Let's not if we are very low on factories
+				num_of_civilian_factories < 13
+				factor = 0.25
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = MERCS_hire_twin_axes_effects_tt
+			add_to_variable = { num_mercs_hiring = 1 }
+			hidden_effect = {
+				division_template = {
+					name = "Twin Axes Mercenaries"
+					is_locked = yes
+					
+					regiments = {
+						dwarven_warriors = { x = 0 y = 0 }
+						dwarven_warriors = { x = 0 y = 1 }
+						dwarven_warriors = { x = 0 y = 2 }
+				    dwarven_warriors = { x = 1 y = 0 }
+						dwarven_warriors = { x = 1 y = 1 }
+						dwarven_warriors = { x = 1 y = 2 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+					    division = "name = \"Stone Biters\" division_template = \"Twin Axes Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Siege Breakers\" division_template = \"Twin Axes Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Tunnel Clearers\" division_template = \"Twin Axes Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Mountain Levelers\" division_template = \"Twin Axes Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Hole Diggers\" division_template = \"Twin Axes Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+				}
+				
+				add_timed_idea = {
+					idea = MERCS_hiring_twin_axes_idea
+					days = 183
+				}
+				country_event = { id = merc.9 days = 184 }
+				set_country_flag = MERCS_hiring_twin_axes_flag	
+			}
+		}
+	}
+
+	MERCS_roaming_gathering = {
+		
+		icon = GFX_generic_civil_support
+		
+		allowed = {
+			OR = {
+				tag = GMR
+				tag = RMT
+				tag = LIR
+				tag = MER
+				tag = KUR
+				tag = BLD
+				tag = IRI
+				tag = TLA
+				tag = SKA
+				tag = RTH
+				tag = BER
+				is_og_freiprinz = yes
+				tag = PRK
+			}
+		}
+		
+		available = {
+			num_of_civilian_factories > 9
+			if = {
+				limit = {
+					NOT = { tag = STA }
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_a_group
+					check_variable = { num_mercs_hiring < 1 }
+				}
+			}
+			if = {
+				limit = {
+					tag = STA
+				}
+				custom_trigger_tooltip = {
+					tooltip = MERCS_not_already_hiring_2_groups
+					check_variable = { num_mercs_hiring < 2 }
+				}
+			}
+			NOT = {
+				has_country_flag = MERCS_hiring_roaming_gathering_flag
+			}
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			NOT = {
+				any_country = { 
+					has_idea = MERCS_hiring_roaming_gathering_idea
+				}
+			}
+		}
+		
+		visible = {
+			has_idea = BLD_roaming_gathering
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 0
+
+		days_re_enable = 540
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Let's not if we are very low on factories
+				num_of_civilian_factories < 13
+				factor = 0.25
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = MERCS_hire_roaming_gathering_effects_tt
+			add_to_variable = { num_mercs_hiring = 1 }
+			hidden_effect = {
+				division_template = {
+					name = "Ogre Mercenaries"
+					is_locked = yes
+					
+					regiments = {
+						ogre_warriors = { x = 0 y = 0 }
+						ogre_warriors = { x = 0 y = 1 }
+				    ogre_warriors = { x = 1 y = 0 }
+						ogre_warriors = { x = 1 y = 1 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+					    division = "name = \"Anghel's Ankle Smashers\" division_template = \"Ogre Mercenaries\" start_experience_factor = 0.6"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Saburo's Skullcrushers\" division_template = \"Ogre Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Eachann's Excorcists\" division_template = \"Ogre Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Ujarak's Usurpers\" division_template = \"Ogre Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+					}
+				}
+				
+				add_timed_idea = {
+					idea = MERCS_hiring_roaming_gathering_idea
+					days = 183
+				}
+				country_event = { id = merc.10 days = 184 }
+				set_country_flag = MERCS_hiring_roaming_gathering_flag	
+			}
+		}
+	}
+
+	MERCS_gowie_mercenaries = {
+		
+		icon = GFX_generic_industry
+		
+		allowed = {
+			OR = { #misthal guys I think? the center continent
+				tag = GOW
+				tag = TES
+				tag = SUL
+				tag = TAR
+				tag = GET
+				tag = ITH
+				tag = DIA
+			}
+		}
+		
+		available = {
+			num_of_civilian_factories > 9
+			custom_trigger_tooltip = {
+				tooltip = MERCS_not_already_hiring_a_group
+				check_variable = { num_mercs_hiring < 1 }
+			}
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			NOT = {
+				any_country = { 
+					has_idea = MERCS_hiring_gowie_mercs_idea
+				}
+			}
+		}
+		
+		visible = {
+			NOT = {
+				OR = {
+					has_war_with = GOW
+					has_country_flag = MERCS_hiring_gowie_mercs_flag
+				}
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 0
+
+		days_re_enable = 540
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Let's not if we are very low on factories
+				num_of_civilian_factories < 13
+				factor = 0.25
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = MERCS_hire_gowie_mercs_effects_tt
+			add_to_variable = { num_mercs_hiring = 1 }
+			hidden_effect = {
+				division_template = {
+					name = "Gowie Mercenaries"
+					is_locked = yes
+					
+					regiments = {
+						halberdier = { x = 0 y = 0 }
+						halberdier = { x = 0 y = 1 }
+						archer_longbow = { x = 0 y = 2 }
+						halberdier = { x = 1 y = 0 }
+						halberdier = { x = 1 y = 1 }
+						archer_longbow = { x = 1 y = 2 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+					    division = "name = \"Touch of Death\" division_template = \"Gowie Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Advance Infiltration Division\" division_template = \"Gowie Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Fulgur's Force\" division_template = \"Gowie Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Forest Watchers\" division_template = \"Gowie Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Shadowy Warband\" division_template = \"Gowie Mercenaries\" start_experience_factor = 0.5"
+					    owner = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_idea = IR_gowie_mercenaries
+					}
+					capital_scope = {
+						create_unit = {
+					    division = "name = \"Ghost Division\" division_template = \"Gowie Mercenaries\" start_experience_factor = 0.75"
+					    owner = ROOT
+						}
+					}
+				}
+				
+				add_timed_idea = {
+					idea = MERCS_hiring_gowie_mercs_idea
+					days = 183
+				}
+				country_event = { id = merc.11 days = 184 }
+				set_country_flag = MERCS_hiring_gowie_mercs_flag	
+			}
+		}
+	}
+
+	SKA_hire_soltruists = {
+		
+		icon = GFX_decision_eng_support_imperialist_coup
+		
+		allowed = {
+			tag = SKA
+		}
+		
+		available = {
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			has_idea = SKA_paramilitary_support
+		}
+		
+		visible = {
+			has_idea = SKA_paramilitary_support
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 25
+
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = SKA_hire_soltruists_effects_tt
+			hidden_effect = {
+				add_to_variable = { SKA_social_war_soltruist_inf = 1 }
+				if = {
+					limit = {
+						NOT = { has_template = "Paramilitarists" }
+					}
+					division_template = {
+						name = "Paramilitarists"
+						is_locked = yes
+						
+						regiments = {
+							men_at_arms = { x = 0 y = 0 }
+							men_at_arms = { x = 0 y = 1 }
+							men_at_arms = { x = 0 y = 2 }
+					    men_at_arms = { x = 1 y = 0 }
+							men_at_arms = { x = 1 y = 1 }
+							men_at_arms = { x = 1 y = 2 }
+						}
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						  division = "name = \"Soltruist Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						  division = "name = \"Soltruist Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	SKA_hire_equalists = {
+		
+		icon = GFX_decision_eng_propaganda_campaigns
+		
+		allowed = {
+			tag = SKA
+		}
+		
+		available = {
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			has_idea = SKA_paramilitary_support
+		}
+		
+		visible = {
+			has_idea = SKA_paramilitary_support
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 25
+
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = SKA_hire_equalists_effects_tt
+			hidden_effect = {
+				add_to_variable = { SKA_social_war_boe_inf = 1 }
+				if = {
+					limit = {
+						NOT = { has_template = "Paramilitarists" }
+					}
+					division_template = {
+						name = "Paramilitarists"
+						is_locked = yes
+						
+						regiments = {
+							men_at_arms = { x = 0 y = 0 }
+							men_at_arms = { x = 0 y = 1 }
+							men_at_arms = { x = 0 y = 2 }
+					    men_at_arms = { x = 1 y = 0 }
+							men_at_arms = { x = 1 y = 1 }
+							men_at_arms = { x = 1 y = 2 }
+						}
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						  division = "name = \"Equalist Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						  division = "name = \"Equalist Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	SKA_hire_iron_bloods = {
+		
+		icon = GFX_decision_generic_reorganize_irregulars
+		
+		allowed = {
+			tag = SKA
+		}
+		
+		available = {
+			any_state = {
+				custom_trigger_tooltip = {
+					tooltip = is_capital_tt #broken loc
+					is_capital = yes
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			has_idea = SKA_paramilitary_support
+		}
+		
+		visible = {
+			has_idea = SKA_paramilitary_support
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				state = ROOT.capital
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		
+		cost = 25
+
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { #Why on Earth would we hire mercs when we're at peace?
+				has_war = no
+				factor = 0
+			}
+			modifier = { #Let's not if we are low on factories
+				num_of_civilian_factories < 23
+				factor = 0.5
+			}
+			modifier = { #Best to get units if we're at war
+				surrender_progress > 0.25
+				factor = 2
+			}
+			modifier = {#Oh god oh fuck
+				surrender_progress > 0.5
+				factor = 4
+			}
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = SKA_hire_iron_bloods_effects_tt
+			hidden_effect = {
+				add_to_variable = { SKA_social_war_iron_blood_inf = 1 }
+				if = {
+					limit = {
+						NOT = { has_template = "Paramilitarists" }
+					}
+					division_template = {
+						name = "Paramilitarists"
+						is_locked = yes
+						
+						regiments = {
+							men_at_arms = { x = 0 y = 0 }
+							men_at_arms = { x = 0 y = 1 }
+							men_at_arms = { x = 0 y = 2 }
+					    men_at_arms = { x = 1 y = 0 }
+							men_at_arms = { x = 1 y = 1 }
+							men_at_arms = { x = 1 y = 2 }
+						}
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						  division = "name = \"Iron Blood Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						  division = "name = \"Iron Blood Militia\" division_template = \"Paramilitarists\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+}

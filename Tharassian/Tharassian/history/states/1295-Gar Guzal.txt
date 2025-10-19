@@ -1,0 +1,20 @@
+state={
+	id=1295
+	name="STATE_1295"
+	provinces={
+		299 954 7268 7304 7341 7342 
+	}
+	manpower=237
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+	
+	history={
+		owner = AGE
+		add_core_of = AGE
+		victory_points = { 954 2 }
+		buildings = {
+			forge = 1
+		}
+	}
+}

@@ -1,0 +1,24 @@
+state={
+	id=788
+	name="STATE_788"
+	provinces={
+		737 6770 4336 749 
+	}
+	state_category = pastoral
+	manpower=1096
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 1
+	}
+	history={
+		victory_points = {
+			749 2
+		}
+		owner = TLA
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = TLA
+	}
+}

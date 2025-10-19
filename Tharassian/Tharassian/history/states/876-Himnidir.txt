@@ -1,0 +1,19 @@
+state={
+	id=876
+	name="STATE_876"
+	provinces={
+		4880 5490 8461 8501 8533 
+	}
+	state_category = rural
+	manpower = 7662
+	
+	history={
+		owner = TES
+		buildings = {
+			infrastructure = 2
+			farm = 1
+			forge = 1
+		}
+		add_core_of = TES
+	}
+}

@@ -1,0 +1,157 @@
+defined_text = { # Get a specific state name for the Glory League riot random event
+    name = GetRiotStateName
+    text = {
+        trigger = {
+            has_variable = ORD_glory_league_riot_state_id
+        }
+        localization_key = loc_key_ORD_glory_league_riot
+    }
+}
+
+defined_text = {
+	name = GetDivisionRatio
+	text = {
+		trigger = {
+			check_variable = {
+				num_divisions < ORD_steel_crisis_division_limit
+			}
+		}
+		localization_key = GUI_ORD_steel_crisis_divisions_healthy
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				num_divisions = ORD_steel_crisis_division_limit
+			}
+		}
+		localization_key = GUI_ORD_steel_crisis_divisions_worrying
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				num_divisions > ORD_steel_crisis_division_limit
+			}
+		}
+		localization_key = GUI_ORD_steel_crisis_divisions_crisis
+	}
+}
+defined_text = {
+	name = GetSouthmountainsStatus
+	text = {
+		trigger = {
+			OR = {
+				controls_state = 105
+				EOR = {
+					controls_state = 105
+				}
+			}
+			OR = {
+				controls_state = 106
+				EOR = {
+					controls_state = 106
+				}
+			}
+			OR = {
+				controls_state = 1291
+				EOR = {
+					controls_state = 1291
+				}
+			}
+		}
+		localization_key = GUI_ORD_steel_crisis_southmountains_controlled
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						controls_state = 105
+						EOR = {
+							controls_state = 105
+						}
+					}
+					OR = {
+						controls_state = 1291
+						EOR = {
+							controls_state = 1291
+						}
+					}
+					NOT = {
+						OR = {
+							controls_state = 106
+							EOR = {
+								controls_state = 106
+							}
+						}
+					}
+				}
+				AND = {
+					NOT = {
+						controls_state = 105
+						EOR = {
+							controls_state = 105
+						}
+					}
+					OR = {
+						controls_state = 1291
+						EOR = {
+							controls_state = 1291
+						}
+					}
+					OR = {
+						controls_state = 106
+						EOR = {
+							controls_state = 106
+						}
+					}
+				}
+				AND = {
+					OR = {
+						controls_state = 105
+						EOR = {
+							controls_state = 105
+						}
+					}
+					NOT = {
+						controls_state = 1291
+						EOR = {
+							controls_state = 1291
+						}
+					}
+					OR = {
+						controls_state = 106
+						EOR = {
+							controls_state = 106
+						}
+					}
+				}
+			}
+		}
+		localization_key = GUI_ORD_steel_crisis_southmountains_contested
+	}
+	text = {
+		trigger = {
+			NOT = {
+				OR = {
+					controls_state = 105
+					EOR = {
+						controls_state = 105
+					}
+				}
+				OR = {
+					controls_state = 106
+					EOR = {
+						controls_state = 106
+					}
+				}
+				OR = {
+					controls_state = 1291
+					EOR = {
+						controls_state = 1291
+					}
+				}
+			}
+		}
+		localization_key = GUI_ORD_steel_crisis_southmountains_not_controlled
+	}
+}

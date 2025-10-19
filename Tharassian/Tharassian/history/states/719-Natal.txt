@@ -1,0 +1,18 @@
+state={
+	id=719
+	name="STATE_719"
+	provinces={
+		6203 1597
+	}
+	state_category = pastoral
+	manpower=82
+	impassable = yes
+	buildings_max_level_factor=1.000
+	history={
+		owner = RMT
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = RMT
+	}
+}

@@ -1,0 +1,20 @@
+state={
+	id=168
+	name="STATE_168"
+	provinces={
+		5329 5532 6897 1960
+	}
+	state_category = rural
+	manpower=1720
+	impassable = yes
+	buildings_max_level_factor=1.000
+	history={
+		owner = SKA
+		buildings = {
+			infrastructure = 1
+			forge = 1
+		}
+		add_core_of = SKA
+
+	}
+}

@@ -1,0 +1,25 @@
+state={
+	id=906
+	name="STATE_906"
+	provinces={
+		5 3736 5291 7993 8006 
+	}
+	buildings_max_level_factor=1.000
+	manpower=5092
+	state_category=rural
+	
+	resources = {
+		steel = 21
+	}
+	
+	history={
+		victory_points = { 3736 4 }
+		owner = THA
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+		}
+		add_core_of = THA
+		add_core_of = HIH
+	}
+}

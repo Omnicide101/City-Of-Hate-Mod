@@ -1,0 +1,23 @@
+state = {
+	id = 1183
+	name = "STATE_1183"
+	provinces = {
+		631 1594 2746 3093 5891 5925 
+	}
+	manpower = 16883
+	state_category = town
+	history = {
+		victory_points = {
+			3093 4
+		}
+		buildings = {
+			infrastructure = 2
+			farm = 2
+			workshop = 1
+		}
+		owner = XXX
+		add_core_of = XXX
+	}
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

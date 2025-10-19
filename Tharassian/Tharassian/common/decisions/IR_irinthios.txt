@@ -1,0 +1,3808 @@
+IRI_debug_category = {
+	
+	IRI_collapse_irinthios = {
+
+		available = {
+			has_war = no
+		}
+
+		complete_effect = {
+			CAI = {
+				add_state_core = 386
+				add_state_core = 753
+				add_state_core = 757
+				add_state_core = 755
+				add_state_core = 752
+			}
+			TIO = {
+				add_state_core = 758
+				add_state_core = 751
+				add_state_core = 756
+				add_state_core = 750
+				add_state_core = 396
+				add_state_core = 797
+			}
+			TYK = {
+				add_state_core = 397
+				add_state_core = 744
+				add_state_core = 738
+				add_state_core = 737
+				add_state_core = 759
+			}
+			TOF = {
+				add_state_core = 399
+				add_state_core = 739
+				add_state_core = 740
+			}
+			SAS = {
+				add_state_core = 398
+				add_state_core = 741
+				add_state_core = 742
+			}
+			CYT = {
+				add_state_core = 400
+				add_state_core = 743
+				add_state_core = 748
+				add_state_core = 749
+			}
+			MAK = {
+				add_state_core = 401
+				add_state_core = 747
+				add_state_core = 745
+			}
+			TKT = {
+				add_state_core = 746
+				add_state_core = 754
+				add_state_core = 402
+			}
+			every_owned_state = {
+				limit = { is_core_of = CAI }
+				CAI = {
+					transfer_state = PREV
+				}
+			}
+			every_owned_state = {
+				limit = { is_core_of = TIO }
+				TIO = {
+					transfer_state = PREV
+					change_tag_from = IRI
+				}
+			}
+			every_owned_state = {
+				limit = { is_core_of = TYK }
+				TYK = {
+					transfer_state = PREV
+				}
+			}
+			every_owned_state = {
+				limit = { is_core_of = TOF }
+				TOF = {
+					transfer_state = PREV
+				}
+			}
+			every_owned_state = {
+				limit = { is_core_of = SAS }
+				SAS = {
+					transfer_state = PREV
+				}
+			}
+			every_owned_state = {
+				limit = { is_core_of = CYT }
+				CYT = {
+					transfer_state = PREV
+				}
+			}
+			every_owned_state = {
+				limit = { is_core_of = MAK }
+				MAK = {
+					transfer_state = PREV
+				}
+			}
+			every_owned_state = {
+				limit = { is_core_of = TKT }
+				TKT = {
+					transfer_state = PREV
+				}
+			}
+		}
+
+	}
+
+}
+#glug glug
+
+IRI_faction_management_category = {
+	
+	IRI_sway_aristocrats = {
+
+		icon = generic_political_discourse
+
+		days_re_enable = 80
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 2
+				has_political_power > 74
+				has_completed_focus = IRI_the_rightful_dynasty_returns
+			}
+			modifier = {
+				add = 2
+				has_political_power > 74
+				OR = {
+					has_completed_focus = IRI_the_theresandrean_restoration
+					has_completed_focus = IRI_land_of_mercenaries
+				}
+			}
+		}
+
+		cost = 30
+
+		days_remove = 5
+
+		visible = {
+			check_variable = { IRI_aristocrat_approval_var < 0.1 }
+		}
+
+		modifier = {
+			political_power_cost = 0.2
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = IRI_increase_aristocrat_approval
+			add_to_variable = { IRI_aristocrat_approval_var = 0.01 }
+			IRI_recalculate_interest_group_vars = yes
+		}
+
+	}
+
+	IRI_sway_army = {
+
+		icon = generic_political_discourse
+
+		days_re_enable = 50
+
+		cost = 25
+
+		days_remove = 30
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 2
+				has_political_power > 74
+				has_completed_focus = IRI_the_rightful_dynasty_returns
+			}
+			modifier = {
+				add = 2
+				has_political_power > 74
+				OR = {
+					has_completed_focus = IRI_the_theresandrean_restoration
+					has_completed_focus = IRI_land_of_mercenaries
+				}
+			}
+		}
+
+		visible = {
+			check_variable = { IRI_army_approval_var < 0.1 }
+		}
+
+		modifier = {
+			production_speed_buildings_factor = -0.1
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = IRI_increase_army_approval
+			add_to_variable = { IRI_army_approval_var = 0.01 }
+			IRI_recalculate_interest_group_vars = yes
+		}
+
+	}
+
+	IRI_sway_populace = {
+
+		icon = generic_political_discourse
+
+		days_re_enable = 50
+
+		cost = 20
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 2
+				has_political_power > 74
+				has_completed_focus = IRI_the_rightful_dynasty_returns
+			}
+			modifier = {
+				add = 2
+				has_political_power > 74
+				OR = {
+					has_completed_focus = IRI_the_theresandrean_restoration
+					has_completed_focus = IRI_land_of_mercenaries
+				}
+			}
+		}
+
+		days_remove = 30
+
+		visible = {
+			check_variable = { IRI_people_approval_var < 0.1 }
+		}
+
+		modifier = {
+			consumer_goods_factor = -0.05
+			political_power_cost = 0.1
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = IRI_increase_people_approval
+			add_to_variable = { IRI_people_approval_var = 0.01 }
+			IRI_recalculate_interest_group_vars = yes
+		}
+
+	}
+
+}
+
+IRI_chairophon_faction_management_category = {
+	
+	IRI_sway_aristocrats_chairophon = {
+
+		icon = generic_political_discourse
+
+		name = IRI_sway_aristocrats
+
+		days_re_enable = 80
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 2
+				has_political_power > 74
+			}
+		}
+
+		visible = {
+			check_variable = { IRI_aristocrat_approval_var < 0.1 }
+		}
+
+		cost = 30
+
+		days_remove = 5
+
+		modifier = {
+			political_power_cost = 0.2
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = IRI_increase_aristocrat_approval
+			add_to_variable = { IRI_aristocrat_approval_var = 0.01 }
+			IRI_recalculate_interest_group_vars = yes
+		}
+
+	}
+
+	IRI_sway_army_chairophon = {
+
+		icon = generic_political_discourse
+
+		name = IRI_sway_army
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 2
+				has_political_power > 74
+			}
+		}
+
+		days_re_enable = 50
+
+		visible = {
+			check_variable = { IRI_army_approval_var < 0.1 }
+		}
+
+		cost = 25
+
+		days_remove = 30
+
+		modifier = {
+			production_speed_buildings_factor = -0.1
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = IRI_increase_army_approval
+			add_to_variable = { IRI_army_approval_var = 0.01 }
+			IRI_recalculate_interest_group_vars = yes
+		}
+
+	}
+
+	IRI_sway_populace_chairophon = {
+
+		icon = generic_political_discourse
+
+		name = IRI_sway_populace
+
+		days_re_enable = 50
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 2
+				has_political_power > 74
+			}
+		}
+
+		cost = 20
+
+		visible = {
+			check_variable = { IRI_people_approval_var < 0.1 }
+		}
+
+		days_remove = 30
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			political_power_cost = 0.1
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = IRI_increase_people_approval
+			add_to_variable = { IRI_people_approval_var = 0.01 }
+			IRI_recalculate_interest_group_vars = yes
+		}
+
+	}
+
+	IRI_sway_guilds_chairophon = {
+
+		icon = generic_political_discourse
+
+		days_re_enable = 50
+
+		cost = 25
+
+		days_remove = 30
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 2
+				has_political_power > 74
+			}
+		}
+
+		visible = {
+			check_variable = { IRI_guild_approval_var < 0.1 }
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			min_export = 0.1
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = IRI_increase_guild_approval
+			add_to_variable = { IRI_guild_approval_var = 0.01 }
+			IRI_recalculate_interest_group_vars = yes
+		}
+
+	}
+
+}
+
+IRI_aggelos_scheming = {
+
+	IRI_aggelos_deal_with_palace_guard = {
+
+		icon = generic_industry
+
+		cost = 50
+
+		available = {
+			OR = {
+				NOT = { has_idea = IRI_bribed_important_figure }
+				has_completed_focus = IRI_cloaks_and_daggers
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = { id = iri.60 hours = 1 }
+		}
+
+	}
+
+	IRI_aggelos_deal_with_chairophon_spymaster = {
+
+		icon = generic_political_discourse
+
+		cost = 100
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRI_less_than_75_discovery
+				check_variable = { IRI_chance_of_discovery < 75 }
+			}
+		}
+
+		complete_effect = {
+			country_event = { id = iri.61 hours = 1 }
+		}
+
+	}
+
+	IRI_aggelos_scout_for_secret_passages_tion = {
+
+		icon = generic_political_discourse
+
+		cost = 20
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 14
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRI_less_than_75_discovery
+				check_variable = { IRI_chance_of_discovery < 75 }
+			}
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				tooltip = IRI_increase_chance_of_cinyras_coup_success
+				IRI_cinyras_coup_chance = 5
+			}
+		}
+
+	}
+
+	IRI_aggelos_persuade_minor_nobles_to_plot = {
+
+		icon = generic_political_discourse
+
+		cost = 15
+
+		days_re_enable = 30
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRI_at_least_4_aristocrat_approval
+				check_variable = { IRI_aristocrat_approval_var > 0.03 }
+			}
+		}
+
+		complete_effect = {
+			add_to_variable = {
+				tooltip = IRI_increase_chance_of_cinyras_coup_success
+				IRI_cinyras_coup_chance = 3
+			}
+		}
+
+	}
+
+	IRI_cinyras_promote_mandate_of_moon = {
+
+		visible = {
+			has_completed_focus = IRI_mandate_of_the_moon
+		}
+
+		cost = 40
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		complete_effect = {
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = 0.03
+			}
+			add_to_variable = {
+				tooltip = IRI_increase_chance_of_cinyras_coup_success
+				IRI_cinyras_coup_chance = 3
+			}
+			custom_effect_tooltip = IRI_increase_aristocrat_approval
+			custom_effect_tooltip = IRI_increase_people_approval
+			add_to_variable = { IRI_people_approval_var = 0.01 }
+			add_to_variable = { IRI_aristocrat_approval_var = 0.01 }
+			IRI_recalculate_interest_group_vars = yes
+		}
+
+	}
+
+	IRI_cinyras_meet_old_friends = {
+
+		visible = {
+			has_completed_focus = IRI_reach_out_to_old_friends
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cost = 30
+
+		fire_only_once = yes
+
+		complete_effect = {
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = 0.01
+			}
+			add_to_variable = {
+				tooltip = IRI_increase_chance_of_cinyras_coup_success
+				IRI_cinyras_coup_chance = 3
+			}
+			custom_effect_tooltip = IRI_increase_aristocrat_approval
+			add_to_variable = { IRI_aristocrat_approval_var = 0.01 }
+			IRI_recalculate_interest_group_vars = yes
+		}
+
+	}
+
+	IRI_cinyras_appeal_common_soldiery = {
+
+		visible = {
+			has_completed_focus = IRI_propagate_the_common_soldiery
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cost = 20
+
+		days_re_enable = 35
+
+		complete_effect = {
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = 0.01
+			}
+			add_to_variable = {
+				tooltip = IRI_increase_chance_of_cinyras_coup_success
+				IRI_cinyras_coup_chance = 3
+			}
+			custom_effect_tooltip = IRI_increase_army_approval
+			add_to_variable = { IRI_army_approval_var = 0.01 }
+			IRI_recalculate_interest_group_vars = yes
+		}
+
+	}
+
+	IRI_aggelos_spymaster_mission = {
+
+		days_mission_timeout = 28
+
+		icon = border_conflict
+
+		activation = {
+			has_completed_focus = IRI_aggelos_ambition
+			NOT = {
+				OR = {
+					has_government = republic_aristocrat
+					has_civil_war = yes
+					has_country_flag = IRI_dealt_with_spymaster
+					has_country_flag = IRI_spy_mission_stop_please
+				}
+			}
+		}
+
+		available = {
+			OR = {
+				has_government = republic_aristocrat
+				has_civil_war = yes
+				has_country_flag = IRI_dealt_with_spymaster
+			}
+		}
+
+		visible = {
+			NOT = {
+				OR = {
+					has_government = republic_aristocrat
+					has_civil_war = yes
+					has_country_flag = IRI_dealt_with_spymaster
+					has_country_flag = IRI_spy_mission_stop_please
+				}
+			}
+		}
+
+		complete_effect = {
+			set_country_flag = IRI_spy_mission_stop_please
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						IRI_chance_of_discovery < 96
+					}
+				}
+				add_to_variable = {
+					tooltip = IRI_5_closer_to_discovery
+					IRI_chance_of_discovery = 5
+				}
+				else = {
+					country_event = { id = iri.62 hours = 1 }
+				}
+			}
+			hidden_effect = {
+				activate_mission = IRI_aggelos_spymaster_mission
+			}
+		}
+
+	}
+
+	IRI_debug_remove_strategos_flag = {
+
+		visible = {
+			has_country_flag = IRI_swaying_strategos
+			is_debug = yes
+		}
+
+		complete_effect = {
+			clr_country_flag = IRI_swaying_strategos
+		}
+
+	}
+	
+	IRI_aggelos_swaying_cai_strategos = {
+
+		cost = 20
+
+		icon = generic_nationalism
+
+		state_target = yes
+
+		ai_will_do = {
+			factor = 1 #Don't split our fronts!
+		}
+
+		target_trigger = {
+			FROM = {
+				state = 386
+			}
+			check_variable = { IRI_cai_loyalty > -1 }
+		}
+
+		days_remove = 15
+
+		on_map_mode = map_only
+
+		available = {
+			NOT = {
+				has_country_flag = IRI_swaying_strategos
+			}
+		}
+
+		days_re_enable = 20
+
+		complete_effect = {
+			set_country_flag = {
+				flag = IRI_swaying_strategos
+				days = 15
+				value = 1
+			}
+			hidden_effect = {
+				386 = { set_state_flag = IRI_current_strategos_focus }
+			}
+			country_event = { id = iri.59 hours = 1 }
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				386 = { clr_state_flag = IRI_current_strategos_focus }
+			}
+		}
+
+	}
+
+	IRI_aggelos_swaying_sasnai_strategos = {
+
+		cost = 20
+
+		icon = generic_nationalism
+
+		ai_will_do = {
+			factor = 34 #Close to home
+		}
+
+		state_target = yes
+
+		target_trigger = {
+			FROM = {
+				state = 398
+			}
+			check_variable = { IRI_sasnai_loyalty > -1 }
+		}
+
+		days_remove = 15
+
+		on_map_mode = map_only
+
+		available = {
+			NOT = {
+				has_country_flag = IRI_swaying_strategos
+			}
+		}
+
+		days_re_enable = 20
+
+		complete_effect = {
+			set_country_flag = {
+				flag = IRI_swaying_strategos
+				days = 15
+				value = 1
+			}
+			hidden_effect = {
+				398 = { set_state_flag = IRI_current_strategos_focus }
+			}
+			country_event = { id = iri.59 hours = 1 }
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				398 = { clr_state_flag = IRI_current_strategos_focus }
+			}
+		}
+
+	}
+
+	IRI_aggelos_swaying_tofnos_strategos = {
+
+		cost = 20
+
+		icon = generic_nationalism
+
+		state_target = yes
+
+		ai_will_do = {
+			factor = 30 #close to home
+		}
+
+		target_trigger = {
+			FROM = {
+				state = 399
+			}
+			check_variable = { IRI_tofnos_loyalty > -1 }
+		}
+
+		days_remove = 15
+
+		on_map_mode = map_only
+
+		available = {
+			NOT = {
+				has_country_flag = IRI_swaying_strategos
+			}
+		}
+
+		days_re_enable = 20
+
+		complete_effect = {
+			set_country_flag = {
+				flag = IRI_swaying_strategos
+				days = 15
+				value = 1
+			}
+			hidden_effect = {
+				399 = { set_state_flag = IRI_current_strategos_focus }
+			}
+			country_event = { id = iri.59 hours = 1 }
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				399 = { clr_state_flag = IRI_current_strategos_focus }
+			}
+		}
+
+	}
+
+	IRI_aggelos_swaying_cyttra_strategos = {
+
+		cost = 20
+
+		icon = generic_nationalism
+
+		state_target = yes
+
+		ai_will_do = {
+			factor = 28
+		}
+
+		target_trigger = {
+			FROM = {
+				state = 400
+			}
+			check_variable = { IRI_cyttra_loyalty > -1 }
+		}
+
+		days_remove = 15
+
+		on_map_mode = map_only
+
+		available = {
+			NOT = {
+				has_country_flag = IRI_swaying_strategos
+			}
+		}
+
+		days_re_enable = 20
+
+		complete_effect = {
+			set_country_flag = {
+				flag = IRI_swaying_strategos
+				days = 15
+				value = 1
+			}
+			hidden_effect = {
+				400 = { set_state_flag = IRI_current_strategos_focus }
+			}
+			country_event = { id = iri.59 hours = 1 }
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				400 = { clr_state_flag = IRI_current_strategos_focus }
+			}
+		}
+
+	}
+
+	IRI_aggelos_swaying_marakai_strategos = {
+
+		cost = 20
+
+		icon = generic_nationalism
+
+		state_target = yes
+
+		ai_will_do = {
+			factor = 28
+		}
+
+		target_trigger = {
+			FROM = {
+				state = 401
+			}
+			check_variable = { IRI_marakai_loyalty > -1 }
+		}
+
+		days_remove = 15
+
+		on_map_mode = map_only
+
+		available = {
+			NOT = { has_country_flag = IRI_swaying_strategos }
+		}
+
+		days_re_enable = 20
+
+		complete_effect = {
+			set_country_flag = {
+				flag = IRI_swaying_strategos
+				days = 15
+				value = 1
+			}
+			hidden_effect = {
+				401 = { set_state_flag = IRI_current_strategos_focus }
+			}
+			country_event = { id = iri.59 hours = 1 }
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				401 = { clr_state_flag = IRI_current_strategos_focus }
+			}
+		}
+
+	}
+
+	IRI_aggelos_swaying_tikynthaios_strategos = {
+
+		cost = 20
+
+		icon = generic_nationalism
+
+		ai_will_do = {
+			factor = 24
+		}
+
+		state_target = yes
+
+		target_trigger = {
+			FROM = {
+				state = 402
+			}
+			check_variable = { IRI_tikynthaios_loyalty > -1 }
+		}
+
+		days_remove = 15
+
+		on_map_mode = map_only
+
+		available = {
+			NOT = {
+				has_country_flag = IRI_swaying_strategos
+			}
+		}
+
+		days_re_enable = 20
+
+		complete_effect = {
+			set_country_flag = {
+				flag = IRI_swaying_strategos
+				days = 15
+				value = 1
+			}
+			hidden_effect = {
+				402 = { set_state_flag = IRI_current_strategos_focus }
+			}
+			country_event = { id = iri.59 hours = 1 }
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				402 = { clr_state_flag = IRI_current_strategos_focus }
+			}
+		}
+
+	}
+
+}
+
+IRI_recolonization_of_bilodya = {
+	
+	IRI_recolonize_bilodya_targeted_decision = {
+
+		cost = 30
+
+		state_target = yes
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		target_trigger = {
+			FROM = {
+				is_core_of = BLD
+				NOT = {
+					OR = {
+						has_state_flag = IRI_colonized_state
+						state = 385
+					}
+				}
+			}
+		}
+
+		days_remove = 30
+
+		modifier = {
+			monthly_population = -0.05
+			consumer_goods_factor = 0.05
+		}
+
+		remove_effect = {
+			FROM = {
+				set_state_flag = IRI_colonized_state
+				add_manpower = 5000
+				if = {
+					limit = { has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_1 } }
+					remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_1 }
+				}
+				if = {
+					limit = { has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_2 } }
+					remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_2 }
+				}
+				if = {
+					limit = { has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier } }
+					remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier }
+				}
+				if = {
+					limit = { has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_4 } }
+					remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_4 }
+				}
+				if = {
+					limit = { has_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_5 } }
+					remove_dynamic_modifier = { modifier = IRI_ogre_resistance_modifier_5 }
+				}
+			}
+		}
+
+	}
+
+}
+
+IRI_buying_from_trade_cities = {
+
+	IRI_ask_for_reopening_markets = {
+
+		cost = 50
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = MER
+				exists = yes
+			}
+		}
+
+		visible = {
+			has_country_flag = MER_embargo
+		}
+
+		available = {
+			NOT = {
+				has_idea = IRI_debase_currency
+			}
+		}
+
+		days_re_enable = 90
+
+		complete_effect = {
+			if = {
+				limit = { has_idea = IRI_embargoed_minor }
+				remove_ideas = IRI_embargoed_minor
+			}
+			custom_effect_tooltip = IRI_buy_mer_again
+			clr_country_flag = MER_embargo
+		}
+
+	}
+	
+	IRI_buy_swords_trade_cities = {
+
+		cost = var:IRI_cost_for_weapons
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = MER_embargo
+			}
+		}
+
+		days_remove = 30
+
+		days_re_enable = 60
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250
+			}
+			if = {
+				limit = {
+					has_idea = IRI_lightened_currency
+					check_variable = { IRI_fraud_chance > 10 }
+				}
+				random_list = {
+					40 = {
+					}
+					var:IRI_fraud_chance = {
+						MER = {
+							country_event = { id = iri.67 hours = 3 }
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = IRI_lightened_currency
+					}
+					add_to_variable = { IRI_fraud_chance = 5 }
+				}
+			}
+		}
+
+	}
+
+	IRI_buy_bows_trade_cities = {
+
+		cost = var:IRI_cost_for_weapons
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+			NOT = {
+				has_country_flag = MER_embargo
+			}
+		}
+
+		days_remove = 35
+
+		days_re_enable = 60
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = ranged_equipment
+				amount = 200
+			}
+			if = {
+				limit = {
+					has_idea = IRI_lightened_currency
+					check_variable = { IRI_fraud_chance > 10 }
+				}
+				random_list = {
+					40 = {
+					}
+					var:IRI_fraud_chance = {
+						MER = {
+							country_event = { id = iri.67 hours = 3 }
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = IRI_lightened_currency
+					}
+					add_to_variable = { IRI_fraud_chance = 5 }
+				}
+			}
+		}
+
+	}
+
+	IRI_buy_wood_trade_cities = {
+
+		cost = var:IRI_cost_for_weapons
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+			NOT = {
+				has_country_flag = MER_embargo
+			}
+		}
+
+		days_remove = 30
+
+		days_re_enable = 60
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			country_resource_lumber = 6
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					has_idea = IRI_lightened_currency
+					check_variable = { IRI_fraud_chance > 10 }
+				}
+				random_list = {
+					40 = {
+					}
+					var:IRI_fraud_chance = {
+						MER = {
+							country_event = { id = iri.67 hours = 3 }
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = IRI_lightened_currency
+					}
+					add_to_variable = { IRI_fraud_chance = 5 }
+				}
+			}
+		}
+
+	}
+
+	IRI_buy_steel_trade_cities = {
+
+		cost = var:IRI_cost_for_weapons
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		available = {
+			NOT = {
+				has_country_flag = MER_embargo
+			}
+		}
+
+		days_remove = 30
+
+		days_re_enable = 60
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			country_resource_steel = 6
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					has_idea = IRI_lightened_currency
+					check_variable = { IRI_fraud_chance > 10 }
+				}
+				random_list = {
+					40 = {
+					}
+					var:IRI_fraud_chance = {
+						MER = {
+							country_event = { id = iri.67 hours = 3 }
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = IRI_lightened_currency
+					}
+					add_to_variable = { IRI_fraud_chance = 5 }
+				}
+			}
+		}
+
+	}
+
+}
+
+IRI_mercenaries_category = {
+	
+	IRI_recruit_mercenaries = {
+
+		icon = generic_industry
+
+		available = {
+			OR = {
+				has_equipment = {
+					infantry_equipment > 999
+				}
+				has_political_power > 99
+			}
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				OR = {
+					check_variable = { IRI_mercenaries_recruited = controlled_states }
+					check_variable = { IRI_mercenaries_recruited > controlled_states }
+				}
+			}
+		}
+
+		days_re_enable = 25
+
+		days_remove = 50
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					has_equipment = {
+						infantry_equipment > 999
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -1000
+				}
+				else = {
+					add_political_power = -100
+				}
+			}
+			capital_scope = {
+				create_unit = {
+				    division = "name = \"Merkanti Condottieros\" division_template = \"Merkanti Condottieros\" start_experience_factor = 0.2"
+				    owner = ROOT
+				}
+			}
+			add_to_variable = { IRI_mercenaries_recruited = 3 }
+		}
+
+	}
+
+	IRI_march_on_tion = {
+
+		cost = 50
+
+		icon = generic_prepare_civil_war
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			puritan > 0.3
+			custom_trigger_tooltip = {
+				tooltip = IRI_at_least_8_mercenaries
+				check_variable = { IRI_mercenaries_recruited > 21 }
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_temp_variable = {
+				merc_ideology_temp = IRI_mercenaries_recruited
+			}
+			multiply_temp_variable = { merc_ideology_temp = 0.007 }
+			add_popularity = {
+				ideology = puritan
+				popularity = merc_ideology_temp
+			}
+			set_politics = {
+				ruling_party = puritan
+				elections_allowed = no
+			}
+			custom_effect_tooltip = IRI_increase_army_approval
+			add_to_variable = { IRI_army_approval_var = 0.05 }
+			IRI_recalculate_interest_group_vars = yes
+		}
+
+	}
+
+	IRI_encourage_looting = {
+
+		cost = 50
+
+		icon = generic_industry
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_war = yes
+		}
+
+		days_re_enable = 365
+
+		days_remove = 90
+
+		modifier = {
+			consumer_goods_factor = -0.03
+			supply_consumption_factor = -0.1
+			compliance_growth = -0.1
+			army_org_factor = -0.05
+		}
+
+	}
+
+	IRI_mercenary_colony_decision_example = {
+
+		cost = 50
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = generic_political_discourse
+		
+		available = {
+			396 = {
+				NOT = {
+					is_core_of = IRI
+				}
+				compliance > 49
+			}
+			hidden_trigger = {
+				always = no
+			}
+		}
+
+		days_remove = 70
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			political_power_cost = 0.1
+		}
+
+		remove_effect = {
+			396 = {
+				add_core_of = IRI
+			}
+		}
+
+	}
+
+	IRI_mercenary_colony_decision = {
+
+		cost = 50
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = generic_political_discourse
+
+		state_target = yes
+
+		target_trigger = {
+			FROM = {
+				NOT = { is_core_of = IRI }
+				is_owned_by = IRI
+				compliance > 49
+			}
+		}
+
+		days_remove = 70
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			political_power_cost = 0.1
+		}
+
+		remove_effect = {
+			FROM = {
+				add_core_of = IRI
+			}
+		}
+
+	}
+
+	IRI_targeted_merc_attack_decision = {
+
+		cost = 75
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = generic_prepare_civil_war
+
+		visible = {
+			has_government = puritan
+		}
+
+		available = {
+			has_war = no
+		}
+
+		fire_only_once = yes
+
+		target_trigger = {
+			FROM = {
+				NOT = {
+					OR = {
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+						has_war_with = ROOT
+						tag = TLA
+						tag = BLD
+					}
+				}
+				is_neighbor_of = ROOT
+			}
+		}
+
+		complete_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+
+	}
+
+	IRI_need_more_land = {
+
+		icon = border_war
+
+		activation = {
+			check_variable = {
+				IRI_mercenaries_recruited > controlled_states
+			}
+			has_completed_focus = IRI_promise_lands_for_soldiers
+		}
+
+		available = {
+			check_variable = {
+				var = IRI_mercenaries_recruited 
+				value = controlled_states
+				compare = less_than_or_equals
+			}
+		}
+
+		days_mission_timeout = 180
+
+		timeout_effect = {
+			add_stability = -0.025
+			custom_effect_tooltip = IRI_decrease_army_approval
+			add_to_variable = { IRI_army_approval_var = -0.01 }
+			IRI_recalculate_interest_group_vars = yes
+			add_popularity = {
+				ideology = puritan
+				popularity = 0.01
+			}
+		}
+
+	}
+
+}
+
+IRI_integrating_tlarthingians = {
+	
+	IRI_integrate_tlarthingia_targeted_decision = {
+
+		cost = 40
+
+		icon = eng_propaganda_campaigns
+
+		state_target = yes
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		target_trigger = {
+			FROM = {
+				is_core_of = TLA
+				is_owned_by = IRI
+				is_controlled_by = IRI
+				has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+			}
+		}
+
+		days_remove = 50
+
+		modifier = {
+			political_power_cost = 0.1
+			consumer_goods_factor = 0.05
+		}
+
+		remove_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 1
+				if = {
+					limit = { has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier } }
+					remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+				}
+			}
+		}
+
+	}
+
+	IRI_tlarthingian_irinthian_pride = {
+
+		icon = generic_nationalism
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		cost = 50
+
+		visible = {
+			has_completed_focus = IRI_lizardmen_conscription
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			add_war_support = 0.05
+			add_manpower = 2500
+			add_to_variable = { 
+				tooltip = IRI_reduces_tlarthingian_resistance_11
+				IRI_lizardmen_resistance_var = 0.11 
+			}
+		}
+
+	}
+
+}
+
+IRI_settling_tlarthingia = {
+	
+	IRI_settling_northern_tlarthingia_targeted_decision = {
+
+		cost = 25
+
+		icon = eng_propaganda_campaigns
+
+		state_target = yes
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		visible = {
+			has_completed_focus = IRI_settler_missions
+		}
+
+		target_trigger = {
+			FROM = {
+				is_owned_by = IRI
+				is_controlled_by = IRI
+				OR = {
+					state = 773
+					state = 377
+					state = 374
+					state = 766
+					state = 788
+					state = 765
+					state = 774
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		days_remove = 50
+
+		modifier = {
+			monthly_population = -0.1
+			consumer_goods_factor = 0.05
+		}
+
+		remove_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 1
+				if = {
+					limit = {
+						free_building_slots = {
+							building = workshop
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_building_construction = {
+						type = workshop
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_manpower = 5000
+			}
+		}
+
+	}
+
+	IRI_settling_tlarthingia_targeted_decision = {
+
+		cost = 50
+
+		icon = eng_propaganda_campaigns
+
+		state_target = yes
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		visible = {
+			has_completed_focus = IRI_explore_southern_frontier
+		}
+
+		target_trigger = {
+			FROM = {
+				is_owned_by = IRI
+				is_controlled_by = IRI
+				is_core_of = TLA
+				NOT = {
+					is_core_of = IRI
+					has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		days_remove = 50
+
+		modifier = {
+			monthly_population = -0.1
+			consumer_goods_factor = 0.05
+		}
+
+		remove_effect = {
+			FROM = {
+				add_manpower = 5000
+				add_core_of = IRI
+			}
+		}
+
+	}
+
+	IRI_promote_frontier_life = {
+
+		cost = 50
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = eng_propaganda_campaigns
+
+		state_target = yes
+
+		visible = {
+			has_completed_focus = IRI_explore_southern_frontier
+		}
+		
+		target_trigger = {
+			FROM = {
+				is_owned_by = IRI
+				is_controlled_by = IRI
+				NOT = {
+					is_core_of = IRI
+					has_state_flag = IRI_settled_state_flag
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		days_remove = 365
+
+		modifier = {
+			monthly_population = 0.1
+			stability_factor = -0.05
+			production_speed_buildings_factor = 0.05
+			production_factory_max_efficiency_factor = -0.1
+			resistance_target = -0.05
+		}
+		
+		remove_effect = {
+			FROM = {
+				set_state_flag = IRI_settled_state_flag
+			}
+		}
+
+	}
+
+}
+
+IRI_lizard_genocide = {
+	
+	IRI_cleansing_resistance = {
+
+		cost = 25
+
+		icon = generic_industry
+
+		state_target = yes
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		target_trigger = {
+			FROM = {
+				is_owned_by = IRI
+				is_controlled_by = IRI
+				has_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+			}
+		}
+
+		available = {
+			has_equipment = {
+				infantry_equipment > 99
+			}
+			has_manpower > 99
+		}
+
+		fire_only_once = yes
+
+		days_remove = 60
+
+		modifier = {
+			weekly_manpower = -25
+		}
+
+		remove_effect = {
+			FROM = {
+				remove_dynamic_modifier = { modifier = IRI_lizardmen_resistance_modifier }
+				add_resistance = -25
+			}
+		}
+
+	}
+
+}
+
+IRI_merchant_hand_trade_league = {
+	
+	IRI_invest_into_MER = {
+
+		icon = generic_construction
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		visible = {
+			original_tag = IRI
+		}
+
+		cost = 30
+
+		target_trigger = {
+			FROM = {
+				tag = MER
+				NOT = {
+					has_idea = IRI_recent_investment
+				}
+			}
+		}
+
+		days_re_enable = 60
+
+		days_remove = 60
+
+		modifier = {
+			production_speed_buildings_factor = -0.1
+			min_export = 0.05
+		}
+
+		complete_effect = {
+			MER = {
+				country_event = { id = iri.73 hours = 3 }
+			}
+		}
+
+	}
+
+	IRI_show_off_irinthian_might = {
+
+		icon = generic_industry
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				check_variable = { IRI_nationalism > 3 }
+			}
+		}
+
+		visible = {
+			original_tag = IRI
+		}
+
+		cost = 50
+
+		target_trigger = {
+			FROM = {
+				has_war_with = IRI
+				surrender_progress > 0.05
+			}
+		}
+
+		days_re_enable = 75
+
+		complete_effect = {
+			MER = {
+				custom_effect_tooltip = IRI_increase_MER_nationalism
+				add_to_variable = { IRI_nationalism = 1 }
+			}
+		}
+
+	}
+
+	IRI_shared_irinthian_history = {
+
+		icon = generic_research
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				check_variable = { IRI_nationalism > 3 }
+			}
+		}
+
+		visible = {
+			original_tag = IRI
+		}
+
+		cost = 25
+
+		days_re_enable = 75
+
+		complete_effect = {
+			MER = {
+				custom_effect_tooltip = IRI_increase_MER_nationalism
+				add_to_variable = { IRI_nationalism = 1 }
+			}
+		}
+
+	}
+
+	IRI_look_for_other_trades = {
+
+		icon = generic_research
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				check_variable = { IRI.MER_trade_influence < MER.IRI_trade_influence }
+			}
+		}
+
+		visible = {
+			original_tag = IRI
+			has_completed_focus = IRI_entice_foreign_merchants
+		}
+
+		cost = 25
+
+		days_remove = 50
+
+		modifier = {
+			trade_opinion_factor = 0.25
+			min_export = 0.1
+		}
+
+		days_re_enable = 180
+
+		complete_effect = {
+			MER = {
+				country_event = { id = iri.80 hours = 2 }
+			}
+		}
+
+	}
+
+	IRI_flood_merchant_market = {
+
+		icon = ger_mefo_bills
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				check_variable = { IRI.MER_trade_influence < MER.IRI_trade_influence }
+			}
+		}
+
+		visible = {
+			original_tag = IRI
+			has_completed_focus = IRI_protect_our_merchants
+		}
+
+		cost = 25
+
+		days_remove = 50
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			min_export = 0.2
+		}
+
+		days_re_enable = 180
+
+		complete_effect = {
+			MER = {
+				country_event = { id = iri.81 hours = 2 }
+			}
+		}
+
+	}
+
+	IRI_ask_referendum = {
+
+		icon = generic_political_discourse
+
+		visible = {
+			original_tag = IRI
+		}
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			has_war = no
+			OR = {
+				has_completed_focus = IRI_the_empire_reborn
+				has_completed_focus = IRI_extol_on_irinthian_unity
+				BLD = {
+					exists = no
+				}
+				owns_state = 374
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = MER
+			}
+		}
+
+		days_re_enable = 180
+
+		complete_effect = {
+			MER = {
+				country_event = { id = iri.35 hours = 3 }
+			}
+		}
+
+	}
+
+	MER_invest_into_IRI = {
+
+		icon = generic_construction
+
+		visible = {
+			original_tag = MER
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				IRI = { has_war = yes }
+			}
+		}
+
+		cost = 30
+
+		target_trigger = {
+			FROM = {
+				tag = IRI
+				NOT = {
+					has_idea = IRI_recent_investment
+				}
+			}
+		}
+
+		days_re_enable = 60
+
+		days_remove = 60
+
+		modifier = {
+			production_speed_buildings_factor = -0.1
+			min_export = 0.05
+		}
+
+		complete_effect = {
+			IRI = {
+				country_event = { id = iri.73 hours = 3 }
+			}
+		}
+
+	}
+
+	MER_demand_more_guild_power = {
+
+		icon = ger_mefo_bills
+
+		visible = {
+			original_tag = MER
+			IRI = {
+				has_completed_focus = IRI_the_theresandrean_restoration
+			}
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				IRI = { has_war = yes }
+			}
+		}
+
+		cost = 50
+
+		target_trigger = {
+			FROM = {
+				tag = IRI
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRI_less_than_MER_trade_influence
+				check_variable = { MER.IRI_trade_influence > IRI.MER_trade_influence }
+			}
+		}
+
+		days_re_enable = 180
+
+		complete_effect = {
+			IRI = {
+				country_event = { id = iri.74 hours = 3 }
+			}
+		}
+
+	}
+
+	MER_stability_over_nationalism = {
+
+		icon = generic_political_discourse
+
+		visible = {
+			original_tag = MER
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				IRI = { has_war = yes }
+			}
+		}
+
+		visible = {
+			check_variable = { IRI_nationalism > 0 }
+		}
+
+		cost = 50
+
+		days_re_enable = 100
+
+		complete_effect = {
+			add_to_variable = { IRI_nationalism = -1 }
+			add_stability = 0.01
+			add_war_support = -0.01
+		}
+
+	}
+
+}
+
+IRI_managing_TLA_occupation = {
+	
+	IRI_spread_anti_monarchist_propaganda = {
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_country_flag = IRI_royalist_collaboration
+			}
+		}
+		
+		icon = eng_propaganda_campaigns
+
+		cost = var:IRI_occupation_royalist_power
+
+		visible = {
+			OR = {
+				has_country_flag = IRI_royalist_collaboration
+				has_country_flag = IRI_republican_collaboration
+			}
+			check_variable = { IRI_occupation_royalist_power > 5 }
+		}
+
+		days_remove = 10
+
+		days_re_enable = 35
+
+		modifier = {
+			political_power_cost = 0.1
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				tooltip = IRI_decreases_TLA_royalist_power_5
+				IRI_occupation_royalist_power = -5
+			}
+			add_to_variable = {
+				tooltip = IRI_decreases_TLA_royalist_loyalty_5
+				IRI_occupation_royalist_loyalty = -5
+			}
+			clamp_variable = {
+				var = IRI_occupation_royalist_power
+				min = 0
+				max = 100
+			}
+			clamp_variable = {
+				var = IRI_occupation_royalist_loyalty
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+
+	IRI_spread_anti_republican_propaganda = {
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_country_flag = IRI_republican_collaboration
+			}
+		}
+		
+		icon = eng_propaganda_campaigns
+
+		cost = var:IRI_occupation_republican_power
+
+		visible = {
+			OR = {
+				has_country_flag = IRI_royalist_collaboration
+				has_country_flag = IRI_republican_collaboration
+			}
+			check_variable = { IRI_occupation_republican_power > 5 }
+		}
+
+		days_remove = 10
+
+		days_re_enable = 60
+
+		modifier = {
+			political_power_cost = 0.1
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				tooltip = IRI_decreases_TLA_republican_power_5
+				IRI_occupation_republican_power = -5
+			}
+			clamp_variable = {
+				var = IRI_occupation_republican_power
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				tooltip = IRI_decreases_TLA_republican_loyalty_5
+				IRI_occupation_republican_loyalty = -5
+			}
+			clamp_variable = {
+				var = IRI_occupation_republican_loyalty
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+
+	IRI_spread_pro_republican_propaganda = {
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_country_flag = IRI_royalist_collaboration
+			}
+		}
+		
+		icon = eng_propaganda_campaigns
+
+		cost = 50
+
+		visible = {
+			OR = {
+				has_country_flag = IRI_royalist_collaboration
+				has_country_flag = IRI_republican_collaboration
+			}
+			check_variable = { IRI_occupation_royalist_power < 95 }
+		}
+
+		days_remove = 10
+
+		days_re_enable = 50
+
+		modifier = {
+			political_power_cost = 0.1
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				tooltip = IRI_increases_TLA_republican_power_5
+				IRI_occupation_republican_power = 5
+			}
+			clamp_variable = {
+				var = IRI_occupation_republican_power
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				tooltip = IRI_increases_TLA_republican_loyalty_5
+				IRI_occupation_republican_loyalty = 5
+			}
+			clamp_variable = {
+				var = IRI_occupation_republican_loyalty
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+
+	IRI_spread_pro_monarchist_propaganda = {
+	
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_country_flag = IRI_republican_collaboration
+			}
+		}
+
+		icon = eng_propaganda_campaigns
+
+		cost = 50
+
+		visible = {
+			OR = {
+				has_country_flag = IRI_royalist_collaboration
+				has_country_flag = IRI_republican_collaboration
+			}
+			check_variable = { IRI_occupation_royalist_loyalty < 100 }
+		}
+
+		days_remove = 10
+
+		days_re_enable = 50
+
+		modifier = {
+			political_power_cost = 0.1
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				tooltip = IRI_increases_TLA_royalist_power_5
+				IRI_occupation_royalist_power = 5
+			}
+			add_to_variable = {
+				tooltip = IRI_increases_TLA_royalist_loyalty_5
+				IRI_occupation_royalist_loyalty = 5
+			}
+			clamp_variable = {
+				var = IRI_occupation_royalist_power
+				min = 0
+				max = 100
+			}
+			clamp_variable = {
+				var = IRI_occupation_royalist_loyalty
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+
+	IRI_foment_monarchist_split = {
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_country_flag = IRI_royalist_collaboration
+			}
+		}
+
+		icon = generic_prepare_civil_war
+
+		cost = var:IRI_occupation_royalist_power
+
+		visible = {
+			has_country_flag = IRI_royalist_collaboration
+			check_variable = { IRI_occupation_royalist_power > 5 }
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRI_at_least_35_loyalty_from_royalists
+				check_variable = { IRI_occupation_royalist_loyalty > 30 }
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = { id = iri.90 hours = 2 }
+			add_to_variable = {
+				tooltip = IRI_decreases_TLA_royalist_power_10
+				IRI_occupation_royalist_power = -10
+			}
+			add_to_variable = {
+				tooltip = IRI_increases_TLA_royalist_loyalty_10
+				IRI_occupation_royalist_loyalty = 10
+			}
+			clamp_variable = {
+				var = IRI_occupation_royalist_power
+				min = 0
+				max = 100
+			}
+			clamp_variable = {
+				var = IRI_occupation_royalist_loyalty
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+
+	IRI_enforce_demands_on_collaborators = {
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = oppression
+
+		cost = 40
+
+		visible = {
+			OR = {
+				has_country_flag = IRI_royalist_collaboration
+				has_country_flag = IRI_republican_collaboration
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRI_at_least_40_loyalty_from_supported_collaborators
+				OR = {
+					AND = {
+						check_variable = { IRI_occupation_royalist_loyalty > 35 }
+						has_country_flag = IRI_royalist_collaboration
+					}
+					AND = {
+						check_variable = { IRI_occupation_republican_loyalty > 35 }
+						has_country_flag = IRI_republican_collaboration
+					}
+				}
+			}
+		}
+
+		days_remove = 14
+
+		days_re_enable = 35
+
+		complete_effect = {
+			set_country_flag = IRI_demanding_from_collaborators
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = IRI_republican_collaboration }
+					random_list = {
+						var:IRI_occupation_republican_loyalty = {
+							set_country_flag = IRI_collaborator_demand_success
+						}
+						var:IRI_occupation_republican_power = {
+							set_country_flag = IRI_collaborator_demand_failure
+						}
+					}
+				}
+				if = {
+					limit = { has_country_flag = IRI_royalist_collaboration }
+					random_list = {
+						var:IRI_occupation_royalist_loyalty = {
+							set_country_flag = IRI_collaborator_demand_success
+						}
+						var:IRI_occupation_royalist_power = {
+							set_country_flag = IRI_collaborator_demand_failure
+						}
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = IRI_demanding_from_collaborators } has_country_flag = IRI_republican_collaboration }
+				effect_tooltip = {
+					random_list = {
+						var:IRI_occupation_republican_loyalty = {
+							custom_effect_tooltip = IRI_increases_TLA_republican_loyalty_5
+							custom_effect_tooltip = IRI_increases_TLA_republican_power_5
+						}
+						var:IRI_occupation_republican_power = {
+							custom_effect_tooltip = IRI_decreases_TLA_republican_loyalty_5
+						}
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = IRI_demanding_from_collaborators } has_country_flag = IRI_royalist_collaboration }
+				effect_tooltip = {
+					random_list = {
+						var:IRI_occupation_royalist_loyalty = {
+							custom_effect_tooltip = IRI_increases_TLA_royalist_loyalty_5
+							custom_effect_tooltip = IRI_increases_TLA_royalist_power_5
+						}
+						var:IRI_occupation_royalist_power = {
+							custom_effect_tooltip = IRI_decreases_TLA_royalist_loyalty_5
+						}
+					}
+				}
+			}
+			if = {
+				limit = { has_country_flag = IRI_demanding_from_collaborators has_country_flag = IRI_republican_collaboration has_country_flag = IRI_collaborator_demand_success }
+				add_to_variable = {
+					tooltip = IRI_increases_TLA_republican_power_5
+					IRI_occupation_republican_power = 5
+				}
+				clamp_variable = {
+					var = IRI_occupation_republican_power
+					min = 0
+					max = 100
+				}
+				add_to_variable = {
+					tooltip = IRI_increases_TLA_republican_loyalty_5
+					IRI_occupation_republican_loyalty = 5
+				}
+				clamp_variable = {
+					var = IRI_occupation_republican_loyalty
+					min = 0
+					max = 100
+				}
+				clr_country_flag = IRI_collaborator_demand_success
+				else_if = {
+					limit = { has_country_flag = IRI_demanding_from_collaborators has_country_flag = IRI_republican_collaboration has_country_flag = IRI_collaborator_demand_failure }
+					add_to_variable = {
+						tooltip = IRI_decreases_TLA_republican_loyalty_5
+						IRI_occupation_republican_loyalty = -5
+					}
+					clamp_variable = {
+						var = IRI_occupation_republican_loyalty
+						min = 0
+						max = 100
+					}
+					clr_country_flag = IRI_collaborator_demand_failure
+				}
+			}
+			if = {
+				limit = { has_country_flag = IRI_demanding_from_collaborators has_country_flag = IRI_royalist_collaboration has_country_flag = IRI_collaborator_demand_success }
+				add_to_variable = {
+					tooltip = IRI_increases_TLA_royalist_power_5
+					IRI_occupation_royalist_power = 5
+				}
+				add_to_variable = {
+					tooltip = IRI_increases_TLA_royalist_loyalty_5
+					IRI_occupation_royalist_loyalty = 5
+				}
+				clamp_variable = {
+					var = IRI_occupation_royalist_power
+					min = 0
+					max = 100
+				}
+				clamp_variable = {
+					var = IRI_occupation_royalist_loyalty
+					min = 0
+					max = 100
+				}
+				clr_country_flag = IRI_collaborator_demand_success
+				else_if = {
+					limit = { has_country_flag = IRI_demanding_from_collaborators has_country_flag = IRI_royalist_collaboration has_country_flag = IRI_collaborator_demand_failure }
+					add_to_variable = {
+						tooltip = IRI_decreases_TLA_royalist_loyalty_5
+						IRI_occupation_royalist_loyalty = -5
+					}
+					clamp_variable = {
+						var = IRI_occupation_royalist_loyalty
+						min = 0
+						max = 100
+					}
+					clr_country_flag = IRI_collaborator_demand_failure
+				}
+			}
+			clr_country_flag = IRI_demanding_from_collaborators
+		}
+
+	}
+
+	IRI_promise_representation_to_tlarthingians = {
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		icon = generic_political_discourse
+
+		cost = 100
+
+		visible = {
+			OR = {
+				has_country_flag = IRI_republican_collaboration
+				has_country_flag = IRI_huuthor_collaborator
+			}
+			check_variable = { IRI_occupation_royalist_loyalty < 95 }
+			check_variable = { IRI_occupation_republican_loyalty < 95 }
+			NOT = {
+				OR = {
+					has_completed_focus = IRI_tlarthingian_crown
+					has_completed_focus = IRI_lizardmen_senators
+					has_completed_focus = IRI_stabilize_the_occupation
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = IRI_promised_TLA_representation
+			if = {
+				limit = { has_country_flag = IRI_republican_collaboration }
+				add_to_variable = {
+					tooltip = IRI_increases_TLA_republican_loyalty_10
+					IRI_occupation_republican_loyalty = 10
+				}
+				clamp_variable = {
+					var = IRI_occupation_republican_loyalty
+					min = 0
+					max = 100
+				}
+				else = {
+					add_to_variable = {
+						tooltip = IRI_increases_TLA_republican_loyalty_5
+						IRI_occupation_republican_loyalty = 5
+					}
+					clamp_variable = {
+						var = IRI_occupation_republican_loyalty
+						min = 0
+						max = 100
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = IRI_huuthor_collaborator
+				}
+				add_to_variable = {
+					tooltip = IRI_increases_TLA_royalist_loyalty_10
+					IRI_occupation_royalist_loyalty = 10
+				}
+				clamp_variable = {
+					var = IRI_occupation_royalist_loyalty
+					min = 0
+					max = 100
+				}
+			}
+		}
+
+	}
+
+	IRI_promise_autonomous_kingdom_under_iri = {
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		icon = generic_political_discourse
+
+		cost = var:IRI_occupation_royalist_loyalty
+
+		visible = {
+			has_country_flag = IRI_royalist_collaboration
+			check_variable = { IRI_occupation_royalist_loyalty < 95 }
+			NOT = {
+				OR = {
+					has_completed_focus = IRI_tlarthingian_crown
+					has_completed_focus = IRI_lizardmen_senators
+					has_completed_focus = IRI_stabilize_the_occupation
+				}
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRI_at_least_30_royalist_power
+				check_variable = { IRI_occupation_royalist_power > 25 }
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = IRI_promised_TLA_kingdom
+			add_to_variable = {
+				tooltip = IRI_increases_TLA_royalist_loyalty_10
+				IRI_occupation_royalist_loyalty = 10
+			}
+			clamp_variable = {
+				var = IRI_occupation_royalist_loyalty
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+
+	IRI_rebuild_tlarthingian_steel_road = {
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = generic_construction
+
+		cost = 50
+
+		visible = {
+			OR = {
+				has_country_flag = IRI_royalist_collaboration
+				has_country_flag = IRI_republican_collaboration
+			}
+		}
+
+		available = {
+			has_completed_focus = IRI_mobilize_occupation_force
+		}
+
+		days_remove = 70
+
+		fire_only_once = yes
+
+		modifier = {
+			production_speed_buildings_factor = -0.1
+			consumer_goods_factor = 0.1
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_country_flag = IRI_royalist_collaboration }
+				add_to_variable = {
+					tooltip = IRI_increases_TLA_royalist_power_5
+					IRI_occupation_royalist_power = 5
+				}
+				clamp_variable = {
+					var = IRI_occupation_royalist_power
+					min = 0
+					max = 100
+				}
+			}
+			if = {
+				limit = { has_country_flag = IRI_republican_collaboration }
+				add_to_variable = {
+					tooltip = IRI_increases_TLA_republican_power_5
+					IRI_occupation_republican_power = 5
+				}
+				clamp_variable = {
+					var = IRI_occupation_republican_power
+					min = 0
+					max = 100
+				}
+			}
+			add_to_variable = {
+				tooltip = IRI_increases_TLA_republican_loyalty_5
+				IRI_occupation_republican_loyalty = 5
+			}
+			clamp_variable = {
+				var = IRI_occupation_republican_loyalty
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				tooltip = IRI_increases_TLA_royalist_loyalty_5
+				IRI_occupation_royalist_loyalty = 5
+			}
+			clamp_variable = {
+				var = IRI_occupation_royalist_loyalty
+				min = 0
+				max = 100
+			}
+		}
+
+		remove_effect = {
+			every_state = {
+				limit = { 
+					is_owned_by = IRI
+					is_core_of = TLA
+					OR = {
+						state = 774
+						state = 775
+						state = 776
+						state = 777
+						state = 789
+						state = 372
+						state = 795
+						state = 793
+						state = 796
+					}
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 774
+						state = 775
+						state = 776
+						state = 777
+						state = 789
+						state = 372
+						state = 795
+						state = 793
+						state = 796
+					}
+					NOT = { is_core_of = IRI }
+				}
+				add_resistance = -10
+				add_compliance = 10
+			}
+		}
+
+	}
+
+	IRI_hold_military_march_example = {
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		cost = 25
+
+		visible = {
+			NOT = { has_completed_focus = IRI_mobilize_occupation_force }
+		}
+
+		available = {
+			has_completed_focus = IRI_mobilize_occupation_force
+		}
+
+		icon = generic_prepare_civil_war
+
+		days_remove = 14
+
+		available = {
+			has_equipment = {
+				infantry_equipment > 199
+			}
+			has_manpower > 199
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -200
+			}
+			add_manpower = -200
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = TLA NOT = { is_core_of = IRI } }
+				add_resistance = -5
+				add_compliance = 5
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 200
+			}
+			add_manpower = 200
+		}
+
+	}
+
+	IRI_hold_military_march_in_TLA_FROM = {
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		cost = 25
+
+		state_target = yes
+
+		on_map_mode = map_only
+
+		visible = {
+			has_completed_focus = IRI_mobilize_occupation_force
+		}
+
+		target_trigger = {
+			FROM = {
+				is_core_of = TLA
+				NOT = { is_core_of = IRI }
+				is_owned_by = IRI
+				is_controlled_by = IRI
+			}
+		}
+
+		icon = generic_prepare_civil_war
+
+		days_remove = 14
+
+		available = {
+			has_equipment = {
+				infantry_equipment > 199
+			}
+			has_manpower > 199
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -200
+			}
+			add_manpower = -200
+		}
+
+		remove_effect = {
+			FROM = {
+				add_resistance = -5
+				add_compliance = 5
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 200
+			}
+			add_manpower = 200
+		}
+
+	}
+
+}
+
+GENERIC_war_exhaustion_category = {
+	
+	IRI_take_putrun = {
+
+		days_mission_timeout = 45
+
+		icon = generic_prepare_civil_war
+
+		activation = {
+			has_war_with = TLA
+		}
+
+		allowed = {
+			tag = IRI
+		}
+
+		fire_only_once = yes
+
+		available = {
+			controls_state = 377
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_idea = IRI_tlarthingian_invasion }
+				modify_timed_idea = {
+					idea = IRI_tlarthingian_invasion
+					days = 35
+				}
+			}
+			if = {
+				limit = { has_idea = IRI_tlarthingian_invasion_ai }
+				modify_timed_idea = {
+					idea = IRI_tlarthingian_invasion_ai
+					days = 35
+				}
+			}
+		}
+
+		is_good = yes
+
+		timeout_effect = {
+			if = {
+				limit = { has_idea = IRI_tlarthingian_invasion }
+				remove_ideas = IRI_tlarthingian_invasion
+			}
+			if = {
+				limit = { has_idea = IRI_tlarthingian_invasion_ai }
+				remove_ideas = IRI_tlarthingian_invasion_ai
+			}
+			add_political_power = -50
+			add_war_support = -0.05
+		}
+
+	}
+
+	IRI_offer_peace_deal_to_tla = {
+
+		target_trigger = {
+			FROM = {
+				tag = TLA
+				has_war_with = IRI
+			}
+		}
+
+		allowed = {
+			tag = IRI
+		}
+
+		cost = 100
+
+		fire_only_once = yes
+
+		icon = generic_political_discourse
+
+		available = {
+			controls_state = 765
+			controls_state = 377
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				OR = {
+					NOT = {
+						controls_state = 398
+					}
+					AND = {
+						any_other_country = {
+							NOT = {
+								tag = TLA
+							}
+							has_war_with = IRI
+						}
+						surrender_progress > 0.1
+					}
+				}
+				add = 2
+			}
+		}
+
+		complete_effect = {
+			TLA = {
+				country_event = { id = iri.113 hours = 3 }
+			}
+		}
+
+	}
+
+}
+
+IRI_bureaucracy_expand_core = {
+	
+	IRI_establish_irinthian_bureaucracy_in_bilodya = {
+
+		available = {
+			NOT = {
+				has_country_flag = IRI_establishing_bureacracy_in_southern_swamps
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		days_remove = 100
+
+		cost = 75
+
+		modifier = {
+			political_power_cost = -0.1
+			consumer_goods_factor = 0.05
+		}
+
+		complete_effect = {
+			set_country_flag = {
+				flag = IRI_establishing_bureacracy_in_eastern_steppes
+				value = 1
+				days = 100
+			}
+		}
+
+		remove_effect = {
+			IRI_decrease_admin_overextension = yes
+		}
+
+	}
+
+	IRI_establish_irinthian_bureaucracy_in_tlarthingia = {
+
+		available = {
+			NOT = {
+				has_country_flag = IRI_establishing_bureacracy_in_eastern_steppes
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		days_remove = 100
+
+		cost = 75
+
+		modifier = {
+			political_power_cost = -0.1
+			consumer_goods_factor = 0.05
+		}
+
+		complete_effect = {
+			set_country_flag = {
+				flag = IRI_establishing_bureacracy_in_southern_swamps
+				value = 1
+				days = 100
+			}
+		}
+
+		remove_effect = {
+			IRI_decrease_admin_overextension = yes
+		}
+
+	}
+
+}
+
+IRI_dealing_with_terrorists = {
+	
+	IRI_root_out_imperialists = { #time to solve racism
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = generic_prepare_civil_war
+
+		visible = {
+			count_triggers = {
+				amount = 2
+				has_completed_focus = IRI_tlarthingian_senators
+				has_completed_focus = IRI_lizardmen_senators
+				has_completed_focus = IRI_tlarthingian_crown
+				has_completed_focus = IRI_ogres_in_parliament
+			}
+			check_variable = {
+				IRI_terrorism_problem_var > 0
+			}
+		}
+
+		state_target = yes
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					state = 386
+					state = 797
+					state = 397
+					state = 398
+					state = 399
+					state = 400
+					state = 401
+					state = 402
+				}
+			}
+		}
+
+		available = {
+			has_equipment = {
+				infantry_equipment > 49
+			}
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = IRI_anti_terrorist_stufferino
+				}
+			}
+		}
+
+		cost = 25
+
+		days_remove = 14
+
+		days_re_enable = 180
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -50
+			}
+			set_country_flag = {
+				flag = IRI_anti_terrorist_stufferino
+				days = 14
+				value = 1
+			}
+		}
+
+		remove_effect = {
+			add_popularity = {
+				ideology = puritan
+				popularity = -0.01
+			}
+			add_to_variable = {
+				tooltip = IRI_decrease_terrorism
+				IRI_terrorism_problem_var = -1
+			}
+			clamp_variable = {
+				var = IRI_terrorism_problem_var
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+
+	IRI_increase_occupation_in_tlarthingia = {
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = oppression
+
+		visible = {
+			OR = {
+				has_completed_focus = IRI_tlarthingian_senators
+				has_completed_focus = IRI_lizardmen_senators
+				has_completed_focus = IRI_tlarthingian_crown
+				has_completed_focus = IRI_stabilize_the_occupation
+			}
+			check_variable = {
+				IRI_terrorism_problem_var > 0
+			}
+		}
+
+		state_target = yes
+
+		target_trigger = {
+			FROM = {
+				is_core_of = TLA
+			}
+		}
+
+		on_map_mode = map_only
+
+		available = {
+			has_equipment = {
+				infantry_equipment > 99
+			}
+			has_manpower > 99
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = IRI_anti_terrorist_stufferino
+				}
+			}
+		}
+
+		cost = 50
+
+		days_remove = 14
+
+		days_re_enable = 180
+
+		complete_effect = {
+			set_country_flag = {
+				flag = IRI_anti_terrorist_stufferino
+				days = 14
+				value = 1
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -100
+			}
+			add_manpower = -100
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 100
+			}
+			add_manpower = 100
+			add_to_variable = {
+				tooltip = IRI_decrease_terrorism
+				IRI_terrorism_problem_var = -1
+			}
+			clamp_variable = {
+				var = IRI_terrorism_problem_var
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+
+	IRI_increase_convoy_protection = { #anti bandit aktion
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = generic_industry
+
+		visible = {
+			OR = {
+				has_completed_focus = IRI_cleanse_the_swamps
+				has_completed_focus = IRI_lizard_removal_corps
+			}
+			check_variable = {
+				IRI_terrorism_problem_var > 0
+			}
+		}
+
+		available = {
+			has_equipment = {
+				infantry_equipment > 99
+			}
+			has_manpower > 99
+		}
+
+		cost = 25
+
+		days_remove = 30
+
+		days_re_enable = 30
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -100
+			}
+			add_manpower = -100
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 100
+			}
+			add_manpower = 100
+			add_to_variable = {
+				tooltip = IRI_decrease_terrorism
+				IRI_terrorism_problem_var = -1
+			}
+			clamp_variable = {
+				var = IRI_terrorism_problem_var
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+
+	IRI_infiltrate_terrorists = {
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = generic_political_discourse
+
+		visible = {
+			has_completed_focus = IRI_elimination_via_infiltration
+			check_variable = {
+				IRI_terrorism_problem_var > 0
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = IRI_anti_terrorist_stufferino
+				}
+			}
+		}
+
+		cost = 50
+
+		days_remove = 30
+
+		days_re_enable = 60
+
+		remove_effect = {
+			add_manpower = 100
+			add_to_variable = {
+				tooltip = IRI_decrease_terrorism
+				IRI_terrorism_problem_var = -1
+			}
+			clamp_variable = {
+				var = IRI_terrorism_problem_var
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+
+	IRI_destroy_terrorists = {
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = generic_industry
+
+		visible = {
+			has_completed_focus = IRI_return_the_favor
+			check_variable = {
+				IRI_terrorism_problem_var > 0
+			}
+		}
+
+		modifier = {
+			resistance_target = 0.1
+		}
+
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = IRI_anti_terrorist_stufferino
+				}
+			}
+			has_equipment = {
+				infantry_equipment > 199
+			}
+			has_manpower > 199
+		}
+
+		cost = 25
+
+		days_remove = 40
+
+		days_re_enable = 90
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -200
+			}
+			add_manpower = -200
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					workshop > 0
+					is_core_of = TLA
+				}
+				damage_building = {
+					type = workshop
+					damage = 0.75
+				}
+				if = {
+					limit = { NOT = { is_core_of = IRI } }
+					add_resistance = -5
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 200
+			}
+			add_manpower = 200
+			add_to_variable = {
+				tooltip = IRI_decrease_terrorism
+				IRI_terrorism_problem_var = -1
+			}
+			clamp_variable = {
+				var = IRI_terrorism_problem_var
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+
+	IRI_solve_terrorism = { #tempted to make an edgy joke here
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRI_terrorism_solved
+				check_variable = {
+					IRI_terrorism_problem_var = 0
+				}
+			}
+		}
+
+		icon = generic_political_discourse
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = IRI_terrorists_dealt_with
+		}
+
+	}
+
+}
+
+IRI_debts_to_tlarthingia_category = {
+
+	IRI_paying_debts_mission = {
+
+		visible = {
+			NOT = {
+				has_country_flag = IRI_debts_repaid
+			}
+			has_dynamic_modifier = { modifier = IRI_debts_to_TLA }
+		}
+
+		activation = {
+			OR = {
+				has_completed_focus = IRI_slow_down_payments
+				has_completed_focus = IRI_paying_off_debt
+			}
+		}
+
+		is_good = yes
+
+		fire_only_once = no
+
+		days_mission_timeout = 60
+
+		available = {
+			check_variable = { IRI_debt_var > -0.03 }
+		}
+
+		timeout_effect = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = IRI_war_debts_TLA
+					add_idea = IRI_war_debts_TLA_example
+				}
+			}
+			activate_mission = IRI_paying_debts_mission
+			add_to_variable = { IRI_debt_var = 0.03 }
+			clamp_variable = {
+				var = IRI_debt_var
+				max = 0
+				min = -1
+			}
+			TLA = {
+				country_event = { id = tla.21 hours = 3 random = 6 }
+			}
+		}
+
+		complete_effect = {
+			TLA = {
+				news_event = { id = iri.131 hours = 2 }
+			}
+			news_event = { id = iri.131 hours = 2 }
+			set_country_flag = IRI_debts_repaid
+		}
+
+	}
+
+	IRI_speed_up_payments_decision = {
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		cost = 25
+
+		visible = {
+			NOT = {
+				has_country_flag = IRI_debts_repaid
+			}
+			has_dynamic_modifier = { modifier = IRI_debts_to_TLA }
+		}
+
+		available = {
+			has_completed_focus = IRI_speed_up_payments
+			check_variable = { days_mission_timeout@IRI_paying_debts_mission > 15 }
+		}
+
+		days_remove = 15
+
+		days_re_enable = 60
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = IRI_paying_debts_mission
+				days = -15
+			}
+		}
+
+	}
+
+	IRI_slow_down_payments_decision = {
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		cost = 25
+
+		visible = {
+			NOT = {
+				has_country_flag = IRI_debts_repaid
+			}
+			has_dynamic_modifier = { modifier = IRI_debts_to_TLA }
+		}
+
+		available = {
+			has_completed_focus = IRI_slow_down_payments
+		}
+
+		days_remove = 25
+
+		modifier = {
+			consumer_goods_factor = -0.03
+		}
+
+		days_re_enable = 75
+
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = IRI_paying_debts_mission
+				days = 25
+			}
+		}
+
+	}
+
+}
+
+IRI_sosibos_scheming_category = {
+	
+	IRI_sosibos_blame_current_leader = {
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = generic_political_discourse
+
+		cost = 50
+
+		days_re_enable = 25
+
+		days_remove = 10
+
+		remove_effect = {
+			add_popularity = {
+				ideology = puritan
+				popularity = 0.03
+			}
+		}
+
+	}
+
+	IRI_sosibos_state_need_for_militant_leadership = {
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = generic_prepare_civil_war
+
+		cost = 30
+
+		days_re_enable = 25
+
+		days_remove = 10
+
+		available = {
+			NOT = {
+				has_completed_focus = IRI_claim_responsibility_for_victories
+			}
+		}
+
+		remove_effect = {
+			add_popularity = {
+				ideology = puritan
+				popularity = 0.02
+			}
+		}
+
+	}
+
+	IRI_sosibos_court_senators = {
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = ger_mefo_bills
+
+		cost = 30
+
+		days_re_enable = 15
+
+		days_remove = 20
+
+		available = {
+			NOT = {
+				has_completed_focus = IRI_spread_distrust_of_senators
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+
+		remove_effect = {
+			add_popularity = {
+				ideology = puritan
+				popularity = 0.03
+			}
+		}
+
+	}
+
+	IRI_sosibos_brag_about_exploits = {
+	
+		ai_will_do = {
+			factor = 5
+		}
+
+		icon = eng_propaganda_campaigns
+
+		cost = 25
+
+		days_re_enable = 25
+
+		days_remove = 10
+
+		available = {
+			has_completed_focus = IRI_claim_responsibility_for_victories
+		}
+
+		remove_effect = {
+			add_popularity = {
+				ideology = puritan
+				popularity = 0.03
+			}
+		}
+
+	}
+
+}

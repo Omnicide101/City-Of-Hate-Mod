@@ -1,0 +1,21 @@
+state={
+	id=62
+	name="STATE_62"
+	provinces={
+		4332 4462 548 6102 4415 6084
+	}
+	state_category = rural
+	manpower=8821
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 5
+	}
+	history={
+		owner = GMR
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = GMR
+		add_core_of = KAL
+	}
+}

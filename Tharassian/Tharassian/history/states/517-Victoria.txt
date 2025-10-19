@@ -1,0 +1,29 @@
+state={
+	id=517
+	name="STATE_517"
+	provinces={
+		2853 7949 7984 7953 1912 7916
+	}
+	buildings_max_level_factor=1.000
+	
+	state_category = large_city
+	manpower = 483201
+	
+	history={
+		owner = SAL
+		victory_points = {
+			7949 44
+		}
+		buildings = {
+			infrastructure = 3
+			forge = 2
+			workshop = 2
+			dockyard = 2
+			farm = 1
+			7949 = {
+				naval_base = 5
+			}
+		}
+		add_core_of = SAL
+	}
+}

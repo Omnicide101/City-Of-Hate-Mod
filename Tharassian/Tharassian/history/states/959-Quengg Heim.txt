@@ -1,0 +1,25 @@
+state = {
+	id = 959
+	name = "STATE_959"
+	provinces = {
+		457 1686 1889 2436 3969 7028 
+	}
+	manpower=4962
+	buildings_max_level_factor = 1.000
+	local_supplies = 5
+	state_category = rural
+	
+	resources = {
+    lumber = 8
+		food = 4
+  }
+  history = {
+    owner = AKK
+    add_core_of = AKK
+    buildings = {
+      infrastructure = 3
+	  forge = 1
+		}
+		victory_points = { 457 4 }
+	}
+}

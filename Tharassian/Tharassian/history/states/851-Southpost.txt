@@ -1,0 +1,30 @@
+state={
+	id=851
+	name="STATE_851"
+	provinces={
+		1381 2554 8491 
+	}
+	buildings_max_level_factor=1.000
+	manpower=1
+	state_category=pastoral
+	state_category = town
+	manpower=8900
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 4
+		mount = 6
+		lumber = 22
+	}
+	history={
+		victory_points = {
+			8491 16
+		}
+		owner = HIH
+		buildings = {
+			infrastructure = 2
+			workshop = 2
+		}
+		add_core_of = HIH
+
+	}
+}

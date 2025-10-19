@@ -1,0 +1,31 @@
+﻿division_template = {
+	name = "Kriegsspieler"
+	is_locked = yes
+	regiments = {
+		swordsmen = { x = 0 y = 0 }
+		men_at_arms = { x = 0 y = 1 }
+       	men_at_arms = { x = 0 y = 2 }
+		swordsmen = { x = 1 y = 0 }
+		halberdier = { x = 1 y = 1 }
+		arbalists = { x = 1 y = 2 }
+		swordsmen= { x = 2 y = 0 }
+		halberdier = { x = 2 y = 1 }
+		arbalists = { x = 2 y = 2 }
+		swordsmen = { x = 3 y = 0 }
+		men_at_arms = { x = 3 y = 1 }
+		men_at_arms = { x = 3 y = 2 }
+		heavy_cavalry = { x = 4 y = 0 }
+		heavy_cavalry = { x = 4 y = 1 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "1st Regiment 'Die Veteranen'"
+		location = 4340
+		division_template = "Kriegsspieler"
+		start_experience_factor = 1
+
+	}
+}

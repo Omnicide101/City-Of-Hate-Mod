@@ -1,0 +1,29 @@
+state={
+	id=391
+	name="STATE_391"
+	provinces={
+		5761 3052 2957 5771 4923 4427 579 5752
+	}
+	state_category = metropolis
+	manpower=210045
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 4
+		food = 3
+	}
+	history={
+		victory_points = { 4427 47 }
+		owner = LIR
+		buildings = {
+			infrastructure = 3
+			workshop = 2
+			forge = 1
+			dockyard = 2
+			4427 = {
+				bunker = 5
+				naval_base = 8
+			}
+		}
+		add_core_of = LIR
+	}
+}

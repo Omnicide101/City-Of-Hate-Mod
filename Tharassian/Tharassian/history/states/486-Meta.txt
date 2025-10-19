@@ -1,0 +1,31 @@
+state={
+	id=486
+	name="STATE_486"
+	provinces={
+		3097 5249 8264 5279 8222 8210 5633
+	}
+	state_category = city
+	manpower=155512
+	buildings_max_level_factor=1.000
+	resources = {
+		steel = 6
+	}
+	history={
+		owner = ATH
+		victory_points = {
+			5249 32
+		}
+		buildings = {
+			infrastructure = 5
+			dockyard = 2
+			forge = 2
+			workshop = 2
+			5249 = {
+				naval_base = 4
+			}
+		}
+		add_core_of = ATH
+		add_claim_by = TRS
+
+	}
+}

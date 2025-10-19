@@ -1,0 +1,17 @@
+state={
+	id=644
+	name="STATE_644"
+	provinces={
+		2589 587 567
+	}
+	state_category = pastoral
+	manpower=1029
+	buildings_max_level_factor=1.000
+	history={
+		owner = PRK
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = PRK
+	}
+}

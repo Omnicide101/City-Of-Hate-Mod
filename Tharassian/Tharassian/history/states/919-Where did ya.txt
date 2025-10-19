@@ -1,0 +1,26 @@
+state={
+	id=919
+	name="STATE_919"
+	provinces={
+		796 3885 4426 4449 8122 
+	}
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = pastoral
+	manpower = 1924
+	
+	resources = {
+		steel = 4
+		food = 6
+	}
+	
+	history={
+		owner = SAL
+		buildings = {
+			infrastructure = 2
+			farm = 1
+		}
+		add_core_of = SAL
+		add_core_of = TRX
+	}
+}

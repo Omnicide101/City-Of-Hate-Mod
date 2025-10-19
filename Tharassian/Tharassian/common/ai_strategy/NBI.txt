@@ -1,0 +1,1219 @@
+# antagonize
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+NBI_advance_trans_rights = {
+	enable = {
+		tag = NBI
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = VRG
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RMT
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SKA
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = BER
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = GMR
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NPC
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NAV
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TRI
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FEL
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KAL
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NAS
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRT
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = IRT
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LIR
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LEX
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ORD
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ORB
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = EOR
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RTH
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = BLD
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = IRI
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TLA
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = MER
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = STA
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = HLZ
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NOC
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SPW
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ARK
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ARB
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NRK
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FTH
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WIS
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WSZ
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = UNG
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = FAU
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SVT
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = TEI
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SNF
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = PRK
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SUL
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = SVC
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRL
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = NVT
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = RLV
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = LNK
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KRZ
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = WLT
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = VLN
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = VTZ
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = KUR
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = VRG
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = RMT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = SKA
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = BER
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = GMR
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = NPC
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = NAV
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = TRI
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = FEL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = KAL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = NAS
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = KRT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = IRT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = LIR
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = LEX
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = ORD
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = ORB
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = EOR
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = RTH
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = BLD
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = IRI
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = TLA
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = MER
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = STA
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = HLZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = NOC
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = SPW
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = ARK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = ARB
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = NRK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = FTH
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = WIS
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = WSZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = UNG
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = FAU
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = SVT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = TEI
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = SNF
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = PRK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = SUL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = SVC
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = KRL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = NVT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = RLV
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = LNK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = KRZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = WLT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = VLN
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = VTZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = KUR
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = VRG
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = RMT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = SKA
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = BER
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = GMR
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NPC
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NAV
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = TRI
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = FEL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = KAL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NAS
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = KRT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = IRT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = LIR
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = LEX
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = ORD
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = ORB
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = EOR
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = RTH
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = BLD
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = IRI
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = TLA
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = MER
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = STA
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = HLZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NOC
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = SPW
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = ARK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = ARB
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NRK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = FTH
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = WIS
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = WSZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = UNG
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = FAU
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = SVT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = TEI
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = SNF
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = PRK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = SUL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = SVC
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = KRL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = NVT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = RLV
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = LNK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = KRZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = WLT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = VLN
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = VTZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = KUR
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = VRG
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = RMT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = SKA
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = BER
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = GMR
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NPC
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NAV
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = TRI
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = FEL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = KAL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NAS
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = KRT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = IRT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = LIR
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = LEX
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = ORD
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = ORB
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = EOR
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = RTH
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = BLD
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = IRI
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = TLA
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = MER
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = STA
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = HLZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NOC
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = SPW
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = ARK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = ARB
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NRK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = FTH
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = WIS
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = WSZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = UNG
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = FAU
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = SVT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = TEI
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = SNF
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = PRK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = SUL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = SVC
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = KRL
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = NVT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = RLV
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = LNK
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = KRZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = WLT
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = VLN
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = VTZ
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = KUR
+		value = 1000
+	}
+}

@@ -1,0 +1,23 @@
+state={
+	id=132
+	name="STATE_132"
+	provinces={
+		6958 4916 3058 3875 3199 5426
+	}
+	state_category = rural
+	manpower=9283
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 13
+	}
+		history={	
+		owner = RTH
+		buildings = {
+			farm = 1
+			forge = 1
+			infrastructure = 2
+		}	
+		add_core_of = RTH
+
+		}
+}

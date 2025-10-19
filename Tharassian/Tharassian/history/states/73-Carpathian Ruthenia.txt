@@ -1,0 +1,18 @@
+state={
+	id=73
+	name="STATE_73"
+	provinces={
+		6341 755 6340 4946
+	}
+	state_category = rural
+	manpower=7219
+	buildings_max_level_factor=1.000
+	history={
+		owner = GMR
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = GMR
+		add_core_of = NAS
+	}
+}

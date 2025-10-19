@@ -1,0 +1,22 @@
+state={
+	id=129
+	name="STATE_129"
+	provinces={
+		1648 4862 2891 7428
+	}
+	state_category = rural
+	manpower=5338
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 2
+	}
+		history={	
+		owner = RTH
+		buildings = {
+			farm = 2
+			infrastructure = 2
+		}	
+		add_core_of = RTH
+
+		}
+}

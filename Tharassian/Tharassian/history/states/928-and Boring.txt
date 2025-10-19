@@ -1,0 +1,24 @@
+state={
+	id=928
+	name="STATE_928"
+	provinces={
+		1791 2499 2665 4206 7952 7975 
+	}
+	manpower=4329
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = rural
+	
+	resources = {
+		lumber = 3
+	}
+	
+	history={
+		owner = SAL
+		buildings = {
+			infrastructure = 2
+			forge = 1
+		}
+		add_core_of = SAL
+	}
+}

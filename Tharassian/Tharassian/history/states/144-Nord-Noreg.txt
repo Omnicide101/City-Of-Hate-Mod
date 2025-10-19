@@ -1,0 +1,35 @@
+state={
+	id=144
+	name="STATE_144"
+	provinces={
+		758 7610 7663 3079 617
+	}
+	state_category = rural
+	manpower=4327
+	buildings_max_level_factor=1.000
+		history={
+			victory_points = {
+				758 1
+			}
+			owner = RTH
+			buildings = {	
+				infrastructure = 1
+				workshop = 2
+				617 = {
+					bunker = 2
+				}
+				758 = {
+					bunker = 2
+				}
+				7610 = {
+					bunker = 2
+				}
+				7663 = {
+					bunker = 2
+				}
+			
+			}
+			add_core_of = RTH
+
+		}
+}

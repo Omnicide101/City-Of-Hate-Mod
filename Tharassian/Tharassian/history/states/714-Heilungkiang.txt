@@ -1,0 +1,27 @@
+
+state={
+	id=714
+	name="STATE_714"
+	resources={
+		steel=5.000
+	}
+
+	history={
+		owner = RMT
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = RMT
+
+	}
+
+	provinces={
+		3618 5613 6307 6323 6329 
+	}
+	manpower=92
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	impassable = yes
+	local_supplies=0.000
+}

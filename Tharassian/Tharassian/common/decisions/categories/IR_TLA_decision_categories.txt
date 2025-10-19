@@ -1,0 +1,10 @@
+TLA_pilgrimages_category = {
+	
+	allowed = {
+		original_tag = TLA
+	}
+
+	visible = {
+		has_country_flag = TLA_ritual_signs_seen
+	}
+}

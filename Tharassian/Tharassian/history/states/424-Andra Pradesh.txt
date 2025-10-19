@@ -1,0 +1,28 @@
+state={
+	id=424
+	name="STATE_424"
+	provinces={
+		9109 5511 4591 9010 1235 8967 9723 593
+	}
+	
+	state_category = large_city 
+	manpower = 766591
+	
+	resources = {
+		food = 15
+	}
+	
+	history={
+		owner = TAR
+		victory_points = { 4591 36 }
+			buildings = {
+				infrastructure = 2
+				workshop = 4
+				4591  = {
+					naval_base = 5
+				}
+				farm = 2
+			}
+		add_core_of = TAR
+	}
+}

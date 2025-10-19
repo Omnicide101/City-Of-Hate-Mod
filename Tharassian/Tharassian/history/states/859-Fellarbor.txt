@@ -1,0 +1,23 @@
+state={
+	id=859
+	name="STATE_859"
+	provinces={
+		691 4371 8581 8591 8652 
+	}
+	buildings_max_level_factor=1.000
+	manpower=2009
+	state_category=rural
+	history={
+		owner = TRX
+		add_core_of = TRX
+		
+		victory_points = {
+			4371 4
+		}
+		
+		buildings = {
+			infrastructure = 2
+			forge = 1
+		}
+	}
+}

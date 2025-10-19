@@ -1,0 +1,15 @@
+on_actions = {
+
+	on_startup = {
+		#Kill Hellirfast and pick a path if no rules are set
+		effect = {
+			SKA = {
+				country_event = {
+					id = skaelinger.6
+					days = 240
+					random = 150
+				}
+			}
+		}
+	}
+}

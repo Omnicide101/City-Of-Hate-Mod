@@ -1,0 +1,23 @@
+state={
+	id=27
+	name="STATE_27"
+
+	history={
+		owner = GMR
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = GMR
+		add_core_of = KRT
+	}
+
+	provinces={
+		6601 4814 479 6485 1225 2342 311
+	}
+	state_category = rural
+	manpower=5693
+	buildings_max_level_factor=1.000
+	resources = {
+		mount = 7
+	}
+}

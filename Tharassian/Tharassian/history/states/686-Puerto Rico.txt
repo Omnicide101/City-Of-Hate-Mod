@@ -1,0 +1,21 @@
+state={
+	id=686
+	name="STATE_686"
+	provinces={
+		1092 3078
+	}
+	state_category = pastoral
+	manpower=3035
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			3078 1
+		}
+		owner = KUR
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+		}
+		add_core_of = KUR
+	}
+}

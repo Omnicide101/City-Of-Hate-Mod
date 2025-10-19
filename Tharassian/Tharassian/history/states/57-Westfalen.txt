@@ -1,0 +1,25 @@
+state={
+	id=57
+	name="STATE_57"
+	provinces={
+		1966 6126 1045 6138 633 4457 4817 6124
+	}
+	state_category = pastoral
+	manpower=3425
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 2
+		lumber = 5
+	}
+	history={
+		victory_points = {
+			6138 2
+		}
+		owner = GMR
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = GMR
+		add_core_of = KAL
+	}
+}

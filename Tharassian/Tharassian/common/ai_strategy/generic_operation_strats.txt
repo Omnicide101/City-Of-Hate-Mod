@@ -1,0 +1,47 @@
+go_do_quests = {
+	enable = {
+		any_operative_leader = { always = yes }
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		value = 1000
+		mission_target = ADV
+	}
+}
+
+fuck_rebels = {
+	enable = {
+		any_operative_leader = { always = yes }
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_mission
+		mission = root_out_resistance
+		value = 100
+	}
+}
+
+slay_a_monster = {
+	enable = {
+		any_controlled_state = {
+			has_dynamic_modifier = {
+				modifier = roaming_monster
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_operation
+		operation = operation_vanquish_monster
+		value = 1500
+		operation_target = ADV
+	}
+}

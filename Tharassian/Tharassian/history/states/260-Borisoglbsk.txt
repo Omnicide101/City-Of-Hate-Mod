@@ -1,0 +1,20 @@
+state={
+	id=260
+	name="STATE_260"
+	provinces={
+		773 8548 1158 4153 8626 5212 8661
+	}
+	state_category = pastoral
+	manpower=2003
+	buildings_max_level_factor=1.000
+	resources = {
+		mount = 4
+	}
+	history={
+		owner = NRK
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = NRK
+		}
+}

@@ -1,0 +1,84 @@
+characters={
+	BER_joris_zilversteen={
+		name="Joris Zilversteen"
+		portraits={
+			civilian={
+				large="gfx/leaders/BER/Portrait_BER_Zilversteen.dds"
+			}
+		}
+		country_leader={
+			desc="politics_BER_zilversteen_desc"
+			ideology=monarchy_absolute_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_BER_zilversteen_desc"
+			ideology=monarchy_constitutional_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="politics_BER_zilversteen_desc"
+			ideology=republic_aristocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	BER_willemijn_doeringa={
+		name="Willemijn Doeringa"
+		portraits={
+			civilian={
+				large="gfx/leaders/BER/Portrait_BER_Doeringa.dds"
+			}
+		}
+		country_leader={
+			desc="politics_BER_doeringa_desc"
+			ideology=republic_peasant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	BER_alexander_goudhand={
+		name="Alexander Goudhand"
+		portraits={
+			civilian={
+				large="gfx/leaders/BER/Portrait_BER_Goudhand.dds"
+			}
+		}
+		country_leader={
+			desc="politics_BER_goudhand_desc"
+			ideology=puritan_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	BER_tessa_hoevering={
+		name="Tessa Hoevering"
+		portraits={
+			civilian={
+				large="gfx/leaders/BER/Portrait_BER_Hoevering.dds"
+			}
+		}
+		country_leader={
+			desc="politics_BER_hoevering_desc"
+			ideology=theocrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+	BER_jasper_ijzerbaard={
+		name="Jasper Ijzerbaard"
+		portraits={
+			civilian={
+				large="gfx/leaders/BER/Portrait_BER_Ijzerbaard.dds"
+			}
+		}
+		country_leader={
+			desc="politics_BER_ijzerbaard_desc"
+			ideology=republic_merchant_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

@@ -131,7 +131,7 @@ add_ideas = {
 create_import = {
     resource = food
     amount = 8
-    exporter = BER
+    exporter = WIS
 }
 
 recruit_character = SNF_ulrich_drecht
@@ -142,6 +142,8 @@ recruit_character = SNF_hans_werthner
 recruit_character = SNF_andrea_schiefer
 recruit_character = SNF_madlen_bodenheimer
 recruit_character = SNF_louise_straussler
+
+activate_advisor = evil_ulrich_drecht
 
 give_military_access = UNG
 give_military_access = HLZ

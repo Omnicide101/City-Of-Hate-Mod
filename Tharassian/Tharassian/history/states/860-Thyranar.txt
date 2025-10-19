@@ -1,0 +1,28 @@
+state={
+	id=860
+	name="STATE_860"
+	provinces={
+		106 5187 5226 8828 8859 
+	}
+	buildings_max_level_factor=1.000
+	manpower=892
+	state_category=pastoral
+	
+	resources = {
+		lumber = 8
+	}
+	
+	history={
+		owner = TRX
+		add_core_of = TRX
+		
+		victory_points = {
+			106 1
+		}
+		
+		buildings = {
+			infrastructure = 2
+			farm = 1
+		}
+	}
+}

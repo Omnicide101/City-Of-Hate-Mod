@@ -1,0 +1,316 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+#Stop building so many divisions please #DEPRECATED
+#ai_division_limiter = {
+#	ai_desired_divisions_factor = -1
+#}
+
+#Country-specific modifiers
+SPW_river_patrol = {
+	icon = GFX_modifier_river_patrol
+	army_speed_factor_for_controller = 0.15
+	local_org_regain = 0.1
+	
+}
+
+SPW_bandit_haven = {
+	icon = GFX_modifier_bandit_haven
+	army_speed_factor_for_controller = -0.05
+	attrition_for_controller = 0.1
+	production_speed_buildings_factor = -0.33
+	resistance_damage_to_garrison = 0.2
+	resistance_target = 0.15
+}
+
+SPW_darkweald_bandits = {
+	icon = GFX_modifier_darkweald_bandits
+	army_speed_factor_for_controller = -0.35
+	attrition_for_controller = 0.2
+	production_speed_buildings_factor = -0.5
+	resistance_damage_to_garrison = 0.4
+	resistance_target = 0.25
+}
+
+
+SPW_darkweald_bandits_aligned = {
+	icon = GFX_modifier_darkweald_bandits_aligned
+	army_speed_factor_for_controller = 0.2
+	local_supplies = 0.15
+}
+
+SPW_darkweald_bandits_empowered = {
+	icon = GFX_modifier_darkweald_bandits_empowered
+	army_speed_factor_for_controller = -0.5
+	attrition_for_controller = 0.4
+	production_speed_buildings_factor = -0.75
+	resistance_damage_to_garrison = 0.5
+	resistance_target = 0.35
+}
+
+
+SPW_newheart_bandits = {
+	icon = GFX_modifier_newheart_bandits
+	army_speed_factor_for_controller = -0.05
+	attrition_for_controller = 0.1
+	production_speed_buildings_factor = -0.33
+	resistance_damage_to_garrison = 0.2
+	resistance_target = 0.15
+}
+
+
+SPW_newheart_bandits_aligned = {
+	icon = GFX_modifier_newheart_bandits_aligned
+	local_org_regain = 0.15
+	local_manpower = 0.2
+	attrition_for_controller = 0.2
+}
+
+
+SPW_newheart_bandits_empowered = {
+	icon = GFX_modifier_newheart_bandits_empowered
+	army_speed_factor_for_controller = -0.5
+	attrition_for_controller = 0.4
+	production_speed_buildings_factor = -0.75
+	resistance_damage_to_garrison = 0.5
+	resistance_target = 0.35
+}
+
+
+SPW_ominous_presences = {
+	icon = GFX_modifier_ominous_presences
+	resistance_damage_to_garrison = 0.2
+	resistance_target = 0.15
+	monthly_population = -0.1
+	army_speed_factor_for_controller = -0.5
+	attrition_for_controller = 0.4
+	production_speed_buildings_factor = -0.75
+}
+
+ORD_drakeskin_guarded_lands = {
+	icon = GFX_modifier_drakeskin_guarded_lands
+	resistance_damage_to_garrison = 0.5
+	resistance_target = 0.35
+}
+
+ORD_steel_crisis_hit = {
+	icon = GFX_IRI_Forges_Mobilisation
+	
+	war_support_factor = var:ORD_steel_crisis_multiplier_war_support
+	army_attack_factor = var:ORD_steel_crisis_multiplier_attack
+	army_defence_factor = var:ORD_steel_crisis_multiplier_defence
+	breakthrough_factor = var:ORD_steel_crisis_multiplier_breakthrough
+	production_lack_of_resource_penalty_factor = var:ORD_steel_crisis_multiplier_resource_penalty
+}
+
+EOR_neglected_lands = {
+	icon = GFX_modifier_state_diseased_region
+	compliance_growth = -0.15
+	state_resources_factor = -0.1
+	mobilization_speed = -0.05
+	resistance_target = 0.15
+}
+
+EOR_local_government = {
+	icon = GFX_modifier_local_government
+	compliance_growth = 0.15
+	state_resources_factor = 0.1
+	mobilization_speed = 0.05
+	resistance_target = -0.15
+}
+
+#Fertility
+
+very_fertile_land = {
+    icon = GFX_modifier_state_big_fertility
+    state_resource_food = 3
+    monthly_population = 0.1
+	local_supplies_for_controller = 0.25
+}
+
+fertile_land = {
+    icon = GFX_modifier_state_fertility
+    state_resource_food = 1
+    monthly_population = 0.025
+	local_supplies_for_controller = 0.1
+}
+
+infertile_land = {
+    icon = GFX_modifier_state_infertility
+    state_resource_food = -1
+    monthly_population = -0.025
+	local_supplies_for_controller = -0.1
+}
+
+very_infertile_land = {
+    icon = GFX_modifier_state_big_infertility
+    state_resource_food = -3
+    monthly_population = -0.1
+	local_supplies_for_controller = -0.25
+}
+
+#Generic state modifiers
+
+tomb_of_inskyllithe = {
+	icon = GFX_modifier_drakeskin_guarded_lands
+	army_morale_factor = 0.2
+	army_core_defence_factor = 0.25
+}
+
+city_of_erudition = {
+	icon = GFX_modifier_city_erudition
+    research_speed_factor = 0.03
+	stability_factor = 0.05
+	political_power_gain = 0.25
+}
+
+city_of_foundries = {
+	icon = GFX_modifier_city_foundries
+    production_factory_max_efficiency_factor = 0.07
+	production_lack_of_resource_penalty_factor = -0.05
+}
+
+city_of_harbours = {
+	icon = GFX_modifier_city_harbours
+	repair_speed_factor = 0.07
+	experience_gain_navy_unit_factor = 0.05
+	industrial_capacity_dockyard = 0.03
+}
+
+city_of_slavers = {
+	icon = GFX_modifier_city_harbours
+	production_speed_buildings_factor = 0.03
+	repair_speed_factor = 0.02
+	experience_gain_navy_unit_factor = 0.02
+	industrial_capacity_dockyard = 0.01				
+}
+
+city_of_generals = {
+	icon = GFX_modifier_city_generals
+	army_leader_cost_factor = -0.1
+	experience_gain_army_unit_factor = 0.05
+	army_org_regain = 0.03
+}
+
+sanctuary_city = {
+	icon = GFX_modifier_local_government
+	state_resources_factor = 0.33
+	local_supplies = 0.2
+	recruitable_population = 0.04
+	local_intel_to_enemies = -0.21
+}
+
+
+ongoing_border_conflict = {
+    icon = GFX_modifier_ongoing_conflict
+	remove_trigger = {
+		owner = {
+			has_border_war = no
+		}
+	}
+    army_speed_factor_for_controller = -0.5
+	disable_strategic_redeployment = 1
+}
+
+upset_populace = {
+	icon = GFX_modifier_state_upset_populace
+	local_factories = -0.2
+	state_resources_factor = -0.25
+	mobilization_speed = -0.5
+	recruitable_population_factor = -0.1
+}
+
+autonomous_region = {
+	icon = GFX_modifier_state_autonomous_region
+	local_factories = -0.15
+	state_resources_factor = -0.1
+	recruitable_population_factor = 0.1
+	resistance_growth = 0.1
+}
+
+roaming_monster = {
+	icon = GFX_modifier_state_roaming_monster
+	local_factories = -0.15
+	state_resources_factor = -0.4
+	recruitable_population_factor = -0.33
+	state_production_speed_buildings_factor = -0.5
+}
+
+smog_choked_skies = {
+	icon = GFX_modifier_state_smog_choked_skies
+	monthly_population = -0.15
+}
+
+diseased_region = {
+    icon = GFX_modifier_state_diseased_region
+    monthly_population = -0.45
+	local_supplies = -0.65
+}
+
+#civilian_food_consumption = { #Need to fix later
+#	enable = {
+#		always = yes
+#	}
+#	fuel_cost = civilian_food_consumption_var
+#}
+
+freiprinz_piety = {
+	enable = {
+		has_variable = FPT_piety
+	}
+	mobilization_speed = FPT_pious_mobilization
+	research_speed_factor = FPT_pious_science
+}
+
+steel_road_state = {
+	enable = {
+		always = yes
+	}
+
+	icon = GFX_MODIFIER_NO_SUPPLY_GRACE
+}
+
+
+sabotaged_resources = {
+	remove_trigger = { 
+		has_resistance = no
+	}
+	
+	icon = GFX_modifiers_sabotaged_resource
+	
+	temporary_state_resource_food = sabotaged_food
+	temporary_state_resource_steel = sabotaged_steel
+	temporary_state_resource_mount = sabotaged_mount
+	temporary_state_resource_lumber = sabotaged_lumber
+}
+
+war_exhaustion_modifier = {
+	enable = {
+		has_war = yes
+	}
+	mobilization_speed = war_exhaustion_mobilization
+	surrender_limit = war_exhaustion_surrender_limit
+}

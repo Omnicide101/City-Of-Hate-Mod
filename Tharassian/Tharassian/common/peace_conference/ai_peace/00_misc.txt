@@ -1,0 +1,85 @@
+# Scripted AI desire for peace actions.
+# Hacked together from vanilla stuff
+# Game is built for everyone to annex everything they can
+# So promote that
+
+peace_ai_desires = {
+	
+	dont_do_non_land_grabby_stuff = {
+        peace_action_type = { liberate force_government puppet }
+        enable = {
+            always = yes
+        }
+        ai_desire = -999
+    }
+	
+	do_land_grabby_stuff = {
+        peace_action_type = take_states
+        enable = {
+            always = yes
+        }
+        ai_desire = 50
+    }
+
+    take_our_cores = {
+        peace_action_type = { take_states }
+        enable = {
+            ROOT = { tag = ROOT.FROM } #We are negotiating for ourselves
+            ROOT.FROM.FROM.FROM = { is_core_of = ROOT.FROM } #It is ours
+        }
+        ai_desire = 100
+    }
+	
+	dont_grab_exclaves = {
+        peace_action_type = take_states
+        enable = {
+            ROOT.FROM.FROM.FROM = {
+                NOT = {
+                    OR = {
+                        is_claimed_by = ROOT.FROM
+                        any_neighbor_state = {
+                            OR = {
+                                is_owned_by = ROOT.FROM
+                                pc_is_state_claimed_by = ROOT.FROM
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ai_desire = -40
+    }
+	
+    do_grab_stuff_near_us = {
+        peace_action_type = take_states
+        enable = {
+            ROOT.FROM.FROM.FROM = {
+                OR = {
+                    any_neighbor_state = {
+                        OR = {
+                            is_owned_by = ROOT.FROM
+                        }
+                    }
+                    is_claimed_by = ROOT.FROM
+                }
+            }
+            ROOT = {
+                tag = ROOT.FROM
+            }
+        }
+        ai_desire = 10
+    }
+	
+    doesnt_control_no_claim = {
+        peace_action_type = { take_states }
+        enable = {
+            ROOT = { tag = ROOT.FROM } #We are negotiating for ourselves
+            ROOT.FROM.FROM.FROM = {
+                NOT = { is_core_of = ROOT.FROM }
+                NOT = { is_claimed_by = ROOT.FROM }
+                NOT = { is_controlled_by = ROOT.FROM }
+            }
+        }
+        ai_desire = -20
+    }
+}

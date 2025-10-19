@@ -1,0 +1,27 @@
+
+state={
+	id=978
+	name="STATE_978"
+	provinces={
+		317 2396 3445 5597 8799 
+	}
+	state_category = pastoral
+	manpower=6849
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 2
+	}
+	history={
+		owner = ATH
+		victory_points = {
+			3445 5
+		}
+		buildings = {
+			infrastructure = 2
+			farm = 1
+		}
+		add_core_of = ATH
+		add_claim_by = TRS
+
+	}
+}

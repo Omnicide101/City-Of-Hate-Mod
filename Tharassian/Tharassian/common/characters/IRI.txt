@@ -1,0 +1,449 @@
+characters = {
+	IRI_therseandros_chairophon = {
+		name = "Therseandros Chairophon"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Chairophon.dds"
+			}
+		}
+		country_leader = {
+			ideology = monarchy_constitutional_ideology
+			desc = "politics_IRI_chairophon_desc"
+			expire = "1965.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = monarchy_absolute_ideology
+			desc = "politics_IRI_chairophon_desc"
+			expire = "1965.1.1"
+			id = -1
+		}
+	}
+	IRI_ignatius_chairophon = {
+		name = "Ignatius Chairophon"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Ignatius_Chairophon.dds"
+			}
+		}
+		country_leader = {
+			ideology = monarchy_constitutional_ideology
+			desc = "politics_IRI_chairophon_desc"
+			expire = "1965.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = monarchy_absolute_ideology
+			desc = "politics_IRI_chairophon_desc"
+			expire = "1965.1.1"
+			id = -1
+		}
+	}
+	IRI_aclepiades_thersilochus = {
+		name = "Aclepiades Thersilochus"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Thersilochus.dds"
+			}
+		}
+		country_leader = {
+			ideology = theocrat_ideology
+			desc = "politics_IRI_thersilochus_desc"
+			expire = "1965.1.1"
+			id = -1
+		}
+	}
+	IRI_aggelos_cinyras = {
+		name = "Aggelos Cinyras"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Cinyras.dds"
+			}
+		}
+		country_leader = {
+			ideology = republic_aristocrat_ideology
+			desc = "politics_IRI_thersilochus_desc"
+			expire = "1965.1.1"
+			traits = {
+				dishonoured_dynasty
+			}
+			id = -1
+		}
+	}
+	IRI_amarhyllis_agrotis = {
+		name = "Amarhyllis Agrótis"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Agrotis.dds"
+			}
+		}
+		country_leader = {
+			ideology = republic_peasant_ideology
+			desc = "politics_IRI_thersilochus_desc"
+			expire = "1965.1.1"
+			id = -1
+		}
+	}
+	IRI_tryphena_vettias = {
+		name = "Tryphena Vettias"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Vettias.dds"
+			}
+		}
+		country_leader = {
+			ideology = republic_merchant_ideology
+			desc = "politics_IRI_thersilochus_desc"
+			expire = "1965.1.1"
+			id = -1
+		}
+	}
+	IRI_kephalos_sosibios = {
+		name = "Kephalos Sosibios"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
+				small = "gfx/interface/ideas/characters/IRI/IRI_Sosibios.dds"
+			}
+		}
+		country_leader = {
+			ideology = puritan_ideology
+			desc = "politics_IRI_thersilochus_desc"
+			expire = "1965.1.1"
+			traits = {
+				rabid_irredentist
+			}
+			id = -1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = IRI_kephalos_sosibios
+			allowed = {
+				original_tag = IRI
+			}
+			available = {
+				OR = {
+					has_government = puritan
+					has_completed_focus = IRI_new_prime_orator
+				}
+			}
+			traits = {
+				rabid_irredentist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	IRI_commera_vennado = {
+		name = "Commera Vennado"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
+				small = GFX_idea_IRI_Tosteratos
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = IRI_commera_vennado
+			allowed = {
+				original_tag = IRI
+			}
+			available = {
+				has_government = republic_merchant
+			}
+			traits = {
+				experienced_rosite
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	IRI_Ioanna_Cinyras = {
+		name = "Ioanna Cinyras"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
+				small = GFX_idea_IRI_Ioanna
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = IRI_Ioanna_Cinyras
+			allowed = {
+				original_tag = IRI
+			}
+			available = {
+				has_government = republic_aristocrat
+			}
+			traits = {
+				first_lady_of_tykhintos_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	IRI_Alexander_Kyriaziss = {
+		name = "Alexander Kyriaziss"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
+				small = GFX_idea_IRI_Kyriazis
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = IRI_Alexander_Kyriaziss
+			allowed = {
+				original_tag = IRI
+			}
+			traits = {
+				retired_strategos
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	IRI_ephina_pession = {
+		name = "Ephinne Pession"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
+				small = GFX_idea_IRI_Heartstrong
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = IRI_ephina_pession
+			allowed = {
+				original_tag = IRI
+			}
+			traits = {
+				ambitious_noble
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	IRI_Anna_Chalkia = {
+		name = "Anna Chalkia"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
+				small = GFX_idea_IRI_Chalkia
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = IRI_Anna_Chalkia
+			allowed = {
+				original_tag = IRI
+			}
+			available = {
+				has_completed_focus = IRI_irinthian_women
+			}
+			traits = {
+				brilliant_administrator
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	IRI_Chrisos_Florou = {
+		name = "Chrisos Florou"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
+				small = GFX_idea_IRI_Florou
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = IRI_Chrisos_Florou
+			allowed = {
+				original_tag = IRI
+			}
+			available = {
+				has_government = puritan
+			}
+			traits = {
+				visionary_architect
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	IRI_lucius_agrippa = {
+		name = "Lucius Agrippa"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
+				small = GFX_idea_IRI_Kyriazis
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = IRI_lucius_agrippa
+			allowed = {
+				original_tag = IRI
+			}
+			available = {
+				NOT = {
+					has_completed_focus = IRI_new_prime_orator
+				}
+			}
+			traits = {
+				aristocratic_paragon
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	IRI_asteia_rinoloasc = {
+		name = "Asteia Rinoloasc"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
+				small = GFX_idea_IRI_Heartstrong
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = IRI_asteia_rinoloasc
+			allowed = {
+				original_tag = IRI
+			}
+			available = {
+				has_completed_focus = IRI_pardon_asteia
+			}
+			visible = {
+				has_focus_tree = irinthios_focus
+			}
+			traits = {
+				comedy_author
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	IRI_Tosteratos = {
+		name = "Tosteratos"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/IRI/Portrait_IRI_Sosibios.dds"
+				small = GFX_idea_IRI_Tosteratos
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = IRI_Tosteratos
+			allowed = {
+				original_tag = IRI
+			}
+			available = {
+				has_completed_focus = IRI_patronize_the_akadimia_filosofi
+			}
+			traits = {
+				natural_philosopher_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	IRI_perthecles_thaurun = {
+		name = "Perthecles Tenancian"
+		portraits = {
+			army = {
+				small = GFX_idea_IRI_Tosteratos
+			}
+			army = {
+				large = "gfx/leaders/IRI/portrait_IRI_Hector_Lupus.dds"
+			}
+		}
+		
+		corps_commander = {
+			traits = {
+				trickster
+			}
+			skill = 3
+			
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+			
+			legacy_id = 0
+		}
+	}
+
+	IRI_diomedes_stathis = {
+		name = "Diomedes Stathis"
+		portraits = {
+			army = {
+				small = GFX_idea_IRI_Tosteratos
+			}
+			army = {
+				large = "gfx/leaders/IRI/portrait_IRI_Diomedes_Stathis.dds"
+			}
+		}
+		
+		corps_commander = {
+			skill = 2
+			
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			
+			legacy_id = 0
+		}
+	}
+
+	IRI_lysimachus_monophthal = {
+		name = "Lysimachus Monophthal"
+		portraits = {
+			army = {
+				small = GFX_idea_IRI_Tosteratos
+			}
+			army = {
+				large = "gfx/leaders/IRI/portrait_IRI_Galen_Vlahos.dds"
+			}
+		}
+		
+		#gonna be made a general via focus
+	}
+
+	IRI_cassandra_reahossi = {
+		name = "Cassandra Reah"
+		portraits = {
+			army = {
+				small = GFX_idea_IRI_Tosteratos
+			}
+			army = {
+				large = "gfx/leaders/IRI/portrait_IRI_Elias_Kouris.dds"
+			}
+		}
+		
+		#gonna be made a general via focus
+	}
+}

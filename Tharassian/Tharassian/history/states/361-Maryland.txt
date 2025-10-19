@@ -1,0 +1,21 @@
+state={
+	id=361
+	name="STATE_361"
+	provinces={
+		987 3587 432 8855 612
+	}
+	state_category = rural
+	manpower=4938
+	buildings_max_level_factor=1.000
+	history={
+		victory_points = {
+			3587 3
+		}
+		owner = WIS
+		buildings = {
+			infrastructure = 2
+			farm = 1
+		}
+		add_core_of = WIS
+		}
+}

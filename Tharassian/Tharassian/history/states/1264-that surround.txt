@@ -1,0 +1,26 @@
+state={
+	id=1264
+	name="STATE_1264"
+	provinces={
+		330 1688 4443 8588 8653 
+	}
+	state_category = rural
+	manpower=4763
+	buildings_max_level_factor=1.000
+	resources = {
+		lumber = 11
+	}
+	history={
+		owner = ATH
+		victory_points = {
+			1688 2
+		}
+		buildings = {
+			infrastructure = 1
+			farm = 1
+		}
+		add_core_of = ATH
+		add_claim_by = TRS
+
+	}
+}

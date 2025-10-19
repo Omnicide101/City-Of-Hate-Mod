@@ -1,0 +1,33 @@
+state={
+	id=383
+	name="STATE_383"
+	provinces={
+		6215 6195 4692
+	}
+	state_category = large_city
+	manpower=628201
+	buildings_max_level_factor=1.000
+	resources = {
+		food = 14
+		steel = 26
+	}
+	history={
+		victory_points = { 6215 34 }
+		owner = RMT
+		buildings = {
+			infrastructure = 3
+			workshop = 3
+			forge = 2
+			6215 = {
+				bunker = 3
+			}
+			6195 = {
+				bunker = 3
+			}
+			4692 = {
+				bunker = 3
+			}
+		}
+		add_core_of = RMT
+	}
+}

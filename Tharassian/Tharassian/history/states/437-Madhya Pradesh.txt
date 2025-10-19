@@ -1,0 +1,20 @@
+state={
+	id=437
+	name="STATE_437"
+	provinces={
+		5497 4132 1443 1344 3793 440 918
+	}
+	state_category = pastoral
+	manpower = 123
+	
+	history={
+		victory_points = {
+			918 3
+		}
+		owner = GET
+			buildings = {
+				infrastructure = 1
+			}
+		add_core_of = GET
+	}
+}

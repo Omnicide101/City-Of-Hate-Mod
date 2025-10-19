@@ -1,0 +1,25 @@
+state={
+	id=917
+	name="STATE_917"
+	provinces={
+		2387 2970 4333 5220 8403 8434 
+	}
+	manpower=3488
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = rural
+	resources = {
+		lumber = 8
+	}
+	history = {
+        owner = SAL
+        add_core_of = SAL
+		add_core_of = TRX
+        buildings = {
+            infrastructure = 3
+			workshop = 1
+		}
+		victory_points = { 4333 2 }
+		victory_points = { 2387 6 }
+	}
+}

@@ -1,0 +1,21 @@
+
+state={
+	id=10
+	name="STATE_10"
+	state_category = town
+	history={
+		owner = GMR
+		buildings = {
+		infrastructure = 1
+		workshop = 1
+		}
+		add_core_of = GMR
+		add_core_of = IRT
+	}
+
+	provinces={
+		6629 789 1305 5363 1109 6449 6440
+	}
+	manpower=20468
+	buildings_max_level_factor=1.000
+}
