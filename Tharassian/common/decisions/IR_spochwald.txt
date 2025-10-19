@@ -1,0 +1,170 @@
+SPW_balance_of_power_category = {
+
+    SPW_little_drink = {
+
+        cost = 5
+
+        icon = generic_civil_support
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SPW_not_drinking_tt
+				NOT = {
+					OR = {
+						has_active_mission = SPW_tipsy_binge
+						has_active_mission = SPW_drunk_binge
+						has_active_mission = SPW_hammered_binge
+					}
+				}
+			}
+		}
+
+        complete_effect = {
+			weisz_moralize_tiny = yes
+			
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = -0.03
+				tooltip_side = SPW_bekazaal_side
+			}
+        }
+		
+		days_remove = 7
+		
+		remove_effect = {
+			weisz_demoralize_small = yes
+		}
+    }
+	
+	SPW_medium_drink = {
+
+        cost = 15
+
+        icon = generic_civil_support
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SPW_not_drinking_tt
+				NOT = {
+					OR = {
+						has_active_mission = SPW_tipsy_binge
+						has_active_mission = SPW_drunk_binge
+						has_active_mission = SPW_hammered_binge
+					}
+				}
+			}
+		}
+
+        complete_effect = {
+			weisz_moralize_small = yes
+			
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = -0.07
+				tooltip_side = SPW_bekazaal_side
+			}
+        }
+		
+		days_remove = 14
+		
+		remove_effect = {
+			weisz_demoralize_medium = yes
+		}
+    }
+	
+	SPW_big_drink = {
+
+        cost = 35
+
+        icon = generic_civil_support
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SPW_not_drinking_tt
+				NOT = {
+					OR = {
+						has_active_mission = SPW_tipsy_binge
+						has_active_mission = SPW_drunk_binge
+						has_active_mission = SPW_hammered_binge
+					}
+				}
+			}
+		}
+
+        complete_effect = {
+			weisz_moralize_medium = yes
+			
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = -0.16
+				tooltip_side = SPW_bekazaal_side
+			}
+        }
+		
+		days_remove = 21
+		
+		remove_effect = {
+			weisz_demoralize_big = yes
+		}
+    }
+	
+	SPW_go_hunt = {
+
+        cost = 15
+
+        icon = generic_reorganize_irregulars
+		
+		visible = {
+			has_country_flag = SPW_weisz_hunter
+		}
+
+        complete_effect = {
+			weisz_moralize_medium = yes
+        }
+		
+		days_remove = 21
+		
+		modifier = {
+			war_support_weekly = 0.002
+		}
+		
+		remove_effect = {
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = -0.04
+				tooltip_side = SPW_bekazaal_side
+			}
+		}
+	
+    }
+	
+	SPW_go_garden = {
+
+        cost = 15
+
+        icon = hol_inundate_water_lines
+		
+		visible = {
+			has_country_flag = SPW_weisz_gardener
+		}
+
+        complete_effect = {
+			weisz_moralize_small = yes
+        }
+		
+		days_remove = 21
+		
+		modifier = {
+			political_power_gain = 0.05
+		}
+		
+		remove_effect = {
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = 0.04
+				tooltip_side = SPW_magdalena_side
+			}
+		}
+	
+    }
+}

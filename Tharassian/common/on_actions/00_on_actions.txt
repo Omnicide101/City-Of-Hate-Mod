@@ -388,6 +388,54 @@ on_actions = {
 					modifier = SPW_river_patrol
 				}
 			}
+			# St Vichtlas Patrols
+			269 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			1297 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			227 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			# Neureik Patrols
+			268 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			1298 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			284 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			1299 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			316 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			318 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			#
 			301 = {
 				add_dynamic_modifier = {
 					modifier = SPW_darkweald_bandits

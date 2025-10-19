@@ -1051,9 +1051,9 @@ focus = { #support the road to wertzvorde
 		prerequisite = {
 			focus = SNF_konkordat_highroad
 			}
-		mutually_exclusive = {
-			focus = SNF_Road_to_faustburg
-		}
+		#mutually_exclusive = {
+		#	focus = SNF_Road_to_faustburg
+		#}
 		ai_will_do = {
 			factor = 70
 		}
@@ -1112,9 +1112,9 @@ focus = { #support the road to faustburg
 				is_not_independent = yes
 			}
 		}
-		mutually_exclusive = {
-			focus = SNF_konkordat_highroad
-		}
+		#mutually_exclusive = {
+		#	focus = SNF_konkordat_highroad
+		#}
 		prerequisite = {
 			focus = SNF_invest_in_capital
 		}

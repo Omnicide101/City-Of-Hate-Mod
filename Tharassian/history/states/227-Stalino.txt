@@ -2,7 +2,7 @@ state={
 	id=227
 	name="STATE_227"
 	provinces={
-		9285 1596 5312 9253
+		9285 1596 5312 9253 9316 5441
 	}
 	state_category = city
 	manpower=934215

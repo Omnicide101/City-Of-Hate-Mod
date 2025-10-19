@@ -982,8 +982,7 @@ leader_traits = {
 	}
 	desperate_opportunist = {
 		random = no
-		stability_factor = -0.05
-		party_stability_factor = -0.1
+		stability_factor = -0.1
 		monarchy_absolute_drift = -0.05
 	}
 	dreamy_prince = {
