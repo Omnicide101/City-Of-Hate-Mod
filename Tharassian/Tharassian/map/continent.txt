@@ -1,9 +1,0 @@
-continents = {
-	latherin
-	asweyne
-	rosthirin
-	maslodan
-	thosthal
-	niftaris
-	venmethor
-}

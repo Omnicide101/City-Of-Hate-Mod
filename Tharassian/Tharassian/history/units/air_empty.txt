@@ -1,5 +1,0 @@
-﻿
-
-air_wings = {
-	### None
-}

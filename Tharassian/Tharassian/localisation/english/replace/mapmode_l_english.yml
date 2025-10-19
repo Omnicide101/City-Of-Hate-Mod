@@ -1,4 +1,0 @@
-﻿l_english:
- MAPMODE_STRATEGIC_NAVY_NAME:0 "Strategic Navy and Tunnels"
- MAPMODE_STRATEGIC_NAVY:0 "§HStrategic Navy§! and §YTunnels§! map mode"
- MAPMODE_STRATEGIC_NAVY_DESCRIPTION:0 "Shows strategic areas and §YDwarven Tunnels§!, and allows you to see what naval operations are being performed by your fleets. \nRegions where you have naval supremacy are shown with a §Ggreen§! outline. \nAreas striped §Rred§! are outside the operational range of the currently selected fleet."

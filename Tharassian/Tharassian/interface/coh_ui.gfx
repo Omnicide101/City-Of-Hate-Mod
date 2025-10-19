@@ -1,9 +1,0 @@
-spriteTypes = {
-###City of Hate
-	spriteType = {
-		name = "GFX_COH_logo"
-		textureFile = "gfx/interface/logo_COH.dds"
-	}
-	
-
-}

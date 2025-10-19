@@ -1,7 +1,0 @@
-#MOL = "countries/Moliva.txt"
-#CAL = "countries/Calezzio.txt"
-#KEL = "countries/Kel.txt"
-#QUA = "countries/Quarralani.txt"
-#STP = "countries/StompingGrounds.txt"
-#EOK = "countries/Eokgi.txt"
-#ROT = "countries/Tears.txt"
