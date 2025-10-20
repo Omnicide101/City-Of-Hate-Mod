@@ -7,18 +7,17 @@ state={
 	}
 
 	history={
-		owner = SPW
+		owner = NRK
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 
 		}
-		add_core_of = SPW
-		add_core_of = RKS
+		add_core_of = NRK
 
 	}
 
 	provinces={
-		715 9183 
+		5201 8880 8854 3377
 	}
 	manpower=1022
 	buildings_max_level_factor=1.000

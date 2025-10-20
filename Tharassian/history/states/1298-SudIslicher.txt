@@ -1,0 +1,19 @@
+state={
+	id=1298
+	name="STATE_1298"
+	provinces={
+		8947 4054 5236 8822 8817 8930
+	}
+	manpower=3612
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+
+	history={
+		owner = NRK
+		add_core_of = NRK
+		buildings = {
+			infrastructure = 3
+		}
+	}
+}

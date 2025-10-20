@@ -1,0 +1,20 @@
+state={
+	id=1297
+	name="STATE_1297"
+	provinces={
+		4094 5242 9180 9201 3091
+	}
+	manpower=1021
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+
+	history={
+		owner = SVT
+		add_core_of = SVT
+		buildings = {
+			infrastructure = 1
+			workshop = 1
+		}
+	}
+}

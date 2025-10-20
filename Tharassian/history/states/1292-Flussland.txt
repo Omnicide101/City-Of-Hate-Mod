@@ -2,7 +2,9 @@
 state={
 	id=1292
 	name="STATE_1292"
-
+	resources={
+		lumber=5.000
+	}
 	history={
 		victory_points = { 9172 16 }
 		owner = SPW
@@ -11,11 +13,12 @@ state={
 			workshop = 1
 		}
 		add_core_of = SPW
+		add_core_of = RKS
 	}
 	provinces={
-		1558 2821 9155 9172 9182
+		1558 2821 9155 9172 9182 715 9183
 	}
-	manpower=2091
+	manpower=26091
 	buildings_max_level_factor=1.000
 	state_category=town
 	local_supplies=0.000

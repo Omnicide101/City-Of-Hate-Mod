@@ -115,3 +115,169 @@ defined_text = { #Country
 		localization_key = GUI_STA_FPT_very_disloyal
 	}
 }
+
+# KOnkord Loyalty Show Scripts
+
+defined_text = {
+	name = wss_win_loyalty
+	text = { 
+		trigger = {
+			is_subject_of = UNG
+			NOT = {
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+			NOT = { TAG = WIS }
+				WIS = {
+				has_country_flag = wws_konkord_yes
+			}
+		}
+		localization_key = wss_win_loyalty_show
+	}
+	text = { 
+		trigger = {
+			is_subject_of = UNG
+			NOT = {
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+			OR = {
+			AND = {
+				TAG = WIS
+				has_country_flag = wws_konkord_yes
+				}
+			NOT = {
+				WIS = {
+				has_country_flag = wws_konkord_yes
+				}
+				}
+			}
+		}
+		localization_key = wss_win_loyalty_no
+	}
+}
+
+defined_text = {
+	name = wss_snf_loyalty
+	text = { 
+		trigger = {
+			is_subject_of = UNG
+			NOT = {
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+			NOT = { TAG = SNF }
+				SNF = {
+				has_country_flag = wws_konkord_yes
+			}
+		}
+		localization_key = wss_snf_loyalty_show
+	}
+	text = { 
+		trigger = {
+			is_subject_of = UNG
+			NOT = {
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+			OR = {
+			AND = {
+				TAG = SNF
+				has_country_flag = wws_konkord_yes
+				}
+			NOT = {
+				SNF = {
+				has_country_flag = wws_konkord_yes
+				}
+				}
+			}
+		}
+		localization_key = wss_snf_loyalty_no
+	}
+}
+
+defined_text = {
+	name = wss_wsz_loyalty
+	text = { 
+		trigger = {
+			is_subject_of = UNG
+			NOT = {
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+			NOT = { TAG = WSZ }
+				WSZ = {
+				has_country_flag = wws_konkord_yes
+			}
+		}
+		localization_key = wss_wsz_loyalty_show
+	}
+	text = { 
+		trigger = {
+			is_subject_of = UNG
+			NOT = {
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+			OR = {
+			AND = {
+				TAG = WSZ
+				has_country_flag = wws_konkord_yes
+				}
+			NOT = {
+				WSZ = {
+				has_country_flag = wws_konkord_yes
+				}
+				}
+			}
+		}
+		localization_key = wss_wsz_loyalty_no
+	}
+}
+
+defined_text = {
+	name = wss_tei_loyalty
+	text = { 
+		trigger = {
+			is_subject_of = UNG
+			NOT = {
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+			NOT = { TAG = TEI }
+				TEI = {
+				has_country_flag = wws_konkord_yes
+			}
+		}
+		localization_key = wss_tei_loyalty_show
+	}
+	text = { 
+		trigger = {
+			is_subject_of = UNG
+			NOT = {
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+			OR = {
+			AND = {
+				TAG = TEI
+				has_country_flag = wws_konkord_yes
+				}
+			NOT = {
+				TEI = {
+				has_country_flag = wws_konkord_yes
+				}
+				}
+			}
+		}
+		localization_key = wss_tei_loyalty_no
+	}
+}

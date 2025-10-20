@@ -4,29 +4,9 @@ focus_tree = {
 	id = spochwald_focus
 	country = {
 		factor = 0
-		#modifier = {
-			#add = 10
-			#tag = SPW
-		#}
-	}
-
-	focus = { #
-		id = 
-		icon = GFX_
-		cost = 
-		prerequisite = {
-			focus = 
-		}
-		bypass = {
-			
-		}
-		ai_will_do = {
-			factor = 
-		}
-		x = 
-		y = 
-		completion_reward = {
-			
+		modifier = {
+			add = 10
+			tag = SPW
 		}
 	}
 

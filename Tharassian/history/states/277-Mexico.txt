@@ -23,6 +23,5 @@ state={
 			forge = 1
 		}
 		add_core_of = SPW
-		add_core_of = RKS
 	}
 }

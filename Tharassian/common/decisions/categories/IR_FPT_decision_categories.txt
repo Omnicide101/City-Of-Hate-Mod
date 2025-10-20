@@ -7,3 +7,21 @@ FPT_elections = {
 	
 	visible_when_empty = yes
 }
+
+WSS_Konkord_members = {
+	icon = GFX_decision_category_eng_appeal_to_imperial_loyalists
+	
+	allowed = {
+		has_country_flag = wws_konkord_yes
+		is_subject_of = UNG
+			NOT = {
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 100
+}
