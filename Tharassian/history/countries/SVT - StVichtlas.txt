@@ -104,6 +104,16 @@ set_variable = {
 	value = 100
 }
 
+set_variable = {
+	var = SPW_rooks_loyalty
+	value = 0
+}
+
+set_variable = {
+	var = SPW_rooks_tension
+	value = 3
+}
+
 1939.1.1 = {
 }
 
@@ -147,6 +157,7 @@ add_ideas = {
 	human_country
 	septism_religion
 	FPT_bauernfreistellung
+	SPW_reapers_of_the_harvest
 }
 
 add_opinion_modifier = {

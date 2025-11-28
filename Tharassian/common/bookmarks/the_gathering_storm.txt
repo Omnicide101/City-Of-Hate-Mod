@@ -113,6 +113,20 @@ bookmarks = {
 				SNF_support_rural_farms
 			}
 		}
+
+		"SPW"={
+			history = "SPW_CITY_OF_HATE_DESC"
+			ideology = monarchy_constitutional
+			minor = yes
+			ideas = {
+				SPW_breadbasket_of_the_union
+				SPW_Spectre_BeKazaal
+				SPW_rapidly_collapsing_state
+			}
+			focuses = {
+				
+			}
+		}
 		
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !

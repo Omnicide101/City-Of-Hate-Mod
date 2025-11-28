@@ -203,6 +203,10 @@ country_event = { # Nobility Steps In
 		add_political_power = 25
 		hidden_effect = {
 			set_country_flag = HLZ_wholesome_king
+			news_event = {
+			id = news.12
+			days = 3
+			}
 		}
 	}
 	option = { # Aristocratic Republic
@@ -229,6 +233,10 @@ country_event = { # Nobility Steps In
 		add_political_power = 25
 		hidden_effect = {
 			set_country_flag = HLZ_wholesome_nobles
+			news_event = {
+			id = news.12
+			days = 3
+			}
 		}
 	}
 }
@@ -265,6 +273,10 @@ country_event = { # Kirschenrevolution
 		add_political_power = 25
 		hidden_effect = {
 			set_country_flag = HLZ_wholesome_liberals
+			news_event = {
+			id = news.13
+			days = 3
+			}
 		}
 	}
 	option = { # Solidarity League
@@ -291,6 +303,10 @@ country_event = { # Kirschenrevolution
 		add_political_power = 25
 		hidden_effect = {
 			set_country_flag = HLZ_wholesome_socdems
+			news_event = {
+			id = news.13
+			days = 3
+			}
 		}
 	}
 }
@@ -1195,6 +1211,12 @@ country_event = {#Pressler Takes Over
 			remove_opinion_modifier = {
 				target = HLZ
 				modifier = HLZ_banned_aristocrats_opinion
+			}
+		}
+		hidden_effect = {
+		news_event = {
+			id = news.14
+			days = 3
 			}
 		}
 	}

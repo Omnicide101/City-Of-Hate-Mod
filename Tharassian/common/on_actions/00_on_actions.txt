@@ -364,10 +364,76 @@ on_actions = {
 			}
 		}
 	}
+
+	#Spochwald The Rooks Tenstion as Global so as to be shared between St Vichtlas and Faustburg
 	
-	#Set spooky Spochwald Bandits
+	#Spochwald Weisz Willpower
 	on_startup = {
 		effect = {
+		SPW = {
+		SPW_check_weisz_willpower = yes
+			}
+		}
+	}
+
+	#Set spooky Spochwald Modifiers
+	on_startup = {
+		effect = {
+			#The Rooks
+			#St Vichtlas
+			265 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			269 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			#Spochwald
+			1292 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			322 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			267 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			259 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			1287 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			#Faustburger Rooks
+			274 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			251 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			264 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			#Spochwald Patrols
 			1284 = {
 				add_dynamic_modifier = {
 					modifier = SPW_river_patrol

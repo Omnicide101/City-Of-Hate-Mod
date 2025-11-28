@@ -980,6 +980,12 @@ country_event = {#Defender Cancel
 			}
 			clr_country_flag = show_effect_tooltips
 		}
+		hidden_effect = {
+		news_event = {
+			id = news.9
+			days = 3
+			}
+		}
 	}	
 }
 

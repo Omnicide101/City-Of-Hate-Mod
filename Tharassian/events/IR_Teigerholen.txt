@@ -1,0 +1,219 @@
+
+add_namespace = tei
+
+country_event = { #Teigerholen Civil War
+	id = tei.1
+	title = tei.1.t
+	desc = tei.1.d
+
+	trigger = {
+		original_tag = TEI
+		STA = { has_offensive_war_with = UNG }
+		NOT = {
+		OR = {
+		has_idea = FPT_legitimist_freiprinztum
+		has_idea = FPT_ferdinist_freiprinztum
+			}
+		}
+		is_ai = yes #maybe one day the player will be able to see this
+	}
+	mean_time_to_happen = {
+		days = 15
+	}
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			TEG = {
+				create_country_leader = {
+				name = "Adalbrecht Krukenberg"
+				desc = "politics_TEI_krukenberg_desc"
+				picture = "gfx/leaders/TEI/Portrait_TEI_Krukenberg.dds"
+				ideology = monarchy_absolute_ideology
+				traits = {
+				}
+				}
+				create_country_leader = {
+				name = "Adalbrecht Krukenberg"
+				desc = "politics_TEI_krukenberg_desc"
+				picture = "gfx/leaders/TEI/Portrait_TEI_Krukenberg.dds"
+				ideology = monarchy_constitutional_ideology
+				traits = {
+				}
+				}
+				add_state_core = 256
+				add_state_core = 257
+				add_state_core = 261
+				add_state_core = 262
+				set_capital = {
+					state = 256
+				}
+			}
+			every_state = {
+				limit = {
+					is_owned_by = TEI
+					is_core_of = TEG
+				}
+				TEG = {
+					transfer_state = PREV
+				}
+			}
+			every_state = {
+				limit = {
+					is_owned_by = TEI
+				}
+				TEG = {
+					add_state_core = PREV
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = wws_konkord_yes
+				}
+				country_event = {
+					id = tei.2
+					days = 5
+				}
+				every_country = {
+					limit = {
+						has_country_flag = wws_konkord_yes
+						NOT = { original_tag = TEI }
+					}
+				if = {
+				limit = {
+					check_variable = {
+					var = FPT_stahlhof_loyalty 
+					value = var:FPT_union_loyalty
+					compare = greater_than
+					}
+					}
+					add_to_variable = {
+    					var = wws_tei_stahlhof
+    					value = 1
+						}
+				}
+				if = {
+				limit = {
+					check_variable = {
+					var = FPT_union_loyalty
+					value = var:FPT_stahlhof_loyalty
+					compare = greater_than
+					}
+					}
+					add_to_variable = {
+    					var = wws_tei_adalina
+    					value = 1
+						}
+				}
+				}
+			}
+		}
+	}
+	
+	option = { #my goal in life is to blow up and act like i know nobody
+		name = tei.1.a
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = -0.15
+		add_popularity = {
+			ideology = republic_aristocrat
+			popularity = 0.2
+		}
+		UNG = {
+					faction_leader = {
+						add_to_faction = ROOT
+					}
+				}
+		hidden_effect = {
+			transfer_units_fraction= {
+				target = TEG
+				size = 0.5
+				}
+			STA = {
+					faction_leader = {
+						add_to_faction = TEG
+					}
+				}
+
+				    	if = {
+    		limit = {
+    				check_variable = {
+						var = wws_tei_stahlhof
+						value = var:wws_tei_adalina
+						compare = greater_than
+						}
+					}
+			every_other_country  = {
+						limit = {
+							has_country_flag = TEI_krukenberg
+						}
+					load_oob = "wss_tei_help_stahlhof"
+					add_equipment_to_stockpile = {
+    					type = infantry_equipment
+    					amount = 1000
+    					producer = TEI
+							}
+						}
+			}
+		if = {
+    		limit = {
+    				check_variable = {
+						var = wws_tei_adalina
+						value = var:wws_tei_stahlhof
+						compare = greater_than
+						}
+					}
+			load_oob = "wss_tei_help_adalina"
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1000
+    			producer = TEI
+				}
+			}
+		if = {
+    		limit = {
+    				check_variable = {
+						var = wws_tei_adalina
+						value = var:wws_tei_stahlhof
+						compare = equals
+						}
+					}
+				random_list = {
+				50 = {
+				load_oob = "wss_tei_help_adalina"
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment
+    				amount = 1000
+    				producer = TEI
+					}
+				}
+				50 = {
+					every_other_country  = {
+						limit = {
+							has_country_flag = TEI_krukenberg
+						}
+					load_oob = "wss_tei_help_stahlhof"
+					add_equipment_to_stockpile = {
+    					type = infantry_equipment
+    					amount = 1000
+    					producer = TEI
+							}
+						}
+					}
+				}
+			}
+
+			TEG = {
+				inherit_technology = TEI
+				load_focus_tree = {
+  				tree = fpt_shared_focus
+					}
+				declare_war_on = {
+					target = TEI
+					type = civil_war
+					}
+				}
+			}
+	}
+}

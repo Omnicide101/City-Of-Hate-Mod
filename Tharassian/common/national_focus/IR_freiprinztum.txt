@@ -7,9 +7,7 @@ focus_tree = { #General Foci
 		modifier = {
 			add = 5
 			OR = {
-				tag = SNF
 				tag = TEI
-				tag = SPW
 				tag = NOC
 				tag = NRK
 				tag = FTH
@@ -1002,6 +1000,12 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 					}
 				}
 			}
+			if = {
+				limit = {
+					tag = SPW
+				}
+				has_country_flag = SPW_things_are_okay
+			}
 			is_subject_of = UNG
 			STA = {
 				is_subject_of = UNG
@@ -1523,6 +1527,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 		ai_will_do = {
 			factor = 15 #Most likely
 		}
+		available = {
+		STA = { has_offensive_war_with = UNG }
+		}
 		mutually_exclusive = {
 			focus = FPT_break_from_union
 			focus = FPT_declare_neutrality
@@ -1543,6 +1550,7 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 					set_autonomy = {
 						target = ROOT
 						autonomous_state = autonomy_IR_freiprinztum
+						end_wars = no
 					}
 					faction_leader = {
 						add_to_faction = ROOT

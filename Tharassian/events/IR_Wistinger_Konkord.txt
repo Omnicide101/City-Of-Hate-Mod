@@ -17,7 +17,21 @@ country_event = {#Schneefilde begging
 	option = {
 	name = wws.1.a #i mean this is my idea
 		ai_chance = {
-			factor = 3
+			factor = 2
+			modifier = {
+				has_opinion = {
+    				target = WIS
+    				value > 50
+				}
+			factor = 5
+			}
+			modifier = {
+				has_opinion = {
+    				target = WSZ
+    				value > 50
+				}
+			factor = 5
+			}
 		}
 		set_country_flag = wws_konkord_yes
 		add_to_variable = {
@@ -28,7 +42,7 @@ country_event = {#Schneefilde begging
 	option = {
 	name = wws.1.b #no this is silly, AI factors probably should change depending on who is in charge
 		ai_chance = {
-			factor = 0
+			factor = 1
 		}
 		set_country_flag = wws_konkord_no
 	}
@@ -50,7 +64,21 @@ country_event = {#Wistingen chilling cautiously
 	option = {
 	name = wws.2.a
 		ai_chance = {
-			factor = 3
+			factor = 2
+			modifier = {
+				has_opinion = {
+    				target = SNF
+    				value > 50
+				}
+			factor = 5
+			}
+			modifier = {
+				has_opinion = {
+    				target = WSZ
+    				value > 50
+				}
+			factor = 5
+			}
 		}
 		set_country_flag = wws_konkord_yes
 		add_to_variable = {
@@ -61,7 +89,7 @@ country_event = {#Wistingen chilling cautiously
 	option = {
 	name = wws.2.b #no this is silly
 		ai_chance = {
-			factor = 0
+			factor = 1
 		}
 		set_country_flag = wws_konkord_no
 	}
@@ -83,7 +111,21 @@ country_event = {#Kristin Kindl torture sesh 1
 	option = {
 	name = wws.3.a
 		ai_chance = {
-			factor = 3
+			factor = 2
+			modifier = {
+				has_opinion = {
+    				target = WIS
+    				value > 50
+				}
+			factor = 5
+			}
+			modifier = {
+				has_opinion = {
+    				target = SNF
+    				value > 50
+				}
+			factor = 5
+			}
 		}
 		add_to_variable = {
     		var = wws_member_count
@@ -100,7 +142,7 @@ country_event = {#Kristin Kindl torture sesh 1
 	option = {
 	name = wws.3.b #AAAAAAAAAAAAAAAAAAAAAA
 		ai_chance = {
-			factor = 0
+			factor = 1
 		}
 		set_country_flag = wws_konkord_no
 	}
@@ -120,7 +162,28 @@ country_event = {#Teigerholen considering
 	option = {
 	name = wws.4.a #why not?
 		ai_chance = {
-			factor = 5
+			factor = 2
+			modifier = {
+				has_opinion = {
+    				target = WIS
+    				value > 50
+				}
+			factor = 3
+			}
+			modifier = {
+				has_opinion = {
+    				target = WSZ
+    				value > 50
+				}
+			factor = 3
+			}
+			modifier = {
+				has_opinion = {
+    				target = SNF
+    				value > 50
+				}
+			factor = 3
+			}
 		}
 		every_country = {
 			limit = {

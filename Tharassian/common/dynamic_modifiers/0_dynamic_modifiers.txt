@@ -44,6 +44,7 @@ SPW_bandit_haven = {
 	production_speed_buildings_factor = -0.33
 	resistance_damage_to_garrison = 0.2
 	resistance_target = 0.15
+	disable_strategic_redeployment = 1
 }
 
 SPW_darkweald_bandits = {
@@ -53,6 +54,7 @@ SPW_darkweald_bandits = {
 	production_speed_buildings_factor = -0.5
 	resistance_damage_to_garrison = 0.4
 	resistance_target = 0.25
+	disable_strategic_redeployment = 1
 }
 
 
@@ -79,6 +81,7 @@ SPW_newheart_bandits = {
 	production_speed_buildings_factor = -0.33
 	resistance_damage_to_garrison = 0.2
 	resistance_target = 0.15
+	disable_strategic_redeployment = 1
 }
 
 
@@ -109,6 +112,18 @@ SPW_ominous_presences = {
 	attrition_for_controller = 0.4
 	production_speed_buildings_factor = -0.75
 }
+
+SPW_the_rooks_modifier = {
+	icon = GFX_modifier_local_government
+	local_manpower = -0.5
+	state_resources_factor = 0.25
+	resistance_target = 0.15
+	local_building_slots_factor = -1
+	production_speed_buildings_factor = -1
+	#local_building_slots = -2
+	army_defence_factor = 0.1
+}
+
 
 ORD_drakeskin_guarded_lands = {
 	icon = GFX_modifier_drakeskin_guarded_lands

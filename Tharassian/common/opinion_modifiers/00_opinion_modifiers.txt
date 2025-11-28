@@ -320,6 +320,13 @@ opinion_modifiers = {
 		value = -35
 	}
 
+	SPW_arcanophobia = {
+		value = -50
+	}
+	SPW_warlock_purge = {
+		value = -50
+	}
+
 	### VANILLA STUFF ###
 
 	holds_our_cores = {

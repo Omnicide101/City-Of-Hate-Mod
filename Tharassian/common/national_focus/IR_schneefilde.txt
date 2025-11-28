@@ -1218,7 +1218,18 @@ focus = { #support rural farms
 				ideology = monarchy_absolute
 				popularity = 0.08
 			}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy4
+			}
+		remove_ideas = SNF_brittle_economy4
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy5
+			}
 		remove_ideas = SNF_brittle_economy5
+		}
 		}
 	}
 

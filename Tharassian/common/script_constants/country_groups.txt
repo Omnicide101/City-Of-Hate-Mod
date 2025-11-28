@@ -1,0 +1,23 @@
+country_groups = {
+    schema = {
+        any_key = yes
+        array = country
+    }
+
+    ungerdaler_union = {
+    UNG
+    STA
+    TEI
+    SPW
+    SVT
+    NRK
+    NOC
+    HLZ
+    ARK
+    FTH
+    WSZ
+    WIS
+    SNF
+    }
+
+}

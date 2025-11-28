@@ -6,24 +6,28 @@ weisz_demoralize_big = {
 	subtract_from_variable = {
 		SPW_weisz_willpower = 10
 	}
+	SPW_check_weisz_willpower = yes
 }
 weisz_demoralize_medium = {
 	custom_effect_tooltip = SPW_weisz_demoralize_medium_tt
 	subtract_from_variable = {
 		SPW_weisz_willpower = 5
 	}
+	SPW_check_weisz_willpower = yes
 }
 weisz_demoralize_small = {
 	custom_effect_tooltip = SPW_weisz_demoralize_small_tt
 	subtract_from_variable = {
 		SPW_weisz_willpower = 3
 	}
+	SPW_check_weisz_willpower = yes
 }
 weisz_demoralize_tiny = {
 	custom_effect_tooltip = SPW_weisz_demoralize_tiny_tt
 	subtract_from_variable = {
 		SPW_weisz_willpower = 1
 	}
+	SPW_check_weisz_willpower = yes
 }
 
 weisz_moralize_big = {
@@ -31,24 +35,28 @@ weisz_moralize_big = {
 	add_to_variable = {
 		SPW_weisz_willpower = 10
 	}
+	SPW_check_weisz_willpower = yes
 }
 weisz_moralize_medium = {
 	custom_effect_tooltip = SPW_weisz_moralize_medium_tt
 	add_to_variable = {
 		SPW_weisz_willpower = 5
 	}
+	SPW_check_weisz_willpower = yes
 }
 weisz_moralize_small = {
 	custom_effect_tooltip = SPW_weisz_moralize_small_tt
 	add_to_variable = {
 		SPW_weisz_willpower = 3
 	}
+	SPW_check_weisz_willpower = yes
 }
 weisz_moralize_tiny = {
 	custom_effect_tooltip = SPW_weisz_moralize_tiny_tt
 	add_to_variable = {
 		SPW_weisz_willpower = 1
 	}
+	SPW_check_weisz_willpower = yes
 }
 
 rooks_loyalty_big = {
@@ -77,13 +85,13 @@ rooks_disloyalty_big = {
 	}
 }
 rooks_disloyalty_medium = {
-	custom_effect_tooltip = SPW_rooks_disloyalty_small_tt
+	custom_effect_tooltip = SPW_rooks_disloyalty_medium_tt
 	subtract_from_variable = {
 		SPW_rooks_loyalty = 2
 	}
 }
 rooks_disloyalty_small = {
-	custom_effect_tooltip = SPW_rooks_disloyalty_tiny_tt
+	custom_effect_tooltip = SPW_rooks_disloyalty_small_tt
 	subtract_from_variable = {
 		SPW_rooks_loyalty = 1
 	}
@@ -94,6 +102,7 @@ rooks_tension_increase_big = {
 	add_to_variable = {
 		SPW_rooks_tension = 3
 	}
+
 }
 rooks_tension_increase_medium = {
 	custom_effect_tooltip = SPW_rooks_tension_increase_medium_tt
@@ -124,5 +133,157 @@ rooks_tension_decrease_small = {
 	custom_effect_tooltip = SPW_rooks_tension_decrease_small_tt
 	subtract_from_variable = {
 		SPW_rooks_tension = 1
+	}
+}
+
+SPW_check_weisz_willpower = {
+	hidden_effect = {
+	remove_all_power_balance_modifiers = {
+    	id = SPW_power_balance
+		}
+	}
+	if = {
+		limit = {
+				check_variable = {
+				SPW_weisz_willpower < 25
+				}
+				check_variable = {
+				SPW_weisz_willpower < 50
+				}
+				check_variable = {
+				SPW_weisz_willpower < 75
+				}
+			}
+			add_power_balance_modifier = {
+    		id = SPW_power_balance    
+    		modifier = SPW_bop_willpower_low
+			}
+	}
+	if = {
+		limit = {
+				check_variable = {
+				SPW_weisz_willpower > 25
+				}
+				check_variable = {
+				SPW_weisz_willpower < 50
+				}
+				check_variable = {
+				SPW_weisz_willpower < 75
+				}
+			}
+			add_power_balance_modifier = {
+    		id = SPW_power_balance    
+    		modifier = SPW_bop_willpower_okay
+			}
+	}
+	if = {
+		limit = {
+				check_variable = {
+				SPW_weisz_willpower > 25
+				}
+				check_variable = {
+				SPW_weisz_willpower > 50
+				}
+				check_variable = {
+				SPW_weisz_willpower < 75
+				}
+			}
+			add_power_balance_modifier = {
+    		id = SPW_power_balance    
+    		modifier = SPW_bop_willpower_better
+			}
+	}
+	if = {
+		limit = {
+				check_variable = {
+				SPW_weisz_willpower > 25
+				}
+				check_variable = {
+				SPW_weisz_willpower > 50
+				}
+				check_variable = {
+				SPW_weisz_willpower > 75
+				}
+			}
+			add_power_balance_modifier = {
+    		id = SPW_power_balance    
+    		modifier = SPW_bop_willpower_good
+			}
+	}
+}
+
+SPW_check_irp_defeat = {
+	if = {
+		limit = {
+				check_variable = {
+    			var = IRP_equipment_var
+    			value = 0
+    			compare = less_than_or_equals
+				}
+				check_variable = {
+    			var = IRP_manpower_var
+    			value = 0
+    			compare = greater_than_or_equals
+				}
+			}
+				SPW = {
+				subtract_from_variable = {
+					IRP_manpower_var = 250
+					}
+				}
+	}
+	if = {
+		limit = {
+				check_variable = {
+    			var = IRP_equipment_var
+    			value = 0
+    			compare = less_than_or_equals
+				}
+				check_variable = {
+    			var = IRP_manpower_var
+    			value = 0
+    			compare = less_than_or_equals
+				}
+			}
+				SPW = {
+				subtract_from_variable = {
+					IRP_health_var = 1
+					}
+				}
+				random_owned_state = {
+    				limit = {
+    					has_dynamic_modifier = {
+    						modifier = GFX_modifier_river_patrol
+								}
+    				}
+    				remove_dynamic_modifier = {
+						modifier = GFX_modifier_river_patrol
+					}
+			}
+	}
+	if = {
+		limit = {
+				check_variable = {
+    			var = IRP_equipment_var
+    			value = 0
+    			compare = less_than_or_equals
+				}
+				check_variable = {
+    			var = IRP_manpower_var
+    			value = 0
+    			compare = less_than_or_equals
+				}
+				check_variable = {
+    			var = IRP_health_var
+    			value = 1
+    			compare = equals
+				}
+			}
+				SPW = {
+				subtract_from_variable = {
+					IRP_health_var = 1
+					}
+				}
+				country_event = spw.101
 	}
 }

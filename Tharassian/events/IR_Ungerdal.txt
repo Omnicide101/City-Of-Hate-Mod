@@ -2698,6 +2698,14 @@ country_event = {#Stahlhof Defeated
 		STA = {
 			set_country_flag = STA_beaten_in_civil_war #Yer done kid
 		}
+		hidden_effect = {
+		every_state = {
+				limit = {
+					is_core_of = TEG
+				}
+				remove_core_of = TEG
+			}
+		}
 	}
 	
 	option = {#Retire

@@ -1,0 +1,25 @@
+﻿division_template = {
+	name = "Unhaunted"
+	regiments = {
+		men_at_arms = { x = 0 y = 0 }
+		archer_shortbow = { x = 0 y = 1 }
+       	archer_shortbow = { x = 0 y = 2 }
+		men_at_arms = { x = 1 y = 0 }
+		archer_shortbow = { x = 1 y = 1 }
+		archer_shortbow = { x = 1 y = 2 }
+		men_at_arms = { x = 2 y = 0 }
+		archer_shortbow = { x = 2 y = 1 }
+		archer_shortbow = { x = 2 y = 2 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "Unhaunted"
+		location = 9005
+		division_template = "Unhaunted"
+		start_experience_factor = 0.7
+
+	}
+}

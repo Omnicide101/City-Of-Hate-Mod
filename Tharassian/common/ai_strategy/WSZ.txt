@@ -1,0 +1,105 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+#Fight with Perkavland
+
+WSZ_perkav_skirmishes_general = {
+
+	enable = {
+		original_tag = WSZ
+		has_country_flag = SNF_retake_nevedenn_flag
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = prepare_for_war
+		id = PRK
+		
+		value = 50
+	}
+}
+wsz_perkav_skirmishes_nevendenn_wertz = {
+
+	enable = {
+		original_tag = WSZ
+		has_country_flag = SNF_retake_nevedenn_flag
+		NOT = {
+			owns_state = 420
+			owns_state = 354
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.05
+		states = {
+			235
+		}
+		subtract_fronts_from_need = yes
+		}
+	}
+
+wsz_perkav_skirmishes_nevendenn = {
+
+	enable = {
+		original_tag = WSZ
+		has_country_flag = SNF_retake_nevedenn_flag
+		NOT = {
+			owns_state = 420
+			owns_state = 354
+			owns_state = 355
+			owns_state = 334
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.05
+		states = {
+			235
+		}
+		subtract_fronts_from_need = yes
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 420
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 354
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 355
+		
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		state = 334
+		
+		value = 150
+	}
+}
