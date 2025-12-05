@@ -253,11 +253,11 @@ SPW_check_irp_defeat = {
 				random_owned_state = {
     				limit = {
     					has_dynamic_modifier = {
-    						modifier = GFX_modifier_river_patrol
+    						modifier = SPW_river_patrol
 								}
     				}
     				remove_dynamic_modifier = {
-						modifier = GFX_modifier_river_patrol
+						modifier = SPW_river_patrol
 					}
 			}
 	}

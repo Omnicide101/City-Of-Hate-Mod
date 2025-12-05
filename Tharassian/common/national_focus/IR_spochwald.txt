@@ -30,7 +30,7 @@ focus_tree = {
 			modifier = {
 				has_game_rule = {
 					rule = SPW_game_plan
-					option = SNF_BeKazaal
+					option = SPW_BeKazaal
 				}
 				factor = 10
 			}
@@ -64,7 +64,7 @@ focus_tree = {
 			modifier = {
 				has_game_rule = {
 					rule = SPW_game_plan
-					option = SNF_BeKazaal
+					option = SPW_BeKazaal
 				}
 				factor = 0
 			}
@@ -96,7 +96,7 @@ focus_tree = {
 			modifier = {
 				has_game_rule = {
 					rule = SPW_game_plan
-					option = SNF_BeKazaal
+					option = SPW_BeKazaal
 				}
 				factor = 10
 			}
@@ -134,7 +134,7 @@ focus_tree = {
 			modifier = {
 				has_game_rule = {
 					rule = SPW_game_plan
-					option = SNF_BeKazaal
+					option = SPW_BeKazaal
 				}
 				factor = 2
 			}
@@ -170,7 +170,7 @@ focus_tree = {
 			modifier = {
 				has_game_rule = {
 					rule = SPW_game_plan
-					option = SNF_BeKazaal
+					option = SPW_BeKazaal
 				}
 				factor = 10
 			}
@@ -217,7 +217,7 @@ focus_tree = {
 			modifier = {
 				has_game_rule = {
 					rule = SPW_game_plan
-					option = SNF_BeKazaal
+					option = SPW_BeKazaal
 				}
 				factor = 0
 			}
@@ -390,7 +390,7 @@ focus_tree = {
 			modifier = {
 				has_game_rule = {
 					rule = SPW_game_plan
-					option = SNF_BeKazaal
+					option = SPW_BeKazaal
 				}
 				factor = 0
 			}
@@ -427,7 +427,6 @@ focus_tree = {
 		add_corps_commander_role = {
     		character = SPW_august_wissmann
     		#activate = yes
-    		add_corps_commander_role = {
     		traits = { stubborn old_guard politically_connected }
     		skill = 5
     		attack_skill = 1
@@ -435,7 +434,6 @@ focus_tree = {
     		planning_skill = 4
     		logistics_skill = 4
 				}
-			}
 		}
 	}
 	#Patrols and Jager
@@ -479,14 +477,12 @@ focus_tree = {
 		add_corps_commander_role = {
     		character = SPW_lea_eichenwald
     		#activate = yes
-    		add_corps_commander_role = {
     		traits = { infantry_officer ranger }
     		skill = 5
     		attack_skill = 3
     		defense_skill = 3
     		planning_skill = 3
     		logistics_skill = 3
-				}
 			}
 		add_popularity = {
 				ideology = theocrat
@@ -773,7 +769,7 @@ focus_tree = {
 			modifier = {
 				has_game_rule = {
 					rule = SPW_game_plan
-					option = SNF_BeKazaal
+					option = SPW_BeKazaal
 				}
 				factor = 0
 			}
@@ -807,6 +803,7 @@ focus_tree = {
     		remove_power_balance = {
     		id = SPW_power_balance
 			}
+			custom_effect_tooltip = SPW_incorporating_irp_puritan
     	}
 	}
 focus = { 
@@ -841,134 +838,6 @@ focus = {
 				modifier = SPW_arcanophobia
 			}
 			}
-    	}
-	}
-focus = { 
-		id = SPW_instigate_warlock_purge
-		icon = GFX_focus_SWE_neither_death_nor_dishonor
-		cost = 5
-		prerequisite = {
-			focus = SPW_forbid_magic
-		}
-		prerequisite = {
-			focus = SPW_gallows_row
-		}
-		relative_position_id = SPW_forbid_magic
-		x = -1
-		y = 1
-		ai_will_do = {
-			factor = 10
-			
-		}
-		completion_reward = { #maybe there should be warlock characters actually
-			custom_effect_tooltip = SPW_destroy_haunts_tooltip
-			custom_effect_tooltip = FPT_increase_piety_tt
-			add_to_variable = {
-				var = FPT_piety
-				value = 1
-			}
-		set_freiprinz_piety_effects = yes
-			every_other_country = {
-			limit = {
-				OR = {
-				tag = UNG
-				AND = {
-				is_subject_of = UNG
-				NOT = { SVT }
-					}
-				}
-			}
-			add_opinion_modifier = {
-				target = SPW
-				modifier = SPW_warlock_purge
-				}
-			}
-    	}
-	}
-
-focus = { 
-		id = SPW_exorcism_by_sword
-		icon = GFX_BLD_Codex_Of_War
-		cost = 5
-		prerequisite = {
-			focus = SPW_instigate_warlock_purge
-		}
-		relative_position_id = SPW_instigate_warlock_purge
-		x = 0
-		y = 1
-		available = {
-		NOT = {
-		any_owned_state = {
-				has_dynamic_modifier = {
-    						modifier = SPW_ominous_presences
-								}
-							}
-			}
-		}
-		ai_will_do = {
-			factor = 10
-			
-		}
-		completion_reward = {
-			add_popularity = {
-			ideology = puritan
-			popularity = 0.1
-			}
-			remove_ideas = { SPW_Spectre_BeKazaal }
-    	}
-	}
-focus = { 
-		id = SPW_bastion_of_stability
-		icon = GFX_goal_generic_fortify_city
-		cost = 5
-		prerequisite = {
-			focus = SPW_forbid_magic
-		}
-		relative_position_id = SPW_forbid_magic
-		x = 1
-		y = 1
-		ai_will_do = {
-			factor = 10
-			
-		}
-		completion_reward = {
-			
-    	}
-	}
-focus = { 
-		id = SPW_guardians_with_a_state
-		icon = GFX_goal_generic_fortify_city
-		cost = 5
-		prerequisite = {
-			focus = SPW_bastion_of_stability
-		}
-		relative_position_id = SPW_bastion_of_stability
-		x = 2
-		y = 1
-		ai_will_do = {
-			factor = 10
-			
-		}
-		completion_reward = {
-			
-    	}
-	}
-focus = { 
-		id = SPW_prepare_for_the_worst
-		icon = GFX_focus_ord_faithful_society
-		cost = 5
-		prerequisite = {
-			focus = SPW_bastion_of_stability
-		}
-		relative_position_id = SPW_bastion_of_stability
-		x = 0
-		y = 1
-		ai_will_do = {
-			factor = 10
-			
-		}
-		completion_reward = { #unlocks decisions to build forts on the borders
-			
     	}
 	}
 focus = { 
@@ -1031,6 +900,186 @@ focus = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = SPW_destroy_bandits_tooltip
+    	}
+	}
+focus = { 
+		id = SPW_instigate_warlock_purge
+		icon = GFX_focus_SWE_neither_death_nor_dishonor
+		cost = 5
+		prerequisite = {
+			focus = SPW_forbid_magic
+		}
+		prerequisite = {
+			focus = SPW_gallows_row
+		}
+		relative_position_id = SPW_forbid_magic
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 10
+			
+		}
+		completion_reward = { #maybe there should be warlock characters actually
+			custom_effect_tooltip = SPW_destroy_haunts_tooltip
+			custom_effect_tooltip = FPT_increase_piety_tt
+			add_to_variable = {
+				var = FPT_piety
+				value = 1
+			}
+		set_freiprinz_piety_effects = yes
+			every_other_country = {
+			limit = {
+				OR = {
+				tag = UNG
+				AND = {
+				is_subject_of = UNG
+				NOT = { tag = SVT }
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = SPW
+				modifier = SPW_warlock_purge
+				}
+			}
+    	}
+	}
+
+focus = { 
+		id = SPW_exorcism_by_sword
+		icon = GFX_BLD_Codex_Of_War
+		cost = 5
+		prerequisite = {
+			focus = SPW_instigate_warlock_purge
+		}
+		relative_position_id = SPW_instigate_warlock_purge
+		x = 0
+		y = 1
+		available = {
+		NOT = {
+		any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_ominous_presences
+								}
+							}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			
+		}
+		completion_reward = {
+			add_popularity = {
+			ideology = puritan
+			popularity = 0.1
+			}
+			remove_ideas = { SPW_Spectre_BeKazaal }
+    	}
+	}
+focus = { 
+		id = SPW_bastion_of_stability
+		icon = GFX_goal_generic_fortify_city
+		cost = 5
+		prerequisite = {
+			focus = SPW_forbid_magic
+		}
+		relative_position_id = SPW_forbid_magic
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 10
+			
+		}
+		completion_reward = {
+			add_ideas = { SPW_bastion }
+			add_popularity = {
+			ideology = puritan
+			popularity = 0.06
+			}
+    	}
+	}
+focus = { 
+		id = SPW_guardians_with_a_state
+		icon = GFX_IRI_New_Cohorts_Training_Program
+		cost = 5
+		prerequisite = {
+			focus = SPW_bastion_of_stability
+		}
+		relative_position_id = SPW_bastion_of_stability
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 10
+			
+		}
+		completion_reward = {
+			add_ideas = { SPW_guardians }
+			add_popularity = {
+			ideology = puritan
+			popularity = 0.04
+			}
+    	}
+	}
+focus = { 
+		id = SPW_prepare_for_the_worst
+		icon = GFX_focus_ord_faithful_society
+		cost = 5
+		prerequisite = {
+			focus = SPW_bastion_of_stability
+		}
+		relative_position_id = SPW_bastion_of_stability
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 10
+			
+		}
+		completion_reward = { #unlocks decisions to build forts on the borders
+			random_owned_controlled_state = {
+				limit = {
+				NOT = {
+					has_dynamic_modifier = {
+    						modifier = SPW_the_rooks_modifier
+								}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				NOT = {
+					has_dynamic_modifier = {
+    						modifier = SPW_the_rooks_modifier
+								}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				NOT = {
+					has_dynamic_modifier = {
+    						modifier = SPW_the_rooks_modifier
+								}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+			}
     	}
 	}
 focus = { 
@@ -1138,7 +1187,7 @@ focus = {
 			modifier = {
 				has_game_rule = {
 					rule = SPW_game_plan
-					option = SNF_BeKazaal
+					option = SPW_BeKazaal
 				}
 				factor = 0
 			}
@@ -1199,7 +1248,7 @@ focus = {
 			modifier = {
 				has_game_rule = {
 					rule = SPW_game_plan
-					option = SNF_BeKazaal
+					option = SPW_BeKazaal
 				}
 				factor = 0
 			}

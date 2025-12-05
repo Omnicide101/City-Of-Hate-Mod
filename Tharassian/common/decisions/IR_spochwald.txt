@@ -185,6 +185,58 @@ SPW_balance_of_power_category = {
 		}
 	
     }
+
+    SPW_wissman_call_to_action = {
+
+        cost = 30
+
+        icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = SPW_guard_tall
+		}
+
+        complete_effect = {
+			weisz_demoralize_small = yes
+        }
+		
+		days_remove = 70
+		
+		modifier = {
+			puritan_drift = 0.08
+		}
+		
+		remove_effect = {
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = -0.08
+				tooltip_side = SPW_magdalena_side
+			}
+		}
+	
+    }
+    SPW_lea_counselling = {
+
+        cost = 20
+
+        icon = GFX_decision_generic_intelligence_operation
+		
+		visible = {
+			has_completed_focus = SPW_soil_fathers_chosen
+		}
+
+        complete_effect = {
+			weisz_moralize_medium = yes
+        }
+		
+		days_remove = 90
+		
+		modifier = {
+			theocrat_drift = 0.1
+			political_power_gain = -0.1
+		}
+	
+    }
 }
 
 SPW_rooks_management = {
@@ -774,6 +826,60 @@ SPW_securing_the_spochwald = {
 					IRP_equipment_var = 250
 				}
 			}
+		}
+	}
+	SPW_eat_irp_piece = {
+		
+		icon = GFX_decision_ger_military_buildup
+		
+		visible = {
+			tag = SPW
+			has_government = puritan
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_SPW_irp_removal_manpower_cost
+				check_variable = {
+					IRP_manpower_var > 250
+					}
+				}
+			custom_trigger_tooltip = {
+				tooltip = GUI_SPW_irp_removal_equipment_cost
+				check_variable = {
+					IRP_equipment_var > 150
+					}
+				}
+		}
+		
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		days_remove = 70
+		
+		complete_effect = {
+			SPW = {
+				subtract_from_variable = {
+					IRP_equipment_var = 150
+				}
+				subtract_from_variable = {
+					IRP_manpower_var = 250
+				}
+			}
+		}
+		
+		modifier = {
+			war_support_weekly = 0.003
+		}
+		
+		remove_effect = {
+		add_manpower = 250
+		add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 150
+			}	
 		}
 	}
 	SPW_bandit_raid_incoming = {

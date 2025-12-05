@@ -287,7 +287,7 @@ SPW_game_plan = {
 		desc = "SPW_Weisz_transition_PLAN_DESC"
 	}
 	option = {
-		name = "SPW_bekazaal"
+		name = "SPW_BeKazaal"
 		text = "SPW_BeKazaal_PLAN"
 		desc = "SPW_BeKazaal_PLAN_DESC"
 	}

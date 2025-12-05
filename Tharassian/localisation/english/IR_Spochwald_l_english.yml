@@ -9,11 +9,15 @@ SPW_order_of_living_merc:0 "Order Of The Living"
 SPW_order_of_living_merc_desc:0 "The Order Of The Living was formed by Lea Eichenwald after her time as part of the Islicher River Patrol. Inspired by the Schneefidler Taifun-Orden. They brave the nights keeping the haunted Spochwald woods safe."
 GUI_SPW_Weisz_has_good_willpower:0 "§YWeisz's Willpower is §Gbetter§! now.§!"
 #
+SPW_incorporating_irp_puritan:0 "With the establishment of §YThe Watchman State§!, it will be possible to §Gincorporate the manpower and equipment§! of the §2Islicher River Patrol§! into our supplies!"
+#
 SPW_arcanophobia:0 "Arcanophobic"
 SPW_warlock_purge:0 "Purged Warlocks"
 #
 SPW_gallows_row_idea:0 "Gallows Row"
 SPW_arcanophobia_idea:0 "Arcanophobia"
+SPW_guardians:0 "Guardians With a State"
+SPW_bastion:0 "Bastions of Stability"
 #
 SPW_wissman_bop_stuff_tooltip:0 "Unlock §YBalance of Powers§! decisions that increase §YPuritanism§!\n"
 SPW_temple_bop_stuff_tooltip:0 "Unlock §YBalance of Powers§! decisions that increase §YTheocrat§!\n"
@@ -21,6 +25,10 @@ SPW_jager_make_devisions_tooltip:0 "Unlocks §YDecisions§! to convert §GDarkwe
 SPW_jager_remove_tooltip:0 "Unlocks §YDecisions§! to destroy §GDarkweald Bandit§! camps!"
 SPW_destroy_bandits_tooltip:0 "Unlocks §YDecisions§! to destroy §RBandit§! camps!"
 SPW_destroy_haunts_tooltip:0 "Unlocks §YDecisions§! to destroy §ROminous Presenses§!"
+#
+SPW_wissman_call_to_action:0 "Wissman's Call to Action"
+#
+SPW_lea_counselling:0 "Correspondence with Lea Eichenwald"
 #
 GUI_SPW_irp_removal_manpower_cost:0 "§2Islicher River Patrol§! needs to have §Y250 Manpower§!"
 GUI_SPW_irp_removal_equipment_cost:0 "§2Islicher River Patrol§! needs to have §Y150 Equipment§!"
@@ -82,7 +90,13 @@ SPW_give_irp_manpower:0 "Train New Recruits for the River Patrol"
 SPW_give_irp_equipment:0 "Supply the River Patrol with equipment"
 SPW_give_irp_manpower_themself:0 "Send More Recruits to the River Patrol"
 SPW_give_irp_equipment_themself:0 "Send More Equipment to the River Patrol"
+SPW_eat_irp_piece:0 "Integrate Part of the Patrol"
 SPW_bandit_raid_incoming:0 "Incoming Bandit Raid"
 SPW_undead_raid_incoming:0 "Incoming Undead Raid"
 SPW_jager_converting:0 "Jäger Converting Locals"
 SPW_newhearts_stealing_equipment:0 "Newheart Equipment Raid"
+SPW_irp_patrols:0 "River Patrol Counter-Raid"
+SPW_clearing_bandit:0 "Clear Bandit Camp"
+SPW_clearing_haunts:0 "Exorcize Land"
+SPW_clearing_unhaunted:0 "Hunt The Unhaunted"
+SPW_converting_unhaunted:0 "Recruit The Unhaunted"
