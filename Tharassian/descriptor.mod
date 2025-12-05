@@ -79,6 +79,6 @@ replace_path="tutorial"
 tags={
 	"Total Conversion"
 }
-path = "/home/irynith/.local/share/Paradox Interactive/Hearts of Iron IV/mod/City of Hate Dev/"
+path = "mod/Tharassian"
 picture="Tharassian.png"
 supported_version="1.17.*"
