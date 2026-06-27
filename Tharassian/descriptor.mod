@@ -81,4 +81,4 @@ tags={
 }
 path = "mod/Tharassian"
 picture="Tharassian.png"
-supported_version="1.17.*"
+supported_version="1.19.*"

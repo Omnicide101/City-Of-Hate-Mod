@@ -1,6 +1,4 @@
 ﻿capital = 225
-set_cosmetic_tag = TEI
-set_oob = "TEI_1936"
 
 set_technology ={
 	tech_tribal_pride = 1

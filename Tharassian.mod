@@ -78,5 +78,5 @@ tags={
 	"Total Conversion"
 }
 picture="Tharassian.png"
-supported_version="1.16.*"
+supported_version="1.19.*"
 path = "mod/Tharassian"

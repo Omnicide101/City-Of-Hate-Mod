@@ -1,7 +1,7 @@
 ### Schneefilde N UNGERDALER UNION FOCUS TREE ###
 
 focus_tree = {
-	id = schneefilde_union_focus
+	id = a_schneefilde_union_focus
 	country = {
 		factor = 0
 		modifier = {
@@ -313,7 +313,7 @@ focus_tree = {
 	joint_focus = {#Fry Bigger Fish
 		id = UNG_bigger_fish
 		icon = GFX_goal_generic_dangerous_deal
-		cost = 5
+		cost = 4
 		prerequisite = {
 			focus = UNG_schneefilde_sack
 		}
@@ -334,6 +334,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		completion_reward_joint_originator = {
+		custom_effect_tooltip = UNG_fry_bigger_fish_tt
 			add_political_power = 25
 			UNG = {
 			country_event = {
@@ -604,6 +605,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+		custom_effect_tooltip = UNG_punish_perkavland_tt
 			add_war_support = 0.1
 		}
 	}
@@ -652,6 +654,7 @@ focus_tree = {
 		cost = 15
 		prerequisite = {
 			focus = UNG_reinforce_schneefilde
+			focus = UNG_war_perkavland
 		}
 		available = {
 			SNF = {
@@ -663,7 +666,7 @@ focus_tree = {
 		}
 		relative_position_id = UNG_reinforce_schneefilde
 		x = 0
-		y = 1
+		y = 2
 		
 		completion_reward_joint_originator = {
 			254 = {
@@ -776,13 +779,14 @@ focus_tree = {
 		cost = 10
 		prerequisite = {
 			focus = UNG_southern_strike
+			focus = UNG_war_perkavland
 		}
 		ai_will_do = {
 			factor = 70
 		}
 		relative_position_id = UNG_southern_strike
 		x = 0
-		y = 1
+		y = 2
 		
 		completion_reward = {
 			add_ideas = UNG_kaltwetter_corps_idea
@@ -864,8 +868,8 @@ focus_tree = {
 		icon = GFX_focus_ung_take_down_krell
 		cost = 15
 		prerequisite = {
-			focus = UNG_central_command
-			focus = UNG_joint_planning
+			focus = UNG_reinforce_schneefilde
+			focus = UNG_southern_strike
 		}
 		available = {
 			tag = UNG
@@ -881,9 +885,9 @@ focus_tree = {
 			}
 		}
 		
-		relative_position_id = UNG_central_command
-		x = 1
-		y = 1
+		relative_position_id = UNG_punish_perkavland
+		x = 0
+		y = 2
 		
 		completion_reward = {
 			declare_war_on = {
@@ -916,6 +920,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			custom_effect_tooltip = UNG_diplomatic_efforts_tt
 			add_stability = 0.05
 		}
 	}
@@ -1281,7 +1286,7 @@ focus_tree = {
 		
 		relative_position_id = UNG_war_perkavland
 		x = 0
-		y = 1
+		y = 3
 		
 		completion_reward_joint_originator = {
 		UNG = {
