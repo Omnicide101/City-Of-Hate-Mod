@@ -1,4 +1,4 @@
-﻿### SPOCHWALDER EVENTS
+### SPOCHWALDER EVENTS
 
 add_namespace = spw
 
@@ -11,11 +11,10 @@ country_event = {#Heavy is the Head
 	
 	option = {#*Hic* another!
 		name = spw.1.a
-		set_power_balance = {
+		add_power_balance_value = {
 			id = SPW_power_balance
-			left_side = SPW_magdalena_side
-			right_side = SPW_bekazaal_side
-			set_value = -0.05
+			value = 0.05
+			tooltip_side = SPW_bekazaal_side
 		}
 	}
 }
@@ -29,11 +28,10 @@ country_event = {#Refuge in the Legends
 	
 	option = {#Girliepop take the E
 		name = spw.2.a
-		set_power_balance = {
+		add_power_balance_value = {
 			id = SPW_power_balance
-			left_side = SPW_magdalena_side
-			right_side = SPW_bekazaal_side
-			set_value = 0.05
+			value = -0.05
+			tooltip_side = SPW_magdalena_side
 		}
 	}
 }
@@ -49,7 +47,7 @@ country_event = {#Get a Hobby
 		name = spw.3.a
 		add_power_balance_value = {
 			id = SPW_power_balance
-			value = -0.05
+			value = 0.05
 			tooltip_side = SPW_bekazaal_side
 		}
 		custom_effect_tooltip = SPW_enable_hunting_tt
@@ -60,10 +58,553 @@ country_event = {#Get a Hobby
 		name = spw.3.b
 		add_power_balance_value = {
 			id = SPW_power_balance
-			value = 0.05
+			value = -0.05
 			tooltip_side = SPW_magdalena_side
 		}
 		custom_effect_tooltip = SPW_enable_gardening_tt
 		set_country_flag = SPW_weisz_gardener
 	}
 }
+
+# The Rooks Events
+
+country_event = {#St Vichtlas religious pogrom against The Rooks
+	id = spw.4
+	title = spw.4.t
+	desc = spw.4.d
+	
+	trigger = {
+		original_tag = SVT
+	}
+	mean_time_to_happen = {
+		days = 250
+	}
+	fire_only_once = yes
+
+	immediate = {
+	hidden_effect = {
+	SPW = {
+		country_event = {
+				id = spw.5
+				days = 3
+				}
+			}
+		}
+	}
+	
+	option = {#Oh god, help them
+		name = spw.4.a
+		ai_chance = {
+			factor = 5
+		}
+		269 = {
+				add_manpower = -893
+			}
+		265 = {
+				add_manpower = -5139
+			}
+		rooks_disloyalty_small = yes
+		rooks_tension_increase_medium = yes
+		add_popularity = {
+			ideology = theocrat
+			popularity = 0.08
+		}
+	}
+	
+	option = {#die
+		name = spw.4.b
+		ai_chance = {
+			factor = 3
+		}
+		269 = {
+				add_manpower = -893
+			}
+		265 = {
+				add_manpower = -5139
+			}
+		rooks_disloyalty_big = yes
+		rooks_tension_increase_medium = yes
+		265 = {
+				remove_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+		269 = {
+				remove_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+		add_popularity = {
+			ideology = theocrat
+			popularity = -0.08
+		}
+	}
+}
+
+country_event = {#Spochwald oh fuck refugees!
+	id = spw.5
+	title = spw.5.t
+	desc = spw.5.d
+	
+	is_triggered_only = yes
+		
+	fire_only_once = yes
+
+	option = {#Oh god, help them
+		name = spw.5.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				has_game_rule = {
+					rule = SPW_game_plan
+					option = SPW_Wissman
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SPW_game_plan
+					option = SPW_Jager
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SPW_game_plan
+					option = SPW_bekazaal
+				}
+				factor = 0
+			}
+		}
+		weisz_moralize_small = yes
+		1292 = {
+				add_manpower = 4971
+			}
+		rooks_tension_decrease_small = yes
+		rooks_loyalty_small = yes
+		add_popularity = {
+			ideology = theocrat
+			popularity = 0.04
+		}
+		add_popularity = {
+			ideology = monarchy_constitutional
+			popularity = 0.04
+		}
+	}
+	
+	option = {#deploy the river patrol to control the situation
+		name = spw.5.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				has_game_rule = {
+					rule = SPW_game_plan
+					option = SPW_Weisz_transition
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SPW_game_plan
+					option = SPW_temple
+				}
+				factor = 0
+			}
+		}
+		1292 = {
+				add_manpower = 4971
+			}
+		rooks_disloyalty_small = yes
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.08
+		}
+	}
+
+	option = {#rally them to the cause of justice! #Allows Jaeger to get the loyalty of St Vichtlas Halflings
+		name = spw.5.c
+		ai_chance = {
+			factor = 2
+			modifier = {
+				has_game_rule = {
+					rule = SPW_game_plan
+					option = SPW_Weisz_transition
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SPW_game_plan
+					option = SPW_temple
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SPW_game_plan
+					option = SPW_Wissman
+				}
+				factor = 0
+			}
+		}
+		1292 = {
+				add_manpower = 4971
+			}
+		267 = {
+				add_dynamic_modifier = {
+					modifier = SPW_darkweald_bandits
+				}
+			}
+		add_popularity = {
+			ideology = theocrat
+			popularity = 0.04
+		}
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.06
+		}
+	}
+}
+
+country_event = {#River Patrol Guy, Wissman and Lea asking Weisz to let them figure things out
+	id = spw.6
+	title = spw.6.t
+	desc = spw.6.d
+	
+	is_triggered_only = yes
+	
+	option = {#NO! I CAN DO IT ALONE!
+		name = spw.6.a
+		ai_chance = {
+			factor = 2
+			modifier = {
+				has_game_rule = {
+					rule = SPW_game_plan
+					option = SPW_Weisz_transition
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = monarchy_constitutional
+			popularity = 0.1
+		}
+		add_stability = -0.05
+		weisz_moralize_big = yes
+		add_power_balance_value = {
+			id = SPW_power_balance
+			value = 0.1
+			tooltip_side = SPW_bekazaal_side
+		}
+		set_country_flag = SPW_weisz_solo
+	}
+	
+	option = {#okay actually please help me, you guys can help
+		name = spw.6.b
+		ai_chance = {
+			factor = 2
+			modifier = {
+				has_game_rule = {
+					rule = SPW_game_plan
+					option = SPW_BeKazaal
+				}
+				factor = 0
+			}
+		}
+		weisz_demoralize_small = yes
+		add_popularity = {
+			ideology = theocrat
+			popularity = 0.08
+		}
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.08
+		}
+		add_power_balance_value = {
+			id = SPW_power_balance
+			value = -0.05
+			tooltip_side = SPW_magdalena_side
+		}
+		remove_country_leader_trait = the_sod-wit_prince
+		set_country_flag = SPW_weisz_regency
+	}
+
+	option = {#bwahaha, i think you all guys are just in my way
+		name = spw.6.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_game_rule = {
+					rule = SPW_game_plan
+					option = SPW_Weisz_transition
+				}
+				factor = 0
+			}
+		}
+		add_stability = -0.25
+		weisz_moralize_big = yes
+		add_power_balance_value = {
+			id = SPW_power_balance
+			value = 0.20
+			tooltip_side = SPW_bekazaal_side
+		}
+		SPW_matthias_jager = {
+		retire = yes
+		}
+		SPW_eike_bachmeier = {
+		retire = yes
+		}
+		SPW_august_wissmann = {
+		retire = yes
+		}
+		SPW_lea_eichenwald = {
+		retire = yes
+		}
+		remove_mission = SPW_jager_converting
+		set_country_flag = SPW_weisz_bekazaal_kill
+	}
+}
+
+country_event = { #Lea Eichenwald reaching out to Weisz about hauntings
+	id = spw.7
+	title = spw.7.t
+	desc = spw.7.d
+	
+	is_triggered_only = yes
+	
+	option = {#Lea and Weisz have the girl talk or something
+		name = spw.7.a
+		weisz_moralize_small = yes
+		#probably unlocks some new decision to increase willpower by going to gatherings with the Soil-Father's chosen maybe
+	}
+}
+
+country_event = { #Wissman tells Weisz to lock the fuck in but in a nice way
+	id = spw.8
+	title = spw.8.t
+	desc = spw.8.d
+	
+	is_triggered_only = yes
+	
+	option = {#
+		name = spw.8.a
+		weisz_demoralize_medium = yes
+		#maybe Weisz tries to discipline himself which is kinda cringe but idk :BoP choice
+	}
+}
+
+country_event = {#Weisz joins a patrol mission and meets Jager fucking around
+	id = spw.9
+	title = spw.9.t
+	desc = spw.9.d
+	
+	is_triggered_only = yes
+	
+	option = {#damn this jager guy sucks
+		name = spw.9.a
+		weisz_demoralize_small = yes
+		add_stability = 0.05
+	}
+	option = {#yo this guy kinda like a literature character, can we work with him?
+		name = spw.9.b
+		weisz_moralize_small = yes
+		set_country_flag = SPW_weisz_jager_oomf
+		#unlocks BoP choice about finding jager
+	}
+}
+
+country_event = {#Lea Eichenwald reaching out to Weisz about hauntings
+	id = spw.7
+	title = spw.7.t
+	desc = spw.7.d
+	
+	is_triggered_only = yes
+	
+	option = {#Lea and Weisz have the girl talk or something
+		name = spw.7.a
+		weisz_moralize_small = yes
+		add_power_balance_value = {
+			id = SPW_power_balance
+			value = -0.05
+			tooltip_side = SPW_magdalena_side
+		}
+		#probably unlocks some new decision to increase willpower
+	}
+}
+
+########
+
+
+country_event = {#Rooks rebel
+	id = spw.100
+	title = spw.100.t
+	desc = spw.100.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+		#add_ideas = GENERIC_civil_war_isolation
+		every_state = {
+			limit = {
+			is_core_of = RKS
+			is_owned_by = ROOT
+			}
+		RKS = {
+		transfer_state = PREV
+		}
+		}
+		RKS = {
+		inherit_technology = ROOT
+		#add_ideas = GENERIC_civil_war_isolation
+		}
+		if = {
+			limit = {
+			check_variable = {
+    		var = SPW_rooks_loyalty
+    		value = -2
+    		compare = less_than_or_equals
+			}
+			check_variable = {
+    		var = SPW_rooks_tension
+    		value = 5
+    		compare = less_than_or_equals
+			}
+			}
+			RKS = {
+			set_politics = {
+			ruling_party = republic_peasant
+			}
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = 0.25
+			}
+			}
+		}
+		if = {
+			limit = {
+			SPW = { has_country_flag = SPW_jager_rooks_protector }
+			}
+			RKS = {
+			SPW_matthias_jager = {
+			set_nationality = RKS
+			if = {
+				limit = {
+					can_be_country_leader = yes
+				}
+				promote_character = monarchy_absolute_ideology
+			}
+			else = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						ideology = monarchy_absolute_ideology
+						traits = { heroic_commoner }
+					}
+				}
+				}
+			}
+			set_politics = {
+			ruling_party = monarchy_absolute
+			}
+			add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.25
+			}
+			}
+		}
+		transfer_units_fraction= {
+			target = RKS
+			size = 0.1
+			stockpile_ratio = 0.3
+			army_ratio = 0.2
+			navy_ratio = 0.0
+			air_ratio = 0.0
+		}
+		}
+	}
+	
+	option = {#nuh uh
+		name = spw.100.a
+		ai_chance = {
+			factor = 1
+		}
+		RKS = {
+		declare_war_on = {
+  			  target = ROOT
+		      type = annex_everything
+			}
+		}
+	}
+	
+	option = {#Go Halfings!!
+		name = spw.100.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		RKS = { change_tag_from = ROOT }
+		hidden_effect = {
+			RKS = {
+			declare_war_on = {
+  			  target = ROOT
+		      type = annex_everything
+			}
+		}
+		}
+		}
+
+	option = {#let them go...
+		name = spw.100.c
+		ai_chance = {
+			factor = 1
+		}
+	}
+	}
+
+country_event = {#Spochwald Sacked
+	id = spw.101
+	title = spw.101.t
+	desc = spw.101.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {#nuh uh
+		name = spw.101.a
+		ai_chance = {
+			factor = 1
+		}
+		remove_ideas = { SPW_breadbasket_of_the_union }
+		rooks_disloyalty_small = yes
+		rooks_tension_increase_medium = yes
+		weisz_demoralize_big = yes
+		SVT = {
+			country_event = spw.102
+			}
+		NRK = {
+			country_event = spw.102
+			}
+		}
+	}
+
+country_event = {#Spochwald sacked notif
+	id = spw.102
+	title = spw.102.t
+	desc = spw.102.d
+	picture = GFX_report_event_perkavland_sacked
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {#oh woe
+		name = spw.102.a
+		ai_chance = {
+			factor = 1
+		}
+		remove_ideas = { SPW_reapers_of_the_harvest }
+		}
+	}

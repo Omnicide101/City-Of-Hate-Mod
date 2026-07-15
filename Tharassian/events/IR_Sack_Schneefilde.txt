@@ -110,6 +110,10 @@ country_event = {
 		}
 		set_country_flag = SNF_raid_limited_damage
 		add_ideas = SNF_limited_devastation
+		news_event = {
+			id = news.11
+			days = 3
+		}
 	}
 }
 
@@ -172,6 +176,10 @@ country_event = {
 				days = 6
 			}
 		}
+		news_event = {
+			id = news.10
+			days = 3
+		}
 	}
 }
 
@@ -232,6 +240,10 @@ country_event = {
 				id = refugee.1
 				days = 6
 			}
+		}
+		news_event = {
+			id = news.10
+			days = 3
 		}
 	}
 }

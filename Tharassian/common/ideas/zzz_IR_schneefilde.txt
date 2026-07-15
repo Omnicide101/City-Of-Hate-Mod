@@ -863,7 +863,9 @@ SNF_perkav_studied = {
 
 			modifier = {
 				consumer_goods_factor = -0.05
-				local_resources_factor = 0.1
+				local_resources_factor = 0.15
+				trade_opinion_factor = 0.15
+				base_fuel_gain_factor = 0.1
 				}
 			
 			targeted_modifier = {

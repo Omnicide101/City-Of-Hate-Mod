@@ -151,68 +151,12 @@ give_military_access = FTH
 give_military_access = WIS
 give_military_access = WSZ
 
-create_country_leader = {
-	name = "Adalbrecht Krukenberg"
-	desc = "politics_TEI_krukenberg_desc"
-	picture = "gfx/leaders/TEI/Portrait_TEI_Krukenberg.dds"
-	ideology = monarchy_constitutional_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Eckhard Wächtler"
-	desc = "politics_TEI_wachtler_desc"
-	picture = "gfx/leaders/TEI/Portrait_TEI_Wachtler.dds"
-	ideology = republic_peasant_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Florian Grohl"
-	desc = "politics_TEI_grohl_desc"
-	picture = "gfx/leaders/TEI/Portrait_TEI_Grohl.dds"
-	ideology = puritan_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Adalbrecht Krukenberg"
-	desc = "politics_TEI_krukenberg_desc"
-	picture = "gfx/leaders/TEI/Portrait_TEI_Krukenberg.dds"
-	ideology = monarchy_absolute_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Franz Saxer"
-	desc = "politics_TEI_saxer_desc"
-	picture = "gfx/leaders/TEI/Portrait_TEI_Saxer.dds"
-	ideology = theocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Clara Schillinger"
-	desc = "politics_TEI_schillinger_desc"
-	picture = "gfx/leaders/TEI/Portrait_TEI_Schillinger.dds"
-	ideology = republic_aristocrat_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Sylvia Kehrer"
-	desc = "politics_TEI_kehrer_desc"
-	picture = "gfx/leaders/TEI/Portrait_TEI_Kehrer.dds"
-	ideology = republic_merchant_ideology
-	traits = {
-	}
-}
+recruit_character = TEI_adalbrecht_krukenberg
+recruit_character = TEI_eckhard_wächtler
+recruit_character = TEI_florian_grohl
+recruit_character = TEI_franz_saxer
+recruit_character = TEI_clara_schillinger
+recruit_character = TEI_sylvia_kehrer
 
 if = {
 	limit = {

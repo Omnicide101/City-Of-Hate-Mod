@@ -1,0 +1,67 @@
+﻿division_template = {
+	name = "Stráže"	
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Wojownicy"
+	regiments = {
+		warband = { x = 0 y = 0 }
+		warband = { x = 0 y = 1 }
+        warband = { x = 0 y = 2 }
+		warband = { x = 1 y = 0 }
+		warband = { x = 1 y = 1 }
+		warband = { x = 1 y = 2 }
+		warband = { x = 2 y = 0 }
+		warband = { x = 2 y = 1 }
+		warband = { x = 2 y = 2 }
+		warband = { x = 2 y = 3 }
+	}
+}
+
+division_template = {
+	name = "Fosztogató"
+	regiments = {
+		perkav_raiders = { x = 0 y = 0 }
+		perkav_raiders = { x = 0 y = 1 }
+		perkav_raiders = { x = 0 y = 2 }
+        perkav_raiders = { x = 1 y = 0 }
+		perkav_raiders = { x = 1 y = 1 }
+		perkav_raiders = { x = 1 y = 2 }
+	}
+}
+
+units = {
+	division = {
+		name = "Fosztogató"
+		location = 4488
+		division_template = "Fosztogató"
+		start_experience_factor = 0.5
+
+	}
+	division = {
+		name = "Wojownicy"
+		location = 4488
+		division_template = "Wojownicy"
+		start_experience_factor = 0.5
+
+	}
+	division = {
+		name = "Wojownicy"
+		location = 4488
+		division_template = "Wojownicy"
+		start_experience_factor = 0.5
+
+	}
+	division = {
+		name = "Wojownicy"
+		location = 4488
+		division_template = "Wojownicy"
+		start_experience_factor = 0.5
+
+	}
+}

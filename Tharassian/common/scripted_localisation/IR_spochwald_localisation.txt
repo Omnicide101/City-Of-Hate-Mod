@@ -133,3 +133,71 @@ defined_text = { #Country
 		localization_key = GUI_SPW_RKS_beloved
 	}
 }
+
+defined_text = {
+	name = spw_darkweald_bandits_loc
+	text = { 
+		trigger = {
+			original_tag = SPW
+			OR = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_darkweald_bandits
+								}
+							}
+			NOT = {
+			has_country_flag = SPW_jager_solved_flag
+			}
+			}
+		}
+		localization_key = spw_darkweald_bandits_loc_show
+	}
+	text = { 
+		trigger = {
+			original_tag = SPW
+			OR = {
+			NOT = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_darkweald_bandits
+								}
+							}
+						}
+			has_country_flag = SPW_jager_solved_flag
+			}
+		}
+		localization_key = wss_snf_loyalty_no
+	}
+}
+
+defined_text = {
+	name = spw_newheart_rebels_loc
+	text = { 
+		trigger = {
+			original_tag = SPW
+			OR = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_newheart_bandits
+								}
+							}
+			}
+		}
+		localization_key = spw_newheart_rebels_loc_show
+	}
+	text = { 
+		trigger = {
+			original_tag = SPW
+			OR = {
+			NOT = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_newheart_bandits
+								}
+							}
+						}
+			}
+		}
+		localization_key = wss_snf_loyalty_no
+	}
+}

@@ -22,5 +22,216 @@ ideas = {
 				consumer_goods_factor = -0.15
 			}
 		}
+		SPW_breadbasket_of_the_union = {
+			
+			allowed = {
+				original_tag = SPW
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = prc_permit_opium_trade
+			
+			removal_cost = -1
+			
+			modifier = {
+				base_fuel_gain_factor = 0.10
+				local_resources_factor = 0.20
+				trade_opinion_factor = 0.25
+				min_export = 0.15
+				consumer_goods_factor = -0.05
+			}
+		}
+		SPW_reapers_of_the_harvest = {
+			
+			allowed = {
+				country_exists = SPW
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = prc_permit_opium_trade
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				stability_factor = 0.1
+				conscription = 0.01
+				base_fuel_gain = 160
+			}
+			targeted_modifier = {
+					tag = SPW
+					trade_opinion_factor = 0.15
+					extra_trade_to_target_factor = 0.1
+					trade_cost_for_target_factor = -0.3
+			}
+		}
+		SPW_Spectre_BeKazaal = {
+			
+			allowed = {
+				original_tag = SPW
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_2
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = -0.1
+				stability_factor = -0.2
+				war_support_factor = -0.1
+				political_power_gain = -0.15
+				production_factory_efficiency_gain_factor = -0.2
+			}
+		}
+		SPW_rapidly_collapsing_state = {
+			
+			allowed = {
+				original_tag = SPW
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = high_devastation
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.25
+				political_power_cost = -0.3
+				monthly_population = -0.2
+				research_speed_factor = -0.25
+				surrender_limit = -0.5
+				cic_to_overlord_factor = -0.1
+				mic_to_overlord_factor = -0.25
+				autonomy_manpower_share = -0.25
+				consumer_goods_factor = 0.15
+			}
+		}
+		SPW_gallows_row_idea = {
+			
+			allowed = {
+				original_tag = SPW
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = high_devastation
+			
+			removal_cost = -1
+			
+			modifier = {
+				required_garrison_factor = -0.3
+				conscription = 0.01
+				monthly_population = -0.05
+				local_resources_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+
+		SPW_arcanophobia_idea = {
+			
+			allowed = {
+				original_tag = SPW
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = high_devastation
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = -0.3
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				war_stability_factor = 0.3
+			}
+		}
+
+		SPW_bastion = {
+			
+			allowed = {
+				original_tag = SPW
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = GFX_idea_generic_fortify_the_borders
+			
+			removal_cost = -1
+			
+			modifier = {
+				line_change_production_efficiency_factor = 0.15
+				party_popularity_stability_factor = 0.3
+			}
+		}
+
+		SPW_guardians = {
+			
+			allowed = {
+				original_tag = SPW
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = GFX_idea_german_advisors
+			
+			removal_cost = -1
+			
+			modifier = {
+				recruitable_population_factor = 0.1
+				army_core_defence_factor = 0.1
+				army_core_attack_factor = 0.1
+			}
+		}
 	}
+
+	mercenary_company = {
+
+		SPW_order_of_living_merc = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			allowed_to_remove = {
+				has_government = puritan
+			}
+			
+			picture = generic_religion_bonuses
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = 0.05
+				war_support_factor = 0.05
+				stability_factor = 0.05
+				weekly_manpower = 20
+				army_fuel_consumption_factor = 0.1
+			}
+		}
 }

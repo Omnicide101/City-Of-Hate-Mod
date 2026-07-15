@@ -1924,6 +1924,12 @@ id = sta.78
 		
 		hidden_effect = {
 			restore_sigismunds_stahlhof = yes
+			every_state = {
+				limit = {
+					is_core_of = TEI
+				}
+				remove_core_of = TEI
+			}
 		}
 	}
 }

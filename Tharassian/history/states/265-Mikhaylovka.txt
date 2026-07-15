@@ -2,14 +2,14 @@ state={
 	id=265
 	name="STATE_265"
 	provinces={
-		9316 5441 2080 513
+		2080 513
 	}
 	state_category = rural
-	manpower=7742
+	manpower=14742
 	buildings_max_level_factor=1.000
 	history={
 		victory_points = {
-			513 1
+			513 5
 		}
 		owner = SVT
 		buildings = {
@@ -17,5 +17,6 @@ state={
 			farm = 1
 		}
 		add_core_of = SVT
+		add_core_of = RKS
 	}
 }

@@ -66,6 +66,36 @@ set_technology ={
 	basic_heavy_ship_hull = 1
 }
 
+activate_mission = SPW_bandit_raid_incoming
+activate_mission = SPW_undead_raid_incoming
+activate_mission = SPW_jager_converting
+activate_mission = SPW_newhearts_stealing_equipment
+
+set_variable = {
+	var = jager_manpower_var
+	value = 200
+}
+
+set_variable = {
+	var = newhearts_equipment_var
+	value = 200
+}
+
+set_variable = {
+	var = IRP_manpower_var
+	value = 1200
+}
+
+set_variable = {
+	var = IRP_health_var
+	value = 4
+}
+
+set_variable = {
+	var = IRP_equipment_var
+	value = 450
+}
+
 set_variable = {
 	var = SPW_weisz_willpower
 	value = 37
@@ -138,7 +168,17 @@ add_ideas = {
 	human_country
 	tergewelft_patron
 	FPT_bauernfreistellung
+	SPW_breadbasket_of_the_union
+	SPW_Spectre_BeKazaal
+	SPW_rapidly_collapsing_state
 }
+
+set_power_balance = {
+			id = SPW_power_balance
+			left_side = SPW_magdalena_side
+			right_side = SPW_bekazaal_side
+			set_value = 0.00
+		}
 
 recruit_character = SPW_wilhelm_weisz
 recruit_character = SPW_matthias_jager
@@ -147,6 +187,7 @@ recruit_character = SPW_august_wissmann
 recruit_character = SPW_lea_eichenwald
 recruit_character = SPW_magdalene_schichau
 recruit_character = SPW_nicolas_krauser
+recruit_character = SPW_eike_bachmeier
 
 give_military_access = UNG
 give_military_access = HLZ

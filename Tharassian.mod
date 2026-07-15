@@ -94,5 +94,5 @@ tags={
 	"Total Conversion"
 }
 picture="Tharassian.png"
-supported_version="1.18.*"
-path="/home/mira/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Tharassian"
+supported_version="1.19.*"
+path = "mod/Tharassian"

@@ -15,6 +15,8 @@ rule_group_manpower = {
 	}
 }
 
+<<<<<<< HEAD
+=======
 rule_group_ideology = {
 	rules = {
 		joining_rule_non_monarchy
@@ -44,11 +46,14 @@ rule_group_war_relation = {
 }
 
 
+>>>>>>> main
 ###  ###  ## #   # ###  ##  ##  ##  #   
 #  #  #  #   ## ##  #  #   #   #  # #   
 #  #  #   #  # # #  #   #   #  #### #   
 #  #  #    # #   #  #    #   # #  # #   
 ###  ### ##  #   # ### ##  ##  #  # ### 
+<<<<<<< HEAD
+=======
  
 # Ideology rules 
 rule_group_dismissal_ideology = {
@@ -60,6 +65,7 @@ rule_group_dismissal_ideology = {
 		dismissal_rule_ideology_not_communism
 	}
 }
+>>>>>>> main
 
 #Member Action rules
 rule_group_dismissal_actions = {
@@ -131,6 +137,8 @@ rule_group_generate_wargoal_threat = {
 	#default_rule = call_to_war_rule_faction_leader_only
 	rules = {
 		generate_wargoal_threat_reduction_20
+<<<<<<< HEAD
+=======
 		generate_wargoal_threat_reduction_40
 	}
 }
@@ -155,6 +163,7 @@ rule_group_peace_rules = {
 		faction_peace_rule_conquest_focus
 		faction_peace_take_claimed_focus
 		faction_peace_china_focus # New Order in East Asia 
+>>>>>>> main
 	}
 }
 
@@ -185,6 +194,8 @@ INFLUENCE_SORT = {
 	}
 }
 
+<<<<<<< HEAD
+=======
 faction_set_goal_rules = {
 	rules = {
 		goals_only_faction_leader
@@ -192,6 +203,7 @@ faction_set_goal_rules = {
 	
 }
 
+>>>>>>> main
  ##   ##  #   # ### ###  #  # #   # ### #  # ###     ### #  #     ### #   # ### #   ### 
 #    #  # #   # #   #  # ## # ## ## #   ## #  #       #  ## #     #    # #   #  #   #   
 # ## #  #  # #  ##  ###  # ## # # # ##  # ##  #       #  # ##     ##    #    #  #   ##  
@@ -203,4 +215,8 @@ rule_group_gie_rules = {
 	rules = {
 		government_in_exile_allowed
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

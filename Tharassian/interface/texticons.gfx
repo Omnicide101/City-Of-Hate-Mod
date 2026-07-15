@@ -186,6 +186,60 @@ spriteTypes = {
 	### VANILLA TEXTICONS ###
 
 	spriteType = {
+		name = "GFX_doctrine_mastery"
+		texturefile = "gfx/texticons/doctrine_mastery_texticon.dds"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_power_balance_texticon"
+		texturefile = "gfx/texticons/bop_texticon.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_BoP_left_texticon"
+		texturefile = "gfx/texticons/BoP_left_texticon.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_BoP_right_texticon"
+		texturefile = "gfx/texticons/BoP_right_texticon.dds"
+		legacy_lazy_load = no
+	}	
+
+	spriteType = {
+		name = "GFX_naval_dominance_texticon"
+		texturefile = "gfx/texticons/naval_dominance_texticon.dds"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_naval_dominance_multiplication_texticon"
+		texturefile = "gfx/texticons/naval_dominance_multiplication_texticon.dds"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_naval_dominance_reduction_texticon"
+		texturefile = "gfx/texticons/naval_dominance_reduction_texticon.dds"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_naval_dominance_increase_texticon"
+		texturefile = "gfx/texticons/naval_dominance_increase_texticon.dds"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_naval_dominance_protect_texticon"
+		texturefile = "gfx/texticons/naval_dominance_protect_texticon.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
 		name = "GFX_autonomy_texticon"
 		texturefile = "gfx/texticons/autonomy_texticon.dds"
 		legacy_lazy_load = no

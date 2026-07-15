@@ -273,6 +273,41 @@ SKA_game_plan = {
 	}
 }
 
+SPW_game_plan = {
+	name = "SPW_GAME_PLAN"
+	group = "AI_GAME_PLANS"
+	option = {
+		name = "DEFAULT"
+		text = "DEFAULT_PLAN"
+		desc = "DEFAULT_PLAN_DESC"
+	}
+	option = {
+		name = "SPW_Weisz_transition"
+		text = "SPW_Weisz_transition_PLAN"
+		desc = "SPW_Weisz_transition_PLAN_DESC"
+	}
+	option = {
+		name = "SPW_BeKazaal"
+		text = "SPW_BeKazaal_PLAN"
+		desc = "SPW_BeKazaal_PLAN_DESC"
+	}
+	option = {
+		name = "SPW_temple"
+		text = "SPW_temple_PLAN"
+		desc = "SPW_temple_PLAN_DESC"
+	}
+	option = {
+		name = "SPW_Wissman"
+		text = "SPW_Wissman_PLAN"
+		desc = "SPW_Wissman_PLAN_DESC"
+	}
+	option = {
+		name = "SPW_jager"
+		text = "SPW_jager_PLAN"
+		desc = "SPW_jager_PLAN_DESC"
+	}
+}
+
 allow_wargoals = {
 	name = "RULE_ALLOW_WARGOALS"
 	group = "RULE_GROUP_GENERAL_FOREIGN_POLICY"

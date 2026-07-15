@@ -275,7 +275,7 @@ shatter_perkavland = {
 			transfer_state = 617
 			transfer_state = 625
 			transfer_state = 632
-			load_oob = "PRK_empty"
+			load_oob = "PRK_shatter_KRL"
 		}
 		
 		SVC = {
@@ -292,7 +292,7 @@ shatter_perkavland = {
 			transfer_state = 634
 			transfer_state = 643
 			transfer_state = 633
-			load_oob = "PRK_empty"
+			load_oob = "PRK_shatter_SVC"
 		}
 		
 		WLT = {
@@ -307,7 +307,7 @@ shatter_perkavland = {
 			transfer_state = 628
 			transfer_state = 637
 			transfer_state = 638
-			load_oob = "PRK_empty"
+			load_oob = "PRK_shatter_WLT"
 		}
 		
 		RLV = {
@@ -324,7 +324,7 @@ shatter_perkavland = {
 			transfer_state = 627
 			transfer_state = 639
 			transfer_state = 646
-			load_oob = "PRK_empty"
+			load_oob = "PRK_shatter_WLT"
 		}
 		
 		VLN = {
@@ -339,7 +339,7 @@ shatter_perkavland = {
 			transfer_state = 640
 			transfer_state = 651
 			transfer_state = 652
-			load_oob = "PRK_empty"
+			load_oob = "PRK_shatter_VLN"
 		}
 		
 		LNK = {
@@ -431,7 +431,7 @@ shatter_perkavland = {
 				add_state_core = 629
 				transfer_state = 629
 			}
-			load_oob = "PRK_empty"
+			load_oob = "PRK_shatter_LNK"
 		}
 		
 		KRZ = {
@@ -490,11 +490,18 @@ shatter_perkavland = {
 				add_state_core = 631
 				transfer_state = 631
 			}
-			
-			add_state_core = 648
-			
-			transfer_state = 648
-			load_oob = "PRK_empty"
+			if = {
+				limit = {
+					NOT = {
+						648 = {
+							is_owned_by = SNF
+						}
+					}
+				}
+				add_state_core = 648
+				transfer_state = 648
+			}
+			load_oob = "PRK_shatter_KRZ"
 		}
 		
 		VTZ = {
@@ -507,7 +514,7 @@ shatter_perkavland = {
 			transfer_state = 653
 			transfer_state = 647
 			transfer_state = 654
-			load_oob = "PRK_empty"
+			load_oob = "PRK_shatter_VTZ"
 		}
 		
 		NVT = {
@@ -586,7 +593,7 @@ shatter_perkavland = {
 			transfer_state = 332
 			transfer_state = 336
 			transfer_state = 337
-			load_oob = "PRK_empty"
+			load_oob = "PRK_shatter_NVT"
 		}
 	}
 }

@@ -81,6 +81,15 @@ set_variable = {
 	value = 9
 }
 
+set_variable = {
+	var = SPW_rooks_loyalty
+	value = 0
+}
+
+set_variable = {
+	var = SPW_rooks_tension
+	value = 2
+}
 
 1939.1.1 = {
 }

@@ -45,7 +45,7 @@ SNF_perkav_skirmishes_general = {
 		type = prepare_for_war
 		id = PRK
 		
-		value = 150
+		value = 50
 	}
 }
 

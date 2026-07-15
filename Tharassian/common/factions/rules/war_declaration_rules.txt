@@ -132,10 +132,6 @@ generate_wargoal_threat_reduction_20 = {
 	type = war_declaration_rules
 	ai_will_do = {
 		base = 0
-		modifier = {
-			add = 1
-			has_government = neutrality 
-		}
 	}
 	modifier = {
 		generate_wargoal_tension = -0.2

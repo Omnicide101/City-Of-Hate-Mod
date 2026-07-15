@@ -16,7 +16,11 @@ SPW_balance_of_power_category = {
 
 SPW_rooks_management = {
 	allowed = {
+		OR = {
 		original_tag = SPW
+		original_tag = SVT
+		original_tag = UNG
+		}
 	}
 	
 	visible = {
@@ -57,6 +61,28 @@ SPW_securing_the_spochwald = {
 		}
 	}
 	
+	priority = 75
+	
+	visible_when_empty = yes
+}
+
+SPW_Islicher_River_Patrol_donating = {
+	allowed = {
+		OR = {
+		original_tag = NRK
+		original_tag = SVT
+		}
+		NOT = {
+		has_war_with = SPW
+		}
+	}
+	visible = {
+		SPW = {
+		NOT = {
+		has_country_flag = SPW_secured_territories_yes_flag
+			}
+		}
+	}
 	priority = 75
 	
 	visible_when_empty = yes

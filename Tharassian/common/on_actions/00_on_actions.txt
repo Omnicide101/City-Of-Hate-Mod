@@ -364,10 +364,76 @@ on_actions = {
 			}
 		}
 	}
+
+	#Spochwald The Rooks Tenstion as Global so as to be shared between St Vichtlas and Faustburg
 	
-	#Set spooky Spochwald Bandits
+	#Spochwald Weisz Willpower
 	on_startup = {
 		effect = {
+		SPW = {
+		SPW_check_weisz_willpower = yes
+			}
+		}
+	}
+
+	#Set spooky Spochwald Modifiers
+	on_startup = {
+		effect = {
+			#The Rooks
+			#St Vichtlas
+			265 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			269 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			#Spochwald
+			1292 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			322 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			267 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			259 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			1287 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			#Faustburger Rooks
+			274 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			251 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			264 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			#Spochwald Patrols
 			1284 = {
 				add_dynamic_modifier = {
 					modifier = SPW_river_patrol
@@ -388,6 +454,54 @@ on_actions = {
 					modifier = SPW_river_patrol
 				}
 			}
+			# St Vichtlas Patrols
+			269 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			1297 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			227 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			# Neureik Patrols
+			268 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			1298 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			284 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			1299 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			316 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			318 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			#
 			301 = {
 				add_dynamic_modifier = {
 					modifier = SPW_darkweald_bandits

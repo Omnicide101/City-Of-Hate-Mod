@@ -131,6 +131,7 @@ add_ideas = {
 	human_country
 	bitha_patron
 	FPT_bauernfreistellung
+	SPW_reapers_of_the_harvest
 }
 
 give_military_access = UNG

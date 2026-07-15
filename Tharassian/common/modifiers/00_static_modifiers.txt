@@ -483,3 +483,19 @@ operative_nationality_operation = {
 	operation_outcome = 0.1
 	operation_cost = -0.1
 }
+
+SPW_bop_willpower_low = {
+    power_balance_daily = 0.01 # Changes by 0.5% each day to the right
+}
+
+SPW_bop_willpower_okay = {
+    power_balance_daily = 0.005 # Changes by 0.1% each day to the right
+}
+
+SPW_bop_willpower_better = {
+    power_balance_weekly = -0.001 # Changes by 0.1% each week to the left
+}
+
+SPW_bop_willpower_good = {
+    power_balance_weekly = -0.005 # Changes by 0.5% each week to the left
+}

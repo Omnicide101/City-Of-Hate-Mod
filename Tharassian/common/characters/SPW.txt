@@ -9,6 +9,7 @@ characters={
 		country_leader={
 			desc="politics_SPW_weisz_desc"
 			ideology=monarchy_constitutional_ideology
+			traits={ the_sod-wit_prince drunkard }
 			expire="1.1.1.1"
 			id=-1
 		}
@@ -95,6 +96,23 @@ characters={
 			ideology=republic_merchant_ideology
 			expire="1.1.1.1"
 			id=-1
+		}
+	}
+	SPW_eike_bachmeier={
+		name="Eike Bachmeier"
+		portraits={
+			civilian={
+				large="gfx/leaders/SPW/Portrait_SPW_Krauser.dds"
+			}
+		}
+		field_marshal={
+			traits={ trait_engineer ranger charismatic }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
 		}
 	}
 }

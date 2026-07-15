@@ -1,0 +1,1217 @@
+SPW_balance_of_power_category = {
+
+    SPW_little_drink = {
+
+        cost = 5
+
+        icon = generic_civil_support
+
+        visible = {
+        	has_country_flag = SPW_weisz_drinker
+        }
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SPW_not_drinking_tt
+				NOT = {
+					OR = {
+						#has_active_mission = SPW_little_drink
+						has_active_mission = SPW_medium_drink
+						has_active_mission = SPW_big_drink
+					}
+				}
+			}
+		}
+
+        complete_effect = {
+			weisz_moralize_tiny = yes
+			remove_all_power_balance_modifiers = {
+    			id = SPW_power_balance
+			}
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = 0.03
+				tooltip_side = SPW_bekazaal_side
+			}
+        }
+		
+		days_remove = 7
+		
+		remove_effect = {
+			weisz_demoralize_small = yes
+		}
+    }
+	
+	SPW_medium_drink = {
+
+        cost = 15
+
+        icon = generic_civil_support
+
+        visible = {
+        	has_country_flag = SPW_weisz_drinker
+        }
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SPW_not_drinking_tt
+				NOT = {
+					OR = {
+						has_active_mission = SPW_little_drink
+						#has_active_mission = SPW_medium_drink
+						has_active_mission = SPW_big_drink
+					}
+				}
+			}
+		}
+
+        complete_effect = {
+			weisz_moralize_small = yes
+			remove_all_power_balance_modifiers = {
+    			id = SPW_power_balance
+			}
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = 0.07
+				tooltip_side = SPW_bekazaal_side
+			}
+        }
+		
+		days_remove = 14
+		
+		remove_effect = {
+			weisz_demoralize_medium = yes
+		}
+    }
+	
+	SPW_big_drink = {
+
+        cost = 35
+
+        icon = generic_civil_support
+
+        visible = {
+        	has_country_flag = SPW_weisz_drinker
+        }
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SPW_not_drinking_tt
+				NOT = {
+					OR = {
+						has_active_mission = SPW_little_drink
+						has_active_mission = SPW_medium_drink
+						#has_active_mission = SPW_big_drink
+					}
+				}
+			}
+		}
+
+        complete_effect = {
+			weisz_moralize_medium = yes
+			remove_all_power_balance_modifiers = {
+    			id = SPW_power_balance
+			}
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = 0.16
+				tooltip_side = SPW_bekazaal_side
+			}
+        }
+		
+		days_remove = 21
+		
+		remove_effect = {
+			weisz_demoralize_big = yes
+		}
+    }
+	
+	SPW_go_hunt = {
+
+        cost = 15
+
+        icon = generic_reorganize_irregulars
+		
+		visible = {
+			has_country_flag = SPW_weisz_hunter
+		}
+
+        complete_effect = {
+			weisz_moralize_medium = yes
+        }
+		
+		days_remove = 21
+		
+		modifier = {
+			war_support_weekly = 0.002
+		}
+		
+		remove_effect = {
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = 0.04
+				tooltip_side = SPW_bekazaal_side
+			}
+		}
+	
+    }
+	
+	SPW_go_garden = {
+
+        cost = 15
+
+        icon = hol_inundate_water_lines
+		
+		visible = {
+			has_country_flag = SPW_weisz_gardener
+		}
+
+        complete_effect = {
+			weisz_moralize_small = yes
+        }
+		
+		days_remove = 21
+		
+		modifier = {
+			political_power_gain = 0.05
+		}
+		
+		remove_effect = {
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = -0.04
+				tooltip_side = SPW_magdalena_side
+			}
+		}
+	
+    }
+
+    SPW_wissman_call_to_action = {
+
+        cost = 30
+
+        icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = SPW_guard_tall
+		}
+
+        complete_effect = {
+			weisz_demoralize_small = yes
+        }
+		
+		days_remove = 70
+		
+		modifier = {
+			puritan_drift = 0.08
+		}
+		
+		remove_effect = {
+			add_power_balance_value = {
+				id = SPW_power_balance
+				value = -0.08
+				tooltip_side = SPW_magdalena_side
+			}
+		}
+	
+    }
+    SPW_lea_counselling = {
+
+        cost = 20
+
+        icon = GFX_decision_generic_intelligence_operation
+		
+		visible = {
+			has_completed_focus = SPW_soil_fathers_chosen
+		}
+
+        complete_effect = {
+			weisz_moralize_medium = yes
+        }
+		
+		days_remove = 90
+		
+		modifier = {
+			theocrat_drift = 0.1
+			political_power_gain = -0.1
+		}
+	
+    }
+}
+
+SPW_rooks_management = {
+	SPW_rooks_rebellion = {
+		
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			OR = {
+			TAG = SPW
+			TAG = SVT
+			TAG = UNG
+			}
+		}
+		visible = {
+			NOT = {
+			has_country_flag = SPW_rooks_chill
+			}
+		}
+		available = {
+			
+		}
+		
+		activation = {
+			custom_trigger_tooltip = {
+			tooltip = rks_unupset_trigger_val_tt
+			check_variable = { SPW_rooks_tension > 5 }
+			}
+			custom_trigger_tooltip = {
+			tooltip = rks_disloyal_trigger_val_tt
+			check_variable = { SPW_rooks_loyalty < 0 }
+			}
+			NOT = {
+			custom_trigger_tooltip = {
+			tooltip = rks_upset_trigger_val_tt
+			check_variable = { SPW_rooks_tension < 5 }
+			}
+			}
+		}
+		
+		days_mission_timeout = 180
+		
+		fire_only_once = no
+		selectable_mission = no
+		is_good = no
+		
+		timeout_effect = { #if a rebellion triggers in one place, everywhere else should get a boost in tension
+			hidden_effect = {
+			SVT = {
+			rooks_tension_increase_medium = yes
+			}
+			UNG = {
+			rooks_tension_increase_medium = yes
+			}
+			SPW = {
+			rooks_tension_increase_medium = yes
+			}
+			set_variable = { var = SPW_rooks_tension value = 0 }
+			}
+			if = {
+			limit = {
+				country_exists = RKS
+				}
+				every_state = {
+					limit = {
+					is_core_of = RKS
+					is_owned_by = ROOT
+					}
+				RKS = {
+				transfer_state = PREV
+					}
+				}
+				else = {
+				country_event = spw.100
+				}
+			}
+		}
+	}
+}
+
+SPW_securing_the_spochwald = {
+	
+	SPW_converting_unhaunted = {
+		
+		icon = GFX_decision_generic_independence
+		
+		visible = {
+			original_tag = SPW
+			has_completed_focus = SPW_incorporate_the_unhaunted
+			OR = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_darkweald_bandits
+								}
+							}
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				is_owned_by = ROOT
+				OR = {
+				has_dynamic_modifier = {
+    						modifier = SPW_darkweald_bandits
+								}
+					}
+			}
+		}
+		
+		available = {
+			has_completed_focus = SPW_incorporate_the_unhaunted
+			has_equipment = {
+				infantry_equipment > 599
+			}
+		}
+		
+		
+		on_map_mode = map_only
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 35
+		}
+		
+		days_remove = 75
+		
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -600
+			}
+		}
+		
+		modifier = {
+			stability_weekly = 0.001
+		}
+		
+		remove_effect = {
+			weisz_moralize_tiny = yes
+			hidden_effect = {
+			load_oob = SPW_undaunted
+			}
+			FROM = {
+				if = {
+    				limit = {
+    					has_dynamic_modifier = {
+    						modifier = SPW_darkweald_bandits
+								}
+    				}
+    				remove_dynamic_modifier = {
+						modifier = SPW_darkweald_bandits
+					}
+    			}
+			}
+		}
+	}
+
+	SPW_clearing_unhaunted = {
+		
+		icon = GFX_decision_POL_organize_strike_two
+		
+		visible = {
+			original_tag = SPW
+			not = { has_completed_focus = SPW_incorporate_the_unhaunted }
+			OR = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_darkweald_bandits
+								}
+							}
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				is_owned_by = ROOT
+				OR = {
+				has_dynamic_modifier = {
+    						modifier = SPW_darkweald_bandits
+								}
+					}
+			}
+		}
+		
+		available = {
+			has_completed_focus = SPW_clear_out_darkwealders
+			has_manpower > 299
+			has_equipment = {
+				infantry_equipment > 399
+			}
+		}
+		
+		
+		on_map_mode = map_only
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 35
+		}
+		
+		days_remove = 75
+		
+		complete_effect = {
+			add_manpower = -300
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -400
+			}
+		}
+		
+		modifier = {
+			stability_weekly = 0.001
+		}
+		
+		remove_effect = {
+			weisz_moralize_tiny = yes
+			FROM = {
+				if = {
+    				limit = {
+    					has_dynamic_modifier = {
+    						modifier = SPW_darkweald_bandits
+								}
+    				}
+    				remove_dynamic_modifier = {
+						modifier = SPW_darkweald_bandits
+					}
+    			}
+			}
+		}
+	}
+
+	SPW_clearing_haunts = {
+		
+		icon = GFX_decision_generic_civil_support
+		
+		visible = {
+			original_tag = SPW
+			OR = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_ominous_presences
+								}
+							}
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				is_owned_by = ROOT
+				OR = {
+				has_dynamic_modifier = {
+    						modifier = SPW_ominous_presences
+								}
+					}
+			}
+		}
+		
+		available = {
+			has_completed_focus = SPW_instigate_warlock_purge
+			has_manpower > 199
+			has_equipment = {
+				infantry_equipment > 349
+			}
+		}
+		
+		
+		on_map_mode = map_only
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 35
+		}
+		
+		days_remove = 75
+		
+		complete_effect = {
+			add_manpower = -200
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -350
+			}
+		}
+		
+		modifier = {
+			stability_weekly = 0.001
+		}
+		
+		remove_effect = {
+			weisz_moralize_tiny = yes
+			FROM = {
+				if = {
+    				limit = {
+    					has_dynamic_modifier = {
+    						modifier = SPW_ominous_presences
+								}
+    				}
+    				remove_dynamic_modifier = {
+						modifier = SPW_ominous_presences
+					}
+    			}
+			}
+		}
+	}
+
+	SPW_clearing_bandit = {
+		
+		icon = GFX_decision_generic_assassination
+		
+		visible = {
+			original_tag = SPW
+			OR = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_bandit_haven
+								}
+							}
+			NOT = {
+			has_country_flag = SPW_bandits_solved_flag
+			}
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				is_owned_by = ROOT
+				OR = {
+				has_dynamic_modifier = {
+    						modifier = SPW_bandit_haven
+								}
+					}
+			}
+		}
+		
+		available = {
+			has_completed_focus = SPW_cleanse_the_forests
+			has_manpower > 299
+			has_equipment = {
+				infantry_equipment > 249
+			}
+		}
+		
+		
+		on_map_mode = map_only
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 35
+		}
+		
+		days_remove = 75
+		
+		complete_effect = {
+			add_manpower = -300
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -250
+			}
+			
+		}
+		
+		modifier = {
+			stability_weekly = 0.001
+		}
+		
+		remove_effect = {
+			weisz_moralize_tiny = yes
+			FROM = {
+				if = {
+    				limit = {
+    					has_dynamic_modifier = {
+    						modifier = SPW_bandit_haven
+								}
+    				}
+    				remove_dynamic_modifier = {
+						modifier = SPW_bandit_haven
+					}
+    			}
+			}
+		}
+	}
+
+	SPW_irp_patrols = {
+		
+		icon = GFX_decision_generic_intelligence_operation
+		
+		visible = {
+			original_tag = SPW
+			OR = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_bandit_haven
+								}
+							}
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_ominous_presences
+								}
+							}
+			}
+		}
+		
+		state_target = yes
+		
+		target_trigger = {
+			FROM = {
+				OR = {
+				state = 1290
+				state = 1288
+				state = 288
+				state = 289
+				}
+				is_core_of = ROOT
+				is_owned_by = ROOT
+				OR = {
+				has_dynamic_modifier = {
+    						modifier = SPW_bandit_haven
+								}
+				has_dynamic_modifier = {
+    						modifier = SPW_ominous_presences
+								}
+					}
+			}
+		}
+		
+		available = {
+			has_completed_focus = SPW_accompany_river_patrol
+			custom_trigger_tooltip = {
+				tooltip = GUI_SPW_irp_removal_manpower_cost
+				check_variable = {
+					IRP_manpower_var > 250
+					}
+				}
+			custom_trigger_tooltip = {
+				tooltip = GUI_SPW_irp_removal_equipment_cost
+				check_variable = {
+					IRP_equipment_var > 150
+					}
+				}
+		}
+		
+		
+		on_map_mode = map_only
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 35
+		}
+		
+		days_remove = 75
+		
+		complete_effect = {
+			SPW = {
+				subtract_from_variable = {
+					IRP_manpower_var = 250
+				}
+				subtract_from_variable = {
+					IRP_equipment_var = 150
+				}
+			}
+		}
+		
+		modifier = {
+			stability_weekly = 0.001
+		}
+		
+		remove_effect = {
+			weisz_moralize_tiny = yes
+			FROM = {
+				if = {
+    				limit = {
+    					has_dynamic_modifier = {
+    						modifier = SPW_bandit_haven
+								}
+    				}
+    				remove_dynamic_modifier = {
+						modifier = SPW_bandit_haven
+					}
+    			}
+    			if = {
+    				limit = {
+    					has_dynamic_modifier = {
+    						modifier = SPW_ominous_presences
+								}
+    				}
+    				remove_dynamic_modifier = {
+						modifier = SPW_ominous_presences
+					}
+    			}
+			}
+		}
+	}
+	SPW_give_irp_manpower_themself = {
+		
+		icon = GFX_decision_generic_military
+		
+		visible = {
+			tag = SPW
+			NOT = { has_government = puritan }
+		}
+		
+		available = {
+			has_manpower > 149
+			NOT = { has_country_flag = IRP_supplying_already }
+		}
+		
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		days_remove = 24
+		
+		complete_effect = {
+			add_manpower = -150
+			set_country_flag = IRP_supplying_already
+		}
+		
+		modifier = {
+			war_support_weekly = 0.003
+		}
+		
+		remove_effect = {	
+		clr_country_flag = IRP_supplying_already			
+			SPW = {
+				add_to_variable = {
+					IRP_manpower_var = 150
+				}
+			}
+		}
+	}
+	SPW_give_irp_equipment_themself = {
+		
+		icon = GFX_decision_ger_military_buildup
+		
+		visible = {
+			tag = SPW
+			NOT = { has_government = puritan }
+		}
+		
+		available = {
+			has_equipment = {
+				infantry_equipment > 249
+			}
+			NOT = { has_country_flag = IRP_supplying_already }
+		}
+		
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		days_remove = 72
+		
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -250
+			}
+			set_country_flag = IRP_supplying_already
+		}
+		
+		modifier = {
+			war_support_weekly = 0.003
+		}
+		
+		remove_effect = {		
+		clr_country_flag = IRP_supplying_already		
+			SPW = {
+				add_to_variable = {
+					IRP_equipment_var = 250
+				}
+			}
+		}
+	}
+	SPW_eat_irp_piece = {
+		
+		icon = GFX_decision_ger_military_buildup
+		
+		visible = {
+			tag = SPW
+			has_government = puritan
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GUI_SPW_irp_removal_manpower_cost
+				check_variable = {
+					IRP_manpower_var > 250
+					}
+				}
+			custom_trigger_tooltip = {
+				tooltip = GUI_SPW_irp_removal_equipment_cost
+				check_variable = {
+					IRP_equipment_var > 150
+					}
+				}
+		}
+		
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		days_remove = 70
+		
+		complete_effect = {
+			SPW = {
+				subtract_from_variable = {
+					IRP_equipment_var = 150
+				}
+				subtract_from_variable = {
+					IRP_manpower_var = 250
+				}
+			}
+		}
+		
+		modifier = {
+			war_support_weekly = 0.003
+		}
+		
+		remove_effect = {
+		add_manpower = 250
+		add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 150
+			}	
+		}
+	}
+	SPW_bandit_raid_incoming = {
+		
+		icon = GFX_decision_eng_blackshirt_march
+		
+		visible = {
+			original_tag = SPW
+			OR = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_bandit_haven
+								}
+							}
+			NOT = {
+			has_country_flag = SPW_bandits_solved_flag
+			}
+			}
+		}
+		
+		available = {
+			always = no #targeted only
+		}
+		
+		activation = {
+			always = no #targeted only
+		}
+		
+		days_mission_timeout = 70
+		
+		fire_only_once = no
+		
+		is_good = no
+		
+		timeout_effect = { #If statements about if the Islicher Patrol have enough manpower and resources to win the fight. If they lose then an Islicher patrol is lost on a random province. If all Islicher patrols are lost, then it is dead and big bad happens.
+				subtract_from_variable = {
+					IRP_manpower_var = 200
+				}
+				custom_effect_tooltip = SPW_irp_manpower_loss_200
+				subtract_from_variable = {
+					IRP_equipment_var = 100
+				}
+				custom_effect_tooltip = SPW_irp_equipment_loss_100
+				SPW_check_irp_defeat = yes
+			activate_mission = SPW_bandit_raid_incoming
+		}
+	
+	}
+	SPW_undead_raid_incoming = {
+		
+		icon = GFX_decision_generic_confiscation
+		
+		visible = {
+			original_tag = SPW
+			OR = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_ominous_presences
+								}
+							}
+			NOT = {
+			has_country_flag = SPW_undead_solved_flag
+			}
+			}
+		}
+		
+		available = {
+			always = no #targeted only
+		}
+		
+		activation = {
+			always = no #targeted only
+		}
+		
+		days_mission_timeout = 180
+		
+		fire_only_once = no
+		
+		is_good = no
+		
+		timeout_effect = {
+			SPW = {
+				subtract_from_variable = {
+					IRP_manpower_var = 300
+				}
+			}
+			custom_effect_tooltip = SPW_irp_manpower_loss_300
+			SPW = {
+				subtract_from_variable = {
+					IRP_equipment_var = 250
+				}
+			}
+			custom_effect_tooltip = SPW_irp_equipment_loss_250
+			SPW_check_irp_defeat = yes
+			activate_mission = SPW_undead_raid_incoming
+		}
+	
+	}
+	SPW_jager_converting = {
+		
+		icon = GFX_decision_CHL_mapuche_liberate_isthmo_amerindia
+		
+		visible = {
+			original_tag = SPW
+			OR = {
+			any_owned_state = {
+				has_dynamic_modifier = {
+    						modifier = SPW_darkweald_bandits
+								}
+							}
+			NOT = {
+			has_country_flag = SPW_jager_solved_flag
+			}
+			}
+		}
+		
+		available = {
+			always = no #targeted only
+		}
+		
+		activation = {
+			always = no #targeted only
+		}
+		
+		days_mission_timeout = 290
+		
+		fire_only_once = no
+		
+		is_good = no
+
+		timeout_effect = { #if you convince jager to be good, you get all the manpower back per tile of darkweald bandits. If rebellion, Darkweald bandit tile gets an army
+			if = {
+				limit = {
+				check_variable = {
+					jager_manpower_var < 500
+				}
+				}
+			SPW = {
+				add_manpower = -150
+			}
+			SPW = {
+				add_to_variable = {
+					jager_manpower_var = 150
+					}
+				}
+			custom_effect_tooltip = SPW_irp_manpower_loss_150_jager
+			}
+			if = {
+				limit = {
+				check_variable = {
+					jager_manpower_var > 500
+				}
+				}
+			SPW = {
+				subtract_from_variable = {
+					jager_manpower_var = 500
+				}
+			}
+			random_owned_state = {
+    				limit = {
+    					OR = {
+    					has_dynamic_modifier = {
+    						modifier = SPW_bandit_haven
+								}
+						has_dynamic_modifier = {
+    						modifier = SPW_ominous_presences
+								}
+						}
+    				}
+    			if = {
+    				limit = {
+    					has_dynamic_modifier = {
+    						modifier = SPW_bandit_haven
+								}
+    				}
+    				remove_dynamic_modifier = {
+						modifier = SPW_bandit_haven
+					}
+    			}
+    			add_dynamic_modifier = {
+					modifier = SPW_darkweald_bandits
+				}
+			}
+		}
+		SPW_check_irp_defeat = yes
+		activate_mission = SPW_jager_converting
+	
+	}
+	
+	}
+
+	SPW_newhearts_stealing_equipment = {
+		
+		icon = GFX_decision_generic_industry
+		
+		visible = {
+			original_tag = SPW
+		}
+		
+		available = {
+			always = no #targeted only
+		}
+		
+		activation = {
+			always = no #targeted only
+		}
+		
+		days_mission_timeout = 210
+		
+		fire_only_once = no
+		
+		is_good = no
+		
+		timeout_effect = { #when newhearts are raided, you get all the equipment back
+			SPW = {
+				subtract_from_variable = {
+					IRP_equipment_var = 300
+				}
+			}
+			SPW = {
+				add_to_variable = {
+					newhearts_equipment_var = 300 
+				}
+			}
+		custom_effect_tooltip = SPW_irp_manpower_loss_300_newheart
+		SPW_check_irp_defeat = yes
+		activate_mission = SPW_newhearts_stealing_equipment
+	
+		}
+	}
+}
+
+SPW_Islicher_River_Patrol_donating = {
+	SPW_give_irp_manpower = {
+		
+		icon = GFX_decision_generic_military
+		
+		visible = {
+			or = {
+			tag = SVT
+			tag = NRK
+			}
+		}
+		
+		available = {
+			has_manpower > 149
+			NOT = { has_country_flag = IRP_supplying_already }
+		}
+		
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_opinion = {
+    				target = SPW
+    				value > 60
+				}
+			factor = 100
+			}
+		}
+		
+		days_remove = 24
+		
+		complete_effect = {
+			add_manpower = -150
+			set_country_flag = IRP_supplying_already
+		}
+		
+		modifier = {
+			war_support_weekly = 0.003
+		}
+		
+		remove_effect = {
+		clr_country_flag = IRP_supplying_already			
+			SPW = {
+				add_to_variable = {
+					IRP_manpower_var = 150
+				}
+			}
+		}
+	}
+	SPW_give_irp_equipment = {
+		
+		icon = GFX_decision_ger_military_buildup
+		
+		visible = {
+			or = {
+			tag = SVT
+			tag = NRK
+			}
+		}
+		
+		available = {
+			has_equipment = {
+				infantry_equipment > 249
+			}
+			NOT = { has_country_flag = IRP_supplying_already }
+		}
+		
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_opinion = {
+    				target = SPW
+    				value > 60
+				}
+			factor = 100
+			}
+		}
+		
+		days_remove = 72
+		
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -250
+			}
+			set_country_flag = IRP_supplying_already
+		}
+		
+		modifier = {
+			war_support_weekly = 0.003
+		}
+		
+		remove_effect = {
+		clr_country_flag = IRP_supplying_already		
+			SPW = {
+				add_to_variable = {
+					IRP_equipment_var = 250
+				}
+			}
+		}
+	}
+}

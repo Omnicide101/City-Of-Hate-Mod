@@ -94,3 +94,25 @@ units = {
 
 	}
 }
+
+### STARTING PRODUCTION ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "SPW"
+		}
+		requested_factories = 1
+		progress = 0.28
+		efficiency = 56
+	}
+	add_equipment_production = {
+		equipment = {
+			type = heavy_cavalry_equipment_0
+			creator = "SPW" 
+		}
+		requested_factories = 1
+		progress = 0.32
+		efficiency = 60
+	}
+}
