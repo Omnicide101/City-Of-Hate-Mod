@@ -1,0 +1,24 @@
+state={
+	id=938
+	name="STATE_938"
+	provinces={
+		1900 2873 3008 3072 5552 7518 
+	}
+	manpower=267
+	buildings_max_level_factor=1.000
+	local_supplies=5
+	state_category = pastoral
+	
+	resources = {
+        lumber = 7
+    }
+    history = {
+        owner = AGE
+        add_core_of = AGE
+        buildings = {
+            infrastructure = 1
+			farm = 1
+		}
+		victory_points = { 2873 1 }
+	}
+}
