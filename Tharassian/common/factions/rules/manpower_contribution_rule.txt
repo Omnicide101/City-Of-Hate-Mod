@@ -38,6 +38,12 @@ manpower_contribution_high = {
 		base = 0
 		modifier = {
 			add = 2 
+			OR = {
+				has_war_with = GMR
+				has_war_with = TRS
+				has_war_with = IRI
+				has_war_with = UNG
+			}
 		}
 	}
 	available = {

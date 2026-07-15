@@ -24,7 +24,11 @@ country_event = {#Oh fuck oh shit light the beacons
 			}
 		}
 		
-		create_faction = maslodan_league_faction
+		create_faction_from_template = {
+			template = faction_template_generic_dominance
+			name = maslodan_league_faction
+			icon = GFX_faction_logo_generic_4
+		}
 	}
 	
 	option = {#We stand strong alone

@@ -1575,11 +1575,19 @@ id = sta.70
 				limit = {
 					is_in_faction = no
 				}
-				create_faction = ung_cv_faction
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = ung_cv_faction
+					icon = GFX_faction_logo_generic_12
+				}
 			}
 		}
 		STA = {
-			create_faction = sta_cv_faction
+			create_faction_from_template = {
+				template = faction_template_generic_dominance
+				name = sta_cv_faction
+				icon = GFX_faction_logo_generic_15
+			}
 			hidden_effect = {
 				country_event = {
 					id = sta.73

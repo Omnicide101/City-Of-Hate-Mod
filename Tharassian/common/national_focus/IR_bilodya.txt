@@ -1072,7 +1072,7 @@ focus_tree = {
 
 	focus = {
 		id = BLD_Create_First_Smithing_Guild
-		icon = BLD_Create_First_Smithing_Guild
+		icon = GFX_BLD_Create_First_Smithing_Guild
 		prerequisite = { focus = BLD_Promote_Farming }
 		x = 0
 		y = 3
@@ -2224,7 +2224,7 @@ focus_tree = {
 
 	focus = {
 		id = BLD_Food_For_Everyone
-		icon = GFX_focus_BLD_Food_For_Everyone
+		icon = GFX_BLD_Promote_Farming
 		prerequisite = { focus = BLD_Marshes_Drying }
 		x = 0
 		y = 1
@@ -2255,7 +2255,7 @@ focus_tree = {
 
 	focus = {
 		id = BLD_Early_Centralisation
-		icon = GFX_focus_BLD_british_investors
+		icon = GFX_BLD_Burdvin_Development
 		prerequisite = { focus = BLD_Clan_Forges_Integration }
 		x = 0
 		y = 1

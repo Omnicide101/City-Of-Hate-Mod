@@ -2271,7 +2271,11 @@ rally_princes = {
 			factor = 200
 		}
 		complete_effect = {
-			create_faction = "freiprinztum_alliance"
+			create_faction_from_template = {
+				template = faction_template_generic_dominance
+				name = freiprinztum
+				icon = GFX_faction_logo_generic_12
+			}
 			set_country_flag = freiprinzen_allied
 			every_other_country = {
 				limit = {

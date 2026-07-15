@@ -154,9 +154,10 @@ country_event = {#Kristin Kindl torture sesh 3 (Otto Edition)
 		ai_chance = {
 			factor = 3
 		}
+		custom_effect_tooltip = kindl_invite_tooltip_SNF
 		hidden_effect = {
 		country_event = {
-				id = wsz.6
+				id = wsz.7
 				days = 7
 				}
 			}

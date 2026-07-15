@@ -1310,7 +1310,11 @@ GENERIC_create_factions = {
 		
 		complete_effect = {
 			set_global_flag = GENERIC_northern_plains_alliance_created
-			create_faction = northern_plains_alliance
+			create_faction_from_template = {
+				template = faction_template_generic_dominance
+				name = northern_plains_alliance
+				icon = GFX_faction_logo_generic_2
+			}
 			
 			every_other_country = {
 				limit = {

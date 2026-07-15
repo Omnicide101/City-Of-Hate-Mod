@@ -184,6 +184,24 @@ spriteTypes = {
 	}
 
 	### VANILLA TEXTICONS ###
+	
+	spriteType = {
+		name = "GFX_energy_texticon"
+		texturefile = "gfx/texticons/energy_icon_small.dds"							
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_energy_consumption_texticon"
+		texturefile = "gfx/texticons/energy_consumption_texticon.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_nav_dockyard_texticon"
+		texturefile = "gfx/texticons/nav_dockyard.dds"
+		legacy_lazy_load = no
+	}
 
 	spriteType = {
 		name = "GFX_doctrine_mastery"

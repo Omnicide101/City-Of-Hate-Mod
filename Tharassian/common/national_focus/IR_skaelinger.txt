@@ -2303,7 +2303,11 @@ focus_tree = {
 		x = 38
 		y = 11
 		completion_reward = {
-			create_faction = mutual_defense_allegiance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = mutual_defense_allegiance
+			   icon = GFX_faction_logo_generic_9
+			}
 			RTH = {
 				country_event = { id = skaelinger.8 hours = 3 }
 			}
@@ -3237,7 +3241,11 @@ focus_tree = {
 		y = 2
 		completion_reward = {
 			remove_ideas = SKA_memories_of_vergallheim_all_but_name
-			create_faction = dwarven_pact
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = dwarven_pact
+			   icon = GFX_faction_logo_generic_11
+			}
 			RMT = {
 				country_event = { id = skaelinger.25 hours = 3 }
 			}
@@ -4038,7 +4046,11 @@ focus_tree = {
 				}
 			}
 			else = {
-				create_faction = "brotherhood_alliance"
+				create_faction_from_template = {
+				   template = faction_template_generic_dominance
+				   name = brotherhood_alliance
+				   icon = GFX_faction_logo_generic_9
+				}
 				add_to_faction = RTH
 			}
 		}

@@ -3697,7 +3697,11 @@ SKA_supporting_republicans = {
 		complete_effect = {
 			if = {
 				limit = { is_faction_leader = no }
-				create_faction = freedom_alliance
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = freedom_alliance
+					icon = GFX_faction_logo_generic_communist
+				}
 			}
 			RTH = {
 				country_event = { id = skaelinger.8 hours = 2 }

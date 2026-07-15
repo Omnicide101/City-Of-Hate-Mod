@@ -1,4 +1,4 @@
-spriteTypes = {	
+spriteTypes = {
 	SpriteType = {
 	name = "GFX_BLD_Counting_Losses"
 	texturefile = "gfx/interface/goals/BLD_Counting_Losses.dds"			

@@ -4,7 +4,7 @@ guiTypes = {
 		name = "lore_tab_container"
 		position = {
 			x = -65
-			y = -300
+			y = -325
 		}
 		orientation = lower_right
 		

@@ -1,3 +1,4 @@
+
 faction_peace_rule_puppeting_focus = {
 	type = peace_conference_rules
 	ai_will_do = {
@@ -13,7 +14,7 @@ faction_peace_rule_puppeting_focus = {
 faction_peace_rule_no_puppeting = {
 	type = peace_conference_rules
 	ai_will_do = {
-		base = 1
+		base = 10
 	}
 	peace_action_modifiers = {
 		faction_rule_modifier_discourage_puppet
@@ -65,7 +66,7 @@ faction_peace_rule_conquest_focus = {
 faction_peace_take_claimed_focus = {
 	type = peace_conference_rules
 	ai_will_do = {
-		base = 1
+		base = 0
 	}
 	peace_action_modifiers = {
 		faction_rule_modifier_encourage_take_claimed_states

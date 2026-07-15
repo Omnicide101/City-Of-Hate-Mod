@@ -1196,14 +1196,22 @@ focus_tree = {
 					is_faction_leader = no
 				}
 				leave_faction = yes
-				create_faction = southern_alliance
+				create_faction_from_template = {
+				   template = faction_template_generic_dominance
+				   name = southern_alliance
+				   icon = GFX_faction_logo_generic_2
+				}
 				add_to_faction = PRK
 			}
 			if = {
 				limit = {
 					is_in_faction = no
 				}
-				create_faction = southern_alliance
+				create_faction_from_template = {
+				   template = faction_template_generic_dominance
+				   name = southern_alliance
+				   icon = GFX_faction_logo_generic_2
+				}
 				add_to_faction = PRK
 			}
 

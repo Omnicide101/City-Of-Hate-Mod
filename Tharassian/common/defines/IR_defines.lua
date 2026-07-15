@@ -4,6 +4,9 @@ NDefines.NGame.START_DATE = "887.1.1.12"
 NDefines.NGame.END_DATE = "2000.1.1.1"
 NDefines.NGame.FUEL_RESOURCE = "food"										-- resource that will give country fuel, changed to food for the mod
 NDefines.NGame.HANDS_OFF_START_TAG = "ADV"									-- tag for player country for -hands_off runs. use an existing tag that is less likely to affect the game
+NDefines.NGame.OIL_RESOURCE = "food"										-- Name of the oil resource
+NDefines.NGame.FUEL_RESOURCE = "food"										-- resource that will give country fuel
+NDefines.NGame.ENERGY_RESOURCE = "food"										-- resource that will give country energy 
 
 NDefines.NDiplomacy.TENSION_TIME_SCALE_START_DATE = "887.1.1.12"			-- Starting at this date, the tension values will be scaled down (will be equal to 1 before that)
 NDefines.NDiplomacy.ASSUME_FACTION_LEADERSHIP_COOLDOWN_DAYS = 99999			-- Number of days after formation of faction or change in leadership before another country is allowed to assume leadership.

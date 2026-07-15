@@ -375,6 +375,11 @@ country_event = { #Lea Eichenwald reaching out to Weisz about hauntings
 	option = {#Lea and Weisz have the girl talk or something
 		name = spw.7.a
 		weisz_moralize_small = yes
+		add_power_balance_value = {
+			id = SPW_power_balance
+			value = -0.05
+			tooltip_side = SPW_magdalena_side
+		}
 		#probably unlocks some new decision to increase willpower by going to gatherings with the Soil-Father's chosen maybe
 	}
 }
@@ -410,25 +415,6 @@ country_event = {#Weisz joins a patrol mission and meets Jager fucking around
 		weisz_moralize_small = yes
 		set_country_flag = SPW_weisz_jager_oomf
 		#unlocks BoP choice about finding jager
-	}
-}
-
-country_event = {#Lea Eichenwald reaching out to Weisz about hauntings
-	id = spw.7
-	title = spw.7.t
-	desc = spw.7.d
-	
-	is_triggered_only = yes
-	
-	option = {#Lea and Weisz have the girl talk or something
-		name = spw.7.a
-		weisz_moralize_small = yes
-		add_power_balance_value = {
-			id = SPW_power_balance
-			value = -0.05
-			tooltip_side = SPW_magdalena_side
-		}
-		#probably unlocks some new decision to increase willpower
 	}
 }
 

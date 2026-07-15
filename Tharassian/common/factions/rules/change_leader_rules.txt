@@ -27,6 +27,14 @@ change_leader_rule_never = {
 	}
 	ai_will_do = {
 		base = 0
+		modifier = {  
+			add = 5
+			OR = {
+				has_government = puritan
+				haS_government = monarchy_absolute
+			}
+			is_faction_leader = yes 
+		}
 	}
 }
 

@@ -2111,7 +2111,12 @@ focus_tree = {
 		y = 1
 		relative_position_id = RTH_thorns_of_roses
 		completion_reward = {
-			create_faction = directory_lathweyne
+		
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = directory_lathweyne
+			   icon = GFX_faction_logo_generic_communist
+			}
 			if = {
 				limit = { SKA = { has_government = republic_peasant } }
 				SKA = {

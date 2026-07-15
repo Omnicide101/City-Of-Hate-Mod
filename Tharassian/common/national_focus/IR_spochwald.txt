@@ -264,7 +264,7 @@ focus_tree = {
 
 	focus = { 
 		id = SPW_meeting_with_wissman
-		icon = GFX_
+		icon = GFX_focus_BEL_belgian_gates
 		cost = 5
 		prerequisite = {
 			focus = SPW_visit_wistingen
@@ -295,7 +295,7 @@ focus_tree = {
 
 	focus = { 
 		id = SPW_cooperate_order_of_the_living
-		icon = GFX_
+		icon = GFX_focus_AUS_womens_education_initiative
 		cost = 5
 		prerequisite = {
 			focus = SPW_visit_wistingen
@@ -326,7 +326,7 @@ focus_tree = {
 
 	focus = { 
 		id = SPW_triumvirate_intervention
-		icon = GFX_
+		icon = GFX_focus_generic_commission
 		cost = 5
 		prerequisite = {
 			focus = SPW_accompany_river_patrol

@@ -5664,14 +5664,22 @@ country_event = { #Joining Astrellion
 				is_faction_leader = no
 			}
 			leave_faction = yes
-			create_faction = lathweynian_concord
+			create_faction_from_template = {
+				template = faction_template_generic_dominance
+				name = lathweynian_concord
+				icon = GFX_faction_logo_generic_5
+			}
 			add_to_faction = NPC
 		}
 		if = {
 			limit = {
 				is_in_faction = no
 			}
-			create_faction = lathweynian_concord
+			create_faction_from_template = {
+				template = faction_template_generic_dominance
+				name = lathweynian_concord
+				icon = GFX_faction_logo_generic_5
+			}
 			add_to_faction = NPC
 		}
 		add_to_war = {
