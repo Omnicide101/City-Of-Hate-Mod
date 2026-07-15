@@ -7,6 +7,14 @@ spriteTypes = {
 	}
 
 	#Vanilla
+
+	
+	### Energy
+	
+	spriteType = {
+		name = "GFX_modifiers_energy"
+		textureFile = "gfx/interface/modifiers/modifiers_energy.dds"
+	}	
 	
 	progressbartype = {
 		name = "GFX_nuke_progress"

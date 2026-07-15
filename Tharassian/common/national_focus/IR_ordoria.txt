@@ -3724,12 +3724,12 @@ focus_tree = {
 		id = ORD_guardians_lathweyne
 		icon = GFX_focus_generic_league_of_nations
 		cost = 6
-		#allow_branch = {
-		#	has_completed_focus = ORD_wheels_turn
-		#}
-		#prerequisite = {
-		#	focus = ORD_wheels_turn
-		#}
+		allow_branch = {
+			has_completed_focus = ORD_wheels_turn
+		}
+		prerequisite = {
+			focus = ORD_wheels_turn
+		}
 		ai_will_do = {
 			factor = 25
 		}
@@ -4116,7 +4116,12 @@ focus_tree = {
 						is_faction_leader = no
 					}
 				}
-				create_faction = lathweynian_concord
+				
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = lathweynian_concord
+					icon = GFX_faction_logo_generic_5
+				}
 				
 				add_to_faction = UNG
 			}
@@ -4206,7 +4211,11 @@ focus_tree = {
 						is_faction_leader = no
 					}
 				}
-				create_faction = lathweynian_concord
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = lathweynian_concord
+					icon = GFX_faction_logo_generic_5
+				}
 				
 				add_to_faction = UNG
 			}
@@ -4619,7 +4628,11 @@ focus_tree = {
 						is_in_faction = yes
 					}
 				}
-				create_faction = ordorian_coalition
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = lathweynian_concord
+					icon = GFX_faction_logo_generic_5
+				}
 			}
 			every_country = {
 				limit = {
@@ -4962,10 +4975,18 @@ focus_tree = {
 					is_in_faction = yes
 				}
 				leave_faction = yes
-				create_faction = lathweynian_conclave
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = lathweynian_conclave
+					icon = GFX_faction_logo_generic_5
+				}
 			}
 			else = {
-				create_faction = lathweynian_conclave
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = lathweynian_conclave
+					icon = GFX_faction_logo_generic_5
+				}
 			}
 			every_country = {
 				limit = {
@@ -4985,24 +5006,6 @@ focus_tree = {
 				}
 				country_event = ord.139
 			}
-		}
-	}
-	
-	focus = { #
-		id = 
-		icon = GFX_
-		cost = 
-		prerequisite = {
-			focus = 
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		relative_position_id = 
-		x = 
-		y = 
-		completion_reward = {
-			
 		}
 	}
 	

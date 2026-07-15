@@ -258,7 +258,11 @@ country_event = { # Ordoria Breaks Pact
 					has_country_flag = UNG_perkav_alliance
 				}
 			}
-			create_faction = southern_alliance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = southern_alliance
+			   icon = GFX_faction_logo_generic_2
+			}
 			add_to_faction = PRK
 		}
 		if = {
@@ -942,7 +946,11 @@ country_event = {# Rthauiaur Accepts
 			limit = {
 				is_in_faction = no
 			}
-			create_faction = anti_ordorian_alliance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = anti_ordorian_alliance
+			   icon = GFX_faction_logo_generic_11
+			}
 			add_to_faction = RTH
 		}
 		if = {
@@ -1051,14 +1059,22 @@ country_event = {# Lirothlind Accepts
 				is_faction_leader = no
 			}
 			leave_faction = yes
-			create_faction = anti_arthenon_alliance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = anti_arthenon_alliance
+			   icon = GFX_faction_logo_generic_11
+			}
 			add_to_faction = LIR
 		}
 		if = {
 			limit = {
 				is_in_faction = no
 			}
-			create_faction = anti_arthenon_alliance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = anti_arthenon_alliance
+			   icon = GFX_faction_logo_generic_11
+			}
 			add_to_faction = LIR
 		}
 		if = {
@@ -1147,7 +1163,11 @@ country_event = {# Rimatu Accepts
 			limit = {
 				is_in_faction = no
 			}
-			create_faction = anti_arthenon_alliance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = anti_arthenon_alliance
+			   icon = GFX_faction_logo_generic_11
+			}
 			add_to_faction = RMT
 		}
 		if = {
@@ -1470,14 +1490,22 @@ country_event = {#Arthenon Accepts
 				is_faction_leader = no
 			}
 			leave_faction = yes
-			create_faction = two_thrones_alliance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = two_thrones_alliance
+			   icon = GFX_faction_logo_generic_19
+			}
 			add_to_faction = GMR
 		}
 		if = {
 			limit = {
 				is_in_faction = no
 			}
-			create_faction = two_thrones_alliance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = two_thrones_alliance
+			   icon = GFX_faction_logo_generic_19
+			}
 			add_to_faction = GMR
 		}
 		set_country_flag = twothrone_concord_member
@@ -1744,14 +1772,22 @@ country_event = {#Tlarthingia Accepts!
 				is_faction_leader = no
 			}
 			leave_faction = yes
-			create_faction = neupakt_alliance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = neupakt_alliance
+			   icon = GFX_faction_logo_generic_8
+			}
 			add_to_faction = TLA
 		}
 		if = {
 			limit = {
 				is_in_faction = no
 			}
-			create_faction = neupakt_alliance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = neupakt_alliance
+			   icon = GFX_faction_logo_generic_8
+			}
 			add_to_faction = TLA
 		}
 	}
@@ -1809,14 +1845,22 @@ country_event = {#Irinthios Accepts!
 				is_faction_leader = no
 			}
 			leave_faction = yes
-			create_faction = steel_league_alliance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = steel_league_alliance
+			   icon = GFX_faction_logo_generic_2
+			}
 			add_to_faction = IRI
 		}
 		if = {
 			limit = {
 				is_in_faction = no
 			}
-			create_faction = steel_league_alliance
+			create_faction_from_template = {
+			   template = faction_template_generic_dominance
+			   name = steel_league_alliance
+			   icon = GFX_faction_logo_generic_2
+			}
 			add_to_faction = IRI
 		}
 		IRI = {
@@ -3071,7 +3115,11 @@ country_event = {#Ordorian Mission to Faustburg - Platonic
 				}
 				
 				ORD = {
-					create_faction = lathweynian_concord
+					create_faction_from_template = {
+						template = faction_template_generic_dominance
+						name = lathweynian_concord
+						icon = GFX_faction_logo_generic_5
+					}
 					
 					add_to_faction = UNG
 				}
@@ -3165,7 +3213,11 @@ country_event = {#Ordorian Mission to Faustburg - Romantic
 				}
 				
 				ORD = {
-					create_faction = lathweynian_concord
+					create_faction_from_template = {
+						template = faction_template_generic_dominance
+						name = lathweynian_concord
+						icon = GFX_faction_logo_generic_5
+					}
 					
 					add_to_faction = UNG
 				}
@@ -3252,7 +3304,11 @@ country_event = {#Ordorian Mission to Faustburg - Romantic
 				}
 				
 				ORD = {
-					create_faction = lathweynian_concord
+					create_faction_from_template = {
+						template = faction_template_generic_dominance
+						name = lathweynian_concord
+						icon = GFX_faction_logo_generic_5
+					}
 					
 					add_to_faction = UNG
 				}

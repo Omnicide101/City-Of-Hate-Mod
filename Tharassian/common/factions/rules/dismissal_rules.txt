@@ -10,6 +10,14 @@ dismissal_rule_world_tension = {
 	type = dismissal_rules
 	ai_will_do = {
 		base = 0
+		modifier = {  
+			add = 1
+			NOT = {
+				has_government = puritan
+				has_government = monarchy_absolute
+			}
+			is_faction_leader = yes 
+		}
 	}
 	dismiss_member_trigger = {
 		has_added_tension_amount > 0.1
@@ -20,11 +28,155 @@ dismissal_rule_offensive_war = {
 	type = dismissal_rules
 	ai_will_do = {
 		base = 0
+		modifier = {  
+			add = 0.5
+			has_government = republic_merchant
+			is_faction_leader = yes 
+		}
 	}
 	dismiss_member_trigger = {
 		has_offensive_war_without_friend = FROM
 	}
 	ai_will_do = {
 		base = 0
+	}
+}
+
+
+### ###  ###  ##  #    ##   ##  #   # 
+ #  #  # #   #  # #   #  # #     # #  
+ #  #  # ##  #  # #   #  # # ##   #   
+ #  #  # #   #  # #   #  # #  #   #   
+### ###  ###  ##  ###  ##   ##    #   
+
+
+dismissal_rule_ideology_not_republican = {
+	type = dismissal_rules
+	visible = { is_republic = yes }
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		NOT = {
+			is_republic = yes
+		}
+	}
+}
+
+dismissal_rule_ideology_not_monarchist = {
+	type = dismissal_rules
+	visible = { is_monarchy = yes }
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		NOT = {
+			is_monarchy = yes
+		}
+	}
+}
+
+dismissal_rule_ideology_not_aristocratic = {
+	type = dismissal_rules
+	visible = { has_aristocracy = yes }
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		NOT = {
+			has_aristocracy = yes
+		}
+	}
+}
+
+dismissal_rule_ideology_republican = {
+	type = dismissal_rules
+	visible = { NOT = { is_republic = yes } }
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		is_republic = yes
+	}
+}
+
+dismissal_rule_ideology_monarchist = {
+	type = dismissal_rules
+	visible = { NOT = { is_monarchy = yes } }
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		is_monarchy = yes
+	}
+}
+
+dismissal_rule_ideology_aristocratic = {
+	type = dismissal_rules
+	visible = { NOT = { has_aristocracy = yes } }
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		has_aristocracy = yes
+	}
+}
+
+dismissal_rule_ideology_radical = {
+	type = dismissal_rules
+	visible = { NOT = { has_government = republic_peasant has_government = puritan } }
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		OR = {
+			has_government = republic_peasant
+			has_government = puritan
+		}
+	}
+}
+
+dismissal_rule_ideology_peasant_republic = {
+	type = dismissal_rules
+	visible = { NOT = { has_government = republic_peasant } }
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		has_government = republic_peasant
+	}
+}
+
+dismissal_rule_ideology_puritan = {
+	type = dismissal_rules
+	visible = { NOT = { has_government = puritan } }
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		has_government = puritan
+	}
+}
+
+dismissal_rule_ideology_wrong_species = {
+	type = dismissal_rules
+	visible = { has_government = puritan }
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		NOT = {
+			has_same_race_as_ROOT = yes
+		}
 	}
 }

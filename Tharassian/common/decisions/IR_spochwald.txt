@@ -15,9 +15,9 @@ SPW_balance_of_power_category = {
 				tooltip = SPW_not_drinking_tt
 				NOT = {
 					OR = {
-						#has_active_mission = SPW_little_drink
-						has_active_mission = SPW_medium_drink
-						has_active_mission = SPW_big_drink
+						#has_decision = SPW_little_drink
+						has_decision = SPW_medium_drink
+						has_decision = SPW_big_drink
 					}
 				}
 			}
@@ -57,9 +57,9 @@ SPW_balance_of_power_category = {
 				tooltip = SPW_not_drinking_tt
 				NOT = {
 					OR = {
-						has_active_mission = SPW_little_drink
-						#has_active_mission = SPW_medium_drink
-						has_active_mission = SPW_big_drink
+						has_decision = SPW_little_drink
+						#has_decision = SPW_medium_drink
+						has_decision = SPW_big_drink
 					}
 				}
 			}
@@ -99,9 +99,9 @@ SPW_balance_of_power_category = {
 				tooltip = SPW_not_drinking_tt
 				NOT = {
 					OR = {
-						has_active_mission = SPW_little_drink
-						has_active_mission = SPW_medium_drink
-						#has_active_mission = SPW_big_drink
+						has_decision = SPW_little_drink
+						has_decision = SPW_medium_drink
+						#has_decision = SPW_big_drink
 					}
 				}
 			}

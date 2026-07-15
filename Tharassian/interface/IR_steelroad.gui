@@ -5,7 +5,7 @@ guiTypes = {
 		name = "steel_road_container"
 		position = {
 			x = -65
-			y = -360
+			y = -380
 		}
 		Orientation = LOWER_RIGHT
 		

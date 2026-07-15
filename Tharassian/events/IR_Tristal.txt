@@ -134,7 +134,9 @@ country_event = { #Hastalian Demands We Shape Up!
 			}
 			
 			hidden_effect = {
-				create_faction = acuerdo_del_dragon
+				create_faction_from_template = {
+					template = faction_template_acuerdo_del_dragon
+				}
 				every_other_country = {
 					limit = {
 						has_country_flag = TRS_faction_member_temp_flag

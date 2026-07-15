@@ -3531,14 +3531,23 @@ focus_tree = {
 					is_faction_leader = no
 				}
 				leave_faction = yes
-				create_faction = new_alliance
+				
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = new_alliance
+					icon = GFX_faction_logo_generic_13
+				}
 				add_to_faction = BER
 			}
 			if = {
 				limit = {
 					is_in_faction = no
 				}
-				create_faction = new_alliance
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = new_alliance
+					icon = GFX_faction_logo_generic_13
+				}
 				add_to_faction = BER
 			}
 		}
@@ -4417,7 +4426,11 @@ focus_tree = {
 					is_faction_leader = no
 				}
 				leave_faction = yes
-				create_faction = old_alliance
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = old_alliance
+					icon = GFX_faction_logo_generic_13
+				}
 				add_to_faction = SKA
 			}
 			if = {
@@ -4428,7 +4441,11 @@ focus_tree = {
 					}
 					is_in_faction = no
 				}
-				create_faction = old_alliance
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = old_alliance
+					icon = GFX_faction_logo_generic_13
+				}
 				add_to_faction = SKA
 			}
 			if = {
@@ -4451,7 +4468,11 @@ focus_tree = {
 					is_faction_leader = no
 				}
 				leave_faction = yes
-				create_faction = new_alliance
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = new_alliance
+					icon = GFX_faction_logo_generic_13
+				}
 				add_to_faction = RMT
 			}
 			if = {
@@ -4462,7 +4483,11 @@ focus_tree = {
 					}
 					is_in_faction = no
 				}
-				create_faction = new_alliance
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = new_alliance
+					icon = GFX_faction_logo_generic_13
+				}
 				add_to_faction = RMT
 			}
 			#Edge case where Skaelinger creates the Dwarven Protection Pact

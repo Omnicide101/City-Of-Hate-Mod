@@ -110,7 +110,18 @@ add_ideas = {
 	TRS_widespread_corruption
 }
 
-create_faction = acuerdo_del_dragon #...but Hastalia carries, let's be honest
+create_faction_from_template = faction_template_acuerdo_del_dragon
+IF= {
+	limit = {
+		has_dlc = "No Compromise, No Surrender"
+	}
+	add_faction_goal_slot = {
+		category  = long_term
+		value = 1 
+	}
+}
+
+#create_faction = acuerdo_del_dragon #...but Hastalia carries, let's be honest
 add_to_faction = HAS
 
 add_opinion_modifier = {

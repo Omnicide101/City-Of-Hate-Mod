@@ -448,7 +448,11 @@ country_event = { #Second Rthaur Revolution
 				limit = {
 					is_in_faction = no
 				}
-				create_faction = "brotherhood_alliance"
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = brotherhood_alliance
+					icon = GFX_faction_logo_generic_9
+				}
 				add_to_faction = RTH
 			}
 			
@@ -458,7 +462,11 @@ country_event = { #Second Rthaur Revolution
 					is_faction_leader = no
 				}
 				leave_faction = yes
-				create_faction = "brotherhood_alliance"
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = brotherhood_alliance
+					icon = GFX_faction_logo_generic_9
+				}
 				add_to_faction = RTH
 			}
 			
@@ -2181,7 +2189,11 @@ country_event = { #FROM accepts invite :)
 	option = { #Chogpamp
 		name = skaelinger.26.a
 		trigger = { has_completed_focus = SKA_vergallheim_alliance }
-		create_faction = vergallheim_alliance
+		create_faction_from_template = {
+			template = faction_template_generic_dominance
+			name = vergallheim_alliance
+			icon = GFX_faction_logo_generic_6
+		}
 		add_to_faction = FROM
 	}
 	option = { #Chogpamp
@@ -4652,7 +4664,11 @@ country_event = { #RMT civil war event for SKA, they can ally with radicals
 		name = skaelinger.78.a
 		if = {
 			limit = { is_faction_leader = no }
-			create_faction = freedom_alliance
+			create_faction_from_template = {
+				template = faction_template_generic_dominance
+				name = freedom_alliance
+				icon = GFX_faction_logo_generic_15
+			}
 		}
 		random_country = {
 			limit = {

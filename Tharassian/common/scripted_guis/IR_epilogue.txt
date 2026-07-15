@@ -1,20 +1,4 @@
 scripted_gui = {
-
-	epilogue_tab = {
-		context_type = player_context
-		
-		window_name = "epilogue_tab_container"
-		
-		visible = {
-			always = yes
-		}
-		
-		effects = {
-			epilogue_tab_button_click = {
-				set_country_flag = open_epilogue_tab_button_flag
-			}
-		}
-	}
 	
 	epilogue_tab_list = {
 		context_type = player_context

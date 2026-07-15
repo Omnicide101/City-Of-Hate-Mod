@@ -475,6 +475,7 @@ script_enum_equipment_bonus_type = {
 	super_heavy_tank_aa_equipment_1
 	amphibious_tank_equipment_1
 	amphibious_tank_equipment_2
+	support_ship
 }
 
 script_enum_operative_mission_type = {
@@ -572,6 +573,9 @@ script_enum_equipment_stat = {
 	night_penalty				#Cannot be used with MIOS
 	build_cost_ic
 	naval_weather_penalty_factor
+	carrier_sub_detection
+	carrier_surface_detection
+	submarine_carrier_size
 }
 
 script_enum_production_stat = {
@@ -622,4 +626,5 @@ script_enum_equipment_category = {
 	rocket
 	flame
 	land_cruiser
+	support_ship
 }
