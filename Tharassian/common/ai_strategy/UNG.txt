@@ -1,0 +1,354 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+ordorian_lover = {
+	enable = {
+		has_idea = marriage_UNG_ORD
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = ORD
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = ORD
+		value = 200
+	}
+}
+
+you_can_take_perkavland = {
+	enable = {
+		original_tag = UNG
+		has_war_with = PRK
+		war_length_with = {
+			tag = PRK
+			months < 3
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = front_control
+
+		tag = PRK
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+help_krell_survive = {
+	enable = {
+		original_tag = UNG
+		has_completed_focus = UNG_diplomatic_efforts
+		PRK = {
+			has_civil_war = yes
+			has_government = monarchy_constitutional
+		}
+		is_subject = no
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = PRK			
+		value = 200
+	}
+	ai_strategy = {
+		type = protect
+		id = PRK			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = PRK			
+		value = 200
+	}
+	ai_strategy = {
+		type = support
+		id = PRK
+		value = 200
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = PRK
+		value = 200
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = PRK
+		value = 200
+		target = send_volunteers #send_volunteers_desire doesn't seem to work?
+	}
+}
+
+skaelinger_buddies = {
+	enable = {
+		tag = UNG
+		NOT = {
+			has_government = puritan
+		}
+		OR = {
+			has_country_flag = UNG_nordtorf_summit_success_SKA_favoured
+			has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = SKA
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = SKA
+		value = 200
+	}
+	ai_strategy = {
+		type = protect
+		id = SKA
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = SKA
+		target = military_access
+		value = 200
+	}
+}
+
+dont_hog_ordorian_supplies = {
+	enable = {
+		original_tag = UNG
+		country_exists = ORB
+		ORD = {
+			has_country_flag = ORD_pact_with_realm
+		}
+	}
+	abort = {
+		OR = {
+			ORD = {
+				has_country_flag = ordoria_backstab
+			}
+			NOT = {
+				country_exists = ORB
+			}
+		}
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = ORD			
+		value = 500
+	}
+}
+
+ordorian_buddies = {
+	enable = {
+		original_tag = UNG
+		country_exists = ORD
+		ORD = {
+			has_country_flag = ORD_pact_with_union
+		}
+	}
+	abort = {
+		ORD = {
+			has_country_flag = ordoria_backstab
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = ORD			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = ORD			
+		value = 200
+	}	
+}
+
+realm_buddies = {
+	enable = {
+		tag = UNG
+		has_country_flag = UNG_realm_buddies
+		ORD = {
+			is_independent = yes
+		}
+	}
+	
+	abort = {
+		NOT = {
+			has_country_flag = UNG_realm_buddies
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = GMR			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = GMR			
+		value = 200
+	}
+}
+
+go_through_bergial = {#Get MA through BER if at war with TLA
+	enable = {
+		has_idea = FPT_union_member
+		UNG = {
+			has_war_with = IRI
+		}
+		country_exists = BER
+		BER = {
+			is_not_sphered = yes
+		}
+		TLA = {
+			has_war_with = IRI
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = BER
+		target = military_access
+		value = 200
+	}
+}
+
+go_through_tlarthingia = {#Get MA through TLA if at war with IRI
+	enable = {
+		has_idea = FPT_union_member
+		has_war_with = IRI
+		country_exists = TLA
+		TLA = {
+			is_not_sphered = yes
+			has_war_with = IRI
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = force_defend_ally_borders 
+		id = TLA
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = TLA
+		target = military_access
+		value = 200
+	}
+}
+
+
+eat_tlarthingia = {#Go after Tlarthingia if you've got the wargoal
+	enable = {
+		has_completed_focus = UNG_conquer_tlarthingia
+		has_war = no
+		TLA = {
+			is_not_sphered = yes
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = antagonize
+		id = TLA
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = TLA
+		value = 200
+	}
+	ai_strategy = {
+		type = declare_war
+		id = TLA
+		value = 200
+	}
+}
+
+eat_irinthios = {#Go after Irinthios if you've got the wargoal
+	enable = {
+		has_completed_focus = UNG_extinguish_irinthios
+		has_war = no
+		IRI = {
+			is_not_sphered = yes
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = antagonize
+		id = IRI
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = IRI
+		value = 200
+	}
+	ai_strategy = {
+		type = declare_war
+		id = IRI
+		value = 200
+	}
+}
+
+
+eat_bergial = {#Go after Bergial if you've got the wargoal
+	enable = {
+		has_completed_focus = UNG_hostile_takeover
+		BER = {
+			is_not_sphered = yes
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = antagonize
+		id = BER
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = BER
+		value = 200
+	}
+	ai_strategy = {
+		type = declare_war
+		id = BER
+		value = 200
+	}
+}

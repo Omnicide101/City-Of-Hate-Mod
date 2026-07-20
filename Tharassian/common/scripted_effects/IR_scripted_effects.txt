@@ -1,0 +1,2571 @@
+# Transfer all characters from ROOT to PREV (for formables)
+transfer_all_ROOT_characters_to_PREV = {
+	ROOT = {
+		# Edge case for monarchists - can't promote to multiple parties, which is really annoying
+		# TODO - add a character flag to make country leaders swap to the party they're intended to lead
+		# So that e.g. a Teigerholen-united Ungeradler Union that switches from aristocratic to absolutist
+		# Gets led by an absolutist Krukenberg and not a rando
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = monarchy_constitutional
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							OR = {
+								has_ideology_group = monarchy_absolute
+								has_ideology_group = republic_aristocrat
+							}
+						}
+						ROOT = {
+							has_government = monarchy_constitutional
+						}
+						AND = {
+							OR = {
+								has_ideology_group = monarchy_absolute
+								has_ideology_group = republic_aristocrat
+							}
+							NOT = {
+								OR = {
+									ROOT = {
+										has_government = monarchy_absolute
+										has_government = republic_aristocrat
+									}
+								}
+							}
+						}
+					}
+				}
+				set_nationality = PREV.PREV
+				promote_character = monarchy_constitutional_ideology
+			}
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = monarchy_absolute
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							OR = {
+								has_ideology_group = monarchy_constitutional
+								has_ideology_group = republic_aristocrat
+							}
+						}
+						ROOT = {
+							has_government = monarchy_absolute
+						}
+						AND = {
+							OR = {
+								has_ideology_group = monarchy_constitutional
+								has_ideology_group = republic_aristocrat
+							}
+							NOT = {
+								OR = {
+									ROOT = {
+										has_government = monarchy_constitutional
+										has_government = republic_aristocrat
+									}
+								}
+							}
+						}
+					}
+				}
+				set_nationality = PREV.PREV
+				promote_character = monarchy_absolute_ideology
+			}
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = republic_peasant
+			}
+			set_nationality = PREV.PREV
+			promote_character = republic_peasant_ideology
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = republic_aristocrat
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							OR = {
+								has_ideology_group = monarchy_absolute
+								has_ideology_group = monarchy_constitutional
+							}
+						}
+						ROOT = {
+							has_government = republic_aristocrat
+						}
+						AND = {
+							OR = {
+								has_ideology_group = monarchy_absolute
+								has_ideology_group = monarchy_constitutional
+							}
+							NOT = {
+								OR = {
+									ROOT = {
+										has_government = monarchy_absolute
+										has_government = monarchy_constitutional
+									}
+								}
+							}
+						}
+					}
+				}
+				set_nationality = PREV.PREV
+				promote_character = republic_aristocrat_ideology
+			}
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = republic_merchant
+			}
+			set_nationality = PREV.PREV
+			promote_character = republic_merchant_ideology
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = theocrat
+			}
+			set_nationality = PREV.PREV
+			promote_character = theocrat_ideology
+		}
+		every_character = {
+			limit = {
+				can_be_country_leader = yes
+				has_ideology_group = puritan
+			}
+			set_nationality = PREV.PREV
+			promote_character = puritan_ideology
+		}
+		#every_character = { 	#Doesn't seem to work, activate_advisor requires a token and doesn't appear to accept scopes :/
+		#	limit = {
+		#		is_hired_as_advisor = yes
+		#	}
+		#	set_nationality = PREV.PREV
+		#	PREV = {
+		#		activate_advisor = PREV
+		#	}
+		#}
+		every_character = {
+			limit = {
+				can_be_country_leader = no
+				#is_hired_as_advisor = no
+			}
+			set_nationality = PREV.PREV
+		}
+	}
+}
+
+# Return all original states, based on the TAG.original_cores array (set in on_actions at game start)
+THIS_return_og_states = {
+	for_each_scope_loop = {
+		array = THIS.original_cores
+		
+		transfer_state_to = PREV
+		
+	}
+}
+
+# Transfer all core states to THIS and make puppet of PREV - in case you need to puppet someone else's conquests
+# Scope this in a tag in a tag, e.g. PRK = { RKS = { PREV_vassalize_THIS = yes } } will cause PRK to puppet RKS
+PREV_vassalize_THIS = {
+	if = {
+		limit = {
+			NOT = {
+				THIS = {
+					tag = UNG
+				}
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = PREV
+				owner = {
+					OR = {
+						tag = PREV.PREV.PREV
+						is_in_faction_with = PREV.PREV.PREV
+						is_subject_of = PREV.PREV.PREV
+					}
+				}
+			}
+			transfer_state_to = PREV
+		}
+		PREV = {
+			puppet = PREV
+		}
+	}
+	# Special case for turning UNG into FAU
+	else = {
+		every_state = {
+			limit = {
+				is_core_of = PREV
+				owner = {
+					OR = {
+						tag = PREV.PREV.PREV
+						is_in_faction_with = PREV.PREV.PREV
+						is_subject_of = PREV.PREV.PREV
+					}
+				}
+			}
+			add_core_of = FAU
+			transfer_state_to = FAU
+			remove_core_of = PREV
+		}
+		PREV = {
+			puppet = FAU
+		}
+	}
+}
+
+# Free prisoner
+free_prisoner = {
+	random_character = {
+		limit = {
+			is_prisoner = yes
+		}
+		custom_effect_tooltip = released_prisoner_tt
+		hidden_effect = {
+			remove_trait = {
+				character = THIS
+				trait = captured_unit_leader_prisoner_trait
+			}
+			remove_trait = {
+				character = THIS
+				trait = captured_party_leader_prisoner_trait
+			}
+			remove_trait = {
+				character = THIS
+				trait = captured_advisor_prisoner_trait
+			}
+			remove_trait = {
+				character = THIS
+				trait = captured_unit_leader
+			}
+			remove_advisor_role = {
+			  slot = prisoners_guests
+			}
+		}
+		set_nationality = var:original_nationality
+	}
+}
+
+# Free character (for prisoners that have additional trigger requirements beyond being imprisoned)
+free_character = {
+	custom_effect_tooltip = released_prisoner_tt
+	hidden_effect = {
+		remove_trait = {
+			character = THIS
+			trait = captured_unit_leader_prisoner_trait
+		}
+		remove_trait = {
+			character = THIS
+			trait = captured_party_leader_prisoner_trait
+		}
+		remove_trait = {
+			character = THIS
+			trait = captured_advisor_prisoner_trait
+		}
+		remove_trait = {
+			character = THIS
+			trait = captured_unit_leader
+		}
+		remove_advisor_role = {
+		  character = THIS
+		  slot = prisoners_guests
+		}
+	}
+	set_nationality = var:original_nationality
+}
+
+# Damage food supplies
+destroy_food = {
+	if = {
+		limit = {
+			fuel_ratio > 0.75
+			NOT = {
+				has_country_flag = food_already_burnt
+			}
+		}
+		set_fuel_ratio = 0.75
+		
+		set_country_flag = food_already_burnt
+	}
+	if = {
+		limit = {
+			fuel_ratio < 0.76
+			fuel_ratio > 0.50
+			NOT = {
+				has_country_flag = food_already_burnt
+			}
+		}
+		set_fuel_ratio = 0.50
+		
+		set_country_flag = food_already_burnt
+	}
+	if = {
+		limit = {
+			fuel_ratio < 0.51
+			fuel_ratio > 0.35
+			NOT = {
+				has_country_flag = food_already_burnt
+			}
+		}
+		set_fuel_ratio = 0.35
+		
+		set_country_flag = food_already_burnt
+	}
+	if = {
+		limit = {
+			fuel_ratio < 0.36
+			fuel_ratio > 0.15
+			NOT = {
+				has_country_flag = food_already_burnt
+			}
+		}
+		set_fuel_ratio = 0.15
+		
+		set_country_flag = food_already_burnt
+	}
+	if = {
+		limit = {
+			fuel_ratio < 0.16
+			NOT = {
+				has_country_flag = food_already_burnt
+			}
+		}
+		set_fuel_ratio = 0
+		
+		set_country_flag = food_already_burnt
+	}
+	
+	clr_country_flag = food_already_burnt
+}
+
+# Drifts towards ruling party ideology
+ruling_ideology_drift = {
+	if = {
+		limit = {
+			has_government = monarchy_absolute
+		}
+		add_timed_idea = {
+			idea = hidden_drift_absolutist
+			days = var:hidden_drift_timer
+		}
+	}
+	if = {
+		limit = {
+			has_government = monarchy_constitutional
+		}
+		add_timed_idea = {
+			idea = hidden_drift_constitutionalist
+			days = var:hidden_drift_timer
+		}
+	}
+	if = {
+		limit = {
+			has_government = republic_aristocrat
+		}
+		add_timed_idea = {
+			idea = hidden_drift_aristocrat
+			days = var:hidden_drift_timer
+		}
+	}
+	if = {
+		limit = {
+			has_government = republic_merchant
+		}
+		add_timed_idea = {
+			idea = hidden_drift_merchant
+			days = var:hidden_drift_timer
+		}
+	}
+	if = {
+		limit = {
+			has_government = republic_peasant
+		}
+		add_timed_idea = {
+			idea = hidden_drift_peasant
+			days = var:hidden_drift_timer
+		}
+	}
+	if = {
+		limit = {
+			has_government = puritan
+		}
+		add_timed_idea = {
+			idea = hidden_drift_puritan
+			days = var:hidden_drift_timer
+		}
+	}
+	if = {
+		limit = {
+			has_government = theocrat
+		}
+		add_timed_idea = {
+			idea = hidden_drift_theocrat
+			days = var:hidden_drift_timer
+		}
+	}
+}
+
+# Track Kriegsspiele preparedness
+update_kriegsspiele_tracker = {
+	#Clear out previous winner
+	if = {
+		limit = {
+			has_variable = FPT_best_prepared_for_kriegsspiele
+		}
+		clear_variable = FPT_best_prepared_for_kriegsspiele
+	}
+	#Let the most prepared Freiprinztum lead
+	if = {
+		limit = {
+			NOT = {
+				any_other_country = {
+					OR = {
+						check_variable = {
+							FPT_kriegsspiele_preparedness > ROOT.FPT_kriegsspiele_preparedness
+						}
+						check_variable = {
+							FPT_kriegsspiele_preparedness = ROOT.FPT_kriegsspiele_preparedness
+						}
+					}
+				}
+			}
+		}
+		set_variable = {
+			global.FPT_best_prepared_for_kriegsspiele = THIS.id
+		}
+	}
+	#Pick a random leader if there's a tie
+	if = {
+		limit = {
+			has_variable = FPT_kriegsspiele_preparedness
+			NOT = {
+				any_other_country = {
+					OR = {
+						check_variable = {
+							FPT_kriegsspiele_preparedness > ROOT.FPT_kriegsspiele_preparedness
+						}
+						has_variable = FPT_kriegsspiele_preparedness
+					}
+				}
+			}
+			any_other_country = {
+				check_variable = {
+					FPT_kriegsspiele_preparedness = ROOT.FPT_kriegsspiele_preparedness
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				has_variable = FPT_kriegsspiele_preparedness
+				NOT = {
+					any_other_country = {
+						check_variable = {
+							FPT_kriegsspiele_preparedness > ROOT.FPT_kriegsspiele_preparedness
+						}
+					}
+				}
+			}
+			set_variable = {
+				global.FPT_best_prepared_for_kriegsspiele = THIS.id
+			}
+		}
+	}
+}
+
+# Set the relevant states as being Stahlreich states
+set_stahlreich_states = {
+	every_state = {
+		limit = {
+			OR = {
+				is_core_of = NRK
+				is_core_of = HLZ
+				AND = {
+					is_core_of = NOC
+					NOT = {
+						state = 281
+						state = 231
+					}
+				}
+				state = 289
+				state = 226
+				state = 242
+				state = 206
+				state = 239
+				state = 1284
+			}
+		}
+		set_state_flag = stahlreich_state
+	}
+}
+
+#Formalize the Waterways
+
+formalize_waterways_steelroad = {
+	771 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	757 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	755 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	750 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	797 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	737 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	397 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	740 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	398 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	377 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	765 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	374 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	774 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	775 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	776 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	777 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	789 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	372 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	787 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	795 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	371 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	599 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	605 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	572 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	542 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	532 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	
+	370 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	582 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	613 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	604 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	611 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	368 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	580 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	614 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	551 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	545 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	583 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	585 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	347 = {
+		clr_state_flag = steel_road_state
+		remove_from_array = { global.steelroadarray = THIS }
+	}
+	
+	400 = {
+		set_state_flag = steel_road_state
+	}
+	742 = {
+		set_state_flag = steel_road_state
+	}
+	401 = {
+		set_state_flag = steel_road_state
+	}
+	402 = {
+		set_state_flag = steel_road_state
+	}
+	375 = {
+		set_state_flag = steel_road_state
+	}
+	373 = {
+		set_state_flag = steel_road_state
+	}
+	608 = {
+		set_state_flag = steel_road_state
+	}
+	406 = {
+		set_state_flag = steel_road_state
+	}
+	369 = {
+		set_state_flag = steel_road_state
+	}
+}
+
+#Check Steel Road
+
+check_steel_road_change = {
+	
+	if = {
+		limit = {
+			check_variable = {
+				STLRD_state_control_var < 1
+			}
+		}
+		remove_ideas = STLRD_control_1
+		clear_variable = STLRD_state_control_var
+	}
+	if = {
+		limit = {
+			check_variable = {
+				STLRD_state_control_var > 0
+				STLRD_state_control_var < 5
+			}
+			num_of_controlled_states > 0
+		}
+		swap_ideas = {
+			remove_idea = STLRD_control_2
+			add_idea = STLRD_control_1
+		}
+
+		remove_ideas = STLRD_control_3
+		remove_ideas = STLRD_control_4
+		remove_ideas = STLRD_control_5
+	}
+	if = {
+		limit = {
+			check_variable = {
+				STLRD_state_control_var > 4
+				STLRD_state_control_var < 10
+			}
+		}
+		swap_ideas = {
+			remove_idea = STLRD_control_1
+			add_idea = STLRD_control_2
+		}
+		remove_ideas = STLRD_control_3
+		remove_ideas = STLRD_control_4
+		remove_ideas = STLRD_control_5
+	}
+	if = {
+		limit = {
+			check_variable = {
+				STLRD_state_control_var > 9
+				STLRD_state_control_var < 15
+			}
+		}
+		swap_ideas = {
+			remove_idea = STLRD_control_2
+			add_idea = STLRD_control_3
+		}
+		remove_ideas = STLRD_control_1
+		remove_ideas = STLRD_control_4
+		remove_ideas = STLRD_control_5
+	}
+	if = {
+		limit = {
+			check_variable = {
+				STLRD_state_control_var > 14
+				STLRD_state_control_var < 20
+			}
+		}
+		swap_ideas = {
+			remove_idea = STLRD_control_3
+			add_idea = STLRD_control_4
+		}
+		remove_ideas = STLRD_control_1
+		remove_ideas = STLRD_control_2
+		remove_ideas = STLRD_control_5
+	}
+	if = {
+		limit = {
+			check_variable = {
+				STLRD_state_control_var > 19
+			}
+		}
+		swap_ideas = {
+			remove_idea = STLRD_control_4
+			add_idea = STLRD_control_5
+		}
+		remove_ideas = STLRD_control_1
+		remove_ideas = STLRD_control_2
+		remove_ideas = STLRD_control_3
+	}
+	if = {
+		limit = {
+			check_variable = {
+				STLRD_state_control_var > 25
+			}
+			NOT = {
+				any_other_country = {
+					has_idea = STLRD_dominated
+				}
+			}
+		}
+		add_ideas = STLRD_dominated
+	}
+}
+
+#Assigns random magic item to country leader
+
+grant_magic_item_to_country_leader = {
+	random_list = {
+		
+		33 = {
+			add_country_leader_trait = has_magic_sword
+		}
+		34 = {
+			add_country_leader_trait = has_magic_ring
+		}
+		33 = {
+			add_country_leader_trait = has_magic_armour
+		}
+	}
+}
+
+#Assigns random magic item to commander
+
+grant_magic_item_to_commander = {
+	random_list = {
+		
+		33 = {
+			add_unit_leader_trait = has_magic_sword_commander
+		}
+		34 = {
+			add_unit_leader_trait = has_magic_ring_commander
+		}
+		33 = {
+			add_unit_leader_trait = has_magic_armour_commander
+		}
+	}
+}
+
+#Sets a country's states as valid targets for Perkav raids
+
+set_perkav_raid_target = {
+	every_owned_state = {
+		limit = {
+			is_coastal = yes
+		}
+		set_state_flag = PRK_coastal_state_in_raid_range_flag
+	}
+}
+
+set_prk_tribal_ter = {
+	#Western Alliance
+	621 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	630 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	650 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	631 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	649 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	648 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	645 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	652 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	651 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	417 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	640 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	641 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	416 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	642 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	629 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	418 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	622 = {
+	set_state_flag = PRK_tribal_territory_krz
+	}
+	#
+	#Southern Dominion
+	#
+	646 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	639 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	415 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	626 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	643 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	633 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	638 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	637 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	419 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	636 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	628 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	655 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	627 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	644 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	634 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	635 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	421 = {
+	set_state_flag = PRK_tribal_territory_wlt
+	}
+	#
+	#Druidic Circles
+	#
+	414 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	653 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	654 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	647 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	646 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	639 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	415 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	626 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	643 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	633 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	638 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	637 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	419 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	636 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	628 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	655 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	627 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	644 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	634 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	635 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	421 = {
+	set_state_flag = PRK_tribal_territory_vtz
+	}
+	#
+	#Pirate-Raiders
+	#
+	623 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	620 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	420 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	619 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	621 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	630 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	650 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	631 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	649 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	648 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	645 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	652 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	651 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	417 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	640 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	641 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	416 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	642 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	629 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	418 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+	622 = {
+	set_state_flag = PRK_tribal_territory_vln
+	}
+}
+
+# Increase or decrease FROM relations with THIS.
+
+FROM_worsen_THIS_relations = {#Worsen Relations
+	if = {
+		limit = {
+			has_relation_modifier = {
+				target = FROM
+				modifier = trusted_opinion_modifier
+			}
+			NOT = {
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = trusted_opinion
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = liked_opinion
+		}
+		hidden_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = trusted_opinion_modifier
+			}
+			add_relation_modifier = {
+				target = FROM
+				modifier = liked_opinion_modifier
+			}
+		}
+
+		FROM = {
+			remove_opinion_modifier = {
+				target = PREV
+				modifier = trusted_opinion
+			}
+			add_opinion_modifier = {
+				target = PREV
+				modifier = liked_opinion
+			}
+			hidden_effect = {
+				remove_relation_modifier = {
+					target = PREV
+					modifier = trusted_opinion_modifier
+				}
+				add_relation_modifier = {
+					target = PREV
+					modifier = liked_opinion_modifier
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_relation_modifier = {
+				target = FROM
+				modifier = liked_opinion_modifier
+			}
+			NOT = {
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = liked_opinion
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = supportive_opinion
+		}
+		hidden_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = liked_opinion_modifier
+			}
+			add_relation_modifier = {
+				target = FROM
+				modifier = supportive_opinion_modifier
+			}
+		}
+
+		FROM = {
+			remove_opinion_modifier = {
+				target = PREV
+				modifier = liked_opinion
+			}
+			add_opinion_modifier = {
+				target = PREV
+				modifier = supportive_opinion
+			}
+			hidden_effect = {
+				remove_relation_modifier = {
+					target = PREV
+					modifier = liked_opinion_modifier
+				}
+				add_relation_modifier = {
+					target = PREV
+					modifier = supportive_opinion_modifier
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_relation_modifier = {
+				target = FROM
+				modifier = supportive_opinion_modifier
+			}
+			NOT = {
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = supportive_opinion
+		}
+		hidden_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = supportive_opinion_modifier
+			}
+		}
+		
+		FROM = {
+			remove_opinion_modifier = {
+				target = PREV
+				modifier = supportive_opinion
+			}
+			hidden_effect = {
+				remove_relation_modifier = {
+					target = PREV
+					modifier = supportive_opinion_modifier
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			NOT = {
+				has_relation_modifier = {
+					target = FROM
+					modifier = trusted_opinion_modifier
+				}
+				has_relation_modifier = {
+					target = FROM
+					modifier = liked_opinion_modifier
+				}
+				has_relation_modifier = {
+					target = FROM
+					modifier = supportive_opinion_modifier
+				}
+				has_relation_modifier = {
+					target = FROM
+					modifier = annoyed_opinion_modifier
+				}
+				has_relation_modifier = {
+					target = FROM
+					modifier = dislike_opinion_modifier
+				}
+				has_relation_modifier = {
+					target = FROM
+					modifier = threatened_opinion_modifier
+				}
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+		
+		add_opinion_modifier = {
+			target = FROM
+			modifier = annoyed_opinion
+		}
+		hidden_effect = {
+			add_relation_modifier = {
+				target = FROM
+				modifier = annoyed_opinion_modifier
+			}
+		}
+
+		FROM = {
+			add_opinion_modifier = {
+				target = PREV
+				modifier = annoyed_opinion
+			}
+			hidden_effect = {
+				add_relation_modifier = {
+					target = PREV
+					modifier = annoyed_opinion_modifier
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_relation_modifier = {
+				target = FROM
+				modifier = annoyed_opinion_modifier
+			}
+			NOT = {
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = annoyed_opinion
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = dislike_opinion
+		}
+		hidden_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = annoyed_opinion_modifier
+			}
+			add_relation_modifier = {
+				target = FROM
+				modifier = dislike_opinion_modifier
+			}
+		}
+
+		FROM = {
+			remove_opinion_modifier = {
+				target = PREV
+				modifier = annoyed_opinion
+			}
+			add_opinion_modifier = {
+				target = PREV
+				modifier = dislike_opinion
+			}
+			hidden_effect = {
+				remove_relation_modifier = {
+					target = PREV
+					modifier = annoyed_opinion_modifier
+				}
+				add_relation_modifier = {
+					target = PREV
+					modifier = dislike_opinion_modifier
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_relation_modifier = {
+				target = FROM
+				modifier = dislike_opinion_modifier
+			}
+			NOT = {
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+		
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = dislike_opinion
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = threatened_opinion
+		}
+		hidden_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = dislike_opinion_modifier
+			}
+			add_relation_modifier = {
+				target = FROM
+				modifier = threatened_opinion_modifier
+			}
+		}
+		
+		FROM = {
+			remove_opinion_modifier = {
+				target = PREV
+				modifier = dislike_opinion
+			}
+			add_opinion_modifier = {
+				target = PREV
+				modifier = threatened_opinion
+			}
+			hidden_effect = {
+				remove_relation_modifier = {
+					target = PREV
+					modifier = dislike_opinion_modifier
+				}
+				add_relation_modifier = {
+					target = PREV
+					modifier = threatened_opinion_modifier
+				}
+			}
+		}
+	}
+	
+	clr_country_flag = relations_already_changed
+}
+
+FROM_improve_THIS_relations = {#Improve relations
+	if = {
+		limit = {
+			has_relation_modifier = {
+				target = FROM
+				modifier = threatened_opinion_modifier
+			}
+			NOT = {
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+		
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = threatened_opinion
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = dislike_opinion
+		}
+		hidden_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = threatened_opinion_modifier
+			}
+			add_relation_modifier = {
+				target = FROM
+				modifier = dislike_opinion_modifier
+			}
+		}
+		
+		FROM = {
+			remove_opinion_modifier = {
+				target = PREV
+				modifier = threatened_opinion
+			}
+			add_opinion_modifier = {
+				target = PREV
+				modifier = dislike_opinion
+			}
+			hidden_effect = {
+				remove_relation_modifier = {
+					target = PREV
+					modifier = threatened_opinion_modifier
+				}
+				add_relation_modifier = {
+					target = PREV
+					modifier = dislike_opinion_modifier
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_relation_modifier = {
+				target = FROM
+				modifier = dislike_opinion_modifier
+			}
+			NOT = {
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+		
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = dislike_opinion
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = annoyed_opinion
+		}
+		hidden_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = dislike_opinion_modifier
+			}
+			add_relation_modifier = {
+				target = FROM
+				modifier = annoyed_opinion_modifier
+			}
+		}
+		
+		FROM = {
+			remove_opinion_modifier = {
+				target = PREV
+				modifier = dislike_opinion
+			}
+			add_opinion_modifier = {
+				target = PREV
+				modifier = annoyed_opinion
+			}
+			hidden_effect = {
+				remove_relation_modifier = {
+					target = PREV
+					modifier = dislike_opinion_modifier
+				}
+				add_relation_modifier = {
+					target = PREV
+					modifier = annoyed_opinion_modifier
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_relation_modifier = {
+				target = FROM
+				modifier = annoyed_opinion_modifier
+			}
+			NOT = {
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+		
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = annoyed_opinion
+		}
+		hidden_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = annoyed_opinion_modifier
+			}
+		}
+		
+		FROM = {
+			remove_opinion_modifier = {
+				target = PREV
+				modifier = annoyed_opinion
+			}
+			hidden_effect = {
+				remove_relation_modifier = {
+					target = PREV
+					modifier = annoyed_opinion_modifier
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			NOT = {
+				has_relation_modifier = {
+					target = FROM
+					modifier = trusted_opinion_modifier
+				}
+				has_relation_modifier = {
+					target = FROM
+					modifier = liked_opinion_modifier
+				}
+				has_relation_modifier = {
+					target = FROM
+					modifier = supportive_opinion_modifier
+				}
+				has_relation_modifier = {
+					target = FROM
+					modifier = annoyed_opinion_modifier
+				}
+				has_relation_modifier = {
+					target = FROM
+					modifier = dislike_opinion_modifier
+				}
+				has_relation_modifier = {
+					target = FROM
+					modifier = threatened_opinion_modifier
+				}
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+		
+		add_opinion_modifier = {
+			target = FROM
+			modifier = supportive_opinion
+		}
+		hidden_effect = {
+			add_relation_modifier = {
+				target = FROM
+				modifier = supportive_opinion_modifier
+			}
+		}
+		
+		FROM = {
+			add_opinion_modifier = {
+				target = PREV
+				modifier = supportive_opinion
+			}
+			hidden_effect = {
+				add_relation_modifier = {
+					target = PREV
+					modifier = supportive_opinion_modifier
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_relation_modifier = {
+				target = FROM
+				modifier = supportive_opinion_modifier
+			}
+			NOT = {
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+		
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = supportive_opinion
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = liked_opinion
+		}
+		hidden_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = supportive_opinion_modifier
+			}
+			add_relation_modifier = {
+				target = FROM
+				modifier = liked_opinion_modifier
+			}
+		}
+		
+		FROM = {
+			remove_opinion_modifier = {
+				target = PREV
+				modifier = supportive_opinion
+			}
+			add_opinion_modifier = {
+				target = PREV
+				modifier = liked_opinion
+			}
+			hidden_effect = {
+				remove_relation_modifier = {
+					target = PREV
+					modifier = supportive_opinion_modifier
+				}
+				add_relation_modifier = {
+					target = PREV
+					modifier = liked_opinion_modifier
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_relation_modifier = {
+				target = FROM
+				modifier = liked_opinion_modifier
+			}
+			NOT = {
+				has_country_flag = relations_already_changed
+			}
+		}
+
+		set_country_flag = relations_already_changed
+		
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = liked_opinion
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = trusted_opinion
+		}
+		hidden_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = liked_opinion_modifier
+			}
+			add_relation_modifier = {
+				target = FROM
+				modifier = trusted_opinion_modifier
+			}
+		}
+
+		FROM = {
+			remove_opinion_modifier = {
+				target = PREV
+				modifier = liked_opinion
+			}
+			add_opinion_modifier = {
+				target = PREV
+				modifier = trusted_opinion
+			}
+			hidden_effect = {
+				remove_relation_modifier = {
+					target = PREV
+					modifier = liked_opinion_modifier
+				}
+				add_relation_modifier = {
+					target = PREV
+					modifier = trusted_opinion_modifier
+				}
+			}
+		}
+	}
+	
+	clr_country_flag = relations_already_changed
+}
+
+
+#Set the Steel Road States
+
+set_steel_road = {
+
+	585 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	583 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	545 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	551 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	614 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	580 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	368 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	611 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	604 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	613 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	582 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	370 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	532 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	542 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	572 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	605 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	599 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	371 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	795 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	787 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	372 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	789 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	777 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	776 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	775 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	774 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	374 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	765 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	377 = {
+		set_state_flag = steel_road_state
+		add_to_array = { TLA.steelroadarray = THIS }
+	}
+	398 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	740 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	397 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	737 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	797 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	396 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	750 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	755 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	757 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	753 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	386 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	830 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BLD.steelroadarray = THIS }
+	}
+	829 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BLD.steelroadarray = THIS }
+	}
+	761 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BLD.steelroadarray = THIS }
+	}
+	771 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BLD.steelroadarray = THIS }
+	}
+	385 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BLD.steelroadarray = THIS }
+	}
+	711 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	710 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	382 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	721 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	722 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	733 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	720 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	383 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	716 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	718 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	730 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	731 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	384 = {
+		set_state_flag = steel_road_state
+		add_to_array = { RMT.steelroadarray = THIS }
+	}
+	399 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	406 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	540 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	529 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	537 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	576 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	369 = {
+		set_state_flag = steel_road_state
+		add_to_array = { BER.steelroadarray = THIS }
+	}
+	400 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	742 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	401 = {
+		set_state_flag = steel_road_state
+		add_to_array = { IRI.steelroadarray = THIS }
+	}
+	233 = {
+		set_state_flag = steel_road_state
+		add_to_array = { UNG.steelroadarray = THIS }
+	}
+	249 = {
+		set_state_flag = steel_road_state
+		add_to_array = { UNG.steelroadarray = THIS }
+	}
+	328 = {
+		set_state_flag = steel_road_state
+		add_to_array = { UNG.steelroadarray = THIS }
+	}
+	342 = {
+		set_state_flag = steel_road_state
+		add_to_array = { UNG.steelroadarray = THIS }
+	}
+	357 = {
+		set_state_flag = steel_road_state
+		add_to_array = { WIS.steelroadarray = THIS }
+	}
+	361 = {
+		set_state_flag = steel_road_state
+		add_to_array = { WIS.steelroadarray = THIS }
+	}
+	347 = {
+		set_state_flag = steel_road_state
+		add_to_array = { FTH.steelroadarray = THIS }
+	}
+	356 = {
+		set_state_flag = steel_road_state
+		add_to_array = { FTH.steelroadarray = THIS }
+	}
+	339 = {
+		set_state_flag = steel_road_state
+		add_to_array = { FTH.steelroadarray = THIS }
+	}
+	345 = {
+		set_state_flag = steel_road_state
+		add_to_array = { FTH.steelroadarray = THIS }
+	}
+	236 = {
+		set_state_flag = steel_road_state
+		add_to_array = { FTH.steelroadarray = THIS }
+	}
+	UNG = {
+		set_variable = {
+			var = STLRD_state_control_var
+			value = 4
+		}
+		add_ideas = STLRD_control_1
+	}
+	WIS = {
+		set_variable = {
+			var = STLRD_state_control_var
+			value = 2
+		}
+		add_ideas = STLRD_control_1
+	}
+	FTH = {
+		set_variable = {
+			var = STLRD_state_control_var
+			value = 15 #Actually 5, but punching above their weight
+		}
+		add_ideas = STLRD_control_3
+	}
+	BER = {
+		set_variable = {
+			var = STLRD_state_control_var
+			value = 23
+		}
+		add_ideas = STLRD_control_4
+	}
+	TLA = {
+		set_variable = {
+			var = STLRD_state_control_var
+			value = 2 #12 States, but being bypassed
+		}
+		add_ideas = STLRD_control_1
+	}
+	IRI = {
+		set_variable = {
+			var = STLRD_state_control_var
+			value = 15
+		}
+		add_ideas = STLRD_control_3
+	}
+	BLD = {
+		set_variable = {
+			var = STLRD_state_control_var
+			value = 3 #Actually 5, but not able to capitalize on it
+		}
+		add_ideas = STLRD_control_1
+	}
+	RMT = {
+		set_variable = {
+			var = STLRD_state_control_var
+			value = 24 #Actually 13, but they own the source
+		}
+		add_ideas = STLRD_control_4
+	}
+}
+
+#Become the new Hochprinz of the Union
+become_hochprinz = {
+	set_temp_variable = {
+		UNG_new_capital = ROOT.capital
+	}
+	UNG = {
+		set_variable = {
+			UNG_constituent_state = ROOT
+		}
+		transfer_state = var:UNG_new_capital
+		set_capital = {
+			state = var:UNG_new_capital
+			remember_old_capital = no
+		}
+	}
+	puppet = UNG
+	every_country = {
+		limit = {
+			is_in_faction_with = ROOT
+		}
+		PREV = {
+			add_to_faction = UNG
+		}
+	}
+	every_country = {
+		limit = {
+			has_war_with = ROOT
+		}
+		UNG = {
+			add_to_war = { 
+				targeted_alliance = ROOT 
+				enemy = PREV
+			}
+		}
+	}
+	UNG = {
+		if = {
+			limit = {
+				ROOT = {
+					tag = HLZ
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = HLZ_monarchy_absolute_party
+					long_name = HLZ_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = HLZ_monarchy_constitutional_party
+					long_name = HLZ_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = HLZ_monarchy_constitutional_party 
+					long_name = HLZ_monarchy_constitutional_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = NOC
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = NOC_monarchy_absolute_party
+					long_name = NOC_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = NOC_monarchy_constitutional_party
+					long_name = NOC_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = NOC_republic_aristocrat_party 
+					long_name = NOC_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = SPW
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = SPW_monarchy_absolute_party
+					long_name = SPW_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = SPW_monarchy_constitutional_party
+					long_name = SPW_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = SPW_republic_aristocrat_party 
+					long_name = SPW_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = SVT
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = SVT_monarchy_absolute_party
+					long_name = SVT_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = SVT_monarchy_constitutional_party
+					long_name = SVT_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = SVT_republic_aristocrat_party 
+					long_name = SVT_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = TEI
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = TEI_monarchy_absolute_party
+					long_name = TEI_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = TEI_monarchy_constitutional_party
+					long_name = TEI_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = TEI_republic_aristocrat_party 
+					long_name = TEI_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = NRK
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = RKS_monarchy_absolute_party
+					long_name = NRK_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = RKS_monarchy_constitutional_party
+					long_name = NRK_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = RKS_republic_aristocrat_party 
+					long_name = NRK_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = RKS
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = RKS_monarchy_absolute_party
+					long_name = RKS_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = RKS_monarchy_constitutional_party
+					long_name = RKS_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = RKS_republic_aristocrat_party 
+					long_name = RKS_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = FAU
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = FAU_monarchy_absolute_party
+					long_name = FAU_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = FAU_monarchy_constitutional_party
+					long_name = FAU_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = FAU_republic_aristocrat_party 
+					long_name = FAU_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = SNF
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = SNF_monarchy_absolute_party
+					long_name = SNF_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = SNF_monarchy_constitutional_party
+					long_name = SNF_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = SNF_republic_aristocrat_party 
+					long_name = SNF_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = WIS
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = WIS_monarchy_absolute_party
+					long_name = WIS_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = WIS_monarchy_constitutional_party
+					long_name = WIS_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = WIS_republic_aristocrat_party 
+					long_name = WIS_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = WSZ
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = WSZ_monarchy_absolute_party
+					long_name = WSZ_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = WSZ_monarchy_constitutional_party
+					long_name = WSZ_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = WSZ_republic_aristocrat_party 
+					long_name = WSZ_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = FTH
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = FTH_monarchy_absolute_party
+					long_name = FTH_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = FTH_monarchy_constitutional_party
+					long_name = FTH_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = FTH_republic_aristocrat_party 
+					long_name = FTH_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = ARK
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = ARK_monarchy_absolute_party
+					long_name = ARK_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = ARK_monarchy_constitutional_party
+					long_name = ARK_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = ARK_republic_aristocrat_party 
+					long_name = ARK_republic_aristocrat_party 
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					tag = STA
+				}
+			}
+			UNG = {
+				set_party_name = {
+					ideology = monarchy_absolute
+					name = STA_monarchy_absolute_party
+					long_name = STA_monarchy_absolute_party
+				}
+				set_party_name = {
+					ideology = monarchy_constitutional
+					name = STA_monarchy_constitutional_party
+					long_name = STA_monarchy_constitutional_party
+				}
+				set_party_name = {
+					ideology = republic_aristocrat
+					name = STA_republic_aristocrat_party 
+					long_name = STA_republic_aristocrat_party 
+				}
+			}
+		}
+		inherit_technology = ROOT
+		annex_country = {
+			target = ROOT
+			transfer_troops = yes
+		}
+		change_tag_from = ROOT
+	}
+}
+
+#Unification of the Union
+unite_the_union = {
+	every_state = {
+		limit = {
+			OR = {
+				is_core_of = HLZ
+				is_core_of = NOC
+				is_core_of = SVT
+				is_core_of = STA
+				is_core_of = SPW
+				is_core_of = TEI
+				is_core_of = FAU
+				is_core_of = NRK
+				is_core_of = SNF
+				is_core_of = ARK
+				is_core_of = WIS
+				is_core_of = WSZ
+				is_core_of = FTH
+				is_core_of = UNG
+			}
+		}
+		remove_core_of = HLZ
+		remove_core_of = NOC
+		remove_core_of = SVT
+		remove_core_of = STA
+		remove_core_of = SPW
+		remove_core_of = TEI
+		remove_core_of = FAU
+		remove_core_of = NRK
+		remove_core_of = SNF
+		remove_core_of = ARK
+		remove_core_of = WIS
+		remove_core_of = WSZ
+		remove_core_of = FTH
+		add_core_of = UNG
+	}
+	every_country = {
+		limit = {
+			has_idea = FPT_union_member
+			is_og_freiprinz = yes
+		}
+		UNG = {
+			annex_country = {
+				target = PREV
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+clear_sabotaged_resources_if_necessary = {
+	if = {
+		limit = {
+			not = {
+				has_dynamic_modifier = {
+					modifier = sabotaged_resources
+				}
+			}
+		}
+		
+		clear_variable = sabotaged_food
+		clear_variable = sabotaged_mount
+		clear_variable = sabotaged_lumber
+		clear_variable = sabotaged_tungsten
+		clear_variable = sabotaged_steel
+		clear_variable = sabotaged_chromium
+	}
+}
+
+#Reunification of Ordoria
+#reunify_ordoria = {
+#	every_state = {
+#		limit = {
+#			is_owned_by = ROOT
+#		}
+#		ORD = {
+#			transfer_state = PREV
+#		}
+#	}
+#	every_state = {
+#		limit = {
+#			OR = {
+#	

@@ -1,0 +1,204 @@
+﻿capital = 226
+
+set_oob = "SPW_1936"
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
+}
+
+activate_mission = SPW_bandit_raid_incoming
+activate_mission = SPW_undead_raid_incoming
+activate_mission = SPW_jager_converting
+activate_mission = SPW_newhearts_stealing_equipment
+
+set_variable = {
+	var = jager_manpower_var
+	value = 200
+}
+
+set_variable = {
+	var = newhearts_equipment_var
+	value = 200
+}
+
+set_variable = {
+	var = IRP_manpower_var
+	value = 1200
+}
+
+set_variable = {
+	var = IRP_health_var
+	value = 4
+}
+
+set_variable = {
+	var = IRP_equipment_var
+	value = 450
+}
+
+set_variable = {
+	var = SPW_weisz_willpower
+	value = 37
+}
+
+set_variable = {
+	var = SPW_rooks_tension
+	value = 3
+}
+
+set_variable = {
+	var = SPW_rooks_loyalty
+	value = 1
+}
+
+set_variable = {
+	var = FPT_piety
+	value = 7
+}
+
+set_variable = {
+	var = FPT_union_loyalty
+	value = 2
+}
+
+set_variable = {
+	var = FPT_stahlhof_loyalty
+	value = 0
+}
+
+set_politics = {
+	ruling_party = monarchy_constitutional
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_variable = {
+	var = FPT_small_loyalty_cost
+	value = 50
+}
+
+set_variable = {
+	var = FPT_medium_loyalty_cost
+	value = 75
+}
+
+set_variable = {
+	var = FPT_big_loyalty_cost
+	value = 100
+}
+
+set_popularities = {
+	monarchy_absolute = 8
+
+	monarchy_constitutional = 52
+
+	republic_peasant = 1
+
+	republic_aristocrat = 2
+
+	republic_merchant = 7
+
+	theocrat = 14
+
+	puritan = 16
+}
+
+add_ideas = {
+	human_country
+	tergewelft_patron
+	FPT_union_member
+	FPT_bauernfreistellung
+	SPW_breadbasket_of_the_union
+	SPW_Spectre_BeKazaal
+	SPW_rapidly_collapsing_state
+}
+
+set_power_balance = {
+			id = SPW_power_balance
+			left_side = SPW_magdalena_side
+			right_side = SPW_bekazaal_side
+			set_value = 0.00
+		}
+
+recruit_character = SPW_wilhelm_weisz
+recruit_character = SPW_matthias_jager
+recruit_character = SPW_moritz_lohmann
+recruit_character = SPW_august_wissmann
+recruit_character = SPW_lea_eichenwald
+recruit_character = SPW_magdalene_schichau
+recruit_character = SPW_nicolas_krauser
+recruit_character = SPW_eike_bachmeier
+
+give_military_access = UNG
+give_military_access = HLZ
+give_military_access = NOC
+give_military_access = SVT
+give_military_access = STA
+give_military_access = NRK
+give_military_access = TEI
+give_military_access = ARK
+give_military_access = SNF
+give_military_access = FTH
+give_military_access = WIS
+give_military_access = WSZ

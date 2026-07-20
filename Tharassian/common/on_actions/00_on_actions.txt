@@ -1,0 +1,1278 @@
+on_actions = {
+
+	on_weekly = {
+		effect = {
+			if = {
+				limit = { 
+					has_intelligence_agency = yes
+					is_ai = yes
+				}
+				update_operation_ai = yes
+			}
+		}
+	}
+	
+	on_operation_completed = {
+		effect = {
+			# same scope setup as in operation outcome:
+			# THIS: the operation
+			# ROOT: the initiating country
+			# FROM: the target country
+			#log = "This: [This.GetName] From: [From.GetName] Root: [Root.GetName]"
+		}
+		
+		#Dummy on_action to prevent errors from being thrown
+	}
+	
+	#Annexed Freiprinztümer leave the Union
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						has_idea = FPT_union_member
+					}
+				}
+				FROM = {
+					remove_ideas = FPT_union_member
+				}
+			}
+		}
+	}
+	
+	#Declaring war on any state in the Ungerdaler Union calls in the Freiprinztümer
+	#The Union itself declaring war does the same
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						has_idea = FPT_union_member
+					}
+					NOT = {
+						has_idea = FPT_union_member
+					}
+				}
+				FROM = {
+					country_event = fpt.27
+				}
+			}
+			if = {
+				limit = {
+					tag = UNG
+					FROM = {
+						NOT = {
+							has_idea = FPT_union_member
+						}
+					}
+				}
+				country_event = fpt.27
+			}
+		}
+	}
+	
+	#Re-enable species-specific units for liberated commissiaries
+	on_subject_autonomy_level_change = {
+		effect = { 
+			if = {
+				limit = {
+					ROOT = {
+						tag = SKA
+					}
+					FROM = {
+						tag = ORD
+					}
+				}
+				
+				set_technology = {
+					dwarven_warriors = 1 #Dwarf units for you
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = PRK
+					}
+					FROM = {
+						tag = ORD
+					}
+				}
+				
+				set_technology = {
+					perkav_raiders = 1 #Perkav units for you
+					perkav_raiders_naval = 1
+				}
+			}
+		}
+	}
+	
+	#Add a small chance for a general to be captured on defeat
+	on_army_leader_lost_combat = {
+		effect = {
+			random = {
+				chance = 3
+				FROM = {
+					country_event = random.15
+				}
+				ROOT = {
+					add_trait = {
+						character = THIS
+						trait = captured_unit_leader
+					}
+					#Set nationality so we know who to send relevant events back to
+					set_variable = {
+						original_nationality = FROM.id
+					}
+				}
+			}
+		}
+	}
+	
+	#Hack solution for some countries (mainly SKA and sometimes ORD) randomly getting 'Ongoing Border Conflict' as a national spirit instead of a modifier in their states
+	#Probably a scoping issue somewhere but I can't be fucked to go through every FROM.FROM.FROM rn
+	#TODO clean this up properly
+	#RMT got it too at some point - seems to be a mountain skirmish issue?
+	on_border_war_lost = {
+		effect = {
+			every_country = {
+				remove_dynamic_modifier = {
+					modifier = ongoing_border_conflict
+				}
+			}
+		}
+	}
+	
+	#Give heads up about Adventurers (Operatives)
+	#Should only fire once
+	on_operative_recruited = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						is_ai = no
+					}
+				}
+				FROM = {
+					country_event = ai.2
+				}
+			}
+		}
+	}
+	
+	#Sets Adventurers (Operatives) to have classes
+	#THIS is the operative, FROM the country that created them
+	on_operative_created = {
+		effect = {
+			THIS = {
+				random_list = {
+					45 = {
+						add_unit_leader_trait = warrior_class
+					}
+					15 = {
+						add_unit_leader_trait = barbarian_class
+					}
+					10 = {
+						add_unit_leader_trait = priest_class
+					}
+					25 = {
+						add_unit_leader_trait = thief_class
+					}
+					5 = {
+						add_unit_leader_trait = wizard_class
+					}
+				}
+			}
+		}
+	}
+	
+	#Set a baseline minimum of compliance for (Eastern) Ordoria taking Rthaur states
+	#ROOT is new controller, FROM is old controller, FROM.FROM is state ID. 
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							tag = ORD
+							tag = EOR
+						}
+					}
+					FROM.FROM = {
+						OR = {
+							is_core_of = RTH
+							is_core_of = EOR
+						}
+						compliance < 15
+					}
+				}
+				FROM.FROM = {
+					set_compliance = 15
+				}
+			}
+		}
+	}
+	
+	###STATE MODIFIERS WITH COUNTRY SCOPES###
+	#This sets hidden ideas that conflate with 'state' modifiers that actually affect the entire country scope
+	#ROOT is new controller, FROM is old controller, FROM.FROM is state ID.
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 111
+					}
+					ORD = {
+						has_completed_focus = ORD_improve_varinthia
+					}
+				}
+				FROM = {
+					remove_ideas = CITY_varinthia
+				}
+				ROOT = {
+					add_ideas = CITY_varinthia
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 85
+					}
+					ORD = {
+						has_completed_focus = ORD_improve_istaroth
+					}
+				}
+				FROM = {
+					remove_ideas = CITY_istaroth
+				}
+				ROOT = {
+					add_ideas = CITY_istaroth
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 85
+					}
+					85 = {
+						has_dynamic_modifier = {
+							modifier = tomb_of_inskyllithe
+						}
+					}
+				}
+				FROM = {
+					remove_ideas = CITY_istaroth_tomb_of_inskyllithe
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 85
+					}
+					85 = {
+						has_dynamic_modifier = {
+							modifier = tomb_of_inskyllithe
+						}
+					}
+					OR = {
+						ROOT = {
+							original_tag = ORD
+							tag = EOR
+						}
+					}
+				}
+				ROOT = {
+					add_ideas = CITY_istaroth_tomb_of_inskyllithe
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 112
+					}
+					ORD = {
+						has_completed_focus = ORD_improve_ythelmare
+						NOT = {
+							has_completed_focus = ORD_ythelmare_slave_market
+						}
+					}
+				}
+				FROM = {
+					remove_ideas = CITY_ythelmare
+				}
+				ROOT = {
+					add_ideas = CITY_ythelmare
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 112
+					}
+					ORD = {
+						has_completed_focus = ORD_ythelmare_slave_market
+					}
+				}
+				FROM = {
+					remove_ideas = CITY_ythelmare_slavery
+				}
+				ROOT = {
+					add_ideas = CITY_ythelmare_slavery
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 84
+					}
+					ORD = {
+						has_completed_focus = ORD_improve_vuid
+					}
+				}
+				FROM = {
+					remove_ideas = CITY_vuid
+				}
+				ROOT = {
+					add_ideas = CITY_vuid
+				}
+			}
+		}
+	}
+	
+	#Adds every tag's cores to an array for later reference (in case cores get shuffled around and need to be restored, e.g. for ORD Commissiaries)
+	on_startup = {
+		effect = {
+			every_country = {
+				every_owned_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					add_to_array = {
+						array = PREV.original_cores
+						value = THIS.id
+					}
+				}
+			}
+			
+			# Gotta set manually for tags that have cores but don't exist yet
+			every_state = {
+				if = { limit = { is_core_of = IRT } add_to_array = { IRT.original_cores = THIS.id } }
+				if = { limit = { is_core_of = KRT } add_to_array = { KRT.original_cores = THIS.id } }
+				if = { limit = { is_core_of = FEL } add_to_array = { FEL.original_cores = THIS.id } }
+				if = { limit = { is_core_of = TRI } add_to_array = { TRI.original_cores = THIS.id } }
+				if = { limit = { is_core_of = KAL } add_to_array = { KAL.original_cores = THIS.id } }
+				if = { limit = { is_core_of = NAV } add_to_array = { NAV.original_cores = THIS.id } }
+				if = { limit = { is_core_of = NAS } add_to_array = { NAS.original_cores = THIS.id } }
+				if = { limit = { is_core_of = GMR } add_to_array = { NPC.original_cores = THIS.id } }
+			}
+		}
+	}
+	
+	#Sets AI strats that need to be scoped to every country
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					NOT = {
+						tag = GOW
+					}
+				}
+				country_event = ai_strats.1
+			}
+		}
+	}
+	
+	#Sets lore screen to pop up
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = open_lore_tab_button_flag
+				set_country_flag = country_context_text_flag
+			}
+			RTH = { 
+				country_event = { id = rth.18 days = 90 random = 720 } 
+				country_event = { id = rth.24 days = 71 random = 120 }
+				country_event = { id = rth.27 days = 100 random = 1200 } 
+			}
+		}
+	}
+
+	#Spochwald The Rooks Tenstion as Global so as to be shared between St Vichtlas and Faustburg
+	
+	#Spochwald Weisz Willpower
+	on_startup = {
+		effect = {
+		SPW = {
+		SPW_check_weisz_willpower = yes
+			}
+		}
+	}
+
+	#Set spooky Spochwald Modifiers
+	on_startup = {
+		effect = {
+			#The Rooks
+			#St Vichtlas
+			265 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			269 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			#Spochwald
+			1292 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			322 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			267 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			259 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			1287 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			#Faustburger Rooks
+			274 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			251 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			264 = {
+				add_dynamic_modifier = {
+					modifier = SPW_the_rooks_modifier
+				}
+			}
+			#Spochwald Patrols
+			1284 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			226 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			277 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			1292 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			# St Vichtlas Patrols
+			269 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			1297 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			227 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			# Neureik Patrols
+			268 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			1298 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			284 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			1299 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			316 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			318 = {
+				add_dynamic_modifier = {
+					modifier = SPW_river_patrol
+				}
+			}
+			#
+			301 = {
+				add_dynamic_modifier = {
+					modifier = SPW_darkweald_bandits
+				}
+			}
+			1285 = {
+				add_dynamic_modifier = {
+					modifier = SPW_ominous_presences
+				}
+			}
+			1286 = {
+				add_dynamic_modifier = {
+					modifier = SPW_ominous_presences
+				}
+			}
+			1289 = {
+				add_dynamic_modifier = {
+					modifier = SPW_bandit_haven
+				}
+			}
+			310 = {
+				add_dynamic_modifier = {
+					modifier = SPW_bandit_haven
+				}
+			}
+			311 = {
+				add_dynamic_modifier = {
+					modifier = SPW_bandit_haven
+				}
+			}
+			1288 = {
+				add_dynamic_modifier = {
+					modifier = SPW_bandit_haven
+				}
+			}
+			289 = {
+				add_dynamic_modifier = {
+					modifier = SPW_newheart_bandits
+				}
+			}
+			288 = {
+				add_dynamic_modifier = {
+					modifier = SPW_bandit_haven
+				}
+			}
+			1290 = {
+				add_dynamic_modifier = {
+					modifier = SPW_ominous_presences
+				}
+			}
+		}
+	}
+	
+	#Deploy the Drakeskins
+	on_startup = {
+		effect = {
+			100 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			104 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			105 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			107 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+			116 = {
+				add_dynamic_modifier = {
+					modifier = ORD_drakeskin_guarded_lands
+				}
+			}
+		}
+	}
+	
+	#Sets fertility
+	on_startup = {
+		effect = {
+			every_state = {
+				set_fertility = yes
+			}
+		}
+	}
+	
+	#Sets Freiprinz Piety effects
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					has_variable = FPT_piety
+				}
+				set_freiprinz_piety_effects = yes
+			}
+		}
+	}
+	
+	#Set Stahlreich states
+	on_startup = {
+		effect = {
+			every_state = {
+				set_stahlreich_states = yes
+			}
+		}
+	}
+	
+	#Sets freiprinz loyalty approximations
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					has_variable = FPT_union_loyalty
+				}			
+				set_loyalty_approximations = yes
+			}
+		}
+	}
+	
+	#Checks for starvation
+	on_daily = {
+		effect = {
+			every_country = {
+				limit = {
+					has_fuel < 100
+					NOT = {
+						has_idea = FOOD_starvation
+					}
+				}
+				add_ideas = FOOD_starvation
+			}
+			every_country = {
+				limit = {
+					has_fuel > 99
+					has_idea = FOOD_starvation
+				}
+				remove_ideas = FOOD_starvation
+			}
+		}
+	}
+	
+	#Checks freiprinz loyalties
+	on_daily = {
+		effect = {
+			check_amount_of_loyal_freiprinzen = yes
+		}
+	}
+	
+	#Checks population change
+	on_daily = {
+		effect = {
+			check_population_change = yes
+			#check_steel_road_change = yes #Bugged
+		}
+	}
+
+	#Sets the Steel Road
+	on_startup = {
+		effect = {
+			random_state = {
+				set_steel_road = yes
+			}
+		}
+	}
+	
+	#Sets Steel Road states
+	on_state_control_changed = {
+		effect = {
+			set_variable = { global.NEW_CONTROLLER = ROOT }
+			set_variable = { global.OLD_CONTROLLER = FROM }
+			set_variable = { global.STATE = FROM.FROM }
+
+			if = {
+				limit = {
+					var:global.STATE = {
+						has_state_flag = steel_road_state
+					}
+				}
+				
+				var:global.OLD_CONTROLLER = {
+					remove_from_array = {
+						steelroadarray = global.STATE
+					}
+				}
+				
+				var:global.NEW_CONTROLLER = {
+					add_to_array = {
+						steelroadarray = global.STATE
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_variable = STLRD_state_control_var
+							}
+						}
+						set_variable = {
+							var = STLRD_state_control_var
+							value = 1
+						}
+						add_ideas = STLRD_control_1
+					}
+					if = {
+						limit = {
+							has_variable = STLRD_state_control_var
+						}
+						add_to_variable = {
+							var = STLRD_state_control_var
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								STLRD_state_control_var > 4
+								STLRD_state_control_var < 10
+							}
+						}
+						swap_ideas = {
+							remove_idea = STLRD_control_1
+							add_idea = STLRD_control_2
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								STLRD_state_control_var > 9
+								STLRD_state_control_var < 15
+							}
+						}
+						swap_ideas = {
+							remove_idea = STLRD_control_2
+							add_idea = STLRD_control_3
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								STLRD_state_control_var > 14
+								STLRD_state_control_var < 20
+							}
+						}
+						swap_ideas = {
+							remove_idea = STLRD_control_3
+							add_idea = STLRD_control_4
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								STLRD_state_control_var > 19
+							}
+						}
+						swap_ideas = {
+							remove_idea = STLRD_control_4
+							add_idea = STLRD_control_5
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								STLRD_state_control_var > 25
+							}
+							NOT = {
+								any_other_country = {
+									has_idea = STLRD_dominated
+								}
+							}
+						}
+						add_ideas = STLRD_dominated
+					}
+					if = {
+						limit = {
+							check_variable = {
+								STLRD_state_control_var > 25
+							}
+							any_other_country = {
+								has_idea = STLRD_dominated
+								check_variable = {
+									variable = STLRD_state_control_var
+									value < global:NEW_CONTROLLER:STLRD_state_control_var
+								}
+							}
+						}
+						every_other_country = {
+							limit = {
+								has_idea = STLRD_dominated
+							}
+							remove_ideas = STLRD_dominated
+						}
+						add_ideas = STLRD_dominated
+					}
+					FROM = {
+						if = {
+							limit = {
+								check_variable = {
+									var = STLRD_state_control_var
+									value < 2
+								}
+							}
+							clear_variable = STLRD_state_control_var
+							remove_ideas = STLRD_control_1
+							#Following ones are for conquering countries like FTH or such that have different values
+							remove_ideas = STLRD_control_2
+							remove_ideas = STLRD_control_3
+							remove_ideas = STLRD_control_4
+							remove_ideas = STLRD_control_5
+						}
+					}
+					FROM = {
+						if = {
+							limit = {
+								check_variable = {
+									var = STLRD_state_control_var
+									value = 2
+									compare = greater_than_or_equals
+								}
+								num_of_controlled_states > 0
+							}
+							subtract_from_variable = {
+								var = STLRD_state_control_var
+								value = 1
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									var = STLRD_state_control_var
+									value = 2
+									compare = greater_than_or_equals
+								}
+								num_of_controlled_states < 1
+							}
+							clear_variable = STLRD_state_control_var
+							remove_ideas = STLRD_control_1
+							#Following ones are for conquering countries like FTH or such that have different values
+							remove_ideas = STLRD_control_2
+							remove_ideas = STLRD_control_3
+							remove_ideas = STLRD_control_4
+							remove_ideas = STLRD_control_5
+						}
+						if = {
+							limit = {
+								check_variable = {
+									STLRD_state_control_var > 0
+									STLRD_state_control_var < 5
+								}
+								num_of_controlled_states > 0
+							}
+							swap_ideas = {
+								remove_idea = STLRD_control_2
+								add_idea = STLRD_control_1
+							}
+
+							remove_ideas = STLRD_control_3
+							remove_ideas = STLRD_control_4
+							remove_ideas = STLRD_control_5
+						}
+						if = {
+							limit = {
+								check_variable = {
+									STLRD_state_control_var > 4
+									STLRD_state_control_var < 10
+								}
+								num_of_controlled_states > 0
+							}
+							swap_ideas = {
+								remove_idea = STLRD_control_3
+								add_idea = STLRD_control_2
+							}
+							
+							remove_ideas = STLRD_control_1
+							remove_ideas = STLRD_control_4
+							remove_ideas = STLRD_control_5
+						}
+						if = {
+							limit = {
+								check_variable = {
+									STLRD_state_control_var > 9
+									STLRD_state_control_var < 15
+								}
+								num_of_controlled_states > 0
+							}
+							swap_ideas = {
+								remove_idea = STLRD_control_4
+								add_idea = STLRD_control_3
+							}
+							
+							remove_ideas = STLRD_control_1
+							remove_ideas = STLRD_control_2
+							remove_ideas = STLRD_control_5
+						}
+						if = {
+							limit = {
+								check_variable = {
+									STLRD_state_control_var > 14
+									STLRD_state_control_var < 20
+								}
+								num_of_controlled_states > 0
+							}
+							swap_ideas = {
+								remove_idea = STLRD_control_5
+								add_idea = STLRD_control_4
+							}
+							remove_ideas = STLRD_control_1
+							remove_ideas = STLRD_control_2
+							remove_ideas = STLRD_control_3
+						}
+					}
+				}
+			}
+			clear_variable = global.NEW_CONTROLLER
+			clear_variable = global.OLD_CONTROLLER
+			clear_variable = global.STATE
+		}
+	}
+	
+	#Sets states within Perkav raiding range and allows Perkavland to raid
+	on_startup = {
+		effect = {
+			WSZ = {
+				set_perkav_raid_target = yes
+			}
+			FTH = {
+				set_perkav_raid_target = yes
+			}
+			BER = {
+				set_perkav_raid_target = yes
+			}
+			TEI = {
+				set_perkav_raid_target = yes
+			}
+			SVT = {
+				set_perkav_raid_target = yes
+			}
+			NOC = {
+				set_perkav_raid_target = yes
+			}
+			HLZ = {
+				set_perkav_raid_target = yes
+			}
+			PRK = {
+				set_country_flag = PRK_can_raid
+			}
+		}
+	}
+
+	#remove state flag from tribal territories that don't belong to PRK anymore
+	on_state_owner_changed = {
+	 effect = {
+	   every_state = {
+	  	 	limit = {
+	  			 OR = {
+	  			 has_state_flag = PRK_tribal_territory_krz
+	  			 has_state_flag = PRK_tribal_territory_wlt
+	  			 has_state_flag = PRK_tribal_territory_vtz
+	  			 has_state_flag = PRK_tribal_territory_vln
+	  			 }
+	  			 NOT = {
+	  			 OR = {
+	  			 is_owned_by = PRK
+	  			 is_owned_by = KRZ
+	  			 is_owned_by = WLT
+	  			 is_owned_by = VTZ
+	  			 is_owned_by = VLN
+	  			 }
+	 		 	 }
+			   }
+			clr_state_flag = PRK_tribal_territory_krz
+			clr_state_flag = PRK_tribal_territory_wlt
+		    clr_state_flag = PRK_tribal_territory_vtz
+			clr_state_flag = PRK_tribal_territory_vln
+	  }
+	 }
+	}
+	
+	#Sets up the tribal territories
+	on_startup = {
+		effect = {
+			random_state = {
+				set_prk_tribal_ter = yes
+			}
+		}
+	}
+	
+	#Sets Politics and Faith
+	on_startup = {
+		effect = {
+			every_country = {
+				country_event = {
+					id = ir.political.1
+				}
+				country_event = {
+					id = ir.political.3
+				}
+			}
+		}
+	}
+	
+	#Tells AI to not immediately leave faction
+	on_join_faction = {
+		effect = {
+			ROOT = {
+				set_country_flag = faction_friends
+			}
+		}
+	}
+	
+	on_leave_faction = {
+		effect = {
+			ROOT = {
+				clr_country_flag = faction_friends
+			}
+		}
+	}
+
+	#Sets Politics when Government Change
+	on_government_change = {
+		effect = {
+			ROOT = {
+				country_event = {
+					id = ir.political.2
+					days = 1
+				}
+				country_event = {
+					id = ir.political.1
+					days = 3
+				}
+			}
+			every_country = {
+				limit = {
+					has_government = puritan
+				}
+				country_event = {
+					id = ir.political.2
+					days = 1
+				}
+				country_event = {
+					id = ir.political.1
+					days = 3
+				}
+			}
+			every_country = {
+				country_event = {
+					id = ir.political.4
+					days = 1
+				}
+				country_event = {
+					id = ir.political.3
+					days = 3
+				}
+			}
+		}
+	}
+	
+	on_ruling_party_change = {
+		effect = {
+			ROOT = {
+				country_event = {
+					id = ir.political.2
+					days = 1
+				}
+				country_event = {
+					id = ir.political.1
+					days = 3
+				}
+			}
+			every_country = {
+				country_event = {
+					id = ir.political.4
+					days = 1
+				}
+				country_event = {
+					id = ir.political.3
+					days = 3
+				}
+			}
+			if = { #No
+				limit = {
+					tag = NBI
+					NOT = {
+						has_government = republic_merchant
+						has_government = republic_peasant
+					}
+				}
+				set_politics = {
+					ruling_party = republic_peasant
+				}
+			}
+		}
+	}
+	
+	#Sets Politics when War Declared (Workaround for Civil Wars)
+	on_declare_war = {
+		effect = {
+			ROOT = {
+				hidden_effect = {
+					country_event = {
+						id = ir.political.2
+						days = 1
+					}
+					country_event = {
+						id = ir.political.1
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	
+	#Force economy laws for Puritans and Rosites
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					has_government = puritan
+				}
+				remove_ideas = agrarianism_economy
+				remove_ideas = manorialism_economy
+				remove_ideas = fiscalism_economy
+				remove_ideas = mercantilism_economy
+				remove_ideas = corporatism_economy
+				remove_ideas = communalism_economy
+				remove_ideas = steam_and_steel
+				if = {
+					limit = {
+						NOT = {
+							has_idea = unorganized_economy
+						}
+					}
+					add_ideas = autarkic_isolationism
+				}
+			}
+			if = {
+				limit = {
+					has_government = republic_peasant
+				}
+				remove_ideas = agrarianism_economy
+				remove_ideas = manorialism_economy
+				remove_ideas = fiscalism_economy
+				remove_ideas = mercantilism_economy
+				remove_ideas = autarkic_isolationism
+				remove_ideas = communalism_economy
+				remove_ideas = steam_and_steel
+				if = {
+					limit = {
+						NOT = {
+							has_idea = unorganized_economy
+						}
+					}
+					add_ideas = communalism_economy
+				}
+			}
+		}
+	}
+	
+	# country random events
+	#on_bi_yearly_pulse = {
+	#
+	#}
+
+	#on_five_year_pulse = {
+	#
+	#}
+	
+	on_leave_faction = {
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_idea = MASLEAGUE_member_fervent
+							has_idea = MASLEAGUE_member_committed
+							has_idea = MASLEAGUE_member_wavering
+							has_idea = FPT_union_member
+						}
+					}
+				}
+				FROM = {
+					add_opinion_modifier = {
+						modifier = faction_traitor
+						target = ROOT
+						days = 365
+					}
+				
+					add_opinion_modifier = {
+						modifier = faction_traitor_trade
+						target = ROOT
+						days = 365
+					}
+				}
+			}
+		}
+	}
+
+	#Army Stuff
+	on_unit_leader_level_up = {
+		effect = {
+			
+		}
+	}
+	
+	on_army_leader_promoted = {
+		effect = {
+			add_timed_unit_leader_trait = {
+				trait = recently_promoted
+				days = 100
+			}
+		}
+	}
+	
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = IST
+						tag = YTH
+						tag = VUD
+						tag = VAR
+					}
+					is_subject_of = RTH
+					puritan > 0.5
+				}
+				country_event = {
+					id = rth.61
+					days = 3
+					random = 120
+				}
+			}
+		}
+	}
+}

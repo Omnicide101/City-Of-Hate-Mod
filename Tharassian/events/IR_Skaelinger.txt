@@ -1,0 +1,6149 @@
+﻿### SKAELINGER EVENTS
+
+add_namespace = ska
+
+### ORDORIAN WAR EVENTS
+
+country_event = { #Ordoria Threatens Us
+	id = ska.1
+	title = ska.1.t
+	desc = ska.1.d
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = {#Cave In
+		name = ska.1.a
+		ai_chance = {
+			factor = 3
+		}
+		add_stability = -0.1
+		add_war_support = -0.15
+		add_political_power = -20
+		
+		diplomatic_relation = {
+			country = RTH
+			relation = guarantee
+			active = no
+		}
+		
+		diplomatic_relation = {
+			country = RTH
+			relation = military_access
+			active = no
+		}
+		
+		remove_opinion_modifier = {
+			target = RTH
+			modifier = staunch_allies
+		}
+		
+		remove_relation_modifier = {
+			target = RTH
+			modifier = staunch_allies_opinion_modifier
+		}
+		
+		RTH = {
+			country_event = {
+				id = rth.3
+				days = 1
+			
+			}
+		}
+	}
+	
+	option = {#Piss Off
+		name = ska.1.b
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = 0.05
+		add_war_support = 0.1
+		add_political_power = 20
+	}
+}
+
+country_event = { #Ordoria Offers Peace
+	id = ska.2
+	title = ska.2.t
+	desc = ska.2.d
+	picture = GFX_report_event_german_italian_pact
+	
+	is_triggered_only = yes
+	
+	option = {#Very Well
+		name = ska.2.a
+		ai_chance = {
+			factor = 7
+		}
+		add_stability = -0.1
+		add_war_support = -0.15
+		add_political_power = -20
+		if = {
+			limit = {
+				country_exists = RTH
+				RTH = {
+					has_capitulated = yes
+				}
+			}
+			ORD = {
+				annex_country = {
+					target = RTH
+				}
+			}
+		}
+		ORD = {
+			country_event = {
+				id = ord.114
+			}
+		}
+		effect_tooltip = {
+			white_peace = ORD
+		}
+	}
+	
+	option = {#Piss Off
+		name = ska.2.b
+		ai_chance = {
+			factor = 1
+		}
+		add_stability = 0.05
+		add_war_support = 0.1
+		add_political_power = 20
+		country_event = {
+			id = ord.115
+			days = 7
+		}
+	}
+}
+
+country_event = { #Offer Peace to Ordoria?
+	id = ska.3
+	title = ska.3.t
+	desc = ska.3.d
+	picture = GFX_report_event_german_reichstag_gathering
+	
+	mean_time_to_happen = {
+		days = 4
+	}
+	
+	trigger = {
+		tag = SKA
+		has_war_with = ORD
+		NOT = {
+			country_exists = RTH
+		}
+		NOT = {
+			controls_state = 146
+		}
+	}
+	
+	fire_only_once = yes
+	
+	option = {#Very Well
+		name = ska.3.a
+		ai_chance = {
+			factor = 7
+		}
+		add_stability = -0.1
+		add_war_support = -0.15
+		add_political_power = -20
+		hidden_effect = {
+			ORD = {
+				country_event = {
+					id = ord.30
+					days = 1
+				}
+			}
+		}
+	}
+	
+	option = {#Piss Off
+		name = ska.3.b
+		ai_chance = {
+			factor = 1
+		}
+		add_stability = 0.05
+		add_war_support = 0.1
+		add_political_power = 20
+	}
+}
+
+country_event = { #Ordoria Accepts
+	id = ska.4
+	title = ska.4.t
+	desc = ska.4.d
+	picture = GFX_report_event_king_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ska.4.a
+		if = {
+			limit = {
+				country_exists = RTH
+				RTH = {
+					has_capitulated = yes
+				}
+			}
+			ORD = {
+				annex_country = {
+					target = RTH
+				}
+			}
+		}
+		effect_tooltip = {
+			white_peace = ORD
+		}
+		hidden_effect = {
+			white_peace = {
+				tag = ORD
+				message = ORD_SKA_white_peace_tt
+			}
+		}
+		add_political_power = -25
+	}
+}
+
+country_event = { #Ordoria Demands Concessions
+	id = ska.5
+	title = ska.5.t
+	desc = ska.5.d
+	picture = GFX_report_event_german_reichstag_bombed
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = ska.5.a
+		ai_chance = {
+			factor = 7
+		}
+		if = {
+			limit = {
+				country_exists = RTH
+				RTH = {
+					has_capitulated = yes
+				}
+			}
+			ORD = {
+				annex_country = {
+					target = RTH
+				}
+			}
+		}
+		effect_tooltip = {
+			white_peace = ORD
+		}
+		hidden_effect = {
+			white_peace = {
+				tag = ORD
+				message = ORD_SKA_white_peace_SKA_concessions_tt
+			}
+		}
+		ORD = {
+			transfer_state = 155
+			transfer_state = 153
+			transfer_state = 150
+			transfer_state = 154
+			transfer_state = 188
+			transfer_state = 180
+			transfer_state = 165
+			transfer_state = 161
+			transfer_state = 184
+			transfer_state = 147
+			transfer_state = 191
+			transfer_state = 189
+			transfer_state = 120
+			transfer_state = 181
+			transfer_state = 121
+			transfer_state = 178
+			transfer_state = 1277
+			transfer_state = 1281
+		}
+		hidden_effect = {
+			ORD = {
+				country_event = {
+					id = ord.31
+					days = 1
+				}
+			}
+		}
+		add_political_power = -35
+	}
+	
+	option = { # No
+		name = ska.5.b
+		ai_chance = {
+			factor = 1
+		}
+		hidden_effect = {
+			ORD = {
+				country_event = {
+					id = ord.32
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Ordoria Declines
+	id = ska.6
+	title = ska.6.t
+	desc = ska.6.d
+	picture = GFX_report_event_king_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ska.6.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #Ordoria Demands Vassalization
+	id = ska.7
+	title = ska.7.t
+	desc = ska.7.d
+	picture = GFX_report_event_czech_soldiers_01
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = ska.7.a
+		ai_chance = {
+			factor = 6
+		}
+		if = {
+			limit = {
+				country_exists = RTH
+				RTH = {
+					has_capitulated = yes
+				}
+			}
+			ORD = {
+				annex_country = {
+					target = RTH
+				}
+			}
+		}
+		effect_tooltip = {
+			white_peace = ORD
+		}
+		hidden_effect = {
+			white_peace = {
+				tag = ORD
+				message = ORD_SKA_white_peace_SKA_vassalized_tt
+			}
+		}
+		hidden_effect = {
+			ORD = {
+				country_event = {
+					id = ord.33
+					days = 1
+				}
+			}
+		}
+		add_political_power = -50
+	}
+	
+	option = { # No
+		name = ska.7.b
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			ORD = {
+				country_event = {
+					id = ord.34
+					days = 1
+				}
+			}
+		}
+		add_political_power = -50
+	}
+}
+
+country_event = { #Second Rthaur Revolution
+	id = ska.8
+	title = ska.8.t
+	desc = ska.8.d
+	picture = GFX_report_event_czech_soldiers_01
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		trigger = {
+			if = {
+				limit = {
+					NOT = {
+						is_puppet_of = ORD
+					}
+				}
+				is_puppet = no
+			}
+		}
+		name = ska.8.a
+		ai_chance = {
+			factor = 9
+		}
+		SKA = {
+			annex_country = {
+				target = ROOT
+			}
+			
+			if = {
+				limit = {
+					has_war_with = RTH
+				}
+				effect_tooltip = {
+					white_peace = RTH
+				}
+				hidden_effect = {
+					white_peace = {
+						tag = RTH
+						message = SKA_RTH_ii_rev_peace_tt
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					has_war_with = RMT
+				}
+				effect_tooltip = {
+					white_peace = RMT
+				}
+				hidden_effect = {
+					white_peace = {
+						tag = RMT
+						message = SKA_RMT_ii_rev_peace_tt
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					has_war_with = BER
+				}
+				effect_tooltip = {
+					white_peace = BER
+				}
+				hidden_effect = {
+					white_peace = {
+						tag = BER
+						message = SKA_BER_ii_rev_peace_tt
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = RTH
+			}
+			
+			if = {
+				limit = {
+					is_in_faction = no
+				}
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = brotherhood_alliance
+					icon = GFX_faction_logo_generic_9
+				}
+				add_to_faction = RTH
+			}
+			
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				leave_faction = yes
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = brotherhood_alliance
+					icon = GFX_faction_logo_generic_9
+				}
+				add_to_faction = RTH
+			}
+			
+			add_war_support = 0.1
+			hidden_effect = {
+				load_oob = "SKA_ii_rev"
+			}
+			add_to_war = {
+				targeted_alliance = RTH
+				enemy = ORD
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_relation_modifier = {
+							target = RTH
+							modifier = staunch_allies_opinion_modifier
+						}
+					}
+				}
+				add_opinion_modifier = {
+					target = RTH
+					modifier = staunch_allies
+				}
+				add_relation_modifier = {
+					target = RTH
+					modifier = staunch_allies_opinion_modifier
+				}
+			}
+			
+			RTH = {
+				country_event = {
+					id = rth.11
+					days = 2
+				}
+			}
+		}
+	}
+	
+	option = { # No
+		trigger = {
+			if = {
+				limit = {
+					NOT = {
+						is_puppet_of = ORD
+					}
+				}
+				is_puppet = no
+			}
+		}
+		name = ska.8.b
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = -50
+		
+		RTH = {
+			country_event = {
+				id = rth.12
+				days = 2
+			}
+		}
+	}
+	
+	option = { # We can't
+		trigger = {
+			if = {
+				limit = {
+					NOT = {
+						is_puppet_of = ORD
+					}
+				}
+				is_puppet = yes
+			}
+			NOT = {
+				is_puppet_of = ORD
+			}
+		}
+		name = ska.8.c
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = -5
+		
+		RTH = {
+			country_event = {
+				id = rth.13
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = {#Troops Retreat from Rthauiaur
+	id = ska.9
+	title = ska.9.t
+	desc = ska.9.d
+	picture = GFX_report_event_ast_army
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	trigger = {
+		original_tag = SKA
+		has_war_with = ORD
+		OR = {
+			NOT = {
+				country_exists = RTH
+			}
+			RTH = {
+				has_capitulated = yes
+			}
+		}
+		OR = {
+			divisions_in_state = {
+				size > 0
+				state = 128
+			}
+			divisions_in_state = {
+				size > 0
+				state = 143
+			}divisions_in_state = {
+				size > 0
+				state = 145
+			}
+			divisions_in_state = {
+				size > 0
+				state = 137
+			}
+			divisions_in_state = {
+				size > 0
+				state = 138
+			}
+			divisions_in_state = {
+				size > 0
+				state = 132
+			}
+			divisions_in_state = {
+				size > 0
+				state = 131
+			}
+			divisions_in_state = {
+				size > 0
+				state = 130
+			}
+			divisions_in_state = {
+				size > 0
+				state = 127
+			}
+			divisions_in_state = {
+				size > 0
+				state = 129
+			}
+			divisions_in_state = {
+				size > 0
+				state = 126
+			}
+			divisions_in_state = {
+				size > 0
+				state = 122
+			}
+			divisions_in_state = {
+				size > 0
+				state = 125
+			}
+			divisions_in_state = {
+				size > 0
+				state = 123
+			}
+			divisions_in_state = {
+				size > 0
+				state = 124
+			}
+			divisions_in_state = {
+				size > 0
+				state = 139
+			}
+			divisions_in_state = {
+				size > 0
+				state = 142
+			}
+			divisions_in_state = {
+				size > 0
+				state = 133
+			}
+			divisions_in_state = {
+				size > 0
+				state = 118
+			}
+			divisions_in_state = {
+				size > 0
+				state = 134
+			}
+			divisions_in_state = {
+				size > 0
+				state = 136
+			}
+			divisions_in_state = {
+				size > 0
+				state = 135
+			}
+			divisions_in_state = {
+				size > 0
+				state = 119
+			}
+			divisions_in_state = {
+				size > 0
+				state = 144
+			}
+			divisions_in_state = {
+				size > 0
+				state = 143
+			}
+			divisions_in_state = {
+				size > 0
+				state = 140
+			}
+		}
+	}
+	
+	option = {#Fall back and defend, enemy coming!
+		name = ska.9.a
+		hidden_effect = {
+			every_state = {
+				limit = {	
+					OR = {
+						AND = {
+							is_owned_by = ORD
+							NOT = {
+								is_controlled_by = SKA
+							}
+						}
+						is_controlled_by = ORD
+					}
+				}
+				teleport_armies = {
+					limit = {
+						has_war_with = ORD
+					}
+					to_state_array = owned_controlled_states
+				}
+			}
+		}
+	}
+}
+
+### UNION EVENTS
+country_event = { #Union Sends Aid
+	id = ska.10
+	title = ska.10.t
+	desc = ska.10.d
+	picture = GFX_report_event_french_liberation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ska.10.a
+		UNG = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -2400
+			}
+			add_manpower = -2400
+		}
+		add_manpower = 2400
+		
+		remove_opinion_modifier = {
+			target = UNG
+			modifier = liked_opinion
+		}
+		
+		UNG = {
+			remove_opinion_modifier = {
+				target = SKA
+				modifier = liked_opinion
+			}
+			add_opinion_modifier = {
+				target = SKA
+				modifier = trusted_opinion
+			}
+			reverse_add_opinion_modifier = {
+				target = SKA
+				modifier = trusted_opinion
+			}
+		}
+		
+		hidden_effect = {
+			load_oob = "SKA_union_volunteers"
+			
+			set_division_template_lock = {
+				division_template = "Ungerdaler Expeditionary Force"
+				is_locked = yes
+			}
+		}
+	}
+}
+
+country_event = { #Union Assists Seventh Campaign
+	id = ska.11
+	title = ska.11.t
+	desc = ska.11.d
+	picture = GFX_report_event_french_liberation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ska.11.a
+		
+		custom_effect_tooltip = BER_assisted_terugkeer_tt
+		
+		set_country_flag = SKA_allowed_to_initiate_seventh_campaign
+		
+		remove_opinion_modifier = {
+			target = UNG
+			modifier = trusted_opinion
+		}
+		UNG = {
+			remove_opinion_modifier = {
+				target = SKA
+				modifier = trusted_opinion
+			}
+			add_opinion_modifier = {
+				target = SKA
+				modifier = staunch_allies
+			}
+			add_relation_modifier = {
+				target = SKA
+				modifier = staunch_allies_opinion_modifier
+			}
+			reverse_add_opinion_modifier = {
+				target = SKA
+				modifier = staunch_allies
+			}
+		}
+		add_relation_modifier = {
+			target = UNG
+			modifier = staunch_allies_opinion_modifier
+		}
+	}
+}
+
+country_event = {#Attend Nordtorf Summit?
+	id = ska.12
+	title = ska.12.t
+	desc = ska.12.d
+	picture = GFX_report_event_carol_meeting
+
+	is_triggered_only = yes
+	
+	option = {#Yes
+		name = ska.12.a
+		ai_chance = {
+			factor = 15
+		}
+		UNG = {
+			country_event = {
+				id = ung.62
+				days = 3
+			}
+		}
+		if = {
+			limit = {
+				UNG = {
+					has_country_flag = UNG_backed_skaelinger_flag
+				}
+			}
+			add_political_power = 125
+			add_stability = 0.15
+		}
+	}
+	
+	option = {#No
+		name = ska.12.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				UNG = {
+					has_country_flag = UNG_backed_rimatu_flag
+				}
+				factor = 3
+			}
+			modifier = {
+				has_war_with = RMT
+				factor = 2
+			}
+		}
+		UNG = {
+			country_event = {
+				id = ung.63
+				days = 3
+			}
+		}
+		if = {
+			limit = {
+				UNG = {
+					has_country_flag = UNG_backed_rimatu_flag
+				}
+			}
+			add_political_power = 125
+			add_war_support = 0.15
+		}
+	}
+}
+
+country_event = { #Union Backs Us
+	id = ska.13
+	title = ska.13.t
+	desc = ska.13.d
+	picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ska.13.a
+		
+		add_political_power = 150
+		add_stability = 0.1
+	}
+}
+
+country_event = { #Union Backs Skyldske
+	id = ska.14
+	title = ska.14.t
+	desc = ska.14.d
+	picture = GFX_report_event_german_politician_speech
+	
+	is_triggered_only = yes
+	
+	option = {#I suppose
+		name = ska.14.a
+		
+		if = {
+			limit = {
+				has_war_with = RMT
+			}
+			effect_tooltip = {
+				white_peace = RMT
+			}
+			hidden_effect = {
+				white_peace = {
+					tag = RMT
+					message = UNG_negotiated_SKA_RMT_peace_tt
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 3
+		}
+		
+		add_political_power = -35
+		add_stability = -0.05
+		
+		UNG = {
+			country_event = {
+				id = ung.69
+				days = 2
+			}
+		}
+		
+		RMT = {
+			country_event = {
+				id = rmt.5
+				days = 2
+			}
+		}
+	}
+		
+	option = {#Fuck that noise
+		name = ska.14.b
+		
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_opinion = {
+					target = UNG
+					value > 60
+				}
+				factor = 0.1
+			}
+			modifier = {
+				has_opinion = {
+					target = UNG
+					value > 40
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = {
+					target = UNG
+					value > 20
+				}
+				factor = 0.8
+			}
+			modifier = {
+				has_war_with = RMT
+				factor = 2
+			}
+		}
+		
+		add_political_power = -75
+		add_stability = -0.15
+		add_war_support = 0.15
+		
+		if = {
+			limit = {
+				has_opinion_modifier = staunch_allies
+			}
+		
+			remove_opinion_modifier = {
+				target = UNG
+				modifier = staunch_allies
+			}
+			
+			remove_relation_modifier = {
+				target = UNG
+				modifier = staunch_allies_opinion_modifier
+			}
+			
+			UNG = {
+				remove_opinion_modifier = {
+					target = SKA
+					modifier = staunch_allies
+				}
+				remove_relation_modifier = {
+					target = SKA
+					modifier = staunch_allies_opinion_modifier
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				has_opinion_modifier = trusted_opinion
+			}
+		
+			remove_opinion_modifier = {
+				target = UNG
+				modifier = trusted_opinion
+			}
+			
+			UNG = {
+				remove_opinion_modifier = {
+					target = SKA
+					modifier = trusted_opinion
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				has_opinion_modifier = liked_opinion
+			}
+		
+			remove_opinion_modifier = {
+				target = UNG
+				modifier = liked_opinion
+			}
+			
+			UNG = {
+				remove_opinion_modifier = {
+					target = SKA
+					modifier = liked_opinion
+				}
+			}
+		}
+			
+		add_opinion_modifier = {
+			target = UNG
+			modifier = incredible_betrayal
+		}
+		
+		reverse_add_opinion_modifier = {
+			target = UNG
+			modifier = dislike_opinion
+		}
+		
+		UNG = {
+			country_event = {
+				id = ung.70
+				days = 2
+			}
+		}
+		RMT = {
+			country_event = {
+				id = rmt.6
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = {#Rimatu Accepts
+	id = ska.15
+	title = ung.67.t #No sense in wasting good loc
+	desc = ung.67.d
+	picture = GFX_report_event_carol_meeting
+
+	is_triggered_only = yes
+	
+	option = {#Huzzah
+		name = ung.67.a
+		add_stability = 0.05
+		
+		puppet = RMT
+		
+		remove_opinion_modifier = {
+			target = RMT
+			modifier = bitter_rivals
+		}
+		remove_relation_modifier = {
+			target = RMT
+			modifier = bitter_rivals_opinion_modifier
+		}
+
+		add_opinion_modifier = {
+			target = RMT
+			modifier = dislike_opinion
+		}
+		
+		reverse_add_opinion_modifier = {
+			target = RMT
+			modifier = dislike_opinion
+		}
+		
+		RMT = {
+			remove_opinion_modifier = {
+				target = SKA
+				modifier = bitter_rivals
+			}
+			remove_relation_modifier = {
+				target = SKA
+				modifier = bitter_rivals_opinion_modifier
+			}
+		}
+	}
+}
+
+country_event = {#Rimatu Declines
+	id = ska.16
+	title = ung.68.t #No sense in wasting good loc
+	desc = ung.68.d
+	picture = GFX_report_event_carol_meeting
+
+	is_triggered_only = yes
+	
+	option = {#Oh shit
+		name = ung.68.a
+		add_war_support = 0.05
+	}
+}
+
+country_event = {#Union DoW's Rimatü
+	id = ska.17
+	title = ska.17.t
+	desc = ska.17.d
+	picture = GFX_report_event_carol_meeting
+	
+	is_triggered_only = yes
+	
+	option = {#Yay
+		name = ska.17.a
+		set_country_flag = SKA_UNG_invade_rimatu
+		custom_effect_tooltip = SKA_UNG_invade_rimatu_tt
+	}
+}
+
+country_event = { #Ordoria Demands Inskyllithe
+	id = ska.18
+	title = ska.18.t
+	desc = ska.18.d
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { #Send
+		name = skaelinger.111.a
+		
+		ai_chance = {
+			factor = 10
+		}
+		
+		add_stability = -0.07
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.04
+		}
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.04
+		}
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.04
+		}
+		
+		ORD = {
+			country_event = {
+				id = ord.82
+				days = 7
+			}
+		}
+	}
+	
+	option = { #Refuse
+		name = skaelinger.111.b
+		
+		ai_chance = {
+			factor = 3
+		}
+		
+		custom_effect_tooltip = SKA_possible_ordoria_war_tt
+		
+		ORD = {
+			country_event = {
+				id = ord.83
+				days = 7
+			}
+		}
+	}
+	
+	option = { #Desecrate and send
+		name = skaelinger.111.c
+		
+		ai_chance = {
+			factor = 0.5
+		}
+		
+		custom_effect_tooltip = SKA_very_likely_ordoria_war_tt
+		
+		add_stability = 0.07
+		add_political_power = 35
+		
+		ORD = {
+			country_event = {
+				id = ord.84
+				days = 7
+			}
+		}
+	}
+}
+
+###Glugenash events
+add_namespace = skaelinger
+
+country_event = { #miner blight
+	id = skaelinger.1
+	title = skaelinger.1.t
+	desc = skaelinger.1.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = skaelinger.1.a
+		
+	}
+}
+
+country_event = { #Emergency Conclave
+	id = skaelinger.2
+	title = skaelinger.2.t
+	desc = skaelinger.2.d
+	
+	is_triggered_only = yes
+	
+	option = { #transition republic
+		name = skaelinger.2.a
+		ai_chance = {
+			factor = 3
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_HELLIRFAST
+					}
+					has_country_flag = SKA_ai_hellirfast_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_GRIMVALD
+					}
+					has_country_flag = SKA_ai_grimvald_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_PALMKEVIST
+					}
+					has_country_flag = SKA_ai_palmkevist_path_flag
+				}
+				factor = 0
+			}
+		}
+		set_country_flag = SKA_transitioning_republic
+	}
+	option = { #monarchism
+		name = skaelinger.2.b
+		ai_chance = {
+			factor = 7
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_CHARTIST
+					}
+					has_country_flag = SKA_ai_charter_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_COUNCIL
+					}
+					has_country_flag = SKA_ai_council_path_flag
+				}
+				factor = 0
+			}
+		}
+		set_country_flag = SKA_keeping_monarchism
+	}
+}
+
+country_event = { #Republic options
+	id = skaelinger.3
+	title = skaelinger.3.t
+	desc = skaelinger.3.d
+	
+	is_triggered_only = yes
+	
+	option = { #keep lore in charge
+		name = skaelinger.3.a
+		ai_chance = {
+			factor = 3
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_CHARTIST
+					}
+					has_country_flag = SKA_ai_charter_path_flag
+				}
+				factor = 0
+			}
+		}
+		complete_national_focus = SKA_the_grandlore_council
+		add_popularity = {
+			ideology = republic_aristocrat
+			popularity = 0.05
+		}
+	}
+	option = { #charter
+		name = skaelinger.3.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_COUNCIL
+					}
+					has_country_flag = SKA_ai_council_path_flag
+				}
+				factor = 0
+			}
+			
+		}
+		complete_national_focus = SKA_charter_protection_league
+		add_popularity = {
+			ideology = republic_merchant
+			popularity = 0.05
+		}
+	}
+}
+
+country_event = { #RTH gets abandoned by SKA
+	id = skaelinger.4
+	title = skaelinger.4.t
+	desc = skaelinger.4.d
+	
+	is_triggered_only = yes
+	
+	option = { #bro wtf I thought you were bae...
+		name = skaelinger.4.a
+		diplomatic_relation = {
+			country = SKA
+			relation = guarantee
+			active = no
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = military_access
+			active = no
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = non_aggression_pact
+			active = no
+		}
+	}
+}
+
+country_event = { #Monarch options
+	id = skaelinger.5
+	title = skaelinger.5.t
+	desc = skaelinger.5.d
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			add_popularity = {
+				ideology = monarchy_constitutional
+				popularity = 0.05
+			}
+		}
+	}
+	
+	option = { #Hellirfast
+		name = skaelinger.5.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_GRIMVALD
+					}
+					has_country_flag = SKA_ai_grimvald_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_PALMKEVIST
+					}
+					has_country_flag = SKA_ai_palmkevit_path_flag
+				}
+				factor = 0
+			}
+		}
+		complete_national_focus = SKA_house_hellirfast
+		set_politics = {
+			ruling_party = monarchy_constitutional
+			elections_allowed = no
+		}
+		hidden_effect = {
+			retire_ideology_leader = monarchy_constitutional
+		}
+		add_country_leader_role={
+			character = SKA_reev_hellirfast
+			promote_leader = yes
+			country_leader = {
+				desc = "politics_SKA_hellirfast_ii_desc"
+				ideology = monarchy_constitutional_ideology
+				traits = {
+					king_of_republicans
+				}
+				expire="1.1.1.1"
+			}
+		}
+	}
+	option = { #Grimvald
+		name = skaelinger.5.b
+		ai_chance = {
+			factor = 3
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_HELLIRFAST
+					}
+					has_country_flag = SKA_ai_hellirfast_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_PALMKEVIST
+					}
+					has_country_flag = SKA_ai_palmkevist_path_flag
+				}
+				factor = 0
+			}
+		}
+		complete_national_focus = SKA_house_grimvald
+		set_politics = {
+			ruling_party = monarchy_constitutional
+			elections_allowed = no
+		}
+		hidden_effect = {
+			retire_ideology_leader = monarchy_constitutional
+			set_party_name = {
+				ideology = monarchy_constitutional
+				name = SKA_grimvald_party
+				long_name = SKA_grimvald_party
+			}
+		}
+		add_country_leader_role={
+			character = SKA_petar_grimvald
+			promote_leader = yes
+			country_leader = {
+				desc = "politics_SKA_grimvald_desc"
+				ideology = monarchy_constitutional_ideology
+				traits = {
+					stone_hermit
+				}
+				expire="1.1.1.1"
+			}
+		}
+	}
+	option = { #Palmkevist
+		ai_chance = {
+			factor = 2
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_HELLIRFAST
+					}
+					has_country_flag = SKA_ai_hellirfast_path_flag
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SKA_game_plan
+						option = SKA_GRIMVALD
+					}
+					has_country_flag = SKA_ai_grimvald_path_flag
+				}
+				factor = 0
+			}
+		}
+		name = skaelinger.5.c
+		complete_national_focus = SKA_house_palmekvist
+		set_politics = {
+			ruling_party = monarchy_constitutional
+			elections_allowed = no
+		}
+		hidden_effect = {
+			set_party_name = {
+				ideology = monarchy_constitutional
+				name = SKA_palmekvist_party
+				long_name = SKA_palmekvist_party
+			}
+			retire_ideology_leader = monarchy_constitutional
+		}
+		add_country_leader_role={
+			character = SKA_kytos_palmkevist
+			promote_leader = yes
+			country_leader = {
+				desc = "politics_SKA_palmkevist_desc"
+				ideology = monarchy_constitutional_ideology
+				traits = {
+					last_vergallheimer
+				}
+				expire="1.1.1.1"
+			}
+		}
+	}
+}
+
+country_event = { #The King Dies F
+	id = skaelinger.6
+	title = skaelinger.6.t
+	desc = skaelinger.6.d
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = SKA_king_died
+		}
+	}
+	
+	option = { #RIP in Pepperonis
+		name = skaelinger.6.a
+		kill_country_leader = yes
+		hidden_effect = {
+			kill_ideology_leader = monarchy_absolute
+			set_temp_variable = { temp_constitutional_support_var = party_popularity@monarchy_constitutional }
+			divide_temp_variable = { temp_constitutional_support_var = 3 }
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = temp_constitutional_support_var
+			}
+		}
+		add_popularity = {
+			ideology = republic_aristocrat
+			popularity = 0.05
+		}
+		set_politics = {
+			ruling_party = republic_aristocrat
+			elections_allowed = no
+		}
+		
+		if = {
+			limit = {
+				is_ai = yes
+				has_game_rule = {
+					rule = SKA_game_plan
+					option = DEFAULT
+				}
+			}
+			random_list = { # Ordered most to least likely
+				
+				27 = { #Reev
+					set_country_flag = SKA_ai_hellirfast_path_flag
+				}
+				21 = { #Council
+					set_country_flag = SKA_ai_council_path_flag
+				}
+				14 = { #Palmkevist
+					set_country_flag = SKA_ai_palmkevist_path_flag
+				}
+				11 = { #Charter
+					set_country_flag = SKA_ai_charter_path_flag
+				}
+				10 = { #Soltruists
+					set_country_flag = SKA_ai_soltruist_path_flag
+				}
+				7 = { #Ironbloods
+					set_country_flag = SKA_ai_ironbloods_path_flag
+				}
+				5 = { #Grimvald
+					set_country_flag = SKA_ai_grimvald_path_flag
+				}
+				5 = { #Brotherhood
+					set_country_flag = SKA_ai_brotherhood_path_flag
+				}
+			}
+		}
+	}
+}
+
+country_event = { #BER gets SKA refugess
+	id = skaelinger.7
+	title = skaelinger.7.t
+	desc = skaelinger.7.d
+	
+	is_triggered_only = yes
+	
+	option = { #RIP in Pepperonis
+		name = skaelinger.7.a
+		random_state = {
+			limit = { is_controlled_by = BER is_owned_by = BER any_neighbor_state = { is_owned_by = KUR } }
+			add_manpower = 5000
+		}
+		add_stability = -0.01
+	}
+}
+
+country_event = { #SKA invites RTH to faction
+	id = skaelinger.8
+	title = skaelinger.8.t
+	desc = skaelinger.8.d
+	
+	is_triggered_only = yes
+	
+	option = { #Sounds gamer
+		name = skaelinger.8.a
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		FROM = {
+			add_to_faction = ROOT
+			country_event = { id = skaelinger.9 hours = 3 }
+		}
+	}
+	option = { #No
+		name = skaelinger.8.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			country_event = { id = skaelinger.10 hours = 3 }
+		}
+	}
+}
+
+country_event = { #FROM accepts invite
+	id = skaelinger.9
+	title = skaelinger.9.t
+	desc = skaelinger.9.d
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = skaelinger.9.a
+		
+	}
+}
+
+country_event = { #FROM denies invite
+	id = skaelinger.10
+	title = skaelinger.10.t
+	desc = skaelinger.10.d
+	
+	is_triggered_only = yes
+	
+	option = { #:(
+		name = skaelinger.10.a
+		add_political_power = -25
+	}
+}
+
+country_event = { #Ironblood conspiracy
+	id = skaelinger.11
+	title = skaelinger.11.t
+	desc = skaelinger.11.d
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = SKA_legalized_boe_debates #Ironbloods do not tolerate the BoE lmao
+			set_politics = {
+				ruling_party = monarchy_absolute
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = republic_aristocrat
+				popularity = -0.1
+			}
+		}
+	}
+	
+	option = { #Uh oh civil war!
+		name = skaelinger.11.a
+		trigger = {
+			OR = {
+				AND = {
+					monarchy_absolute < 0.25
+					check_variable = {
+						SKA_ironblood_conspiracy_strength < 10
+					}
+				}
+				AND = {
+					monarchy_absolute < 0.1
+					check_variable = {
+						SKA_ironblood_conspiracy_strength < 25
+					}
+				}
+				AND = {
+					monarchy_absolute < 0.15
+					check_variable = {
+						SKA_ironblood_conspiracy_strength < 15
+					}
+				}
+				has_country_flag = SKA_forced_iron_blood_conspiracy #Forces civil war
+			}
+		}
+		start_civil_war = {
+			ideology = republic_aristocrat
+			size = 0.5
+			states = all
+			states_filter = {
+				has_state_flag = SKA_ironblood_conspirator_state
+			}	
+		}
+		set_country_flag = SKA_ironbloods_fighting_revolters #Sets tag alias, handled in common/country_tag_aliases
+		every_other_country = {
+			limit = {
+				original_tag = SKA
+				has_government = republic_aristocrat
+			}
+			clr_country_flag = SKA_has_started_ironblood_conspiracy
+			unlock_national_focus = SKA_the_dwarfen_republic
+			unlock_national_focus = SKA_the_grandlore_council
+			uncomplete_national_focus = {
+				focus = SKA_iron_blood_conspiracy
+				uncomplete_children = yes
+				refund_political_power = no
+			}
+			set_country_flag = SKA_anti_ironblood_revolters #Tag alias
+			if = {
+				limit = {
+					ROOT = {
+						has_country_flag = SKA_forced_iron_blood_conspiracy
+					}
+				}
+				change_tag_from = ROOT
+			}
+		}
+	}
+	option = { #some GLC members escaped the purge and fled to RTH. Because I think it'd be neat. 
+		name = skaelinger.11.b
+		trigger = {
+			check_variable = {
+				SKA_ironblood_conspiracy_strength > 15
+			}
+			monarchy_absolute > 0.15
+			OR = {
+				check_variable = {
+					SKA_ironblood_conspiracy_strength < 18
+				}
+				monarchy_absolute < 0.2
+			}
+			NOT = {
+				has_country_flag = SKA_forced_iron_blood_conspiracy
+			}
+		}
+		add_popularity = {
+			ideology = republic_aristocrat
+			popularity = -0.05
+		}
+		RTH = {
+			country_event = { id = skaelinger.13 hours = 6 random = 25 }
+		}
+	}
+	option = { #unstable because power struggle
+		name = skaelinger.11.e
+		trigger = {
+			NOT = {
+				has_completed_focus = SKA_popular_general
+				has_completed_focus = SKA_popular_figurehead
+			}
+			check_variable = {
+				SKA_ironblood_conspiracy_strength > 15
+			}
+			monarchy_absolute > 0.15
+			NOT = {
+				has_country_flag = SKA_forced_iron_blood_conspiracy
+			}
+		}
+		add_popularity = {
+			ideology = republic_aristocrat
+			popularity = -0.05
+		}
+		add_stability = -0.05
+		country_event = { id = skaelinger.12 hours = 4 }
+	}
+	option = { #went off without a hitch
+		name = skaelinger.11.c
+		trigger = {
+			OR = { has_completed_focus = SKA_popular_general has_completed_focus = SKA_popular_figurehead }
+			check_variable = { SKA_ironblood_conspiracy_strength > 17 }
+			monarchy_absolute > 0.17
+			NOT = {
+				has_country_flag = SKA_forced_iron_blood_conspiracy
+			}
+		}
+	}
+}
+
+country_event = { #Iron Blood Power Struggle
+	id = skaelinger.12
+	title = skaelinger.12.t
+	desc = skaelinger.12.d
+	
+	is_triggered_only = yes
+	
+	option = { #Popular figurehead
+		name = skaelinger.12.a
+		hidden_effect = {
+			retire_ideology_leader = monarchy_absolute
+		}
+		create_country_leader = {
+			name = "Gayra Hafahlif"
+			desc = "POLITICS_REEV_HELLIRFAST_DESC"
+			picture = "gfx/leaders/SKA/Portrait_SKA_Hafahlif.dds"
+			expire = "990.1.1"
+			ideology = monarchy_absolute_ideology
+			traits = {
+			}
+		}
+		unlock_national_focus = SKA_popular_figurehead
+	}
+
+	option = { #Popular General
+		name = skaelinger.12.b
+		hidden_effect = {
+			retire_ideology_leader = monarchy_absolute
+		}
+		create_country_leader = {
+			name = "Egviel Hvassøx"
+			desc = "POLITICS_REEV_HELLIRFAST_DESC"
+			picture = "gfx/leaders/SKA/Portrait_SKA_Hvassox.dds"
+			expire = "990.1.1"
+			ideology = monarchy_absolute_ideology
+			traits = {
+			}
+		}
+		unlock_national_focus = SKA_popular_general
+	}
+}
+
+country_event = { #Grand Lore Council members flee to RTH because of Iron Blood Coup
+	id = skaelinger.13
+	title = skaelinger.13.t
+	desc = skaelinger.13.d
+	
+	is_triggered_only = yes
+	
+	option = { #How dare they >:(
+		name = skaelinger.13.a
+		add_popularity = {
+			ideology = republic_aristocrat
+			popularity = 0.05
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = guarantee
+			active = no
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = military_access
+			active = no
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = non_aggression_pact
+			active = no
+		}
+		add_ideas = RTH_grand_lore_council_refuge
+	}
+	option = { #How dare they >:(
+		name = skaelinger.13.b
+		ai_chance = {
+			factor = 0
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = guarantee
+			active = no
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = military_access
+			active = no
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = non_aggression_pact
+			active = no
+		}
+	}
+}
+
+country_event = { #SKA event for successful raid
+	id = skaelinger.14
+	title = skaelinger.14.t
+	desc = skaelinger.14.d
+	
+	is_triggered_only = yes
+	
+	option = { #Gamer Moment
+		name = skaelinger.14.a
+		add_war_support = 0.01
+		army_experience = 5
+		add_timed_idea = {
+			idea = SKA_slaves_acquired
+			days = 180
+		}
+	}
+}
+
+country_event = { #SKA event for failed raid
+	id = skaelinger.15
+	title = skaelinger.15.t
+	desc = skaelinger.15.d
+	
+	is_triggered_only = yes
+	
+	option = { #Unpog :(
+		name = skaelinger.15.a
+		add_war_support = -0.01
+	}
+}
+
+country_event = { #KUR event for failed raid
+	id = skaelinger.16
+	title = skaelinger.16.t
+	desc = skaelinger.16.d
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = skaelinger.16.a
+		add_war_support = 0.01
+		army_experience = 5
+	}
+}
+
+country_event = { #KUR event for successful raid
+	id = skaelinger.17
+	title = skaelinger.17.t
+	desc = skaelinger.17.d
+	
+	is_triggered_only = yes
+	
+	option = { #:( I miss my wife
+		name = skaelinger.17.a
+		add_war_support = 0.01
+		add_political_power = -30
+	}
+}
+
+country_event = { #SKA preparing for slave raids - KUR event
+	id = skaelinger.18
+	title = skaelinger.18.t
+	desc = skaelinger.18.d
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = skaelinger.18.a
+		add_war_support = 0.05
+		add_opinion_modifier = {
+			target = SKA
+			modifier = dislike_opinion
+		}
+	}
+}
+
+country_event = { #RTH gets event saying they can invest into SKA, and vice versa
+	id = skaelinger.19
+	title = skaelinger.19.t
+	desc = skaelinger.19.d
+	
+	is_triggered_only = yes
+	
+	option = { #epico
+		name = skaelinger.19.a
+		unlock_decision_category_tooltip = SKA_RTH_support_stuff
+	}
+}
+
+country_event = { #RTH gets event saying they're being converted to monarchist :(
+	id = skaelinger.20
+	title = skaelinger.20.t
+	desc = skaelinger.20.d
+	
+	is_triggered_only = yes
+	
+	option = { #unbased
+		name = skaelinger.20.a
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.05
+		}
+		add_opinion_modifier = {
+			target = SKA
+			modifier = annoyed_opinion 
+		}
+	}
+}
+
+country_event = { #Deciding how to restore Vergallheim
+	id = skaelinger.21
+	title = skaelinger.21.t
+	desc = skaelinger.21.d
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = skaelinger.21.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				OR = {
+					has_government = republic_merchant
+					has_government = puritan
+				}
+			}
+		}
+		set_country_flag = SKA_minor_restoration
+		add_political_power = 50
+	}
+	option = { #
+		name = skaelinger.21.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 3
+				OR = {
+					has_government = monarchy_constitutional
+					has_government = republic_aristocrat
+				}
+			}
+		}
+		set_country_flag = SKA_major_restoration
+		add_war_support = 0.05
+	}
+	option = { #
+		name = skaelinger.21.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 3
+				OR = {
+					has_government = monarchy_absolute
+					has_government = republic_peasant
+				}
+			}
+		}
+		set_country_flag = SKA_diplomatic_restoration
+		add_stability = 0.05
+	}
+}
+
+country_event = { #RMT ultimatum
+	id = skaelinger.22
+	title = skaelinger.22.t
+	desc = skaelinger.22.d
+	
+	is_triggered_only = yes
+	
+	option = { #nah bro
+		name = skaelinger.22.a
+		SKA = {
+			country_event = { id = skaelinger.24 hours = 3 }
+		}
+	}
+	option = { #sure bro
+		name = skaelinger.22.b
+		SKA = {
+			country_event = { id = skaelinger.23 hours = 3 }
+		}
+	}
+}
+
+country_event = { #RMT ultimatum accepted
+	id = skaelinger.23
+	title = skaelinger.23.t
+	desc = skaelinger.23.d
+	
+	is_triggered_only = yes
+	
+	option = { #:)
+		name = skaelinger.23.a
+		puppet = RMT
+	}
+}
+
+country_event = { #RMT ultimatum denied
+	id = skaelinger.24
+	title = skaelinger.24.t
+	desc = skaelinger.24.d
+	
+	is_triggered_only = yes
+	
+	option = { #>:(
+		name = skaelinger.24.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = RMT
+		}
+	}
+}
+
+country_event = { #Invite to Vergallheim alliance
+	id = skaelinger.25
+	title = skaelinger.25.t
+	desc = {
+		text = skaelinger.25.d
+		trigger = {
+			original_tag = RMT
+		}
+	}
+	desc = {
+		text = skaelinger.25.d1
+		trigger = {
+			NOT = {
+				original_tag = RMT
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = { #Sounds radical (skater)
+		name = skaelinger.25.a
+		add_ai_strategy = {
+			type = alliance
+			id = SKA
+			value = 200
+		}
+		SKA = {
+			country_event = { id = skaelinger.26 hours = 2 }
+		}
+	}
+	option = { #Sounds radical (conservative)
+		name = skaelinger.25.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #FROM accepts invite :)
+	id = skaelinger.26
+	title = skaelinger.26.t
+	desc = skaelinger.26.d
+	
+	is_triggered_only = yes
+	
+	option = { #Chogpamp
+		name = skaelinger.26.a
+		trigger = { has_completed_focus = SKA_vergallheim_alliance }
+		create_faction_from_template = {
+			template = faction_template_generic_dominance
+			name = vergallheim_alliance
+			icon = GFX_faction_logo_generic_6
+		}
+		add_to_faction = FROM
+	}
+	option = { #Chogpamp
+		name = skaelinger.26.b
+		trigger = { has_completed_focus = SKA_dwarven_protection_pact }
+		add_to_faction = FROM
+	}
+}
+
+country_event = { #northern dominion
+	id = skaelinger.27
+	title = skaelinger.27.t
+	desc = skaelinger.27.d
+	
+	is_triggered_only = yes
+	
+	option = { #sure bro
+		name = skaelinger.27.a
+		SKA = {
+			set_autonomy = {
+				target = RMT
+				autonomous_state = autonomy_integrated_puppet
+			}
+		}
+		RMT = {
+			set_cosmetic_tag = RMT_SKA_northern_dominion
+		}
+	}
+	option = { #nah bro
+		name = skaelinger.27.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #FROM has invested into us
+	id = skaelinger.28
+	title = skaelinger.28.t
+	desc = skaelinger.28.d
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = skaelinger.28.a
+		
+	}
+}
+
+country_event = { #SKA demands territory
+	id = skaelinger.29
+	title = skaelinger.29.t
+	desc = {
+		text = skaelinger.29.d1
+		trigger = {
+			original_tag = KUR
+		}
+	}
+	desc = {
+		text = skaelinger.29.d2
+		trigger = {
+			original_tag = RMT
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = { #Hmmm... fine
+		name = skaelinger.29.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				add = 3
+				original_tag = KUR
+			}
+			modifier = {
+				add = 3
+				strength_ratio = {
+					tag = SKA
+					ratio < 0.5
+				}
+			}
+		}
+		SKA = {
+			country_event = { id = skaelinger.30 hours = 3 random = 3 }
+		}
+	}
+	option = { #Say sike rn
+		name = skaelinger.29.b
+		ai_chance = {
+			factor = 7
+			modifier = {
+				add = -1
+				original_tag = KUR
+			}
+			modifier = {
+				add = -4
+				strength_ratio = {
+					tag = SKA
+					ratio < 0.5
+				}
+			}
+		}
+		SKA = {
+			country_event = { id = skaelinger.31 hours = 4 random = 3 }
+		}
+	}
+}
+
+country_event = { #FROM says yes to border changes
+	id = skaelinger.30
+	title = skaelinger.30.t
+	desc = skaelinger.30.d
+	
+	is_triggered_only = yes
+	
+	option = { #Kurgos is ours!
+		name = skaelinger.30.a
+		trigger = { FROM = { original_tag = RMT } }
+		transfer_state = 381
+		add_state_core = 381
+		transfer_state = 724
+		add_state_core = 724
+	}
+	option = { #Zarathum is ours!
+		name = skaelinger.30.b
+		trigger = { FROM = { original_tag = KUR } }
+		transfer_state = 176
+		transfer_state = 174
+		transfer_state = 173
+		transfer_state = 172
+		transfer_state = 179
+		transfer_state = 659
+		transfer_state = 704
+		transfer_state = 694
+		transfer_state = 660
+		transfer_state = 664
+		transfer_state = 665
+		hidden_effect = {
+			add_state_core = 176
+			add_state_core = 174
+			add_state_core = 173
+			add_state_core = 172
+			add_state_core = 179
+			add_state_core = 659
+			add_state_core = 704
+			add_state_core = 694
+			add_state_core = 660
+			add_state_core = 664
+			add_state_core = 665
+		}
+	}
+}
+
+country_event = { #FROM says no to border changes
+	id = skaelinger.31
+	title = skaelinger.31.t
+	desc = skaelinger.31.d
+	
+	is_triggered_only = yes
+	
+	option = { #Kurgos will be ours
+		name = skaelinger.31.a
+		trigger = { FROM = { original_tag = RMT } }
+		add_state_claim = 381
+		set_country_flag = SKA_gonna_take_kurgo
+		unlock_decision_tooltip = DORF_invade_kurgo
+	}
+	option = { #We will take what is ours by force
+		name = skaelinger.31.b
+		trigger = { FROM = { original_tag = KUR } }
+		hidden_effect = {
+			add_state_claim = 176
+			add_state_claim = 174
+			add_state_claim = 173
+			add_state_claim = 172
+			add_state_claim = 179
+			add_state_claim = 659
+			add_state_claim = 704
+			add_state_claim = 694
+			add_state_claim = 660
+			add_state_claim = 664
+			add_state_claim = 665
+		}
+		create_wargoal = {
+			target = KUR
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Heljarchen Froki debates for the legalization of the brotherhood
+	id = skaelinger.32
+	title = skaelinger.32.t
+	desc = skaelinger.32.d
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = skaelinger.33 days = 15 }
+		}
+	}
+	
+	option = { #Alright sure
+		name = skaelinger.32.a
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.08
+		}
+		set_country_flag = SKA_legalized_boe_debates
+		retire_ideology_leader = republic_peasant
+		create_country_leader = {
+			name = "Heljarchen Froki"
+			desc = "politics_SKA_rettrdaga_desc"
+			picture = "gfx/leaders/SKA/Portrait_SKA_Rettrdaga.dds"
+			ideology = republic_peasant_ideology
+			traits = {
+			}
+		}
+	}
+	option = { #No
+		name = skaelinger.32.b
+		add_stability = -0.02
+	}
+	option = { #Heljarchen is obviously a radical, arrest him!
+		name = skaelinger.32.c
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = -0.03
+		}
+	}
+}
+
+country_event = { #Using guild funds to help sponsor debates
+	id = skaelinger.33
+	title = skaelinger.33.t
+	desc = skaelinger.33.d
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = skaelinger.34 days = 15 }
+			if = {
+				limit = {
+					NOT = { has_country_flag = SKA_legalized_boe_debates }
+				}
+				country_event = { id = skaelinger.35 days = 7 random = 120 }
+			}
+		}
+	}
+	
+	option = { #Alright sure
+		name = skaelinger.33.a
+		add_popularity = {
+			ideology = republic_merchant
+			popularity = 0.08
+		}
+		add_political_power = 50
+	}
+	option = { #No
+		name = skaelinger.33.b
+		add_popularity = {
+			ideology = republic_merchant
+			popularity = -0.01
+		}
+	}
+	option = { #We will not allow money to define our politics
+		name = skaelinger.33.c
+		add_popularity = {
+			ideology = republic_merchant
+			popularity = -0.05
+		}
+	}
+}
+
+country_event = { #centralization or decentralization of power?
+	id = skaelinger.34
+	title = skaelinger.34.t
+	desc = skaelinger.34.d
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = SKA_legalized_boe_debates }
+				country_event = { id = skaelinger.36 days = 15 }
+			}
+		}
+	}
+	
+	option = { #centralizing power
+		name = skaelinger.34.a
+		add_popularity = {
+			ideology = republic_aristocrat
+			popularity = 0.05
+		}
+		add_political_power = 50
+	}
+	option = { #decentralizing power
+		name = skaelinger.34.b
+		add_popularity = {
+			ideology = republic_merchant
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.05
+		}
+		add_stability = 0.05
+	}
+}
+
+country_event = { #Brotherhood of Equals terrorist attack
+	id = skaelinger.35
+	title = skaelinger.35.t
+	desc = skaelinger.35.d
+	
+	is_triggered_only = yes
+	
+	option = { #focus on rebuilding
+		name = skaelinger.35.a
+		146 = {
+			damage_building = {
+				type = workshop
+				damage = 0.4
+			}
+		}
+	}
+	option = { #focus on hunting down the terrorists
+		name = skaelinger.35.b
+		146 = {
+			damage_building = {
+				type = workshop
+				damage = 0.75
+			}
+		}
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = -0.03
+		}
+		add_stability = 0.03
+	}
+}
+
+country_event = { #Pwease Mistew Obama wet me make communes :pleading_face:
+	id = skaelinger.36
+	title = skaelinger.36.t
+	desc = skaelinger.36.d
+	
+	is_triggered_only = yes
+	
+	option = { #Sure, I guess?
+		name = skaelinger.36.a
+		random_owned_controlled_state = {
+			limit = { NOT = { state = 146 } }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = workshop
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = { NOT = { state = 146 } }
+			add_extra_state_shared_building_slots = 1
+		}
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.05
+		}
+	}
+	option = { #Bro what, no
+		name = skaelinger.36.b
+		add_political_power = -10
+	}
+}
+
+country_event = { #SKA supporting RTH aristocrats
+	id = skaelinger.37
+	title = skaelinger.37.t
+	desc = skaelinger.37.d
+	
+	is_triggered_only = yes
+	
+	option = { #Bruh
+		name = skaelinger.37.a
+		
+	}
+}
+
+country_event = { #RTH Aristocrat Coup (Rthauriaur becoming cring)
+	id = skaelinger.38
+	title = skaelinger.38.t
+	desc = {
+		text = skaelinger.38.d
+		trigger = {
+			check_variable = { SKA_coup_attempt = 1 }
+		}
+	}
+	desc = {
+		text = skaelinger.38.d1
+		trigger = {
+			check_variable = { SKA_coup_attempt = 2 }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			add_to_variable = { SKA_coup_attempt = 1 }
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = { #The coup succeeds
+		name = skaelinger.38.a
+		trigger = { check_variable = { SKA_coup_attempt = 1 } }
+		ai_chance = {
+			factor = 4
+			modifier = {
+				republic_merchant > 0.25
+				add = 2
+			}
+			modifier = {
+				republic_merchant > 0.4
+				add = 1
+			}
+			modifier = {
+				republic_merchant > 0.5
+				add = 1
+			}
+			modifier = {
+				SKA = { check_variable = { SKA_RTH_moderate_power_inf > 75 } }
+				add = 2
+			}
+			modifier = {
+				SKA = { check_variable = { SKA_RTH_moderate_power_inf > 85 } }
+				factor = 1.5
+			}
+		}
+		add_stability = -0.1
+		set_politics = {
+			ruling_party = republic_merchant
+			elections_allowed = no
+		}
+		#probably remove any socialist ideas they got
+		SKA = {
+			country_event = { id = skaelinger.39 hours = 3 }
+			set_variable = { SKA_RTH_moderate_power_inf = 100 }
+			add_to_variable = { SKA_RTH_overlord_inf = 10 }
+		}
+	}
+	option = { #The coup fails
+		name = skaelinger.38.b
+		trigger = { check_variable = { SKA_coup_attempt = 1 } }
+		ai_chance = {
+			factor = 3
+			modifier = {
+				republic_merchant < 0.4
+				add = 1
+			}
+			modifier = {
+				SKA = { check_variable = { SKA_RTH_moderate_power_inf < 8 } }
+				add = 1
+			}
+			modifier = {
+				SKA = { check_variable = { SKA_RTH_moderate_power_inf > 95 } }
+				factor = 0
+			}
+		}
+		add_stability = -0.05
+		add_popularity = {
+			ideology = republic_merchant
+			popularity = -0.1
+		}
+		#country event deciding whether or not to cut ties with teh Skaelinger
+		SKA = {
+			country_event = { id = skaelinger.40 hours = 3 }
+			subtract_from_variable = { SKA_RTH_moderate_power_inf = 20 }
+		}
+	}
+	option = { #The coup succeeds
+		name = skaelinger.38.c
+		trigger = { check_variable = { SKA_coup_attempt = 2 } }
+		ai_chance = {
+			factor = 4
+			modifier = {
+				republic_merchant > 0.25
+				add = 2
+			}
+			modifier = {
+				republic_merchant > 0.4
+				add = 1
+			}
+			modifier = {
+				republic_merchant > 0.5
+				add = 1
+			}
+			modifier = {
+				SKA = { check_variable = { SKA_RTH_moderate_power_inf > 75 } }
+				add = 2
+			}
+			modifier = {
+				SKA = { check_variable = { SKA_RTH_moderate_power_inf > 85 } }
+				factor = 1.5
+			}
+		}
+		add_stability = -0.1
+		set_politics = {
+			ruling_party = republic_merchant
+			elections_allowed = no
+		}
+		#probably remove any socialist ideas they got
+		SKA = {
+			country_event = { id = skaelinger.39 hours = 3 }
+			set_variable = { SKA_RTH_moderate_power_inf = 100 }
+			add_to_variable = { SKA_RTH_overlord_inf = 10 }
+		}
+	}
+	option = { #The coup fails
+		name = skaelinger.38.e
+		trigger = { check_variable = { SKA_coup_attempt = 2 } }
+		ai_chance = {
+			factor = 3
+			modifier = {
+				republic_merchant < 0.4
+				add = 1
+			}
+			modifier = {
+				SKA = { check_variable = { SKA_RTH_moderate_power_inf < 8 } }
+				add = 1
+			}
+			modifier = {
+				SKA = { check_variable = { SKA_RTH_moderate_power_inf > 95 } }
+				factor = 0
+			}
+		}
+		add_stability = -0.05
+		add_popularity = {
+			ideology = republic_merchant
+			popularity = -0.1
+		}
+		#country event deciding whether or not to cut ties with teh Skaelinger
+		SKA = {
+			country_event = { id = skaelinger.40 hours = 3 }
+			subtract_from_variable = { SKA_RTH_moderate_power_inf = 20 }
+		}
+	}
+}
+
+country_event = { #SKA event for RTH coup succeeding
+	id = skaelinger.39
+	title = skaelinger.39.t
+	desc = skaelinger.39.d
+	
+	is_triggered_only = yes
+	
+	option = { #The coup succeeds
+		name = skaelinger.39.a
+		add_political_power = 50
+	}
+}
+
+country_event = { #SKA event for RTH coup failing
+	id = skaelinger.40
+	title = skaelinger.40.t
+	desc = skaelinger.40.d
+	
+	is_triggered_only = yes
+	
+	option = { #uh oh
+		name = skaelinger.40.a
+		add_political_power = -10
+	}
+}
+
+country_event = { #SKA asks to have oversight on foreign diplomacy (definitely not puppet state :wink:)
+	id = skaelinger.41
+	title = skaelinger.41.t
+	desc = skaelinger.41.d
+	
+	is_triggered_only = yes
+	
+	option = { #Sure
+		name = skaelinger.41.a
+		ai_chance = {
+			factor = 4
+			modifier = {
+				republic_aristocrat > 0.75
+				add = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = SKA
+					value > 75
+				}
+				add = 2
+			}
+		}
+		SKA = {
+			country_event = { id = skaelinger.42 hours = 3 }
+		}
+	}
+	option = { #No bro
+		name = skaelinger.41.b
+		ai_chance = {
+			factor = 2
+			modifier = {
+				republic_aristocrat < 0.7
+				add = 1
+			}
+			modifier = {
+				SKA = { check_variable = { SKA_RTH_overlord_inf < 0.8 } }
+				add = 1
+			}
+			modifier = {
+				SKA = { check_variable = { SKA_RTH_overlord_inf > 0.9 } }
+				factor = 0
+			}
+		}
+		add_political_power = 25
+		SKA = {
+			country_event = { id = skaelinger.43 hours = 3 }
+			subtract_from_variable = { SKA_RTH_overlord_inf = 10 }
+		}
+	}
+}
+
+country_event = { #SKA event for RTH accepting puppet
+	id = skaelinger.42
+	title = skaelinger.42.t
+	desc = skaelinger.42.d
+	
+	is_triggered_only = yes
+	
+	option = { #pog champ
+		name = skaelinger.42.a
+		puppet = RTH
+		add_political_power = 50
+	}
+}
+
+country_event = { #SKA event for RTH denying puppet
+	id = skaelinger.43
+	title = skaelinger.43.t
+	desc = skaelinger.43.d
+	
+	is_triggered_only = yes
+	
+	option = { #Awww :(
+		name = skaelinger.43.a
+		add_political_power = -10
+	}
+}
+
+country_event = { #RTH looking for the cause of the coup attempt
+	id = skaelinger.44
+	title = skaelinger.44.t
+	desc = skaelinger.44.d
+	
+	is_triggered_only = yes
+	
+	option = { #Ignore the conspiracy theories about Skaelinger funding
+		name = skaelinger.44.a
+		ai_chance = {
+			factor = 2
+			modifier = {
+				check_variable = { SKA_coup_attempt = 2 }
+				factor = 0
+			}
+		}
+		add_stability = 0.05
+	}
+	option = { #Cut off all ties with teh SKA
+		name = skaelinger.44.b
+		ai_chance = {
+			factor = 4
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = guarantee
+			active = no
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = military_access
+			active = no
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = non_aggression_pact
+			active = no
+		}
+	}
+}
+
+country_event = { #yooooo aristocratic influence
+	id = skaelinger.45
+	title = skaelinger.45.t
+	desc = skaelinger.45.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SKA
+		has_completed_focus = SKA_funding_moderate_rthaur
+		RTH = {
+			has_idea = alyssyna_lavynthis
+		}
+	}
+	
+	option = { #Don't look a gift horse in the mouth
+		name = skaelinger.45.a
+		custom_effect_tooltip = SKA_increase_moderate_inf_in_RTH
+		add_to_variable = {
+			SKA_RTH_moderate_power_inf = 10
+		}
+		clamp_variable = {
+			var = SKA_RTH_moderate_power_inf
+			min = 0
+			max = 100
+		}
+	}
+}
+
+country_event = { #Social War Beginning
+	id = skaelinger.46
+	title = skaelinger.46.t
+	desc = skaelinger.46.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SKA
+		has_war_with = ORD
+		RTH = {
+			has_war_with = ORD
+		}
+	}
+	
+	option = { #lessssgoooo
+		name = skaelinger.46.a
+		unlock_decision_category_tooltip = SKA_social_war_decisions
+		set_country_flag = social_war_beginning
+		add_to_variable = { SKA_social_war_soltruist_inf = 2 }
+		if = {
+			limit = { has_country_flag = SKA_legalized_boe_debates }
+			add_to_variable = { SKA_social_war_boe_inf = 4 }
+			else = {
+				add_to_variable = { SKA_social_war_boe_inf = 2 }
+			}
+		}
+		if = {
+			limit = { NOT = { has_country_flag = SKA_iron_bloods_purged } }
+			add_to_variable = { SKA_social_war_iron_blood_inf = 1 }
+		}
+	}
+}
+
+country_event = { #Iron Blood Influence over military
+	id = skaelinger.47
+	title = skaelinger.47.t
+	desc = skaelinger.47.d
+	
+	is_triggered_only = yes
+	
+	option = { #Game Time
+		name = skaelinger.47.a
+		random_list = {
+			25 = {
+				add_timed_idea = {
+					idea = SKA_iron_blood_influence_1
+					days = 75
+				}
+			}
+			25 = {
+				add_timed_idea = {
+					idea = SKA_iron_blood_influence_2
+					days = 75
+				}
+			}
+			25 = {
+				add_timed_idea = {
+					idea = SKA_iron_blood_influence_3
+					days = 75
+				}
+			}
+			25 = {
+				add_timed_idea = {
+					idea = SKA_iron_blood_influence_4
+					days = 75
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Iron Blood Influence over military
+	id = skaelinger.48
+	title = skaelinger.48.t
+	desc = skaelinger.48.d
+	
+	is_triggered_only = yes
+	
+	option = { #Game Time
+		name = skaelinger.48.a
+		division_template = {
+			name = "Iron-Blooded Knights"
+			is_locked = yes
+			regiments = {
+				men_at_arms = { x = 0 y = 0 }
+				men_at_arms = { x = 0 y = 1 }
+		       	halberdier = { x = 0 y = 2 }
+				men_at_arms = { x = 1 y = 0 }
+				men_at_arms = { x = 1 y = 1 }
+				halberdier = { x = 1 y = 2 }
+				men_at_arms = { x = 2 y = 0 }
+				men_at_arms = { x = 2 y = 1 }
+				halberdier = { x = 2 y = 2 }
+			}
+		}
+		if = {
+			limit = { check_variable = { SKA_social_war_iron_blood_inf > 3 } }
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Iron-Blooded Knights\" start_experience_factor = 0.4" 
+					owner = SKA
+					allow_spawning_on_enemy_provs = yes
+					count = 3
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Iron-Blooded Knights\" start_experience_factor = 0.4" 
+						owner = SKA
+						allow_spawning_on_enemy_provs = yes
+						count = 2
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Iron Blood Influence over military but bad
+	id = skaelinger.49
+	title = skaelinger.49.t
+	desc = skaelinger.49.d
+	
+	is_triggered_only = yes
+	
+	option = { #Uh oh
+		name = skaelinger.49.a
+		add_timed_idea = {
+			idea = SKA_iron_blood_military_indoctrination
+			days = 75
+		}
+	}
+}
+
+news_event = { #Skaelinger renounces claims on us
+	id = skaelinger.50
+	title = skaelinger.50.t
+	desc = skaelinger.50.d
+	
+	is_triggered_only = yes
+	
+	option = { #yooooo epic
+		name = skaelinger.50.a
+	}
+}
+
+country_event = { #Iron Bloods Abandon Army after war
+	id = skaelinger.51
+	title = skaelinger.51.t
+	desc = skaelinger.51.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SKA
+		check_variable = { SKA_social_war_iron_blood_inf > 1 }
+		has_template = "Iron-Blooded Knights"
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+	
+	option = { #yooooo epic
+		name = skaelinger.51.a
+		delete_unit_template_and_units = {
+			division_template = "Iron-Blooded Knights"
+			disband = no
+		}
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.03
+		}
+		add_stability = -0.05
+		add_war_support = -0.1
+	}
+}
+
+country_event = { #Social War Ends, Bad Tie
+	id = skaelinger.52
+	title = skaelinger.52.t
+	desc = skaelinger.52.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SKA
+		check_variable = { SKA_social_war_boe_inf = SKA_social_war_soltruist_inf }
+		check_variable = { SKA_social_war_boe_inf > 4 }
+		has_country_flag = SKA_social_war_STOP
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		hidden_effect = {			
+			add_ideas = GENERIC_civil_war_isolation
+			set_country_flag = SKA_social_war_tie_occurred
+			delete_unit_template_and_units = {
+				division_template = "Paramilitarists"
+			}
+			SKR = {
+				transfer_state = 186 #Always
+				transfer_state = 187 #Always
+				set_capital = {
+					state = 186 #Votrosr
+				}
+				load_oob = "SKA_empty"
+				add_ideas = GENERIC_civil_war_isolation
+				add_popularity = {
+					ideology = republic_peasant
+					popularity = 0.8
+				}
+				set_politics = {
+					ruling_party = republic_peasant
+					elections_allowed = no
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 5 } } }
+					transfer_state = 152
+					transfer_state = 1278 #impassable
+					transfer_state = 190 #impassable
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 250
+						producer = SKA
+					}
+					add_manpower = 1000
+					152 = {
+						create_unit = {
+							division = "name = \"Equalist Militia\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.3" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
+					186 = { #Capital
+						create_unit = {
+							division = "name = \"Equalist Militia\" division_template = \"Cave Cleaners\" start_experience_factor = 0.3" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 6 } } }
+					transfer_state = 154
+					transfer_state = 162
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1000
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 500
+						producer = SKA
+					}
+					add_manpower = 1500
+					154 = {
+						create_unit = {
+							division = "name = \"Equalist Band\" division_template = \"Cave Cleaners\" start_experience_factor = 0.4" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
+					162 = {
+						create_unit = {
+							division = "name = \"Equalist Band\" division_template = \"Cave Cleaners\" start_experience_factor = 0.4" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 7 } } }
+					transfer_state = 155
+					transfer_state = 1277 #impassable
+					transfer_state = 153
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 1000
+						producer = SKA
+					}
+					add_manpower = 3500
+					155 = {
+						create_unit = {
+							division = "name = \"Equalist Host\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.5" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
+					153 = {
+						create_unit = {
+							division = "name = \"Equalist Host\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.5" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 8 } } }
+					transfer_state = 150
+					transfer_state = 156 #impassable
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 2500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 1500
+						producer = SKA
+					}
+					add_manpower = 5000
+					186 = {
+						create_unit = {
+							division = "name = \"Equalist Brotherhood\" division_template = \"Mountainbreakers\" start_experience_factor = 0.6" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 3
+						}
+					}
+					156 = {
+						create_unit = {
+							division = "name = \"Equalist Brotherhood\" division_template = \"Mountainbreakers\" start_experience_factor = 0.6" 
+							owner = SKR
+							allow_spawning_on_enemy_provs = yes
+							count = 3
+						}
+					}
+				}
+				every_state = {
+					limit = { is_core_of = SKA }
+					add_core_of = PREV
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Equalist Rebels\" division_template = \"Hearthguards\" start_experience_factor = 0.2" 
+						owner = SKR
+						allow_spawning_on_enemy_provs = yes
+						count = 5
+					}
+				}
+			}
+			if = {
+				limit = { check_variable = { SKA_social_war_boe_inf > 5 } }
+				transfer_units_fraction = {
+					target = SKR
+					size = 0.3
+					stockpile_ratio = 0.3
+					army_ratio = 0.3
+				}
+				else = {
+					transfer_units_fraction = {
+						target = SKR
+						size = 0.2
+						stockpile_ratio = 0.2
+						army_ratio = 0.2
+					}
+				}
+			}
+			SKP = {
+			
+				transfer_state = 149 #Always
+				transfer_state = 163 #Always
+				set_capital = {
+					state = 149 #Hostringr
+				}
+			
+				load_oob = "SKA_empty"
+				add_ideas = GENERIC_civil_war_isolation
+				add_popularity = {
+					ideology = puritan
+					popularity = 0.8
+				}
+				set_politics = {
+					ruling_party = puritan
+					elections_allowed = no
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 5 } } } 
+					transfer_state = 149
+					transfer_state = 168 #Impassable
+					transfer_state = 160
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 250
+						producer = SKA
+					}
+					add_manpower = 1000
+					149 = {
+						create_unit = {
+							division = "name = \"Soltruist Militia\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.3" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
+					160 = {
+						create_unit = {
+							division = "name = \"Soltruist Militia\" division_template = \"Cave Cleaners\" start_experience_factor = 0.3" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 6 } } }
+					transfer_state = 184
+					transfer_state = 1280 #Impassable
+					transfer_state = 161
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1000
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 500
+						producer = SKA
+					}
+					add_manpower = 1500
+					184 = {
+						create_unit = {
+							division = "name = \"Soltruist Band\" division_template = \"Cave Cleaners\" start_experience_factor = 0.4" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
+					161 = {
+						create_unit = {
+							division = "name = \"Soltruist Band\" division_template = \"Cave Cleaners\" start_experience_factor = 0.4" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+					}
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 7 } } }
+					transfer_state = 175
+					transfer_state = 159 #Impassable
+					transfer_state = 158
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 1000
+						producer = SKA
+					}
+					add_manpower = 3500
+					175 = {
+						create_unit = {
+							division = "name = \"Soltruist Host\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.5" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
+					158 = {
+						create_unit = {
+							division = "name = \"Soltruist Host\" division_template = \"Tunnel Fighters\" start_experience_factor = 0.5" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 8 } } }
+					transfer_state = 166
+					transfer_state = 169 #Impassable
+					transfer_state = 167
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 2500
+						producer = SKA
+					}
+					add_equipment_to_stockpile = {
+						type = ranged_equipment
+						amount = 1500
+						producer = SKA
+					}
+					add_manpower = 5000
+					166 = {
+						create_unit = {
+							division = "name = \"Soltruist Brotherhood\" division_template = \"Mountainbreakers\" start_experience_factor = 0.6" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 3
+						}
+					}
+					167 = {
+						create_unit = {
+							division = "name = \"Soltruist Brotherhood\" division_template = \"Mountainbreakers\" start_experience_factor = 0.6" 
+							owner = SKP
+							allow_spawning_on_enemy_provs = yes
+							count = 3
+						}
+					}
+				}
+				every_state = {
+					limit = { is_core_of = SKA }
+					add_core_of = PREV
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Soltruist Rebels\" division_template = \"Hearthguards\" start_experience_factor = 0.2" 
+						owner = SKP
+						allow_spawning_on_enemy_provs = yes
+						count = 5
+					}
+				}
+			}
+			if = {
+				limit = { check_variable = { SKA_social_war_soltruist_inf > 5 } }
+				transfer_units_fraction = {
+					target = SKP
+					size = 0.3
+					stockpile_ratio = 0.3
+					army_ratio = 0.3
+				}
+				else = {
+					transfer_units_fraction = {
+						target = SKP
+						size = 0.2
+						stockpile_ratio = 0.2
+						army_ratio = 0.2
+					}
+				}
+			}
+			add_popularity = {
+				ideology = puritan
+				popularity = -0.15
+			}
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.15
+			}
+		}
+	}
+	
+	option = { #Uh oh
+		name = skaelinger.52.a
+		SKP = {
+			declare_war_on = {
+				target = SKR
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = SKA
+				type = annex_everything
+			}
+			add_civil_war_target = SKR
+			add_civil_war_target = SKA
+		}
+		SKR = {
+			declare_war_on = {
+				target = SKA
+				type = annex_everything
+			}
+			add_civil_war_target = SKA
+		}
+	}
+}
+
+country_event = { #Social War - Soltruist Revolt
+	id = skaelinger.53
+	title = skaelinger.53.t
+	desc = skaelinger.53.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SKA
+		check_variable = { SKA_social_war_boe_inf < SKA_social_war_soltruist_inf }
+		check_variable = { SKA_social_war_soltruist_inf > 2 }
+		has_country_flag = SKA_social_war_STOP
+		has_completed_focus = SKA_shore_up_the_caste_system
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		set_country_flag = SKA_social_war_puritan_victory
+		hidden_effect = {
+			delete_unit_template_and_units = {
+				division_template = "Paramilitarists"
+			}
+			add_ideas = GENERIC_civil_war_isolation
+			SKP = {
+				add_ideas = GENERIC_civil_war_isolation
+				add_popularity = {
+					ideology = puritan
+					popularity = 0.8
+				}
+				set_politics = {
+					ruling_party = puritan
+					elections_allowed = no
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 1 } } } 
+					transfer_state = 149
+					transfer_state = 168
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 2 } } }
+					transfer_state = 160
+					transfer_state = 163
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 3 } } }
+					transfer_state = 159
+					transfer_state = 184
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_soltruist_inf > 5 } } }
+					transfer_state = 158
+					transfer_state = 169
+				}
+				every_state = {
+					limit = { is_core_of = SKA }
+					add_core_of = PREV
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Soltruist Militia\" division_template = \"Hearthguards\" start_experience_factor = 0.2" 
+						owner = SKP
+						allow_spawning_on_enemy_provs = yes
+						count = 5
+					}
+				}
+			}
+			if = {
+				limit = { check_variable = { SKA_social_war_soltruist_inf > 3 } }
+				transfer_units_fraction = {
+					target = SKP
+					size = 0.4
+					stockpile_ratio = 0.4
+					army_ratio = 0.4
+				}
+				else = {
+					transfer_units_fraction = {
+						target = SKP
+						size = 0.3
+						stockpile_ratio = 0.3
+						army_ratio = 0.3
+					}
+				}
+			}
+			add_popularity = {
+				ideology = puritan
+				popularity = -0.15
+			}
+		}
+	}
+	
+	option = { #Uh oh
+		name = skaelinger.53.a
+		SKP = {
+			declare_war_on = {
+				target = SKA
+				type = annex_everything
+			}
+			add_civil_war_target = SKA
+		}
+	}
+}
+
+country_event = { #Social War - Brotherhood Revolt
+	id = skaelinger.54
+	title = skaelinger.54.t
+	desc = skaelinger.54.d
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	trigger = {
+		tag = SKA
+		check_variable = { SKA_social_war_boe_inf > SKA_social_war_soltruist_inf }
+		check_variable = { SKA_social_war_soltruist_inf > 2 }
+		has_country_flag = SKA_social_war_STOP
+		has_completed_focus = SKA_shore_up_the_caste_system
+		NOT = {
+			has_war_with = ORD
+			has_country_flag = SKA_legalized_boe_debates
+		}
+	}
+
+	immediate = {
+		set_country_flag = SKA_fought_second_scheme_war_already
+		set_country_flag = SKA_social_war_radical_republican_victory
+		hidden_effect = {
+			delete_unit_template_and_units = {
+				division_template = "Paramilitarists"
+			}
+			add_ideas = GENERIC_civil_war_isolation
+			SKR = {
+				add_ideas = GENERIC_civil_war_isolation
+				add_popularity = {
+					ideology = republic_peasant
+					popularity = 0.8
+				}
+				set_politics = {
+					ruling_party = republic_peasant
+					elections_allowed = no
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 1 } } }
+					transfer_state = 186
+					transfer_state = 190
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 2 } } }
+					transfer_state = 154
+					transfer_state = 162
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 3 } } }
+					transfer_state = 155
+					transfer_state = 187
+				}
+				if = {
+					limit = { SKA = { check_variable = { SKA_social_war_boe_inf > 5 } } }
+					transfer_state = 150
+					transfer_state = 156
+				}
+				every_state = {
+					limit = { is_core_of = SKA }
+					add_core_of = PREV
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Equalist Militia\" division_template = \"Hearthguards\" start_experience_factor = 0.2" 
+						owner = SKR
+						allow_spawning_on_enemy_provs = yes
+						count = 5
+					}
+				}
+			}
+			if = {
+				limit = { check_variable = { SKA_social_war_boe_inf > 3 } }
+				transfer_units_fraction = {
+					target = SKR
+					size = 0.4
+					stockpile_ratio = 0.4
+					army_ratio = 0.4
+				}
+				else = {
+					transfer_units_fraction = {
+						target = SKR
+						size = 0.3
+						stockpile_ratio = 0.3
+						army_ratio = 0.3
+					}
+				}
+			}
+			add_popularity = {
+				ideology = republic_peasant
+				popularity = -0.15
+			}
+		}
+	}
+	
+	option = { #Uh oh
+		name = skaelinger.54.a
+		SKR = {
+			declare_war_on = {
+				target = SKA
+				type = annex_everything
+			}
+			add_civil_war_target = SKA
+		}
+	}
+}
+
+country_event = { #Social War - Brotherhood Mobilization
+	id = skaelinger.55
+	title = skaelinger.55.t
+	desc = skaelinger.55.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SKA
+		has_template = "Hearthguards"
+		has_war_with = ORD
+		RTH = {
+			has_war_with = ORD
+			surrender_progress > 0.15
+		}
+	}
+	
+	option = { #WAAAAAAAAGH but socialist
+		name = skaelinger.55.a
+		random_state = {
+			limit = { is_owned_by = RTH is_controlled_by = RTH is_core_of = RTH }
+			create_unit = {
+				division = "name = \"Equality Militia\" division_template = \"Hearthguards\" start_experience_factor = 0.2" 
+				owner = SKA
+				allow_spawning_on_enemy_provs = yes
+				count = 3
+			}
+		}
+		add_to_variable = { SKA_social_war_boe_inf = 1 }
+	}
+}
+
+country_event = { #Social War - Soltruist Mobilization
+	id = skaelinger.56
+	title = skaelinger.56.t
+	desc = skaelinger.56.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SKA
+		has_template = "Hearthguards"
+		puritan > 0.05
+		has_war_with = ORD
+		RTH = {
+			has_war_with = ORD
+		}
+	}
+	
+	option = { #WAAAAAAAAGH but fascist
+		name = skaelinger.56.a
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"Mohrok's Faithful\" division_template = \"Hearthguards\" start_experience_factor = 0.2" 
+				owner = SKA
+				allow_spawning_on_enemy_provs = yes
+				count = 2
+			}
+		}
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.03
+		}
+		add_to_variable = { SKA_social_war_soltruist_inf = 1 }
+	}
+}
+
+country_event = { #SKA wants to become your sugar daddy
+	id = skaelinger.57
+	title = skaelinger.57.t
+	desc = skaelinger.57.d
+
+	is_triggered_only = yes
+	
+	option = { #Sure
+		name = skaelinger.57.a
+		add_offsite_building = {
+			type = workshop
+			level = 2
+		}
+	}
+	option = { #Not when you phrase it like that
+		name = skaelinger.57.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #people in mines starting to go crazy
+	id = skaelinger.58
+	title = skaelinger.58.t
+	desc = skaelinger.58.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			add_stability = -0.005
+		}
+	}
+	
+	option = { #:thonk:
+		name = skaelinger.58.a
+	}
+}
+
+country_event = { #gold rush
+	id = skaelinger.59
+	title = skaelinger.59.t
+	desc = skaelinger.59.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			every_state = {
+				limit = { has_state_flag = gold_rush_encurring }
+				add_manpower = 750
+				clr_state_flag = gold_rush_encurring
+			}
+		}
+	}
+	
+	option = { #Shiny
+		name = skaelinger.59.a
+		add_timed_idea = {
+			idea = SKA_gold_rush
+			days = 60
+		}
+	}
+}
+
+country_event = { #uh oh demon
+	id = skaelinger.60
+	title = skaelinger.60.t
+	desc = skaelinger.60.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SKA
+		OR = {
+			check_variable = { 162_mining_progress = 10 }
+			check_variable = { 160_mining_progress = 10 }
+			check_variable = { 191_mining_progress = 10 }
+			check_variable = { 151_mining_progress = 10 }
+		}
+		has_war = no
+	}
+	
+	option = { #Cordon off the area immediately
+		name = skaelinger.60.a
+		random_state = {
+			limit = { has_state_flag = SKA_demon_can_come }
+			set_demilitarized_zone = yes
+		}
+		set_country_flag = SKA_demon_released
+		activate_mission = SKA_demon_moving_mission
+		hidden_effect = {
+			every_state = {
+				limit = {
+					has_state_flag = SKA_demon_can_come
+					is_demilitarized_zone = no
+				}
+				clr_state_flag = SKA_demon_can_come
+			}
+		}
+	}
+}
+
+country_event = { #demon be zooomin and nyoomin
+	id = skaelinger.61
+	title = skaelinger.61.t
+	desc = skaelinger.61.d
+
+	is_triggered_only = yes
+	
+	option = { #Cordon off the area immediately
+		name = skaelinger.61.a
+		add_stability = -0.01
+		random_owned_controlled_state = {
+			limit = { is_demilitarized_zone = yes has_state_flag = SKA_demon_can_come }
+			clr_state_flag = SKA_demon_can_come
+			set_state_flag = SKA_demon_moved_from_here
+			set_demilitarized_zone = no
+			damage_building = {
+				type = workshop
+				damage = 0.25
+			}
+		}
+		random_owned_controlled_state = {
+			limit = { any_neighbor_state = { has_state_flag = SKA_demon_moved_from_here } }
+			set_demilitarized_zone = yes
+			set_state_flag = SKA_demon_can_come
+			damage_building = {
+				type = infrastructure
+				damage = 0.25
+			}
+		}
+		activate_mission = SKA_demon_moving_mission
+	}
+}
+
+country_event = { #Demon Slain
+	id = skaelinger.62
+	title = skaelinger.62.t
+	desc = skaelinger.62.d
+
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = skaelinger.62.a
+		every_state = {
+			limit = { is_demilitarized_zone = yes }
+			set_demilitarized_zone = no
+		}
+		add_stability = 0.1
+		add_political_power = 50
+	}
+}
+
+country_event = { #Grimvald offers trade in exchange for a non-aggression pact
+	id = skaelinger.63
+	title = skaelinger.63.t
+	desc = {
+		text = skaelinger.63.d1
+		trigger = { tag = ORD }
+	}
+	desc = {
+		text = skaelinger.63.d2
+		trigger = { NOT = { tag = ORD } }
+	}
+
+	is_triggered_only = yes
+	
+	option = { #Sure
+		name = skaelinger.63.a
+		add_offsite_building = {
+			type = workshop
+			level = 2
+		}
+		random_owned_controlled_state = {
+			add_resource = {
+				type = steel
+				amount = 10
+			}
+		}
+		diplomatic_relation = {
+			country = SKA
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+	option = { #*wink*
+		name = skaelinger.63.b
+		add_offsite_building = {
+			type = workshop
+			level = 1
+		}
+	}
+}
+
+country_event = { #SKA builds up Loris Pass for us
+	id = skaelinger.64
+	title = skaelinger.64.t
+	desc = skaelinger.64.d
+
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = skaelinger.64.a
+		add_war_support = 0.05
+	}
+}
+
+country_event = { #Hellirfasts Final Decree
+	id = skaelinger.65
+	title = skaelinger.65.t
+	desc = skaelinger.65.d
+
+	is_triggered_only = yes
+	
+	option = { #Diplomacy
+		name = skaelinger.65.a
+		add_ideas = SKA_hellirfast_diplo
+	}
+	option = { #Stability
+		name = skaelinger.65.b
+		add_ideas = SKA_hellirfast_stability
+	}
+	option = { #wealth
+		name = skaelinger.65.c
+		add_ideas = SKA_hellirfast_wealth
+	}
+}
+
+country_event = { #Typical YA novel about a girl deciding to stand up to totalitarian state
+	id = skaelinger.66
+	title = skaelinger.66.t
+	desc = skaelinger.66.d
+
+	is_triggered_only = yes
+	
+	option = { #General Revolt Choice
+		name = skaelinger.66.a
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.02
+		}
+		add_to_variable = { SKA_second_scheme_strength = 1 }
+		country_event = { id = skaelinger.67 days = 5 }
+	}
+	option = { #Coup
+		name = skaelinger.66.b
+		add_stability = -0.01
+		add_to_variable = { SKA_second_scheme_strength = 2 }
+		country_event = { id = skaelinger.68 days = 5 }
+	}
+}
+
+country_event = { #stirring popular opinion
+	id = skaelinger.67
+	title = skaelinger.67.t
+	desc = skaelinger.67.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = skaelinger.69 days = 20 }
+		}
+	}
+	
+	option = { #Talk horrors of Iron Bloods
+		name = skaelinger.67.a
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = -0.08
+		}
+		add_to_variable = { SKA_second_scheme_strength = 2 }
+	}
+	option = { #Talk about glory of Rthaur
+		name = skaelinger.67.b
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.04
+		}
+		add_to_variable = { SKA_second_scheme_strength = 1 }
+	}
+}
+
+country_event = { #selecting who to coup with
+	id = skaelinger.68
+	title = skaelinger.68.t
+	desc = skaelinger.68.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = skaelinger.69 days = 20 }
+		}
+	}
+	
+	option = { #Troops trained by Rthaur veterans
+		name = skaelinger.68.a
+		army_experience = 5
+		add_to_variable = { SKA_second_scheme_strength = 2 }
+	}
+	option = { #General mob hope it works
+		name = skaelinger.68.b
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.04
+		}
+		add_to_variable = { SKA_second_scheme_strength = 1 }
+	}
+}
+
+country_event = { #Raiding armory
+	id = skaelinger.69 #nice
+	title = skaelinger.69.t
+	desc = skaelinger.69.d
+
+	is_triggered_only = yes
+	
+	option = { #steeel
+		name = skaelinger.69.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -200
+		}
+		add_to_variable = { SKA_second_scheme_strength = 1 }
+	}
+	option = { #Seduce the guard? Only adding this option because of the event number
+		name = skaelinger.69.b
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.01
+		}
+		add_to_variable = { SKA_second_scheme_strength = 1 }
+	}
+}
+
+country_event = { #The coup
+	id = skaelinger.70
+	title = skaelinger.70.t
+	desc = skaelinger.70.d
+
+	is_triggered_only = yes
+	
+	option = { #coup goes cleanly
+		name = skaelinger.70.a
+		trigger = {
+			check_variable = {
+				SKA_second_scheme_strength > 5
+			}
+		}
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.1
+		}
+		set_politics = {
+			ruling_party = republic_peasant
+			elections_allowed = no
+		}
+	}
+	option = { #chaotic but successful
+		name = skaelinger.70.b
+		trigger = {
+			OR = {
+				check_variable = { SKA_second_scheme_strength = 5 }
+				AND = {
+					republic_peasant > 0.25
+					check_variable = { SKA_second_scheme_strength = 4 }
+				}
+			}
+		}
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.15
+		}
+		set_politics = {
+			ruling_party = republic_peasant
+			elections_allowed = no
+		}
+		add_timed_idea = {
+			idea = RTH_disorganized_revolution 
+			days = 180
+		}
+	}
+	option = { #slaughter
+		name = skaelinger.70.c
+		trigger = {
+			OR = {
+				check_variable = { SKA_second_scheme_strength < 5 }
+				republic_peasant < 0.33
+			}
+			AND = {
+				check_variable = { SKA_second_scheme_strength < 4 }
+			}
+		}
+		add_ideas = GENERIC_civil_war_isolation
+		hidden_effect = {
+			SKR = {
+				transfer_state = 186
+				transfer_state = 190
+				transfer_state = 154
+				transfer_state = 162
+				transfer_state = 155
+				transfer_state = 187
+				transfer_state = 150
+				transfer_state = 156
+				transfer_state = 152
+				transfer_state = 158
+				transfer_state = 159
+				transfer_state = 166
+
+				every_state = {
+					limit = { is_core_of = SKA }
+					add_core_of = PREV
+				}
+				
+				add_ideas = GENERIC_civil_war_isolation
+				
+				add_popularity = {
+					ideology = republic_peasant
+					popularity = 0.8
+				}
+				
+				set_politics = {
+					ruling_party = republic_peasant
+					elections_allowed = no
+				}
+				
+				add_timed_idea = {
+					idea = RTH_disorganized_revolution 
+					days = 365
+				}
+			}
+			
+			transfer_units_fraction = {
+				target = SKR
+				size = 0.6
+				stockpile_ratio = 0.6
+				army_ratio = 0.6
+			}
+			
+			declare_war_on = {
+				target = SKR
+				type = annex_everything
+			}
+			
+			SKR = {
+				change_tag_from = SKA
+				add_civil_war_target = SKA
+			}
+		}
+	}
+}
+
+country_event = { #The Grand Offering to Mohrok
+	id = skaelinger.71
+	title = skaelinger.71.t
+	desc = skaelinger.71.d
+
+	is_triggered_only = yes
+	
+	option = { #coup goes cleanly
+		name = skaelinger.71.a
+		trigger = {
+			check_variable = {
+				SKA_second_scheme_strength > 4
+			}
+		}
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.1
+		}
+		set_politics = {
+			ruling_party = puritan
+			elections_allowed = no
+		}
+	}
+	option = { #chaotic but successful
+		name = skaelinger.71.b
+		trigger = {
+			OR = {
+				check_variable = { SKA_second_scheme_strength = 4 }
+				AND = {
+					puritan > 0.25
+					check_variable = { SKA_second_scheme_strength = 3 }
+				}
+			}
+		}
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.05
+		}
+		set_politics = {
+			ruling_party = puritan
+			elections_allowed = no
+		}
+		add_stability = -0.05
+	}
+	option = { #slaughter
+		name = skaelinger.71.c
+		trigger = {
+			OR = {
+				check_variable = { SKA_second_scheme_strength < 5 }
+				puritan < 0.33
+			}
+			AND = {
+				check_variable = { SKA_second_scheme_strength < 4 }
+			}
+		}
+		add_ideas = GENERIC_civil_war_isolation
+		hidden_effect = {
+			SKP = {
+				transfer_state = 149
+				transfer_state = 168
+				transfer_state = 160
+				transfer_state = 163
+				transfer_state = 159
+				transfer_state = 184
+				transfer_state = 158
+				transfer_state = 169
+				transfer_state = 152
+				transfer_state = 166
+
+				every_state = {
+					limit = { is_core_of = SKA }
+					add_core_of = PREV
+				}
+				
+				add_ideas = GENERIC_civil_war_isolation
+				
+				add_popularity = {
+					ideology = puritan
+					popularity = 0.8
+				}
+				
+				set_politics = {
+					ruling_party = puritan
+					elections_allowed = no
+				}
+				
+				add_timed_idea = {
+					idea = RTH_disorganized_revolution 
+					days = 365
+				}
+			}
+			
+			transfer_units_fraction = {
+				target = SKP
+				size = 0.6
+				stockpile_ratio = 0.6
+				army_ratio = 0.6
+			}
+			
+			declare_war_on = {
+				target = SKP
+				type = annex_everything
+			}
+			
+			SKP = {
+				change_tag_from = SKA
+				add_civil_war_target = SKA
+			}
+		}
+	}
+}
+
+news_event = { #1st Lathweyne Communalist Conference
+	id = skaelinger.72
+	title = skaelinger.72.t
+	desc = skaelinger.72.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { original_tag = SKA } }
+			SKA = {
+				FROM_improve_THIS_relations = yes
+			}
+		}
+	}
+	
+	option = { #
+		name = skaelinger.72.a
+	}
+}
+
+country_event = { #Putting down a clanhold
+	id = skaelinger.73
+	title = skaelinger.73.t
+	desc = skaelinger.73.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SKA
+		has_government = republic_peasant
+	}
+	
+	option = { #put down the resisting clanhold
+		name = skaelinger.73.a
+		random_owned_controlled_state = {
+			add_manpower = -200
+			damage_building = {
+				type = infrastructure
+				damage = 0.5
+			}
+		}
+	}
+}
+
+country_event = { #Universal suffrage for women?
+	id = skaelinger.74
+	title = skaelinger.74.t
+	desc = skaelinger.74.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SKA
+		OR = {
+			has_idea = SKA_universal_suffrage_radical
+			AND = {
+				has_idea = SKA_universal_suffrage_idea
+				has_country_flag = SKA_legalized_boe_debates
+			}
+		}
+	}
+	
+	option = { #Soudns very epic
+		name = skaelinger.74.a
+		if = {
+			limit = { has_idea = SKA_universal_suffrage_radical }
+			remove_ideas = SKA_universal_suffrage_radical
+		}
+		if = {
+			limit = { has_idea = SKA_universal_suffrage }
+			remove_ideas = SKA_universal_suffrage
+		}
+		add_ideas = SKA_universal_suffrage_women
+	}
+	option = { #No because we are all epic gamers and believe women belong in the kitchen
+		name = skaelinger.74.b
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = -0.015
+		}
+	}
+}
+
+country_event = { #Hardliner Legionnaire Revolt
+	id = skaelinger.75
+	title = skaelinger.75.t
+	desc = skaelinger.75.d
+
+	is_triggered_only = yes
+	
+	option = { #They're insane
+		name = skaelinger.75.a
+		hidden_effect = {
+			SKP = {
+				add_popularity = {
+					ideology = puritan
+					popularity = 0.8
+				}
+				set_politics = {
+					ruling_party = puritan
+					elections_allowed = no
+				}
+				retire_ideology_leader = puritan
+				create_country_leader = {
+					name = "Sigurdar Hakonson"
+					desc = "POLITICS_REEV_HELLIRFAST_DESC"
+					picture = "gfx/leaders/SKA/Portrait_SKA_Hakonson.dds"
+					expire = "990.1.1"
+					ideology = puritan_ideology
+					traits = {
+					}
+				}
+				transfer_state = 149
+				transfer_state = 168
+				transfer_state = 160
+				transfer_state = 163
+				if = {
+					limit = { SKA = { check_variable = { SKA_radical_soltruist_anger > 4 } } }
+					transfer_state = 159
+					transfer_state = 184
+					transfer_state = 158
+					transfer_state = 169
+				}
+			}
+			if = {
+				limit = { check_variable = { SKA_radical_soltruist_anger > 4 } }
+				transfer_units_fraction = {
+					target = SKP
+					size = 0.33
+					stockpile_ratio = 0.33
+					army_ratio = 0.33
+				}
+				else = {
+					transfer_units_fraction = {
+						target = SKP
+						size = 0.25
+						stockpile_ratio = 0.25
+						army_ratio = 0.25
+					}
+				}
+			}
+			every_state = {
+				limit = { is_core_of = SKA }
+				add_core_of = PREV
+			}
+		}
+		SKP = {
+			declare_war_on = {
+				target = SKA
+				type = annex_everything
+			}
+		}
+	}
+	option = { #We're insane >:) hehehehehe
+		name = skaelinger.75.b
+		retire_ideology_leader = puritan
+		create_country_leader = {
+			name = "Sigurdar Hakonson"
+			desc = "POLITICS_REEV_HELLIRFAST_DESC"
+			picture = "gfx/leaders/SKA/Portrait_SKA_Hakonson.dds"
+			expire = "990.1.1"
+			ideology = puritan_ideology
+			traits = {
+			}
+		}
+		hidden_effect = {
+			SKP = {
+				add_popularity = {
+					ideology = puritan
+					popularity = 0.8
+				}
+				set_politics = {
+					ruling_party = puritan
+					elections_allowed = no
+				}
+				transfer_state = 149
+				transfer_state = 168
+				transfer_state = 160
+				transfer_state = 163
+				transfer_state = 159
+				transfer_state = 184
+				transfer_state = 158
+				transfer_state = 169
+			}
+			if = {
+				limit = { check_variable = { SKA_radical_soltruist_anger < 5 } }
+				transfer_units_fraction = {
+					target = SKP
+					size = 0.33
+					stockpile_ratio = 0.33
+					army_ratio = 0.33
+				}
+				else = {
+					transfer_units_fraction = {
+						target = SKP
+						size = 0.25
+						stockpile_ratio = 0.25
+						army_ratio = 0.25
+					}
+				}
+			}
+			every_state = {
+				limit = { is_core_of = SKA }
+				add_core_of = PREV
+			}
+		}
+		SKP = {
+			declare_war_on = {
+				target = SKA
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = { #RMT gets event saying they're being converted to republicans >:)
+	id = skaelinger.76
+	title = skaelinger.76.t
+	desc = skaelinger.76.d
+	
+	is_triggered_only = yes
+	
+	option = { #unbased
+		name = skaelinger.76.a
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.05
+		}
+		add_timed_idea = {
+			idea = republic_peasant_drift_idea 
+			days = 180
+		}
+		add_opinion_modifier = {
+			target = SKA
+			modifier = annoyed_opinion 
+		}
+	}
+}
+
+country_event = { #RMT radical coup
+	id = skaelinger.77
+	title = skaelinger.77.t
+	desc = skaelinger.77.d
+	
+	is_triggered_only = yes
+	
+	option = { #It succeeds
+		name = skaelinger.77.a
+		ai_chance = {
+			factor = 3
+			modifier = {
+				add = -1
+				republic_peasant > 0.45
+			}
+		}
+		set_politics = {
+			ruling_party = republic_peasant
+		}
+		add_stability = 0.05
+	}
+	option = { #Civil War go brrrrr
+		name = skaelinger.77.b
+		ai_chance = {
+			factor = 2
+			modifier = {
+				add = 2
+				republic_peasant > 0.4
+			}
+		}
+		start_civil_war = {
+			ideology = republic_peasant
+		}
+		hidden_effect = {
+			SKA = {
+				country_event = { id = skaelinger.78 hours = 6 random = 6 }
+			}
+		}
+	}
+}
+
+country_event = { #RMT civil war event for SKA, they can ally with radicals
+	id = skaelinger.78
+	title = skaelinger.78.t
+	desc = skaelinger.78.d
+	
+	is_triggered_only = yes
+	
+	option = { #We will join our brothers
+		name = skaelinger.78.a
+		if = {
+			limit = { is_faction_leader = no }
+			create_faction_from_template = {
+				template = faction_template_generic_dominance
+				name = freedom_alliance
+				icon = GFX_faction_logo_generic_15
+			}
+		}
+		random_country = {
+			limit = {
+				original_tag = RMT
+				has_government = republic_peasant
+			}
+			hidden_effect = {
+				remove_opinion_modifier = {
+					target = SKA
+					modifier = bitter_rivals
+				}
+				remove_relation_modifier = {
+					target = SKA
+					modifier = bitter_rivals_opinion_modifier
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = SKA
+					value = 200
+				}
+			}
+			SKA = {
+				add_to_faction = PREV
+			}
+		}
+	}
+	option = { #nah bro
+		name = skaelinger.78.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #SKA wants to unite the dwarven ssrs
+	id = skaelinger.79
+	title = skaelinger.79.t
+	desc = skaelinger.79.d
+	
+	is_triggered_only = yes
+	
+	option = { #We will join our brothers
+		name = skaelinger.79.a
+		ai_chance = {
+			factor = 4
+		}
+		SKA = {
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+			country_event = { id = skaelinger.80 hours = 2 }
+		}
+	}
+	option = { #nah bro
+		name = skaelinger.79.b
+		ai_chance = {
+			factor = 1
+		}
+		SKA = {
+			country_event = { id = skaelinger.81 hours = 2 }
+		}
+	}
+}
+
+country_event = { #RMT accepts merging
+	id = skaelinger.80
+	title = skaelinger.80.t
+	desc = skaelinger.80.d
+	
+	is_triggered_only = yes
+	
+	option = { #Yay
+		name = skaelinger.80.a
+		every_state = {
+			limit = { is_core_of = RMT }
+			add_core_of = SKA
+		}
+	}
+}
+
+country_event = { #RMT denies merging
+	id = skaelinger.81
+	title = skaelinger.81.t
+	desc = skaelinger.81.d
+	
+	is_triggered_only = yes
+	
+	option = { #Nayyyyyy
+		name = skaelinger.81.a
+		if = {
+			limit = { is_in_faction_with = RMT }
+			RMT = {
+				leave_faction = yes
+			}
+		}
+		every_state = {
+			limit = { is_core_of = RMT }
+			add_core_of = SKA
+		}
+		create_wargoal = {
+			target = RMT
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Palmekvist deciding whether to coup or not
+	id = skaelinger.82
+	title = skaelinger.82.t
+	desc = skaelinger.82.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SKA
+		has_government = monarchy_absolute
+		has_country_leader = {
+			name = "Kytos Palmekvist"
+			ruling_only = yes
+		}
+		has_war = no
+	}
+	
+	option = { #We will 'save' the Charter
+		name = skaelinger.82.a
+		set_cosmetic_tag = SKA_not_ironblood_absolutism
+		set_party_name = {
+			ideology = monarchy_absolute
+			name = SKA_palmekvist_party
+			long_name = SKA_palmekvist_party
+		}
+		add_stability = 0.05
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.05
+		}
+		if = {
+			limit = {
+				NOT = { has_completed_focus = SKA_the_great_houses }
+			}
+			unlock_national_focus = SKA_the_great_houses
+		}
+		unlock_national_focus = SKA_house_palmekvist
+		set_country_flag = SKA_palmekvist_couped_iron_bloods
+	}
+	option = { #No this is good
+		name = skaelinger.82.b
+		add_stability = 0.1
+	}
+}
+
+country_event = { #SKA demands subjugation of us
+	id = skaelinger.83
+	title = skaelinger.83.t
+	desc = skaelinger.83.d
+
+	is_triggered_only = yes
+	
+	option = { #I am resisting the urge to make a daddy joke, you better be thankful
+		name = skaelinger.83.a
+		ai_chance = {
+			factor = 2
+			modifier = {
+				strength_ratio = {
+					tag = SKA
+					ratio > 0.8
+				}
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = SKA
+					value > 25
+				}
+				add = 1
+			}
+		}
+		SKA = {
+			puppet = ROOT
+			country_event = { id = skaelinger.84 hours = 1 random = 2 }
+		}
+	}
+	option = { #Nah bro
+		name = skaelinger.83.b
+		ai_chance = {
+			factor = 4
+			modifier = {
+				strength_ratio = {
+					tag = SKA
+					ratio > 1
+				}
+				add = -2
+			}
+		}
+		SKA = {
+			country_event = { id = skaelinger.85 hours = 2 random = 2 }
+		}
+	}
+}
+
+country_event = { #FROM accepts our overlordship
+	id = skaelinger.84
+	title = skaelinger.84.t
+	desc = skaelinger.84.d
+
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = skaelinger.84.a
+		
+	}
+}
+
+country_event = { #FROM denies our overlordship
+	id = skaelinger.85
+	title = skaelinger.85.t
+	desc = skaelinger.85.d
+
+	is_triggered_only = yes
+	
+	option = { #No talk to me I angy
+		name = skaelinger.85.a
+		create_wargoal = {
+			target = FROM
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Choosing which noble or glc member to lead the Vergall Riks Party
+	id = skaelinger.86
+	title = skaelinger.86.t
+	desc = skaelinger.86.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_politics = {
+				ruling_party = republic_aristocrat
+       			elections_allowed = no
+        		last_election = "887.1.1"
+    		    election_frequency = 240
+			}
+		}
+	}
+	
+	option = { #Chill dude
+		name = skaelinger.86.a
+		hidden_effect = {
+			retire_ideology_leader = republic_aristocrat
+		}
+		create_country_leader = {
+			name = "Krael Skellige"
+			desc = "POLITICS_REEV_HELLIRFAST_DESC"
+			picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds"
+			expire = "990.1.1"
+			ideology = republic_aristocrat_ideology
+			traits = {
+				calming_unifier
+			}
+		}
+	}
+	option = { #Money dude
+		name = skaelinger.86.b
+		hidden_effect = {
+			retire_ideology_leader = republic_aristocrat
+		}
+		create_country_leader = {
+			name = "Cnute Stauningr"
+			desc = "POLITICS_REEV_HELLIRFAST_DESC"
+			picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds"
+			expire = "990.1.1"
+			ideology = republic_aristocrat_ideology
+			traits = {
+				market_proponent
+			}
+		}
+	}
+	option = { #Generallete I dunno man I'm just picking random things in country_leader
+		name = skaelinger.86.c
+		hidden_effect = {
+			retire_ideology_leader = republic_aristocrat
+		}
+		create_country_leader = {
+			name = "Thruska Goldir"
+			desc = "POLITICS_REEV_HELLIRFAST_DESC"
+			picture = "gfx/leaders/Dwarves/Portrait_Dwarves_Generic_land_3.dds"
+			expire = "990.1.1"
+			ideology = republic_aristocrat_ideology
+			traits = {
+				retired_strategos  
+			}
+		}
+	}
+}
+
+country_event = { #Choosing whether to ally with IRI or UNG
+	id = skaelinger.87
+	title = skaelinger.87.t
+	desc = skaelinger.87.d
+
+	is_triggered_only = yes
+	
+	option = { #UNG
+		name = skaelinger.87.a
+		UNG = {
+			FROM_improve_THIS_relations = yes
+		}
+		set_country_flag = SKA_simping_for_UNG
+	}
+	option = { #IRI
+		name = skaelinger.87.b
+		IRI = {
+			FROM_improve_THIS_relations = yes
+		}
+		set_country_flag = SKA_simping_for_IRI
+	}
+}
+
+country_event = { #SKA wants to be allies or be guaranteed
+	id = skaelinger.88
+	title = skaelinger.88.t
+	desc = skaelinger.88.d
+
+	is_triggered_only = yes
+	
+	option = { #They can have a guarantee
+		name = skaelinger.88.a
+		give_guarantee = FROM
+		FROM = {
+			give_guarantee = ROOT
+		}
+	}
+	option = { #Let's add them to our faction
+		name = skaelinger.88.b
+		trigger = { is_faction_leader = yes }
+		add_to_faction = FROM
+	}
+	option = { #No
+		name = skaelinger.88.c
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #SKA wants to be our little bitch boi
+	id = skaelinger.89
+	title = skaelinger.89.t
+	desc = skaelinger.89.d
+
+	is_triggered_only = yes
+	
+	option = { #Um okay
+		name = skaelinger.89.a
+		trigger = { original_tag = IRI }
+		puppet = FROM
+		hidden_effect = {
+			FROM = {
+				country_event = { id = skaelinger.90 hours = 3 }
+				set_politics = {
+					ruling_party = republic_aristocrat
+					elections_allowed = no
+				}
+				set_popularities = {
+					republic_aristocrat = 60
+					republic_merchant = 12
+					monarchy_constitutional = 18
+					monarchy_absolute = 5
+					puritan = 5
+				}
+			}
+		}
+	}
+	option = { #Alright they can be a FPT
+		name = skaelinger.89.b
+		trigger = { original_tag = UNG }
+		SKA = {
+			add_ideas = FPT_union_member
+		}
+		hidden_effect = {
+			SKA = {
+				country_event = { id = skaelinger.90 hours = 3 }
+				set_politics = {
+					ruling_party = republic_aristocrat
+					elections_allowed = no
+				}
+				set_popularities = {
+					republic_aristocrat = 60
+					republic_merchant = 12
+					monarchy_constitutional = 18
+					monarchy_absolute = 5
+					puritan = 5
+				}
+			}
+		}
+	}
+	option = { #no wtf you freaks
+		name = skaelinger.89.c
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #We are now someone's puppet
+	id = skaelinger.90
+	title = skaelinger.90.t
+	desc = skaelinger.90.d
+
+	is_triggered_only = yes
+	
+	option = { #Nice... I think
+		name = skaelinger.90.a
+		hidden_effect = {
+			country_event = { id = skaelinger.92 days = 1 random = 48 }
+			if = {
+				limit = {NOT = { has_country_flag = SKA_iron_bloods_purged } }
+				country_event = { id = skaelinger.97 days = 30 random = 480 }
+			}
+		}
+	}
+}
+
+country_event = { #Anti-GLC riots
+	id = skaelinger.91
+	title = skaelinger.91.t
+	desc = skaelinger.91.d
+
+	trigger = {
+		has_completed_focus = SKA_enlightened_council_rule
+		has_country_flag = social_war_beginning
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 40
+	}
+	
+	option = { #send in the troops
+		name = skaelinger.91.a
+		add_ideas = SKA_anger_at_glc
+		149 = {
+			set_demilitarized_zone = yes
+		}
+		random_list = {
+			40 = {
+				country_event = { id = skaelinger.92 days = 10 random = 120 }
+			}
+			60 = {
+				country_event = { id = skaelinger.93 days = 10 random = 120 }
+			}
+		}
+	}
+	option = { #just ignore it, this'll go well
+		name = skaelinger.91.b
+		add_ideas = SKA_anger_at_glc
+		hidden_effect = {
+			country_event = { id = skaelinger.93 days = 10 random = 120 }
+		}
+	}
+}
+
+country_event = { #Anti-GLC riots quelled
+	id = skaelinger.92
+	title = skaelinger.92.t
+	desc = skaelinger.92.d
+
+	is_triggered_only = yes
+	
+	option = { #send in the troops
+		name = skaelinger.92.a
+		remove_ideas = SKA_anger_at_glc
+		hidden_effect = {
+			149 = {
+				set_demilitarized_zone = no
+			}
+		}
+	}
+}
+
+country_event = { #Anti-GLC riots 2, hostringr fire
+	id = skaelinger.93
+	title = skaelinger.93.t
+	desc = skaelinger.93.d
+
+	is_triggered_only = yes
+	
+	option = { #focus on fixing the fires
+		name = skaelinger.93.a
+		149 = {
+			damage_building = {
+				type = workshop
+				damage = 0.25
+			}
+		}
+		random_list = {
+			40 = {
+				country_event = { id = skaelinger.92 days = 10 random = 120 }
+			}
+			60 = {
+				country_event = { id = skaelinger.94 days = 10 random = 120 }
+			}
+		}
+	}
+	option = { #focus on putting down the protestors
+		name = skaelinger.93.b
+		149 = {
+			damage_building = {
+				type = workshop
+				damage = 0.5
+			}
+		}
+		random_list = {
+			50 = {
+				country_event = { id = skaelinger.92 days = 10 random = 120 }
+			}
+			50 = {
+				country_event = { id = skaelinger.94 days = 10 random = 120 }
+			}
+		}
+	}
+}
+
+country_event = { #Anti-GLC riots 3, takes over entire country
+	id = skaelinger.94
+	title = skaelinger.94.t
+	desc = skaelinger.94.d
+
+	is_triggered_only = yes
+	
+	option = { #fuck fuck fuck kill everyone
+		name = skaelinger.94.a
+		add_manpower = -500
+		add_stability = -0.05
+		random_list = {
+			1 = {
+				country_event = { id = skaelinger.92 days = 10 random = 120 }
+			}
+			2 = {
+				country_event = { id = skaelinger.95 days = 10 random = 120 }
+			}
+		}
+	}
+	option = { #maybe give in to some of their demnads????
+		name = skaelinger.94.b
+		add_political_power = -100
+		random_list = {
+			60 = {
+				country_event = { id = skaelinger.92 days = 10 random = 120 }
+			}
+			40 = {
+				country_event = { id = skaelinger.95 days = 10 random = 120 }
+			}
+		}
+	}
+}
+
+country_event = { #Anti-GLC riots 4, we've lost control dawg
+	id = skaelinger.95
+	title = skaelinger.95.t
+	desc = skaelinger.95.d
+
+	is_triggered_only = yes
+	
+	option = { #civil war time
+		name = skaelinger.95.a
+		add_ideas = GENERIC_civil_war_isolation
+		hidden_effect = {
+			SKR = {
+				transfer_state = 186
+				transfer_state = 190
+				transfer_state = 154
+				transfer_state = 162
+				transfer_state = 155
+				transfer_state = 187
+				transfer_state = 150
+				transfer_state = 156
+				transfer_state = 152
+				transfer_state = 158
+				transfer_state = 159
+				transfer_state = 166
+
+				every_state = {
+					limit = { is_core_of = SKA }
+					add_core_of = PREV
+				}
+				
+				add_ideas = GENERIC_civil_war_isolation
+				
+				add_popularity = {
+					ideology = republic_peasant
+					popularity = 0.8
+				}
+				
+				set_politics = {
+					ruling_party = republic_peasant
+					elections_allowed = no
+				}
+				
+				add_timed_idea = {
+					idea = RTH_disorganized_revolution 
+					days = 365
+				}
+			}
+			
+			transfer_units_fraction = {
+				target = SKR
+				size = 0.6
+				stockpile_ratio = 0.6
+				army_ratio = 0.6
+			}
+			
+			declare_war_on = {
+				target = SKR
+				type = annex_everything
+			}
+			
+			SKR = {
+				change_tag_from = SKA
+				add_civil_war_target = SKA
+			}
+		}
+		remove_ideas = SKA_anger_at_glc
+	}
+	option = { #Uh let's ask someone else to deal with this for us
+		name = skaelinger.95.b
+		add_popularity = {
+			ideology = republic_aristocrat
+			popularity = -0.05
+		}
+		country_event = { id = skaelinger.96 random = 12 hours = 2 }
+	}
+}
+
+country_event = { #Whom to ask to bail us out of this
+	id = skaelinger.96
+	title = skaelinger.96.t
+	desc = skaelinger.96.d
+
+	is_triggered_only = yes
+	
+	option = { #Faustburg sounds nice this time of year
+		name = skaelinger.96.a
+		UNG = {
+			country_event = { id = skaelinger.89 hours = 3 }
+		}
+	}
+	option = { #Tion sounds nice this time of year
+		name = skaelinger.96.b
+		IRI = {
+			country_event = { id = skaelinger.89 hours = 3 }
+		}
+	}
+}
+
+country_event = { #Iron Bloods Rise Up because you became a lil bitch
+	id = skaelinger.97
+	title = skaelinger.97.t
+	desc = skaelinger.97.d
+
+	is_triggered_only = yes
+	
+	option = { #Bro wdym people don't like being a puppet state
+		name = skaelinger.97.a
+		hidden_effect = {
+			SKP = {
+				add_popularity = {
+					ideology = monarchy_absolute
+					popularity = 0.8
+				}
+				set_politics = {
+					ruling_party = monarchy_absolute
+					elections_allowed = no
+				}
+				transfer_state = 149
+				transfer_state = 168
+				transfer_state = 160
+				transfer_state = 163
+				transfer_state = 159
+				transfer_state = 184
+				transfer_state = 158
+				transfer_state = 169
+			}
+			if = {
+				limit = { SKA = { monarchy_absolute > 0.2 } }
+				transfer_units_fraction = {
+					target = SKP
+					size = 0.33
+					stockpile_ratio = 0.33
+					army_ratio = 0.33
+				}
+				else = {
+					transfer_units_fraction = {
+						target = SKP
+						size = 0.25
+						stockpile_ratio = 0.25
+						army_ratio = 0.25
+					}
+				}
+			}
+			every_state = {
+				limit = { is_core_of = SKA }
+				add_core_of = PREV
+			}
+		}
+		SKP = {
+			declare_war_on = {
+				target = SKA
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = { #Losing Zarathum
+	id = skaelinger.98
+	title = skaelinger.98.t
+	desc = skaelinger.98.d
+
+	trigger = {
+		tag = SKA
+		NOT = { controls_state = 174 }
+		has_country_flag = SKA_seventh_campaign_zenith
+	}
+
+	fire_only_once = yes
+	
+	option = { #Oops
+		name = skaelinger.98.a
+		add_war_support = -0.1
+		add_political_power = -25
+		set_country_flag = SKA_cannot_do_restoration_stuff
+	}
+}
+
+country_event = { #Yo KUR you can do border conflicts now
+	id = skaelinger.99
+	title = skaelinger.99.t
+	desc = skaelinger.99.d
+
+	is_triggered_only = yes
+	
+	option = { #Lesss goooo
+		name = skaelinger.99.a
+		set_country_flag = KUR_can_retake_zarathum
+		unlock_decision_category_tooltip = KUR_retake_zarathum_category
+	}
+}
+
+country_event = { #Yo KUR you can't do border conflicts now
+	id = skaelinger.100
+	title = skaelinger.100.t
+	desc = skaelinger.100.d
+
+	is_triggered_only = yes
+	
+	option = { #Literally 1984...
+		name = skaelinger.100.a
+		clr_country_flag = KUR_can_retake_zarathum
+		#lock_decision_category_tooltip = KUR_retake_zarathum_category lol
+	}
+}
+
+country_event = { #Flip to SKA and unlock relevant foci after war
+	id = skaelinger.101
+	title = skaelinger.101.t
+	desc = skaelinger.101.d
+	
+	trigger = {
+		OR = {
+			AND = {
+				tag = SKR
+				NOT = {
+					country_exists = SKP
+				}
+			}
+			AND = {
+				tag = SKP
+				NOT = {
+					country_exists = SKR
+				}
+			}
+			AND = {
+				original_tag = SKA #Aristocratic republic civil war that can fire if the Ironbloods fuck up
+				has_country_flag = SKA_anti_ironblood_revolters
+			}
+		}
+		NOT = {
+			country_exists = SKA
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	immediate = {
+		hidden_effect = {
+			#Dynamic revolter tags are now treated as the original tag if the original stops existing
+			#That is to say, if the DXX tag of the GLC revolters beat the Ironbloods, and SKA gets annexed,
+			#DXX will be treated as SKA, which is annoying as shit
+			#Gotta use a tag alias to fix this
+			if = {
+				limit = {
+					has_country_flag = SKA_anti_ironblood_revolters
+				}
+				
+				SKI = {
+					transfer_state = 146
+					
+					unlock_national_focus = SKA_emergency_conclave
+					uncomplete_national_focus = {
+						focus = SKA_shore_up_the_caste_system
+						uncomplete_children = yes
+					}
+				}
+			}
+			
+			else = {
+
+				SKA = {
+
+					transfer_state = 146
+
+					unlock_national_focus = SKA_emergency_conclave
+					uncomplete_national_focus = {
+						focus = SKA_shore_up_the_caste_system
+						uncomplete_children = yes
+					}
+
+					set_country_flag = SKA_has_started_ironblood_conspiracy
+
+					unlock_national_focus = SKA_iron_blood_conspiracy
+					unlock_national_focus = SKA_popular_figurehead
+					unlock_national_focus = SKA_dissolve_the_lore_council
+					unlock_national_focus = SKA_second_scheme
+				}
+			}
+		}
+	}
+	
+	option = {#Revolution
+		name = skaelinger.101.a
+		trigger = {
+			tag = SKR
+		}
+		SKA = {
+			set_politics = {
+				ruling_party = republic_peasant
+			}
+			set_popularities = {
+				monarchy_absolute = 8
+
+				puritan = 0
+
+				monarchy_constitutional = 3
+
+				republic_aristocrat = 12
+
+				republic_merchant = 5
+
+				theocrat = 2
+
+				republic_peasant= 70
+			}
+			clr_country_flag = SKA_social_war_tie_occurred
+			clr_country_flag = SKA_social_war_puritan_victory
+			set_country_flag = SKA_social_war_radical_republican_victory
+			unlock_national_focus = SKA_follow_rthaur_brothers
+		}
+		
+		SKA = {
+			change_tag_from = SKR
+		}
+		
+		SKA = {
+			annex_country = {
+				target = SKR
+				transfer_troops = yes
+			}
+		}
+	}
+
+	option = {#The Subsun
+		name = skaelinger.101.b
+		trigger = {
+			tag = SKP
+		}
+		SKA = {
+			set_politics = {
+				ruling_party = puritan
+			}
+			set_popularities = {
+				monarchy_absolute = 8
+
+				puritan = 70
+
+				monarchy_constitutional = 3
+
+				republic_aristocrat = 12
+
+				republic_merchant = 5
+
+				theocrat = 2
+
+				republic_peasant= 0
+			}
+			clr_country_flag = SKA_social_war_tie_occurred
+			clr_country_flag = SKA_social_war_radical_republican_victory
+			set_country_flag = SKA_social_war_puritan_victory
+			unlock_national_focus = SKA_sun_beneath_stone
+		}
+		
+		SKA = {
+			change_tag_from = SKP
+		}
+		
+		SKA = {
+			annex_country = {
+				target = SKP
+				transfer_troops = yes
+			}
+		}
+	}
+	
+	option = {#The GLC
+		name = skaelinger.101.c
+		trigger = {
+			has_country_flag = SKA_anti_ironblood_revolters
+		}
+		SKI = {
+			set_politics = {
+				ruling_party = republic_aristocrat
+			}
+			set_popularities = {
+				monarchy_absolute = 2
+
+				puritan = 9
+
+				monarchy_constitutional = 3
+
+				republic_aristocrat = 70
+
+				republic_merchant = 5
+
+				theocrat = 2
+
+				republic_peasant= 9
+			}
+			clr_country_flag = SKA_social_war_tie_occurred
+			clr_country_flag = SKA_social_war_radical_republican_victory
+			clr_country_flag = SKA_social_war_puritan_victory
+			unlock_national_focus = SKA_the_dwarfen_republic
+			unlock_national_focus = SKA_the_grandlore_council
+		}
+
+		SKI = {
+			change_tag_from = SKC
+		}
+
+		SKI = {
+			annex_country = {
+				target = SKC
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+country_event = { #SKA demands that RTH bring back monarchist generals
+	id = skaelinger.102
+	title = skaelinger.102.t
+	desc = skaelinger.102.d
+
+	is_triggered_only = yes
+	
+	option = { #alright fine
+		name = skaelinger.102.a
+		ai_chance = {
+			factor = 3
+		}
+		add_ideas = monarchy_constitutional_drift_idea
+		create_field_marshal = {
+			name = "Ternise Locthorin"
+			picture = "gfx/leaders/RTH/Portrait_RTH_Locthorin.dds"
+			traits = {
+				brilliant_strategist
+				infantry_officer
+				infantry_leader
+				infantry_expert
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		create_corps_commander = {
+			name = "Cornello Tretia"
+			picture = "gfx/leaders/RTH/Portrait_Rthauiaur_Generic_land_1.dds"
+			traits = {
+				brilliant_strategist
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+	option = { #Nnnno
+		name = skaelinger.102.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		
+	}
+}
+
+country_event = { #SKA event for making RTH monarchist
+	id = skaelinger.103
+	title = skaelinger.103.t
+	desc = skaelinger.103.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SKA
+		RTH = {
+			NOT = {
+				has_government = monarchy_constitutional
+			}
+			exists = yes
+			has_idea = monarchy_constitutional_drift_idea
+			monarchy_constitutional > 0.33
+		}
+	}
+	
+	option = { #Demand they turn monarchist
+		name = skaelinger.103.a
+		RTH = {
+			country_event = { id = skaelinger.104 hours = 3 }
+		}
+	}
+	option = { #Push our advantage, make them a puppet
+		name = skaelinger.103.b
+		RTH = {
+			country_event = { id = skaelinger.105 hours = 3 }
+		}
+	}
+}
+
+country_event = { #SKA event for making RTH monarchist - light
+	id = skaelinger.104
+	title = skaelinger.104.t
+	desc = skaelinger.104.d
+
+	is_triggered_only = yes
+	
+	option = { #Okay let's go monarchist 
+		name = skaelinger.104.a
+		set_politics = {
+			ruling_party = monarchy_constitutional
+		}
+		SKA = {
+			country_event = { id = skaelinger.106 hours = 3 }
+		}
+	}
+	option = { #No
+		name = skaelinger.104.b
+		add_stability = -0.1
+		ai_chance = {
+			factor = 0
+		}
+		SKA = {
+			FROM_worsen_THIS_relations = yes
+			country_event = { id = skaelinger.107 hours = 3 }
+		}
+	}
+}
+
+country_event = { #SKA event for making RTH monarchist - heavy
+	id = skaelinger.105
+	title = skaelinger.105.t
+	desc = skaelinger.105.d
+
+	is_triggered_only = yes
+	
+	option = { #Okay let's go monarchist 
+		name = skaelinger.105.a
+		SKA = {
+			puppet = ROOT
+			country_event = { id = skaelinger.106 hours = 3 }
+		}
+	}
+	option = { #No
+		name = skaelinger.105.b
+		add_stability = -0.05
+		ai_chance = {
+			factor = 0
+		}
+		SKA = {
+			FROM_worsen_THIS_relations = yes
+			country_event = { id = skaelinger.107 hours = 3 }
+		}
+	}
+}
+
+country_event = { #RTH monarchy now
+	id = skaelinger.106
+	title = skaelinger.106.t
+	desc = skaelinger.106.d
+
+	is_triggered_only = yes
+	
+	option = { #chog pamp
+		name = skaelinger.106.a
+	}
+}
+
+country_event = { #RTH says no to being a monarcringe
+	id = skaelinger.107
+	title = skaelinger.107.t
+	desc = skaelinger.107.d
+
+	is_triggered_only = yes
+	
+	option = { #angy no talk to me
+		name = skaelinger.107.a
+	}
+}
+
+country_event = { #SKA demands that RTH gives Thurgithon Merchants increased autonomy
+	id = skaelinger.108
+	title = skaelinger.108.t
+	desc = skaelinger.108.d
+
+	is_triggered_only = yes
+	
+	option = { #alright fine
+		name = skaelinger.102.a
+		ai_chance = {
+			factor = 3
+		}
+		add_ideas = republic_merchant_drift_idea
+		add_ideas = RTH_regionalism_thurgithon_strong
+	}
+	option = { #Nnnno
+		name = skaelinger.108.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		
+	}
+}
+
+country_event = { #SKA sabotages RTH industry
+	id = skaelinger.109
+	title = skaelinger.109.t
+	desc = skaelinger.109.d
+
+	is_triggered_only = yes
+	
+	option = { #alright fine
+		name = skaelinger.109.a
+		random_owned_controlled_state = {
+			limit = {
+				workshop > 0
+			}
+			damage_building = {
+				type = workshop
+				damage = 0.5
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				forge > 0
+			}
+			damage_building = {
+				type = forge
+				damage = 0.5
+			}
+		}
+	}
+}
+
+country_event = { # SKA wants the Khorinor mountains back now
+	id = skaelinger.110
+	title = skaelinger.110.t
+	desc = skaelinger.110.d
+
+	is_triggered_only = yes
+	
+	option = {#We have won the war, now we will return their land
+		name = rth.23.a
+		ai_chance = {
+			factor = 10
+		}
+		every_owned_state = {
+			for_each_scope_loop = {
+				array = SKA.original_cores
+				transfer_state_to = SKA
+			}
+		}
+		SKA = {
+			transfer_state = 133
+			add_state_core = 133
+			transfer_state = 135
+			add_state_core = 135
+			country_event = { id = rth.25 hours = 3 }
+		}
+		remove_state_core = 133
+		remove_state_core = 135
+		hidden_effect = {
+			if = {
+				limit = { 135 = { is_core_of = THR } }
+				135 = {
+					remove_core_of = THR
+				}
+			}
+		}
+	}
+	option = {#No it's ours now
+		name = rth.23.b
+		ai_chance = {
+			factor = 0
+		}
+		SKA = {
+			add_state_claim = 133
+			add_state_claim = 135
+			remove_opinion_modifier = {
+				target = RTH
+				modifier = staunch_allies
+			}
+			remove_relation_modifier = {
+				target = RTH
+				modifier = staunch_allies_opinion_modifier
+			}
+			country_event = { id = rth.26 hours = 3 }
+		}
+	}
+}
+
+country_event = { #Social War Ends, Good Tie
+	id = skaelinger.111
+	title = skaelinger.111.t
+	desc = skaelinger.111.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SKA
+		check_variable = { SKA_social_war_boe_inf = SKA_social_war_soltruist_inf }
+		check_variable = { SKA_social_war_boe_inf < 5 }
+		has_country_flag = SKA_social_war_STOP
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+	
+	option = { #Nice
+		name = skaelinger.111.a
+		add_popularity = {
+			ideology = puritan
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = -0.1
+		}
+	}
+}
+
+country_event = { #Force Trigger Iron-Blood Conspiracy if their influence got too high in the Social War
+	id = skaelinger.112
+	title = skaelinger.112.t
+	desc = skaelinger.112.d
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SKA
+		is_subject = no
+		check_variable = { SKA_social_war_iron_blood_inf > 4 }
+		has_country_flag = SKA_social_war_STOP
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+	
+	option = { #Oh god oh fuck
+		name = skaelinger.112.a
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.07
+		}
+		set_country_flag = SKA_forced_iron_blood_conspiracy #Forces civil war and switches tag to anti-Ironblood forces
+		#randomly select which states are going to go ironblood or not
+		every_owned_state = {
+			random = {
+				chance = 50
+				set_state_flag = SKA_ironblood_conspirator_state
+			}
+		}
+		complete_national_focus = SKA_iron_blood_conspiracy
+		random_list = {
+			50 = {
+				complete_national_focus = SKA_popular_figurehead
+			}
+			50 = {
+				complete_national_focus = SKA_popular_general
+			}
+		}
+		custom_effect_tooltip = SKA_oppose_ironbloods_tt
+	}
+	
+	option = { #Commit to the bit (starts Ironblood path as normal)
+		name = skaelinger.112.b
+		ai_chance = {
+			factor = 0 #Trying to see if this helps stop Skaelinger from always becoming Ironblood
+		}
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = 0.07
+		}
+		complete_national_focus = SKA_iron_blood_conspiracy
+	}
+}
+
+### REWORKED ORDORIA PEACE DEALS ###
+	country_event = { #Royalists Offer Concessions
+	id = skaelinger.113
+	title = skaelinger.113.t
+	desc = skaelinger.113.d
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { #Deal
+		name = skaelinger.113.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				ORD = {
+					is_ai = no #Pro-player bias (shhhh)
+				}
+				factor = 2
+			}
+			modifier = { #no
+				SKA = {
+					OR = {
+						has_government = puritan
+						has_government = monarchy_absolute
+						has_government = republic_peasant
+					}
+				}
+				factor = 0.1
+			}
+		}
+		effect_tooltip = {
+			white_peace = ORD
+		}
+		custom_effect_tooltip = SKA_ORD_mountain_concessions_deal_tt
+		ORD = {
+			country_event = {
+				id = ord.112
+				days = 7
+			}
+		}
+	}
+	
+	option = { #No deal
+		name = skaelinger.113.b
+		ai_chance = {
+			factor = 5
+			modifier = { #eh
+				SKA = {
+					OR = {
+						has_government = republic_aristocrat
+						has_government = republic_merchant
+					}
+				}
+				factor = 0.8
+			}
+		}
+		add_war_support = 0.06
+		ORD = {
+			country_event = {
+				id = ord.113
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Social War Ends - Brotherhood Victory
+	id = skaelinger.114
+	title = skaelinger.114.t
+	desc = skaelinger.114.d
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	trigger = {
+		tag = SKA
+		check_variable = { SKA_social_war_boe_inf > SKA_social_war_soltruist_inf }
+		check_variable = { SKA_social_war_soltruist_inf > 2 }
+		has_country_flag = SKA_social_war_STOP
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+	
+	option = { #Gotcha
+		name = skaelinger.114.a
+		custom_effect_tooltip = SKA_boe_revolt_warning_tt
+		set_country_flag = SKA_warned_for_second_scheme_revolt
+		set_country_flag = SKA_social_war_radical_republican_victory
+		add_popularity = {
+			ideology = republic_peasant
+			popularity = 0.06
+		}
+	}
+}
+
+country_event = { #Social War Ends - Soltruist Victory
+	id = skaelinger.115
+	title = skaelinger.115.t
+	desc = skaelinger.115.d
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	trigger = {
+		tag = SKA
+		check_variable = { SKA_social_war_boe_inf < SKA_social_war_soltruist_inf }
+		check_variable = { SKA_social_war_soltruist_inf > 2 }
+		has_country_flag = SKA_social_war_STOP
+		NOT = {
+			has_war_with = ORD
+		}
+	}
+	
+	option = { #Gotcha
+		name = skaelinger.115.a
+		custom_effect_tooltip = SKA_soltruist_revolt_warning_tt
+		set_country_flag = SKA_warned_for_second_scheme_revolt
+		set_country_flag = SKA_social_war_puritan_victory
+		add_popularity = {
+			ideology = puritan
+			popularity = 0.06
+		}
+	}
+}

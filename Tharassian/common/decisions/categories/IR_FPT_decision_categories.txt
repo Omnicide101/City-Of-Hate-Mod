@@ -1,0 +1,30 @@
+FPT_elections = {
+	icon = GFX_decision_category_wiederherstellung
+	
+	allowed = {
+		always = no # Why do we have this?
+	}
+	
+	visible_when_empty = yes
+}
+
+WSS_Konkord_members = {
+	icon = GFX_decision_category_eng_appeal_to_imperial_loyalists
+	
+	allowed = {
+		has_country_flag = wws_konkord_yes
+		has_idea = FPT_union_member
+		NOT = {
+			tag = UNG
+		}
+		NOT = {
+			STA = {
+				has_country_flag = STA_civil_war_started
+			}
+		}
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 100
+}

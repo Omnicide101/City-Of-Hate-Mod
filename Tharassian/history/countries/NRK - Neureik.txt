@@ -1,0 +1,154 @@
+﻿capital = 284
+
+set_oob = "NRK_1936"
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	set_air_oob = "air_empty_bba"
+	set_technology = {
+		basic_dragonfly_creature = 1
+	}
+	else = {
+		set_air_oob = "air_empty"
+		set_technology = {
+			basic_dragonfly_creature_vanilla = 1
+		}
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone"}
+	create_equipment_variant = {
+		name = "Griffinfly Swarm"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = dragonfly_mandibles_1
+			engine_type_slot = autonomous_swarm_1
+		}
+	}
+}
+
+
+
+set_technology ={
+	tech_tribal_pride = 1
+	tech_wheel = 1
+	implements_war = 1
+	tribal_warbands = 1
+	sparring_fields = 1
+	war_artisans = 1
+	advanced_leatherworking = 1
+	gambesons = 1
+	brigandines = 1
+	alloy_creation = 1
+	steel_working = 1
+	fullered_blades = 1
+	peasant_levy = 1
+	mail_hauberks = 1
+	improved_woodworking = 1
+	recurve_bow = 1
+	broadhead_arrows = 1
+	horseback_riding = 1
+	mounted_warriors = 1
+	saddles = 1
+	stirrups = 1
+	cavalry_lances = 1
+	flanking_tactics = 1
+	skirmish_tactics = 1
+	scouting_parties = 1
+	astrolabe = 1
+	compass = 1
+	cartography = 1
+	light_cavalry = 1
+	feints = 1
+	war_bred_steeds = 1
+	mounted_knights = 1
+	basic_ship_hull = 1
+	basic_heavy_ship_hull = 1
+}
+
+set_variable = {
+	var = FPT_piety
+	value = 6
+}
+
+set_variable = {
+	var = FPT_union_loyalty
+	value = 0
+}
+
+set_variable = {
+	var = FPT_stahlhof_loyalty
+	value = 32
+}
+
+set_variable = {
+	var = FPT_small_loyalty_cost
+	value = 50
+}
+
+set_variable = {
+	var = FPT_medium_loyalty_cost
+	value = 75
+}
+
+set_variable = {
+	var = FPT_big_loyalty_cost
+	value = 100
+}
+
+set_politics = {
+	ruling_party = monarchy_constitutional
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	monarchy_absolute = 28
+
+	monarchy_constitutional = 62
+
+	republic_peasant = 0
+
+	republic_aristocrat = 10
+
+	republic_merchant = 0
+
+	theocrat = 0
+
+	puritan = 0
+}
+
+recruit_character = NRK_fabian_hassler
+recruit_character = NRK_saskia_stier
+recruit_character = NRK_stephanie_eisenstein
+recruit_character = NRK_lilly_hofmeister
+recruit_character = NRK_lars_friedberger
+recruit_character = NRK_eberhart_emmerich
+
+add_ideas = {
+	human_country
+	bitha_patron
+	FPT_union_member
+	FPT_bauernfreistellung
+	SPW_reapers_of_the_harvest
+}
+
+give_military_access = UNG
+give_military_access = HLZ
+give_military_access = NOC
+give_military_access = SPW
+give_military_access = SVT
+give_military_access = STA
+give_military_access = TEI
+give_military_access = ARK
+give_military_access = SNF
+give_military_access = FTH
+give_military_access = WIS
+give_military_access = WSZ
+
+add_opinion_modifier = {
+	target = STA
+	modifier = liked_opinion
+}

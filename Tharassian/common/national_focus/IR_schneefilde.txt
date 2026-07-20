@@ -1,0 +1,2181 @@
+### Schneefilde FOCUS TREE ###
+
+focus_tree = {
+	id = schneefilde_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SNF
+		}
+	}
+	shared_focus = FPT_recover_hex_scare
+	shared_focus = FPT_memories_crisis
+	shared_focus = FPT_our_place_union
+	shared_focus = UNG_schneefilde_sack
+
+	continuous_focus_position = { x = 50 y = 1750 }
+	
+	#focus = { #
+	#	id = 
+	#	icon = GFX_
+	#	cost = 
+	#	prerequisite = {
+	#		focus = 
+	#	}
+	#	available = {
+	#		
+	#	}
+	#	mutually_exclusive = {
+	#		focus = 
+	#	}
+	#	bypass = {
+	#		
+	#	}
+	#	ai_will_do = {
+	#		factor = 
+	#	}
+	#	x = 
+	#	y = 
+	#	completion_reward = {
+	#		
+	#	}
+	#}
+	
+	
+### Sack of Schneefilde ###
+
+	#focus = { #Sack of Schneefilde
+	#	id = SNF_sack_of_schneefilde
+	#	icon = GFX_focus_ung_sack_schneefilde
+	#	cost = 5
+	#	available = {
+	#		has_idea = SNF_opposing_nobility
+	#	}
+	#	ai_will_do = {
+	#		factor = 50
+	#	}
+	#	x = 30
+	#	y = 0
+	#	completion_reward = {
+	#		country_event = {
+	#			id = snf.6
+	#			days = 1
+	#		}
+	#		set_country_flag = SNF_Drecht_opportunity_flag
+	#		activate_mission = SNF_drecht_hiding
+	#	}
+	#}
+#### CURTAIL NOBLES PATH
+	focus = { #curtail the nobility
+		id = SNF_curtail_nobles
+		icon = GFX_focus_rom_handle_king
+		cost = 3
+		available = {
+			has_country_flag = SNF_curtail_nobility
+		}
+		allow_branch = {
+            	original_tag = SNF
+    		}
+		prerequisite = {
+			focus = UNG_schneefilde_sack
+		}
+		bypass = {
+		has_government = republic_aristocrat
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		relative_position_id = UNG_schneefilde_sack
+		x = 17
+		y = 1
+		completion_reward = {
+		add_popularity = {
+				ideology = republic_aristocrat
+				popularity = -0.08
+			}
+		swap_ideas = {
+		remove_idea = SNF_opposing_nobility
+		add_idea = SNF_curtailed_nobility
+		}
+		}
+	}
+	focus = { #Vilify old policies
+		id = SNF_vilify_policies
+		icon = GFX_focus_rom_parties_end
+		cost = 3
+		available = {
+			has_country_flag = SNF_curtail_nobility
+		}
+		prerequisite = {
+			focus = SNF_curtail_nobles
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		bypass = {
+		has_government = republic_aristocrat
+		}
+		relative_position_id = SNF_curtail_nobles
+		x = 0
+		y = 1
+		completion_reward = {
+		add_popularity = {
+				ideology = monarchy_absolute
+				popularity = -0.04
+			}
+		add_popularity = {
+				ideology = republic_aristocrat
+				popularity = -0.08
+			}
+		swap_ideas = {
+		remove_idea = SNF_curtailed_nobility
+		add_idea = SNF_vilified_nobility
+		}
+		}
+	}
+	focus = { #demand aristocratic generals loyalty
+		id = SNF_demand_loyalty_knights
+		icon = GFX_focus_generic_military_mission
+		cost = 5
+		available = {
+			has_country_flag = SNF_curtail_nobility
+		}
+		prerequisite = {
+			focus = SNF_curtail_nobles
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+		has_government = republic_aristocrat
+		}
+		relative_position_id = SNF_curtail_nobles
+		x = 2
+		y = 1
+		completion_reward = {
+		add_ideas = SNF_military_loyalty
+		}
+	}
+
+####### GAIN SUPPORT FROM COMMONERS PATH	
+	focus = { #Gain commoner support
+		id = SNF_Volkprinz
+		icon = GFX_focus_generic_monarchy_1
+		cost = 9
+		available = {
+			has_country_flag = SNF_folksprintz
+		}
+		prerequisite = {
+			focus = UNG_schneefilde_sack
+		}
+		allow_branch = {
+            	original_tag = SNF
+    		}
+		#available = {
+		#	has_government = abs
+		#}
+		ai_will_do = {
+			factor = 50
+		}
+		bypass = {
+		has_government = republic_aristocrat
+		}
+		relative_position_id = UNG_schneefilde_sack
+		x = 15
+		y = 1
+		completion_reward = {
+		add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.08
+			}
+		swap_ideas = {
+		remove_idea = SNF_opposing_nobility
+		add_idea = SNF_opposed_nobles
+		}
+		}
+	}
+	focus = { #promote local councils
+		id = SNF_promote_councils
+		icon = GFX_BLD_Swear_Loyalty_To_Irinthios
+		cost = 9
+		available = {
+			has_country_flag = SNF_folksprintz
+		}
+		prerequisite = {
+			focus = SNF_Volkprinz
+		}
+		bypass = {
+		has_government = republic_aristocrat
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		relative_position_id = SNF_Volkprinz
+		x = 0
+		y = 1
+		completion_reward = {
+		add_popularity = {
+				ideology = republic_peasant
+				popularity = 0.08
+			}
+		swap_ideas = {
+		remove_idea = SNF_opposed_nobles
+		add_idea = SNF_wary_of_nobles
+		}
+		}
+	}
+	
+	###################################################################
+	focus = { #Ask for Faustburg legitimacy
+		id = SNF_faustburg_assistance
+		icon = GFX_focus_ung_reinforce_schneefilde
+		cost = 5
+		available = {
+		#	has_country_flag = SNF_curtail_nobility
+		}
+		prerequisite = {
+			focus = SNF_vilify_policies
+			focus = SNF_promote_councils
+		}
+		mutually_exclusive = {
+			focus = SNF_a_knightly_putsch
+		}
+		bypass = {
+		has_government = republic_aristocrat
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		relative_position_id = SNF_promote_councils
+		x = 0
+		y = 1
+		completion_reward = {
+		UNG = {
+			country_event = {
+			id = snf.7
+			days = 3
+			}
+		    }
+		}
+	}
+	focus = { #recreate a Neureik
+		id = SNF_a_knightly_putsch
+		icon = GFX_focus_STA_last_march
+		cost = 5
+		available = {
+		#	has_country_flag = SNF_curtail_nobility
+		}
+		prerequisite = {
+			focus = SNF_vilify_policies
+			focus = SNF_promote_councils
+		}
+		mutually_exclusive = {
+			focus = SNF_faustburg_assistance
+		}
+		bypass = {
+		has_government = republic_aristocrat
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		relative_position_id = SNF_promote_councils
+		x = 2
+		y = 1
+		completion_reward = {
+			country_event = {
+			id = snf.30
+			days = 1
+			}
+		}
+	}
+	###################################################################
+	focus = { #Call out Drecht
+		id = SNF_call_out_Drecht
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 9
+		available = {
+			has_country_flag = SNF_folksprintz
+		}
+		prerequisite = {
+			focus = SNF_Volkprinz
+		}
+		bypass = {
+		has_government = republic_aristocrat
+		}
+		ai_will_do = {
+			factor = 150
+		}
+		relative_position_id = SNF_Volkprinz
+		x = -2
+		y = 1
+		completion_reward = {
+		add_political_power = 50
+		add_popularity = {
+				ideology = republic_aristocrat
+				popularity = -0.12
+			}
+		}
+	}
+	#focus = { #Use religious fervor
+	#	id = SNF_religious_fervor
+	#	icon = GFX_focus_freiprinzen_septism
+	#	cost = 9
+	#	available = {
+	#		has_country_flag = SNF_folksprintz
+	#		NOT = {
+	#		has_completed_focus = FPT_church_divided
+	#		}
+	#	}
+	#	prerequisite = {
+	#		focus = SNF_Volkprinz
+	#	}
+	#	#available = {
+	#	#	has_government = abs
+	#	#}
+	#	ai_will_do = {
+	#		factor = 10
+	#	}
+	#	relative_position_id = SNF_Volkprinz
+	#	x = 2
+	#	y = 1
+	#	completion_reward = {
+	#	add_manpower = 8000
+	#	add_popularity = {
+	#			ideology = monarchy_absolute
+	#			popularity = 0.04
+	#		}
+	#	custom_effect_tooltip = FPT_increase_piety_tt
+	#		add_to_variable = {
+	#			var = FPT_piety
+	#			value = 1
+	#		}
+	#		set_freiprinz_piety_effects = yes
+	#	
+	#	}
+	#}
+###################################
+	focus = { #End Nobility Opposition
+		id = SNF_demand_noble_surrender
+		icon = GFX_focus_generic_strike_at_democracy1
+		cost = 5
+		available = {
+		}
+		bypass = {
+		has_government = republic_aristocrat
+		}
+		prerequisite = {
+			focus = SNF_faustburg_assistance
+			focus = SNF_a_knightly_putsch
+		}
+		#prerequisite = {
+		#	focus = SNF_blackmail_drecht
+		#	focus = SNF_placate_drecht
+		#}
+		#available = {
+		#	has_government = abs
+		#}
+		ai_will_do = {
+			factor = 100
+		}
+		relative_position_id = SNF_faustburg_assistance
+		x = 1
+		y = 1
+		completion_reward = {
+		#custom_effect_tooltip = SNF_demand_noble_surrender_tooltip
+		if = {
+			limit = {
+			OR = {
+			has_idea = SNF_vilified_nobility
+			has_idea = SNF_wary_of_nobles
+			}
+			}
+		random_list = {
+				60 = {
+					country_event = {
+						id = snf.12
+					}
+				}
+				40 = {
+					country_event = {
+						id = snf.13
+					}
+				}
+			}
+		else = {
+		country_event = {
+						id = snf.12
+					}
+			}
+		    }
+		}
+	
+	}
+########################### END CONTROL THE NOBILITY TREE - Circumvent Drecht tree begins
+focus = { #Question of Ulrich Drecht
+		id = SNF_question_drecht
+		icon = GFX_goal_generic_major_war
+		cost = 5
+		available = {
+		}
+		prerequisite = {
+			focus = UNG_schneefilde_sack
+		}
+		allow_branch = {
+            	original_tag = SNF
+    		}
+		#available = {
+		#	has_government = abs
+		#}
+		ai_will_do = {
+			factor = 150
+			modifier = {
+				has_game_rule = {
+					rule = SNF_game_plan
+					option = SNF_DRECHT
+				}
+				NOT = {
+					has_country_leader = {
+						name = "Ulrich Drecht"
+						ruling_only = yes
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SNF_game_plan
+					option = SNF_DRECHT_ALTERNATE
+				}
+				NOT = {
+					has_country_leader = {
+						name = "Ulrich Drecht"
+						ruling_only = yes
+					}
+				}
+				factor = 0
+			}
+		}
+		bypass = {
+		has_government = republic_aristocrat
+		}
+		relative_position_id = UNG_schneefilde_sack
+		x = 10
+		y = 1
+		completion_reward = {
+		country_event = {
+			id = snf.14
+			days = 1
+			}
+		}
+	}
+################
+focus = { #Spy over Drecht
+		id = SNF_rid_of_drecht
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		available = {
+		has_country_flag = SNF_Drecht_opportunity_flag
+		has_country_flag = SNF_fuck_drecht
+		}
+		prerequisite = {
+			focus = SNF_question_drecht
+		}
+		ai_will_do = {
+			factor = 150
+		}
+		bypass = {
+		OR = {
+		has_government = republic_aristocrat
+		NOT = {
+		has_country_flag = SNF_Drecht_opportunity_flag
+		}
+		}
+		}
+		relative_position_id = SNF_question_drecht
+		x = -1
+		y = 1
+		completion_reward = {
+		add_ideas = SNF_spy_network 
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_hiding
+				republic_aristocrat < 0.20
+			}
+			remove_mission = SNF_drecht_hiding
+			country_event = {
+						id = snf.15
+					}
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_hiding
+				republic_aristocrat > 0.20
+			}
+			remove_mission = SNF_drecht_hiding
+			activate_mission = SNF_drecht_hiding
+			add_popularity = {
+			ideology = republic_aristocrat
+			popularity = -0.09
+		}
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_consolidation
+			}
+			remove_mission = SNF_drecht_consolidation
+			activate_mission = SNF_drecht_hiding
+			add_popularity = {
+			ideology = republic_aristocrat
+			popularity = -0.09
+		}
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_gathering_nobles
+			}
+			remove_mission = SNF_drecht_gathering_nobles
+			activate_mission = SNF_drecht_consolidation
+			add_popularity = {
+			ideology = republic_aristocrat
+			popularity = -0.09
+		}
+		}
+		}
+	}
+focus = { #Blackmail Drecht
+		id = SNF_blackmail_drecht
+		icon = GFX_focus_hlz_hard_power
+		cost = 5
+		available = {
+		has_political_power > 74
+		has_country_flag = SNF_Drecht_opportunity_flag
+		has_country_flag = SNF_fuck_drecht
+		}
+		prerequisite = {
+			focus = SNF_rid_of_drecht
+		}
+		ai_will_do = {
+			factor = 150
+		}
+		bypass = {
+			OR = {
+				has_government = republic_aristocrat
+				NOT = {
+					has_country_flag = SNF_Drecht_opportunity_flag
+				}
+			}
+		}
+			relative_position_id = SNF_rid_of_drecht
+		x = 0
+		y = 1		
+		continue_if_invalid  = yes
+		select_effect = {
+			add_political_power = -75
+		}
+		completion_reward = {
+		deactivate_advisor = evil_ulrich_drecht
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_hiding
+				republic_aristocrat < 0.20
+			}
+			remove_mission = SNF_drecht_hiding
+			country_event = {
+						id = snf.15
+					}
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_hiding
+				republic_aristocrat > 0.20
+			}
+			remove_mission = SNF_drecht_hiding
+			activate_mission = SNF_drecht_hiding
+			add_popularity = {
+			ideology = republic_aristocrat
+			popularity = -0.09
+		}
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_consolidation
+			}
+			remove_mission = SNF_drecht_consolidation
+			activate_mission = SNF_drecht_hiding
+			add_popularity = {
+			ideology = republic_aristocrat
+			popularity = -0.09
+		}
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_gathering_nobles
+			}
+			remove_mission = SNF_drecht_gathering_nobles
+			activate_mission = SNF_drecht_consolidation
+			add_popularity = {
+			ideology = republic_aristocrat
+			popularity = -0.09
+		}
+		}
+		}
+	       }
+#focus = { #Ultimatum Drecht
+#		id = SNF_ultimatum_drecht
+#		icon = GFX_focus_rom_royal_dictatorship
+#		cost = 10
+#		available = {
+#		has_country_flag = SNF_Drecht_opportunity_flag
+#		has_country_flag = SNF_fuck_drecht
+#		}
+#		prerequisite = {
+#			focus = SNF_blackmail_drecht
+#		}
+#		ai_will_do = {
+#			factor = 55
+#		}
+#		relative_position_id = SNF_blackmail_drecht
+#		x = 0
+#		y = 1
+#		completion_reward = {
+#		if = {
+#			limit = {
+#				has_active_mission = SNF_drecht_gathering_nobles
+#			}
+#			remove_mission = SNF_drecht_gathering_nobles
+#			add_popularity = {
+#			ideology = republic_aristocrat
+#			popularity = -0.09
+#			}
+#			country_event = {
+#						id = snf.15
+#					}
+#		}
+#		
+#		if = {
+#			limit = {
+#				has_active_mission = SNF_drecht_consolidation
+#			}
+#			remove_mission = SNF_drecht_consolidation
+#			add_popularity = {
+#			ideology = republic_aristocrat
+#			popularity = -0.09
+#			}
+#			country_event = {
+#						id = snf.15
+#					}
+#		}
+#		
+#		if = {
+#			limit = {
+#				has_active_mission = SNF_drecht_hiding
+#			}
+#			remove_mission = SNF_drecht_hiding
+#			add_popularity = {
+#			ideology = republic_aristocrat
+#			popularity = -0.09
+#			}
+#			country_event = {
+#						id = snf.15
+#					}
+#		}
+#		}
+#	       }
+##############################
+focus = { #Reach out to Drecht
+		id = SNF_talk_to_drecht
+		icon = GFX_focus_hlz_soft_power
+		cost = 10
+		available = {
+		has_country_flag = SNF_Drecht_opportunity_flag
+		has_country_flag = SNF_friends_drecht
+		}
+		prerequisite = {
+			focus = SNF_question_drecht
+		}
+		ai_will_do = {
+			factor = 150
+		}
+		bypass = {
+		OR = {
+		has_government = republic_aristocrat
+		NOT = {
+		has_country_flag = SNF_Drecht_opportunity_flag
+		}
+		}
+		}
+		relative_position_id = SNF_question_drecht
+		x = 1
+		y = 1
+		completion_reward = {
+		add_popularity = {
+			ideology = monarchy_absolute
+			popularity = -0.08
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_hiding
+				republic_aristocrat < 0.20
+			}
+			remove_mission = SNF_drecht_hiding
+			country_event = {
+						id = snf.16
+					}
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_hiding
+				republic_aristocrat > 0.20
+			}
+			remove_mission = SNF_drecht_hiding
+			activate_mission = SNF_drecht_hiding
+
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_consolidation
+			}
+			remove_mission = SNF_drecht_consolidation
+			activate_mission = SNF_drecht_hiding
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_gathering_nobles
+			}
+			remove_mission = SNF_drecht_gathering_nobles
+			activate_mission = SNF_drecht_consolidation
+		}
+		
+		}
+	}
+focus = { #Placate Drecht
+		id = SNF_placate_drecht
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		available = {
+		has_country_flag = SNF_Drecht_opportunity_flag
+		has_country_flag = SNF_friends_drecht
+		}
+		prerequisite = {
+			focus = SNF_talk_to_drecht
+		}
+		ai_will_do = {
+			factor = 150
+		}
+		bypass = {
+		OR = {
+		has_government = republic_aristocrat
+		NOT = {
+		has_country_flag = SNF_Drecht_opportunity_flag
+		}
+		}
+		}
+		relative_position_id = SNF_talk_to_drecht
+		x = 0
+		y = 1
+		completion_reward = {
+		add_popularity = {
+			ideology = republic_aristocrat
+			popularity = -0.08
+		}
+		deactivate_advisor = evil_ulrich_drecht
+		add_advisor_role = {
+    		character = SNF_ulrich_drecht
+    		activate = yes
+    		advisor = {
+        	slot = political_advisor
+        	cost = 50
+        	idea_token = ulrich_drecht
+        	traits = {
+            	second_prince
+        			}
+    			}
+			}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_hiding
+				republic_aristocrat < 0.20
+			}
+			remove_mission = SNF_drecht_hiding
+			country_event = {
+						id = snf.16
+					}
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_hiding
+				republic_aristocrat > 0.20
+			}
+			remove_mission = SNF_drecht_hiding
+			activate_mission = SNF_drecht_hiding
+
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_consolidation
+			}
+			remove_mission = SNF_drecht_consolidation
+			activate_mission = SNF_drecht_hiding
+		}
+		if = {
+			limit = {
+				has_active_mission = SNF_drecht_gathering_nobles
+			}
+			remove_mission = SNF_drecht_gathering_nobles
+			activate_mission = SNF_drecht_consolidation
+		}
+		}
+	}
+#focus = { #Elavate Drecht
+#		id = SNF_Elavate_drecht
+#		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+#		cost = 10
+#		available = {
+#		has_country_flag = SNF_Drecht_opportunity_flag
+#		has_country_flag = SNF_friends_drecht
+#		}
+#		prerequisite = {
+#			focus = SNF_placate_drecht
+#		}
+#		ai_will_do = {
+#			factor = 55
+#		}
+#		relative_position_id = SNF_placate_drecht
+#		x = 0
+#		y = 1
+#		completion_reward = {
+#		if = {
+#			limit = {
+#				has_active_mission = SNF_drecht_gathering_nobles
+#			}
+#			remove_mission = SNF_drecht_gathering_nobles
+#			country_event = {
+#						id = snf.16
+#					}
+#		}
+#		
+#		if = {
+#			limit = {
+#				has_active_mission = SNF_drecht_consolidation
+#			}
+#			remove_mission = SNF_drecht_consolidation
+#			country_event = {
+#						id = snf.16
+#					}
+#		}
+#		
+#		if = {
+#			limit = {
+#				has_active_mission = SNF_drecht_hiding
+#			}
+#			remove_mission = SNF_drecht_hiding
+#			country_event = {
+#						id = snf.16
+#					}
+#		}
+#		}
+#	       }
+######################### Beginning of Economic tree
+focus = { #support Kalaster
+		id = SNF_support_kalaster
+		icon = GFX_BLD_Promote_Farming
+		cost = 10
+		available = {
+		owns_state = 329
+		}
+		prerequisite = {
+			focus = UNG_princely_relief
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		allow_branch = {
+            	original_tag = SNF
+    		}
+		relative_position_id = UNG_princely_relief
+		x = -4
+		y = 1
+		completion_reward = {
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy4
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy4
+		add_idea = SNF_brittle_economy5
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy3
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy3
+		add_idea = SNF_brittle_economy4
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy2
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy2
+		add_idea = SNF_brittle_economy3
+		}
+		}
+		set_country_flag = SNF_supporting_kalaster_farming
+		custom_effect_tooltip = support_kalaster_tooltip
+		329 = {
+		set_state_category = city
+		add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+		add_building_construction = {
+					type = farm
+					level = 1
+					instant_build = yes
+				}
+			}
+		add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.04
+			}
+		}
+	}
+#focus = { #improve farming
+#		id = SNF_improve_farming
+#		icon = GFX_focus_hlz_agricultural_boom
+#		cost = 8
+#		available = {
+#		}
+#		prerequisite = {
+#			focus = SNF_support_kalaster
+#		}
+#		ai_will_do = {
+#			factor = 25
+#		}
+#		relative_position_id = SNF_support_kalaster
+#		x = 2
+#		y = 1
+#		completion_reward = {
+#		custom_effect_tooltip = available_political_advisor
+#		show_ideas_tooltip = till_lehmkuhl
+#		#add_ideas = SNF_supported_farmers
+#		}
+#	}
+focus = { #invest in the capital
+		id = SNF_invest_in_capital
+		icon = GFX_focus_spa_save_the_alcazar
+		cost = 10
+		available = {
+		owns_state = 224
+		}
+		prerequisite = {
+			focus = UNG_princely_relief
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		allow_branch = {
+            	original_tag = SNF
+    		}
+		relative_position_id = UNG_princely_relief
+		x = -2
+		y = 1
+		completion_reward = {
+		add_research_slot = 1
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy4
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy4
+		add_idea = SNF_brittle_economy5
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy3
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy3
+		add_idea = SNF_brittle_economy4
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy2
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy2
+		add_idea = SNF_brittle_economy3
+		}
+		}
+		224 = {
+		add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+		add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+					type = workshop
+					level = 1
+					instant_build = yes
+				}
+		add_building_construction = {
+					type = cathedral
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+focus = { #support the road to wertzvorde
+		id = SNF_wertvorde_highroad
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 5
+		available = {
+		NOT = { has_country_flag = wws_konkord_no }
+		WSZ = {
+			owns_state = 420
+			}
+		}
+		prerequisite = {
+			focus = SNF_support_kalaster
+		}
+		prerequisite = {
+			focus = SNF_konkordat_highroad
+			}
+		#mutually_exclusive = {
+		#	focus = SNF_Road_to_faustburg
+		#}
+		ai_will_do = {
+			factor = 70
+		}
+		relative_position_id = SNF_support_kalaster
+		x = 0
+		y = 1
+		completion_reward = {
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy4
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy4
+		add_idea = SNF_brittle_economy5
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy3
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy3
+		add_idea = SNF_brittle_economy4
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy2
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy2
+		add_idea = SNF_brittle_economy3
+		}
+		}
+		build_railway = {
+    	level = 3
+    	build_only_on_allied = no
+    	controller_priority = {
+        base = 1
+    	}
+    	fallback = yes
+    	path = { 2213 3739 1491 9405 4786 9391 9372 3522 4080 }
+    	start_province = 2213
+    	target_province = 4080
+		}
+
+	  }
+}
+focus = { #support the road to faustburg
+		id = SNF_Road_to_faustburg
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8
+		available = {
+		owns_state = 224
+		SNF = {
+				is_not_independent = yes
+			}
+		}
+		#mutually_exclusive = {
+		#	focus = SNF_konkordat_highroad
+		#}
+		prerequisite = {
+			focus = SNF_invest_in_capital
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		relative_position_id = SNF_invest_in_capital
+		x = 0
+		y = 1
+		completion_reward = {
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy4
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy4
+		add_idea = SNF_brittle_economy5
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy3
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy3
+		add_idea = SNF_brittle_economy4
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy2
+			}
+		swap_ideas = {
+		remove_idea = SNF_brittle_economy2
+		add_idea = SNF_brittle_economy3
+		}
+		}
+		build_railway = {
+    	level = 3
+    	build_only_on_allied = no
+    	controller_priority = {
+        base = 1
+        modifier = {
+            tag = UNG
+            add = 2
+        }
+    	}
+    	fallback = yes
+    	path = { 1764 3510 3484 1280 4553 9292 9299 3509 9368 2243 1754}
+    	start_province = 1764
+    	target_province = 1754
+		}
+		add_resource = {
+					type = steel
+					amount = 9
+					state = 224
+				}
+		add_resource = {
+					type = steel
+					amount = 3
+					state = 324
+				}
+		SNF = {
+				custom_effect_tooltip = FPT_increase_union_loyalty_small_tt
+				add_to_variable = {
+					var = FPT_union_loyalty
+					value = 1
+				}
+				set_loyalty_approximations = yes
+			}
+	  }
+}
+
+focus = { #support rural farms
+		id = SNF_support_rural_farms
+		icon = GFX_focus_hlz_day_plow_rule
+		cost = 6
+		available = {
+		}
+		allow_branch = {
+            	original_tag = SNF
+    		}
+		prerequisite = {
+			focus = SNF_wertvorde_highroad
+			focus = SNF_Road_to_faustburg
+		}
+		#prerequisite = {
+		#	focus = UNG_tax_breaks
+		#}
+		#available = {
+		#	has_government = abs
+		#}
+		ai_will_do = {
+			factor = 55
+		}
+		relative_position_id = SNF_Road_to_faustburg
+		x = -1
+		y = 1
+		completion_reward = {
+		add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.08
+			}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy4
+			}
+		remove_ideas = SNF_brittle_economy4
+		}
+		if = {
+			limit = {
+			has_idea = SNF_brittle_economy5
+			}
+		remove_ideas = SNF_brittle_economy5
+		}
+		}
+	}
+
+focus = { #Promote Forging
+		id = SNF_promote_forging
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8
+		available = {
+		}
+		prerequisite = {
+			focus = SNF_support_rural_farms
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SNF_support_rural_farms
+		x = -2
+		y = 1
+		completion_reward = {
+		324 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+			}
+		252 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+			}
+		224 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+			}
+		329 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = forge
+					level = 1
+					instant_build = yes
+				}
+			}
+		}	  
+	 }
+#focus = { #Un-brittled economy
+#		id = SNF_Sturdy_economy
+#		icon = GFX_goal_generic_positive_trade_relations
+#		cost = 10
+#		available = {
+#		}
+#		prerequisite = {
+#			focus = SNF_Road_to_faustburg
+#		}
+#		prerequisite = {
+#		focus = SNF_steel_prospecting
+#		}
+#		ai_will_do = {
+#			factor = 40
+#		}
+#		relative_position_id = SNF_Road_to_faustburg
+#		x = 1
+#		y = 1
+#		completion_reward = {
+#		add_stability = 0.1
+#		remove_ideas = SNF_brittle_economy5
+#		
+#	  }
+#	  
+#	 }
+####### Military Tree beginning # Keep Cavalry
+focus = { #reorganize the army
+		id = SNF_restore_knightly_discipline
+		icon = GFX_focus_generic_home_defense
+		cost = 6
+		allow_branch = {
+			tag = SNF
+		}
+		prerequisite = {
+			focus = FPT_plate_sword
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = FPT_plate_sword
+		x = 7
+		y = 1
+		completion_reward = {
+		swap_ideas = {
+		remove_idea = SNF_decrepit_military
+		add_idea = SNF_decrepit_military2
+		}
+		
+	  }
+	  
+	 }
+focus = { #recruitment incentives
+		id = SNF_army_payment
+		icon = GFX_focus_generic_little_entente
+		cost = 6
+		available = {
+		}
+		prerequisite = {
+			focus = SNF_restore_knightly_discipline
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id =SNF_restore_knightly_discipline
+		x = -1
+		y = 1
+		completion_reward = {
+		if = {
+			limit = {
+			has_idea = SNF_decrepit_military3
+			}
+			swap_ideas = {
+			remove_idea = SNF_decrepit_military3
+			add_idea = SNF_decrepit_military4
+			}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_decrepit_military2
+			}
+			swap_ideas = {
+			remove_idea = SNF_decrepit_military2
+			add_idea = SNF_decrepit_military3
+			}
+		}
+		
+	  }
+	  
+	 }
+focus = { #climate training
+		id = SNF_climate_training
+		icon = GFX_focus_chi_army_reform
+		cost = 6
+		available = {
+		}
+		prerequisite = {
+			focus = SNF_restore_knightly_discipline
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id =SNF_restore_knightly_discipline
+		x = 1
+		y = 1
+		completion_reward = {
+		if = {
+			limit = {
+			has_idea = SNF_decrepit_military3
+			}
+			swap_ideas = {
+			remove_idea = SNF_decrepit_military3
+			add_idea = SNF_decrepit_military4
+			}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_decrepit_military2
+			}
+			swap_ideas = {
+			remove_idea = SNF_decrepit_military2
+			add_idea = SNF_decrepit_military3
+			}
+		}
+		
+	  }
+	  
+	 }
+focus = { #restore the order EDIT: This should probably play into Hexism somehow
+		id = SNF_restore_the_order
+		icon = GFX_BLD_Unify_The_Church
+		cost = 8
+		available = {
+		custom_trigger_tooltip = {
+		tooltip = has_hutrig_patron_tooltip
+		has_idea = hutrig_patron
+			}
+		}
+		prerequisite = {
+			focus = SNF_army_payment
+		}
+		prerequisite = {
+			focus = SNF_climate_training
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		relative_position_id = SNF_restore_knightly_discipline
+		x = 0
+		y = 2
+		completion_reward = {
+			swap_ideas = {
+			remove_idea = SNF_decrepit_military4
+			add_idea = SNF_hutrigs_guard
+			}
+			#SVT = {
+			#	FROM_improve_THIS_relations = yes
+			#}
+			#The Orden was kinda hexist actually 
+		}
+	  
+	 }
+############ Military Tree beginning - No cavalry
+focus = { #reorganize the army
+		id = SNF_army_restructuring
+		icon = GFX_focus_STA_purge_boomers
+		cost = 6
+		allow_branch = {
+			original_tag = SNF
+		}
+		prerequisite = {
+			focus = FPT_standardize_schnapphahnschloss
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = FPT_standardize_schnapphahnschloss
+		x = -1
+		y = 1
+		completion_reward = {
+		swap_ideas = {
+		remove_idea = SNF_decrepit_military
+		add_idea = SNF_decrepit_military5
+		}
+		
+	  }
+	  
+	 }
+focus = { #new training
+		id = SNF_new_training
+		icon = GFX_focus_secret_rearmament
+		cost = 8
+		available = {
+		}
+		prerequisite = {
+			focus = SNF_army_restructuring
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SNF_army_restructuring
+		x = -1
+		y = 1
+		completion_reward = {
+		if = {
+			limit = {
+			has_idea = SNF_decrepit_military6
+			}
+		swap_ideas = {
+		remove_idea = SNF_decrepit_military6
+		add_idea = SNF_decrepit_military7
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_decrepit_military5
+			}
+		swap_ideas = {
+		remove_idea = SNF_decrepit_military5
+		add_idea = SNF_decrepit_military6
+		}
+		}
+		
+	  }
+	  
+	 }
+focus = { #hit and run
+		id = SNF_hit_and_run
+		icon = GFX_focus_prc_infiltration
+		cost = 8
+		available = {
+		}
+		prerequisite = {
+			focus = SNF_army_restructuring
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SNF_army_restructuring
+		x = 1
+		y = 1
+		completion_reward = {
+		if = {
+			limit = {
+			has_idea = SNF_decrepit_military6
+			}
+		swap_ideas = {
+		remove_idea = SNF_decrepit_military6
+		add_idea = SNF_decrepit_military7
+		}
+		}
+		if = {
+			limit = {
+			has_idea = SNF_decrepit_military5
+			}
+		swap_ideas = {
+		remove_idea = SNF_decrepit_military5
+		add_idea = SNF_decrepit_military6
+		}
+		}
+		
+	  }
+	  
+	 }
+focus = { #Schneesoldaten 
+		id = SNF_Schneesoldaten 
+		icon = GFX_goal_generic_wolf_pack
+		cost = 5
+		available = {
+		}
+		prerequisite = {
+			focus = SNF_hit_and_run
+		}
+		prerequisite = {
+			focus = SNF_new_training
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		relative_position_id = SNF_army_restructuring
+		x = 0
+		y = 2
+		completion_reward = {
+		swap_ideas = {
+		remove_idea = SNF_decrepit_military7
+		add_idea = SNF_schneesoldaten_sp
+		}
+		
+	  }
+	  
+	 }
+################## Restore lost land
+focus = { #reclaim lost territory
+		id = SNF_southern_reclamation
+		icon = GFX_focus_ung_no_more_raids
+		cost = 5
+		allow_branch = {
+			TAG = SNF
+			}
+		available = {
+		NOT = {
+		has_country_flag = SNF_Drecht_opportunity_flag
+		}
+		has_government = monarchy_absolute
+		has_completed_focus = UNG_schneefilde_sack
+		}
+		prerequisite = {
+			focus = FPT_memories_crisis
+		}
+		ai_will_do = {
+			factor = 80
+			modifier = {
+				has_war_with = PRK
+				factor = 500
+			}
+			modifier = {
+				UNG = {
+				has_country_flag = UNG_war_perkavland_flag
+				}
+				factor = 100
+			}
+			modifier = {
+				UNG = {
+				has_country_flag = UNG_diplomatic_efforts_flag
+				}
+				NOT = {
+				has_war_with = PRK
+				}
+				factor = 0.5
+			}
+		}
+		relative_position_id = FPT_memories_crisis
+		x = 15
+		y = 1
+		completion_reward = {
+		PRK = {
+				add_opinion_modifier = {
+					target = SNF
+					modifier = threatened_opinion
+				}
+			}	
+		hidden_effect = {
+		329 = {
+		add_claim_by = SNF
+		}
+		418 = {
+		add_claim_by = SNF
+		}
+		622 = {
+		add_claim_by = SNF
+		}
+		621 = {
+		add_claim_by = SNF
+		}
+		#620 = {
+		#add_claim_by = SNF
+		#}
+		629 = {
+		add_claim_by = SNF
+		}
+		642 = {
+		add_claim_by = SNF
+		}
+		416 = {
+		add_claim_by = SNF
+		}
+		650 = {
+		add_claim_by = SNF
+		}
+		649 = {
+		add_claim_by = SNF
+		}
+		648 = {
+		add_claim_by = SNF
+		}
+		631 = {
+		add_claim_by = SNF
+		}
+		#623 = {
+		#add_claim_by = SNF
+		#}
+		630 = {
+		add_claim_by = SNF
+		}
+		645 = {
+		add_claim_by = SNF
+		}
+		}
+		
+	  }
+	  
+	 }
+focus = { #retake Lienihafen
+		id = SNF_retake_lienihafen
+		icon = GFX_focus_STA_expeditious_retreat
+		cost = 5
+		available = {
+		has_government = monarchy_absolute
+		}
+		prerequisite = {
+			focus = SNF_southern_reclamation
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		relative_position_id = SNF_southern_reclamation
+		x = -1
+		y = 1
+		completion_reward = {
+		custom_effect_tooltip = retake_lienihafen_tooltip
+		set_country_flag = SNF_retake_lienihafen_flag
+		hidden_effect = {
+		PRK = {
+		country_event = {
+		id = snf.17
+		days = 2
+			}
+			}
+	 	 }
+	  }
+	 }
+focus = { #eastern push
+		id = SNF_push_eastwards
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		available = {
+		has_government = monarchy_absolute
+		owns_state = 329
+		}
+		prerequisite = {
+			focus = SNF_southern_reclamation
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+		has_country_flag = SNF_UNG_said_no
+		}
+		relative_position_id = SNF_southern_reclamation
+		x = 1
+		y = 1
+		completion_reward = {
+		custom_effect_tooltip = retake_east_tooltip
+		set_country_flag = SNF_push_eastwards_flag
+	 	 }
+	  
+	 }
+focus = { #consolidate local land
+		id = SNF_nearby_conquests
+		icon = GFX_goal_generic_major_war
+		cost = 5
+		available = {
+		has_government = monarchy_absolute
+		owns_state = 418
+		}
+		prerequisite = {
+			focus = SNF_retake_lienihafen
+		}
+		prerequisite = {
+			focus = SNF_push_eastwards
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SNF_retake_lienihafen
+		x = 1
+		y = 1
+		completion_reward = {
+		custom_effect_tooltip = retake_local_lienihafen_tooltip
+		set_country_flag = SNF_retake_local_lienihafen_flag
+	 	 }
+	  
+	 }
+focus = { #thrust into Karistadt
+		id = SNF_thrust_into_karistadt
+		icon = GFX_focus_ung_take_down_krell
+		cost = 5
+		available = {
+		has_government = monarchy_absolute
+		owns_state = 224
+		}
+		#prerequisite = {
+		#	focus = SNF_retake_nevedenn
+		#	focus = SNF_assist_wertzworde
+		#}
+		prerequisite = {
+			focus = SNF_nearby_conquests
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+		has_country_flag = SNF_UNG_said_no
+		}
+		relative_position_id = SNF_southern_reclamation
+		x = 0
+		y = 3
+		completion_reward = {
+		custom_effect_tooltip = retake_karistadt_tooltip
+		set_country_flag = SNF_karistadt_flag
+	 	 }
+	  
+	 }
+focus = { #retake Nevedenn
+		id = SNF_retake_nevedenn
+		icon = GFX_focus_spa_no_compromise_on_carlist_ideals
+		cost = 5
+		allow_branch = {
+		always = no #idk this is kinda weird to deal with now
+		}
+		available = {
+		has_government = monarchy_absolute
+		OR = {
+		owns_state = 325
+		owns_state = 329
+		}
+		}
+		prerequisite = {
+			focus = SNF_push_eastwards
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+		focus = SNF_assist_wertzworde
+		}
+		bypass = {
+		has_country_flag = SNF_UNG_said_no
+		}
+		relative_position_id = SNF_push_eastwards
+		x = 1
+		y = 1
+		completion_reward = {
+		custom_effect_tooltip = retake_nevedenn_tooltip
+		set_country_flag = SNF_retake_nevedenn_flag
+		420 = {
+		add_claim_by = SNF
+		}
+	 	 }
+	  
+	 }
+focus = { #Assist Wertzworde
+		id = SNF_assist_wertzworde
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 5
+		allow_branch = {
+		always = no #idk this is kinda weird to deal with now
+		}
+		available = {
+		has_government = monarchy_absolute
+		has_country_leader = {
+   				 name = "Otto Kolb"
+   				 ruling_only = yes
+				}
+		WSZ = {
+		owns_state = 235
+		}
+		}
+		prerequisite = {
+			focus = SNF_push_eastwards
+			focus = SNF_retake_lienihafen
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		mutually_exclusive = {
+		focus = SNF_retake_nevedenn
+		}
+		relative_position_id = SNF_push_eastwards
+		x = -1
+		y = 1
+		completion_reward = {
+		WSZ = {
+		country_event = {
+		id = snf.18
+		days = 1
+		}
+		}
+	 	}
+	  
+	 }
+#focus = { #Allince Wertzworde EDIT: Removed, purpose replaced by the shared Wistinger Focuses
+#		id = SNF_ally_wertzworde
+#		icon = GFX_focus_generic_royal_wedding
+#		cost = 5
+#		available = {
+#		has_government = monarchy_absolute
+#		has_country_leader = {
+#   				 name = "Otto Kolb"
+#   				 ruling_only = yes
+#				}
+#		WSZ = {
+#		owns_state = 420
+#		}
+#		}
+#		prerequisite = {
+#			focus = SNF_assist_wertzworde
+#		}
+#		ai_will_do = {
+#			factor = 10
+#		}
+#		relative_position_id = SNF_assist_wertzworde
+#		x = 0
+#		y = 1
+#		completion_reward = {
+#		WSZ = {
+#		country_event = {
+#			id = snf.22
+#			days = 1
+#			}
+#		}
+#		custom_effect_tooltip = WIP_not_done_note
+#	 	}
+#	  
+#	 }
+focus = { #develop new territory
+		id = SNF_develop_new_land
+		icon = GFX_focus_ung_union_reconstruct_sudstadt
+		cost = 5
+		available = {
+		has_government = monarchy_absolute
+		OR = {
+		owns_state = 416
+		owns_state = 418
+		}
+		}
+		prerequisite = {
+			focus = SNF_support_rural_farms
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		relative_position_id = SNF_support_rural_farms
+		x = 2
+		y = 1
+		completion_reward = {
+		add_political_power = 50
+		set_country_flag = SNF_supporting_new_territory
+		custom_effect_tooltip = support_new_territory_tooltip
+	 	}
+	  
+	 }
+focus = { #placate perkav soldiers
+		id = SNF_gather_perkav_soldiers
+		icon = GFX_focus_ung_hire_raiders
+		cost = 10
+		available = {
+		has_government = monarchy_absolute
+		owns_state = 416
+		}
+		prerequisite = {
+			focus = SNF_support_rural_farms
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SNF_support_rural_farms
+		x = 0
+		y = 1
+		completion_reward = {
+		custom_effect_tooltip = perkav_volunteers_tooltip
+		hidden_effect = {
+		load_oob = SNF_settled_perkav
+		}
+		set_technology = {
+				perkav_raiders = 1
+				popup = no
+			}
+	 	}
+	  
+	 }
+############### Otto Lost lol
+focus = { #Kolbs fell off
+		id = SNF_fall_from_grace
+		icon = GFX_focus_rom_abdicate
+		cost = 5
+		available = {
+		hidden_trigger = {
+		always = no
+			}
+		}
+		prerequisite = {
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+		NOT = {
+		has_country_flag = SNF_Drecht_opportunity_flag
+		}
+		has_government = republic_aristocrat
+		}
+		relative_position_id = SNF_blackmail_drecht
+		x = 1
+		y = 1
+		completion_reward = { 
+		custom_effect_tooltip = snf_fall_from_grace_tooltip
+		}
+	}
+focus = { #Ulrich Ascendant
+		id = SNF_Drecht_Ascendant
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 5
+		mutually_exclusive = {
+		focus = SNF_nobles_consolidation
+		}
+		available = {
+		NOT = {
+		has_country_flag = SNF_Drecht_opportunity_flag
+		}
+		has_government = republic_aristocrat
+		}
+		prerequisite = {
+			focus = SNF_fall_from_grace
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				has_game_rule = {
+					rule = SNF_game_plan
+					option = SNF_DRECHT_ALTERNATE
+				}
+				factor = 0
+			}
+		}
+		relative_position_id = SNF_fall_from_grace
+		x = -1
+		y = 1
+		completion_reward = {
+		hidden_effect = {
+		retire_ideology_leader = monarchy_absolute
+		create_country_leader = {
+		name = "Ulrich Drecht"
+		desc = "politics_SNF_Drecht_desc"
+		picture = "gfx/leaders/SNF/Portrait_SNF_Schechter.dds"
+		ideology = monarchy_absolute_ideology
+		traits = {
+		disliked_dynasty ####powerful_noble added later
+			}
+		}
+		}
+		add_stability = -0.1
+		set_party_name = { ideology = monarchy_absolute long_name = "House Drecht" name = "House Drecht" }
+		set_politics = {
+			ruling_party = monarchy_absolute
+			}
+			add_popularity = {
+				ideology = monarchy_absolute
+				popularity = 0.2
+			}
+	 	}
+	  
+	 }
+focus = { #Proof of skill
+		id = SNF_Restored_honour
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 5
+		available = {
+		owns_state = 418
+		owns_state = 420
+		owns_state = 416
+		}
+		prerequisite = {
+			focus = SNF_Drecht_Ascendant
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SNF_Drecht_Ascendant
+		x = -1
+		y = 1
+		completion_reward = { 
+		remove_country_leader_trait = disliked_dynasty
+		add_country_leader_trait = powerful_noble
+		}
+	}
+#
+focus = { #Noble consolidation
+		id = SNF_nobles_consolidation
+		icon = GFX_focus_rom_handle_king
+		cost = 5
+		mutually_exclusive = {
+		focus = SNF_Drecht_Ascendant
+		}
+		available = {
+		NOT = {
+		has_country_flag = SNF_Drecht_opportunity_flag
+		}
+		has_government = republic_aristocrat
+		}
+		prerequisite = {
+			focus = SNF_fall_from_grace
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				has_game_rule = {
+					rule = SNF_game_plan
+					option = SNF_DRECHT
+				}
+				factor = 0
+			}
+		}
+		relative_position_id = SNF_fall_from_grace
+		x = 1
+		y = 1
+		completion_reward = {
+		remove_country_leader_trait = disliked_dynasty
+		add_popularity = {
+				ideology = republic_aristocrat
+				popularity = 0.1
+			}
+	 	}
+	  
+	 }
+focus = { #promote research
+		id = SNF_promote_literacy
+		icon = GFX_focus_research2
+		cost = 5
+		available = {
+		UNG = {
+		has_completed_focus = UNG_literacy_drive
+		}
+		}
+		prerequisite = {
+			focus = SNF_nobles_consolidation
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SNF_nobles_consolidation
+		x = 1
+		y = 1
+		completion_reward = {
+		add_popularity = {
+				ideology = republic_aristocrat
+				popularity = 0.08
+			}
+			add_ideas = UNG_literate_society
+	 	}
+	  
+	 }
+focus = { #Loyalty To The Union
+		id = SNF_loyalty_to_union
+		icon = GFX_focus_ung_union_forever
+		cost = 5
+		available = {
+			has_idea = FPT_union_member
+			STA = {
+				has_idea = FPT_union_member
+			}
+			NOT = {
+				has_country_flag = UNG_civil_war_started
+			}
+			custom_trigger_tooltip = {
+				tooltip = FPT_loyal_to_adalina_tt
+				check_variable = {
+					FPT_union_loyalty > 35
+				}
+				check_variable = {
+					FPT_union_loyalty > FPT_stahlhof_loyalty
+				}
+			}
+		}
+		prerequisite = {
+			focus = SNF_nobles_consolidation
+			focus = SNF_Drecht_Ascendant
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		relative_position_id = SNF_nobles_consolidation
+		x = -1
+		y = 1
+		completion_reward = {
+		clr_country_flag = FPT_ferdinist_strats
+		set_country_flag = FPT_loyalist_strats
+		if = {
+		limit = {
+		NOT = {
+		has_completed_focus = FPT_join_adalina
+		}
+		}
+		complete_national_focus = FPT_join_adalina
+		}
+		
+		add_to_variable = {
+				var = FPT_union_loyalty
+				value = 30
+			}
+			set_loyalty_approximations = yes
+			custom_effect_tooltip = UNG_FPT_loyalty_tt
+	 	}
+	  
+	 }
+
+

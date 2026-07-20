@@ -1,0 +1,19 @@
+scripted_gui = {
+
+	freiprinzloyalty = {
+		context_type = decision_category
+		
+		window_name = "freiprinzloyalty_container"
+		
+		visible = {
+			has_idea = FPT_union_member
+			NOT = {
+				tag = UNG
+				tag = STA
+				STA = {
+					has_country_flag = STA_civil_war_started
+				}
+			}
+		}
+	}
+}

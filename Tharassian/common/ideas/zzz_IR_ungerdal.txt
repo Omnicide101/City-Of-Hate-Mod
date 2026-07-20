@@ -1,0 +1,1511 @@
+ideas = {
+	
+	country = {
+		
+		#NATIONAL SPIRITS
+		
+		UNG_perkav_intervention_idea = {
+		
+			allowed = {
+				PRK = {
+					has_civil_war = yes
+				}
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_volunteer_expedition_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				send_volunteer_divisions_required = -0.75
+				send_volunteer_size = 8
+				send_volunteers_tension = -1
+			}
+		}
+		
+		UNG_literate_society = {
+		
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_literate_society
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.15
+				drift_defence_factor = -0.2
+			}
+		}
+		
+		UNG_edelverfassung = {
+		
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = gre_schachtplan
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 1
+				stability_factor = 0.2
+				conscription_factor = 0.1
+			}
+		}
+		
+		UNG_volksverfassung = {
+		
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = gre_schachtplan
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.2
+				political_power_gain = 0.5
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
+			}
+		}
+		
+		UNG_strict_protocol = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = SPA_carlism
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1
+				political_power_gain = 0.25
+			}
+		}
+		
+		UNG_nobility_controlled = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = SPR_appropriate_church_riches
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				mobilization_speed = 0.012
+				consumer_goods_factor = -0.02
+			}
+		}
+		
+		UNG_loyal_commanders = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = eng_imperial_conscription
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = 0.1
+			}
+		}
+		
+		UNG_hochprinzessinsauge = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_spy_coup
+			
+			removal_cost = -1
+			
+			modifier = {
+				operative_slot = 1
+				compliance_gain = 0.05
+			}
+		}
+	
+		UNG_disgruntled_nobility = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = prc_low_popular_support3
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = -0.02
+				war_support_weekly = -0.02
+			}
+		}
+		
+		UNG_ordorian_refugees = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_ordorian_refugees
+			
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = -0.1
+			}
+		}
+		
+		UNG_ordorian_meddling = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_spy_political
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = -0.015
+				}
+		}
+		
+		UNG_trade_realm = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_sea_focused_navy
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.075
+				local_resources_factor = 0.15
+			}
+		}
+		
+		UNG_trade_bergial = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_sea_focused_navy
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.075
+				local_resources_factor = 0.15
+			}
+		}
+		
+		UNG_trade_bergial_ii = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_sea_focused_navy
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.15
+				production_speed_buildings_factor = 0.1
+				local_resources_factor = 0.2
+			}
+		}
+		
+		UNG_two_thrones_idea = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_monarchist_uprising
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1
+				research_speed_factor = 0.05
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.075
+				local_resources_factor = 0.15
+			}
+		}
+		
+		UNG_trade_harassed = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = brooklyn_naval_yard
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_speed_buildings_factor = -0.1
+				local_resources_factor = -0.2
+			}
+		}
+		
+		princely_relief_tax = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_foreign_capital
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		refugee_crisis = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_refugee_crisis
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.3
+				MONTHLY_POPULATION = 0.05
+			}
+		}
+		
+		UNG_migrants_resettled = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = hol_shell_shocked_spectator
+			
+			removal_cost = -1
+			
+			modifier = {
+				MONTHLY_POPULATION = 0.3
+			}
+		}
+		
+		UNG_money_to_raiders_1 = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_constitutional_guarantees
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.35
+			}
+		}
+		
+		UNG_money_to_raiders_2 = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_constitutional_guarantees
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		UNG_kaltwetter_corps_idea = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_kaltwetter_corps
+			
+			removal_cost = -1
+			
+			modifier = {
+				acclimatization_cold_climate_gain_factor = 0.15
+			}
+		}
+		
+		UNG_central_command_idea = {
+		
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			cancel = {
+				OR = {
+					PRK = {
+						is_subject = yes
+					}
+					PRK = {
+						exists = no
+					}
+				}
+			}
+			
+			picture = CZE_planning_bonus
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+					tag = PRK
+					attack_bonus_against = 0.15
+			}
+		}
+		
+		UNG_joint_planning_idea = {
+		
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			cancel = {
+				OR = {
+					PRK = {
+						is_subject = yes
+					}
+					PRK = {
+						exists = no
+					}
+				}
+			}
+			
+			picture = FRA_national_mobilization_focus
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+					tag = PRK
+					defense_bonus_against = 0.15
+			}
+		}
+		
+		UNG_embargoed_bergial = {
+		
+		allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			cancel = {
+				OR = {
+					BER = {
+						has_idea = FPT_union_member
+					}
+					BER = {
+						exists = no
+					}
+				}
+			}
+			
+			picture = generic_embargo
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_factory_efficiency_gain_factor = -0.1
+			}
+		}
+		
+		UNG_elven_agents_idea = {
+		
+		allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_elven_agents
+			
+			removal_cost = -1
+			
+			modifier = {
+				operative_slot = 1
+			}
+		}
+		
+		UNG_steel_road_dominated = {
+		
+		allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_economic_increase
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.25
+				consumer_goods_factor = -0.2
+				min_export = -0.15
+				stability_factor = 0.05
+			}
+		}
+	
+		UNG_union_forever_idea = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.1
+				conscription_factor = 0.15
+				compliance_gain = 0.25
+				special_forces_min = 100
+			}
+		}
+		
+		marriage_UNG_IRI = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_royal_marriage
+			
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = royal_marriage_warning_tt
+			}
+		}
+		
+		marriage_UNG_GMR = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_royal_marriage
+			
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = royal_marriage_warning_tt
+			}
+		}
+		
+		marriage_UNG_ORD = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_royal_marriage
+			
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = royal_marriage_warning_tt
+			}
+		}
+		
+		UNG_trade_monopolized = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_foreign_capital
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.01
+			}
+		}
+		
+		UNG_RMT_trade = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_economic_increase
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.075
+				local_resources_factor = 0.15
+			}
+		}
+		
+		UNG_freisleruniversitat_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = jap_supremacy_of_technology
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+		
+		UNG_bleeding_edge_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = man_militarism
+			
+			removal_cost = -1
+			
+			modifier = {
+				equipment_upgrade_xp_cost = -0.33
+			}
+		}
+		
+		UNG_freislermuhle_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_agrarian_reform
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		UNG_blueprints_optimized = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = BLD_Open_To_The_WorldSpirit
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		UNG_blueprints_mandated = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = BLD_Open_To_The_WorldSpirit
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				industry_repair_factor = 0.15
+			}
+		}
+		
+		UNG_modularmontage_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ast_volunteer_defence_corps
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_start_efficiency_factor = 0.1
+			}
+		}
+		
+		UNG_refine_irrigation_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_agrarian_society
+			
+			removal_cost = -1
+			
+			modifier = {
+				base_fuel_gain_factor = 0.25
+			}
+		}
+		
+		UNG_holistic_architecture_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = gre_venerate_the_ancient_hellenes
+			
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots_factor = 0.1
+			}
+		}
+		
+		UNG_improvismontage_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = IRI_The_Rebuilding
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_lack_of_resource_penalty_factor = -0.35
+			}
+		}
+		
+		UNG_freislerfressen_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = hlz_agricultural_boom
+			
+			removal_cost = -1
+			
+			modifier = {
+				supply_consumption_factor = -0.1
+			}
+		}
+		
+		UNG_explosive_entrenchment_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ast_naval_auxiliary_patrol
+			
+			removal_cost = -1
+			
+			modifier = {
+				dig_in_speed_factor = 0.5
+			}
+		}
+		
+		UNG_crisis_draft_normalized = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_manpower_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.05
+			}
+		}
+		
+		UNG_divided_army = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_disjointed_gov
+			
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = -0.3
+				army_attack_factor = -0.15
+				army_defence_factor = -0.15
+				army_morale_factor = -0.1
+			}
+		}
+		
+		UNG_united_front_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = IRI_Military_Parades
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
+				army_morale_factor = 0.1
+			}
+		}
+		
+		UNG_ungerdaler_nationalism = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_ungerdaler_nationalism
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.1
+			}
+		}
+		
+		UNG_regional_recruitment_program_1 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.0025
+			}
+		}
+		
+		UNG_regional_recruitment_program_2 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.005
+			}
+		}
+		
+		UNG_regional_recruitment_program_3 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.0075
+			}
+		}
+		
+		UNG_regional_recruitment_program_4 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.01
+			}
+		}
+		
+		UNG_regional_recruitment_program_5 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.0125
+			}
+		}
+		
+		UNG_regional_recruitment_program_6 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.015
+			}
+		}
+		
+		UNG_regional_recruitment_program_7 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.0175
+			}
+		}
+		
+		UNG_regional_recruitment_program_8 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.02
+			}
+		}
+		
+		UNG_regional_recruitment_program_9 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.0225
+			}
+		}
+		
+		UNG_regional_recruitment_program_10 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.025
+			}
+		}
+		
+		UNG_regional_recruitment_program_11 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_union_forever
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.03
+			}
+		}
+		
+		UNG_regional_specialization_1 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.025
+				special_forces_defence_factor = 0.025
+				special_forces_min = 3
+			}
+		}
+		
+		UNG_regional_specialization_2 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+				special_forces_min = 6
+			}
+		}
+		
+		UNG_regional_specialization_3 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.075
+				special_forces_defence_factor = 0.075
+				special_forces_min = 9
+			}
+		}
+		
+		UNG_regional_specialization_4 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+				special_forces_min = 12
+			}
+		}
+		
+		UNG_regional_specialization_5 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.125
+				special_forces_defence_factor = 0.125
+				special_forces_min = 15
+			}
+		}
+		
+		UNG_regional_specialization_6 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.15
+				special_forces_defence_factor = 0.15
+				special_forces_min = 18
+			}
+		}
+		
+		UNG_regional_specialization_7 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.175
+				special_forces_defence_factor = 0.175
+				special_forces_min = 21
+			}
+		}
+		
+		UNG_regional_specialization_8 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.2
+				special_forces_defence_factor = 0.2
+				special_forces_min = 24
+			}
+		}
+		
+		UNG_regional_specialization_9 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.225
+				special_forces_defence_factor = 0.225
+				special_forces_min = 27
+			}
+		}
+		
+		UNG_regional_specialization_10 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.25
+				special_forces_defence_factor = 0.25
+				special_forces_min = 30
+			}
+		}
+		
+		UNG_regional_specialization_11 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = STA_faustburg_loyalties_1
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.3
+				special_forces_defence_factor = 0.3
+				special_forces_min = 35
+			}
+		}
+		
+		UNG_council_strategies_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = BLD_Open_To_The_WorldSpirit
+			
+			removal_cost = -1
+			
+			modifier = {
+				planning_speed = 0.05
+			}
+		}
+		
+		UNG_steel_road_arms = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = IRI_Forges_Mobilisation
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_attack_factor = 0.075
+				army_defence_factor = 0.075
+			}
+		}
+		
+		UNG_pride_colours_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = IRI_Glorious_Speech
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = 0.15
+			}
+		}
+		
+		UNG_adopt_lance_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = FRA_scw_intervention_nationalists_focus
+			
+			removal_cost = -1
+			
+			modifier = {
+				cavalry_attack_factor  = 0.2
+			}
+		}
+		
+		UNG_northern_steeds_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_motorized_equipment_manufacturer_2
+			
+			removal_cost = -1
+			
+			modifier = {
+				cavalry_defence_factor  = 0.2
+			}
+		}
+		
+		UNG_unions_finest_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = BLD_The_Firetrial
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_speed_factor  = 0.15
+				army_org_factor = 0.1
+			}
+		}
+	}
+}

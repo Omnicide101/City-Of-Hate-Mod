@@ -1,0 +1,44 @@
+defined_text = { # Country
+	name = GetFreiprinzKriegsspielePreparedness
+	text = { 
+		trigger = {
+			has_idea = FPT_union_member
+		}
+		localization_key = loc_key_kriegsspiele_preparedness
+	}
+}
+
+defined_text = { # Country
+	name = GetKriegsspieleWinner
+	text = { 
+		trigger = {
+			has_country_flag = FPT_kriegsspiele_winner
+		}
+		localization_key = loc_key_kriegsspiele_winner
+	}
+}
+
+defined_text = { #Country
+	name = BestPreparedFreiprinztum
+	text = {
+		trigger = {
+			has_idea = FPT_union_member
+			NOT = {
+				check_variable = {
+					global.FPT_best_prepared_for_kriegsspiele = THIS
+				}
+			}
+		}
+		localization_key = GUI_FPT_kriegsspiele_best_prepared
+	}
+	
+	text = {
+		trigger = {
+			has_idea = FPT_union_member
+			check_variable = {
+					global.FPT_best_prepared_for_kriegsspiele = THIS
+				}
+		}
+		localization_key = GUI_FPT_kriegsspiele_best_prepared_us
+	}
+}
