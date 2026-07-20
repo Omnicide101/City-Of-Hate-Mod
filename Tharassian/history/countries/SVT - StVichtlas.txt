@@ -156,6 +156,7 @@ set_popularities = {
 add_ideas = {
 	human_country
 	septism_religion
+	FPT_union_member
 	FPT_bauernfreistellung
 	SPW_reapers_of_the_harvest
 }

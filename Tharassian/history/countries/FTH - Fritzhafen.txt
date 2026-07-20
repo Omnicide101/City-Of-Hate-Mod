@@ -135,6 +135,7 @@ set_popularities = {
 add_ideas = {
 	human_country
 	hieyrenous_patron
+	FPT_union_member
 	FPT_bauernfreistellung
 }
 

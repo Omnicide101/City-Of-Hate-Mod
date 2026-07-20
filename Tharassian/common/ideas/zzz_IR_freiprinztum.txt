@@ -2,6 +2,25 @@ ideas = {
 	
 	country = {
 		
+		FPT_union_member = {
+		
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ung_ungerdaler_nationalism
+			
+			removal_cost = -1
+			
+			modifier = {
+			
+			}
+		}
+		
 		FPT_winner_kriegsspiele = {
 		
 			allowed = {

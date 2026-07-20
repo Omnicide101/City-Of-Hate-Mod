@@ -929,12 +929,9 @@ focus = {
 		set_freiprinz_piety_effects = yes
 			every_other_country = {
 			limit = {
-				OR = {
-				tag = UNG
-				AND = {
-				is_subject_of = UNG
-				NOT = { tag = SVT }
-					}
+				has_idea = FPT_union_member
+				NOT = {
+					tag = SVT
 				}
 			}
 			add_opinion_modifier = {

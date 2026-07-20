@@ -57,10 +57,7 @@ country_event = { #Conquest of Stahlhof
 				original_tag = STA
 				AND = {
 					has_global_flag = UNG_STA_started_civil_war
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-					}
+					has_idea = FPT_union_member
 				}
 			}
 		}
@@ -91,8 +88,7 @@ country_event = { #Conquest of Stahlhof
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -134,8 +130,7 @@ country_event = { #Conquest of Stahlhof
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -185,7 +180,7 @@ country_event = { #Conquest of Stahlhof
 				tag = UNG
 				has_country_flag = ORD_pact_with_union
 				ROOT = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 				}
 				UNG = {
 					is_subject_of = ROOT
@@ -212,12 +207,7 @@ country_event = { #Conquest of Stahlhof
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = STA
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		STA = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -268,8 +258,7 @@ country_event = { #Conquest of Rthauiaur
 			OR = {
 				NOT = {
 					tag = SKA
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 				}
 				has_country_leader = {
 					ruling_only = yes
@@ -543,10 +532,7 @@ country_event = { #Conquest of Rthauiaur
 		name = annex.2.e
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -587,12 +573,7 @@ country_event = { #Conquest of Rthauiaur
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = RTH
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		RTH = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -650,8 +631,7 @@ country_event = { #Conquest of Holzbrenn
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -722,8 +702,7 @@ country_event = { #Conquest of Holzbrenn
 							is_subject_of = ORD
 						}
 					}
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -770,10 +749,7 @@ country_event = { #Conquest of Holzbrenn
 		name = annex.3.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -799,12 +775,7 @@ country_event = { #Conquest of Holzbrenn
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = HLZ
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		HLZ = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -898,8 +869,7 @@ country_event = { #Conquest of Neureik
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -964,8 +934,7 @@ country_event = { #Conquest of Neureik
 							is_subject_of = ORD
 						}
 					}
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -1012,10 +981,7 @@ country_event = { #Conquest of Neureik
 		name = annex.4.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -1041,12 +1007,7 @@ country_event = { #Conquest of Neureik
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = NRK
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		NRK = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -1140,8 +1101,7 @@ country_event = { #Conquest of Arkanisturm
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -1207,8 +1167,7 @@ country_event = { #Conquest of Arkanisturm
 						}
 					}
 					
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -1255,10 +1214,7 @@ country_event = { #Conquest of Arkanisturm
 		name = annex.5.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -1284,12 +1240,7 @@ country_event = { #Conquest of Arkanisturm
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = ARK
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		ARK = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -1383,8 +1334,7 @@ country_event = { #Conquest of Nochwald
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -1449,8 +1399,7 @@ country_event = { #Conquest of Nochwald
 							is_subject_of = ORD
 						}
 					}
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -1497,10 +1446,7 @@ country_event = { #Conquest of Nochwald
 		name = annex.6.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -1526,12 +1472,7 @@ country_event = { #Conquest of Nochwald
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = NOC
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		NOC = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -1625,8 +1566,7 @@ country_event = { #Conquest of Spochwald
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -1691,8 +1631,7 @@ country_event = { #Conquest of Spochwald
 							is_subject_of = ORD
 						}
 					}
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -1739,10 +1678,7 @@ country_event = { #Conquest of Spochwald
 		name = annex.7.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -1768,12 +1704,7 @@ country_event = { #Conquest of Spochwald
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = SPW
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		SPW = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -1867,8 +1798,7 @@ country_event = { #Conquest of St. Vichtlas
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -1933,8 +1863,7 @@ country_event = { #Conquest of St. Vichtlas
 							is_subject_of = ORD
 						}
 					}
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -1981,10 +1910,7 @@ country_event = { #Conquest of St. Vichtlas
 		name = annex.8.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -2010,12 +1936,7 @@ country_event = { #Conquest of St. Vichtlas
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = SVT
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		SVT = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -2111,8 +2032,7 @@ country_event = { #Conquest of Teigerholen
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -2177,8 +2097,7 @@ country_event = { #Conquest of Teigerholen
 							is_subject_of = ORD
 						}
 					}
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -2225,10 +2144,7 @@ country_event = { #Conquest of Teigerholen
 		name = annex.9.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -2254,12 +2170,7 @@ country_event = { #Conquest of Teigerholen
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = TEI
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		TEI = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -2355,8 +2266,7 @@ country_event = { #Conquest of Schneefilde
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -2421,8 +2331,7 @@ country_event = { #Conquest of Schneefilde
 							is_subject_of = ORD
 						}
 					}
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -2469,10 +2378,7 @@ country_event = { #Conquest of Schneefilde
 		name = annex.10.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -2498,12 +2404,7 @@ country_event = { #Conquest of Schneefilde
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = SNF
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		SNF = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -2597,8 +2498,7 @@ country_event = { #Conquest of Wistingen
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -2664,8 +2564,7 @@ country_event = { #Conquest of Wistingen
 						}
 					}
 					has_country_flag = ORD_help_UNG_against_STA
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -2711,10 +2610,7 @@ country_event = { #Conquest of Wistingen
 		name = annex.11.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -2740,12 +2636,7 @@ country_event = { #Conquest of Wistingen
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = WIS
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		WIS = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -2830,8 +2721,7 @@ country_event = { #Conquest of Skaelinger
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					
 					AND = {
 						OR = {
@@ -2950,10 +2840,7 @@ country_event = { #Conquest of Skaelinger
 		name = annex.12.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -2978,12 +2865,7 @@ country_event = { #Conquest of Skaelinger
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = SKA
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		SKA = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	
@@ -3131,8 +3013,7 @@ country_event = { #Conquest of Fritzhafen
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -3197,8 +3078,7 @@ country_event = { #Conquest of Fritzhafen
 							is_subject_of = ORD
 						}
 					}
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -3245,10 +3125,7 @@ country_event = { #Conquest of Fritzhafen
 		name = annex.13.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -3274,12 +3151,7 @@ country_event = { #Conquest of Fritzhafen
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = FTH
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		FTH = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -3373,8 +3245,7 @@ country_event = { #Conquest of Wertszvorde
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -3439,8 +3310,7 @@ country_event = { #Conquest of Wertszvorde
 							is_subject_of = ORD
 						}
 					}
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -3487,10 +3357,7 @@ country_event = { #Conquest of Wertszvorde
 		name = annex.14.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -3516,12 +3383,7 @@ country_event = { #Conquest of Wertszvorde
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = WSZ
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		WSZ = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -3651,8 +3513,7 @@ country_event = { #Conquest of Ungerdal
 					STA = {
 						is_subject_of = ORD
 					}
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -3701,10 +3562,7 @@ country_event = { #Conquest of Ungerdal
 		trigger = {
 			OR = {
 				NOT = {
-					tag = UNG
-					ROOT = {
-						is_subject_of = UNG
-					}
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -3885,10 +3743,7 @@ country_event = { #Conquest of Ordoria
 			NOT = {
 				OR = {
 					AND = {
-						OR = {
-							tag = UNG
-							is_subject_of = UNG
-						}
+						has_idea = FPT_union_member
 						has_country_flag = twothrone_concord_member
 					}
 					RTH = {
@@ -3988,10 +3843,7 @@ country_event = { #Conquest of Ordoria
 		name = annex.16.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -4019,12 +3871,7 @@ country_event = { #Conquest of Ordoria
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = ORD
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		ORD = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { #Grant to Rthauiaur
@@ -4169,10 +4016,7 @@ country_event = { #Conquest of Ordoria
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = IST
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				IST = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = IST
@@ -4190,10 +4034,7 @@ country_event = { #Conquest of Ordoria
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = VAR
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				VAR = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = VAR
@@ -4211,10 +4052,7 @@ country_event = { #Conquest of Ordoria
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = YTH
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				YTH = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = YTH
@@ -4232,10 +4070,7 @@ country_event = { #Conquest of Ordoria
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = VUD
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				VUD = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = VUD
@@ -4256,18 +4091,8 @@ country_event = { #Conquest of Ordoria
 		
 		partition_ordoria = yes
 		
-		UNG = {
-			set_autonomy = {
-				target = IST
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
-		UNG = {
-			set_autonomy = {
-				target = VAR
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		IST = { add_ideas = FPT_union_member randomize_politics = yes}
+		VAR = { add_ideas = FPT_union_member randomize_politics = yes}
 		
 		UNG = {
 			set_country_flag = conquest_of_ordoria
@@ -4366,10 +4191,7 @@ country_event = { #Conquest of the Realm
 					GMR = {
 						is_subject_of = ROOT
 					}
-					tag = UNG
-					ROOT = {
-						is_subject_of = UNG
-					}
+					has_idea = FPT_union_member
 				}
 			}
 		}
@@ -4507,10 +4329,7 @@ country_event = { #Conquest of the Realm
 		name = annex.17.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -4552,12 +4371,7 @@ country_event = { #Conquest of the Realm
 					transfer_state = PREV
 				}
 			}
-			UNG = {
-				set_autonomy = {
-					target = NPC
-					autonomy_state = autonomy_IR_freiprinztum
-				}
-			}
+			NPC = { add_ideas = FPT_union_member randomize_politics = yes}
 		}
 		
 		if = {
@@ -4577,12 +4391,7 @@ country_event = { #Conquest of the Realm
 					transfer_state = PREV
 				}
 			}
-			UNG = {
-				set_autonomy = {
-					target = GMR
-					autonomy_state = autonomy_IR_freiprinztum
-				}
-			}
+			GMR = { add_ideas = FPT_union_member randomize_politics = yes}
 		}
 	}
 	
@@ -4759,10 +4568,7 @@ country_event = { #Conquest of the Realm
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = IRT
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				IRT = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = IRT
@@ -4780,10 +4586,7 @@ country_event = { #Conquest of the Realm
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = KRT
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				KRT = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = KRT
@@ -4801,10 +4604,7 @@ country_event = { #Conquest of the Realm
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = NAS
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				NAS = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = NAS
@@ -4822,10 +4622,7 @@ country_event = { #Conquest of the Realm
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = FEL
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				FEL = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = FEL
@@ -4843,10 +4640,7 @@ country_event = { #Conquest of the Realm
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = TRI
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				TRI = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = TRI
@@ -4864,10 +4658,7 @@ country_event = { #Conquest of the Realm
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = KAL
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				KAL = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = KAL
@@ -4885,10 +4676,7 @@ country_event = { #Conquest of the Realm
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = NAV
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				NAV = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = NAV
@@ -4951,8 +4739,7 @@ country_event = { #Conquest of Faustburg
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -5056,10 +4843,7 @@ country_event = { #Conquest of Faustburg
 		name = annex.18.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -5084,12 +4868,7 @@ country_event = { #Conquest of Faustburg
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = FAU
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		FAU = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Stahlhof
@@ -5176,10 +4955,7 @@ country_event = { #Conquest of Ierethayne
 		trigger = {
 			OR = {
 				NOT = {
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-					}
+					has_idea = FPT_union_member
 				}
 				NOT = {
 					country_exists = GMR
@@ -5231,8 +5007,7 @@ country_event = { #Conquest of Ierethayne
 			OR = {
 				NOT = {
 					OR = {
-						tag = UNG
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 						UNG = {
 							is_subject_of = ROOT
 						}
@@ -5291,10 +5066,7 @@ country_event = { #Conquest of Ierethayne
 		name = annex.19.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -5319,12 +5091,7 @@ country_event = { #Conquest of Ierethayne
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = IRT
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		IRT = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Realm
@@ -5433,10 +5200,7 @@ country_event = { #Conquest of Trifell
 		trigger = {
 			OR = {
 				NOT = {
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-					}
+					has_idea = FPT_union_member
 				}
 				NOT = {
 					country_exists = GMR
@@ -5488,8 +5252,7 @@ country_event = { #Conquest of Trifell
 			OR = {
 				NOT = {
 					OR = {
-						tag = UNG
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 						UNG = {
 							is_subject_of = ROOT
 						}
@@ -5548,10 +5311,7 @@ country_event = { #Conquest of Trifell
 		name = annex.20.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -5576,12 +5336,7 @@ country_event = { #Conquest of Trifell
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = TRI
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		TRI = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Realm
@@ -5690,10 +5445,7 @@ country_event = { #Conquest of Nastrogdar
 		trigger = {
 			OR = {
 				NOT = {
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-					}
+					has_idea = FPT_union_member
 				}
 				NOT = {
 					country_exists = GMR
@@ -5745,8 +5497,7 @@ country_event = { #Conquest of Nastrogdar
 			OR = {
 				NOT = {
 					OR = {
-						tag = UNG
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 						UNG = {
 							is_subject_of = ROOT
 						}
@@ -5805,10 +5556,7 @@ country_event = { #Conquest of Nastrogdar
 		name = annex.21.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -5833,12 +5581,7 @@ country_event = { #Conquest of Nastrogdar
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = NAS
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		NAS = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Realm
@@ -5945,13 +5688,10 @@ country_event = { #Conquest of Kortinall
 	option = {# Liberate
 		name = annex.22.a
 		trigger = {
+			NOT = {
+				has_idea = FPT_union_member
+			}
 			OR = {
-				NOT = {
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-					}
-				}
 				NOT = {
 					country_exists = GMR
 					GMR = {
@@ -6000,15 +5740,6 @@ country_event = { #Conquest of Kortinall
 		
 		trigger = {
 			OR = {
-				NOT = {
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-						UNG = {
-							is_subject_of = ROOT
-						}
-					}
-				}
 				NOT = {
 					country_exists = GMR
 					GMR = {
@@ -6062,10 +5793,7 @@ country_event = { #Conquest of Kortinall
 		name = annex.22.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -6090,12 +5818,7 @@ country_event = { #Conquest of Kortinall
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = KRT
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		KRT = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Realm
@@ -6187,13 +5910,10 @@ country_event = { #Conquest of Felweyne
 	option = {# Liberate
 		name = annex.23.a
 		trigger = {
+			NOT = {
+				has_idea = FPT_union_member
+			}
 			OR = {
-				NOT = {
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-					}
-				}
 				NOT = {
 					country_exists = GMR
 					GMR = {
@@ -6242,15 +5962,6 @@ country_event = { #Conquest of Felweyne
 		
 		trigger = {
 			OR = {
-				NOT = {
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-						UNG = {
-							is_subject_of = ROOT
-						}
-					}
-				}
 				NOT = {
 					country_exists = GMR
 					GMR = {
@@ -6304,10 +6015,7 @@ country_event = { #Conquest of Felweyne
 		name = annex.23.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -6332,12 +6040,7 @@ country_event = { #Conquest of Felweyne
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = FEL
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		FEL = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Realm
@@ -6444,13 +6147,10 @@ country_event = { #Conquest of Navandonne
 	option = {# Liberate
 		name = annex.24.a
 		trigger = {
+			NOT = {
+				has_idea = FPT_union_member
+			}
 			OR = {
-				NOT = {
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-					}
-				}
 				NOT = {
 					country_exists = GMR
 					GMR = {
@@ -6499,15 +6199,6 @@ country_event = { #Conquest of Navandonne
 		
 		trigger = {
 			OR = {
-				NOT = {
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-						UNG = {
-							is_subject_of = ROOT
-						}
-					}
-				}
 				NOT = {
 					country_exists = GMR
 					GMR = {
@@ -6561,10 +6252,7 @@ country_event = { #Conquest of Navandonne
 		name = annex.24.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -6589,12 +6277,7 @@ country_event = { #Conquest of Navandonne
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = NAV
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		NAV = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Realm
@@ -6701,13 +6384,10 @@ country_event = { #Conquest of Kaltire
 	option = {# Liberate
 		name = annex.25.a
 		trigger = {
+			NOT = {
+				has_idea = FPT_union_member
+			}
 			OR = {
-				NOT = {
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-					}
-				}
 				NOT = {
 					country_exists = GMR
 					GMR = {
@@ -6756,15 +6436,6 @@ country_event = { #Conquest of Kaltire
 		
 		trigger = {
 			OR = {
-				NOT = {
-					OR = {
-						tag = UNG
-						is_subject_of = UNG
-						UNG = {
-							is_subject_of = ROOT
-						}
-					}
-				}
 				NOT = {
 					country_exists = GMR
 					GMR = {
@@ -6818,10 +6489,7 @@ country_event = { #Conquest of Kaltire
 		name = annex.25.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -6846,12 +6514,7 @@ country_event = { #Conquest of Kaltire
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = KAL
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		KAL = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Realm
@@ -7005,6 +6668,7 @@ country_event = { #Conquest of the Confederation
 			NOT = {
 				has_government = puritan
 				has_government = theocrat
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -7139,10 +6803,7 @@ country_event = { #Conquest of the Confederation
 		name = annex.26.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -7183,12 +6844,7 @@ country_event = { #Conquest of the Confederation
 				}
 			}
 			
-			UNG = {
-				set_autonomy = {
-					target = GMR
-					autonomy_state = autonomy_IR_freiprinztum
-				}
-			}
+			GMR = { add_ideas = FPT_union_member randomize_politics = yes}
 		}
 		
 		if = {
@@ -7211,12 +6867,7 @@ country_event = { #Conquest of the Confederation
 				}
 			}
 			
-			UNG = {
-				set_autonomy = {
-					target = NPC
-					autonomy_state = autonomy_IR_freiprinztum
-				}
-			}
+			NPC = { add_ideas = FPT_union_member randomize_politics = yes}
 		}
 	}
 	
@@ -7225,10 +6876,7 @@ country_event = { #Conquest of the Confederation
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					ROOT = {
-						is_subject_of = UNG
-					}
+					has_idea = FPT_union_member
 					UNG = {
 						is_subject_of = ROOT
 					}
@@ -7271,10 +6919,7 @@ country_event = { #Conquest of the Confederation
 		name = annex.26.f
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -7307,54 +6952,14 @@ country_event = { #Conquest of the Confederation
 		
 		shatter_the_realm = yes
 		
-		UNG = {
-			set_autonomy = {
-				target = IRT
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
-		UNG = {
-			set_autonomy = {
-				target = NAS
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
-		UNG = {
-			set_autonomy = {
-				target = FEL
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
-		UNG = {
-			set_autonomy = {
-				target = KAL
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
-		UNG = {
-			set_autonomy = {
-				target = KRT
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
-		UNG = {
-			set_autonomy = {
-				target = KRT
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
-		UNG = {
-			set_autonomy = {
-				target = NAV
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
-		UNG = {
-			set_autonomy = {
-				target = TRI
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		IRT = { add_ideas = FPT_union_member randomize_politics = yes}
+		NAS = { add_ideas = FPT_union_member randomize_politics = yes}
+		FEL = { add_ideas = FPT_union_member randomize_politics = yes}
+		KAL = { add_ideas = FPT_union_member randomize_politics = yes}
+		KRT = { add_ideas = FPT_union_member randomize_politics = yes}
+		KRT = { add_ideas = FPT_union_member randomize_politics = yes}
+		NAV = { add_ideas = FPT_union_member randomize_politics = yes}
+		TRI = { add_ideas = FPT_union_member randomize_politics = yes}
 		
 		set_country_flag = conquest_of_the_confederation
 	}
@@ -7410,10 +7015,7 @@ country_event = { #Conquest of Perkavland
 		name = annex.27.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -7486,10 +7088,7 @@ country_event = { #Conquest of Perkavland
 		name = annex.27.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -7514,12 +7113,7 @@ country_event = { #Conquest of Perkavland
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = PRK
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		PRK = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = {# Liberate Chiefs
@@ -7722,10 +7316,7 @@ country_event = { #Conquest of Perkavland
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = KRL
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				KRL = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = KRL
@@ -7743,10 +7334,7 @@ country_event = { #Conquest of Perkavland
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = NVT
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				NVT = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = NVT
@@ -7764,10 +7352,7 @@ country_event = { #Conquest of Perkavland
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = VTZ
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				VTZ = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = VTZ
@@ -7785,10 +7370,7 @@ country_event = { #Conquest of Perkavland
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = RLV
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				RLV = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = RLV
@@ -7806,10 +7388,7 @@ country_event = { #Conquest of Perkavland
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = SVC
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				SVC = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = SVC
@@ -7827,10 +7406,7 @@ country_event = { #Conquest of Perkavland
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = WLT
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				WLT = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = WLT
@@ -7848,10 +7424,7 @@ country_event = { #Conquest of Perkavland
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = VLN
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				VLN = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = VLN
@@ -7869,10 +7442,7 @@ country_event = { #Conquest of Perkavland
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = KRZ
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				KRZ = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = KRZ
@@ -7890,10 +7460,7 @@ country_event = { #Conquest of Perkavland
 				limit = {
 					tag = UNG
 				}
-				set_autonomy = {
-					target = LNK
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				LNK = { add_ideas = FPT_union_member randomize_politics = yes}
 			}
 			else = {
 				puppet = LNK
@@ -7960,8 +7527,7 @@ country_event = { #Conquest of Bergial
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					has_country_flag = VRG_can_annex_BER
 				}
 			}
@@ -8042,10 +7608,7 @@ country_event = { #Conquest of Bergial
 		name = annex.28.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -8073,12 +7636,7 @@ country_event = { #Conquest of Bergial
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = BER
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		BER = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Vergallheim cores Bergial
@@ -8149,10 +7707,7 @@ country_event = { #Conquest of Tlarthingia
 		name = annex.29.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -8225,10 +7780,7 @@ country_event = { #Conquest of Tlarthingia
 		name = annex.29.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -8253,12 +7805,7 @@ country_event = { #Conquest of Tlarthingia
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = TLA
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		TLA = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -8304,8 +7851,7 @@ country_event = { #Conquest of Kurgur
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					tag = BER
 					tag = SKA
 					tag = RMT
@@ -8403,10 +7949,7 @@ country_event = { #Conquest of Kurgur
 		name = annex.30.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -8437,12 +7980,7 @@ country_event = { #Conquest of Kurgur
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = KUR
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		KUR = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { #Take Vergall Lands
@@ -8457,7 +7995,7 @@ country_event = { #Conquest of Kurgur
 				}
 				AND = {
 					ROOT = {
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 					}
 					UNG = {
 						has_country_flag = UNG_helping_terugkeer
@@ -8479,7 +8017,7 @@ country_event = { #Conquest of Kurgur
 				}
 				AND = {
 					ROOT = {
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 					}
 					UNG = {
 						has_country_flag = UNG_helping_seventh_campaign
@@ -8538,7 +8076,7 @@ country_event = { #Conquest of Kurgur
 								is_subject_of = ROOT
 							}
 							ROOT = {
-								is_subject_of = UNG
+								has_idea = FPT_union_member
 							}
 						}
 						UNG = {
@@ -8577,7 +8115,7 @@ country_event = { #Conquest of Kurgur
 								is_subject_of = ROOT
 							}
 							ROOT = {
-								is_subject_of = UNG
+								has_idea = FPT_union_member
 							}
 						}
 						UNG = {
@@ -8614,16 +8152,11 @@ country_event = { #Conquest of Kurgur
 						is_subject_of = ROOT
 					}
 					ROOT = {
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 					}
 				}
 			}
-			UNG = {
-				set_autonomy = {
-					target = KUR
-					autonomy_state = autonomy_IR_freiprinztum
-				}
-			}
+			KUR = { add_ideas = FPT_union_member randomize_politics = yes}
 		}
 		
 		if = {
@@ -8635,7 +8168,7 @@ country_event = { #Conquest of Kurgur
 							is_subject_of = ROOT
 						}
 						ROOT = {
-							is_subject_of = UNG
+							has_idea = FPT_union_member
 						}
 					}
 				}
@@ -8687,10 +8220,7 @@ country_event = { #Conquest of Irinthios
 		name = annex.31.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -8763,10 +8293,7 @@ country_event = { #Conquest of Irinthios
 		name = annex.31.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -8791,12 +8318,7 @@ country_event = { #Conquest of Irinthios
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = IRI
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		IRI = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -8844,8 +8366,7 @@ country_event = { #Conquest of Rimatü
 		name = annex.32.a
 		trigger = {
 			NOT = {
-				tag = UNG
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -8921,10 +8442,7 @@ country_event = { #Conquest of Rimatü
 		name = annex.32.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -8949,12 +8467,7 @@ country_event = { #Conquest of Rimatü
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = RMT
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		RMT = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Grant to Skaelinger
@@ -9058,8 +8571,7 @@ country_event = { #Conquest of Lirothlind
 			NOT = {
 				OR = {
 					tag = LEX
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 				}
 			}
 		}
@@ -9139,10 +8651,7 @@ country_event = { #Conquest of Lirothlind
 		name = annex.33.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -9167,12 +8676,7 @@ country_event = { #Conquest of Lirothlind
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = LIR
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		LIR = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = {#Reclamation by the LEX
@@ -9277,10 +8781,7 @@ country_event = { #Conquest of Istaroth
 		name = annex.34.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -9353,10 +8854,7 @@ country_event = { #Conquest of Istaroth
 		name = annex.34.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -9381,12 +8879,7 @@ country_event = { #Conquest of Istaroth
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = IST
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		IST = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -9435,10 +8928,7 @@ country_event = { #Conquest of Varinthia
 		name = annex.35.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -9511,10 +9001,7 @@ country_event = { #Conquest of Varinthia
 		name = annex.35.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -9539,12 +9026,7 @@ country_event = { #Conquest of Varinthia
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = VAR
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		VAR = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -9593,10 +9075,7 @@ country_event = { #Conquest of Ythelmare
 		name = annex.36.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -9669,10 +9148,7 @@ country_event = { #Conquest of Ythelmare
 		name = annex.36.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -9697,12 +9173,7 @@ country_event = { #Conquest of Ythelmare
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = YTH
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		YTH = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -9751,10 +9222,7 @@ country_event = { #Conquest of Vuid
 		name = annex.37.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -9827,10 +9295,7 @@ country_event = { #Conquest of Vuid
 		name = annex.37.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -9855,12 +9320,7 @@ country_event = { #Conquest of Vuid
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = VUD
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		VUD = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -9906,8 +9366,7 @@ country_event = { #Conquest of Bilodya
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					tag = IRI
 				}
 			}
@@ -9989,10 +9448,7 @@ country_event = { #Conquest of Bilodya
 		name = annex.38.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -10017,12 +9473,7 @@ country_event = { #Conquest of Bilodya
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = BLD
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		BLD = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Re-Integrate into Irinthios
@@ -10105,8 +9556,7 @@ country_event = { #Conquest of Merchant's Hand
 		trigger = {
 			NOT = {
 				OR = {
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					tag = IRI
 				}
 			}
@@ -10188,10 +9638,7 @@ country_event = { #Conquest of Merchant's Hand
 		name = annex.39.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -10216,12 +9663,7 @@ country_event = { #Conquest of Merchant's Hand
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = MER
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		MER = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = { # Re-Integrate into Irinthios
@@ -10307,10 +9749,7 @@ country_event = { #Conquest of Lyenikova
 		name = annex.40.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -10384,10 +9823,7 @@ country_event = { #Conquest of Lyenikova
 		name = annex.40.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -10412,12 +9848,7 @@ country_event = { #Conquest of Lyenikova
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = LNK
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		LNK = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -10468,10 +9899,7 @@ country_event = { #Conquest of Vlencin
 		name = annex.41.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -10545,10 +9973,7 @@ country_event = { #Conquest of Vlencin
 		name = annex.41.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -10573,12 +9998,7 @@ country_event = { #Conquest of Vlencin
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = VLN
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		VLN = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -10629,10 +10049,7 @@ country_event = { #Conquest of Karczyk
 		name = annex.42.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -10706,10 +10123,7 @@ country_event = { #Conquest of Karczyk
 		name = annex.42.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -10734,12 +10148,7 @@ country_event = { #Conquest of Karczyk
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = KRZ
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		KRZ = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -10790,10 +10199,7 @@ country_event = { #Conquest of Weltrova
 		name = annex.43.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -10867,10 +10273,7 @@ country_event = { #Conquest of Weltrova
 		name = annex.43.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -10895,12 +10298,7 @@ country_event = { #Conquest of Weltrova
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = WLT
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		WLT = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -10951,10 +10349,7 @@ country_event = { #Conquest of Rlavya
 		name = annex.44.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -11028,10 +10423,7 @@ country_event = { #Conquest of Rlavya
 		name = annex.44.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -11056,12 +10448,7 @@ country_event = { #Conquest of Rlavya
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = RLV
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		RLV = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -11112,10 +10499,7 @@ country_event = { #Conquest of Stotvic
 		name = annex.45.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -11189,10 +10573,7 @@ country_event = { #Conquest of Stotvic
 		name = annex.45.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -11217,12 +10598,7 @@ country_event = { #Conquest of Stotvic
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = SVC
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		SVC = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -11273,10 +10649,7 @@ country_event = { #Conquest of Krellsland
 		name = annex.46.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -11350,10 +10723,7 @@ country_event = { #Conquest of Krellsland
 		name = annex.46.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -11378,12 +10748,7 @@ country_event = { #Conquest of Krellsland
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = KRL
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		KRL = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -11434,10 +10799,7 @@ country_event = { #Conquest of Vitrczin
 		name = annex.47.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -11511,10 +10873,7 @@ country_event = { #Conquest of Vitrczin
 		name = annex.47.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -11539,12 +10898,7 @@ country_event = { #Conquest of Vitrczin
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = VTZ
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		VTZ = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -11595,10 +10949,7 @@ country_event = { #Conquest of Nevetko
 		name = annex.48.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -11672,10 +11023,7 @@ country_event = { #Conquest of Nevetko
 		name = annex.48.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -11700,12 +11048,7 @@ country_event = { #Conquest of Nevetko
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = NVT
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		NVT = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -11750,10 +11093,7 @@ country_event = { #Conquest of Tarnland
 		name = annex.49.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -11827,10 +11167,7 @@ country_event = { #Conquest of Tarnland
 		name = annex.49.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -11855,12 +11192,7 @@ country_event = { #Conquest of Tarnland
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = TAR
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		TAR = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -11905,10 +11237,7 @@ country_event = { #Conquest of Getaland
 		name = annex.50.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -11983,10 +11312,7 @@ country_event = { #Conquest of Getaland
 		name = annex.50.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -12011,12 +11337,7 @@ country_event = { #Conquest of Getaland
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = GET
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		GET = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -12061,10 +11382,7 @@ country_event = { #Conquest of Ith
 		name = annex.51.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -12139,10 +11457,7 @@ country_event = { #Conquest of Ith
 		name = annex.51.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -12167,12 +11482,7 @@ country_event = { #Conquest of Ith
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = ITH
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		ITH = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -12219,8 +11529,7 @@ country_event = { #Conquest of Dialand
 			NOT = {
 				OR = {
 					tag = GET
-					tag = UNG
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 				}
 			}
 		}
@@ -12301,10 +11610,7 @@ country_event = { #Conquest of Dialand
 		name = annex.52.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -12329,12 +11635,7 @@ country_event = { #Conquest of Dialand
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = DIA
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		DIA = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 	
 	option = {# Getaland Reunifies the Island
@@ -12402,10 +11703,7 @@ country_event = { #Conquest of Gowie
 		name = annex.53.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -12479,10 +11777,7 @@ country_event = { #Conquest of Gowie
 		name = annex.53.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -12507,12 +11802,7 @@ country_event = { #Conquest of Gowie
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = GOW
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		GOW = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -12557,10 +11847,7 @@ country_event = { #Conquest of Thryxvanor
 		name = annex.54.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -12634,10 +11921,7 @@ country_event = { #Conquest of Thryxvanor
 		name = annex.54.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -12662,12 +11946,7 @@ country_event = { #Conquest of Thryxvanor
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = TRX
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		TRX = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -12712,10 +11991,7 @@ country_event = { #Conquest of Tesliran
 		name = annex.55.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -12789,10 +12065,7 @@ country_event = { #Conquest of Tesliran
 		name = annex.55.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -12817,12 +12090,7 @@ country_event = { #Conquest of Tesliran
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = TES
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		TES = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -12867,10 +12135,7 @@ country_event = { #Conquest of Sulfurisle
 		name = annex.56.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -12944,10 +12209,7 @@ country_event = { #Conquest of Sulfurisle
 		name = annex.56.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -12972,12 +12234,7 @@ country_event = { #Conquest of Sulfurisle
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = SUL
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		SUL = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -13022,10 +12279,7 @@ country_event = { #Conquest of Aethell
 		name = annex.57.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -13099,10 +12353,7 @@ country_event = { #Conquest of Aethell
 		name = annex.57.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -13127,12 +12378,7 @@ country_event = { #Conquest of Aethell
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = ATH
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		ATH = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -13177,10 +12423,7 @@ country_event = { #Conquest of El
 		name = annex.58.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -13254,10 +12497,7 @@ country_event = { #Conquest of El
 		name = annex.58.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -13282,12 +12522,7 @@ country_event = { #Conquest of El
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = DEL
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		DEL = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -13332,10 +12567,7 @@ country_event = { #Conquest of Highhall
 		name = annex.59.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -13409,10 +12641,7 @@ country_event = { #Conquest of Highhall
 		name = annex.59.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -13437,12 +12666,7 @@ country_event = { #Conquest of Highhall
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = HIH
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		HIH = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -13487,10 +12711,7 @@ country_event = { #Conquest of the Stabba Tribes
 		name = annex.60.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -13564,10 +12785,7 @@ country_event = { #Conquest of the Stabba Tribes
 		name = annex.60.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -13592,12 +12810,7 @@ country_event = { #Conquest of the Stabba Tribes
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = STB
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		STB = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -13694,10 +12907,7 @@ country_event = { #Conquest of Tharothep
 		name = annex.61.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -13771,10 +12981,7 @@ country_event = { #Conquest of Tharothep
 		name = annex.61.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -13799,12 +13006,7 @@ country_event = { #Conquest of Tharothep
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = THA
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		THA = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -13850,10 +13052,7 @@ country_event = { #Conquest of Salnland
 		name = annex.62.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -13927,10 +13126,7 @@ country_event = { #Conquest of Salnland
 		name = annex.62.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -13955,12 +13151,7 @@ country_event = { #Conquest of Salnland
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = SAL
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		SAL = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -14005,10 +13196,7 @@ country_event = { #Conquest of the Ageless Empire
 		name = annex.63.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -14083,10 +13271,7 @@ country_event = { #Conquest of the Ageless Empire
 		name = annex.63.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -14111,12 +13296,7 @@ country_event = { #Conquest of the Ageless Empire
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = AGE
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		AGE = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -14164,10 +13344,7 @@ country_event = { #Conquest of the Tristal Empire
 		name = annex.64.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -14241,10 +13418,7 @@ country_event = { #Conquest of the Tristal Empire
 		name = annex.64.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -14269,12 +13443,7 @@ country_event = { #Conquest of the Tristal Empire
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = TRS
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		TRS = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -14319,10 +13488,7 @@ country_event = { #Conquest of Hastalia
 		name = annex.65.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -14396,10 +13562,7 @@ country_event = { #Conquest of Hastalia
 		name = annex.65.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -14424,12 +13587,7 @@ country_event = { #Conquest of Hastalia
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = HAS
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		HAS = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }
 
@@ -14474,10 +13632,7 @@ country_event = { #Conquest of the Akkanids
 		name = annex.66.a
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 
@@ -14551,10 +13706,7 @@ country_event = { #Conquest of the Akkanids
 		name = annex.66.c
 		trigger = {
 			OR = {
-				tag = UNG
-				ROOT = {
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 				UNG = {
 					is_subject_of = ROOT
 				}
@@ -14579,11 +13731,6 @@ country_event = { #Conquest of the Akkanids
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = AKK
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		AKK = { add_ideas = FPT_union_member randomize_politics = yes}
 	}
 }

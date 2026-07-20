@@ -558,13 +558,13 @@ focus_tree = {
 			every_country = {
 				limit = {
 					NOT = {
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 					}
 					OR = {
 						is_neighbor_of = UNG
 						any_country = {
 							AND = {
-								is_subject_of = UNG
+								has_idea = FPT_union_member
 								is_neighbor_of = PREV
 							}
 						}
@@ -886,7 +886,7 @@ focus_tree = {
 					NOT = {
 						original_tag = FTH
 					}
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 				}
 				add_opinion_modifier = {
 					target = UNG
@@ -1027,7 +1027,7 @@ focus_tree = {
 			every_country = {
 				limit = {
 					has_opinion_modifier = hampered_trade
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 				}
 				remove_opinion_modifier = {
 					target = UNG
@@ -1123,37 +1123,37 @@ focus_tree = {
 						AND = {
 							is_owned_and_controlled_by = WIS
 							WIS = {
-								is_subject_of = UNG
+								has_idea = FPT_union_member
 							}
 						}
 						AND = {
 							is_owned_and_controlled_by = FTH
 							FTH = {
-								is_subject_of = UNG
+								has_idea = FPT_union_member
 							}
 						}
 						AND = {
 							is_owned_and_controlled_by = BER
 							BER = {
-								is_subject_of = UNG
+								has_idea = FPT_union_member
 							}
 						}
 						AND = {
 							is_owned_and_controlled_by = TLA
 							TLA = {
-								is_subject_of = UNG
+								has_idea = FPT_union_member
 							}
 						}
 						AND = {
 							is_owned_and_controlled_by = IRI
 							IRI = {
-								is_subject_of = UNG
+								has_idea = FPT_union_member
 							}
 						}
 						AND = {
 							is_owned_and_controlled_by = RMT
 							RMT = {
-								is_subject_of = UNG
+								has_idea = FPT_union_member
 							}
 						}
 					}
@@ -1170,7 +1170,7 @@ focus_tree = {
 			}
 			every_other_country = {
 				limit = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					has_variable = STLRD_state_control_var
 				}	
 				subtract_from_variable = {
@@ -3398,7 +3398,7 @@ focus_tree = {
 				}
 				any_country = {
 					OR = {
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 						is_subject_of = BER
 					}
 					has_full_control_of_state = 552
@@ -3667,7 +3667,11 @@ focus_tree = {
 		}
 		available = {
 			SKA = {
-				is_independent = yes }
+				is_independent = yes
+			}
+			NOT = {
+				has_war_with = SKA
+			}
 		}
 		bypass = {
 			SKA = {
@@ -3700,6 +3704,7 @@ focus_tree = {
 		available = {
 			NOT = {
 				has_completed_focus = UNG_assist_terugkeer
+				has_war_with = SKA
 			}
 			SKA = {
 				is_independent = yes
@@ -3762,6 +3767,9 @@ focus_tree = {
 		available = {
 			SKA = {
 				is_independent = yes
+			}
+			NOT = {
+				has_war_with = SKA
 			}
 		}
 		mutually_exclusive = {
@@ -3855,7 +3863,7 @@ focus_tree = {
 					NOT = {
 						tag = RMT
 						tag = UNG
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 						is_in_faction_with = UNG
 					}
 				}
@@ -4019,7 +4027,7 @@ focus_tree = {
 				OR = {
 					is_in_faction_with = TLA
 					TLA = {
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 					}
 				}
 			}
@@ -4056,6 +4064,9 @@ focus_tree = {
 		available = {
 			RMT = {
 				is_independent = yes
+			}
+			NOT = {
+				has_war_with = RMT
 			}
 		}
 		mutually_exclusive = {
@@ -4240,10 +4251,7 @@ focus_tree = {
 				limit = {
 					has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
 					any_country = {
-						OR = {
-							is_subject_of = UNG
-							tag = UNG
-						}
+						has_idea = FPT_union_member
 						OR = {
 							is_neighbor_of = SKA
 							is_neighbor_of = RMT
@@ -4266,10 +4274,7 @@ focus_tree = {
 					has_country_flag = UNG_nordtorf_summit_fails_SKA_favoured
 					NOT = {
 						any_country = {
-							OR = {
-								is_subject_of = UNG
-								tag = UNG
-							}
+							has_idea = FPT_union_member
 							OR = {
 								is_neighbor_of = SKA
 								is_neighbor_of = RMT
@@ -4291,10 +4296,7 @@ focus_tree = {
 				limit = {
 					has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
 					any_country = {
-						OR = {
-							is_subject_of = UNG
-							tag = UNG
-						}
+						has_idea = FPT_union_member
 						OR = {
 							is_neighbor_of = SKA
 							is_neighbor_of = RMT
@@ -4317,10 +4319,7 @@ focus_tree = {
 					has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
 					NOT = {
 						any_country = {
-							OR = {
-								is_subject_of = UNG
-								tag = UNG
-							}
+							has_idea = FPT_union_member
 							OR = {
 								is_neighbor_of = SKA
 								is_neighbor_of = RMT
@@ -5430,8 +5429,8 @@ focus_tree = {
 			focus = UNG_coalition_willing
 		}
 		available = {
-			any_country = {
-				is_subject_of = UNG
+			any_other_country = {
+				has_idea = FPT_union_member
 				custom_trigger_tooltip = {
 				tooltip = FPT_favours_adalina_tt
 				check_variable = {
@@ -5940,8 +5939,9 @@ focus_tree = {
 					NOT = {
 						tag = STA
 						tag = SVT
+						tag = UNG
 					}
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 				}
 				add_to_tech_sharing_group = UNG_SVT_freisler_tech_group
 				custom_effect_tooltip = FPT_increase_union_loyalty_small_tt

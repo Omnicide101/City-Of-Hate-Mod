@@ -7,16 +7,19 @@ UNG_requisition_coast_tithe = {
 		}
 		
 		visible = {
-			any_subject_country = {
-				is_og_freiprinz = yes
+			any_other_country = {
+				has_idea = FPT_union_member
+				any_owned_state = {
+					is_coastal = yes
+				}
 			}
 		}
 		
 		available = {
-			any_subject_country = {
-				custom_trigger_tooltip = {
-					tooltip = FPT_is_og_freiprinz_tt
-					is_og_freiprinz = yes
+			any_other_country = {
+				has_idea = FPT_union_member
+				any_owned_state = {
+					is_coastal = yes
 				}
 				has_equipment = {
 					convoy > 49
@@ -35,9 +38,9 @@ UNG_requisition_coast_tithe = {
 		}
 		
 		complete_effect = {
-			random_subject_country = {
+			random_other_country = {
 				limit = {
-					is_og_freiprinz = yes
+					has_idea = FPT_union_member
 					has_equipment = {
 						convoy > 49
 					}
@@ -70,9 +73,10 @@ UNG_convince_freiprinzen = {
 				state = THIS
 				is_capital = yes
 				owner = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					NOT = {
 						tag = STA
+						tag = UNG
 					}
 				}
 			}
@@ -94,9 +98,10 @@ UNG_convince_freiprinzen = {
 			}
 			FROM = {
 				owner = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					NOT = {
 						tag = STA
+						tag = UNG
 					}
 				}
 			}
@@ -236,10 +241,7 @@ UNG_convince_freiprinzen = {
 				state = THIS
 				is_capital = yes
 				owner = {
-					is_subject_of = UNG
-					NOT = {
-						tag = STA
-					}
+					has_idea = FPT_union_member NOT = { OR = { tag = STA tag = UNG } }
 				}
 			}
 		}
@@ -260,10 +262,7 @@ UNG_convince_freiprinzen = {
 			}
 			FROM = {
 				owner = {
-					is_subject_of = UNG
-					NOT = {
-						tag = STA
-					}
+					has_idea = FPT_union_member NOT = { OR = { tag = STA tag = UNG } }
 				}
 			}
 			
@@ -401,10 +400,7 @@ UNG_convince_freiprinzen = {
 				state = THIS
 				is_capital = yes
 				owner = {
-					is_subject_of = UNG
-					NOT = {
-						tag = STA
-					}
+					has_idea = FPT_union_member NOT = { OR = { tag = STA tag = UNG } }
 				}
 			}
 		}
@@ -425,10 +421,7 @@ UNG_convince_freiprinzen = {
 			}
 			FROM = {
 				owner = {
-					is_subject_of = UNG
-					NOT = {
-						tag = STA
-					}
+					has_idea = FPT_union_member NOT = { OR = { tag = STA tag = UNG } }
 				}
 			}
 			

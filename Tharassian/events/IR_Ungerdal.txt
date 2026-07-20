@@ -904,7 +904,7 @@ country_event = {#Tlarthingia Rejects
 		}
 		every_country = {
 			limit = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			add_opinion_modifier = {
 				target = UNG
@@ -1337,7 +1337,7 @@ country_event = {#Northern Ally
 		OR = {
 			owns_state = 85
 			ORD = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 		}
 	}
@@ -2719,13 +2719,12 @@ country_event = {#Stahlhof Defeated
 				country_exists = STA
 			}
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 		}
 		any_country = {
 			OR = {
-				tag = UNG
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 				is_in_faction_with = UNG
 			}
 			owns_state = 192
@@ -2766,7 +2765,7 @@ country_event = {#Stahlhof Defeated
 		hidden_effect = {
 			every_other_country = {
 				limit = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					any_owned_state = {
 						is_core_of = STA
 					}
@@ -2837,7 +2836,7 @@ country_event = {#Stahlhof Defeated
 		hidden_effect = {
 			every_other_country = {
 				limit = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					any_owned_state = {
 						is_core_of = STA
 					}
@@ -2904,7 +2903,7 @@ country_event = {#Stahlhof Defeated
 		hidden_effect = {
 			every_other_country = {
 				limit = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					any_owned_state = {
 						is_core_of = STA
 					}

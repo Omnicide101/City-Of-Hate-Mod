@@ -214,25 +214,7 @@ country_event = {#FPT Returns home
 			}
 		}
 		
-		UNG = {
-			set_autonomy = {
-				target = ROOT
-				autonomy_state = autonomy_IR_freiprinztum
-				freedom_level = 0.4
-			}
-		}
-		if = {
-			limit = {
-				UNG = {#Doesn't always seem to auto-rejoin factions, so making it explicit
-					is_in_faction = yes
-				}
-			}
-			UNG = {
-				faction_leader = {
-					add_to_faction = ROOT
-				}
-			}
-		}
+		add_ideas = FPT_union_member
 	}
 	
 	
@@ -258,11 +240,11 @@ country_event = {#FPT Returns home
 		}
 		if = {
 			limit = {
-				UNG = {#Doesn't always seem to auto-rejoin factions, so making it explicit
+				STA = {#Doesn't always seem to auto-rejoin factions, so making it explicit
 					is_in_faction = yes
 				}
 			}
-			UNG = {
+			STA = {
 				faction_leader = {
 					add_to_faction = ROOT
 				}
@@ -1191,12 +1173,7 @@ country_event = {#We got elected!
 						is_og_freiprinz = yes
 						is_subject_of = ORD
 					}
-					UNG = {
-						set_autonomy = {
-							target = PREV
-							autonomous_state = autonomy_IR_freiprinztum
-						}
-					}
+					add_ideas = FPT_union_member
 				}
 			}
 			UNG = {
@@ -1223,5 +1200,217 @@ country_event = {#We didn't get elected
 	
 	option = {#Rip
 		name = fpt.26.a
+	}
+}
+
+country_event = {#Oh fuck oh shit light the beacons
+	id = fpt.27
+	title = fpt.27.t
+	desc = fpt.27.d
+	is_triggered_only = yes
+	
+	option = {#To arms!
+		name = fpt.27.a
+		every_other_country = {
+			limit = {
+				has_idea = FPT_union_member
+			}
+			country_event = {
+				id = fpt.28
+				days = 7
+			}
+		}
+		
+		if = {
+			limit = {
+				UNG = {
+					is_in_faction = no
+				}
+			}
+			UNG = {
+				set_country_flag = UNG_temporary_faction_flag
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = freiprinztum_faction
+					icon = GFX_faction_logo_generic_4
+				}
+			}
+		}
+		UNG = {
+			add_to_faction = ROOT
+		}
+		set_country_flag = FPT_temporarily_joined_faction_flag
+		if = {
+			limit = {
+				NOT = {
+					FROM = {
+						tag = UNG
+					}
+				}
+			}
+			UNG = {
+				add_to_war = {
+					targeted_alliance = ROOT
+					enemy = FROM
+					hostility_reason = asked_to_join
+				}
+			}
+		}
+		else = {
+			every_country = {
+				limit = {
+					NOT = {
+						has_war_with = ROOT
+					}
+					has_defensive_war_with = UNG
+				}
+				ROOT = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+	
+	option = {#We stand strong alone
+		name = fpt.27.b
+		ai_chance = {
+			factor = 0
+		}
+		add_war_support = 0.04
+	}
+}
+
+country_event = {#War calls!
+	id = fpt.28
+	title = fpt.28.t
+	desc = fpt.28.d
+	is_triggered_only = yes
+	
+	option = {#To arms!
+		name = fpt.28.a
+		ai_chance = {
+			factor = 50
+		}
+		#Flag to stop wars between league members that both join
+		if = {
+			limit = {
+				any_other_country = {
+					has_idea = FPT_union_member
+					has_war_with = ROOT
+				}
+			}
+			custom_effect_tooltip = FPT_war_stop_warning_tt
+			set_country_flag = FPT_external_attacker_stop_inter_union_war_flag
+		}
+		
+		UNG = {
+			add_to_faction = ROOT
+		}
+		
+		set_country_flag = FPT_temporarily_joined_faction_flag
+	}
+	
+	option = {#Not feelin it
+		name = fpt.28.b
+		ai_chance = {
+			factor = 0
+		}
+		
+		trigger = {
+			always = no #Disabled for now, maybe do something with this later
+		}
+		
+		if = {
+			limit = {
+				has_idea = FPT_union_member
+			}
+			add_stability = -0.47
+			custom_effect_tooltip = FPT_forsaking_union_warning_tt
+			remove_ideas = FPT_union_member
+		}
+	}
+}
+
+country_event = {#Hey let's not fight each other for like five minutes
+	id = fpt.29
+	hidden = yes
+
+	trigger = {
+		has_country_flag = FPT_external_attacker_stop_inter_union_war_flag
+		any_other_country = {
+			has_idea = FPT_union_member
+			has_war_with = ROOT
+			has_country_flag = FPT_external_attacker_stop_inter_union_war_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {#To arms!.. against the other guys!
+		every_other_country = {
+			limit = {
+				has_idea = FPT_union_member
+				has_war_with = ROOT
+				has_country_flag = FPT_external_attacker_stop_inter_union_war_flag
+			}
+			white_peace = {
+				tag = ROOT
+				message = FPT_unity_peace_tt
+			}
+		}
+	}
+}
+
+country_event = { #War's over, disband the faction
+	id = fpt.30
+	title = fpt.30.t
+	desc = fpt.30.d
+	trigger = {
+		tag = UNG
+		has_country_flag = UNG_temporary_faction_flag
+		has_war = no
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {#Pog (unless we lost ig)
+		name = fpt.30.a
+		dismantle_faction = yes
+		clr_country_flag = UNG_temporary_faction_flag
+	}
+}
+
+country_event = { #War's over, leave the faction
+	id = fpt.31
+	title = fpt.31.t
+	desc = fpt.31.d
+	trigger = {
+		has_idea = FPT_union_member
+		NOT = {
+			tag = UNG
+		}
+		is_in_faction_with = UNG
+		has_country_flag = FPT_temporarily_joined_faction_flag
+		has_war = no
+		UNG = {
+			has_war = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {#Pog (unless we lost ig)
+		name = fpt.31.a
+		leave_faction = yes
+		clr_country_flag = FPT_temporarily_joined_faction_flag
 	}
 }

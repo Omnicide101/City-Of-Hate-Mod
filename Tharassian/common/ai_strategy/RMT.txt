@@ -18,8 +18,10 @@ ungerdaler_buddies = {
 		}
 		OR = {
 			UNG = {
-				has_country_flag = UNG_nordtorf_summit_success_RMT_favoured
-				has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
+				OR = {
+					has_country_flag = UNG_nordtorf_summit_success_RMT_favoured
+					has_country_flag = UNG_nordtorf_summit_fails_RMT_favoured
+				}
 			}
 			is_in_faction_with = UNG #accounting for the 'Approach Rimatü' focus in the expansionist path
 		}

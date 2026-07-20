@@ -690,6 +690,8 @@
  WIS_trade_spochwald_desc:0 "We have signed a trade deal with Spochwald, bringing economic benefits."
  WIS_whiskey:0 "Wistinger Whiskey"
  WIS_whiskey_desc:0 "Wistinger Whiskey is famed throughout the Union and beyond for its potency and taste - it can even be used to disinfect battlefield wounds in a pinch, though any true Wistinger patriot would denounce the waste of good spirits over something as trivial as grievous injury. Our troops are supplied with generous rations from the Freeprincely Distilleries - assuming they're not bringing their own, home-brewed stuff!"
+ FPT_union_member:0 "Ungerdaler Union Member"
+ FPT_union_member_desc:0 "This state is a Freiprinztum of the Union of Free Ungerdaler Princes, pledging its loyalty to the Hochprinztum and banding together in times of war."
  FPT_winner_kriegsspiele:0 "Victor of the Kriegsspiele"
  FPT_winner_kriegsspiele_desc:0 "We have emerged victorious from the 887 Kriegsspiele! This has greatly boosted our prestige, and inspired recruits flock to our banners!"
  FPT_military_parade:0 "Kriegsspiele Parade Held"

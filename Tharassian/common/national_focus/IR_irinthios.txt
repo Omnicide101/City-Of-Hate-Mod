@@ -26,6 +26,19 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 4
+			modifier = {
+				factor = 0
+				NOT = {
+					has_game_rule = {
+						rule = IRI_game_plan
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = IRI_game_plan
+						option = IRI_CHAIROPHON
+					}
+				}
+			}
 		}
 
 		cost = 5
@@ -558,6 +571,19 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					has_game_rule = {
+						rule = IRI_game_plan
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = IRI_game_plan
+						option = IRI_SOSIBIOS
+					}
+				}
+			}
 		}
 
 		cost = 10
@@ -599,6 +625,19 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				NOT = {
+					has_game_rule = {
+						rule = IRI_game_plan
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = IRI_game_plan
+						option = IRI_CINYRAS
+					}
+				}
+			}
 		}
 
 		cost = 5

@@ -21,12 +21,12 @@ STA_politics_steel_court = {
 		ai_will_do = {
 			factor = 0 #Not without good reason
 			modifier = {
-				add = 50
+				add = 500
 				STA_already_taken_steel_court_decision = no
 				STA_should_buff_republicanism = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
 			}
 			modifier = {
-				add = 500 #Tiebreaker
+				add = 5000 #Tiebreaker
 				OR = {
 					STA_republicanism_puritanism_or_theocracy_tiebreaker_republicanism = yes
 					STA_republicanism_puritanism_or_aristocracy_tiebreaker_republicanism = yes
@@ -72,12 +72,12 @@ STA_politics_steel_court = {
 		ai_will_do = {
 			factor = 0 #Not without good reason
 			modifier = {
-				add = 50
+				add = 500
 				STA_already_taken_steel_court_decision = no
 				STA_should_buff_puritanism = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
 			}
 			modifier = {
-				add = 500 #Tiebreaker
+				add = 5000 #Tiebreaker
 				OR = {
 					STA_republicanism_puritanism_or_theocracy_tiebreaker_puritanism = yes
 					STA_republicanism_puritanism_or_aristocracy_tiebreaker_puritanism = yes
@@ -123,12 +123,12 @@ STA_politics_steel_court = {
 		ai_will_do = {
 			factor = 0 #Not without good reason
 			modifier = {
-				add = 50
+				add = 500
 				STA_already_taken_steel_court_decision = no
 				STA_should_buff_theocracy = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
 			}
 			modifier = {
-				add = 500 #Tiebreaker
+				add = 5000 #Tiebreaker
 				OR = {
 					STA_republicanism_puritanism_or_theocracy_tiebreaker_theocracy = yes
 					STA_republicanism_theocracy_or_aristocracy_tiebreaker_theocracy = yes
@@ -174,12 +174,12 @@ STA_politics_steel_court = {
 		ai_will_do = {
 			factor = 0 #Not without good reason
 			modifier = {
-				add = 50
+				add = 500
 				STA_already_taken_steel_court_decision = no
 				STA_should_buff_aristocracy = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
 			}
 			modifier = {
-				add = 500 #Tiebreaker
+				add = 5000 #Tiebreaker
 				OR = {
 					STA_republicanism_puritanism_or_aristocracy_tiebreaker_aristocracy = yes
 					STA_republicanism_theocracy_or_aristocracy_tiebreaker_aristocracy = yes
@@ -225,7 +225,7 @@ STA_politics_steel_court = {
 		ai_will_do = {
 			factor = 0 #Not without good reason
 			modifier = {
-				add = 5 #Less important than sorting out the other foci first
+				add = 50 #Less important than sorting out the other foci first
 				STA_already_taken_steel_court_decision = no
 				STA_should_buff_absolutism = yes #See common/scripted triggers/IR_stahlhof.triggers.txt for details
 			}
@@ -1494,7 +1494,7 @@ STA_convince_freiprinzen = {
 		}
 		
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			has_completed_focus = STA_scare_the_faustburg_soldiers_into_submission
 			OR = {
 				has_completed_focus = STA_alliance_of_equals
@@ -1503,7 +1503,7 @@ STA_convince_freiprinzen = {
 		}
 		
 		visible = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			tag = STA
 			NOT = {
 				has_country_flag = STA_started_civil_war
@@ -1537,9 +1537,10 @@ STA_convince_freiprinzen = {
 				state = THIS
 				is_capital = yes
 				owner = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					NOT = {
 						tag = STA
+						tag = UNG
 					}
 				}
 			}
@@ -1560,10 +1561,7 @@ STA_convince_freiprinzen = {
 				has_country_flag = STA_already_convincing_someone
 			}
 			FROM.owner = {
-				is_subject_of = UNG
-				NOT = {
-					tag = STA
-				}
+				has_idea = FPT_union_member NOT = { OR = { tag = STA tag = UNG } }
 			}
 			
 			#Can't directly access FPT_small_loyalty_cost for some reason, so workaround
@@ -1696,10 +1694,7 @@ STA_convince_freiprinzen = {
 				state = THIS
 				is_capital = yes
 				owner = {
-					is_subject_of = UNG
-					NOT = {
-						tag = STA
-					}
+					has_idea = FPT_union_member NOT = { OR = { tag = STA tag = UNG } }
 				}
 			}
 		}
@@ -1719,10 +1714,7 @@ STA_convince_freiprinzen = {
 				has_country_flag = STA_already_convincing_someone
 			}
 			FROM.owner = {
-				is_subject_of = UNG
-				NOT = {
-					tag = STA
-				}
+				has_idea = FPT_union_member NOT = { OR = { tag = STA tag = UNG } }
 			}
 			
 			#Can't directly access FPT_small_loyalty_cost for some reason, so workaround
@@ -1855,10 +1847,7 @@ STA_convince_freiprinzen = {
 				state = THIS
 				is_capital = yes
 				owner = {
-					is_subject_of = UNG
-					NOT = {
-						tag = STA
-					}
+					has_idea = FPT_union_member NOT = { OR = { tag = STA tag = UNG } }
 				}
 			}
 		}
@@ -1878,10 +1867,7 @@ STA_convince_freiprinzen = {
 				has_country_flag = STA_already_convincing_someone
 			}
 			FROM.owner = {
-				is_subject_of = UNG
-				NOT = {
-					tag = STA
-				}
+				has_idea = FPT_union_member NOT = { OR = { tag = STA tag = UNG } }
 			}
 			
 			#Can't directly access FPT_small_loyalty_cost for some reason, so workaround

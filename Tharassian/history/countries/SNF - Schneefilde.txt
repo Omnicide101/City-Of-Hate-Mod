@@ -122,6 +122,7 @@ set_popularities = {
 add_ideas = {
 	human_country
 	hutrig_patron
+	FPT_union_member
 	FPT_bauernfreistellung
 	SNF_entrenched_society
 	SNF_decrepit_military

@@ -431,11 +431,8 @@ UNG_perkav_census_decisions = {
 }
 
 FPT_aid_seventh_campaign = {
-	allowed = {
-		is_og_freiprinz = yes
-	}
-	
 	visible = {
+		has_idea = FPT_union_member
 		UNG = {
 			has_country_flag = UNG_helping_seventh_campaign
 		}
@@ -446,10 +443,8 @@ FPT_kriegsspiele_preparations = {
 	
 	icon = GFX_decision_category_kriegsspiele
 	
-	allowed = {
-		is_og_freiprinz = yes
-	}
 	visible = {
+		has_idea = FPT_union_member
 		NOT = {
 			OR = {
 				STA = {
@@ -475,7 +470,10 @@ FPT_border_skirmishes = {
 	}
 	
 	visible = {
-		is_subject_of = UNG
+		has_idea = FPT_union_member
+		NOT = {
+			tag = UNG
+		}
 		has_country_flag = FPT_border_conflicts_enabled
 	}
 	
@@ -496,7 +494,10 @@ FPT_loyalties = {
 	}
 	
 	visible = {
-		is_subject_of = UNG
+		has_idea = FPT_union_member
+		NOT = {
+			tag = UNG
+		}
 		NOT = {
 			OR = {
 				STA = {

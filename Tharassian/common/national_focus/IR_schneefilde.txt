@@ -2129,9 +2129,9 @@ focus = { #Loyalty To The Union
 		icon = GFX_focus_ung_union_forever
 		cost = 5
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started

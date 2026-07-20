@@ -107,6 +107,7 @@ set_politics = {
 add_ideas = {
 	human_country
 	anzella_patron
+	FPT_union_member
 	FPT_bauernfreistellung
 	WIS_whiskey
 }

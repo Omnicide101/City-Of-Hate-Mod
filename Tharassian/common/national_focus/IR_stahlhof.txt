@@ -1017,10 +1017,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			STA = {
-				set_autonomy = {
-					target = NRK
-					autonomy_state = autonomy_IR_freiprinztum
-				}
+				puppet = NRK
 			}
 			add_to_variable = {
 				var = NRK.FPT_stahlhof_loyalty
@@ -1393,7 +1390,20 @@ focus_tree = {
 		
 		continue_if_invalid = yes
 		available = {
-			has_political_power > 40
+			if = {
+				limit = {
+					is_ai = no
+				}
+				has_political_power > 40
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = more_political_power_than_40 #Lying to the player bc I can't code AI lmao
+					}
+					always = yes
+				}
+			}
 		}
 		select_effect = {
 			add_political_power = -40
@@ -1406,7 +1416,6 @@ focus_tree = {
 			modifier = {
 				factor = 0.1
 				OR = {
-					STA_should_buff_puritanism = yes
 					STA_should_buff_republicanism = yes
 					STA_should_buff_theocracy = yes
 					STA_should_buff_aristocracy = yes
@@ -1572,7 +1581,6 @@ focus_tree = {
 				factor = 0.1
 				OR = {
 					STA_should_buff_puritanism = yes
-					STA_should_buff_republicanism = yes
 					STA_should_buff_theocracy = yes
 					STA_should_buff_aristocracy = yes
 					
@@ -1588,7 +1596,20 @@ focus_tree = {
 		
 		continue_if_invalid = yes
 		available = {
-			has_political_power > 40
+			if = {
+				limit = {
+					is_ai = no
+				}
+				has_political_power > 40
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = more_political_power_than_40 #Lying to the player bc I can't code AI lmao
+					}
+					always = yes
+				}
+			}
 		}
 		select_effect = {
 			add_political_power = -40
@@ -1880,7 +1901,6 @@ focus_tree = {
 				OR = {
 					STA_should_buff_puritanism = yes
 					STA_should_buff_republicanism = yes
-					STA_should_buff_theocracy = yes
 					STA_should_buff_aristocracy = yes
 					
 				}
@@ -1894,8 +1914,22 @@ focus_tree = {
 		}
 		
 		continue_if_invalid = yes
+		
 		available = {
-			has_political_power > 40
+			if = {
+				limit = {
+					is_ai = no
+				}
+				has_political_power > 40
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = more_political_power_than_40 #Lying to the player bc I can't code AI lmao
+					}
+					always = yes
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 10
@@ -2073,15 +2107,27 @@ focus_tree = {
 					STA_should_buff_puritanism = yes
 					STA_should_buff_republicanism = yes
 					STA_should_buff_theocracy = yes
-					STA_should_buff_aristocracy = yes
-					
 				}
 			}
 		}
 		
 		continue_if_invalid = yes
+		
 		available = {
-			has_political_power > 40
+			if = {
+				limit = {
+					is_ai = no
+				}
+				has_political_power > 40
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = more_political_power_than_40 #Lying to the player bc I can't code AI lmao
+					}
+					always = yes
+				}
+			}
 		}
 		
 		continue_if_invalid = yes

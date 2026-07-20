@@ -242,7 +242,7 @@ plunder_schneefilde = {
 				}
 			}
 			NOT = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				controls_state = 224

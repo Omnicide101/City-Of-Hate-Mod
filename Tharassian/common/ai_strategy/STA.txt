@@ -39,26 +39,27 @@ yoink_nordtorf = {
 	}
 }
 
-save_pp_for_foci = {#Let's not always take decisions if we need PP for our foci
-	enable = {
-		original_tag = STA
-		NOT = {
-			has_completed_focus = STA_the_anti_ordorian_front
-			has_completed_focus = STA_turn_to_the_caravaneers
-			has_completed_focus = STA_the_league_of_temples
-		}
-		has_political_power < 75
-		has_completed_focus = STA_the_unthinkable_deal
-	}
-	
-	abort_when_not_enabled = yes
-	
-	ai_strategy = {
-		type = pp_spend_priority
-		id = decision
-		value = -15
-	}
-}
+### THIS SEEMS TO NUKE THE AI'S ABILITY TO DO ITS STEEL COURT POLITICS DECISIONS IN ANY USEFUL WAY
+#save_pp_for_foci = {#Let's not always take decisions if we need PP for our foci
+#	enable = {
+#		original_tag = STA
+#		NOT = {
+#			has_completed_focus = STA_the_anti_ordorian_front
+#			has_completed_focus = STA_turn_to_the_caravaneers
+#			has_completed_focus = STA_the_league_of_temples
+#		}
+#		has_political_power < 75
+#		has_completed_focus = STA_the_unthinkable_deal
+#	}
+#	
+#	abort_when_not_enabled = yes
+#	
+#	ai_strategy = {
+#		type = pp_spend_priority
+#		id = decision
+#		value = -15
+#	}
+#}
 
 prio_political_decisions = {#Make sure we can balance our politics well
 	enable = {
@@ -88,7 +89,7 @@ prio_political_decisions = {#Make sure we can balance our politics well
 	ai_strategy = {
 		type = pp_spend_amount
 		id = decision
-		value = 70
+		value = 35
 	}
 }
 

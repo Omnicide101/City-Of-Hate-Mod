@@ -722,6 +722,7 @@ guiTypes = {
 				slotsize = { width = 150 height = 0 }
 				add_horizontal = yes
 				max_slots_vertical = 1
+				max_slots_horizontal = 8
 				format = "UPPER_LEFT"
 			}
 		}
@@ -2217,11 +2218,15 @@ guiTypes = {
 			animation_time = 1000				
 			size = { width=102% height =128}
 			Orientation = lower_left	
-			
-			Background ={
-				name ="bottom_win"
-				spriteType = "GFX_tiled_frontend_lower_bar"
-				position = { x=-10 y =0}				
+
+            containerWindowType = {
+                name = background
+                size = { width=102% height=100% }
+                Background ={
+                    name ="bottom_win"
+                    spriteType = "GFX_tiled_frontend_lower_bar"
+                    position = { x=-10 y =0}
+                }
 			}
 			
 			ButtonType = {

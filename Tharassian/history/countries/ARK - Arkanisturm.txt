@@ -134,6 +134,7 @@ recruit_character = ARK_hautlir_polthore
 add_ideas = {
 	human_country
 	arkanimism_religion
+	FPT_union_member
 	FPT_bauernfreistellung
 }
 

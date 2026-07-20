@@ -1283,15 +1283,9 @@ country_event = {#Arkanisturm drop tag
 		drop_cosmetic_tag = yes
 		if = {
 			limit = {
-				NOT = { is_subject_of = UNG }
+				NOT = { has_idea = FPT_union_member }
 			}
-			UNG = {
-				set_autonomy = {
-					target = ROOT
-					autonomy_state = autonomy_IR_freiprinztum
-				}
-			}
-			
+			add_ideas = FPT_union_member
 		}
 	}
 }
@@ -1361,7 +1355,7 @@ country_event = { # Arkanisturm Civil War
 			if = {
 				limit = {
 					ARK = {
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 					}
 				}
 				set_country_flag = ARK_is_freiprinz
@@ -1404,12 +1398,7 @@ country_event = { # Arkanisturm Civil War
 				limit = {
 					has_country_flag = ARK_is_freiprinz
 				}
-				UNG = {
-					set_autonomy = {
-						target = ARK
-						autonomy_state = autonomy_IR_freiprinztum
-					}
-				}
+				add_ideas = FPT_union_member
 			}
 			
 			load_oob = "ARK_civilwar"
@@ -1463,12 +1452,7 @@ country_event = { # Arkanisturm Civil War
 				limit = {
 					has_country_flag = ARK_is_freiprinz
 				}
-				UNG = {
-					set_autonomy = {
-						target = ARK
-						autonomy_state = autonomy_IR_freiprinztum
-					}
-				}
+				add_ideas = FPT_union_member
 			}	
 			
 			load_oob = "ARK_civilwar"
@@ -1551,11 +1535,7 @@ id = sta.70
 		hidden_effect = {
 			every_country = {
 				limit = {
-					OR = {
-						is_subject_of = UNG
-						is_subject_of = STA
-						tag = UNG
-					}
+					has_idea = FPT_union_member
 					NOT = {
 						tag = STA
 					}
@@ -1563,12 +1543,7 @@ id = sta.70
 				country_event = { id = sta.71 hours = 6 }
 			}
 			
-			UNG = {
-				set_autonomy = {
-					target = STA
-					autonomy_state = autonomy_free
-				}
-			}
+			remove_ideas = FPT_union_member
 		}
 		UNG = {
 			if = {
@@ -1599,10 +1574,7 @@ id = sta.70
 		#Let those on the fence choose
 		every_country = {
 			limit = {
-				OR = {
-					is_subject_of = UNG
-					is_subject_of = STA
-				}
+				has_idea = FPT_union_member
 				set_temp_variable = {
 					FPT_loyalty_difference = FPT_union_loyalty
 				}
@@ -1629,10 +1601,7 @@ id = sta.70
 		#Get allies to join
 		every_country = {
 			limit = {
-				OR = {
-					is_subject_of = UNG
-					is_subject_of = STA
-				}
+				has_idea = FPT_union_member
 				check_variable = {
 					var = FPT_stahlhof_loyalty 
 					value = var:FPT_union_loyalty
@@ -1655,10 +1624,7 @@ id = sta.70
 		#Set remainder as loyalists
 		every_country = {
 			limit = {
-				OR = {
-					is_subject_of = UNG
-					is_subject_of = STA
-				}
+				has_idea = FPT_union_member
 				check_variable = {
 					var = FPT_union_loyalty
 					value = var:FPT_stahlhof_loyalty
@@ -1675,18 +1641,10 @@ id = sta.70
 		#Set neutrals
 		every_country = {
 			limit = {
-				OR = {
-					is_subject_of = UNG
-					is_subject_of = STA
-				}
+				has_idea = FPT_union_member
 				has_completed_focus = FPT_exploit_chaos
 			}
-			UNG = {
-				set_autonomy = {
-					target = PREV
-					autonomy_state = autonomy_free #remaining neutral
-				}
-			}
+			remove_ideas = FPT_union_member
 			if = {
 				limit = {
 					OR = {

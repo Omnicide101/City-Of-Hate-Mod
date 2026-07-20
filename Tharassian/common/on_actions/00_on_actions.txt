@@ -1,16 +1,4 @@
 on_actions = {
-	
-	#Makes sure puppets have access to everyone's land
-	#on_peaceconference_ended = {
-	#	effect = {
-	#		every_country = {
-	#			limit = {
-	#				is_subject_of = UNG
-	#			}
-	#		give_military_access = THIS
-	#		}
-	#	}
-	#}
 
 	on_weekly = {
 		effect = {
@@ -34,6 +22,53 @@ on_actions = {
 		}
 		
 		#Dummy on_action to prevent errors from being thrown
+	}
+	
+	#Annexed Freiprinztümer leave the Union
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						has_idea = FPT_union_member
+					}
+				}
+				FROM = {
+					remove_ideas = FPT_union_member
+				}
+			}
+		}
+	}
+	
+	#Declaring war on any state in the Ungerdaler Union calls in the Freiprinztümer
+	#The Union itself declaring war does the same
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						has_idea = FPT_union_member
+					}
+					NOT = {
+						has_idea = FPT_union_member
+					}
+				}
+				FROM = {
+					country_event = fpt.27
+				}
+			}
+			if = {
+				limit = {
+					tag = UNG
+					FROM = {
+						NOT = {
+							has_idea = FPT_union_member
+						}
+					}
+				}
+				country_event = fpt.27
+			}
+		}
 	}
 	
 	#Re-enable species-specific units for liberated commissiaries
@@ -1175,17 +1210,29 @@ on_actions = {
 	
 	on_leave_faction = {
 		effect = {
-			FROM = {
-				add_opinion_modifier = {
-					modifier = faction_traitor
-					target = ROOT
-					days = 365
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_idea = MASLEAGUE_member_fervent
+							has_idea = MASLEAGUE_member_committed
+							has_idea = MASLEAGUE_member_wavering
+							has_idea = FPT_union_member
+						}
+					}
 				}
-			
-				add_opinion_modifier = {
-					modifier = faction_traitor_trade
-					target = ROOT
-					days = 365
+				FROM = {
+					add_opinion_modifier = {
+						modifier = faction_traitor
+						target = ROOT
+						days = 365
+					}
+				
+					add_opinion_modifier = {
+						modifier = faction_traitor_trade
+						target = ROOT
+						days = 365
+					}
 				}
 			}
 		}

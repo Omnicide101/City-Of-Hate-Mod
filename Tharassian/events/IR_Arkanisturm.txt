@@ -167,7 +167,7 @@ country_event = { # Arkanisturm Civil War
 			if = {
 				limit = {
 					ARK = {
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 					}
 				}
 				set_country_flag = ARK_is_freiprinz
@@ -210,12 +210,7 @@ country_event = { # Arkanisturm Civil War
 				limit = {
 					has_country_flag = ARK_is_freiprinz
 				}
-				UNG = {
-					set_autonomy = {
-						target = ARK
-						autonomy_state = autonomy_IR_freiprinztum
-					}
-				}
+				add_ideas = FPT_union_member
 			}
 			
 			load_oob = "ARK_civilwar"
@@ -269,12 +264,7 @@ country_event = { # Arkanisturm Civil War
 				limit = {
 					has_country_flag = ARK_is_freiprinz
 				}
-				UNG = {
-					set_autonomy = {
-						target = ARK
-						autonomy_state = autonomy_IR_freiprinztum
-					}
-				}
+				add_ideas = FPT_union_member
 			}	
 			
 			load_oob = "ARK_civilwar"

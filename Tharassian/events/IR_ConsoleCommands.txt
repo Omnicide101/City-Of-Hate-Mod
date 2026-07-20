@@ -16,14 +16,9 @@ add_namespace = console_command
 						
 			every_country = {
 				limit = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 				}
-				UNG = {
-					set_autonomy = {
-						target = PREV
-						autonomy_state = autonomy_free
-					}
-				}
+				remove_ideas = FPT_union_member
 			}
 			every_other_country = {
 				every_country = {

@@ -1006,9 +1006,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 				}
 				has_country_flag = SPW_things_are_okay
 			}
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1070,9 +1070,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			}
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1136,9 +1136,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			}
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1199,9 +1199,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			}
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1274,9 +1274,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			}
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1362,9 +1362,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			}
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1411,9 +1411,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			}
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1458,9 +1458,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			factor = 9
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1497,9 +1497,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			factor = 11
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1546,12 +1546,8 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 						}
 					}
 				}
+				add_ideas = FPT_union_member
 				UNG = {
-					set_autonomy = {
-						target = ROOT
-						autonomous_state = autonomy_IR_freiprinztum
-						end_wars = no
-					}
 					faction_leader = {
 						add_to_faction = ROOT
 					}
@@ -1720,9 +1716,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			}
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1785,9 +1781,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			}
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1848,9 +1844,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			}
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -1929,9 +1925,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			}
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started
@@ -2004,9 +2000,9 @@ focus_tree = { #St. Vichtlas and the Arkanisturm getting all foci except the Hex
 			}
 		}
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			STA = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 			NOT = {
 				has_country_flag = UNG_civil_war_started

@@ -613,7 +613,7 @@ country_event = {# Handelpakt?
 		}
 		trigger = {
 			NOT = {
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 		}
 		name = steel_road.9.b

@@ -58,7 +58,7 @@ adjacency_rule =
 					has_idea = dwarf_country
 					OR = {
 						gives_military_access_to = ROOT
-						has_war_together_with = ROOT
+						has_war_together_with = ROOT # doesn't seem to work?
 						is_in_faction_with = ROOT
 					}
 				}

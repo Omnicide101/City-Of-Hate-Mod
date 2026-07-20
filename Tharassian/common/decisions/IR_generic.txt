@@ -1347,8 +1347,11 @@ GENERIC_join_wars = {
 			factor = 200
 		}
 
-		visible = {
+		visible = {	
+			OR = {
 			has_country_flag = SKA_UNG_invade_rimatu
+			has_country_flag = RMT_UNG_invade_skaelinger
+			}
 		}
 
 		is_good = yes

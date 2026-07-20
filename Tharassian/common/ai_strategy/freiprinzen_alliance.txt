@@ -10,6 +10,56 @@
 # protect
 # influence
 
+FPT_team_union = {#Makes sure you join and stay in the Union faction when it's formed
+	enable = {
+		has_idea = FPT_union_member
+		is_in_faction_with = UNG
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = alliance 
+		id = UNG
+		value = 300
+	}
+	
+	ai_strategy = {
+		type = diplo_action_acceptance
+		id = UNG
+		value = 300
+		target = call_allies
+	}
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = UNG
+		value = 300
+		target = join_allies
+	}
+}
+
+FPT_team_union = {#Makes sure the Freiprinztümer will give military access to the Hochprinztum
+	enable = {
+		has_idea = FPT_union_member
+		is_loyal_to_union = yes #Implicitly can't be UNG or STA
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = alliance 
+		id = UNG
+		value = 30
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = UNG
+		value = 30
+	}
+}
+
 FPT_team_schwarzenbach = {#Makes Ferdinist Freiprinztümer actually commit to their alliance
 	enable = {
 		is_in_faction_with = STA

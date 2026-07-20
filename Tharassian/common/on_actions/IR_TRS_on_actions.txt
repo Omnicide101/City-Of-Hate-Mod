@@ -1,5 +1,4 @@
 on_actions = {
-
 	on_declare_war = {
 		effect = {
 			if = {

@@ -18,12 +18,7 @@ country_event = { #Adaliana Demands Subjugation
 			factor = 4
 		}
 		add_stability = -0.05
-		UNG = {
-			set_autonomy = {
-				target = TLA
-				autonomy_state = autonomy_IR_freiprinztum
-			}
-		}
+		add_ideas = FPT_union_member
 	}
 
 	option = {#Never!

@@ -1125,9 +1125,8 @@ country_event = { # Heavy Demands - Stahlhof Refuses
 		ai_chance = {
 			factor = 10
 		}
-		set_autonomy = {
-			target = STA
-			autonomy_state = autonomy_free
+		STA = {
+			remove_ideas = FPT_union_member
 		}
 		name = ord.19.a
 		declare_war_on = {
@@ -1266,9 +1265,8 @@ country_event = { # Exchange - Stahlhof Refuses
 		ai_chance = {
 			factor = 10
 		}
-		set_autonomy = {
-			target = STA
-			autonomy_state = autonomy_free
+		STA = {
+			remove_ideas = FPT_union_member
 		}
 		name = ord.23.a
 		declare_war_on = {
@@ -1724,6 +1722,11 @@ country_event = {#Skaelinger Offers Peace
 	
 	option = {#Accept
 		name = ord.30.a
+		trigger = {
+			NOT = {
+				has_government = puritan
+			}
+		}
 		ai_chance = {
 			factor = 5
 			modifier = {
@@ -5856,7 +5859,7 @@ country_event = { #Ordoria asks if we want to team up on the Union
 		name = ord.127.b
 		
 		trigger = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 		}
 		
 		ai_chance = {
@@ -6329,5 +6332,119 @@ country_event = { #FROM doesn't join
 		larennis_cynicism_small = yes
 		
 		FROM_worsen_THIS_relations = yes
+	}
+}
+
+country_event = { #Transfer Commissiary land back to Commissiaries
+	id = ord.142
+	
+	hidden = yes
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	trigger = {
+		tag = ORD
+		any_owned_state = {
+			OR = {
+				is_core_of = CSK
+				is_core_of = CNS
+				is_core_of = CIR
+				is_core_of = CTR
+				is_core_of = CST
+				is_core_of = CNC
+				is_core_of = CWS
+				is_core_of = CPK
+			}
+		}
+	}
+	
+	option = { #Ok
+		every_owned_state = {
+			limit = {
+				is_core_of = CSK
+			}
+			transfer_state_to = CSK
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = CNS
+			}
+			transfer_state_to = CNS
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = CIR
+			}
+			transfer_state_to = CIR
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = CTR
+			}
+			transfer_state_to = CTR
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = CST
+			}
+			transfer_state_to = CST
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = CNC
+			}
+			transfer_state_to = CNC
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = CWS
+			}
+			transfer_state_to = CWS
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = CPK
+			}
+			transfer_state_to = CPK
+		}
+	}
+}
+
+country_event = { #Make sure Commissiaries are set as such
+	id = ord.143
+	
+	hidden = yes
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	trigger = {
+		is_ORD_commissiary = yes
+		NOT = {
+			has_autonomy_state = autonomy_IR_commissiary
+		}
+		country_exists = ORD
+	}
+	
+	option = { #Ok
+		every_country = {
+			limit = {
+				is_ORD_commissiary = yes
+				NOT = {
+					has_autonomy_state = autonomy_IR_commissiary
+				}
+			}
+			ORD = {
+				set_autonomy = {
+					target = PREV
+					autonomous_state = autonomy_IR_commissiary
+					end_wars = no
+					end_civil_wars = no
+				}
+			}
+		}
 	}
 }

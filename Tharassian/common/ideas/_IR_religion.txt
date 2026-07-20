@@ -76,7 +76,7 @@ ideas = {
 							original_tag = SVT
 							original_tag = NOC
 							original_tag = FAU
-							is_subject_of = UNG
+							has_idea = FPT_union_member
 						}
 					}
 					has_country_flag = PRK_converted_to_septism
@@ -192,7 +192,7 @@ ideas = {
 							original_tag = SVT
 							original_tag = NOC
 							original_tag = FAU
-							is_subject_of = UNG
+							has_idea = FPT_union_member
 						}
 					}
 					has_country_flag = PRK_converted_to_septism
@@ -288,7 +288,7 @@ ideas = {
 							original_tag = SVT
 							original_tag = NOC
 							original_tag = FAU
-							is_subject_of = UNG
+							has_idea = FPT_union_member
 							AND = {
 								original_tag = STA
 								NOT = {
@@ -381,7 +381,7 @@ ideas = {
 							original_tag = SVT
 							original_tag = NOC
 							original_tag = FAU
-							is_subject_of = UNG
+							has_idea = FPT_union_member
 						}
 					}
 					has_country_flag = PRK_converted_to_septism
@@ -468,7 +468,7 @@ ideas = {
 							original_tag = SVT
 							original_tag = NOC
 							original_tag = FAU
-							is_subject_of = UNG
+							has_idea = FPT_union_member
 						}
 					}
 					has_country_flag = PRK_converted_to_septism
@@ -555,7 +555,7 @@ ideas = {
 							original_tag = SVT
 							original_tag = NOC
 							original_tag = FAU
-							is_subject_of = UNG
+							has_idea = FPT_union_member
 						}
 					}
 					has_country_flag = PRK_converted_to_septism
@@ -642,7 +642,7 @@ ideas = {
 							original_tag = SVT
 							original_tag = NOC
 							original_tag = FAU
-							is_subject_of = UNG
+							has_idea = FPT_union_member
 						}
 					}
 					has_country_flag = PRK_converted_to_septism
@@ -729,7 +729,7 @@ ideas = {
 							original_tag = SVT
 							original_tag = NOC
 							original_tag = FAU
-							is_subject_of = UNG
+							has_idea = FPT_union_member
 						}
 					}
 					has_country_flag = PRK_converted_to_septism

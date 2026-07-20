@@ -25,7 +25,7 @@ focus_tree = {
 			has_country_flag = UNG_schneefilde_sacked
 				}
 			SNF = {
-				is_not_independent = yes
+				has_idea = FPT_union_member
 				has_idea = SNF_opposing_nobility
 			}
 		}
@@ -74,7 +74,7 @@ focus_tree = {
 		}
 		available = {
 			SNF = {
-				is_not_independent = yes
+				has_idea = FPT_union_member
 			}
 		}
 		ai_will_do = {
@@ -169,7 +169,7 @@ focus_tree = {
 		}
 		available = {
 			SNF = {
-				is_not_independent = yes
+				has_idea = FPT_union_member
 			}
 		}
 		ai_will_do = {
@@ -211,9 +211,10 @@ focus_tree = {
 			}
 			every_country = {
 				limit = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					NOT = {
 						tag = SNF
+						tag = UNG
 					}
 				}
 				add_timed_idea = {
@@ -223,10 +224,11 @@ focus_tree = {
 			}
 			every_country = {
 				limit = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					NOT = {
 						tag = STA
 						tag = SNF
+						tag = UNG
 						has_country_flag = wws_konkord_yes
 					}
 				}
@@ -249,7 +251,7 @@ focus_tree = {
 		}
 		available = {
 			SNF = {
-				is_not_independent = yes
+				has_idea = FPT_union_member
 			}
 		}
 		ai_will_do = {
@@ -281,7 +283,7 @@ focus_tree = {
 		}
 		available = {
 			SNF = {
-				is_not_independent = yes
+				has_idea = FPT_union_member
 			}
 		}
 		ai_will_do = {
@@ -481,7 +483,10 @@ focus_tree = {
 		}
 		available = {
 			any_other_country = {
-				is_subject_of = UNG
+				NOT = {
+					tag = SNF
+				}
+				has_idea = FPT_union_member
 			}
 		}
 		bypass = {
@@ -503,7 +508,7 @@ focus_tree = {
 			}
 			every_country = {
 				limit = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					NOT = {
 						tag = SNF
 					}
@@ -515,10 +520,11 @@ focus_tree = {
 			}
 			every_country = {
 				limit = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					NOT = {
 						tag = STA
 						tag = SNF
+						tag = UNG
 					}
 				}
 				custom_effect_tooltip = FPT_decrease_union_loyalty_small_tt
@@ -619,7 +625,7 @@ focus_tree = {
 		}
 		available = {
 			SNF = {
-				is_not_independent = yes
+				has_idea = FPT_union_member
 			}
 		}
 		ai_will_do = {
@@ -658,7 +664,7 @@ focus_tree = {
 		}
 		available = {
 			SNF = {
-				is_not_independent = yes
+				has_idea = FPT_union_member
 			}
 		}
 		ai_will_do = {
@@ -725,7 +731,7 @@ focus_tree = {
 				is_independent = yes
 			}
 			SNF = {
-				is_not_independent = yes
+				has_idea = FPT_union_member
 			}
 		}
 		ai_will_do = {
@@ -806,7 +812,7 @@ focus_tree = {
 		available = {
 			tag = UNG
 			SNF = {
-				is_not_independent = yes
+				has_idea = FPT_union_member
 			}
 		}
 		mutually_exclusive = {
@@ -844,7 +850,7 @@ focus_tree = {
 		available = {
 			tag = UNG
 			SNF = {
-				is_not_independent = yes
+				has_idea = FPT_union_member
 			}
 		}
 		ai_will_do = {
@@ -1284,7 +1290,7 @@ focus_tree = {
 		available = {
 			PRK = {
 				OR = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					is_in_faction_with = UNG
 					has_non_aggression_pact_with = UNG
 					exists = no

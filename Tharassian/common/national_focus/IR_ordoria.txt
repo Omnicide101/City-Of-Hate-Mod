@@ -4308,7 +4308,10 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
+					NOT = {
+						tag = UNG
+					}
 				}
 				custom_effect_tooltip = FPT_increase_union_loyalty_large_tt
 				add_to_variable = {
@@ -4389,7 +4392,7 @@ focus_tree = {
 					has_subject = UNG
 				}
 				OR = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					NOT = {
 						is_in_faction_with = UNG
 					}
@@ -4422,7 +4425,7 @@ focus_tree = {
 				limit = {
 					is_og_perkav_chiefdom = yes
 					OR = {
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 						NOT = {
 							is_in_faction_with = UNG
 						}
@@ -4452,7 +4455,7 @@ focus_tree = {
 			}
 			BER = {
 				OR = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					NOT = {
 						is_in_faction_with = UNG
 					}
@@ -4476,7 +4479,7 @@ focus_tree = {
 				BER = {
 					AND = {
 						NOT = {
-							is_subject_of = UNG
+							has_idea = FPT_union_member
 						}
 						is_in_faction_with = UNG
 					}
@@ -4515,7 +4518,7 @@ focus_tree = {
 			}
 			TLA = {
 				OR = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					NOT = {
 						is_in_faction_with = UNG
 					}
@@ -4561,7 +4564,7 @@ focus_tree = {
 			}
 			IRI = {
 				OR = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
 					NOT = {
 						is_in_faction_with = UNG
 					}
@@ -7114,6 +7117,9 @@ focus_tree = {
 		}
         available = {
             OR = {
+                CSK = {
+                    is_subject_of = ORD
+                }
                 SKA = {
                     is_subject_of = ORD
                 }
@@ -7826,12 +7832,7 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-					is_og_freiprinz = yes
-					OR = { #Edge cases where someone else has picked off a FPT
-						is_subject = no
-						is_subject_of = UNG
-						is_subject_of = STA
-					}
+					has_idea = FPT_union_member
 				}
 				ROOT = {
 					declare_war_on = {
@@ -9540,11 +9541,14 @@ focus_tree = {
 					ORD_traditionalists_influence > 9
 				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = ORD_pleased_mods_5
-				check_variable = {
-					ORD_moderates_loyalty > 4
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ORD_pleased_mods_5
+					check_variable = {
+						ORD_moderates_loyalty > 4
+					}
 				}
+				has_country_flag = ORD_mods_defeated
 			}
 		}
 		continue_if_invalid = yes
@@ -9704,7 +9708,7 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = ORD_empowered_trads_15
 				check_variable = {
-					ORD_moderates_influence > 14
+					ORD_traditionalists_influence > 14
 				}
 			}
 		}
@@ -10058,6 +10062,9 @@ focus_tree = {
 				SKA = {
 					is_sphered = yes
 				}
+				CSK = {
+					is_sphered = yes
+				}
 				any_owned_state = {
 					is_core_of = SKA
 				}
@@ -10147,6 +10154,9 @@ focus_tree = {
 		available = {
 			OR = {
 				SKA = {
+					is_sphered = yes
+				}
+				CSK = {
 					is_sphered = yes
 				}
 				any_owned_state = {
@@ -10713,7 +10723,7 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = ORD_empowered_trads_25
 				check_variable = {
-					ORD_moderates_influence > 24
+					ORD_traditionalists_influence > 24
 				}
 			}
 		}

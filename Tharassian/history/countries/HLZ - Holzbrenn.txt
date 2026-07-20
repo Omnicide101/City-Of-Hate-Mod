@@ -147,6 +147,7 @@ recruit_character = HLZ_karl_stelzner
 recruit_character = HLZ_ylcatra_isthyne
 
 add_ideas = {
+	FPT_union_member
 	rosenbluts_evil
 	widespread_famine
 	human_country

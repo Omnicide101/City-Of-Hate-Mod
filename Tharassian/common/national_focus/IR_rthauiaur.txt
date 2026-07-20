@@ -1996,7 +1996,7 @@ focus_tree = {
 		completion_reward = {
 			#UNG gets an event about radical agitation in STA, and whether or not they're willing to accept it then STA gets very destabilized, otherwise just somewhat destabilized
 			if = {
-				limit = { STA = { is_subject_of = UNG } }
+				limit = { STA = { has_idea = FPT_union_member } }
 				UNG = {
 					country_event = { id = rth.66 hours = 4 }
 				}

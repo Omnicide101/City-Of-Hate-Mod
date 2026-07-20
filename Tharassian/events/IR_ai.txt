@@ -49,8 +49,8 @@ country_event = {#Tell player to build intel networks in the Guild
 
 country_event = {#If low on food and not on either Agrarianism or Manorialism, switch to that econ law
 	id = ai.3
-	title = ai.3.t
-	desc = ai.3.d
+	
+	hidden = yes
 	
 	trigger = {
 		is_ai = yes
@@ -79,7 +79,6 @@ country_event = {#If low on food and not on either Agrarianism or Manorialism, s
 	}
 	
 	option = {
-		name = ai.3.a
 		random_list = {
 			50 = {
 				add_ideas = agrarianism_economy
@@ -103,8 +102,8 @@ country_event = {#If low on food and not on either Agrarianism or Manorialism, s
 
 country_event = {#Force demobilization after war - weighing ideas doesn't seem to work
 	id = ai.4
-	title = ai.4.t
-	desc = ai.4.d
+	
+	hidden = yes
 	
 	trigger = {
 		is_ai = yes
@@ -133,7 +132,6 @@ country_event = {#Force demobilization after war - weighing ideas doesn't seem t
 	}
 	
 	option = {
-		name = ai.4.a
 		#Pay with PP if possible, take a war support hit otherwise
 		if = {
 			limit = {

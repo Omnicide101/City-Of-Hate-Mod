@@ -130,6 +130,7 @@ recruit_character = NRK_eberhart_emmerich
 add_ideas = {
 	human_country
 	bitha_patron
+	FPT_union_member
 	FPT_bauernfreistellung
 	SPW_reapers_of_the_harvest
 }

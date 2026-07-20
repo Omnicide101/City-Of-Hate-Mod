@@ -218,8 +218,7 @@ realm_buddies = {
 
 go_through_bergial = {#Get MA through BER if at war with TLA
 	enable = {
-		is_og_freiprinz = yes
-		is_subject_of = UNG
+		has_idea = FPT_union_member
 		UNG = {
 			has_war_with = IRI
 		}
@@ -244,7 +243,7 @@ go_through_bergial = {#Get MA through BER if at war with TLA
 
 go_through_tlarthingia = {#Get MA through TLA if at war with IRI
 	enable = {
-		is_og_freiprinz = yes
+		has_idea = FPT_union_member
 		has_war_with = IRI
 		country_exists = TLA
 		TLA = {

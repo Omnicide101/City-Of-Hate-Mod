@@ -2,7 +2,7 @@ defined_text = { # Country
 	name = GetFreiprinzKriegsspielePreparedness
 	text = { 
 		trigger = {
-			is_og_freiprinz = yes
+			has_idea = FPT_union_member
 		}
 		localization_key = loc_key_kriegsspiele_preparedness
 	}
@@ -22,7 +22,7 @@ defined_text = { #Country
 	name = BestPreparedFreiprinztum
 	text = {
 		trigger = {
-			is_og_freiprinz = yes
+			has_idea = FPT_union_member
 			NOT = {
 				check_variable = {
 					global.FPT_best_prepared_for_kriegsspiele = THIS
@@ -34,7 +34,7 @@ defined_text = { #Country
 	
 	text = {
 		trigger = {
-			is_og_freiprinz = yes
+			has_idea = FPT_union_member
 			check_variable = {
 					global.FPT_best_prepared_for_kriegsspiele = THIS
 				}

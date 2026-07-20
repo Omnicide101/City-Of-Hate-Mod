@@ -408,10 +408,7 @@ news_event = {
 	option = {
 		name = news.9.b
 		trigger = {
-			OR = {
-				tag = UNG
-				is_subject_of = UNG
-			}
+			has_idea = FPT_union_member
 			NOT = {
 				tag = STA
 				has_country_flag = FPT_kriegsspiele_winner
@@ -447,10 +444,7 @@ news_event = {
 		name = news.9.f
 		trigger = {
 			NOT = {
-				OR = {
-					tag = UNG
-					is_subject_of = UNG
-				}
+				has_idea = FPT_union_member
 			}
 		}
 	}
@@ -468,11 +462,10 @@ news_event = {
 	is_triggered_only = yes
 
 	show_major = {
-	OR = {
-			tag = UNG
+		OR = {
+			has_idea = FPT_union_member
 			tag = PRK
-			is_subject_of = UNG
-			}
+		}
 	}
 
 	fire_for_sender = no
@@ -535,11 +528,10 @@ news_event = {
 	is_triggered_only = yes
 
 	show_major = {
-	OR = {
-			tag = UNG
+		OR = {
+			has_idea = FPT_union_member
 			tag = PRK
-			is_subject_of = UNG
-			}
+		}
 	}
 
 	fire_for_sender = no
@@ -598,10 +590,7 @@ news_event = {
 	is_triggered_only = yes
 
 	show_major = {
-	OR = {
-			tag = UNG
-			is_subject_of = UNG
-			}
+	has_idea = FPT_union_member
 	}
 
 	fire_for_sender = no
@@ -645,10 +634,7 @@ news_event = {
 	is_triggered_only = yes
 
 	show_major = {
-	OR = {
-			tag = UNG
-			is_subject_of = UNG
-			}
+	has_idea = FPT_union_member
 	}
 
 	fire_for_sender = no
@@ -692,10 +678,7 @@ news_event = {
 	is_triggered_only = yes
 
 	show_major = {
-	OR = {
-			tag = UNG
-			is_subject_of = UNG
-			}
+	has_idea = FPT_union_member
 	}
 
 	fire_for_sender = no

@@ -1,4 +1,4 @@
-name="Irenthar: City of Hate Dev"
+name="Irenthar: City of Hate"
 user_dir="Tharassian"
 replace_path="common/abilities"
 replace_path="common/ai_areas"
@@ -95,6 +95,7 @@ replace_path="tutorial"
 tags={
 	"Total Conversion"
 }
-path = "mod/Tharassian"
 picture="Tharassian.png"
 supported_version="1.19.*"
+path="/home/mira/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Tharassian"
+remote_file_id="3765524761"

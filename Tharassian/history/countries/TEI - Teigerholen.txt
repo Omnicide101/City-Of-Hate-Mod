@@ -135,6 +135,7 @@ set_popularities = {
 add_ideas = {
 	human_country
 	daskellin_patron
+	FPT_union_member
 	FPT_bauernfreistellung
 }
 

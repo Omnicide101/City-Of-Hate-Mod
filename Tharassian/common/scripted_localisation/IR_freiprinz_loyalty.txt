@@ -2,7 +2,11 @@ defined_text = { # Country
 	name = GetFreiprinzUnionLoyalty
 	text = { 
 		trigger = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
+			NOT = {
+				tag = UNG
+				tag = STA
+			}
 			NOT = {
 				STA = {
 					has_country_flag = STA_civil_war_started
@@ -17,7 +21,11 @@ defined_text = { # Country
 	name = GetFreiprinzStahlhofLoyalty
 	text = { 
 		trigger = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
+			NOT = {
+				tag = UNG
+				tag = STA
+			}
 			NOT = {
 				STA = {
 					has_country_flag = STA_civil_war_started
@@ -122,7 +130,11 @@ defined_text = {
 	name = wss_win_loyalty
 	text = { 
 		trigger = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
+			NOT = {
+				tag = UNG
+				tag = STA
+			}
 			NOT = {
 				STA = {
 					has_country_flag = STA_civil_war_started
@@ -137,7 +149,11 @@ defined_text = {
 	}
 	text = { 
 		trigger = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
+			NOT = {
+				tag = UNG
+				tag = STA
+			}
 			NOT = {
 				STA = {
 					has_country_flag = STA_civil_war_started
@@ -163,11 +179,13 @@ defined_text = {
 	name = wss_snf_loyalty
 	text = { 
 		trigger = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
-				STA = {
-					has_country_flag = STA_civil_war_started
-				}
+				tag = UNG
+				tag = STA
+			}
+			STA = {
+				has_country_flag = STA_civil_war_started
 			}
 			NOT = { TAG = SNF }
 				SNF = {
@@ -178,7 +196,11 @@ defined_text = {
 	}
 	text = { 
 		trigger = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
+			NOT = {
+				tag = UNG
+				tag = STA
+			}
 			NOT = {
 				STA = {
 					has_country_flag = STA_civil_war_started
@@ -204,7 +226,11 @@ defined_text = {
 	name = wss_wsz_loyalty
 	text = { 
 		trigger = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
+			NOT = {
+				tag = UNG
+				tag = STA
+			}
 			NOT = {
 				STA = {
 					has_country_flag = STA_civil_war_started
@@ -219,7 +245,11 @@ defined_text = {
 	}
 	text = { 
 		trigger = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
+			NOT = {
+				tag = UNG
+				tag = STA
+			}
 			NOT = {
 				STA = {
 					has_country_flag = STA_civil_war_started
@@ -245,7 +275,11 @@ defined_text = {
 	name = wss_tei_loyalty
 	text = { 
 		trigger = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
+			NOT = {
+				tag = UNG
+				tag = STA
+			}
 			NOT = {
 				STA = {
 					has_country_flag = STA_civil_war_started
@@ -260,7 +294,11 @@ defined_text = {
 	}
 	text = { 
 		trigger = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
+			NOT = {
+				tag = UNG
+				tag = STA
+			}
 			NOT = {
 				STA = {
 					has_country_flag = STA_civil_war_started

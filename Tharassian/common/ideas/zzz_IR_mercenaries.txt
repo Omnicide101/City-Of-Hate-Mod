@@ -45,10 +45,7 @@ ideas = {
 				}
 				if = {
 					limit = {
-						OR = {
-							tag = UNG
-							is_subject_of = UNG
-						}
+						has_idea = FPT_union_member
 					}
 					NOT = {
 						UNG = {

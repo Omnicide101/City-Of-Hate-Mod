@@ -116,6 +116,7 @@ recruit_character = STA_alcanthyre_losennys
 add_ideas = {
 	human_country
 	septism_religion
+	FPT_union_member
 	STA_adelina_troop_loyalty_idea
 	STA_divided_monarchists_idea
 }

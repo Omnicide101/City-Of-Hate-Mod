@@ -4,14 +4,11 @@ FPT_aid_seventh_campaign = {
 	FPT_send_expeditionary_force = {
 		icon = GFX_decision_generic_military
 		
-		allowed = {
-			always = no
-			is_og_freiprinz = yes
-		}
 		available = {
 			UNG = {
 				has_country_flag = UNG_helping_seventh_campaign
 			}
+			has_idea = FPT_union_member
 			divisions_in_state = {
 				size > 0
 				state = ROOT.CAPITAL
@@ -84,9 +81,6 @@ FPT_kriegsspiele_preparations = {
 	
 	FPT_kriegsspiele_happening = {
 		icon = GFX_decision_eng_puppet_usa
-		allowed = {
-			is_og_freiprinz = yes
-		}
 		available = {
 			always = no
 		}
@@ -106,9 +100,6 @@ FPT_kriegsspiele_preparations = {
 	
 	FPT_kriegsspiele_select_men = {
 		icon = GFX_decision_generic_military
-		allowed = {
-			is_og_freiprinz = yes
-		}
 		available = {
 			has_manpower > 49
 			NOT = {
@@ -144,7 +135,7 @@ FPT_kriegsspiele_preparations = {
 			hidden_effect = {
 				every_country = {
 					limit = {
-						is_og_freiprinz = yes
+						has_idea = FPT_union_member
 					}
 					update_kriegsspiele_tracker = yes
 				}
@@ -154,9 +145,6 @@ FPT_kriegsspiele_preparations = {
 	
 	FPT_kriegsspiele_prepare_equipment = {
 		icon = GFX_decision_generic_intelligence_operation
-		allowed = {
-			is_og_freiprinz = yes
-		}
 		available = {
 			has_equipment = {
 				infantry_equipment > 49
@@ -199,7 +187,7 @@ FPT_kriegsspiele_preparations = {
 			hidden_effect = {
 				every_country = {
 					limit = {
-						is_og_freiprinz = yes
+						has_idea = FPT_union_member
 					}
 					update_kriegsspiele_tracker = yes
 				}
@@ -209,9 +197,6 @@ FPT_kriegsspiele_preparations = {
 	
 	FPT_kriegsspiele_training_tactics = {
 		icon = GFX_decision_hol_draw_up_staff_plans
-		allowed = {
-			is_og_freiprinz = yes
-		}
 		available = {
 			has_army_experience > 2			
 			
@@ -248,7 +233,7 @@ FPT_kriegsspiele_preparations = {
 			hidden_effect = {
 				every_country = {
 					limit = {
-						is_og_freiprinz = yes
+						has_idea = FPT_union_member
 					}
 					update_kriegsspiele_tracker = yes
 				}
@@ -258,9 +243,6 @@ FPT_kriegsspiele_preparations = {
 	
 	FPT_kriegsspiele_prioritize_preparations = {
 		icon = GFX_decision_eng_trade_unions_demand
-		allowed = {
-			is_og_freiprinz = yes
-		}
 		available = {
 			has_political_power > 35	
 			NOT = {
@@ -296,7 +278,7 @@ FPT_kriegsspiele_preparations = {
 			hidden_effect = {
 				every_country = {
 					limit = {
-						is_og_freiprinz = yes
+						has_idea = FPT_union_member
 					}
 					update_kriegsspiele_tracker = yes
 				}
@@ -306,9 +288,6 @@ FPT_kriegsspiele_preparations = {
 	
 	FPT_kriegsspiele_organize_drill = {
 		icon = GFX_decision_eng_blackshirt_march
-		allowed = {
-			is_og_freiprinz = yes
-		}
 		available = {
 			command_power > 15
 			NOT = {
@@ -344,7 +323,7 @@ FPT_kriegsspiele_preparations = {
 			hidden_effect = {
 				every_country = {
 					limit = {
-						is_og_freiprinz = yes
+						has_idea = FPT_union_member
 					}
 					update_kriegsspiele_tracker = yes
 				}
@@ -354,9 +333,6 @@ FPT_kriegsspiele_preparations = {
 	
 	FPT_kriegsspiele_parade = {
 		icon = GFX_decision_generic_form_nation
-		allowed = {
-			is_og_freiprinz = yes
-		}
 		available = {
 			NOT = {
 				has_country_flag = FPT_kriegsspiele_already_preparing
@@ -388,7 +364,7 @@ FPT_kriegsspiele_preparations = {
 			
 			every_country = {
 				limit = {
-					is_og_freiprinz = yes
+					has_idea = FPT_union_member
 				}
 				update_kriegsspiele_tracker = yes
 			}
@@ -422,9 +398,12 @@ FPT_kriegsspiele_preparations = {
 			
 			FROM = {
 				owner = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
+					NOT = {
+						tag = UNG
+					}
 					hidden_trigger = {
-						is_og_freiprinz = yes
+						has_idea = FPT_union_member
 					}
 					NOT = {
 						tag = STA
@@ -444,9 +423,12 @@ FPT_kriegsspiele_preparations = {
 			}
 			FROM = {
 				owner = {
-					is_subject_of = UNG
+					has_idea = FPT_union_member
+					NOT = {
+						tag = UNG
+					}
 					hidden_trigger = {
-						is_og_freiprinz = yes
+						has_idea = FPT_union_member
 					}
 					NOT = {
 						tag = STA
@@ -485,7 +467,7 @@ FPT_kriegsspiele_preparations = {
 			hidden_effect = {
 				every_country = {
 					limit = {
-						is_og_freiprinz = yes
+						has_idea = FPT_union_member
 					}
 					update_kriegsspiele_tracker = yes
 				}
@@ -552,6 +534,9 @@ FPT_border_skirmishes = {
 				NOT = {
 					has_war_together_with = ROOT
 				}
+				NOT = {
+					tag = UNG
+				}
 			}
 			NOT = {
 				is_subject_of = FROM
@@ -559,7 +544,7 @@ FPT_border_skirmishes = {
 		}
 		
 		target_root_trigger = {
-			is_og_freiprinz = yes
+			has_idea = FPT_union_member
 			NOT = {
 				tag = UNG
 			}
@@ -569,7 +554,7 @@ FPT_border_skirmishes = {
 
 		target_trigger = {
 			FROM = {	
-				is_subject_of = UNG
+				has_idea = FPT_union_member
 			}
 		}
 		
@@ -851,18 +836,19 @@ FPT_loyalties = {
 		allowed = {
 			NOT = {
 				tag = STA
+				tag = UNG
 			}
 		}
 		
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				has_country_flag = FPT_already_supporting_someone
 			}
 		}
 		
 		visible = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				tag = STA
 				STA = {
@@ -1022,18 +1008,19 @@ FPT_loyalties = {
 		allowed = {
 			NOT = {
 				tag = STA
+				tag = UNG
 			}
 		}
 		
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				has_country_flag = FPT_already_supporting_someone
 			}
 		}
 		
 		visible = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				tag = STA
 				STA = {
@@ -1177,18 +1164,19 @@ FPT_loyalties = {
 		allowed = {
 			NOT = {
 				tag = STA
+				tag = UNG
 			}
 		}
 		
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				has_country_flag = FPT_already_supporting_someone
 			}
 		}
 		
 		visible = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				tag = STA
 				STA = {
@@ -1316,18 +1304,19 @@ FPT_loyalties = {
 		allowed = {
 			NOT = {
 				tag = STA
+				tag = UNG
 			}
 		}
 		
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				has_country_flag = FPT_already_supporting_someone
 			}
 		}
 		
 		visible = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				tag = STA
 				STA = {
@@ -1487,18 +1476,19 @@ FPT_loyalties = {
 		allowed = {
 			NOT = {
 				tag = STA
+				tag = UNG
 			}
 		}
 		
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				has_country_flag = FPT_already_supporting_someone
 			}
 		}
 		
 		visible = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				tag = STA
 				STA = {
@@ -1642,18 +1632,19 @@ FPT_loyalties = {
 		allowed = {
 			NOT = {
 				tag = STA
+				tag = UNG
 			}
 		}
 		
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				has_country_flag = FPT_already_supporting_someone
 			}
 		}
 		
 		visible = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				tag = STA
 				STA = {
@@ -1783,18 +1774,19 @@ FPT_loyalties = {
 		allowed = {
 			NOT = {
 				tag = STA
+				tag = UNG
 			}
 		}
 		
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				has_country_flag = FPT_already_supporting_someone
 			}
 		}
 		
 		visible = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			has_country_flag = wws_konkord_collectve_movement
 			NOT = {
 				tag = STA
@@ -1929,18 +1921,19 @@ FPT_loyalties = {
 		allowed = {
 			NOT = {
 				tag = STA
+				tag = UNG
 			}
 		}
 		
 		available = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			NOT = {
 				has_country_flag = FPT_already_supporting_someone
 			}
 		}
 		
 		visible = {
-			is_subject_of = UNG
+			has_idea = FPT_union_member
 			has_country_flag = wws_konkord_collectve_movement
 			NOT = {
 				tag = STA
@@ -2081,17 +2074,14 @@ FPT_elections = {
 				state = THIS
 				is_capital = yes
 				owner = {
-					is_og_freiprinz = yes
+					has_idea = FPT_union_member
 				}
 			}
 		}
 		
-		allowed = {
-			is_og_freiprinz = yes
-		}
-		
 		visible = {
 			has_country_flag = FPT_can_vote_new_elections_ORD_supervision
+			has_idea = FPT_union_member
 		}
 		
 		available = {			
@@ -2208,9 +2198,6 @@ FPT_elections = {
 	}
 	FPT_electing_new_hochprinz = {
 		icon = GFX_decision_eng_puppet_usa
-		allowed = {
-			is_og_freiprinz = yes
-		}
 		available = {
 			always = no
 		}
@@ -2234,11 +2221,8 @@ rally_princes = {
 		
 		fire_only_once = yes
 		
-		allowed = {
-			is_og_freiprinz = yes
-		}	
-		
 		available = {
+			has_idea = FPT_union_member
 			is_subject = no
 			has_capitulated = no
 			NOT = {
@@ -2273,7 +2257,7 @@ rally_princes = {
 		complete_effect = {
 			create_faction_from_template = {
 				template = faction_template_generic_dominance
-				name = freiprinztum
+				name = freiprinztum_alliance
 				icon = GFX_faction_logo_generic_12
 			}
 			set_country_flag = freiprinzen_allied

@@ -5048,9 +5048,8 @@ country_event = { #SKA wants to be our little bitch boi
 	option = { #Alright they can be a FPT
 		name = skaelinger.89.b
 		trigger = { original_tag = UNG }
-		set_autonomy = {
-			target = SKA
-			autonomy_state = autonomy_IR_freiprinztum
+		SKA = {
+			add_ideas = FPT_union_member
 		}
 		hidden_effect = {
 			SKA = {

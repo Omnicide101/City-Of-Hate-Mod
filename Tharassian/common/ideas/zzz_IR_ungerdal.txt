@@ -525,7 +525,7 @@ ideas = {
 			cancel = {
 				OR = {
 					BER = {
-						is_subject_of = UNG
+						has_idea = FPT_union_member
 					}
 					BER = {
 						exists = no

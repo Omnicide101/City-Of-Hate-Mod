@@ -167,6 +167,7 @@ set_popularities = {
 add_ideas = {
 	human_country
 	tergewelft_patron
+	FPT_union_member
 	FPT_bauernfreistellung
 	SPW_breadbasket_of_the_union
 	SPW_Spectre_BeKazaal

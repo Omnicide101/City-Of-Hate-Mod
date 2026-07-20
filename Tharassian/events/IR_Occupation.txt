@@ -307,7 +307,7 @@ country_event = {
 						}
 					}
 					
-					# change government if necesarry
+					# change government if necessary
 					var:new_occupied_country = {
 						random_list = {
 							allowed_party_monarchism_constitutional = {
@@ -398,15 +398,19 @@ country_event = {
 						to_state_array = owned_controlled_states
 					}
 					
-					# transfer state
+					# transfer states, but NOT the capital (to make sure Commissiaries don't just vanish)
 					if = {
 						limit = { has_resistance = yes }
 						set_resistance = 0
 					}
-					var:new_occupied_country = {
-						transfer_state = PREV
+					if = {
+						limit = {
+							is_capital = no
+						}
+						var:new_occupied_country = {
+							transfer_state = PREV
+						}
 					}
-					
 					if = {
 						limit = { 
 							var:occupier_country = {
@@ -489,7 +493,46 @@ country_event = {
 				var:occupier_country = {
 					set_variable = { resistance_already_inited@var:occupied_country = 1 } 
 				}
-			
+				# Make sure all Ordorian countries and subjects go play wack-a-mole with  the rebels
+				if = {
+					limit = {
+						NOT = {
+							var:occupied_country = {
+								tag = ORD
+							}
+						}
+						OR = {
+							var:occupier_country = {
+								has_autonomy_state = autonomy_IR_commissiary
+							}
+							AND = {
+								country_exists = ORD
+								any_other_country = {
+									is_ORD_commissiary = yes
+									var:occupied_country = {
+										any_owned_state = {
+											is_core_of = PREV.PREV
+										}
+									}
+								}
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							OR = {
+								tag = ORD
+								tag = ORB
+								tag = EOR
+								has_autonomy_state = autonomy_IR_commissiary
+							}
+						}
+						declare_war_on = {
+							target = var:occupied_country
+							type = annex_everything
+						}
+					}
+				}
 			}
 		}
 	}

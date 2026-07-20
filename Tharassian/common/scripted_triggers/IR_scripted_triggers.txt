@@ -28,7 +28,7 @@ is_prisoner = {
 
 # checks for loyalty to Adalina
 is_loyal_to_union = {
-	is_subject_of = UNG
+	has_idea = FPT_union_member
 	check_variable = {
 		var = FPT_union_loyalty 
 		value = var:FPT_stahlhof_loyalty
